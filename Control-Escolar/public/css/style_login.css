@@ -1,5 +1,14 @@
 body{
-  background-color: #003865;
   font-family: verdana;
   color: white;
+}
+
+div.background{
+  width:100vw;
+  height:100vh;
+  background-color: #003865;
+}
+
+img.logo{
+  width: 15em;
 }

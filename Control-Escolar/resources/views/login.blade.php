@@ -7,5 +7,11 @@
 @section('title', 'Inicio de Sesion')
 
 @section('content')
-  <p>Prueba de vista</p>
+  <div class="background">
+    <div class="container">
+      <div class="flex">
+        <img class="logo" src="{{{ asset('img/logo/lm_b.png') }}}" alt="">
+      </div>
+    </div>
+  </div>
 @endsection
