@@ -9,6 +9,20 @@ div.background{
   background-color: #003865;
 }
 
-img.logo{
-  width: 15em;
+div.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img.img-logo{
+  width: 8em;
+}
+
+@media (min-width:993px) {
+  img.img-logo{
+    width: 20em;
+  }
+
+
 }
