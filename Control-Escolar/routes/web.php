@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('login');
 });
+
+Route::get('dashboard','DashboarController@index')->name('dashboard');
+
+Route::post('login', 'Auth\LoginController@login')->name('login');
