@@ -23,6 +23,7 @@ div.logo{
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 1em;
 }
 
 img.img-logo{
