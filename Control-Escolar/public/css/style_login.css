@@ -6,7 +6,17 @@ body{
 div.background{
   width:100vw;
   height:100vh;
-  background-color: #003865;
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-color: #003865;  */
+}
+
+div.color-bg{
+  width:100vw;
+  height:100vh;
+  background-color: rgba(0,56,101, 0.8);
 }
 
 div.logo{
@@ -17,12 +27,12 @@ div.logo{
 
 img.img-logo{
   width: 8em;
+  opacity: 1.0;
 }
 
 @media (min-width:993px) {
   img.img-logo{
     width: 20em;
   }
-
 
 }
