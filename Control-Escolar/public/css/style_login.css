@@ -1,6 +1,7 @@
 body{
   font-family: verdana;
   color: white;
+  font-size: 14px;
 }
 
 div.background{
@@ -23,17 +24,32 @@ div.logo{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1em;
 }
 
 img.img-logo{
   width: 8em;
-  opacity: 1.0;
+}
+
+p.bienvenida{
+  text-align: center;
+  margin-top: 1em;
 }
 
 @media (min-width:993px) {
+  body{
+    font-size: 20px;
+  }
+
   img.img-logo{
-    width: 20em;
+    width: 14em;
+  }
+
+  p.bienvenida{
+    margin-top: 15%;
+  }
+
+  div.logo{
+    margin-top: 3em;
   }
 
 }
