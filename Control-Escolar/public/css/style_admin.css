@@ -1,39 +1,32 @@
 body{
   font-family: verdana;
-  color: white;
+  color: black ;
 }
 
 div.background{
   width:100vw;
   height:100vh;
-  background-image: url('../img/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  /* background-color: #003865;  */
+  background-color: #E6E6E6;
 }
 
-div.color-bg{
+div.barra_superior{
   width:100vw;
-  height:100vh;
-  background-color: rgba(0,56,101, 0.8);
+  height:12vh;
+  background-color: rgba(0,55,100);
 }
 
 div.logo{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1em;
 }
 
 img.img-logo{
-  width: 8em;
-  opacity: 1.0;
+  margin-top: 0.2em;
 }
 
-@media (min-width:993px) {
-  img.img-logo{
-    width: 20em;
-  }
-
+div.contenedor{
 }

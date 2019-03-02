@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('login');
 });
+
+Route::get('/admin', function () {
+    return view('admin.admin_registro_persona');
+});
