@@ -26,33 +26,124 @@
 
           <div class="row card-panel">
 
-            <div class="input-field col m4 s12 ">
+            <div class="input-field col s12 m3">
+              <i class="material-icons prefix">
+                supervised_user_circle
+              </i>
+              <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="1">Coordinador</option>
+                <option value="2">Profesor</option>
+                <option value="3">Alumno</option>
+              </select>
+              <label>Tipo de usuario</label>
+            </div>
+
+            <div class="input-field col m3 s12 ">
+              <!--<i class="material-icons prefix">account_circle</i>-->
               <input type="text" id="nombre" class="validate" required>
               <label for="nombre">Nombre:</label>
             </div>
-            <div class="input-field col m4 s12 ">
+            <div class="input-field col m3 s12 ">
+              <!--<i class="material-icons prefix">account_circle</i>-->
               <input type="text" id="apellidop" class="validate" required>
               <label for="apellidop">Apellido paterno:</label>
             </div>
-            <div class="input-field col m4 s12 ">
+            <div class="input-field col m3 s12 ">
+              <!--<i class="material-icons prefix">account_circle</i>-->
               <input type="text" id="apellidom" class="validate" required>
               <label for="apellidom">Apellido materno:</label>
             </div>
 
 
-            select
-            <div class="input-field col s12">
-              <select>
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-              </select>
-              <label>Materialize Select</label>
+
+            <div class="input-field col m3 s12 ">
+              <i class="material-icons prefix">email</i>
+              <input type="text" id="correo" class="validate" required>
+              <label for="correo">Correo electrónico:</label>
             </div>
 
 
+          <div class="col m6 s12">
+            <div class="input-field" id="masc">
+              <i class="material-icons prefix">wc</i>
+              <!--<lavel for="" class="col s12 m4">Sexo:</lavel>-->
+              <p class="col s6 m6 push-m1" >
+                <label>
+                  <input name="group1" type="radio" checked />
+                  <span>Masculino</span>
+                </label>
+              </p>
+              <p>
 
+              <p class="col s6 m6">
+                <label>
+                  <input name="group1" type="radio" checked />
+                  <span>Femenino</span>
+                </label>
+              </p>
+              <p>
+            </div>
+          </div>
+
+          <div class="input-field col m3 s12 ">
+            <!--<i class="material-icons prefix">date_range</i>-->
+            <label for="fecha">Fecha de nacimiento: </label>
+              <input type="text" name="" class="datepicker validate" required id="fecha" >
+          </div>
+
+          <div class="row">
+          </div>
+
+
+
+          <div class="input-field col m3 s12 ">
+            <input type="text" id="calle" class="validate" required>
+            <label for="calle">Calle:</label>
+          </div>
+          <div class="input-field col m3 s12 ">
+            <input type="number" id="num_ext" class="validate" required>
+            <label for="num_ext">Número exterior:</label>
+          </div>
+          <div class="input-field col m3 s12 ">
+            <input type="number" id="num_int" class="validate" required>
+            <label for="num_int">Número interior:</label>
+          </div>
+          <div class="input-field col m3 s12 ">
+            <input type="text" id="colonia" class="validate" required>
+            <label for="colonia">Colonia:</label>
+          </div>
+
+
+          <div class="input-field col m4 s12 ">
+            <input type="number" id="cp" class="validate" required>
+            <label for="cp">Código postal:</label>
+          </div>
+          <div class="input-field col m4 s12 ">
+            <input type="text" id="ciudad" class="validate" required>
+            <label for="ciudad">Ciudad:</label>
+          </div>
+          <div class="input-field col m4 s12 ">
+            <input type="text" id="estado" class="validate" required>
+            <label for="estado">Estado:</label>
+          </div>
+
+          <div class="input-field col m4 s12 ">
+            <input type="tel" id="telefono" class="validate" required>
+            <label for="telefono">Número de teléfono:</label>
+          </div>
+          <div class="input-field col m4 s12 ">
+            <input type="tel" id="celular" class="validate" required>
+            <label for="celular">Número de celular:</label>
+          </div>
+          <div class="input-field col m4 s12 ">
+            <input type="password" id="pass" class="validate" required>
+            <label for="pass">Contraseña:</label>
+          </div>
+
+          <button class="btn light-blue darken-4 waves-effect waves-light" type="submit" name="action">Registrar
+            <i class="material-icons right">send</i>
+          </button>
 
 
         </form>
@@ -60,5 +151,8 @@
     </div>
 
   </div>
+
+@endsection
+@section('scripts')
 
 @endsection
