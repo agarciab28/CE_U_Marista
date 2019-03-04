@@ -25,5 +25,9 @@ div.logo{
 }
 
 img.img-logo{
-  margin-top: 0.3em;
+
+}
+
+div.nav-wrapper{
+  background-color: rgba(0,55,100);  
 }

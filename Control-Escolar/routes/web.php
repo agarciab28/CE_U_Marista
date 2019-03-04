@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('admin.admin_registro_persona');
 });
+
+//Route::get('/admin', function () {
+//    return view('admin.admin_registro_alumno');
+//});

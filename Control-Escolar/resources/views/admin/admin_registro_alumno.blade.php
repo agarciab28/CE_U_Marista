@@ -26,33 +26,22 @@
 
           <div class="row card-panel">
 
-            <div class="input-field col s12 m3">
-              <i class="material-icons prefix">
-                supervised_user_circle
-              </i>
-              <select required>
-                <option value="" disabled selected>Seleccione</option>
-                <option value="1">Coordinador</option>
-                <option value="2">Profesor</option>
-                <option value="3">Alumno</option>
-              </select>
-              <label>Tipo de usuario</label>
-            </div>
 
-            <div class="input-field col m3 s12 ">
+
+            <div class="input-field col m2 s12 ">
               <!--<i class="material-icons prefix">account_circle</i>-->
-              <input type="text" id="nombre" class="validate" required>
-              <label for="nombre">Nombre:</label>
+              <input type="text" id="semestre" class="validate" required>
+              <label for="semestre">Semestre en curso:</label>
             </div>
-            <div class="input-field col m3 s12 ">
+            <div class="input-field col m5 s12 ">
               <!--<i class="material-icons prefix">account_circle</i>-->
-              <input type="text" id="apellidop" class="validate" required>
-              <label for="apellidop">Apellido paterno:</label>
+              <input type="text" id="nomfam" class="validate" required>
+              <label for="nomfam">Nombre del familiar responsable:</label>
             </div>
-            <div class="input-field col m3 s12 ">
+            <div class="input-field col m5 s12 ">
               <!--<i class="material-icons prefix">account_circle</i>-->
-              <input type="text" id="apellidom" class="validate" required>
-              <label for="apellidom">Apellido materno:</label>
+              <input type="text" id="telfam" class="validate" required>
+              <label for="telfam">Número de teléfono del familiar:</label>
             </div>
 
 

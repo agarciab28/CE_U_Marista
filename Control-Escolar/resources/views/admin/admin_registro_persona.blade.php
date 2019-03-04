@@ -9,7 +9,7 @@
 @section('content')
 <div class="background">
 
-    <div class="barra_superior">
+  <!--  <div class="barra_superior">
       <div class="row">
         <div class="col s4  push-s4  ">
           <div class="logo">
@@ -17,7 +17,13 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center"><img class="img-logo" src="{{{ asset('img/logo/lm_b_s.png') }}}" alt=""></a>
+
+      </div>
+    </nav>
 
 
     <div class="section container">
@@ -57,18 +63,32 @@
 
 
 
-            <div class="input-field col m3 s12 ">
+            <div class="input-field col m4 s12 ">
               <i class="material-icons prefix">email</i>
               <input type="text" id="correo" class="validate" required>
               <label for="correo">Correo electrónico:</label>
             </div>
 
 
-          <div class="col m6 s12">
-            <div class="input-field" id="masc">
-              <i class="material-icons prefix">wc</i>
+        <!--  <div class="col m6 s12">-->
+
+
+
+              <div class="input-field col s12 m4">
+                <i class="material-icons prefix">
+                  wc
+                </i>
+                <select required>
+                  <option value="" disabled selected>Sexo</option>
+                  <option value="1">Masculino</option>
+                  <option value="2">Femenino</option>
+
+
+                </select>
+                <label>Tipo de usuario</label>
+              </div>
               <!--<lavel for="" class="col s12 m4">Sexo:</lavel>-->
-              <p class="col s6 m6 push-m1" >
+              <!--<p class="col s6 m6 push-m1" >
                 <label>
                   <input name="group1" type="radio" checked />
                   <span>Masculino</span>
@@ -82,11 +102,11 @@
                   <span>Femenino</span>
                 </label>
               </p>
-              <p>
-            </div>
-          </div>
+              <p>-->
 
-          <div class="input-field col m3 s12 ">
+          <!--</div>-->
+
+          <div class="input-field col m4 s12 ">
             <!--<i class="material-icons prefix">date_range</i>-->
             <label for="fecha">Fecha de nacimiento: </label>
               <input type="text" name="" class="datepicker validate" required id="fecha" >
@@ -140,11 +160,16 @@
             <input type="password" id="pass" class="validate" required>
             <label for="pass">Contraseña:</label>
           </div>
-
+        <div class="input-field col m6 s6 ">
+          <button class="btn red darken-1 waves-effect waves-light" type="submit" name="action">Cancelar
+            <i class="material-icons right">clear</i>
+          </button>
+        </div>
+        <div class="input-field col m6 s6 push-m3">
           <button class="btn light-blue darken-4 waves-effect waves-light" type="submit" name="action">Registrar
             <i class="material-icons right">send</i>
           </button>
-
+        </div>
 
         </form>
       </div>
