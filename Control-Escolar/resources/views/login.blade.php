@@ -20,8 +20,8 @@
             <img class="img-logo" src="{{{ asset('img/logo/lm_b.png') }}}" alt="">
           </div>
         </div>
-        <div class="col s12 m12 l7">
-          <div class="card-panel section">
+        <div class="col s12 m12 l7 container section">
+          <div class="card-panel">
             <div class="row">
               <div class="col s12">
                 <ul class="tabs">
