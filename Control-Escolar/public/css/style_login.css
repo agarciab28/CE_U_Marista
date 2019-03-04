@@ -23,7 +23,7 @@ div.logo{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 img.img-logo{
@@ -31,9 +31,71 @@ img.img-logo{
   opacity: 1.0;
 }
 
+button.login{
+  margin-top:1em;;
+}
+
+p.bienvenida{
+  text-align: center;
+}
+
+div.contenedor{
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p.footer{
+  font-size: 10px;
+  position: absolute;
+  bottom:0;
+  opacity: 0.5;
+}
+
+form{
+  margin-top: 14px;
+}
+
+.btn{
+  background-color: #FFB500;
+  color: black;
+}
+
+.btn:hover{
+  background-color: rgba(255, 181, 0, .9);
+}
+
+.tabs .tab a{
+           color:#003865;
+       } /*Black color to the text*/
+
+       .tabs .tab a:hover {
+           background-color:rgba(0, 56, 101,1);
+           color:#fff;
+       } /*Text color on hover*/
+
+       .tabs .tab a.active {
+           background-color:#fff;
+           color:#003865;
+       } /*Background and text color when a tab is active*/
+
+       .tabs .indicator {
+           background-color:#003865;
+       } /*Color of underline*/
+
 @media (min-width:993px) {
   img.img-logo{
     width: 20em;
+  }
+
+  p.bienvenida{
+    font-size: 24px;
+    margin-top: 10em;
+  }
+
+  p.footer{
+    font-size: 12px;
   }
 
 }
