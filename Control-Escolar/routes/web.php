@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('login');
 });
 
+Route::get('dashboard','DashboarController@index')->name('dashboard');
+
+Route::post('login', 'Auth\LoginController@login')->name('login');
+
 Route::get('/admin', function () {
     return view('admin.admin_registro_persona');
 });
