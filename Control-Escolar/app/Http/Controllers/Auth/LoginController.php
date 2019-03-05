@@ -10,13 +10,13 @@ class LoginController extends Controller
 
     public function login(){
       $credentials = $this->validate(request(), [
-        'name' => 'required|string',
-        'password' => 'required|string'
+        'id_persona' => 'required|string',
+        'contrasena' => 'required|string'
       ]);
 
       if(Auth::attempt($credentials)){
         return redirect()->route('dashboard');
       }
-      return back()->withErrors(['name' => 'Sin registro']);
+      return back()->withErrors(['id_persona' => 'Sin registro']);
     }
 }
