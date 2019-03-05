@@ -30,14 +30,15 @@
                 </ul>
               </div>
               <div id="alumno" class="col s12">
-                <form class="" action="#" method="post">
+                <form class="" action="{{ route('login')}}" method="post">
+                   {{ csrf_field() }}
                   <div class="row">
                     <div class="input-field col s12 l8 push-l2 pull-l2   ">
-                      <input id="username" type="text" class="validate">
+                      <input id="username" name="ncontrol" type="text" class="validate">
                       <label for="username"><i class="fas fa-user" style="margin-right:0.5em;"></i>Numero de Control</label>
                     </div>
                     <div class="input-field col s12 l8 push-l2 pull-l2   ">
-                      <input id="password" type="password" class="validate">
+                      <input id="password" type="password" name="password" class="validate">
                       <label for="password"><i class="fas fa-key" style="margin-right:0.5em;"></i>Contraseña</label>
                     </div>
                       <button class="btn col s2 push-s5 pull-s5 l8 push-l2 pull-l2 waves-effect waves-light login" type="submit" name="action">Acceder</button>
@@ -45,14 +46,15 @@
                 </form>
               </div>
               <div id="personal" class="col s12">
-                <form class="" action="#" method="post">
+                <form class="" action="{{ route('loginAdmin')}}" method="post">
+                   {{ csrf_field() }}
                   <div class="row">
                     <div class="input-field col s12 l8 push-l2 pull-l2   ">
-                      <input id="username" type="text" class="validate">
+                      <input id="username" type="text" name ="id_admin" class="validate">
                       <label for="username"><i class="fas fa-user" style="margin-right:0.5em;"></i>Nombre de Usuario</label>
                     </div>
                     <div class="input-field col s12 l8 push-l2 pull-l2   ">
-                      <input id="password" type="password" class="validate">
+                      <input id="password" type="password" name="password" class="validate">
                       <label for="password"><i class="fas fa-key" style="margin-right:0.5em;"></i>Contraseña</label>
                     </div>
                       <button class="btn col s2 push-s5 pull-s5 l8 push-l2 pull-l2 waves-effect waves-light login" type="submit" name="action">Acceder</button>
