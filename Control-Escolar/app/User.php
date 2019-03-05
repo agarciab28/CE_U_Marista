@@ -17,7 +17,7 @@ class User extends Authenticatable
      */
     protected $table = 'alumno';
     protected $fillable = [
-        'ncontrol', 'contrasena',
+        'ncontrol', 'password',
     ];
 
     /**

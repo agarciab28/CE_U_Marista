@@ -17,6 +17,7 @@ class CreateTableAdministrador extends Migration
             $table->string('id_admin',3);
             $table->boolean('activo');
             $table->string('id_persona',10);
+            $table->text('password');
             //$table->timestamps();
 
             $table->primary('id_admin');

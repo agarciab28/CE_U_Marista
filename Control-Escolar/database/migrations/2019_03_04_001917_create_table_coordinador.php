@@ -17,6 +17,7 @@ class CreateTableCoordinador extends Migration
             $table->string('id_coordinador',10);
             $table->string('id_carrera',10);
             $table->string('id_persona',10);
+            $table->text('password');
             //$table->timestamps();
 
             $table->primary('id_coordinador');

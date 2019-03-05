@@ -19,6 +19,7 @@ class CreateTableAlumno extends Migration
             $table->string('num_tel_fam',20)->nullable();
             $table->string('nombre_fam',50)->nullable();
             $table->string('id_persona',10);
+            $table->text('password');
             //$table->timestamps();
 
             $table->primary('ncontrol');
