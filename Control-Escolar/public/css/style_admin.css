@@ -10,6 +10,7 @@ div.background{
   background-repeat: no-repeat;
   background-position: center;
   background-color: #E6E6E6;
+  overflow: auto;
 }
 
 div.barra_superior{
@@ -29,5 +30,6 @@ img.img-logo{
 }
 
 div.nav-wrapper{
-  background-color: rgba(0,55,100);  
+  background-color: rgba(0,55,100);
+  overflow: hidden;
 }
