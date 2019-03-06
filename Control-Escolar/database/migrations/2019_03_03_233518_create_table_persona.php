@@ -31,7 +31,6 @@ class CreateTablePersona extends Migration
             $table->string('estado',30)->nullable();
             $table->string('num_tel',10)->nullable();
             $table->string('num_cel',10)->nullable();
-            $table->text('contrasena');
             //$table->timestamps();
 
             $table->primary('id_persona');

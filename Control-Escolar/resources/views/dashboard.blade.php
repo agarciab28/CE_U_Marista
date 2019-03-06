@@ -7,5 +7,6 @@
 @section('title', 'Home')
 
 @section('content')
+dashboard
 
 @endsection

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 use Auth;
-
+use DB;
+use App;
 use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
@@ -10,13 +11,22 @@ class LoginController extends Controller
 
     public function login(){
       $credentials = $this->validate(request(), [
-        'id_persona' => 'required|string',
-        'contrasena' => 'required|string'
+        'ncontrol' => 'required|string',
+        'password' => 'required|string'
       ]);
-
       if(Auth::attempt($credentials)){
-        return redirect()->route('dashboard');
+        return 'eres alumno';
       }
-      return back()->withErrors(['id_persona' => 'Sin registro']);
+      return back()->withErrors(['ncontrol' => 'Sin registro']);
+    }
+    public function loginAdmin(){
+      $credentials = $this->validate(request(), [
+        'id_admin' => 'required|string',
+        'password' => 'required|string'
+      ]);
+      if(Auth::guard('admins')->attempt($credentials)){
+        return 'eres administrador';
+      }
+      return back()->withErrors(['id_admin' => 'Sin registro']);
     }
 }
