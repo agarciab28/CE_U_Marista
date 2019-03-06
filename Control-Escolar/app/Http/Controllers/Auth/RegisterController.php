@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -68,5 +69,26 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+    public function registro(){
+      $datos = $this->validate(request(),[
+        'rol'=>'string',
+        'nombres'=>'string',
+        'apaterno'=>'string',
+        'amaterno'=>'string',
+        'sexo'=>'string',
+        'email'=>'string',
+        'fnaci'=>'string',
+        'calle'=>'string',
+        'num_ext'=>'string',
+        'num_int'=>'string',
+        'colonia'=>'string',
+        'codigo_postal'=>'string',
+        'ciudad'=>'string',
+        'estado'=>'string',
+        'num_tel'=>'string',
+        'num_cel'=>'string',
+      ]);
+      dd($datos);
     }
 }

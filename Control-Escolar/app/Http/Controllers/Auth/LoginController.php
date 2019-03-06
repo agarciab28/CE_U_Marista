@@ -15,7 +15,7 @@ class LoginController extends Controller
         'password' => 'required|string'
       ]);
       if(Auth::attempt($credentials)){
-        return 'eres alumno';
+        return view('dashboard');
       }
       return back()->withErrors(['ncontrol' => 'Sin registro']);
     }
@@ -25,7 +25,7 @@ class LoginController extends Controller
         'password' => 'required|string'
       ]);
       if(Auth::guard('admins')->attempt($credentials)){
-        return 'eres administrador';
+        return view('admin.dashboardAdmin');
       }
       return back()->withErrors(['id_admin' => 'Sin registro']);
     }
