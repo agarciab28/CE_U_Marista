@@ -68,22 +68,32 @@ form{
 }
 
 .tabs .tab a{
-           color:#003865;
-       } /*Black color to the text*/
+  color:#003865;
+}
 
-       .tabs .tab a:hover {
-           background-color:rgba(0, 56, 101,1);
-           color:#fff;
-       } /*Text color on hover*/
+.tabs .tab a:hover {
+  background-color:rgba(0, 56, 101,1);
+  color:#fff;
+}
 
-       .tabs .tab a.active {
-           background-color:#fff;
-           color:#003865;
-       } /*Background and text color when a tab is active*/
+.tabs .tab a.active {
+  background-color:white;
+  color:#003865;
+}
 
-       .tabs .indicator {
-           background-color:#003865;
-       } /*Color of underline*/
+.tabs .indicator {
+  background-color:#003865;
+}
+
+#alumno_user:focus + label, #alumno_pass:focus + label, #personal_user:focus + label, #personal_pass:focus + label {
+ color: #003865;
+}
+
+#alumno_user:focus, #alumno_pass:focus, #personal_user:focus, #personal_pass:focus {
+ border-bottom: 1px solid #003865;
+ box-shadow: none;
+}
+
 
 @media (min-width:993px){
   img.img-logo{
