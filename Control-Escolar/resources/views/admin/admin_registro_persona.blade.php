@@ -28,28 +28,28 @@
               <i class="material-icons prefix">
                 supervised_user_circle
               </i>
-              <select required>
-                <option value="" name="rol" disabled selected>Seleccione</option>
-                <option value="1" >Coordinador</option>
-                <option value="2">Profesor</option>
-                <option value="3">Alumno</option>
+              <select name="rol" required>
+                <option value=""  disabled selected>Seleccione</option>
+                <option  value="Coordinador" >Coordinador</option>
+                <option  value="Profesor">Profesor</option>
+                <option  value="Alummno">Alumno</option>
               </select>
               <label>Tipo de usuario</label>
             </div>
 
             <div class="input-field col m3 s12 ">
               <!--<i class="material-icons prefix">account_circle</i>-->
-              <input type="text" id="nombre" class="validate" required>
+              <input type="text" name="nombres" id="nombre" class="validate" required>
               <label for="nombre">Nombre:</label>
             </div>
             <div class="input-field col m3 s12 ">
               <!--<i class="material-icons prefix">account_circle</i>-->
-              <input type="text" id="apellidop" class="validate" required>
+              <input type="text" id="apellidop" name="apaterno" class="validate" required>
               <label for="apellidop">Apellido paterno:</label>
             </div>
             <div class="input-field col m3 s12 ">
               <!--<i class="material-icons prefix">account_circle</i>-->
-              <input type="text" id="apellidom" class="validate" required>
+              <input type="text" id="apellidom" name="amaterno" class="validate" required>
               <label for="apellidom">Apellido materno:</label>
             </div>
 
@@ -57,7 +57,7 @@
 
             <div class="input-field col m4 s12 ">
               <i class="material-icons prefix">email</i>
-              <input type="text" id="correo" class="validate" required>
+              <input type="text" id="correo" class="validate" name="email" required>
               <label for="correo">Correo electrónico:</label>
             </div>
 
@@ -70,10 +70,10 @@
                 <i class="material-icons prefix">
                   wc
                 </i>
-                <select required>
-                  <option value="" disabled selected>Sexo</option>
-                  <option value="1">Masculino</option>
-                  <option value="2">Femenino</option>
+                <select name="sexo" required>
+                  <option value="" name="sexo" disabled selected>Sexo</option>
+                  <option value="M">Masculino</option>
+                  <option value="F">Femenino</option>
 
 
                 </select>
@@ -84,7 +84,7 @@
           <div class="input-field col m4 s12 ">
             <!--<i class="material-icons prefix">date_range</i>-->
             <label for="fecha">Fecha de nacimiento: </label>
-              <input type="text" name="" class="datepicker validate" required id="fecha" >
+              <input type="text" name="fnaci" class="datepicker validate" required id="fecha" >
           </div>
 
           <div class="row">
@@ -93,25 +93,25 @@
 
 
           <div class="input-field col m3 s12 ">
-            <input type="text" id="calle" class="validate" required>
+            <input type="text" id="calle" name="calle" class="validate" required>
             <label for="calle">Calle:</label>
           </div>
           <div class="input-field col m3 s12 ">
-            <input type="number" id="num_ext" class="validate" required>
+            <input type="number" id="num_ext" name="num_ext" class="validate" required>
             <label for="num_ext">Número exterior:</label>
           </div>
           <div class="input-field col m3 s12 ">
-            <input type="number" id="num_int" class="validate" required>
+            <input type="number" id="num_int" name="num_int" class="validate" required>
             <label for="num_int">Número interior:</label>
           </div>
           <div class="input-field col m3 s12 ">
-            <input type="text" id="colonia" class="validate" required>
+            <input type="text" id="colonia" class="validate" name="colonia" required>
             <label for="colonia">Colonia:</label>
           </div>
 
 
           <div class="input-field col m4 s12 ">
-            <input type="number" id="cp" class="validate" required>
+            <input type="number" id="cp" class="validate" name="codigo_postal" required>
             <label for="cp">Código postal:</label>
           </div>
           <div class="input-field col m4 s12 ">
@@ -124,11 +124,11 @@
           </div>
 
           <div class="input-field col m4 s12 ">
-            <input type="tel" id="telefono" class="validate" required>
+            <input type="tel" id="telefono" name="num_tel" class="validate" required>
             <label for="telefono">Número de teléfono:</label>
           </div>
           <div class="input-field col m4 s12 ">
-            <input type="tel" id="celular" class="validate" required>
+            <input type="tel" id="celular" name="num_cel" class="validate" required>
             <label for="celular">Número de celular:</label>
           </div>
           <div class="input-field col m4 s12 ">

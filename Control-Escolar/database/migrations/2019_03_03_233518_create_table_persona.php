@@ -14,7 +14,7 @@ class CreateTablePersona extends Migration
     public function up()
     {
         Schema::create('persona', function (Blueprint $table) {
-            $table->integer('id_persona',10);
+            $table->string('id_persona',10);
             $table->string('rol',30);
             $table->string('nombres',50);
             $table->string('apaterno',30);
@@ -32,7 +32,7 @@ class CreateTablePersona extends Migration
             $table->string('num_tel',10)->nullable();
             $table->string('num_cel',10)->nullable();
             //$table->timestamps();
-            $table->increments('id_persona');
+            $table->primary('id_persona');
         });
     }
 
