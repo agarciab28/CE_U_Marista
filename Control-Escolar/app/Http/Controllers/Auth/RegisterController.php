@@ -92,7 +92,8 @@ class RegisterController extends Controller
       //dd($datos);
       DB::insert(
         'insert into persona (id_persona,rol,nombres,apaterno,amaterno,sexo,email,fnaci,calle,num_ext,num_int,colonia,codigo_postal,ciudad,estado,num_tel,num_cel)
-        values (1,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[
+        values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[
+          $datos['apaterno'],
           $datos['rol'],
           $datos['nombres'],
           $datos['apaterno'],
@@ -110,7 +111,7 @@ class RegisterController extends Controller
           $datos['num_tel'],
           $datos['num_cel']
         ]);
-        return "persona insertada";
+        return view('admin.registroExitoso');
 
     }
 }

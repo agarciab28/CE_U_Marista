@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 use Auth;
 use DB;
 use App;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
@@ -14,6 +15,7 @@ class LoginController extends Controller
         'ncontrol' => 'required|string',
         'password' => 'required|string'
       ]);
+      //dd(SHA256($data['password']));
       if(Auth::attempt($credentials)){
         return view('dashboard');
       }
