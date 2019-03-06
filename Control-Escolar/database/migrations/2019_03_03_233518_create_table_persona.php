@@ -32,7 +32,6 @@ class CreateTablePersona extends Migration
             $table->string('num_tel',10)->nullable();
             $table->string('num_cel',10)->nullable();
             //$table->timestamps();
-
             $table->primary('id_persona');
         });
     }

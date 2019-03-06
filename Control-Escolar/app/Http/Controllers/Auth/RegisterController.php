@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -66,7 +67,50 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' =>SHA256($data['password']),
         ]);
+    }
+    public function registro(){
+      $datos = $this->validate(request(),[
+        'rol'=>'string',
+        'nombres'=>'string',
+        'apaterno'=>'string',
+        'amaterno'=>'string',
+        'sexo'=>'string',
+        'email'=>'string',
+        'fnaci'=>'string',
+        'calle'=>'string',
+        'num_ext'=>'string',
+        'num_int'=>'string',
+        'colonia'=>'string',
+        'codigo_postal'=>'string',
+        'ciudad'=>'string',
+        'estado'=>'string',
+        'num_tel'=>'string',
+        'num_cel'=>'string',
+      ]);
+      //dd($datos);
+      DB::insert(
+        'insert into persona (id_persona,rol,nombres,apaterno,amaterno,sexo,email,fnaci,calle,num_ext,num_int,colonia,codigo_postal,ciudad,estado,num_tel,num_cel)
+        values (1,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[
+          $datos['rol'],
+          $datos['nombres'],
+          $datos['apaterno'],
+          $datos['amaterno'],
+          $datos['sexo'],
+          $datos['email'],
+          $datos['fnaci'],
+          $datos['calle'],
+          $datos['num_ext'],
+          $datos['num_int'],
+          $datos['colonia'],
+          $datos['codigo_postal'],
+          $datos['ciudad'],
+          $datos['estado'],
+          $datos['num_tel'],
+          $datos['num_cel']
+        ]);
+        return "persona insertada";
+
     }
 }
