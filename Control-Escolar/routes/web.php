@@ -26,6 +26,10 @@ Route::get('/admin/registro', function () {
     return view('admin.admin_registro_persona');
 });
 
+Route::get('/admin/inicio', function () {
+    return view('admin.dashboard');
+});
+
 //Route::get('/admin', function () {
 //    return view('admin.admin_registro_alumno');
 //});

@@ -1,0 +1,10 @@
+div.background{
+  background-color: white;
+}
+
+<style type="text/css">
+.side-nav{
+    top: 65px;
+    width: 250px;
+}
+</style>
