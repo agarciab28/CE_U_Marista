@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 use Auth;
 use DB;
 use App;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
@@ -14,8 +15,9 @@ class LoginController extends Controller
         'ncontrol' => 'required|string',
         'password' => 'required|string'
       ]);
+      //dd(SHA256($data['password']));
       if(Auth::attempt($credentials)){
-        return 'eres alumno';
+        return view('dashboard');
       }
       return back()->withErrors(['ncontrol' => 'Sin registro']);
     }
@@ -25,7 +27,7 @@ class LoginController extends Controller
         'password' => 'required|string'
       ]);
       if(Auth::guard('admins')->attempt($credentials)){
-        return 'eres administrador';
+        return view('admin.dashboardAdmin');
       }
       return back()->withErrors(['id_admin' => 'Sin registro']);
     }

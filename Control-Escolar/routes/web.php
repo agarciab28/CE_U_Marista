@@ -20,8 +20,14 @@ Route::get('dashboard','DashboarController@index')->name('dashboard');
 Route::post('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/', 'Auth\LoginController@loginAdmin')->name('loginAdmin');
 
-Route::get('/admin', function () {
+Route::post('/admin/registroP','Auth\RegisterController@registro')->name('registroPersona');
+
+Route::get('/admin/registro', function () {
     return view('admin.admin_registro_persona');
+});
+
+Route::get('/admin/inicio', function () {
+    return view('admin.dashboard');
 });
 
 //Route::get('/admin', function () {

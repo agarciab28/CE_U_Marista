@@ -11,7 +11,7 @@
   <div class="color-bg">
     <div class="row">
       <div class="col s8 push-s2">
-        <p class="bienvenida">Inicio Alumno</p>
+        <p class="bienvenida">Registro Exitoso</p>
       </div>
     </div>
   </div>
