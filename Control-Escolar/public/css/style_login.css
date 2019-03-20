@@ -28,7 +28,7 @@ div.logo{
 }
 
 img.img-logo{
-  width: 8em;
+  width: 12em;
   opacity: 1.0;
 }
 
@@ -106,7 +106,7 @@ form{
 
 @media (min-width:993px){
   img.img-logo{
-    width: 20em;
+    width: 25em;
     margin-top: 10em;
   }
 
