@@ -21,7 +21,6 @@ class CreateTableAlumno extends Migration
             $table->integer('id_persona')->unsigned();
             $table->text('password');
             $table->timestamps();
-
             $table->primary('ncontrol');
             $table->foreign('id_carrera')->references('id_carrera')->on('carrera');
             $table->foreign('id_persona')->references('id_persona')->on('persona');
