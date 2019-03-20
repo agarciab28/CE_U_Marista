@@ -1,0 +1,12 @@
+.container{
+  text-align: center;
+  align-items: center;
+}
+
+.center-elements{
+	margin-top: 10em;
+}
+
+#home{
+  background-color: #FFB500;
+}

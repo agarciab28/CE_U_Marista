@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app_login')
 
 @section('stylesheet')
   <link href="{{{ asset('css/style_login.css') }}}" rel="stylesheet">
@@ -34,11 +34,11 @@
                    {{ csrf_field() }}
                   <div class="row">
                     <div class="input-field col s12 l8 push-l2 pull-l2   ">
-                      <input id="alumno_user" name="ncontrol" type="text" class="{{ $errors->has('ncontrol') ? 'input-field col s6 red lighten-1' : 'input-field col s6' }}">
+                      <input id="alumno_user" name="ncontrol" type="text" class="{{ $errors->has('ncontrol') ? 'input-field col s12  red lighten-1' : 'input-field col s12' }}">
                       <label for="alumno_user"><i class="fas fa-user" style="margin-right:0.5em;"></i>Numero de Control</label>
                     </div>
                     <div class="input-field col s12 l8 push-l2 pull-l2   ">
-                      <input id="alumno_pass" type="password" name="password" class="{{ $errors->has('ncontrol') ? 'input-field col s6 red lighten-1' : 'input-field col s6' }}">
+                      <input id="alumno_pass" type="password" name="password" class="{{ $errors->has('ncontrol') ? 'input-field col s12 red lighten-1' : 'input-field col s12' }}">
                       <label for="alumno_pass"><i class="fas fa-key" style="margin-right:0.5em;"></i>Contraseña</label>
                     </div>
                       <button class="btn col s2 push-s5 pull-s5 l8 push-l2 pull-l2 waves-effect waves-light login" type="submit" name="action">Acceder</button>

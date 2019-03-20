@@ -1,0 +1,12 @@
+#buscar{
+  background-color: #FFB500;
+}
+
+th, td{
+  text-align: center;
+}
+
+thead{
+  background-color: #003865;
+  color: white;
+}

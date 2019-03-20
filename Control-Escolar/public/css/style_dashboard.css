@@ -1,10 +1,37 @@
-div.background{
-  background-color: white;
+header,main, footer {
+	padding-left: 300px;
 }
 
-<style type="text/css">
-.side-nav{
-    top: 65px;
-    width: 250px;
+.nav-wrapper{
+  background-color: #FFB500;
+	/* background-color: #003865; */
+  overflow: hidden;
 }
-</style>
+
+.sidenav{
+  background-color: #003865;
+	/* background-color: #FFB500; */
+}
+
+a{
+  color:white;
+}
+
+.btn{
+  /* background-color: rgba(0, 56, 101, 0.9); */
+  background-color: #003865;
+	border-radius: 20px;
+}
+
+.btn:hover{
+  background-color: rgba(0, 56, 101, 0.9);
+}
+
+
+
+@media only screen and (max-width : 992px) {
+	header, main, footer {
+		padding-left: 0;
+	}
+
+}
