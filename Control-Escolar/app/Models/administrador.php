@@ -9,14 +9,14 @@ class administrador extends Model
     protected $table ="administrador";
 
     protected $fillable = [
-      'activo','id_persona','password'
+      'activo','id_persona','password','id_admin'
     ];
 
     protected $hidden = [
-      'id_admin'
+
     ];
 
     protected $casts = [
-      
+      'activo' => "boolean"
     ];
 }

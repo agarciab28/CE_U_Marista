@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class materia extends Model
+class horario extends Model
 {
-  protected $table = "meteria";
+  protected $table = "horario";
 
   protected $fillable = [
-    "id_materia","id_plan","nombre_materia","horas_materia"
+    "aula","hora_horario","hora_fin","id_grupo"
   ];
 
   protected $hidden = [
@@ -17,6 +17,6 @@ class materia extends Model
   ];
 
   protected $casts = [
-    "horas_materia" => "integer"
+
   ];
 }

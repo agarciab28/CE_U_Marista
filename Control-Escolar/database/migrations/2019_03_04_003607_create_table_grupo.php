@@ -19,7 +19,7 @@ class CreateTableGrupo extends Migration
             $table->string('id_carrera',10);
             $table->string('id_materia',18);
             $table->string('id_prof',20);
-            $table->string('perdiodo');
+            $table->string('periodo');
             $table->timestamps();
 
             $table->primary('id_grupo');
