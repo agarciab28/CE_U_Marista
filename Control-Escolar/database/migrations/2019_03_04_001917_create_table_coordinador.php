@@ -16,7 +16,7 @@ class CreateTableCoordinador extends Migration
         Schema::create('coordinador', function (Blueprint $table) {
             $table->string('id_coordinador',10);
             $table->string('id_carrera',10);
-            $table->string('id_persona',10);
+            $table->integer('id_persona')->unsigned();
             $table->text('password');
             //$table->timestamps();
 

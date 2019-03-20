@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Auth;
 use Auth;
-use DB;
 use App;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
