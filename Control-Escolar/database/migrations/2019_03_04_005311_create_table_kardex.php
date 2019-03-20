@@ -18,7 +18,7 @@ class CreateTableKardex extends Migration
             $table->text('obj_calificacion');
             $table->string('intento');
             $table->string('periodo');
-            //$table->timestamps();
+            $table->timestamps();
             $table->foreign('ncontrol')->references('ncontrol')->on('alumno');
         });
     }

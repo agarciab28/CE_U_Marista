@@ -18,7 +18,7 @@ class CreateTableCoordinador extends Migration
             $table->string('id_carrera',10);
             $table->integer('id_persona')->unsigned();
             $table->text('password');
-            //$table->timestamps();
+            $table->timestamps();
 
             $table->primary('id_coordinador');
             $table->foreign('id_carrera')->references('id_carrera')->on('carrera');

@@ -20,7 +20,7 @@ class CreateTableAlumno extends Migration
             $table->string('nombre_fam',50)->nullable();
             $table->integer('id_persona')->unsigned();
             $table->text('password');
-            //$table->timestamps();
+            $table->timestamps();
 
             $table->primary('ncontrol');
             $table->foreign('id_carrera')->references('id_carrera')->on('carrera');

@@ -19,7 +19,7 @@ class CreateTableConfiguracion extends Migration
             $table->string('fecha_inicio');
             $table->string('fecha_terminacion');
             $table->string('Jefe_control_escolar');
-            //$table->timestamps();
+            $table->timestamps();
         });
     }
 

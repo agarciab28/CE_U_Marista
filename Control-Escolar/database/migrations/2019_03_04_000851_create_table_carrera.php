@@ -19,7 +19,7 @@ class CreateTableCarrera extends Migration
             $table->string('rvoe',20);
             $table->integer('total_creditos');
             $table->date('fecha');
-            //$table->timestamps();
+            $table->timestamps();
             $table->primary('id_carrera');
         });
     }

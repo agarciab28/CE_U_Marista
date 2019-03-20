@@ -17,7 +17,7 @@ class CreateTableProfesor extends Migration
             $table->string('id_prof',20);
             $table->integer('id_persona')->unsigned();
             $table->text('password');
-            //$table->timestamps();
+            $table->timestamps();
             $table->primary('id_prof');
             $table->foreign('id_persona')->references('id_persona')->on('persona');
         });

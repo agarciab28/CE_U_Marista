@@ -18,7 +18,7 @@ class CreateTableAdministrador extends Migration
             $table->boolean('activo');
             $table->integer('id_persona')->unsigned();
             $table->text('password');
-            //$table->timestamps();
+            $table->timestamps();
             $table->primary('id_admin');
             $table->foreign('id_persona')->references('id_persona')->on('persona');
         });

@@ -18,7 +18,7 @@ class CreateTableMateria extends Migration
             $table->string('id_plan',30);
             $table->string('nombre_materia');
             $table->integer('horas_materia');
-            //$table->timestamps();
+            $table->timestamps();
 
             $table->primary('id_materia');
             $table->foreign('id_plan')->references('id_plan')->on('plan_de_estudios');
