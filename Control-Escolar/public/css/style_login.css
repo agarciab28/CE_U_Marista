@@ -107,6 +107,7 @@ form{
 @media (min-width:993px){
   img.img-logo{
     width: 20em;
+    margin-top: 10em;
   }
 
   p.bienvenida{
