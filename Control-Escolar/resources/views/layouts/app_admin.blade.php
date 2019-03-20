@@ -36,12 +36,17 @@
           <img class="responsive-img col s10 push-s1" src="{{{ asset('img/logos/logo_1_b.png') }}}">
         </div>
       </li>
+
+
     	<li id="home"><a class="white-text" href="/admin"><i class="fas fa-home white-text" style="margin-right:0;"></i>Inicio</a></li>
-    	<li id="registrar"><a class="white-text" href="/admin/registrar"><i class="fas fa-user-plus white-text" style="margin-right:0;"></i>Registrar Usuario</a></li>
-      <li id="usuarios"><a class="white-text" href="/admin/usuarios"><i class="fas fa-user white-text" style="margin-right:0;"></i>Usuarios</a></li>
-      <li id="buscar"><a class="white-text" href="/admin/buscar"><i class="fas fa-search white-text" style="margin-right:0px;"></i>Buscar Paciente</a></li>
-      <li id="estadisticas"><a class="white-text" href="/admin/estadisticas"><i class="fas fa-chart-pie white-text" style="margin-right:0px;"></i>Estadisticas</a></li>
-      <li id="cerrar_sesion"><a class="show-on-small hide-on-med-and-up white-text" href="/">Cerrar Sesion</a></li>
+    	<li id="registrar"><a class="white-text" href="#"><i class="fas fa-user-plus white-text" style="margin-right:0;"></i>Registrar Usuario</a></li>
+      <li id="grupos"><a href="#" class="white-text"><i class="fas fa-users white-text" style="margin-right:0;"></i>Grupos</a></li>
+      <li id="carreras"><a class="white-text" href="#"><i class="fas fa-book white-text" style="margin-right:0;"></i>Carreras</a></li>
+      <li id="materias"><a class="white-text" href="#"><i class="fas fa-book-open white-text" style="margin-right:0;"></i>Materias</a></li>
+      <li id="registrar"><a class="white-text" href="#"><i class="far fa-calendar-alt white-text" style="margin-right:0;"></i>Calendario periodo escolar</a></li>
+      <li id="registrar"><a class="white-text" href="#"><i class="far fa-clock white-text" style="margin-right:0;"></i>Planes de estudio</a></li>
+      <li id="estadisticas"><a class="white-text" href="#"><i class="fas fa-chart-pie white-text" style="margin-right:0px;"></i>Estadisticas</a></li>
+        <li id="cerrar_sesion"><a class="show-on-small hide-on-med-and-up white-text" href="/">Cerrar Sesion</a></li>
 
     </ul>
 

@@ -35,20 +35,28 @@ Route::get('/admin', function(){
   return view('admin.home');
 });
 
-Route::get('/admin/registrar', function(){
-  return view('admin.registrar');
+Route::get('/admin/registrar_usr', function(){
+  return view('admin.registrar_usr');
 });
 
-Route::get('/admin/usuarios', function(){
-  return view('admin.usuarios');
+Route::get('/admin/grupos', function(){
+  return view('admin.grupos');
 });
 
-Route::get('/admin/buscar', function(){
-  return view('admin.buscar');
+Route::get('/admin/carreras', function(){
+  return view('admin.carreras');
 });
 
-Route::get('/admin/buscar/ver', function(){
-  return view('admin.ver');
+Route::get('/admin/materias', function(){
+  return view('admin.materias');
+});
+
+Route::get('/admin/calendario', function(){
+  return view('admin.calendario');
+});
+
+Route::get('/admin/plan_estudio', function(){
+  return view('admin.plan_estudio');
 });
 
 Route::get('/admin/estadisticas', function(){
