@@ -17,7 +17,7 @@
       <div class="row">
         <div class="col s4 push-s4 pull-s4 l4">
           <div class="logo">
-            <img class="img-logo" src="{{{ asset('img/logos/logo_2_b.png') }}}" alt="">
+            <img class="img-logo" src="{{{ asset('img/logos/firma.png') }}}" alt="">
           </div>
         </div>
         <div class="col s12 m12 l7 container section">
