@@ -35,8 +35,8 @@ Route::get('/admin', function(){
   return view('admin.home');
 });
 
-Route::get('/admin/registrar_usr', function(){
-  return view('admin.registrar_usr');
+Route::get('/admin/registrar', function(){
+  return view('admin.registrar');
 });
 
 Route::get('/admin/grupos', function(){
@@ -55,8 +55,8 @@ Route::get('/admin/calendario', function(){
   return view('admin.calendario');
 });
 
-Route::get('/admin/plan_estudio', function(){
-  return view('admin.plan_estudio');
+Route::get('/admin/planes', function(){
+  return view('admin.planes');
 });
 
 Route::get('/admin/estadisticas', function(){

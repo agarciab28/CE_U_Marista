@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     @yield('stylesheet')
-    <title>FT - @yield('title')</title>
+    <title>CE - @yield('title')</title>
   </head>
   <body>
     <!-- NAVBAR -->
@@ -39,13 +39,13 @@
 
 
     	<li id="home"><a class="white-text" href="/admin"><i class="fas fa-home white-text" style="margin-right:0;"></i>Inicio</a></li>
-    	<li id="registrar"><a class="white-text" href="#"><i class="fas fa-user-plus white-text" style="margin-right:0;"></i>Registrar Usuario</a></li>
-      <li id="grupos"><a href="#" class="white-text"><i class="fas fa-users white-text" style="margin-right:0;"></i>Grupos</a></li>
-      <li id="carreras"><a class="white-text" href="#"><i class="fas fa-book white-text" style="margin-right:0;"></i>Carreras</a></li>
-      <li id="materias"><a class="white-text" href="#"><i class="fas fa-book-open white-text" style="margin-right:0;"></i>Materias</a></li>
-      <li id="registrar"><a class="white-text" href="#"><i class="far fa-calendar-alt white-text" style="margin-right:0;"></i>Calendario periodo escolar</a></li>
-      <li id="registrar"><a class="white-text" href="#"><i class="far fa-clock white-text" style="margin-right:0;"></i>Planes de estudio</a></li>
-      <li id="estadisticas"><a class="white-text" href="#"><i class="fas fa-chart-pie white-text" style="margin-right:0px;"></i>Estadisticas</a></li>
+    	<li id="registrar"><a class="white-text" href="/admin/registrar"><i class="fas fa-user-plus white-text" style="margin-right:0;"></i>Registrar Usuario</a></li>
+      <li id="grupos"><a href="/admin/grupos" class="white-text"><i class="fas fa-users white-text" style="margin-right:0;"></i>Grupos</a></li>
+      <li id="carreras"><a class="white-text" href="/admin/carreras"><i class="fas fa-book white-text" style="margin-right:0;"></i>Carreras</a></li>
+      <li id="materias"><a class="white-text" href="/admin/materias"><i class="fas fa-book-open white-text" style="margin-right:0;"></i>Materias</a></li>
+      <li id="calendario"><a class="white-text" href="/admin/calendario"><i class="far fa-calendar-alt white-text" style="margin-right:0;"></i>Calendario periodo escolar</a></li>
+      <li id="planes"><a class="white-text" href="/admin/planes"><i class="far fa-clock white-text" style="margin-right:0;"></i>Planes de estudio</a></li>
+      <li id="estadisticas"><a class="white-text" href="/admin/estadisticas"><i class="fas fa-chart-pie white-text" style="margin-right:0px;"></i>Estadisticas</a></li>
         <li id="cerrar_sesion"><a class="show-on-small hide-on-med-and-up white-text" href="/">Cerrar Sesion</a></li>
 
     </ul>
