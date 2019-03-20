@@ -20,15 +20,12 @@ Route::get('/', function () {
 Route::post('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/', 'Auth\LoginController@loginAdmin')->name('loginAdmin');
 
-// Route::post('/admin/registroP','Auth\RegisterController@registro')->name('registro_persona');
-//
-// Route::get('/admin/registro', function () {
-//     return view('admin.registro_persona');
-// });
-//
-// Route::get('/admin/inicio', function () {
-//     return view('admin.dashboard');
-// });
+Route::post('/admin/registroP','Auth\RegisterController@registro')->name('registro_persona');
+
+Route::get('/admin/registro', function () {
+    return view('admin.registro_persona');
+});
+
 
 // Rutas Admin
 Route::get('/admin', function(){

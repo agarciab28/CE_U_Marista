@@ -12,7 +12,7 @@
     <div class="row container
     section">
       <div class="col s12">
-        Bienvenido al Sistema de Control de Consultas de la Facultad de Fisioterapia de la Universidad Marista
+        Bienvenido al Sistema de Control Escolar de la Universidad Marista
       </div>
     </div>
     <div class="row section container">
