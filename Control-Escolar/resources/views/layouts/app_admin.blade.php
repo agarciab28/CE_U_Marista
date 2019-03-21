@@ -15,7 +15,7 @@
   <body>
     <!-- NAVBAR -->
       @section('usuario')
-      {{dd(auth('admins')->user()->id_admin)}}
+      {{(auth('admins')->user()->id_admin)}}
       @endsection
     <header>
     	<nav>
