@@ -78,7 +78,7 @@ class RegisterController extends Controller
         'amaterno'=>'string',
         'sexo'=>'string',
         'email'=>'string',
-        'fnaci'=>'string',
+        'fecha1'=>'string',
         'calle'=>'string',
         'num_ext'=>'string',
         'num_int'=>'string',
