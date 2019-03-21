@@ -8,30 +8,27 @@
 @section('title', 'Estadisticas')
 
 @section('content')
-  <div class="row section container">
-    <div class="contenedor col s12 m6 push-m3">
-      <h5>Edades</h5>
+  <div class="section container">
+    <div class="row section container">
+      <div class="contenedor col s12 m6 push-m3">
+        <h5>Carreras</h5>
+      </div>
     </div>
-  </div>
-  <canvas id="chart1" width="400" height="200"></canvas>
-  <div class="row section container">
-    <div class="contenedor col s12 m6 push-m3">
-      <h5>Genero</h5>
+    <canvas id="chart1" width="400" height="200"></canvas>
+    <div class="row section container">
+      <div class="contenedor col s12 m6 push-m3">
+        <h5>Genero</h5>
+      </div>
     </div>
-  </div>
-  <canvas id="chart2" width="400" height="200"></canvas>
-  <div class="row section container">
-    <div class="contenedor col s12 m6 push-m3">
-      <h5>Sintomas Generales</h5>
+    <canvas id="chart2" width="400" height="200"></canvas>
+    <div class="row section container">
+      <div class="contenedor col s12 m6 push-m3">
+        <h5>Grupos</h5>
+      </div>
     </div>
+    <canvas id="chart3" width="400" height="200"></canvas>
   </div>
-  <canvas id="chart3" width="400" height="200"></canvas>
-  <div class="row section container">
-    <div class="contenedor col s12 m6 push-m3">
-      <h5>Aparatos y Sistemas</h5>
-    </div>
-  </div>
-  <canvas id="chart4" width="400" height="200"></canvas>
+
 @endsection
 
 @section('scripts')
