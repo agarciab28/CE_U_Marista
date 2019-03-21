@@ -19,7 +19,7 @@
 
     <div class="section container">
       <div class="row">
-        <form class="col  s12 m12" action="{{ route('registroPersona') }}" method="post">
+        <form class="col  s12 m12" action="#" method="post">
           {{ csrf_field() }}
 
           <div class="row card-panel">
