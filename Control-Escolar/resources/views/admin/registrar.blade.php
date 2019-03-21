@@ -9,7 +9,6 @@
 
 @section('content')
       <div class="section container">
-    <input id="pba" type="text" name="" value="nada">
 
         <div class="row">
           <form class="col  s12 m12" action="#" method="post">
