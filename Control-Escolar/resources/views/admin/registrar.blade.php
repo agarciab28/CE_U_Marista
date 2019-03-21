@@ -126,11 +126,10 @@
 
 
           <div class="input-field col m3 s12">
-            <button class="btn light-blue darken-4 waves-effect waves-light" type="submit" name="action" id="registrar">Registrar
-              <i class="material-icons right">send</i>
+            <button class="btn light-blue darken-4 waves-effect waves-light" type="submit" name="action {{route('registro_persona')}}" id="registrar">Registrar
+              <i class="material-icons right">send </i>
             </button>
           </div>
-
           </form>
         </div>
       </div>
