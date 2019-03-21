@@ -115,18 +115,15 @@
               <label for="estado">Estado:</label>
             </div>
 
-            <div class="input-field col m4 s12 ">
+            <div class="input-field col m6 s12 ">
               <input type="tel" id="telefono" name="num_tel" class="validate" required>
               <label for="telefono">Número de teléfono:</label>
             </div>
-            <div class="input-field col m4 s12 ">
+            <div class="input-field col m6 s12 ">
               <input type="tel" id="celular" name="num_cel" class="validate" required>
               <label for="celular">Número de celular:</label>
             </div>
-            <div class="input-field col m4 s12 ">
-              <input type="password" id="pass" name="pass" class="validate" required>
-              <label for="pass">Contraseña:</label>
-            </div>
+
 
           <div class="input-field col m3 s12">
             <button class="btn light-blue darken-4 waves-effect waves-light" type="submit" name="action" id="registrar">Registrar
