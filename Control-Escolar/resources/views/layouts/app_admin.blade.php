@@ -20,7 +20,7 @@
     			<div class="row">
     				<div class="col s12">
     					<a href="#" data-target="sidenav-1" class="left sidenav-trigger hide-on-medium-and-up"><i class="material-icons">menu</i></a>
-              <a class="left black-text show-on-small-and-up">Titulo - Juanito Perez</a>
+              <a class="left black-text show-on-small-and-up">@yield('usuario')</a>
               <div class="section ">
                 <a href="/" class="waves-effect waves-light btn right show-on-medium-and-up hide-on-small-only">Cerrar Sesion</a>
               </div>
