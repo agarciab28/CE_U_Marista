@@ -26,7 +26,7 @@ class LoginController extends Controller
         'password' => 'required|string'
       ]);
       if(Auth::guard('admins')->attempt($credentials)){
-        return view('admin.dashboardAdmin');
+        return view('admin.home');
       }
       return back()->withErrors(['id_admin' => 'Sin registro']);
     }

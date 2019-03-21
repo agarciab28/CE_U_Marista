@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::post('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/', 'Auth\LoginController@loginAdmin')->name('loginAdmin');
 
-Route::post('/admin/registroP','Auth\RegisterController@registro')->name('registro_persona');
+Route::post('/admin/registro','Auth\RegisterController@registro')->name('registro_persona');
 
 Route::get('/admin/registro', function () {
     return view('admin.registro_persona');
