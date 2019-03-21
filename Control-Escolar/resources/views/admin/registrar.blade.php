@@ -9,8 +9,7 @@
 
 @section('content')
       <div class="section container">
-
-        <input id="pba" type="text" name="" value="nada">
+    <input id="pba" type="text" name="" value="nada">
 
         <div class="row">
           <form class="col  s12 m12" action="#" method="post">
@@ -129,12 +128,8 @@
               <input type="password" id="pass" name="pass" class="validate" required>
               <label for="pass">Contraseña:</label>
             </div>
-          <div class="input-field col m6 s6 ">
-            <button class="btn red darken-1 waves-effect waves-light" type="submit" name="action" id="cancelar_reg">Cancelar
-              <i class="material-icons right">clear</i>
-            </button>
-          </div>
-          <div class="input-field col m6 s6 push-m3">
+
+          <div class="input-field col m3 s12">
             <button class="btn light-blue darken-4 waves-effect waves-light" type="submit" name="action" id="registrar">Registrar
               <i class="material-icons right">send</i>
             </button>
