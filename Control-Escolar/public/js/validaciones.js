@@ -1,6 +1,6 @@
 $(document).ready(function(){
   $('.datepicker').datepicker({
-    format: 'dd/mm/yyyy',
+    format: 'yyyy-mm-dd',
     setDefaultDate: true,
     defaultDate: new Date(1995, 01, 01),
     i18n: {

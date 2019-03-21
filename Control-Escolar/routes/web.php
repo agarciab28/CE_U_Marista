@@ -63,3 +63,7 @@ Route::get('/admin/estadisticas', function(){
 //Route::get('/admin', function () {
 //    return view('admin.admin_registro_alumno');
 //});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

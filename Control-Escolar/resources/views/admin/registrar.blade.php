@@ -11,7 +11,7 @@
       <div class="section container">
 
         <div class="row">
-          <form class="col  s12 m12" action="#" method="post">
+          <form class="col  s12 m12" action="{{route('registro_persona')}}" method="post">
             {{ csrf_field() }}
 
             <div class="row card-panel">
@@ -126,7 +126,7 @@
 
 
           <div class="input-field col m3 s12">
-            <button class="btn light-blue darken-4 waves-effect waves-light" type="submit" name="action {{route('registro_persona')}}" id="registrar">Registrar
+            <button class="btn light-blue darken-4 waves-effect waves-light" type="submit" id="registrar">Registrar
               <i class="material-icons right">send </i>
             </button>
           </div>

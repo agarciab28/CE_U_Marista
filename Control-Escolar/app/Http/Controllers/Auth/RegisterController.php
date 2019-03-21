@@ -78,7 +78,7 @@ class RegisterController extends Controller
         'amaterno'=>'string',
         'sexo'=>'string',
         'email'=>'string',
-        'fecha1'=>'string',
+        'fnaci'=>'string',
         'calle'=>'string',
         'num_ext'=>'string',
         'num_int'=>'string',
@@ -91,9 +91,8 @@ class RegisterController extends Controller
       ]);
       //dd($datos);
       DB::insert(
-        'insert into persona (id_persona,rol,nombres,apaterno,amaterno,sexo,email,fnaci,calle,num_ext,num_int,colonia,codigo_postal,ciudad,estado,num_tel,num_cel)
-        values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[
-          $datos['apaterno'],
+        'insert into persona (rol,nombres,apaterno,amaterno,sexo,email,fnaci,calle,num_ext,num_int,colonia,codigo_postal,ciudad,estado,num_tel,num_cel)
+        values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[
           $datos['rol'],
           $datos['nombres'],
           $datos['apaterno'],
@@ -111,7 +110,8 @@ class RegisterController extends Controller
           $datos['num_tel'],
           $datos['num_cel']
         ]);
-        return view('admin.registroExitoso');
+        echo "<script>alert('Registro Exitoso')</script>";
+        return view('admin.Home');
 
     }
 }

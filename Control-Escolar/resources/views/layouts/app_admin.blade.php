@@ -14,9 +14,6 @@
   </head>
   <body>
     <!-- NAVBAR -->
-      @section('usuario')
-      {{(auth('admins')->user()->id_admin)}}
-      @endsection
     <header>
     	<nav>
     		<div class="nav-wrapper">

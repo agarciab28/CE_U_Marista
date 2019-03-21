@@ -6,9 +6,7 @@
 @endsection
 
 @section('title', 'Administrador')
-@section('usuario')
-{{auth('admins')->user()->id_admin}}
-@endsection
+
 
 @section('content')
   <div class="center-elements">
