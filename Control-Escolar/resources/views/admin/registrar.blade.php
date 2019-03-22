@@ -20,7 +20,7 @@
                 <i class="material-icons prefix">
                   supervised_user_circle
                 </i>
-                <select class="validate" name="rol" required>
+                <select class="validate" name="rol" >
                   <option value=""  disabled selected>Seleccione</option>
                   <option  value="Coordinador" >Coordinador</option>
                   <option  value="Profesor">Profesor</option>
