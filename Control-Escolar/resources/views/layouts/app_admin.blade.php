@@ -24,7 +24,16 @@
     					<a href="#" data-target="sidenav-1" class="left sidenav-trigger hide-on-medium-and-up"><i class="material-icons">menu</i></a>
               <a class="left black-text show-on-small-and-up">Bienvenido @yield('usuario') </a>
               <div class="section ">
-                <a href="/" class="waves-effect waves-light btn right show-on-medium-and-up hide-on-small-only">Cerrar Sesion</a>
+                <ul class="right hide-on-med-and-down">
+                  <li>
+                    <a href="javascript:toggleFullScreen();" class="waves-effect waves-light btn right show-on-medium-and-up hide-on-small-only">
+                      <i class="material-icons">settings_overscan</i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/" class="waves-effect waves-light btn right show-on-medium-and-up hide-on-small-only">Cerrar Sesion</a>
+                  </li>
+                </ul>
               </div>
     				</div>
     			</div>
@@ -59,7 +68,7 @@
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="{{{ asset('js/init.js') }}}"></script>
-
+  <script src="{{{ asset('js/fullscreen.js') }}}"></script>
 
   </script>
   @yield('scripts')
