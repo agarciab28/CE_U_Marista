@@ -3,28 +3,12 @@
 @section('stylesheet')
   <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
   <link href="{{{ asset('css/admin/materias.css') }}}" rel="stylesheet">
-  <!-- CORE CSS-->
-  <link href="{{{ asset('css/style.css') }}}" type="text/css" rel="stylesheet" media="screen,projection">
+  
 @endsection
 
 @section('title', 'Materias')
 
 @section('content')
-<!--breadcrumbs start-->
-<div id="breadcrumbs-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col s12 m12 l12">
-        <h5 class="breadcrumbs-title">Materias</h5>
-        <ol class="breadcrumbs">
-            <li><a href="/admin">Inicio</a></li>
-            <li><a href="#">Materias</a></li>
-            <li class="active">...</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</div>
-<!--breadcrumbs end-->
+
 
 @endsection

@@ -15,21 +15,7 @@
 @section('title', 'Calendario')
 
 @section('content')
-<!--breadcrumbs start-->
-<div id="breadcrumbs-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col s12 m12 l12">
-        <h5 class="breadcrumbs-title">Calendario periodo escolar</h5>
-        <ol class="breadcrumbs">
-            <li><a href="/admin">Inicio</a></li>
-            <li class="active">Calendario periodo escolar</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</div>
-<!--breadcrumbs end-->
+
 <!--start container-->
         <div class="container">
           <div class="section">
