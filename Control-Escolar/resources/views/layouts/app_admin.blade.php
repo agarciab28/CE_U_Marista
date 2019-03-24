@@ -17,6 +17,7 @@
   <body>
     <!-- NAVBAR -->
     <header>
+
     	<nav>
     		<div class="nav-wrapper">
     			<div class="row">
@@ -41,9 +42,30 @@
       </li>
 
 
-    	<li id="home"><a class="white-text" href="/admin"><i class="fas fa-home white-text" style="margin-right:0;"></i>Inicio</a></li>
-    	<li id="registrar"><a class="white-text" href="/admin/registrar"><i class="fas fa-user-plus white-text" style="margin-right:0;"></i>Registrar Usuario</a></li>
-      <li id="grupos"><a href="/admin/grupos" class="white-text"><i class="fas fa-users white-text" style="margin-right:0;"></i>Grupos</a></li>
+    	<li id="home"><a class="white-text" href="/admin" ><i class="fas fa-home white-text" style="margin-right:0;"></i>Inicio</a></li>
+
+    	<li id="registrar"><a class='dropdown-trigger white-text'  data-target='dr1'><i class="fas fa-user-plus white-text" style="margin-right:0;"></i>Usuarios</a></li>
+
+
+        <!-- Dropdown Structure usuarios -->
+        <ul id='dr1' class='dropdown-content'>
+          <li><a href="/admin/registrar">Registrar Usuario</a></li>
+          <li><a href="/admin/listas/lista_alumnos">Alumnos</a></li>
+          <li><a href="/admin/listas/lista_profes">Profesores</a></li>
+          <li><a href="/admin/listas/lista_coordinadores">Coordinadores</a></li>
+
+        </ul>
+
+      <li id="grupos"><a href="/admin/grupos" class="dropdown-trigger white-text" data-target='dr2'><i class="fas fa-users white-text" style="margin-right:0;"></i>Grupos</a></li>
+
+      <!-- Dropdown Structure grupos -->
+      <ul id='dr2' class='dropdown-content'>
+        <li><a href="/admin/grupos">Crear Grupo</a></li>
+        <li><a href="/admin/listas/lista_grupos">Listar grupos</a></li>
+
+      </ul>
+
+
       <li id="carreras"><a class="white-text" href="/admin/carreras"><i class="fas fa-book white-text" style="margin-right:0;"></i>Carreras</a></li>
       <li id="materias"><a class="white-text" href="/admin/materias"><i class="fas fa-book-open white-text" style="margin-right:0;"></i>Materias</a></li>
       <li id="calendario"><a class="white-text" href="/admin/calendario"><i class="far fa-calendar-alt white-text" style="margin-right:0;"></i>Calendario periodo escolar</a></li>
