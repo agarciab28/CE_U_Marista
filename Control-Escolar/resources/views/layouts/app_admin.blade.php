@@ -57,24 +57,32 @@
 
     	<li id="home"><a class="white-text" href="/admin" ><i class="fas fa-home white-text" style="margin-right:0;"></i>Inicio</a></li>
 
-    	<li id="registrar"><a class='dropdown-trigger white-text'  data-target='dr1'><i class="fas fa-user-plus white-text" style="margin-right:0;"></i>Usuarios</a></li>
+      <ul id="registrar" class="collapsible collapsible-accordion">
+            <li>
+              <a class="collapsible-header white-text" style="margin-left:2em;"> Usuarios <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
+              <div class="collapsible-body">
+                <ul class="dropdown_menu">
+                  <li><a href="/admin/registrar" class="white-text">Registrar Usuario</a></li>
+                  <li><a href="/admin/listas/alumnos" class="white-text">Alumnos</a></li>
+                  <li><a href="/admin/listas/profes" class="white-text">Profesores</a></li>
+                  <li><a href="/admin/listas/coordinadores" class="white-text">Coordinadores</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
 
-        <ul id='dr1' class='collapsible-body'>
-          <li><a href="/admin/registrar">Registrar Usuario</a></li>
-          <li><a href="/admin/listas/lista_alumnos">Alumnos</a></li>
-          <li><a href="/admin/listas/lista_profes">Profesores</a></li>
-          <li><a href="/admin/listas/lista_coordinadores">Coordinadores</a></li>
+          <ul id="grupos" class="collapsible collapsible-accordion">
+                <li>
+                  <a class="collapsible-header white-text" style="margin-left:2em;"> Grupos<i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
+                  <div class="collapsible-body">
+                    <ul class="dropdown_menu">
+                      <li><a href="/admin/grupos" class="white-text">Crear Grupo</a></li>
+                      <li><a href="/admin/listas/grupos" class="white-text">Listar grupos</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
 
-        </ul>
-
-      <li id="grupos"><a href="/admin/grupos" class="dropdown-trigger white-text" data-target='dr2'><i class="fas fa-users white-text" style="margin-right:0;"></i>Grupos</a></li>
-
-      <!-- Dropdown Structure grupos -->
-      <ul id='dr2' class='collapsible-body'>
-        <li><a href="/admin/grupos">Crear Grupo</a></li>
-        <li><a href="/admin/listas/lista_grupos">Listar grupos</a></li>
-
-      </ul>
 
 
       <li id="carreras"><a class="white-text" href="/admin/carreras"><i class="fas fa-book white-text" style="margin-right:0;"></i>Carreras</a></li>

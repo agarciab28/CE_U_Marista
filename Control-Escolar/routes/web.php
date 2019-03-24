@@ -60,20 +60,20 @@ Route::get('/admin/estadisticas', function(){
   return view('admin.estadisticas');
 });
 
-Route::get('/admin/listas/lista_alumnos', function(){
-  return view('admin.listas.lista_alumnos');
+Route::get('/admin/listas/alumnos', function(){
+  return view('admin.listas.alumnos');
 });
 
-Route::get('/admin/listas/lista_profes', function(){
-  return view('admin.listas.lista_profes');
+Route::get('/admin/listas/profes', function(){
+  return view('admin.listas.profes');
 });
 
-Route::get('/admin/listas/lista_coordinadores', function(){
-  return view('admin.listas.lista_coordinadores');
+Route::get('/admin/listas/coordinadores', function(){
+  return view('admin.listas.coordinadores');
 });
 
-Route::get('/admin/listas/lista_grupos', function(){
-  return view('admin.listas.lista_grupos');
+Route::get('/admin/listas/grupos', function(){
+  return view('admin.listas.grupos');
 });
 //Route::get('/admin', function () {
 //    return view('admin.admin_registro_alumno');
