@@ -44,6 +44,10 @@ footer.page-footer {
 	right: 0;
 }
 
+.dropdown_menu{
+	background-color: rgba(0, 56, 101, 0.9);
+}
+
 /*----------------------------------------
     Breadcrumb
 ------------------------------------------*/
