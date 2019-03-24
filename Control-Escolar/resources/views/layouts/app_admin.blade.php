@@ -11,6 +11,10 @@
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- CORE CSS-->
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+
     @yield('stylesheet')
     <title>CE - @yield('title')</title>
   </head>
@@ -87,11 +91,25 @@
     <main>
       @yield('content')
     </main>
-  </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="{{{ asset('js/init.js') }}}"></script>
-  <script src="{{{ asset('js/fullscreen.js') }}}"></script>
+    </body>
+    <!-- START FOOTER -->
+    <footer class="page-footer">
+        <div class="footer-copyright">
+            <div class="container">
+                Copyright ©
+                <script type="text/javascript">
+                  document.write(new Date().getFullYear());
+                </script>
+                <a class="grey-text text-lighten-4" href="https://umvalla.edu.mx/" target="_blank">Instituto Valladolid - Morelia</a> ® Todos los derechos reservados. Diseñado y desarrollado por <a class="grey-text text-lighten-4"  href="http://www.itmorelia.edu.mx/">Instituto Tecnológico de Morelia</a>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
 
-  </script>
-  @yield('scripts')
+    <!-- Scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{{ asset('js/init.js') }}}"></script>
+    <script src="{{{ asset('js/fullscreen.js') }}}"></script>
+
+    @yield('scripts')
 </html>

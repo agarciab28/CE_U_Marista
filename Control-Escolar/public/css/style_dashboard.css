@@ -1,5 +1,5 @@
 header,main, footer {
-	padding-left: 300px;
+	padding-left: 280px;
 }
 
 .nav-wrapper{
@@ -9,8 +9,10 @@ header,main, footer {
 }
 
 .sidenav{
-  background-color: #003865;
+  background-color: rgba(8,58,99,1);
 	/* background-color: #FFB500; */
+  width: 280px;
+
 }
 
 a{
@@ -27,7 +29,15 @@ a{
   background-color: rgba(0, 56, 101, 0.9);
 }
 
-
+footer.page-footer {
+  padding-top: 0px;
+  color: #fff;
+  background-color: rgba(8,58,99,0.85);
+  margin-top: 6em;
+}
+.page-footer .container {
+  padding: 0 15px;
+}
 
 @media only screen and (max-width : 992px) {
 	header, main, footer {
