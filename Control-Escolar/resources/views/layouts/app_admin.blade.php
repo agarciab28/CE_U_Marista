@@ -59,9 +59,7 @@
 
     	<li id="registrar"><a class='dropdown-trigger white-text'  data-target='dr1'><i class="fas fa-user-plus white-text" style="margin-right:0;"></i>Usuarios</a></li>
 
-
-        <!-- Dropdown Structure usuarios -->
-        <ul id='dr1' class='dropdown-content'>
+        <ul id='dr1' class='collapsible-body'>
           <li><a href="/admin/registrar">Registrar Usuario</a></li>
           <li><a href="/admin/listas/lista_alumnos">Alumnos</a></li>
           <li><a href="/admin/listas/lista_profes">Profesores</a></li>
@@ -72,7 +70,7 @@
       <li id="grupos"><a href="/admin/grupos" class="dropdown-trigger white-text" data-target='dr2'><i class="fas fa-users white-text" style="margin-right:0;"></i>Grupos</a></li>
 
       <!-- Dropdown Structure grupos -->
-      <ul id='dr2' class='dropdown-content'>
+      <ul id='dr2' class='collapsible-body'>
         <li><a href="/admin/grupos">Crear Grupo</a></li>
         <li><a href="/admin/listas/lista_grupos">Listar grupos</a></li>
 
