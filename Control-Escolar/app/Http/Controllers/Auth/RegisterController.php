@@ -110,8 +110,7 @@ class RegisterController extends Controller
           $datos['num_tel'],
           $datos['num_cel']
         ]);
-        echo "<script>alert('Registro Exitoso')</script>";
-        return view('admin.Home');
+        return view('admin.registrar');
 
     }
 }

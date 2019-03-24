@@ -56,12 +56,9 @@ $(document).ready(function(){
         //alert("Formato de correo incorrecto");
         return false;
       } else if (true) {
-        
+        swal('Registro Exitoso!', 'Presione OK!', 'success');
       }
-
   });
-
-
 /*
   $("#nombre").keyup(function() {
     var Max_Length = 5;

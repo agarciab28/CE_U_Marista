@@ -13,11 +13,6 @@
 @section('content')
         <!--breadcrumbs start-->
         <div id="breadcrumbs-wrapper">
-            <!-- Search for small screen -->
-            <div class="header-search-wrapper grey hide-on-large-only">
-                <i class="mdi-action-search active"></i>
-                <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
-            </div>
           <div class="container">
             <div class="row">
               <div class="col s12 m12 l12">
@@ -150,11 +145,10 @@
 
 
           <div class="input-field col m3 s12">
-            <button class="btn light-blue darken-4 waves-effect waves-light" type="submit" >Registrar
+            <button class="btn light-blue darken-4 waves-effect waves-light" type="submit">Registrar
               <i class="material-icons right">send </i>
             </button>
           </div>
-
           </form>
         </div>
       </div>
@@ -163,6 +157,9 @@
 
 @endsection
 @section('scripts')
-
+<!--sweetalert -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="{{{ asset('js/validaciones.js') }}}"></script>
+
+
 @endsection
