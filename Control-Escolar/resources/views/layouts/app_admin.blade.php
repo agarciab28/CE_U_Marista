@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- CORE CSS-->
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    {{-- <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"> --}}
 
     @yield('stylesheet')
     <title>CE - @yield('title')</title>
@@ -90,21 +90,23 @@
 
     <main>
       @yield('content')
+      <!-- START FOOTER -->
+      <footer class="page-footer">
+          <div class="footer-copyright">
+              <div class="container">
+                  Copyright ©
+                  <script type="text/javascript">
+                    document.write(new Date().getFullYear());
+                  </script>
+                  <a class="grey-text text-lighten-4" href="https://umvalla.edu.mx/" target="_blank">Instituto Valladolid - Morelia</a> ® Todos los derechos reservados. Diseñado y desarrollado por <a class="grey-text text-lighten-4"  href="http://www.itmorelia.edu.mx/">Instituto Tecnológico de Morelia</a>
+              </div>
+          </div>
+      </footer>
+      <!-- END FOOTER -->
     </main>
+
     </body>
-    <!-- START FOOTER -->
-    <footer class="page-footer">
-        <div class="footer-copyright">
-            <div class="container">
-                Copyright ©
-                <script type="text/javascript">
-                  document.write(new Date().getFullYear());
-                </script>
-                <a class="grey-text text-lighten-4" href="https://umvalla.edu.mx/" target="_blank">Instituto Valladolid - Morelia</a> ® Todos los derechos reservados. Diseñado y desarrollado por <a class="grey-text text-lighten-4"  href="http://www.itmorelia.edu.mx/">Instituto Tecnológico de Morelia</a>
-            </div>
-        </div>
-    </footer>
-    <!-- END FOOTER -->
+
 
     <!-- Scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
