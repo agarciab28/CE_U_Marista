@@ -34,6 +34,7 @@ footer.page-footer {
   color: #fff;
   background-color: rgba(8,58,99,0.85);
   margin-top: 6em;
+	left: 280px;
 }
 .page-footer .container {
   padding: 0 15px;
