@@ -145,15 +145,15 @@
 
 
           <div class="input-field col m3 s12">
-            <button class="btn light-blue darken-4 waves-effect waves-light" type="submit">Registrar
+            <button class="btn light-blue darken-4" type="submit">Registrar
               <i class="material-icons right">send </i>
             </button>
           </div>
+        </div>
           </form>
         </div>
       </div>
 
-    </div>
 
 @endsection
 @section('scripts')
