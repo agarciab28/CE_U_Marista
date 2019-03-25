@@ -110,6 +110,7 @@ class RegisterController extends Controller
           $datos['num_tel'],
           $datos['num_cel']
         ]);
+        sleep(2);
         return view('admin.registrar');
 
     }
