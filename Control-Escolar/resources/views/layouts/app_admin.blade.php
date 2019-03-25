@@ -28,11 +28,6 @@
               <div class="section ">
                 <ul class="right hide-on-med-and-down">
                   <li>
-                    <a href="javascript:toggleFullScreen();" class="waves-effect waves-light btn right show-on-medium-and-up hide-on-small-only">
-                      <i class="material-icons">settings_overscan</i>
-                    </a>
-                  </li>
-                  <li>
                     <a href="/" class="waves-effect waves-light btn right show-on-medium-and-up hide-on-small-only">Cerrar Sesion</a>
                   </li>
                 </ul>
@@ -124,7 +119,6 @@
     <!-- Scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{{ asset('js/init.js') }}}"></script>
-    <script src="{{{ asset('js/fullscreen.js') }}}"></script>
 
     @yield('scripts')
 </html>

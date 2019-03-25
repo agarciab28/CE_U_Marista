@@ -14,21 +14,6 @@
 @section('title', 'lista_alumnos')
 
 @section('content')
-<!--breadcrumbs start-->
-<div id="breadcrumbs-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col s12 m12 l12">
-        <h5 class="breadcrumbs-title">Alumnos</h5>
-        <ol class="breadcrumbs">
-            <li><a href="/admin">Inicio</a></li>
-            <li><a href="#">Usuarios</a></li>
-            <li class="active">Alumnos</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="container">
   <table id="example" class="mdl-data-table striped" style="width:100%">
