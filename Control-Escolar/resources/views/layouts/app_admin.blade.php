@@ -87,17 +87,27 @@
 
       <li id="carreras"><a class="white-text" href="/admin/carreras"><i class="fas fa-book white-text" style="margin-right:0;"></i>Carreras</a></li>
       <li id="materias"><a class="white-text" href="/admin/materias"><i class="fas fa-book-open white-text" style="margin-right:0;"></i>Materias</a></li>
-      <li id="calendario"><a class="white-text" href="/admin/calendario"><i class="far fa-calendar-alt white-text" style="margin-right:0;"></i>Calendario periodo escolar</a></li>
+      <li id="calendario"><a class="white-text" href="/admin/calendario"><i class="far fa-calendar-alt white-text" style="margin-right:0;"></i>Calendario</a></li>
       <li id="planes"><a class="white-text" href="/admin/planes"><i class="far fa-clock white-text" style="margin-right:0;"></i>Planes de estudio</a></li>
       <li id="estadisticas"><a class="white-text" href="/admin/estadisticas"><i class="fas fa-chart-pie white-text" style="margin-right:0px;"></i>Estadisticas</a></li>
         <li id="cerrar_sesion"><a class="show-on-small hide-on-med-and-up white-text" href="/">Cerrar Sesion</a></li>
+
+        <div class="contenedor">
+          <div class="white-text footer">
+              Copyright ©
+              <script type="text/javascript">
+                document.write(new Date().getFullYear());
+              </script>
+              <a class="grey-text text-lighten-4" href="https://umvalla.edu.mx/" target="_blank">Instituto Valladolid - Morelia</a> ® Todos los derechos reservados. Diseñado y desarrollado por <a class="grey-text text-lighten-4"  href="http://www.itmorelia.edu.mx/">Instituto Tecnológico de Morelia</a>
+          </div>
+        </div>
 
     </ul>
 
     <main>
       @yield('content')
       <!-- START FOOTER -->
-      <footer class="page-footer">
+      {{-- <footer class="page-footer">
           <div class="footer-copyright">
               <div class="container">
                   Copyright ©
@@ -107,7 +117,7 @@
                   <a class="grey-text text-lighten-4" href="https://umvalla.edu.mx/" target="_blank">Instituto Valladolid - Morelia</a> ® Todos los derechos reservados. Diseñado y desarrollado por <a class="grey-text text-lighten-4"  href="http://www.itmorelia.edu.mx/">Instituto Tecnológico de Morelia</a>
               </div>
           </div>
-      </footer>
+      </footer> --}}
       <!-- END FOOTER -->
     </main>
 
