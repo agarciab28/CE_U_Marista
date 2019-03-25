@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -11,9 +11,6 @@
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- CORE CSS-->
-    {{-- <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"> --}}
 
     @yield('stylesheet')
     <title>CE - @yield('title')</title>
