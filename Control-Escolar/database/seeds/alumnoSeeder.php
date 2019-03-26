@@ -17,7 +17,7 @@ class alumnoSeeder extends Seeder
       DB::statement('set foreign_key_checks = 1;');
 
       $alumno= new alumno();
-      $alumno->ncontrol='15121191';
+      $alumno->ncontrol='1111';
       $alumno->id_carrera="isc";
       $alumno->num_tel_fam="3212342";
       $alumno->nombre_fam="Rebecca Gómez";
