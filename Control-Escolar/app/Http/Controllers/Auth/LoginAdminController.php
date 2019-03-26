@@ -40,8 +40,7 @@ class LoginAdminController extends Controller
       }
       return back()->withErrors(['id_admin' => 'Sin registro']);
     }*/
-    public function showLoginForm()
-    {
+    public function showLoginForm(){
         return view('login');
     }
 
@@ -49,27 +48,24 @@ class LoginAdminController extends Controller
      * Handle a login request to the application.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\Response|\Illuminate\Http\Response|\Illuminate\Http\JsonResponse
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function login(Request $request)
-    {
+    public function login(Request $request){
         $this->validateLogin($request);
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
         // the IP address of the client making these requests into this application.
 
-
         if ($this->attemptLogin($request)) {
             return $this->sendLoginResponse($request);
         }
 
         // If the login attempt was unsuccessful we will increment the number of attempts
-        // to login and redirect the user back to the login form. Of course, when this
+        // to login and  the user back to the login form. Of course, when this
         // user surpasses their maximum number of attempts they will get locked out.
-        $this->incrementLoginAttempts($request);
 
         return $this->sendFailedLoginResponse($request);
     }
@@ -84,7 +80,8 @@ class LoginAdminController extends Controller
      */
     protected function validateLogin(Request $request)
     {
-        $request->validate([
+
+      $request->validate([
             $this->username() => 'required|string',
             'password' => 'required|string',
         ]);
@@ -99,7 +96,7 @@ class LoginAdminController extends Controller
     protected function attemptLogin(Request $request)
     {
         return $this->guard()->attempt(
-            $this->credentials($request), $request->filled('remember')
+            $this->credentials($request)
         );
     }
 
@@ -123,10 +120,12 @@ class LoginAdminController extends Controller
     protected function sendLoginResponse(Request $request)
     {
         $request->session()->regenerate();
-
-
+        $datos=persona::select('nombres','apaterno','amaterno')->where('id_persona',auth('admins')->user()->id_persona)->get();
+        $nombre =$datos[0]->nombres." ".$datos[0]->apaterno." ".$datos[0]->amaterno;
+        //$request->session()->put('id_admin', $request->id_admin);
+        session(['id_admin'=>$request->id_admin,'nombre'=>$nombre]);
         return $this->authenticated($request, $this->guard()->user())
-                ?: redirect()->intended($this->redirectPath());
+                ?: redirect()->intended(route('admin_home'));
     }
 
     /**
@@ -178,7 +177,7 @@ class LoginAdminController extends Controller
 
         $request->session()->invalidate();
 
-        return $this->loggedOut($request) ?: redirect('/');
+        return $this->loggedOut($request) ?: ('/');
     }
 
     /**
