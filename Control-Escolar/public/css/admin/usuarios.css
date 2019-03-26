@@ -11,3 +11,7 @@
 a{
   color: rgba(8,58,99,1);
 }
+
+th, td{
+  text-align: center;
+}
