@@ -18,7 +18,7 @@ Route::get('/', function () {
 // Route::get('dashboard','DashboarController@index')->name('dashboard');
 //
 Route::post('/login', 'Auth\LoginController@login')->name('login');
-Route::post('/', 'Auth\LoginController@loginAdmin')->name('loginAdmin');
+Route::post('/', 'Auth\LoginAdminController@login')->name('loginAdmin');
 
 Route::post('/admin/registro','Auth\RegisterController@registro')->name('registro_persona');
 

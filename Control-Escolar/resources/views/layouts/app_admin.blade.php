@@ -24,7 +24,9 @@
     			<div class="row">
     				<div class="col s12">
     					<a href="#" data-target="sidenav-1" class="left sidenav-trigger hide-on-medium-and-up"><i class="material-icons">menu</i></a>
-              <a class="left black-text show-on-small-and-up">Bienvenido @yield('usuario') </a>
+              @if (session('status'))
+              <a class="left black-text show-on-small-and-up">Bienvenido </a>
+              @endif
               <div class="section ">
                 <ul class="right hide-on-med-and-down">
                   <li>
