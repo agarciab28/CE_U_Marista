@@ -110,7 +110,7 @@
               </div>
           </div>
       </footer> --}}
-      <!-- END FOOTER -->
+
     </main>
 
     </body>
