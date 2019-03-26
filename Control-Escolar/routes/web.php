@@ -28,54 +28,57 @@ Route::get('/admin/registro', function () {
 
 
 // Rutas Admin
-Route::get('/admin', function(){
-  return view('admin.home');
-});
+Route::group(["prefix" => 'admin'], function(){
+  Route::get('/', function(){
+    return view('admin.home');
+  })->name('admin_home');
 
-Route::get('/admin/registrar', function(){
+  Route::get('/registrar', function(){
   $registro=false;
   return view('admin.registrar',compact("registro"));
+  })->name('admin_registrar');
+
+  Route::get('/grupos', function(){
+    return view('admin.grupos');
+  })->name('admin_grupos');
+
+  Route::get('/carreras', function(){
+    return view('admin.carreras');
+  })->name('admin_carreras');
+
+  Route::get('/materias', function(){
+    return view('admin.materias');
+  })->name('admin_materias');
+
+  Route::get('/calendario', function(){
+    return view('admin.calendario');
+  })->name('admin_calendario');
+
+  Route::get('/planes', function(){
+    return view('admin.planes');
+  })->name('admin_planes');
+
+  Route::get('/estadisticas', function(){
+    return view('admin.estadisticas');
+  })->name('admin_estadisticas');
+
+  Route::get('/listas/alumnos', function(){
+    return view('admin.listas.alumnos');
+  })->name('admin_lalumnos');
+
+  Route::get('/listas/profes', function(){
+    return view('admin.listas.profes');
+  })->name('admin_lprofes');
+
+  Route::get('/listas/coordinadores', function(){
+    return view('admin.listas.coordinadores');
+  })->name('admin_lcoordinadores');
+
+  Route::get('/listas/grupos', function(){
+    return view('admin.listas.grupos');
+  })->name('admin_lgrupos');
 });
 
-Route::get('/admin/grupos', function(){
-  return view('admin.grupos');
-});
-
-Route::get('/admin/carreras', function(){
-  return view('admin.carreras');
-});
-
-Route::get('/admin/materias', function(){
-  return view('admin.materias');
-});
-
-Route::get('/admin/calendario', function(){
-  return view('admin.calendario');
-});
-
-Route::get('/admin/planes', function(){
-  return view('admin.planes');
-});
-
-Route::get('/admin/estadisticas', function(){
-  return view('admin.estadisticas');
-});
-
-Route::get('/admin/listas/alumnos', function(){
-  return view('admin.listas.alumnos');
-});
-
-Route::get('/admin/listas/profes', function(){
-  return view('admin.listas.profes');
-});
-
-Route::get('/admin/listas/coordinadores', function(){
-  return view('admin.listas.coordinadores');
-});
-
-Route::get('/admin/listas/grupos', function(){
-  return view('admin.listas.grupos');
-});
 //Route::get('/admin', function () {
 //    return view('admin.admin_registro_alumno');
 //});

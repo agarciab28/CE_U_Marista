@@ -1,4 +1,4 @@
-#registrar{
+#usuarios{
   background-color: #FFB500;
 }
 #toast-container {
@@ -7,6 +7,7 @@
   bottom: 10%;
   left:80%;
 }
+
 a{
   color: rgba(8,58,99,1);
 }

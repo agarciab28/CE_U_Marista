@@ -20,13 +20,13 @@
         <div class="container">
           <div class="section">
 
-            <p class="caption">FullCalendar es un complemento de jQuery que proporciona un calendario de eventos de arrastrar y soltar de tamaño completo como el que se muestra a continuación. Utiliza AJAX para buscar eventos sobre la marcha y se configura fácilmente para usar su propio formato de fuente. Es visualmente personalizable con una API rica.</p>
+            <p class="caption">FullCalendar es un complemento de jQuery que proporciona un calendario de eventos de arrastrar y soltar de tamaño completo como el que se muestra a continuación. Utiliza AJAX para buscar eventos sobre la marcha y se configura fácilmente para usar su propio formato de fuente.</p>
             <div class="divider"></div>
             <div id="full-calendar">
               <div class="row">
                 <div class="col s12 m4 l3">
                   <div id='external-events'>
-                    <h4 class="header">EVENTOS ARRASTRABLES</h4>
+                    <h5 class="header">EVENTOS ARRASTRABLES</h5>
                     <div class='fc-event cyan'>Inicio de clases</div>
                     <div class='fc-event teal'>Bienvenida general</div>
                     <div class='fc-event cyan darken-1'>Examen departamental</div>

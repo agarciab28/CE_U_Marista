@@ -58,7 +58,12 @@ footer.page-footer {
 .dropdown_menu{
 	background-color: rgba(0, 56, 101, 0.9);
 }
-
+.container {
+  padding: 0 0.5rem;
+  margin: 0 auto;
+  max-width: 85% !important;
+  width: 98%;
+}
 /*----------------------------------------
     Breadcrumb
 ------------------------------------------*/

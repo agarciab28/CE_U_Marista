@@ -2,29 +2,13 @@
 
 @section('stylesheet')
   <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
-  <link href="{{{ asset('css/admin/registrar.css') }}}" rel="stylesheet">
+  <link href="{{{ asset('css/admin/usuarios.css') }}}" rel="stylesheet">
 @endsection
 
 @section('title', 'Registrar Usuario')
 
 @section('content')
-        <!--breadcrumbs start-->
 
-        <div id="breadcrumbs-wrapper">
-          <div class="container">
-            <div class="row">
-              <div class="col s12 m12 l12">
-                <h5 class="breadcrumbs-title">Registrar usuario</h5>
-                <ol class="breadcrumbs">
-                    <li><a href="/admin">Inicio</a></li>
-                    <li><a href="#">Usuarios</a></li>
-                    <li class="active">Registrar usuario</li>
-                </ol>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--breadcrumbs end-->
       <div class="section container">
 
         <div class="row">

@@ -9,21 +9,7 @@
 @section('title', 'Inicio de Sesion')
 
 @section('content')
-<div id="breadcrumbs-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col s12 m12 l12">
-        <h5 class="breadcrumbs-title">Registrar usuario</h5>
-        <ol class="breadcrumbs">
-            <li><a href="/admin">Inicio</a></li>
-            <li><a href="#">Usuarios</a></li>
-            <li class="active">Registrar usuario</li>
-            <li class="active">Alumno</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</div>
+
 <div class="background">
 
     <div class="barra_superior">
