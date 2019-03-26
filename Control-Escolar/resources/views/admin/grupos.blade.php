@@ -7,7 +7,7 @@
   <link href="{{{ asset('css/style.css') }}}" type="text/css" rel="stylesheet" media="screen,projection">
 @endsection
 
-@section('title', 'Grupos')
+@section('title', 'Crear Grupo')
 
 @section('content')
 

@@ -6,17 +6,17 @@
   <link href="https://cdn.datatables.net/1.10.19/css/dataTables.material.min.css" rel="stylesheet">
 
   <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
-  <link href="{{{ asset('css/admin/registrar.css') }}}" rel="stylesheet">
+  <link href="{{{ asset('css/admin/usuarios.css') }}}" rel="stylesheet">
   <link href="{{{ asset('css/admin/alumnos.css') }}}" rel="stylesheet">
 
 @endsection
 
-@section('title', 'lista_alumnos')
+@section('title', 'Lista de Alumno')
 
 @section('content')
 
 <div class="container">
-  <table id="example" class="mdl-data-table striped" style="width:100%">
+  <table id="example" class="responsive-table striped" style="width:100%">
         <thead>
             <tr>
                 <th>Name</th>
@@ -485,16 +485,6 @@
                 <td>$112,000</td>
             </tr>
         </tbody>
-        <tfoot>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
-            </tr>
-        </tfoot>
     </table>
 
 

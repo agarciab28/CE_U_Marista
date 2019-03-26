@@ -5,7 +5,7 @@
   <link href="{{{ asset('css/admin/grupos.css') }}}" rel="stylesheet">
 @endsection
 
-@section('title', 'Grupos')
+@section('title', 'Lista de Grupos')
 
 @section('content')
 

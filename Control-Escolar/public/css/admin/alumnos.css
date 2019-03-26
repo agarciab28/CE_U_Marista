@@ -56,7 +56,3 @@ user agent stylesheet
 input, textarea, select, button, meter, progress {
     -webkit-writing-mode: horizontal-tb !important;
 }
-
-th{
-
-}
