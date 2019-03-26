@@ -3,8 +3,6 @@
 @section('stylesheet')
   <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
   <link href="{{{ asset('css/admin/calendario.css') }}}" rel="stylesheet">
-  <!-- CORE CSS-->
-  <link href="{{{ asset('css/style.css') }}}" type="text/css" rel="stylesheet" media="screen,projection">
   <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
   <link href="{{{ asset('js/plugins/prism/prism.css') }}}" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="{{{ asset('js/plugins/chartist-js/chartist.min.css') }}}" type="text/css" rel="stylesheet" media="screen,projection">
@@ -49,23 +47,27 @@
         </div>
         <!--end container-->
 
-      <!-- jQuery Library -->
-    <script type="text/javascript" src="{{{ asset('js/plugins/jquery-1.11.2.min.js') }}}"></script>
-    <!--prism-->
-    <script type="text/javascript" src="{{{ asset('js/plugins/prism/prism.js') }}}"></script>
-    <!--scrollbar-->
-    <script type="text/javascript" src="{{{ asset('js/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}}"></script>
 
-    <!-- chartist -->
-    <script type="text/javascript" src="{{{ asset('js/plugins/chartist-js/chartist.min.js') }}}"></script>
+@endsection
 
-    <!-- Calendar Script -->
-    <script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/lib/jquery-ui.custom.min.js') }}}"></script>
-    <script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/lib/moment.min.js') }}}"></script>
-    <script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/js/fullcalendar.min.js') }}}"></script>
-    <script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/fullcalendar-script.js') }}}"></script>
-    <script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/lang/es.js') }}}"></script>
+@section('scripts')
+  <!-- jQuery Library -->
+<script type="text/javascript" src="{{{ asset('js/plugins/jquery-1.11.2.min.js') }}}"></script>
+<!--prism-->
+<script type="text/javascript" src="{{{ asset('js/plugins/prism/prism.js') }}}"></script>
+<!--scrollbar-->
+<script type="text/javascript" src="{{{ asset('js/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}}"></script>
 
-    <!--plugins.js - Some Specific JS codes for Plugin Settings-->
-    <script type="text/javascript" src="js/plugins.js') }}}"></script>
+<!-- chartist -->
+<script type="text/javascript" src="{{{ asset('js/plugins/chartist-js/chartist.min.js') }}}"></script>
+
+<!-- Calendar Script -->
+<script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/lib/jquery-ui.custom.min.js') }}}"></script>
+<script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/lib/moment.min.js') }}}"></script>
+<script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/js/fullcalendar.min.js') }}}"></script>
+<script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/fullcalendar-script.js') }}}"></script>
+<script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/lang/es.js') }}}"></script>
+
+<!--plugins.js - Some Specific JS codes for Plugin Settings-->
+<script type="text/javascript" src="js/plugins.js') }}}"></script>
 @endsection

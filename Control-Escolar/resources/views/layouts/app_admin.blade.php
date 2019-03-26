@@ -110,11 +110,8 @@
               </div>
           </div>
       </footer> --}}
-<<<<<<< HEAD
-
-=======
       <!-- END FOOTER -->
->>>>>>> fontsinback2
+
     </main>
 
     </body>
