@@ -56,7 +56,7 @@ $(document).ready(function(){
         //alert("Formato de correo incorrecto");
         return false;
       } else if (true) {
-        swal('Registro Exitoso!', 'Presione OK!', 'success');
+        //swal('Registro Exitoso!', 'Presione OK!', 'success');
       }
   });
 /*

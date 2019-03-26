@@ -9,6 +9,7 @@
 
 @section('content')
         <!--breadcrumbs start-->
+
         <div id="breadcrumbs-wrapper">
           <div class="container">
             <div class="row">
@@ -152,11 +153,18 @@
       </div>
 
 
+
+
 @endsection
 @section('scripts')
 <!--sweetalert -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="{{{ asset('js/validaciones.js') }}}"></script>
+@if($registro)
+<script type="text/javascript">
+  swal('Registro Exitoso!', 'Presione OK!', 'success');
+</script>
+@endif
 
 
 @endsection

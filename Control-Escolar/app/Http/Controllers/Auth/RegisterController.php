@@ -90,28 +90,32 @@ class RegisterController extends Controller
         'num_cel'=>'string',
       ]);
       //dd($datos);
-      DB::insert(
-        'insert into persona (rol,nombres,apaterno,amaterno,sexo,email,fnaci,calle,num_ext,num_int,colonia,codigo_postal,ciudad,estado,num_tel,num_cel)
-        values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[
-          $datos['rol'],
-          $datos['nombres'],
-          $datos['apaterno'],
-          $datos['amaterno'],
-          $datos['sexo'],
-          $datos['email'],
-          $datos['fnaci'],
-          $datos['calle'],
-          $datos['num_ext'],
-          $datos['num_int'],
-          $datos['colonia'],
-          $datos['codigo_postal'],
-          $datos['ciudad'],
-          $datos['estado'],
-          $datos['num_tel'],
-          $datos['num_cel']
-        ]);
-        sleep(2);
-        return view('admin.registrar');
+      try {
+        DB::insert(
+          'insert into persona (rol,nombres,apaterno,amaterno,sexo,email,fnaci,calle,num_ext,num_int,colonia,codigo_postal,ciudad,estado,num_tel,num_cel)
+          values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[
+            $datos['rol'],
+            $datos['nombres'],
+            $datos['apaterno'],
+            $datos['amaterno'],
+            $datos['sexo'],
+            $datos['email'],
+            $datos['fnaci'],
+            $datos['calle'],
+            $datos['num_ext'],
+            $datos['num_int'],
+            $datos['colonia'],
+            $datos['codigo_postal'],
+            $datos['ciudad'],
+            $datos['estado'],
+            $datos['num_tel'],
+            $datos['num_cel']
+          ]);
+          $registro=true;
+      } catch (\Exception $e) {
+          $registro=false;
+      }
+      return view('admin.registrar',compact('registro'));
 
     }
 }

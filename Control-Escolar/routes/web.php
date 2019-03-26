@@ -33,7 +33,8 @@ Route::get('/admin', function(){
 });
 
 Route::get('/admin/registrar', function(){
-  return view('admin.registrar');
+  $registro=false;
+  return view('admin.registrar',compact("registro"));
 });
 
 Route::get('/admin/grupos', function(){
