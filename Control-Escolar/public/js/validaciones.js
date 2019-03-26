@@ -7,7 +7,7 @@ $(document).ready(function(){
     i18n: {
       months: ['Enero', 'Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
       monthsShort: ['Ene', 'Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
-      weekdays: ['Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sábado'],
+      weekdays: ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
       weekdaysShort: ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'],
       weekdaysAbbrev: ['D','L','M','M','J','V','S'],
     }
@@ -36,27 +36,29 @@ $(document).ready(function(){
       var exp_correo = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
 
       if(nombre == "" ||apellidop == ""|| apellidom == ""|| correo == ""|| calle == ""|| num_ext == ""|| num_int == ""|| colonia == ""|| cp == ""|| ciudad  == ""|| estado == ""|| telefono == ""|| celular == ""){
-        alert("Existen campos vacios");
+        M.toast({html: 'Existen campos vacios', classes: 'rounded red'});
+        //alert("Existen campos vacios");
         return false;
       } else if (!exp_nom.test(nombre)) {
-        alert("Formato de nombre incorrecto");
+        M.toast({html: 'Formato de nombre incorrecto', classes: 'rounded red'});
+        //alert("Formato de nombre incorrecto");
         return false;
       } else if (!exp_nom.test(apellidop)) {
-        alert("Formato de apellido paterno incorrecto");
+        M.toast({html: 'Formato de apellido paterno incorrecto', classes: 'rounded red'});
+        //alert("Formato de apellido paterno incorrecto");
         return false;
       } else if (!exp_nom.test(apellidom)) {
-        alert("Formato de apellido materno incorrecto");
+        M.toast({html: 'Formato de apellido materno incorrecto', classes: 'rounded red'});
+        //alert("Formato de apellido materno incorrecto");
         return false;
       } else if (!exp_correo.test(correo)) {
-        alert("Formato de correo incorrecto");
+        M.toast({html: 'Formato de correo incorrecto', classes: 'rounded red'});
+        //alert("Formato de correo incorrecto");
         return false;
       } else if (true) {
-
+        //swal('Registro Exitoso!', 'Presione OK!', 'success');
       }
-
   });
-
-
 /*
   $("#nombre").keyup(function() {
     var Max_Length = 5;

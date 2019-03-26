@@ -8,6 +8,7 @@
 @section('title', 'Estadisticas')
 
 @section('content')
+
   <div class="section container">
     <div class="row section container">
       <div class="contenedor col s12 m6 push-m3">

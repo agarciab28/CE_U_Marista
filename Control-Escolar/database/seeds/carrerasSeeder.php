@@ -18,10 +18,79 @@ class carrerasSeeder extends Seeder
 
       $carrera = new carrera();
       $carrera->id_carrera="isc";
-      $carrera->nombre_carrera="sistemas computacionales";
-      $carrera->rvoe="sistemillas";
-      $carrera->total_creditos="55";
+      $carrera->nombre_carrera="Sistemas Computacionales";
+      $carrera->rvoe="1999";
+      $carrera->total_creditos="200";
       $carrera->fecha="2010-12-12";
+      $carrera->save();
+
+
+      $carrera = new carrera();
+      $carrera->id_carrera="anim";
+      $carrera->nombre_carrera="Animacion Digital";
+      $carrera->rvoe="2001";
+      $carrera->total_creditos="200";
+      $carrera->fecha="2010-06-01";
+      $carrera->save();
+
+      $carrera = new carrera();
+      $carrera->id_carrera="arq";
+      $carrera->nombre_carrera="Arquitectura";
+      $carrera->rvoe="2002";
+      $carrera->total_creditos="200";
+      $carrera->fecha="2010-06-01";
+      $carrera->save();
+
+
+      $carrera = new carrera();
+      $carrera->id_carrera="der";
+      $carrera->nombre_carrera="Derecho";
+      $carrera->rvoe="2003";
+      $carrera->total_creditos="200";
+      $carrera->fecha="2010-06-01";
+      $carrera->save();
+
+
+      $carrera = new carrera();
+      $carrera->id_carrera="fis";
+      $carrera->nombre_carrera="Fisioterapia y Rehabilitacion";
+      $carrera->rvoe="2004";
+      $carrera->total_creditos="200";
+      $carrera->fecha="2010-06-01";
+      $carrera->save();
+
+
+      $carrera = new carrera();
+      $carrera->id_carrera="for";
+      $carrera->nombre_carrera="Formacion catequetica";
+      $carrera->rvoe="2005";
+      $carrera->total_creditos="200";
+      $carrera->fecha="2010-06-01";
+      $carrera->save();
+
+
+      $carrera = new carrera();
+      $carrera->id_carrera="ind";
+      $carrera->nombre_carrera="Industrial y sistemas";
+      $carrera->rvoe="2000";
+      $carrera->total_creditos="200";
+      $carrera->fecha="2010-06-01";
+      $carrera->save();
+
+      $carrera = new carrera();
+      $carrera->id_carrera="mer";
+      $carrera->nombre_carrera="Mercadotecnia y publicidad";
+      $carrera->rvoe="2006";
+      $carrera->total_creditos="200";
+      $carrera->fecha="2010-06-01";
+      $carrera->save();
+
+      $carrera = new carrera();
+      $carrera->id_carrera="neg";
+      $carrera->nombre_carrera="Negocios Internacionales";
+      $carrera->rvoe="2007";
+      $carrera->total_creditos="200";
+      $carrera->fecha="2010-06-01";
       $carrera->save();
 
     }

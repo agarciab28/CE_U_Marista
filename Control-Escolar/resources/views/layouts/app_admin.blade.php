@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -11,6 +11,7 @@
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
     @yield('stylesheet')
     <title>CE - @yield('title')</title>
   </head>
@@ -25,7 +26,11 @@
     					<a href="#" data-target="sidenav-1" class="left sidenav-trigger hide-on-medium-and-up"><i class="material-icons">menu</i></a>
               <a class="left black-text show-on-small-and-up">Bienvenido @yield('usuario') </a>
               <div class="section ">
-                <a href="/" class="waves-effect waves-light btn right show-on-medium-and-up hide-on-small-only">Cerrar Sesion</a>
+                <ul class="right hide-on-med-and-down">
+                  <li>
+                    <a href="/" class="waves-effect waves-light btn right show-on-medium-and-up hide-on-small-only">Cerrar Sesion</a>
+                  </li>
+                </ul>
               </div>
     				</div>
     			</div>
@@ -42,47 +47,78 @@
       </li>
 
 
-    	<li id="home"><a class="white-text" href="/admin" ><i class="fas fa-home white-text" style="margin-right:0;"></i>Inicio</a></li>
+    	<li id="home"><a class="white-text" href="{{ route('admin_home') }}" ><i class="fas fa-home white-text" style="margin-right:0;"></i>Inicio</a></li>
 
-    	<li id="registrar"><a class='dropdown-trigger white-text'  data-target='dr1'><i class="fas fa-user-plus white-text" style="margin-right:0;"></i>Usuarios</a></li>
+      <ul id="usuarios" class="collapsible collapsible-accordion">
+            <li>
+              <a class="collapsible-header white-text" accordion="false" style="margin-left:2em;"> Usuarios <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
+              <div class="collapsible-body">
+                <ul class="dropdown_menu">
+                  <li><a href="{{ route('admin_registrar') }}" class="white-text">Registrar Usuario</a></li>
+                  <li><a href="{{ route('admin_lalumnos') }}" class="white-text">Alumnos</a></li>
+                  <li><a href="{{ route('admin_lprofes') }}" class="white-text">Profesores</a></li>
+                  <li><a href="{{ route('admin_lcoordinadores') }}" class="white-text">Coordinadores</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+          <ul id="grupos" class="collapsible collapsible-accordion in">
+                <li>
+                  <a class="collapsible-header white-text" style="margin-left:2em;"> Grupos<i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
+                  <div class="collapsible-body">
+                    <ul class="dropdown_menu">
+                      <li><a href="{{ route('admin_grupos') }}" class="white-text">Crear Grupo</a></li>
+                      <li><a href="{{ route('admin_lgrupos') }}" class="white-text">Listar grupos</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
 
 
-        <!-- Dropdown Structure usuarios -->
-        <ul id='dr1' class='dropdown-content'>
-          <li><a href="/admin/registrar">Registrar Usuario</a></li>
-          <li><a href="/admin/listas/lista_alumnos">Alumnos</a></li>
-          <li><a href="/admin/listas/lista_profes">Profesores</a></li>
-          <li><a href="/admin/listas/lista_coordinadores">Coordinadores</a></li>
 
-        </ul>
-
-      <li id="grupos"><a href="/admin/grupos" class="dropdown-trigger white-text" data-target='dr2'><i class="fas fa-users white-text" style="margin-right:0;"></i>Grupos</a></li>
-
-      <!-- Dropdown Structure grupos -->
-      <ul id='dr2' class='dropdown-content'>
-        <li><a href="/admin/grupos">Crear Grupo</a></li>
-        <li><a href="/admin/listas/lista_grupos">Listar grupos</a></li>
-
-      </ul>
-
-
-      <li id="carreras"><a class="white-text" href="/admin/carreras"><i class="fas fa-book white-text" style="margin-right:0;"></i>Carreras</a></li>
-      <li id="materias"><a class="white-text" href="/admin/materias"><i class="fas fa-book-open white-text" style="margin-right:0;"></i>Materias</a></li>
-      <li id="calendario"><a class="white-text" href="/admin/calendario"><i class="far fa-calendar-alt white-text" style="margin-right:0;"></i>Calendario periodo escolar</a></li>
-      <li id="planes"><a class="white-text" href="/admin/planes"><i class="far fa-clock white-text" style="margin-right:0;"></i>Planes de estudio</a></li>
-      <li id="estadisticas"><a class="white-text" href="/admin/estadisticas"><i class="fas fa-chart-pie white-text" style="margin-right:0px;"></i>Estadisticas</a></li>
+      <li id="carreras"><a class="white-text" href="{{ route('admin_carreras') }}"><i class="fas fa-book white-text" style="margin-right:0;"></i>Carreras</a></li>
+      <li id="materias"><a class="white-text" href="{{ route('admin_materias') }}"><i class="fas fa-book-open white-text" style="margin-right:0;"></i>Materias</a></li>
+      <li id="calendario"><a class="white-text" href="{{ route('admin_calendario') }}"><i class="far fa-calendar-alt white-text" style="margin-right:0;"></i>Calendario</a></li>
+      <li id="planes"><a class="white-text" href="{{ route('admin_planes') }}"><i class="far fa-clock white-text" style="margin-right:0;"></i>Planes de estudio</a></li>
+      <li id="estadisticas"><a class="white-text" href="{{ route('admin_estadisticas') }}"><i class="fas fa-chart-pie white-text" style="margin-right:0px;"></i>Estadisticas</a></li>
         <li id="cerrar_sesion"><a class="show-on-small hide-on-med-and-up white-text" href="/">Cerrar Sesion</a></li>
+
+        <div class="contenedor">
+          <div class="white-text footer">
+              Copyright ©
+              <script type="text/javascript">
+                document.write(new Date().getFullYear());
+              </script>
+              <a class="grey-text text-lighten-4" href="https://umvalla.edu.mx/" target="_blank">Instituto Valladolid - Morelia</a> ® Todos los derechos reservados. Diseñado y desarrollado por <a class="grey-text text-lighten-4"  href="http://www.itmorelia.edu.mx/">Instituto Tecnológico de Morelia</a>
+          </div>
+        </div>
 
     </ul>
 
     <main>
       @yield('content')
+      <!-- START FOOTER -->
+      {{-- <footer class="page-footer">
+          <div class="footer-copyright">
+              <div class="container">
+                  Copyright ©
+                  <script type="text/javascript">
+                    document.write(new Date().getFullYear());
+                  </script>
+                  <a class="grey-text text-lighten-4" href="https://umvalla.edu.mx/" target="_blank">Instituto Valladolid - Morelia</a> ® Todos los derechos reservados. Diseñado y desarrollado por <a class="grey-text text-lighten-4"  href="http://www.itmorelia.edu.mx/">Instituto Tecnológico de Morelia</a>
+              </div>
+          </div>
+      </footer> --}}
+      <!-- END FOOTER -->
     </main>
-  </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="{{{ asset('js/init.js') }}}"></script>
+
+    </body>
 
 
-  </script>
-  @yield('scripts')
+    <!-- Scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{{ asset('js/init.js') }}}"></script>
+
+    @yield('scripts')
 </html>

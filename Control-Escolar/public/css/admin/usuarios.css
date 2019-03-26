@@ -1,0 +1,13 @@
+#usuarios{
+  background-color: #FFB500;
+}
+#toast-container {
+  top: auto !important;
+  right: auto !important;
+  bottom: 10%;
+  left:80%;
+}
+
+a{
+  color: rgba(8,58,99,1);
+}

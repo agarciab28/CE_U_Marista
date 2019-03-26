@@ -2,12 +2,13 @@
 
 @section('stylesheet')
   <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
-  <link href="{{{ asset('css/admin/registrar.css') }}}" rel="stylesheet">
+  <link href="{{{ asset('css/admin/usuarios.css') }}}" rel="stylesheet">
 @endsection
 
 @section('title', 'Registrar Usuario')
 
 @section('content')
+
       <div class="section container">
 
         <div class="row">
@@ -126,19 +127,28 @@
 
 
           <div class="input-field col m3 s12">
-            <button class="btn light-blue darken-4 waves-effect waves-light" type="submit" >Registrar
+            <button class="btn light-blue darken-4" type="submit">Registrar
               <i class="material-icons right">send </i>
             </button>
           </div>
-
+        </div>
           </form>
         </div>
       </div>
 
-    </div>
+
+
 
 @endsection
 @section('scripts')
-
+<!--sweetalert -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="{{{ asset('js/validaciones.js') }}}"></script>
+@if($registro)
+<script type="text/javascript">
+  swal('Registro Exitoso!', 'Presione OK!', 'success');
+</script>
+@endif
+
+
 @endsection
