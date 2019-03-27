@@ -18,7 +18,7 @@ Route::get('/', function () {
 // Route::get('dashboard','DashboarController@index')->name('dashboard');
 //
 Route::post('/login', 'Auth\LoginController@login')->name('login');
-Route::post('/', 'Auth\LoginController@loginAdmin')->name('loginAdmin');
+Route::post('/', 'Auth\LoginAdminController@login')->name('loginAdmin');
 
 Route::post('/admin/registro','Auth\RegisterController@registro')->name('registro_persona');
 
@@ -62,9 +62,7 @@ Route::group(["prefix" => 'admin'], function(){
     return view('admin.estadisticas');
   })->name('admin_estadisticas');
 
-  Route::get('/listas/alumnos', function(){
-    return view('admin.listas.alumnos');
-  })->name('admin_lalumnos');
+  Route::get('/listas/alumnos', 'ListaAlumnosController@lista')->name('admin_lalumnos');
 
   Route::get('/listas/profes', function(){
     return view('admin.listas.profes');
@@ -82,6 +80,10 @@ Route::group(["prefix" => 'admin'], function(){
 //Route::get('/admin', function () {
 //    return view('admin.admin_registro_alumno');
 //});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 

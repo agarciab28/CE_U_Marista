@@ -93,5 +93,13 @@ class carrerasSeeder extends Seeder
       $carrera->fecha="2010-06-01";
       $carrera->save();
 
+      $carrera = new carrera();
+      $carrera->id_carrera="adm";
+      $carrera->nombre_carrera="Administracion";
+      $carrera->rvoe="2008";
+      $carrera->total_creditos="200";
+      $carrera->fecha="2010-06-01";
+      $carrera->save();
+
     }
 }

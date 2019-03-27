@@ -23,7 +23,7 @@ class personasSeeder extends Seeder
         $persona->amaterno='Padilla';
         $persona->fnaci='1996-12-12';
         $persona->sexo='M';
-        $persona->email='Pepe@example.exa';
+        $persona->email='Pepe@example.example.com';
         $persona->calle='Pino Suarez';
         $persona->num_int='43';
         $persona->num_ext='10';
@@ -42,7 +42,7 @@ class personasSeeder extends Seeder
         $persona->amaterno='Rodriguez';
         $persona->fnaci='1997-12-12';
         $persona->sexo='M';
-        $persona->email='Diego@example.exa';
+        $persona->email='Diego@example.example.com';
         $persona->calle='Pino Suarez';
         $persona->num_int='44';
         $persona->num_ext='18';
