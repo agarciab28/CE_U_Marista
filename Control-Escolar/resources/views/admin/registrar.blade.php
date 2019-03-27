@@ -63,7 +63,7 @@
                     <i class="material-icons prefix">
                         wc
                     </i>
-                    <select name="sexo">
+                    <select name="sexo" id="sexo">
                         <option value="" name="sexo" disabled selected>Sexo</option>
                         <option value="M">Masculino</option>
                         <option value="F">Femenino</option>

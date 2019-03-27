@@ -12,6 +12,48 @@ a{
   color: rgba(8,58,99,1);
 }
 
-th, td{
-  text-align: center;
+#rol:focus + label, #nombre:focus + label, #apellidop:focus + label, #apellidom:focus + label {
+ color: #003865;
+}
+
+#correo:focus + label, #sexo:focus + label, #fecha1:focus + label, #input-file-now:focus + label {
+ color: #003865;
+}
+
+#curp:focus + label, #ncontrol:focus + label, #carrera:focus + label, #semestre:focus + label, #plan_est:focus + label {
+ color: #003865;
+}
+
+#clavep:focus + label, #especialidad_profe:focus + label, #cedulap:focus + label, #nsocp:focus + label {
+ color: #003865;
+}
+
+#clavec:focus + label, #especialidad_coo:focus + label, #cedulac:focus + label, #nsocc:focus + label {
+ color: #003865;
+}
+
+
+#rol:focus, #nombre:focus, #apellidop:focus, #apellidom:focus {
+ border-bottom: 1px solid #003865;
+ box-shadow: none;
+}
+
+#correo:focus, #sexo:focus, #fecha1:focus, #input-file-now:focus {
+ border-bottom: 1px solid #003865;
+ box-shadow: none;
+}
+
+#curp:focus, #ncontrol:focus, #carrera:focus, #semestre:focus, #plan_est:focus {
+ border-bottom: 1px solid #003865;
+ box-shadow: none;
+}
+
+#clavep:focus, #especialidad_profe:focus, #cedulap:focus, #nsocp:focus {
+ border-bottom: 1px solid #003865;
+ box-shadow: none;
+}
+
+#clavec:focus, #especialidad_coo:focus, #cedulac:focus, #nsocc:focus {
+ border-bottom: 1px solid #003865;
+ box-shadow: none;
 }
