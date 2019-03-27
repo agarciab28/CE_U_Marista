@@ -33,17 +33,17 @@
                 <div class="input-field col m3 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="text" name="nombres" id="nombre" class="validate">
-                    <label for="nombre">Nombre</label>
+                    <label for="nombre">Nombre:</label>
                 </div>
                 <div class="input-field col m3 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="text" id="apellidop" name="apaterno" class="validate">
-                    <label for="apellidop">Apellido paterno</label>
+                    <label for="apellidop">Apellido paterno:</label>
                 </div>
                 <div class="input-field col m3 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="text" id="apellidom" name="amaterno" class="validate">
-                    <label for="apellidom">Apellido materno</label>
+                    <label for="apellidom">Apellido materno:</label>
                 </div>
 
 
@@ -51,7 +51,7 @@
                 <div class="input-field col m4 s12 ">
                     <i class="material-icons prefix">email</i>
                     <input type="text" id="correo" class="validate" name="email">
-                    <label for="correo">Correo electrónico</label>
+                    <label for="correo">Correo electrónico:</label>
                 </div>
 
 
@@ -63,7 +63,7 @@
                     <i class="material-icons prefix">
                         wc
                     </i>
-                    <select name="sexo" id="sexo">
+                    <select name="sexo">
                         <option value="" name="sexo" disabled selected>Sexo</option>
                         <option value="M">Masculino</option>
                         <option value="F">Femenino</option>
@@ -75,7 +75,7 @@
 
                 <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">date_range</i>-->
-                    <label for="fecha1">Fecha de nacimiento </label>
+                    <label for="fecha">Fecha de nacimiento: </label>
                     <input type="text" name="fnaci" class="datepicker" id="fecha1">
                 </div>
 
@@ -84,12 +84,11 @@
                     <input type="file" id="input-file-now" name="imagen" class="dropify" />
                     <!--<i class="material-icons prefix">account_circle</i>-->
 
-                    <label for="imagen">Foto</label>
                 </div>
                 <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="text" name="curp" id="curp" class="validate">
-                    <label for="curp">CURP</label>
+                    <label for="curp">CURP:</label>
                 </div>
 
 
@@ -99,25 +98,25 @@
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
                         <input type="text" name="ncontrol" id="ncontrol" class="validate">
-                        <label for="ncontrol">Número de control</label>
+                        <label for="ncontrol">Número de control:</label>
                     </div>
                     <!--fila-->
 
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
                         <input type="text" name="carrera" id="carrera" class="validate">
-                        <label for="carrera">Carrera</label>
+                        <label for="carrera">Carrera:</label>
                     </div>
 
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
                         <input type="text" name="semestre" id="semestre" class="validate">
-                        <label for="semestre">Semestre</label>
+                        <label for="semestre">Semestre:</label>
                     </div>
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
                         <input type="text" name="plan_est" id="plan_est" class="validate">
-                        <label for="plan_est">Plan de estudios</label>
+                        <label for="plan_est">Plan de estudios:</label>
                     </div>
                 </div>
 
@@ -125,48 +124,48 @@
 
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="clavep" id="clavep" class="validate">
-                        <label for="clavep">Clave de profesor</label>
+                        <input type="text" name="nomina" id="nomina" class="validate">
+                        <label for="nomina">Clave de profesor:</label>
                     </div>
                     <!--fila-->
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="especialidad_profe" id="especialidad_profe" class="validate">
-                        <label for="especialidad_profe">Especialidad</label>
+                        <input type="text" name="especialidad" id="especialidad" class="validate">
+                        <label for="especialidad">Especialidad:</label>
                     </div>
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="cedulap" id="cedulap" class="cedula">
-                        <label for="cedulap">Cédula fiscal</label>
+                        <input type="text" name="cedula" id="cedula" class="cedula">
+                        <label for="cedula">Cédula fiscal:</label>
                     </div>
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="nsocp" id="nsocp" class="validate">
-                        <label for="nsocp">Número de seguro socal</label>
+                        <input type="text" name="nsoc" id="nsoc" class="validate">
+                        <label for="nsoc">Número de seguro socal:</label>
                     </div>
                 </div>
 
                 <div id="coor_ext">
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="clavec" id="clavec" class="validate">
-                        <label for="clavec">Clave de coordinador</label>
+                        <input type="text" name="nomina" id="nomina" class="validate">
+                        <label for="nomina">Clave de coordinador:</label>
                     </div>
                     <!--fila-->
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="especialidad_coo" id="especialidad_coo" class="validate">
-                        <label for="especialidad_coo">Carrera</label>
+                        <input type="text" name="especialidad" id="especialidad" class="validate">
+                        <label for="especialidad">Carrera:</label>
                     </div>
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="cedulac" id="cedulac" class="cedula">
-                        <label for="cedulac">Cédula fiscal</label>
+                        <input type="text" name="cedula" id="cedula" class="cedula">
+                        <label for="cedula">Cédula fiscal:</label>
                     </div>
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="nsocc" id="nsocc" class="validate">
-                        <label for="nsocc">Número de seguro socal</label>
+                        <input type="text" name="nsoc" id="nsoc" class="validate">
+                        <label for="nsoc">Número de seguro socal:</label>
                     </div>
                 </div>
 
@@ -193,7 +192,7 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="{{{ asset('js/validaciones.js') }}}"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
+<script src="{{{ asset('js/plugins/dropify/js/dropify.min.js') }}}"></script>
 
 <script>
     $(document).ready(function() {
@@ -209,4 +208,4 @@
 @endif
 
 
-@endsection
+@endsection z 
