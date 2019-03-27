@@ -15,11 +15,15 @@
           <form class="col  s12 m12" id="" action="" method="post">
 
               <div class="row card-panel">
+                <div class="input-field col s12 m3">
+                  <input type="text" name="idgrupo" id="idgrupo" value="">
+                  <label for="idgrupo">Identificador</label>
+                </div>
                   <div class="input-field col s12 m3">
                     <input type="text" name="seccion" id="seccion" value="">
                     <label for="seccion">Seccion</label>
                   </div>
-                  <div class="input-field col s12 m6">
+                  <div class="input-field col s12 m3">
                     <select class="" name="carrera" id="carrera">
                       <option value="" disabled>Elige una opcion</option>
                     </select>
