@@ -62,9 +62,7 @@ Route::group(["prefix" => 'admin'], function(){
     return view('admin.estadisticas');
   })->name('admin_estadisticas');
 
-  Route::get('/listas/alumnos', function(){
-    return view('admin.listas.alumnos');
-  })->name('admin_lalumnos');
+  Route::get('/listas/alumnos', 'ListaAlumnosController@lista')->name('admin_lalumnos');
 
   Route::get('/listas/profes', function(){
     return view('admin.listas.profes');

@@ -14,7 +14,6 @@
 @section('title', 'Lista de Alumno')
 
 @section('content')
-
 <div class="container">
   <table id="example" class="responsive-table striped" style="width:100%">
         <thead>
@@ -28,14 +27,16 @@
             </tr>
         </thead>
         <tbody>
+          @foreach($personas as $persona)
             <tr>
-                <td>agarciab28</td>
-                <td contenteditable="true">Alejandro Garcia</td>
-                <td contenteditable="true">28/06/1997</td>
-                <td contenteditable="true">agarciab28@gmail.com</td>
+                <td>{{$persona->ncontrol}}</td>
+                <td contenteditable="true">{{$persona->nombres}} {{$persona->apaterno}} {{$persona->amaterno}}</td>
+                <td contenteditable="true">{{$persona->fnaci}}</td>
+                <td contenteditable="true">{{$persona->email}}</td>
                 <td> <a href="#" class="btn disabled">Guardar</a> </td>
                 <td> <a href="#" class="btn red">Eliminar</a> </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 
