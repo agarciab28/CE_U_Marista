@@ -21,18 +21,18 @@
                 <i class="material-icons prefix">
                   supervised_user_circle
                 </i>
-                <select class="validate" name="rol" >
+                <select class="validate" name="rol" id="rol" >
                   <option value=""  disabled selected>Seleccione</option>
                   <option  value="Coordinador" >Coordinador</option>
                   <option  value="Profesor">Profesor</option>
-                  <option  value="Alummno">Alumno</option>
+                  <option  value="Alumno">Alumno</option>
                 </select>
                 <label>Tipo de usuario</label>
               </div>
 
               <div class="input-field col m3 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="text" name="nombres" id="nombre" class="validate" d>
+                <input type="text" name="nombres" id="nombre" class="validate" >
                 <label for="nombre">Nombre:</label>
               </div>
               <div class="input-field col m3 s12 ">
@@ -73,56 +73,103 @@
                   <label>Sexo</label>
                 </div>
 
-
             <div class="input-field col m4 s12 ">
               <!--<i class="material-icons prefix">date_range</i>-->
               <label for="fecha">Fecha de nacimiento: </label>
                 <input type="text" name="fnaci" class="datepicker"  id="fecha1" >
             </div>
+            
+<!--fila-->
+            <div class="input-field col m4 s12 ">
+                <!--<i class="material-icons prefix">account_circle</i>-->
+                <input type="text" name="curp" id="curp" class="validate" >
+                <label for="curp">CURP:</label>
+            </div>
+            <div class="input-field col m4 s12 ">
+                <!--<i class="material-icons prefix">account_circle</i>-->
+                <input type="text" name="imagen" id="imagen" class="validate" >
+                <label for="imagen">Imagen:</label>
+            </div>
+
+
+<div id="alumno_ext" >
+
+
+            <div class="input-field col m4 s12 ">
+                <!--<i class="material-icons prefix">account_circle</i>-->
+                <input type="text" name="ncontrol" id="ncontrol" class="validate" >
+                <label for="ncontrol">Número de control:</label>
+              </div>
+              <!--fila-->
+
+              <div class="input-field col m4 s12 ">
+                <!--<i class="material-icons prefix">account_circle</i>-->
+                <input type="text" name="carrera" id="carrera" class="validate" >
+                <label for="carrera">Carrera:</label>
+              </div>
+
+              <div class="input-field col m4 s12 ">
+                <!--<i class="material-icons prefix">account_circle</i>-->
+                <input type="text" name="semestre" id="semestre" class="validate" >
+                <label for="semestre">Semestre:</label>
+              </div>
+              <div class="input-field col m4 s12 ">
+                <!--<i class="material-icons prefix">account_circle</i>-->
+                <input type="text" name="plan_est" id="plan_est" class="validate" >
+                <label for="plan_est">Plan de estudios:</label>
+              </div>
+</div>
+
+<div id="profe_ext" >
+
+            <div class="input-field col m4 s12 ">
+                <!--<i class="material-icons prefix">account_circle</i>-->
+                <input type="text" name="nomina" id="nomina" class="validate" >
+                <label for="nomina">Clave de profesor:</label>
+              </div>
+              <!--fila-->
+              <div class="input-field col m4 s12 ">
+                <!--<i class="material-icons prefix">account_circle</i>-->
+                <input type="text" name="especialidad" id="especialidad" class="validate" >
+                <label for="especialidad">Especialidad:</label>
+              </div>
+              <div class="input-field col m4 s12 ">
+                <!--<i class="material-icons prefix">account_circle</i>-->
+                <input type="text" name="cedula" id="cedula" class="cedula" >
+                <label for="cedula">Cédula fiscal:</label>
+              </div>
+              <div class="input-field col m4 s12 ">
+                <!--<i class="material-icons prefix">account_circle</i>-->
+                <input type="text" name="nsoc" id="nsoc" class="validate" >
+                <label for="nsoc">Número de seguro socal:</label>
+              </div>
+</div>
+
+<div id="coor_ext" >
+              <div class="input-field col m4 s12 ">
+                <!--<i class="material-icons prefix">account_circle</i>-->
+                <input type="text" name="nomina" id="nomina" class="validate" >
+                <label for="nomina">Clave de coordinador:</label>
+              </div>
+              <!--fila-->
+              <div class="input-field col m4 s12 ">
+                <!--<i class="material-icons prefix">account_circle</i>-->
+                <input type="text" name="especialidad" id="especialidad" class="validate" >
+                <label for="especialidad">Carrera:</label>
+              </div>
+              <div class="input-field col m4 s12 ">
+                <!--<i class="material-icons prefix">account_circle</i>-->
+                <input type="text" name="cedula" id="cedula" class="cedula" >
+                <label for="cedula">Cédula fiscal:</label>
+              </div>
+              <div class="input-field col m4 s12 ">
+                <!--<i class="material-icons prefix">account_circle</i>-->
+                <input type="text" name="nsoc" id="nsoc" class="validate" >
+                <label for="nsoc">Número de seguro socal:</label>
+              </div>
+</div>
 
             <div class="row">
-            </div>
-
-
-
-            <div class="input-field col m3 s12 ">
-              <input type="text" id="calle" name="calle" class="validate" >
-              <label for="calle">Calle:</label>
-            </div>
-            <div class="input-field col m3 s12 ">
-              <input type="number" id="num_ext" name="num_ext" class="validate" >
-              <label for="num_ext">Número exterior:</label>
-            </div>
-            <div class="input-field col m3 s12 ">
-              <input type="number" id="num_int" name="num_int" class="validate" >
-              <label for="num_int">Número interior:</label>
-            </div>
-            <div class="input-field col m3 s12 ">
-              <input type="text" id="colonia" class="validate" name="colonia" >
-              <label for="colonia">Colonia:</label>
-            </div>
-
-
-            <div class="input-field col m4 s12 ">
-              <input type="number" id="cp" class="validate" name="codigo_postal" >
-              <label for="cp">Código postal:</label>
-            </div>
-            <div class="input-field col m4 s12 ">
-              <input type="text" id="ciudad" name="ciudad" class="validate" >
-              <label for="ciudad">Ciudad:</label>
-            </div>
-            <div class="input-field col m4 s12 ">
-              <input type="text" id="estado" name="estado" class="validate" >
-              <label for="estado">Estado:</label>
-            </div>
-
-            <div class="input-field col m6 s12 ">
-              <input type="tel" id="telefono" name="num_tel" class="validate" >
-              <label for="telefono">Número de teléfono:</label>
-            </div>
-            <div class="input-field col m6 s12 ">
-              <input type="tel" id="celular" name="num_cel" class="validate" >
-              <label for="celular">Número de celular:</label>
             </div>
 
 

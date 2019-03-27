@@ -23,7 +23,7 @@ $(document).ready(function(){
     apellidop = document.getElementById("apellidop").value;
     apellidom = document.getElementById("apellidom").value;
     correo = document.getElementById("correo").value;
-    calle = document.getElementById("calle").value;
+    /*calle = document.getElementById("calle").value;
     num_ext = document.getElementById("num_ext").value;
     num_int = document.getElementById("num_int").value;
     colonia = document.getElementById("colonia").value;
@@ -31,7 +31,7 @@ $(document).ready(function(){
     ciudad = document.getElementById("ciudad").value;
     estado = document.getElementById("estado").value;
     telefono = document.getElementById("telefono").value;
-    celular = document.getElementById("celular").value;
+    celular = document.getElementById("celular").value;*/
       var exp_nom = /^[A-Za-zñÑ-áéíóúÁÉÍÓÚ\s\t-]+$/
       var exp_correo = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
 
@@ -68,5 +68,38 @@ $(document).ready(function(){
     }
   });
 */
+$('#coor_ext').hide();
+$('#profe_ext').hide();
+$('#alumno_ext').hide();
+$('#rol').change(function(){
+var x = document.getElementById('rol').value;
+
+switch(x){
+  case 'Alumno':
+  $('#coor_ext').hide();
+  $('#profe_ext').hide();
+  $('#alumno_ext').show();
+  break;
+  case 'Profesor':
+  $('#coor_ext').hide();
+  $('#alumno_ext').hide();
+  $('#profe_ext').show();
+  break;
+  case 'Coordinador':
+  $('#profe_ext').hide();
+$('#alumno_ext').hide();
+  $('#coor_ext').show();
+  break;
+  default:
+  $('#coor_ext').hide();
+  $('#profe_ext').hide();
+  $('#alumno_ext').hide();
+  break;
+
+}
+
+
+});
+
 
 });
