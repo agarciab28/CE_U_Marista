@@ -5,6 +5,7 @@ use Auth;
 use App\Models\persona;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 
 class LoginController extends Controller
@@ -23,15 +24,19 @@ class LoginController extends Controller
     }
 
 
-    public function loginAdmin(){
-      $credentials = $this->validate(request(), [
+    public function loginAdmin(Request $request){
+      $credentials = $this->validate($request, [
         'id_admin' => 'required|string',
         'password' => 'required|string'
       ]);
-      if(Auth::guard('admins')->attempt($credentials)){
+      if(Auth::guard('admins')->attempt($credentials,$request->remember)){
         $datos=persona::select('nombres','apaterno','amaterno')->where('id_persona',auth('admins')->user()->id_persona)->get();
         $nombre =$datos[0]->nombres." ".$datos[0]->apaterno." ".$datos[0]->amaterno;
+        $request->session()->regenerate();
+        dd(session('status'));
+        if(session('status')){
         return view('admin.home');
+      }else return "nelson";
       }
       return back()->withErrors(['id_admin' => 'Sin registro']);
     }
