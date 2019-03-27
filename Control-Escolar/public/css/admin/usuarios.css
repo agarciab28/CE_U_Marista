@@ -28,7 +28,7 @@ a{
  color: #003865;
 }
 
-#clavec:focus + label, #especialidad_coo:focus + label, #cedulac:focus + label, #nsocc:focus + label {
+#clavec:focus + label, #carrera_coo:focus + label, #cedulac:focus + label, #nsocc:focus + label {
  color: #003865;
 }
 
@@ -53,7 +53,7 @@ a{
  box-shadow: none;
 }
 
-#clavec:focus, #especialidad_coo:focus, #cedulac:focus, #nsocc:focus {
+#clavec:focus, #carrera_coo:focus, #cedulac:focus, #nsocc:focus {
  border-bottom: 1px solid #003865;
  box-shadow: none;
 }
