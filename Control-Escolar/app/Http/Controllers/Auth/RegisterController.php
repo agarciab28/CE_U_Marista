@@ -69,7 +69,7 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' =>SHA256($data['password']),
+            'password' =>($data['password']),
         ]);
     }
     public function registro(){
@@ -152,4 +152,40 @@ class RegisterController extends Controller
       $registro=false;
       return view('admin.registrar',compact(['registro','carreras']));
     }
+    //Seccion de registro de grupos
+    public function registroG(){
+      $datos = $this->validate(request(),[
+        'idgrupo'=>'string',
+        'seccion'=>'string',
+        'carrera'=>'string',
+        'materia'=>'string',
+        'profesor'=>'string',
+        'periodo'=>'string',
+      ]);
+      try {
+        DB::insert(
+          'insert into grupo (id_grupo,seccion,id_carrera,id_materia,id_prof,periodo)
+          values (?,?,?,?,?,?)',[
+
+            $datos['idgrupo'],
+            $datos['seccion'],
+            $datos['carrera'],
+            $datos['materia'],
+            $datos['profesor'],
+            $datos['periodo'],
+          ]);
+          $registro=true;
+      } catch (\Exception $e) {
+        dd($e);
+          $registro=false;
+      }
+      $carreras= carrera::get(['id_carrera','nombre_carrera']);
+      return view('admin.grupos',compact(['registro','carreras']));
+    }
+    public function showFormG(){
+      $carreras= carrera::get(['id_carrera','nombre_carrera']);
+      $registro=false;
+      return view('admin.grupos',compact(['registro','carreras']));
+    }
+
 }

@@ -26,14 +26,14 @@ Route::group(["prefix" => 'admin'], function(){
     return view('admin.home');
   })->name('admin_home');
 
-  Route::post('/registrar','Auth\RegisterController@registro')->name('admin_registrar_envio');
+//rutas registro de usuarios
+Route::post('/registrar','Auth\RegisterController@registro')->name('admin_registrar_envio');
+  
+Route::get('/registrar', 'Auth\RegisterController@showForm')->name('admin_registrar');
+//rutas registro de grupos
+Route::post('/grupos','Auth\RegisterController@registroG')->name('admin_registrar_Grupos');
 
-  Route::get('/registrar', 'Auth\RegisterController@showForm')->name('admin_registrar');
-
-
-  Route::get('/grupos', function(){
-    return view('admin.grupos');
-  })->name('admin_grupos');
+Route::get('/grupos', 'Auth\RegisterController@showFormG')->name('admin_registrarG');
 
 Route::get('/carreras', 'carrerasController@listaGrupos')->name('admin_carreras');
 

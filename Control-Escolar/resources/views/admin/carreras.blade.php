@@ -1,12 +1,12 @@
 @extends('layouts.app_admin')
 
 @section('stylesheet')
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css" rel="stylesheet">
-  <link href="https://cdn.datatables.net/1.10.19/css/dataTables.material.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/1.10.19/css/dataTables.material.min.css" rel="stylesheet">
 
-  <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
-  <link href="{{{ asset('css/admin/carreras.css') }}}" rel="stylesheet">
-  <!-- CORE CSS-->
+<link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
+<link href="{{{ asset('css/admin/carreras.css') }}}" rel="stylesheet">
+<!-- CORE CSS-->
 
 @endsection
 
@@ -14,7 +14,7 @@
 
 @section('content')
 
-  <div class="section container">
+<div class="section container">
 
       <div class="row">
           <form class="col  s12 m12" id="form_carrera" action="" method="post">
@@ -92,10 +92,10 @@
 
 @section('scripts')
 
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="{{{ asset('js/datatables.js') }}}"></script>
-  <script src="{{{ asset('js/validaciones.js') }}}"></script>
-  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
-  <script src="https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="{{{ asset('js/datatables.js') }}}"></script>
+<script src="{{{ asset('js/validaciones.js') }}}"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"></script>
 @endsection

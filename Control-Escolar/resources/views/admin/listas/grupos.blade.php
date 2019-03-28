@@ -5,7 +5,7 @@
   <link href="https://cdn.datatables.net/1.10.19/css/dataTables.material.min.css" rel="stylesheet">
 
   <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
-  <link href="{{{ asset('css/admin/usuarios.css') }}}" rel="stylesheet">
+  <link href="{{{ asset('css/admin/grupos.css') }}}" rel="stylesheet">
   <link href="{{{ asset('css/admin/alumnos.css') }}}" rel="stylesheet">
 @endsection
 
