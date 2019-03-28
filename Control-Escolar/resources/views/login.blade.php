@@ -41,7 +41,7 @@
                       <input id="alumno_pass" type="password" name="password" class="{{ $errors->has('ncontrol') ? 'input-field col s12 red lighten-1' : 'input-field col s12' }}">
                       <label for="alumno_pass"><i class="fas fa-key" style="margin-right:0.5em;"></i>Contraseña</label>
                     </div>
-                      <button class="btn col s2 push-s5 pull-s5 l8 push-l2 pull-l2 waves-effect waves-light login" type="submit" name="action">Acceder</button>
+                      <button class="btn col s4 push-s4 pull-s4 l8 push-l2 pull-l2 waves-effect waves-light login" type="submit" name="action">Acceder</button>
                   </div>
                 </form>
               </div>
@@ -57,7 +57,7 @@
                       <input id="personal_pass" type="password" name="password" class="validate">
                       <label for="personal_pass"><i class="fas fa-key" style="margin-right:0.5em;"></i>Contraseña</label>
                     </div>
-                      <button class="btn col s2 push-s5 pull-s5 l8 push-l2 pull-l2 waves-effect waves-light login" type="submit">Acceder</button>
+                      <button class="btn col s4 push-s4 pull-s4 l8 push-l2 pull-l2 waves-effect waves-light login" type="submit">Acceder</button>
                   </div>
                 </form>
               </div>
