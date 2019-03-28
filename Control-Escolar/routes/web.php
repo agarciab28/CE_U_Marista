@@ -35,9 +35,7 @@ Route::post('/grupos','Auth\RegisterController@registroG')->name('admin_registra
 
 Route::get('/grupos', 'Auth\RegisterController@showFormG')->name('admin_registrarG');
 
-  Route::get('/carreras', function(){
-    return view('admin.carreras');
-  })->name('admin_carreras');
+Route::get('/carreras', 'carrerasController@listaGrupos')->name('admin_carreras');
 
   Route::get('/materias', function(){
     return view('admin.materias');

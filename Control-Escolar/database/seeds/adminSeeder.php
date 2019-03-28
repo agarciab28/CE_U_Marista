@@ -16,13 +16,12 @@ class adminSeeder extends Seeder
       DB::table('administrador')->truncate();
       DB::statement('set foreign_key_checks = 1;');
 
-        $admin= new administrador();
-        $admin->id_admin='admin';
-        $admin->activo='1';
-        $admin->id_persona='2';
-        $admin->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
-
-        $admin->save();
+      $admin= new administrador();
+      $admin->id_admin='admin';
+      $admin->activo='1';
+      $admin->id_persona='2';
+      $admin->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
+      $admin->save();
 
 
 
