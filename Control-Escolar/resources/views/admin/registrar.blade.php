@@ -82,9 +82,6 @@
                 <!--fila-->
                 <div class="input-field col m4 s12 ">
                     <input type="file" id="input-file-now" name="imagen" class="dropify" />
-                    <!--<i class="material-icons prefix">account_circle</i>-->
-
-                    <label for="imagen">Foto</label>
                 </div>
                 <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
@@ -121,19 +118,19 @@
                         <!--<input type="text" name="semestre" id="semestre" class="validate">
                         <label for="semestre">Semestre</label>-->
                         <select name="semestre" id="semestre">
-                          <option value="" name="" disabled selected>Elija semestre</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
-                          <option value="11">11</option>
-                          <option value="12">12</option>
+                            <option value="" name="" disabled selected>Elija semestre</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
                         </select>
 
                     </div>
@@ -222,8 +219,7 @@
 <!--sweetalert -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="{{{ asset('js/validaciones.js') }}}"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
+<script src="{{{ asset('js/plugins/dropify/js/dropify.min.js') }}}"></script>
 
 <script>
     $(document).ready(function() {
@@ -239,4 +235,4 @@
 @endif
 
 
-@endsection
+@endsection 
