@@ -152,7 +152,7 @@
 
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="clavep" id="clavep" class="validate">
+                        <input type="text" name="id_prof" id="clavep" class="validate">
                         <label for="clavep">Clave de profesor</label>
                     </div>
                     <!--fila-->
@@ -168,7 +168,7 @@
                     </div>
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="nsocp" id="nsocp" class="validate">
+                        <input type="text" name="nssocp" id="nsocp" class="validate">
                         <label for="nsocp">Número de seguro socal</label>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                 <div id="coor_ext">
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="clavec" id="clavec" class="validate">
+                        <input type="text" name="id_coordinador" id="clavec" class="validate">
                         <label for="clavec">Clave de coordinador</label>
                     </div>
                     <!--fila-->
@@ -185,7 +185,7 @@
                         <!--<input type="text" name="especialidad_coo" id="especialidad_coo" class="validate">
                         <label for="especialidad_coo">Carrera</label>-->
                         <select name="id_carrera_coordinador" id="carrera_coordinador">
-                            <option value="" name="sexo" disabled selected>Carrera</option>
+                            <option value="" name="id_carrera_coordinador" disabled selected>Carrera</option>
                             @foreach($carreras as $carrera)
                             <option value="{{$carrera->id_carrera}}">{{$carrera->nombre_carrera}}</option>
                             @endforeach
@@ -194,12 +194,12 @@
                     </div>
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="cedulac" id="cedulac" class="cedula">
+                        <input type="text" name="ced_fiscal" id="cedulac" class="cedula">
                         <label for="cedulac">Cédula fiscal</label>
                     </div>
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="nsocc" id="nsocc" class="validate">
+                        <input type="text" name="nssoc" id="nsocc" class="validate">
                         <label for="nsocc">Número de seguro socal</label>
                     </div>
                 </div>

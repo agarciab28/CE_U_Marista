@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use App\Models\carrera;
 use App\Models\persona;
+use App\Models\alumno;
+use App\Models\coordinador;
+use App\Models\profesor;
 use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -70,6 +73,7 @@ class RegisterController extends Controller
         ]);
     }
     public function registro(){
+
       $datos = $this->validate(request(),[
         'rol'=>'string',
         'nombres'=>'string',
@@ -79,10 +83,18 @@ class RegisterController extends Controller
         'email'=>'string',
         'fnaci'=>'string',
         'curp'=>'string',
-        'ncontrol'=>'string',
-        'id_carrera'=>'string',
-        'semestre'=>'string',
-        'plan_de_estudios'=>'string'
+        'ncontrol'=>'string|nullable',
+        'id_carrera'=>'string|nullable',
+        'semestre'=>'string|nullable',
+        'plan_de_estudios'=>'string|nullable',
+        'id_coordinador'=>'string|nullable',
+        'id_carrera_coordinador'=>'string|nullable',
+        'ced_fiscal'=>'string|nullable',
+        'nssoc'=>'string|nullable',
+        'id_prof'=>'string|nullable',
+        'especialidad_profe'=>'string|nullable',
+        'cedulap'=>'string|nullable',
+        'nssocp'=>'string|nullable'
       ]);
       try {
         DB::insert(
@@ -99,29 +111,47 @@ class RegisterController extends Controller
             $datos['curp']
           ]);
 
+
           $id_persona=persona::where('curp',$datos['curp'])->get(['id_persona'])->first();
           if($datos['rol']=='Alumno'){
+            $alumno= new alumno();
+            $alumno->id_persona=$id_persona['id_persona'];
+            $alumno->ncontrol=$datos['ncontrol'];
+            $alumno->id_carrera=$datos['id_carrera'];
+            $alumno->semestre=$datos['semestre'];
+            $alumno->plan_de_estudios=$datos['plan_de_estudios'];
+            $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
+            $alumno->save();
 
-            DB::insert(
-              'insert into alumno (id_persona,ncontrol,id_carrera,semestre,plan_de_estudios,password)
-              values (?,?,?,?,?,?)',[
-                $id_persona['id_persona'],
-                $datos['ncontrol'],
-                $datos['id_carrera'],
-                $datos['semestre'],
-                $datos['plan_de_estudios'],
-                hash_hmac('sha256', $value, env('HASH_KEY')),
-              ]);
-          }elseif($datos['rol']=='Coordinador'){
+          }else if($datos['rol']=='Coordinador'){
 
-          }elseif($datos['rol']=='Profesor'){
+            $coordinador= new coordinador();
+            $coordinador->id_persona=$id_persona['id_persona'];
+            $coordinador->id_coordinador=$datos['id_coordinador'];
+            $coordinador->id_carrera=$datos['id_carrera_coordinador'];
+            $coordinador->ced_fiscal=$datos['ced_fiscal'];
+            $coordinador->nssoc=$datos['nssoc'];
+            $coordinador->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
+            $coordinador->save();
+
+          }else if($datos['rol']=='Profesor'){
+            $profesor = new profesor();
+            $profesor->id_persona=$id_persona['id_persona'];
+            $profesor->id_prof=$datos['id_prof'];
+            $profesor->especialidad=$datos['especialidad_profe'];
+            $profesor->ced_fiscal=$datos['cedulap'];
+            $profesor->nssoc=$datos['nssocp'];
+            $profesor->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
+            $profesor->save();
 
           }
+        } catch (\Exception $e) {
+            dd($e);
+              $registro=false;
+              return view('admin.registrar',compact(['registro','carreras']));
+          }
           $registro=true;
-      } catch (\Exception $e) {
-        dd($e);
-          $registro=false;
-      }
+
       $carreras= carrera::get(['id_carrera','nombre_carrera']);
       return view('admin.registrar',compact(['registro','carreras']));
 

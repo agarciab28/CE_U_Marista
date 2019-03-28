@@ -18,6 +18,7 @@ class CreateTableCoordinador extends Migration
             $table->string('id_carrera',10);
             $table->integer('id_persona')->unsigned();
             $table->string('ced_fiscal');
+            $table->string('nssoc')->nullable();
             $table->text('password');
             $table->timestamps();
 
