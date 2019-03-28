@@ -70,7 +70,7 @@
                   <a class="collapsible-header white-text" style="margin-left:2em;"> Grupos<i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
                   <div class="collapsible-body">
                     <ul class="dropdown_menu">
-                      <li><a href="{{ route('admin_grupos') }}" class="white-text">Crear Grupo</a></li>
+                      <li><a href="{{ route('admin_registrarG') }}" class="white-text">Crear Grupo</a></li>
                       <li><a href="{{ route('admin_lgrupos') }}" class="white-text">Listar grupos</a></li>
                     </ul>
                   </div>

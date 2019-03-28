@@ -24,7 +24,7 @@ class alumnoSeeder extends Seeder
       $alumno->nombre_fam="Rebecca Gómez";
       $alumno->id_persona="1";
       $alumno->semestre="2";
-      $alumno->password=bcrypt("secret");
+      $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
     }
 }

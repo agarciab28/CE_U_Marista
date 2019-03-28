@@ -20,7 +20,8 @@ class adminSeeder extends Seeder
         $admin->id_admin='admin';
         $admin->activo='1';
         $admin->id_persona='2';
-        $admin->password=bcrypt('secret');
+        $admin->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
+
         $admin->save();
 
 

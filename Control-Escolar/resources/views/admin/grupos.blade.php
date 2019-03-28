@@ -12,7 +12,7 @@
 @section('content')
   <div class="section container">
       <div class="row">
-          <form class="col  s12 m12" id="" action="" method="post">
+          <form class="col  s12 m12" id="" action="{{route('admin_registrar_Grupos')}}" method="post">
 
               <div class="row card-panel">
                 <div class="input-field col s12 m3">
@@ -26,6 +26,9 @@
                   <div class="input-field col s12 m3">
                     <select class="" name="carrera" id="carrera">
                       <option value="" disabled>Elige una opcion</option>
+                      @foreach($carreras as $carrera)
+                            <option value="{{$carrera->id_carrera}}">{{$carrera->nombre_carrera}}</option>
+                            @endforeach
                     </select>
                     <label for="carrera">Carrera</label>
                   </div>
@@ -43,7 +46,7 @@
                   </div>
                   <div class="input-field col s12 m6">
                     <select class="" name="periodo" id="periodo">
-                      <option value="" disabled>Elige una opcio</option>
+                      <option value="" disabled>Elige una opcion</option>
                     </select>
                     <label for="periodo">Periodo</label>
                   </div>
