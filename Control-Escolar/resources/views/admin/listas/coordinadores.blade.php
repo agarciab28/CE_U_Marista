@@ -21,7 +21,7 @@
                   <th>Fecha de Nacimiento</th>
                   <th>Correo Electronico</th>
                   <th>Modificar</th>
-                  <th>Eliminar</th>
+                  <th>Deshabilitar</th>
               </tr>
           </thead>
           <tbody>
