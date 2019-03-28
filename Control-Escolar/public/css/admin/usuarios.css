@@ -12,7 +12,7 @@ a{
   color: rgba(8,58,99,1);
 }
 
-#rol:focus + label, #nombre:focus + label, #apellidop:focus + label, #apellidom:focus + label {
+#rol:focus + label, #nombre:focus + label, #apellidop:focus + label, #apellidom:focus + label, #pass:focus + label, #pass:focus + label {
  color: #003865;
 }
 
@@ -53,7 +53,7 @@ a{
  box-shadow: none;
 }
 
-#clavec:focus, #carrera_coo:focus, #cedulac:focus, #nsocc:focus {
+#clavec:focus, #carrera_coo:focus, #cedulac:focus, #nsocc:focus, #pass:focus {
  border-bottom: 1px solid #003865;
  box-shadow: none;
 }
