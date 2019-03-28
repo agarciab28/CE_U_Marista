@@ -80,7 +80,7 @@
                       <th>Creditos</th>
                       <th>{{$carrera->fecha}}</th>
                       <th> <a href="#" class="btn">Modificar</a> </th>
-                      <th> <a href="#" class="btn">Deshabilitar</a> </th>
+                      <th> <a href="#" class="btn red">Deshabilitar</a> </th>
                     </tr>
                     @endforeach
                   </tbody>
