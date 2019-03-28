@@ -102,7 +102,6 @@ $('#alumno_ext').hide();
 });
 
 
-
 //Carreras
 $("#data_carrera").hide();
 $('#btn_add_carrera').click(function(){
@@ -116,4 +115,20 @@ $('#close_registro_carrera').click(function(){
 $("#data_carrera").hide();
 $('#btn_add_carrera').show();
 });
+
+//Materias
+$("#data_materia").hide();
+$('#btn_add_materia').click(function () {
+    $("#data_materia").show();
+    $('#btn_add_materia').hide();
 });
+$('#registrar_materia').click(function () {
+    $("#data_materia").hide();
+});
+$('#close_registro_materia').click(function () {
+    $("#data_materia").hide();
+    $('#btn_add_materia').show();
+});
+
+});
+
