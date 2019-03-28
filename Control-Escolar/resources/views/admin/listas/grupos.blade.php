@@ -22,8 +22,9 @@
                   <th>Materia</th>
                   <th>Profesor</th>
                   <th>Periodo</th>
+                  <th>Registrar</th>
                   <th>Modificar</th>
-                  <th>Eliminar</th>
+                  <th>Deshabiliar</th>
               </tr>
           </thead>
           <tbody>
@@ -34,6 +35,7 @@
                   <td>sdfa</td>
                   <td>sadfad</td>
                   <td>asd</td>
+                  <td> <a href="#" class="btn">Registrar</a> </td>
                   <td> <a href="#" class="btn">Modificar</a> </td>
                   <td> <a href="#" class="btn red">Deshabilitar</a> </td>
               </tr>

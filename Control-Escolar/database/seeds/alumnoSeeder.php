@@ -20,8 +20,10 @@ class alumnoSeeder extends Seeder
       $alumno->ncontrol='1111';
       $alumno->id_carrera="isc";
       $alumno->num_tel_fam="3212342";
+      $alumno->plan_de_estudios="Plan generico";
       $alumno->nombre_fam="Rebecca Gómez";
       $alumno->id_persona="1";
+      $alumno->semestre="2";
       $alumno->password=bcrypt("secret");
       $alumno->save();
     }

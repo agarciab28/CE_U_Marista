@@ -20,23 +20,16 @@ Route::get('/', function () {
 Route::post('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/', 'Auth\LoginAdminController@login')->name('loginAdmin');
 
-Route::post('/admin/registro','Auth\RegisterController@registro')->name('registro_persona');
-
-Route::get('/admin/registro', function () {
-    return view('admin.registro_persona');
-});
-
-
 // Rutas Admin
 Route::group(["prefix" => 'admin'], function(){
   Route::get('/', function(){
     return view('admin.home');
   })->name('admin_home');
 
-  Route::get('/registrar', function(){
-  $registro=false;
-  return view('admin.registrar',compact("registro"));
-  })->name('admin_registrar');
+  Route::post('/registrar','Auth\RegisterController@registro')->name('admin_registrar_envio');
+  
+  Route::get('/registrar', 'Auth\RegisterController@showForm')->name('admin_registrar');
+
 
   Route::get('/grupos', function(){
     return view('admin.grupos');
@@ -81,9 +74,6 @@ Route::group(["prefix" => 'admin'], function(){
 //    return view('admin.admin_registro_alumno');
 //});
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 

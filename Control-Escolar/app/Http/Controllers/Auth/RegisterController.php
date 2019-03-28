@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Models\carrera;
+use App\Models\persona;
 use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -36,10 +38,7 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
+
 
     /**
      * Get a validator for an incoming registration request.
@@ -79,21 +78,17 @@ class RegisterController extends Controller
         'sexo'=>'string',
         'email'=>'string',
         'fnaci'=>'string',
-        'calle'=>'string',
-        'num_ext'=>'string',
-        'num_int'=>'string',
-        'colonia'=>'string',
-        'codigo_postal'=>'string',
-        'ciudad'=>'string',
-        'estado'=>'string',
-        'num_tel'=>'string',
-        'num_cel'=>'string',
+        'curp'=>'string',
+        'ncontrol'=>'string',
+        'id_carrera'=>'string',
+        'semestre'=>'string',
+        'plan_de_estudios'=>'string'
       ]);
-      //dd($datos);
       try {
         DB::insert(
-          'insert into persona (rol,nombres,apaterno,amaterno,sexo,email,fnaci,calle,num_ext,num_int,colonia,codigo_postal,ciudad,estado,num_tel,num_cel)
-          values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[
+          'insert into persona (rol,nombres,apaterno,amaterno,sexo,email,fnaci,curp)
+          values (?,?,?,?,?,?,?,?)',[
+
             $datos['rol'],
             $datos['nombres'],
             $datos['apaterno'],
@@ -101,21 +96,39 @@ class RegisterController extends Controller
             $datos['sexo'],
             $datos['email'],
             $datos['fnaci'],
-            $datos['calle'],
-            $datos['num_ext'],
-            $datos['num_int'],
-            $datos['colonia'],
-            $datos['codigo_postal'],
-            $datos['ciudad'],
-            $datos['estado'],
-            $datos['num_tel'],
-            $datos['num_cel']
+            $datos['curp']
           ]);
+
+          $id_persona=persona::where('curp',$datos['curp'])->get(['id_persona'])->first();
+          if($datos['rol']=='Alumno'){
+
+            DB::insert(
+              'insert into alumno (id_persona,ncontrol,id_carrera,semestre,plan_de_estudios,password)
+              values (?,?,?,?,?,?)',[
+                $id_persona['id_persona'],
+                $datos['ncontrol'],
+                $datos['id_carrera'],
+                $datos['semestre'],
+                $datos['plan_de_estudios'],
+                hash_hmac('sha256', $value, env('HASH_KEY')),
+              ]);
+          }elseif($datos['rol']=='Coordinador'){
+
+          }elseif($datos['rol']=='Profesor'){
+
+          }
           $registro=true;
       } catch (\Exception $e) {
+        dd($e);
           $registro=false;
       }
-      return view('admin.registrar',compact('registro'));
+      $carreras= carrera::get(['id_carrera','nombre_carrera']);
+      return view('admin.registrar',compact(['registro','carreras']));
 
+    }
+    public function showForm(){
+      $carreras= carrera::get(['id_carrera','nombre_carrera']);
+      $registro=false;
+      return view('admin.registrar',compact(['registro','carreras']));
     }
 }

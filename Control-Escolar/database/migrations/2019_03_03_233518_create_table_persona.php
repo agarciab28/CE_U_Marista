@@ -19,6 +19,7 @@ class CreateTablePersona extends Migration
             $table->string('nombres',50);
             $table->string('apaterno',30);
             $table->string('amaterno',30)->nullable();
+            $table->string('curp',18)->unique();
             $table->date('fnaci');
             $table->enum('sexo',['M','F'])->nullable();
             $table->string('email',30)->nullable();
