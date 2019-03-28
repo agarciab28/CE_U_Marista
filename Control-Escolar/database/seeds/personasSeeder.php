@@ -42,7 +42,7 @@ class personasSeeder extends Seeder
         $persona->apaterno='Ramirez';
         $persona->amaterno='Rodriguez';
         $persona->fnaci='1997-12-12';
-        $persona->curp='xxxxxxxxxxxxxxxxxx';
+        $persona->curp='xxxxxxxxxxxxxxxxxy';
         $persona->sexo='M';
         $persona->email='Diego@example.example.com';
         $persona->calle='Pino Suarez';
