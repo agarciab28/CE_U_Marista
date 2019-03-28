@@ -35,7 +35,7 @@
                   <td>sdfa</td>
                   <td>sadfad</td>
                   <td>asd</td>
-                  <td> <a href="#" class="btn">Registrar</a> </td>
+                  <td> <a href="{{ route('admin_asignar') }}" class="btn">Registrar</a> </td>
                   <td> <a href="#" class="btn">Modificar</a> </td>
                   <td> <a href="#" class="btn red">Deshabilitar</a> </td>
               </tr>
