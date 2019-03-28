@@ -30,7 +30,7 @@
                     </div>
                   </div>
                   <div class="fixed-action-btn">
-                    <a class="btn-floating btn-large waves-effect waves-light red">
+                    <a class="btn-floating btn-large waves-effect waves-light red" id="close_registro_carrera">
                       <i class="large material-icons">close</i>
                     </a>
                   </div>
