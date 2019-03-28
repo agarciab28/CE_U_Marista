@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="fixed-action-btn">
-                <a class="btn-floating btn-large waves-effect waves-light red">
+                <a class="btn-floating btn-large waves-effect waves-light red" id="close_registro_materia">
                     <i class="large material-icons">close</i>
                 </a>
             </div>
@@ -96,4 +96,4 @@
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
 <script src="https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"></script>
-@endsection 
+@endsection
