@@ -37,8 +37,18 @@
             <div class="row" id="data_carrera">
               <div class="input-field col m4 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
+                <input type="text" name="cvervoe" id="idcarrera" class="validate" required maxlength="35">
+                <label for="idcarrera">ID Carrera</label>
+              </div>
+              <div class="input-field col m4 s12 ">
+                <!--<i class="material-icons prefix">account_circle</i>-->
                 <input type="text" name="nombrec" id="nombrec" class="validate" required maxlength="35">
                 <label for="nombrec">Nombre de carrera</label>
+              </div>
+              <div class="input-field col m4 s12 ">
+                <!--<i class="material-icons prefix">account_circle</i>-->
+                <input type="text" name="creditos" id="creditos" class="validate" required maxlength="35">
+                <label for="creditos">Creditos</label>
               </div>
               <div class="input-field col m4 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
@@ -49,6 +59,8 @@
                 <!--<i class="material-icons prefix">account_circle</i>-->
                 <input type="text" id="fechar" name="fechar" class="validate" required maxlength="35">
                 <label for="fechar">Fecha de registro</label>
+              </div>
+              <div class="row">
               </div>
               <div class="input-field col m4 s12">
                 <button class="btn light-blue darken-4" type="submit" id="registrar_carrera">Registrar carrera
@@ -62,10 +74,8 @@
                 <table id="example" class="responsive-table striped" style="width:100%">
                   <thead>
                     <tr>
-                      <th>ID Carrera</th>
                       <th>Nombre de carrera</th>
                       <th>Clave RVOE</th>
-                      <th>Creditos</th>
                       <th>Fecha de registro</th>
                       <th>Modificar</th>
                       <th>Deshabilitar</th>
@@ -74,10 +84,8 @@
                   <tbody>
                     @foreach($carreras as $carrera)
                     <tr>
-                      <th>ID</th>
                       <th>{{$carrera->nombre_carrera}}</th>
                       <th>{{$carrera->rvoe}}</th>
-                      <th>Creditos</th>
                       <th>{{$carrera->fecha}}</th>
                       <th> <a href="#" class="btn">Modificar</a> </th>
                       <th> <a href="#" class="btn red">Deshabilitar</a> </th>
