@@ -43,15 +43,16 @@
                 </div>
 
                 <div class="input-field col m4 s12 ">
-                    <!--<i class="material-icons prefix">account_circle</i>-->
-                    <input type="text" name="cvervoe" id="cvervoe" class="validate" required maxlength="35">
-                    <label for="cvervoe">Clave RVOE</label>
+                    <select class="" name="plan" id="plan">
+                        <option value="" disabled>Elige una opcion</option>
+                    </select>
+                    <label for="plan">Plan de estudios</label>
                 </div>
 
                 <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
-                    <input type="text" id="fechar" name="fechar" class="validate" required maxlength="35">
-                    <label for="fechar">Fecha de registro</label>
+                    <input type="number" id="materiasm" name="materiasm" class="validate" required maxlength="35">
+                    <label for="materiasm">Horas de materia</label>
                 </div>
 
                 <div class="input-field col m4 s12">
@@ -68,8 +69,8 @@
                         <thead>
                             <tr>
                                 <th>Nombre de materia</th>
-                                <th>Clave RVOE</th>
-                                <th>Fecha de registro</th>
+                                <th>Plan de estudios</th>
+                                <th>Horas de materia</th>
                                 <th>Modificar</th>
                                 <th>Deshabilitar</th>
                             </tr>
@@ -89,5 +90,10 @@
 
 
 @section('scripts')
-
+<script src="{{{ asset('js/datatables.js') }}}"></script>
+<script src="{{{ asset('js/validaciones.js') }}}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"></script>
 @endsection 
