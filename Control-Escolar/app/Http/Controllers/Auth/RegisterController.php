@@ -110,7 +110,7 @@ class RegisterController extends Controller
                 $datos['id_carrera'],
                 $datos['semestre'],
                 $datos['plan_de_estudios'],
-                bcrypt("secret"),
+                hash_hmac('sha256', $value, env('HASH_KEY')),
               ]);
           }elseif($datos['rol']=='Coordinador'){
 
