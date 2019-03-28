@@ -18,6 +18,12 @@
 
             <div class="row card-panel">
 
+              <div class="row">
+                <div class="col m6 push-m3 s12" style="text-align: center;">
+                  <h4>Registro de usuarios</h4>
+                </div>
+              </div>
+
             <div class="input-field col m4 s12 ">
                     <input type="file" id="input-file-now" name="imagen" class="dropify"   >
                     <!--<i class="material-icons prefix">account_circle</i>-->
