@@ -175,7 +175,7 @@ class LoginAdminController extends Controller
 
         $request->session()->invalidate();
 
-        return $this->loggedOut($request) ?: ('/');
+        return redirect()->route('start');
     }
 
     /**

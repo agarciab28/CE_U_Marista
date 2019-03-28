@@ -30,7 +30,7 @@
               <div class="section ">
                 <ul class="right hide-on-med-and-down">
                   <li>
-                    <a href="/" class="waves-effect waves-light btn right show-on-medium-and-up hide-on-small-only">Cerrar Sesion</a>
+                    <a href="/cerrar_sesion" class="waves-effect waves-light btn right show-on-medium-and-up hide-on-small-only">Cerrar Sesion</a>
                   </li>
                 </ul>
               </div>

@@ -13,12 +13,13 @@
 
 Route::get('/', function () {
     return view('login');
-});
+})->name('start');
 
 // Route::get('dashboard','DashboarController@index')->name('dashboard');
 //
 Route::post('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/', 'Auth\LoginAdminController@login')->name('loginAdmin');
+Route::get('/cerrar_sesion', 'Auth\LoginAdminController@logout')->name('logout');
 
 // Rutas Admin
 Route::group(["prefix" => 'admin'], function(){
@@ -28,7 +29,7 @@ Route::group(["prefix" => 'admin'], function(){
 
 //rutas registro de usuarios
 Route::post('/registrar','Auth\RegisterController@registro')->name('admin_registrar_envio');
-  
+
 Route::get('/registrar', 'Auth\RegisterController@showForm')->name('admin_registrar');
 //rutas registro de grupos
 Route::post('/grupos','Auth\RegisterController@registroG')->name('admin_registrar_Grupos');
@@ -36,6 +37,9 @@ Route::post('/grupos','Auth\RegisterController@registroG')->name('admin_registra
 Route::get('/grupos', 'Auth\RegisterController@showFormG')->name('admin_registrarG');
 
 Route::get('/carreras', 'carrerasController@listaGrupos')->name('admin_carreras');
+
+Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_registro');
+
 
   Route::get('/materias', function(){
     return view('admin.materias');
