@@ -6,7 +6,7 @@
 
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
 <link href="{{{ asset('css/admin/carreras.css') }}}" rel="stylesheet">
-<!-- CORE CSS-->
+<link href="{{{ asset('css/admin/alumnos.css') }}}" rel="stylesheet">
 
 @endsection
 
@@ -62,8 +62,10 @@
                 <table id="example" class="responsive-table striped" style="width:100%">
                   <thead>
                     <tr>
+                      <th>ID Carrera</th>
                       <th>Nombre de carrera</th>
                       <th>Clave RVOE</th>
+                      <th>Creditos</th>
                       <th>Fecha de registro</th>
                       <th>Modificar</th>
                       <th>Deshabilitar</th>
@@ -72,11 +74,13 @@
                   <tbody>
                     @foreach($carreras as $carrera)
                     <tr>
+                      <th>ID</th>
                       <th>{{$carrera->nombre_carrera}}</th>
                       <th>{{$carrera->rvoe}}</th>
+                      <th>Creditos</th>
                       <th>{{$carrera->fecha}}</th>
-                      <th></th>
-                      <th></th>
+                      <th> <a href="#" class="btn">Modificar</a> </th>
+                      <th> <a href="#" class="btn">Deshabilitar</a> </th>
                     </tr>
                     @endforeach
                   </tbody>

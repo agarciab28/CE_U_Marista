@@ -6,6 +6,7 @@
 
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
 <link href="{{{ asset('css/admin/planes.css') }}}" rel="stylesheet">
+<link href="{{{ asset('css/admin/alumnos.css') }}}" rel="stylesheet">
 @endsection
 
 @section('title', 'Planes de Estudio')
