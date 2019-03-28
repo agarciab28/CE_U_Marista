@@ -180,7 +180,7 @@ class RegisterController extends Controller
           $registro=false;
       }
       $carreras= carrera::get(['id_carrera','nombre_carrera']);
-      return view('admin.grupos',compact(['registro','carreras']));
+      return view('admin.asignar',compact(['registro','carreras']));
     }
     public function showFormG(){
       $carreras= carrera::get(['id_carrera','nombre_carrera']);
