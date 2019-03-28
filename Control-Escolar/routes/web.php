@@ -33,10 +33,9 @@ Route::group(["prefix" => 'admin'], function(){
     return view('admin.home');
   })->name('admin_home');
 
-  Route::get('/registrar', function(){
-  $registro=false;
-  return view('admin.registrar',compact("registro"));
-  })->name('admin_registrar');
+  Route::get('/registrar', 'Auth\RegisterController@showForm')->name('admin_registrar');
+
+  Route::post('/registrar','Auth\RegisterController@registro')->name('admin_registrar_envio');
 
   Route::get('/grupos', function(){
     return view('admin.grupos');

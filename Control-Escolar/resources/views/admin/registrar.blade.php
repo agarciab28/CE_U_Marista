@@ -13,7 +13,7 @@
 <div class="section container">
 
     <div class="row">
-        <form class="col  s12 m12" id="pb" action="{{route('registro_persona')}}" method="post">
+        <form class="col  s12 m12" id="pb" action="{{route('admin_registrar_envio')}}" method="post">
             {{ csrf_field() }}
 
             <div class="row card-panel">
@@ -105,18 +105,41 @@
 
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="carrera" id="carrera" class="validate">
-                        <label for="carrera">Carrera</label>
+                        <!--<input type="text" name="carrera" id="carrera" class="validate">
+                        <label for="carrera">Carrera</label>-->
+                        <select name="id_carrera" id="carrera_alumno">
+                            <option value="" name="sexo" disabled selected>Carrera</option>
+                            @foreach($carreras as $carrera)
+                            <option value="{{$carrera->id_carrera}}">{{$carrera->nombre_carrera}}</option>
+                            @endforeach
+
+                        </select>
                     </div>
 
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="semestre" id="semestre" class="validate">
-                        <label for="semestre">Semestre</label>
+                        <!--<input type="text" name="semestre" id="semestre" class="validate">
+                        <label for="semestre">Semestre</label>-->
+                        <select name="semestre" id="semestre">
+                          <option value="" name="" disabled selected>Elija semestre</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                        </select>
+
                     </div>
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="plan_est" id="plan_est" class="validate">
+                        <input type="text" name="plan_de_estudios" id="plan_est" class="validate">
                         <label for="plan_est">Plan de estudios</label>
                     </div>
                 </div>
@@ -155,8 +178,15 @@
                     <!--fila-->
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="especialidad_coo" id="especialidad_coo" class="validate">
-                        <label for="especialidad_coo">Carrera</label>
+                        <!--<input type="text" name="especialidad_coo" id="especialidad_coo" class="validate">
+                        <label for="especialidad_coo">Carrera</label>-->
+                        <select name="id_carrera_coordinador" id="carrera_coordinador">
+                            <option value="" name="sexo" disabled selected>Carrera</option>
+                            @foreach($carreras as $carrera)
+                            <option value="{{$carrera->id_carrera}}">{{$carrera->nombre_carrera}}</option>
+                            @endforeach
+
+                        </select>
                     </div>
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
