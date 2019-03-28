@@ -26,7 +26,7 @@
 
                   <div class="row">
                     <div class="col m4 push-m4 s12">
-                      <h4>Control de carreras</h4>
+                      <h4>Control de Carreras</h4>
                     </div>
                   </div>
                   <div class="fixed-action-btn">
