@@ -6,7 +6,7 @@
 
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
 <link href="{{{ asset('css/admin/materias.css') }}}" rel="stylesheet">
-
+<link href="{{{ asset('css/admin/alumnos.css') }}}" rel="stylesheet">
 @endsection
 
 @section('title', 'Materias')
@@ -96,4 +96,5 @@
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
 <script src="https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"></script>
-@endsection 
+
+@endsection
