@@ -19,7 +19,7 @@
             <!--{{ csrf_field() }}-->
 
             <div class="row">
-                <div class="col m4 push-m4 s12">
+                <div class="col m6 push-m3 s12" style="text-align: center;">
                     <h4>Control de Plan de Estudios</h4>
                 </div>
             </div>
@@ -92,4 +92,4 @@
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
 <script src="https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"></script>
 
-@endsection 
+@endsection
