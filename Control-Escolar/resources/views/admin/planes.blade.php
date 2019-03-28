@@ -20,7 +20,7 @@
 
             <div class="row">
                 <div class="col m4 push-m4 s12">
-                    <h4>Control de Plan de Estidios</h4>
+                    <h4>Control de Plan de Estudios</h4>
                 </div>
             </div>
             <div class="fixed-action-btn">
