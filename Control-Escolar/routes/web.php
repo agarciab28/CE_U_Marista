@@ -35,9 +35,7 @@ Route::group(["prefix" => 'admin'], function(){
     return view('admin.grupos');
   })->name('admin_grupos');
 
-  Route::get('/carreras', function(){
-    return view('admin.carreras');
-  })->name('admin_carreras');
+Route::get('/carreras', 'carrerasController@listaGrupos')->name('admin_carreras');
 
   Route::get('/materias', function(){
     return view('admin.materias');
