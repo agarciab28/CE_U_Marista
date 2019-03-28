@@ -130,5 +130,19 @@ $('#close_registro_materia').click(function () {
     $('#btn_add_materia').show();
 });
 
+//Planes
+$("#data_plan").hide();
+$('#btn_add_plan').click(function () {
+    $("#data_plan").show();
+    $('#btn_add_plan').hide();
+});
+$('#registrar_plan').click(function () {
+    $("#data_plan").hide();
+});
+$('#close_registro_plan').click(function () {
+    $("#data_plan").hide();
+    $('#btn_add_plan').show();
+});
+
 });
 
