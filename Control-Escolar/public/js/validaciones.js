@@ -130,4 +130,33 @@ $('#close_registro_carrera').click(function(){
 $("#data_carrera").hide();
 $('#btn_add_carrera').show();
 });
+
+//Materias
+$("#data_materia").hide();
+$('#btn_add_materia').click(function () {
+    $("#data_materia").show();
+    $('#btn_add_materia').hide();
+});
+$('#registrar_materia').click(function () {
+    $("#data_materia").hide();
+});
+$('#close_registro_materia').click(function () {
+    $("#data_materia").hide();
+    $('#btn_add_materia').show();
+});
+
+//Planes
+$("#data_plan").hide();
+$('#btn_add_plan').click(function () {
+    $("#data_plan").show();
+    $('#btn_add_plan').hide();
+});
+$('#registrar_plan').click(function () {
+    $("#data_plan").hide();
+});
+$('#close_registro_plan').click(function () {
+    $("#data_plan").hide();
+    $('#btn_add_plan').show();
+});
+
 });
