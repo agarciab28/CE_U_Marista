@@ -4,3 +4,17 @@
 a{
   color: rgba(8,58,99,1);
 }
+
+
+
+#nombrec:focus + label, #cvervoe:focus + label, #fechar:focus + label{
+
+}
+
+#nombrec:focus, #cvervoe:focus, #fechar:focus{
+ border-bottom: 1px solid #003865;
+ box-shadow: none;
+}
+.nav-wrapper.x{
+  background-color: #fff;
+}
