@@ -102,4 +102,13 @@ $('#alumno_ext').hide();
 });
 
 
+
+//Carreras
+$("#data_carrera").hide();
+$('#btn_add_carrera').click(function(){
+  $("#data_carrera").show();
+});
+$('#registrar_carrera').click(function(){
+  $("#data_carrera").hide();
+});
 });

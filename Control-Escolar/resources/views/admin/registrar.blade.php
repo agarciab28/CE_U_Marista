@@ -17,7 +17,14 @@
             {{ csrf_field() }}
 
             <div class="row card-panel">
-                <div class="input-field col s12 m3">
+
+            <div class="input-field col m4 s12 ">
+                    <input type="file" id="input-file-now" name="imagen" class="dropify"  required/>
+                    <!--<i class="material-icons prefix">account_circle</i>-->
+
+                </div>
+
+                <div class="input-field col s12 m4">
                     <i class="material-icons prefix">
                         supervised_user_circle
                     </i>
@@ -30,19 +37,19 @@
                     <label>Tipo de usuario</label>
                 </div>
 
-                <div class="input-field col m3 s12 ">
+                <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
-                    <input type="text" name="nombres" id="nombre" class="validate" required>
+                    <input type="text" name="nombres" id="nombre" class="validate" required maxlength="35">
                     <label for="nombre">Nombre</label>
                 </div>
-                <div class="input-field col m3 s12 ">
+                <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
-                    <input type="text" id="apellidop" name="apaterno" class="validate" required>
+                    <input type="text" id="apellidop" name="apaterno" class="validate" required maxlength="35">
                     <label for="apellidop">Apellido paterno</label>
                 </div>
-                <div class="input-field col m3 s12 ">
+                <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
-                    <input type="text" id="apellidom" name="amaterno" class="validate" required>
+                    <input type="text" id="apellidom" name="amaterno" class="validate" required maxlength="35">
                     <label for="apellidom">Apellido materno</label>
                 </div>
 
@@ -50,7 +57,7 @@
 
                 <div class="input-field col m4 s12 ">
                     <i class="material-icons prefix">email</i>
-                    <input type="text" id="correo" class="validate" name="email" required>
+                    <input type="text" id="correo" class="validate" name="email" required maxlength="150">
                     <label for="correo">Correo electrónico</label>
                 </div>
 
@@ -80,11 +87,7 @@
                 </div>
 
                 <!--fila-->
-                <div class="input-field col m4 s12 ">
-                    <input type="file" id="input-file-now" name="imagen" class="dropify"  required/>
-                    <!--<i class="material-icons prefix">account_circle</i>-->
 
-                </div>
                 <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="text" name="curp" id="curp" class="validate" required>
@@ -97,7 +100,7 @@
 
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="ncontrol" id="ncontrol" class="validate" required>
+                        <input type="text" name="ncontrol" id="ncontrol" class="validate" required maxlength="15">
                         <label for="ncontrol">Número de control</label>
                     </div>
                     <!--fila-->
@@ -115,7 +118,7 @@
                     </div>
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="plan_est" id="plan_est" class="validate" required>
+                        <input type="text" name="plan_est" id="plan_est" class="validate" required maxlength="60">
                         <label for="plan_est">Plan de estudios</label>
                     </div>
                 </div>
@@ -124,23 +127,23 @@
 
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="clavep" id="clavep" class="validate" required>
+                        <input type="text" name="clavep" id="clavep" class="validate" required maxlength="25">
                         <label for="clavep">Clave de profesor</label>
                     </div>
                     <!--fila-->
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="especialidad_profe" id="especialidad_profe" class="validate" required>
+                        <input type="text" name="especialidad_profe" id="especialidad_profe" class="validate" required maxlength="35">
                         <label for="especialidad_profe">Especialidad</label>
                     </div>
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="cedulap" id="cedulap" class="cedula" required>
+                        <input type="text" name="cedulap" id="cedulap" class="validate" required maxlength="50">
                         <label for="cedulap">Cédula fiscal</label>
                     </div>
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="nsocp" id="nsocp" class="validate" required>
+                        <input type="text" name="nsocp" id="nsocp" class="validate" required maxlength="20">
                         <label for="nsocp">Número de seguro social</label>
                     </div>
                 </div>
@@ -148,23 +151,23 @@
                 <div id="coor_ext">
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="clavec" id="clavec" class="validate" required>
+                        <input type="text" name="clavec" id="clavec" class="validate" required maxlength="25">
                         <label for="clavec">Clave de coordinador</label>
                     </div>
                     <!--fila-->
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="carrera_coo" id="carrera_coo" class="validate" required>
+                        <input type="text" name="carrera_coo" id="carrera_coo" class="validate" required maxlength="45">
                         <label for="carrera_coo">Carrera</label>
                     </div>
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="cedulac" id="cedulac" class="cedula" required>
+                        <input type="text" name="cedulac" id="cedulac" class="validate" required maxlength="50">
                         <label for="cedulac">Cédula fiscal</label>
                     </div>
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="nsocc" id="nsocc" class="validate" required>
+                        <input type="text" name="nsocc" id="nsocc" class="validate" required maxlength="20">
                         <label for="nsocc">Número de seguro social</label>
                     </div>
                 </div>
