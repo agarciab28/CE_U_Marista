@@ -27,7 +27,7 @@ Route::group(["prefix" => 'admin'], function(){
   })->name('admin_home');
 
   Route::post('/registrar','Auth\RegisterController@registro')->name('admin_registrar_envio');
-  
+
   Route::get('/registrar', 'Auth\RegisterController@showForm')->name('admin_registrar');
 
 
@@ -68,6 +68,10 @@ Route::group(["prefix" => 'admin'], function(){
   Route::get('/listas/grupos', function(){
     return view('admin.listas.grupos');
   })->name('admin_lgrupos');
+
+  Route::get('/asignar', function(){
+    return view('admin.asignar');
+  })->name('admin_asignar');
 });
 
 //Route::get('/admin', function () {
