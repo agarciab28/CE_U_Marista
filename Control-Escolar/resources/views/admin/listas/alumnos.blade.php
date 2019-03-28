@@ -22,7 +22,7 @@
                 <th>Nombre Completo</th>
                 <th>Fecha de Nacimiento</th>
                 <th>Correo Electronico</th>
-                <th>Guardar</th>
+                <th>Modificar</th>
                 <th>Eliminar</th>
             </tr>
         </thead>
@@ -30,18 +30,15 @@
           @foreach($personas as $persona)
             <tr>
                 <td>{{$persona->ncontrol}}</td>
-                <td contenteditable="true">{{$persona->nombres}} {{$persona->apaterno}} {{$persona->amaterno}}</td>
-                <td contenteditable="true">{{$persona->fnaci}}</td>
-                <td contenteditable="true">{{$persona->email}}</td>
-                <td> <a href="#" class="btn disabled">Guardar</a> </td>
-                <td> <a href="#" class="btn red">Eliminar</a> </td>
+                <td>{{$persona->nombres}} {{$persona->apaterno}} {{$persona->amaterno}}</td>
+                <td>{{$persona->fnaci}}</td>
+                <td>{{$persona->email}}</td>
+                <td> <a href="#" class="btn">Modificar</a> </td>
+                <td> <a href="#" class="btn red">Deshabilitar</a> </td>
             </tr>
             @endforeach
         </tbody>
     </table>
-
-
-
 </div>
 @endsection
 @section('scripts')
