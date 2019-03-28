@@ -26,11 +26,11 @@
 
                   <div class="row">
                     <div class="col m4 push-m4 s12">
-                      <h4>Control de carreras</h4>
+                      <h4>Control de Carreras</h4>
                     </div>
                   </div>
                   <div class="fixed-action-btn">
-                    <a class="btn-floating btn-large waves-effect waves-light red">
+                    <a class="btn-floating btn-large waves-effect waves-light red" id="close_registro_carrera">
                       <i class="large material-icons">close</i>
                     </a>
                   </div>

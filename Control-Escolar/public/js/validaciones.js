@@ -107,8 +107,13 @@ $('#alumno_ext').hide();
 $("#data_carrera").hide();
 $('#btn_add_carrera').click(function(){
   $("#data_carrera").show();
+  $('#btn_add_carrera').hide();
 });
 $('#registrar_carrera').click(function(){
   $("#data_carrera").hide();
+});
+$('#close_registro_carrera').click(function(){
+$("#data_carrera").hide();
+$('#btn_add_carrera').show();
 });
 });
