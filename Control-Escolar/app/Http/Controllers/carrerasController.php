@@ -11,4 +11,9 @@ class carrerasController extends Controller
       $carreras = carrera::get();
       return view("admin.carreras",compact("carreras"));
     }
+    public function registro(Request $request){
+      dd($request);
+      $carrera= new carrera();
+
+    }
 }

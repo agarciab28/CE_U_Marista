@@ -28,12 +28,14 @@ Route::group(["prefix" => 'admin'], function(){
 
 //rutas registro de usuarios
 Route::post('/registrar','Auth\RegisterController@registro')->name('admin_registrar_envio');
-  
+
 Route::get('/registrar', 'Auth\RegisterController@showForm')->name('admin_registrar');
 //rutas registro de grupos
 Route::post('/grupos','Auth\RegisterController@registroG')->name('admin_registrar_Grupos');
 
 Route::get('/grupos', 'Auth\RegisterController@showFormG')->name('admin_registrarG');
+
+Route::post('/carreras', 'carrerasController@registro')->name('admin_carreras_registro');
 
 Route::get('/carreras', 'carrerasController@listaGrupos')->name('admin_carreras');
 
