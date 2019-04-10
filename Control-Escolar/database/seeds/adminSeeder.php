@@ -23,6 +23,13 @@ class adminSeeder extends Seeder
       $admin->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $admin->save();
 
+      $admin= new administrador();
+      $admin->id_admin='robert';
+      $admin->activo='1';
+      $admin->id_persona='3';
+      $admin->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
+      $admin->save();
+
 
 
 
