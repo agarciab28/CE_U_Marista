@@ -102,7 +102,7 @@ class RegisterController extends Controller
         $persona->nombres=$datos['nombres'];
         $persona->apaterno=$datos['apaterno'];
         $persona->amaterno=$datos['amaterno'];
-        $persona->apaterno=$datos['sexo'];
+        $persona->sexo=$datos['sexo'];
         $persona->email=$datos['email'];
         $persona->fnaci=$datos['fnaci'];
         $persona->curp=$datos['curp'];
@@ -140,6 +140,7 @@ class RegisterController extends Controller
         }
       } catch (\Exception $e) {
         $registro=false;
+        $carreras= carrera::get(['id_carrera','nombre_carrera']);
         return view('admin.registrar',compact(['registro','carreras']));
       }
       $registro=true;
