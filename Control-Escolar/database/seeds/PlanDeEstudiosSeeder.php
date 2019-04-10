@@ -1,0 +1,78 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class PlanDeEstudiosSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::statement('set foreign_key_checks = 0;');
+        DB::table('carrera')->truncate();
+        DB::statement('set foreign_key_checks = 1;');
+
+        $plan_de_estudios = new plan_de_estudios();
+        $plan_de_estudios->id_plan="2";
+        $plan_de_estudios->id_carrera="anim";
+        $plan_de_estudios->nombre_plan="Animacion Digital-2012";
+        $plan_de_estudios->fecha="2012";
+        $plan_de_estudios->save();
+
+        $plan_de_estudios = new plan_de_estudios();
+        $plan_de_estudios->id_plan="3";
+        $plan_de_estudios->id_carrera="arq";
+        $plan_de_estudios->nombre_plan="Arquitectura-2010";
+        $plan_de_estudios->fecha="2010";
+        $plan_de_estudios->save();
+
+        $plan_de_estudios = new plan_de_estudios();
+        $plan_de_estudios->id_plan="4";
+        $plan_de_estudios->id_carrera="der";
+        $plan_de_estudios->nombre_plan="Derecho-2012";
+        $plan_de_estudios->fecha="2012";
+        $plan_de_estudios->save();
+
+        $plan_de_estudios = new plan_de_estudios();
+        $plan_de_estudios->id_plan="5";
+        $plan_de_estudios->id_carrera="fis";
+        $plan_de_estudios->nombre_plan="Fisioterapia-2015";
+        $plan_de_estudios->fecha="2015";
+        $plan_de_estudios->save();
+
+        $plan_de_estudios = new plan_de_estudios();
+        $plan_de_estudios->id_plan="6";
+        $plan_de_estudios->id_carrera="for";
+        $plan_de_estudios->nombre_plan="Formacion-2010";
+        $plan_de_estudios->fecha="";
+        $plan_de_estudios->save();
+
+        $plan_de_estudios = new plan_de_estudios();
+        $plan_de_estudios->id_plan="7";
+        $plan_de_estudios->id_carrera="ind";
+        $plan_de_estudios->nombre_plan="Industrial y Sistemas-2010";
+        $plan_de_estudios->fecha="2010";
+        $plan_de_estudios->save();
+
+        $plan_de_estudios = new plan_de_estudios();
+        $plan_de_estudios->id_plan="8";
+        $plan_de_estudios->id_carrera="mer";
+        $plan_de_estudios->nombre_plan="Mercadotecnia y Publicidad-2015";
+        $plan_de_estudios->fecha="";
+        $plan_de_estudios->save();
+
+        $plan_de_estudios = new plan_de_estudios();
+        $plan_de_estudios->id_plan="9";
+        $plan_de_estudios->id_carrera="neg";
+        $plan_de_estudios->nombre_plan="Negocios Internacionales-2015";
+        $plan_de_estudios->fecha="2015";
+        $plan_de_estudios->save();
+
+
+        
+
+    }
+}
