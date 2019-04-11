@@ -34,27 +34,40 @@
                 </a>
             </div>
 
+
+
             <div class="row" id="data_materia">
-                <div class="input-field col m4 s12 ">
+
+              <div class="input-field col m2 s12 ">
+                  <!--<i class="material-icons prefix">account_circle</i>-->
+                  <input type="text" id="materia_id" name="id_materia" class="validate" required maxlength="35">
+                  <label for="materia_id">clave de materia</label>
+              </div>
+
+                <div class="input-field col m3 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="text" name="nombrec" id="nombrec" class="validate" required maxlength="35">
                     <label for="nombrec">Nombre de materia</label>
                 </div>
 
-                <div class="input-field col m4 s12 ">
+                <div class="input-field col m2 s12 ">
                     <select class="" name="plan" id="plan">
-                        <option value="" disabled>Elige una opcion</option>
+                      @foreach($planes as $plan)
+                        <option value="{{$plan->id_plan}}">{{$plan->nombre_plan}}</option>
+                      @endforeach
                     </select>
                     <label for="plan">Plan de estudios</label>
                 </div>
 
-                <div class="input-field col m4 s12 ">
+
+
+                <div class="input-field col m3 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="number" id="materiasm" name="materiasm" class="validate" required maxlength="35">
                     <label for="materiasm">Horas de materia</label>
                 </div>
 
-                <div class="input-field col m4 s12">
+                <div class="input-field col m2 s12">
                     <button class="btn light-blue darken-4" type="submit" id="registrar_materia">Registrar materia
                         <i class="material-icons right">send </i>
                     </button>
