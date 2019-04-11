@@ -41,9 +41,7 @@ Route::get('/carreras', 'carrerasController@listaGrupos')->name('admin_carreras'
 Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_registro');
 
 
-  Route::get('/materias', function(){
-    return view('admin.materias');
-  })->name('admin_materias');
+  Route::get('/materias', 'materiasController@showMaterias')->name('admin_materias');
 
   Route::get('/calendario', function(){
     return view('admin.calendario');
