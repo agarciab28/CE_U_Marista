@@ -17,7 +17,7 @@
 
     <div class="row">
         <form class="col  s12 m12" id="form_plan" action="" method="post">
-            <!--{{ csrf_field() }}-->
+            {{ csrf_field() }}
 
             <div class="row">
                 <div class="col m6 push-m3 s12" style="text-align: center;">
@@ -36,19 +36,28 @@
             </div>
 
             <div class="row" id="data_plan">
-                <div class="input-field col m4 s12 ">
+
+              <div class="input-field col m2 s12 ">
+                  <!--<i class="material-icons prefix">account_circle</i>-->
+                  <input type="text" id="plan_id" name="id_plan" class="validate" required maxlength="35">
+                  <label for="plan_id">clave de plan</label>
+              </div>
+
+                <div class="input-field col m3 s12 ">
                     <input type="text" name="nombrec" id="nombrec" class="validate" required maxlength="35">
                     <label for="nombrec">Nombre de plan de estudios</label>
                 </div>
 
                 <div class="input-field col m4 s12 ">
                     <select class="" name="carrera" id="carrera">
-                        <option value="" disabled>Elige una opcion</option>
+                      @foreach($carreras as $carrera)
+                        <option value="{{$carrera->id_carrera}}">{{$carrera->nombre_carrera}}</option>
+                      @endforeach
                     </select>
                     <label for="carrera">Carrera</label>
                 </div>
 
-                <div class="input-field col m4 s12 ">
+                <div class="input-field col m3 s12 ">
                     <input type="text" name="fecha" class="datepicker" id="fecha">
                     <label for="fecha">Fecha</label>
                 </div>

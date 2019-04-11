@@ -43,11 +43,15 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
 
   Route::get('/materias', 'materiasController@showMaterias')->name('admin_materias');
 
+  Route::post('/materias','materiasController@registrar')->name('registrar_materia');
+
   Route::get('/calendario', function(){
     return view('admin.calendario');
   })->name('admin_calendario');
 
   Route::get('/planes', 'planController@showPlan')->name('admin_planes');
+
+  Route::post('/planes', 'planController@registrar')->name('registrar_plan');
 
   Route::get('/estadisticas', function(){
     return view('admin.estadisticas');
@@ -64,6 +68,10 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
   Route::get('/listas/coordinadores', 'ListaCoordinadorController@lista')->name('admin_lcoordinadores');
 
   Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
+
+  Route::get('/modificar/usuarios', function(){
+    return view('admin.modificar.usuarios');
+  })->name('admin_musuarios');
 
   Route::get('/asignar', function(){
     return view('admin.asignar');
