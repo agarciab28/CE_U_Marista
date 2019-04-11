@@ -43,11 +43,15 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
 
   Route::get('/materias', 'materiasController@showMaterias')->name('admin_materias');
 
+  Route::post('/materias','materiasController@registrar')->name('registrar_materia');
+
   Route::get('/calendario', function(){
     return view('admin.calendario');
   })->name('admin_calendario');
 
   Route::get('/planes', 'planController@showPlan')->name('admin_planes');
+
+  Route::post('/planes', 'planController@registrar')->name('registrar_plan');
 
   Route::get('/estadisticas', function(){
     return view('admin.estadisticas');
@@ -74,6 +78,15 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
   })->name('admin_asignar');
 });
 
+//Rutas Docentes
+Route::group(["prefix" => 'docente'], function(){
+  Route::get('/', function(){
+    return view('docente.home');
+  })->name('docente_home');
+
+  //rutas de grupos
+  Route::get('/grupos','Auth\RegisterController@gruposProf')->name('docente_grupos');
+});
 //Route::get('/admin', function () {
 //    return view('admin.admin_registro_alumno');
 //});
