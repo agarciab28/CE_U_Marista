@@ -17,8 +17,7 @@
 
     <div class="row">
         <form class="col  s12 m12" id="form_materia" action="" method="post">
-            <!--{{ csrf_field() }}-->
-
+            {{ csrf_field() }}
             <div class="row">
                 <div class="col m4 push-m4 s12">
                     <h4>Control de Materias</h4>
@@ -68,15 +67,23 @@
                     <table id="example" class="responsive-table striped" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Nombre de materia</th>
-                                <th>Plan de estudios</th>
-                                <th>Horas de materia</th>
-                                <th>Modificar</th>
-                                <th>Deshabilitar</th>
+                              <th>Nombre de materia</th>
+                              <th>Plan de estudios</th>
+                              <th>Horas de materia</th>
+                              <th>Modificar</th>
+                              <th>Deshabilitar</th>
                             </tr>
                         </thead>
                         <tbody>
-
+                          @foreach($materias as $materia)
+                          <tr>
+                            <th>{{$materia->nombre_materia}}</th>
+                            <th>{{$materia->plan}}</th>
+                            <th>{{$materia->horas_materia}}</th>
+                            <td> <a href="#" class="btn">Modificar</a> </td>
+                            <td> <a href="#" class="btn red">Deshabilitar</a> </td>
+                          </tr>
+                          @endforeach
                         </tbody>
                     </table>
                 </div>
