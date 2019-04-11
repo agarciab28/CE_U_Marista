@@ -15,6 +15,11 @@
           <form class="col  s12 m12" id="" action="{{route('admin_registrar_Grupos')}}" method="post">
           {{ csrf_field() }}
               <div class="row card-panel">
+                <div class="row">
+                  <div class="col m6 push-m3 s12" style="text-align: center;">
+                    <h4>Crear Grupo</h4>
+                  </div>
+                </div>
                 <div class="input-field col s12 m3">
                   <input type="text" name="idgrupo" id="idgrupo" value="">
                   <label for="idgrupo">Identificador</label>
@@ -45,14 +50,14 @@
                     <select class="" name="profesor" id="profesor">
                       <option value="" disabled>Elige una opcion</option>
                       @foreach($profesor as $profesor)
-                            <option value="{{$profesor->id_prof}}">{{$profesor->nombres}}{{$profesor->aparterno}}{{$profesor->amaterno}}                          
+                            <option value="{{$profesor->id_prof}}">{{$profesor->nombres}}{{$profesor->aparterno}}{{$profesor->amaterno}}
                             </option>   @endforeach
                     </select>
                     <label for="profesor">Profesor</label>
                   </div>
                   <div class="input-field col s12 m6">
                     <input type="text" name="periodo" id="periodo" value="">
-                      
+
                     </select>
                     <label for="periodo">Periodo</label>
                   </div>

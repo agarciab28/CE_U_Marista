@@ -22,7 +22,7 @@
                   <th>Materia</th>
                   <th>Profesor</th>
                   <th>Periodo</th>
-                  <th>Registrar</th>
+                  <th>Asignar</th>
                   <th>Modificar</th>
                   <th>Deshabiliar</th>
               </tr>
@@ -36,7 +36,7 @@
                   <td>{{$grupo->nombre_materia}}</td>
                   <td>{{$grupo->nombres}} {{$grupo->aparterno}} {{$grupo->amaterno}}</td>
                   <td>{{$grupo->periodo}}</td>
-                  <td> <a href="{{ route('admin_asignar') }}" class="btn">Registrar</a> </td>
+                  <td> <a href="{{ route('admin_asignar') }}" class="btn">Asiganar</a> </td>
                   <td> <a href="#" class="btn">Modificar</a> </td>
                   <td> <a href="#" class="btn red">Deshabilitar</a> </td>
               </tr>

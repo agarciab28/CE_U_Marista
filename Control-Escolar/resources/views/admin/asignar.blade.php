@@ -9,7 +9,7 @@
   <link href="{{{ asset('css/admin/alumnos.css') }}}" rel="stylesheet">
 @endsection
 
-@section('title', 'Lista de Grupos')
+@section('title', 'Asignar Alumnos')
 
 @section('content')
   <div class="container">
