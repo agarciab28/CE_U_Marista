@@ -14,10 +14,10 @@ class grupos extends Seeder
         DB::statement('set foreign_key_checks = 0;');
         DB::table('grupo')->truncate();
         DB::statement('set foreign_key_checks = 1;');
-  
+
         $grupo= new grupo();
         $grupo->id_grupo='materia';
-        $grupo->secion='1';
+        $grupo->seccion='1';
         $grupo->id_carrera='adm';
         $grupo->id_materia='1';
         $grupo->id_prof='nancy';
@@ -26,7 +26,7 @@ class grupos extends Seeder
 
         $grupo= new grupo();
         $grupo->id_grupo='meteria';
-        $grupo->secion='1';
+        $grupo->seccion='1';
         $grupo->id_carrera='anim';
         $grupo->id_materia='DGD-1';
         $grupo->id_prof='ruby';
