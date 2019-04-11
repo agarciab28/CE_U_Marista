@@ -2,25 +2,23 @@
 
 @section('stylesheet')
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
-<link href="{{{ asset('css/admin/usuarios.css') }}}" rel="stylesheet">
 <link href="{{{ asset('https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css') }}}" rel="stylesheet">
 @endsection
 
-@section('title', 'Registrar Usuario')
+@section('title', 'Modificar Usuario')
 
 @section('content')
 
 <div class="section container">
 
     <div class="row">
-        <form class="col  s12 m12" id="pb" action="{{route('admin_registrar_envio')}}" method="post">
-            {{ csrf_field() }}
+        <form class="col  s12 m12" id="pb" action="" method="post">
 
             <div class="row card-panel">
 
               <div class="row">
                 <div class="col m6 push-m3 s12" style="text-align: center;">
-                  <h4>Registro de usuarios</h4>
+                  <h4>Modificar Usuarios</h4>
                 </div>
               </div>
 
@@ -34,11 +32,11 @@
                     <i class="material-icons prefix">
                         supervised_user_circle
                     </i>
-                    <select class="validate" name="rol" id="rol">
-                        <option value="" disabled selected>Seleccione</option>
+                    <select class="validate" name="rol" id="rol" disabled>
+                        <option value="" disabled >Seleccione</option>
                         <option value="Coordinador">Coordinador</option>
                         <option value="Profesor">Profesor</option>
-                        <option value="Alumno">Alumno</option>
+                        <option value="Alumno" selected>Alumno</option>
                     </select>
                     <label>Tipo de usuario</label>
                 </div>
@@ -125,9 +123,6 @@
                         <label for="carrera">Carrera</label>-->
                         <select name="id_carrera" id="carrera_alumno">
                             <option value="" name="id_carrera" disabled selected>Carrera</option>
-                            @foreach($carreras as $carrera)
-                            <option value="{{$carrera->id_carrera}}">{{$carrera->nombre_carrera}}</option>
-                            @endforeach
 
                         </select>
                     </div>
@@ -200,9 +195,6 @@ Listar Planes de estudio !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                         <label for="especialidad_coo">Carrera</label>-->
                         <select name="id_carrera_coordinador" id="carrera_coordinador">
                             <option value="" name="id_carrera_coordinador" disabled selected>Carrera</option>
-                            @foreach($carreras as $carrera)
-                            <option value="{{$carrera->id_carrera}}">{{$carrera->nombre_carrera}}</option>
-                            @endforeach
 
                         </select>
                     </div>
@@ -223,23 +215,20 @@ Listar Planes de estudio !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
                 <div class="input-field col m3 s12">
-                    <button class="btn light-blue darken-4" type="submit">Registrar
-                        <i class="material-icons right">send </i>
-                    </button>
+                    <button class="btn light-blue darken-4" type="submit">Guardar</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
 
-
-
-
 @endsection
+
 @section('scripts')
 <!--sweetalert -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="{{{ asset('js/validaciones.js') }}}"></script>
+<script src="{{{ asset('js/modificar_usuario.js') }}}"></script>
 <script src="{{{ asset('js/plugins/dropify/js/dropify.min.js') }}}"></script>
 
 <script>
@@ -249,11 +238,11 @@ Listar Planes de estudio !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     });
 </script>
 
-@if($registro)
+{{-- @if($registro)
 <script type="text/javascript">
-    swal('Registro Exitoso!', 'Presione OK!', 'success');
+    swal('Modificación Exitosa!', 'Presione OK!', 'success');
 </script>
-@endif
+@endif --}}
 
 
 @endsection

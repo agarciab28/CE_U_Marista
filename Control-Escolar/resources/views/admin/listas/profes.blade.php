@@ -33,7 +33,7 @@
                   <td>{{$persona->nombres}} {{$persona->apaterno}} {{$persona->amaterno}}</td>
                   <td>{{$persona->fnaci}}</td>
                   <td>{{$persona->email}}</td>
-                  <td> <a href="#" class="btn">Modificar</a> </td>
+                  <td> <a href="{{ route('admin_musuarios') }}" class="btn">Modificar</a> </td>
                   <td> <a href="#" class="btn red">Deshabilitar</a> </td>
 
               </tr>

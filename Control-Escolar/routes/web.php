@@ -41,21 +41,25 @@ Route::get('/carreras', 'carrerasController@listaGrupos')->name('admin_carreras'
 Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_registro');
 
 
-  Route::get('/materias', function(){
-    return view('admin.materias');
-  })->name('admin_materias');
+  Route::get('/materias', 'materiasController@showMaterias')->name('admin_materias');
+
+  Route::post('/materias','materiasController@registrar')->name('registrar_materia');
 
   Route::get('/calendario', function(){
     return view('admin.calendario');
   })->name('admin_calendario');
 
-  Route::get('/planes', function(){
-    return view('admin.planes');
-  })->name('admin_planes');
+  Route::get('/planes', 'planController@showPlan')->name('admin_planes');
+
+  Route::post('/planes', 'planController@registrar')->name('registrar_plan');
 
   Route::get('/estadisticas', function(){
     return view('admin.estadisticas');
   })->name('admin_estadisticas');
+
+  Route::get('/bitacora', function () {
+    return view('admin.bitacora');
+  })->name('admin_bitacora');
 
   Route::get('/listas/alumnos', 'ListaAlumnosController@lista')->name('admin_lalumnos');
 
@@ -63,9 +67,11 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
 
   Route::get('/listas/coordinadores', 'ListaCoordinadorController@lista')->name('admin_lcoordinadores');
 
-  Route::get('/listas/grupos', function(){
-    return view('admin.listas.grupos');
-  })->name('admin_lgrupos');
+  Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
+
+  Route::get('/modificar/usuarios', function(){
+    return view('admin.modificar.usuarios');
+  })->name('admin_musuarios');
 
   Route::get('/asignar', function(){
     return view('admin.asignar');
