@@ -17,6 +17,5 @@ class materia extends Model
   ];
 
   protected $casts = [
-    "horas_materia" => "integer"
   ];
 }

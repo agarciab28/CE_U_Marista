@@ -56,6 +56,106 @@ class personasSeeder extends Seeder
         $persona->num_cel='443412121';
         $persona->save();
 
+        $persona= new persona();
+        $persona->rol='Admin';
+        $persona->nombres='Roberto';
+        $persona->apaterno='Gonzalez';
+        $persona->amaterno='Rodriguez';
+        $persona->fnaci='1992-7-10';
+        $persona->curp='xxxxxxxxxxxxxxxxyy';
+        $persona->sexo='M';
+        $persona->email='roberto@example.example.com';
+        $persona->calle='Mango';
+        $persona->num_int='4';
+        $persona->num_ext='19';
+        $persona->colonia='Xangari';
+        $persona->codigo_postal='58058';
+        $persona->ciudad='Morelia';
+        $persona->estado='Michoacan';
+        $persona->num_tel='443223233';
+        $persona->num_cel='443444121';
+        $persona->save();
+
+
+        $persona= new persona();
+        $persona->rol='Prof';
+        $persona->nombres='Nancy';
+        $persona->apaterno='Martinez';
+        $persona->amaterno='Gil';
+        $persona->fnaci='1994-7-10';
+        $persona->curp='xxxxxxxxxxxxxxxyyy';
+        $persona->sexo='F';
+        $persona->email='nancy@example.example.com';
+        $persona->calle='Ruby';
+        $persona->num_int='3';
+        $persona->num_ext='19';
+        $persona->colonia='On Rails';
+        $persona->codigo_postal='58010';
+        $persona->ciudad='Morelia';
+        $persona->estado='Michoacan';
+        $persona->num_tel='443223233';
+        $persona->num_cel='443444121';
+        $persona->save();
+
+        $persona= new persona();
+        $persona->rol='Prof';
+        $persona->nombres='Rubén';
+        $persona->apaterno='Regil';
+        $persona->amaterno='Tecla';
+        $persona->fnaci='1994-7-10';
+        $persona->curp='xxxxxxxxxxxxxxyyyy';
+        $persona->sexo='M';
+        $persona->email='ruby@example.example.com';
+        $persona->calle='Parangaricutirimicuaro';
+        $persona->num_int='56';
+        $persona->num_ext='91';
+        $persona->colonia='Mexico';
+        $persona->codigo_postal='58013';
+        $persona->ciudad='Morelia';
+        $persona->estado='Michoacan';
+        $persona->num_tel='443223233';
+        $persona->num_cel='443444121';
+        $persona->save();
+
+        $persona= new persona();
+        $persona->rol='Coord';
+        $persona->nombres='Monica';
+        $persona->apaterno='Mordisco';
+        $persona->amaterno='Gomez';
+        $persona->fnaci='1970-1-4';
+        $persona->curp='xxxxxxxxxxxxxyyyyy';
+        $persona->sexo='F';
+        $persona->email='moni@example.example.com';
+        $persona->calle='Fuerza';
+        $persona->num_int='134';
+        $persona->num_ext='8';
+        $persona->colonia='Mexico';
+        $persona->codigo_postal='58016';
+        $persona->ciudad='Morelia';
+        $persona->estado='Michoacan';
+        $persona->num_tel='443223233';
+        $persona->num_cel='443444121';
+        $persona->save();
+
+        $persona= new persona();
+        $persona->rol='Coord';
+        $persona->nombres='Nelly';
+        $persona->apaterno='Aguilar';
+        $persona->amaterno='Ramirez';
+        $persona->fnaci='1964-6-4';
+        $persona->curp='xxxxxxxxxxxxyyyyyy';
+        $persona->sexo='F';
+        $persona->email='nelly@example.example.com';
+        $persona->calle='Gloria';
+        $persona->num_int='14';
+        $persona->num_ext='56';
+        $persona->colonia='Mexico';
+        $persona->codigo_postal='56016';
+        $persona->ciudad='Morelia';
+        $persona->estado='Michoacan';
+        $persona->num_tel='443223233';
+        $persona->num_cel='443444121';
+        $persona->save();
 
 
 

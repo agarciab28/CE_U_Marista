@@ -59,13 +59,9 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
 
   Route::get('/listas/alumnos', 'ListaAlumnosController@lista')->name('admin_lalumnos');
 
-  Route::get('/listas/profes', function(){
-    return view('admin.listas.profes');
-  })->name('admin_lprofes');
+  Route::get('/listas/profes', 'ListaProfesoresController@lista')->name('admin_lprofes');
 
-  Route::get('/listas/coordinadores', function(){
-    return view('admin.listas.coordinadores');
-  })->name('admin_lcoordinadores');
+  Route::get('/listas/coordinadores', 'ListaCoordinadorController@lista')->name('admin_lcoordinadores');
 
   Route::get('/listas/grupos', function(){
     return view('admin.listas.grupos');

@@ -25,14 +25,17 @@
               </tr>
           </thead>
           <tbody>
-              <tr>
-                  <td>456</td>
-                  <td>safd</td>
-                  <td>sadf</td>
-                  <td>sdfa</td>
-                  <td> <a href="#" class="btn">Modificar</a> </td>
-                  <td> <a href="#" class="btn red">Deshabilitar</a> </td>
-              </tr>
+            @foreach($personas as $persona)
+            <tr>
+              <td> {{$persona->usuario}} </td>
+              <td>{{$persona->nombres}} {{$persona->apaterno}} {{$persona->amaterno}}</td>
+              <td>{{$persona->fnaci}}</td>
+              <td>{{$persona->email}}</td>
+              <td> <a href="#" class="btn">Modificar</a> </td>
+              <td> <a href="#" class="btn red">Deshabilitar</a> </td>
+
+          </tr>
+          @endforeach
           </tbody>
       </table>
   </div>
