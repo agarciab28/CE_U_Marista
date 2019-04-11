@@ -5,8 +5,8 @@
 <link href="https://cdn.datatables.net/1.10.19/css/dataTables.material.min.css" rel="stylesheet">
 
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
-<link href="{{{ asset('css/admin/materias.css') }}}" rel="stylesheet">
 <link href="{{{ asset('css/admin/alumnos.css') }}}" rel="stylesheet">
+<link href="{{{ asset('css/admin/materias.css') }}}" rel="stylesheet">
 @endsection
 
 @section('title', 'Materias')
@@ -67,23 +67,23 @@
                     <table id="example" class="responsive-table striped" style="width:100%">
                         <thead>
                             <tr>
-                              <th>Nombre de materia</th>
-                              <th>Plan de estudios</th>
-                              <th>Horas de materia</th>
-                              <th>Modificar</th>
-                              <th>Deshabilitar</th>
+                                <th>Nombre de materia</th>
+                                <th>Plan de estudios</th>
+                                <th>Horas de materia</th>
+                                <th>Modificar</th>
+                                <th>Deshabilitar</th>
                             </tr>
                         </thead>
                         <tbody>
-                          @foreach($materias as $materia)
-                          <tr>
-                            <th>{{$materia->nombre_materia}}</th>
-                            <th>{{$materia->plan}}</th>
-                            <th>{{$materia->horas_materia}}</th>
-                            <td> <a href="#" class="btn">Modificar</a> </td>
-                            <td> <a href="#" class="btn red">Deshabilitar</a> </td>
-                          </tr>
-                          @endforeach
+                            @foreach($materias as $materia)
+                            <tr>
+                                <th>{{$materia->nombre_materia}}</th>
+                                <th>{{$materia->plan}}</th>
+                                <th>{{$materia->horas_materia}}</th>
+                                <td> <a href="#" class="btn">Modificar</a> </td>
+                                <td> <a href="#" class="btn red">Deshabilitar</a> </td>
+                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

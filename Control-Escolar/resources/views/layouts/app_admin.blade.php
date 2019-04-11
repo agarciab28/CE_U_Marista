@@ -26,10 +26,17 @@
         <div class="row">
           <div class="col s12">
             <a href="#" data-target="sidenav-1" class="left sidenav-trigger hide-on-medium-and-up"><i class="material-icons">menu</i></a>
-            @if (session('id_admin'))
-            <a class="left black-text show-on-small-and-up">Bienvenido {{session('nombre')}}</a>
-            @endif
-            <div class="section ">
+            <!--<a class="left black-text show-on-small-and-up">Bienvenido {{session('nombre')}}</a>-->
+
+            <div class="section">
+              <ul class="left hide-on-med-and-down">
+                @if (session('id_admin'))
+                <li class="chip">
+                  <img src="{{{ asset('img/user.png') }}}" alt="Contact Person">
+                  Bienvenido {{session('nombre')}}
+                </li>
+                @endif
+              </ul>
               <ul class="right hide-on-med-and-down">
                 <li>
                   <a href="/cerrar_sesion" class="waves-effect waves-light btn right show-on-medium-and-up hide-on-small-only">Cerrar Sesion</a>

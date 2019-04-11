@@ -56,3 +56,33 @@ user agent stylesheet
 input, textarea, select, button, meter, progress {
     -webkit-writing-mode: horizontal-tb !important;
 }
+.chip {
+    display: inline-block;
+    height: 32px;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 32px;
+    padding: 0 12px;
+    border-radius: 16px;
+    background-color: #e4e4e4ef;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    font-family: -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.chip>img {
+    float: left;
+    margin: 0 8px 0 -12px;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+}
