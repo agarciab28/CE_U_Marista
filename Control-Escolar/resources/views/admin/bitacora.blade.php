@@ -36,7 +36,7 @@
                 <td>adminprueba</td>
                 <td>administrador</td>
                 <td>YYYY-MM-DD HH:MI:SS</td>
-                <td>Insert</td>
+                <td>Update</td>
                 <td>Materias</td>
                 <td> <a href="#modal5" class="waves-effect waves-light btn modal-trigger">Detalle</a>
                     <div id="modal5" class="modal bottom-sheet">
