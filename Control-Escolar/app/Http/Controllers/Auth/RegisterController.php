@@ -189,4 +189,10 @@ class RegisterController extends Controller
       return view('admin.grupos',compact(['registro','carreras']));
     }
 
+    public function gruposProf(){
+      $carreras= carrera::get(['id_carrera','nombre_carrera']);
+      $registro=false;
+      return view('docente.grupos',compact(['registro','carreras']));
+    }
+
 }

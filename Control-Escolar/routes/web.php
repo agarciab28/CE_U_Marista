@@ -72,6 +72,15 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
   })->name('admin_asignar');
 });
 
+//Rutas Docentes
+Route::group(["prefix" => 'docente'], function(){
+  Route::get('/', function(){
+    return view('docente.home');
+  })->name('docente_home');
+
+  //rutas de grupos
+  Route::get('/grupos','Auth\RegisterController@gruposProf')->name('docente_grupos');
+});
 //Route::get('/admin', function () {
 //    return view('admin.admin_registro_alumno');
 //});
