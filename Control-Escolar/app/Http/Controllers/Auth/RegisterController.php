@@ -164,7 +164,10 @@ class RegisterController extends Controller
         'profesor'=>'string',
         'periodo'=>'string',
       ]);
+      $id_materia= DB::table('materia')->select('id_materia')->where('nombre_materia',$datos['materia'])->get();
+ 
       try {
+        
         DB::insert(
           'insert into grupo (id_grupo,seccion,id_carrera,id_materia,id_prof,periodo)
           values (?,?,?,?,?,?)',[
@@ -186,7 +189,7 @@ class RegisterController extends Controller
     }
     public function showFormG(){
       $carreras= carrera::get(['id_carrera','nombre_carrera']);
-      $profesor=persona::select('persona.id_persona','nombres','apaterno','amaterno')
+      $profesor=persona::select('persona.id_persona','nombres','apaterno','amaterno','id_prof')
       ->join('profesor','persona.id_persona','=','profesor.id_persona')->get();
       $materia=materia::get(['id_materia','nombre_materia']);
       $registro=false;

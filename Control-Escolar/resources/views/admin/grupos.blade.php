@@ -13,7 +13,7 @@
   <div class="section container">
       <div class="row">
           <form class="col  s12 m12" id="" action="{{route('admin_registrar_Grupos')}}" method="post">
-
+          {{ csrf_field() }}
               <div class="row card-panel">
                 <div class="input-field col s12 m3">
                   <input type="text" name="idgrupo" id="idgrupo" value="">
@@ -45,7 +45,7 @@
                     <select class="" name="profesor" id="profesor">
                       <option value="" disabled>Elige una opcion</option>
                       @foreach($profesor as $profesor)
-                            <option value="{{$profesor->id_persona}}">{{$profesor->nombres}}{{$profesor->aparterno}}{{$profesor->amaterno}}                           
+                            <option value="{{$profesor->id_prof}}">{{$profesor->nombres}}{{$profesor->aparterno}}{{$profesor->amaterno}}                          
                             </option>   @endforeach
                     </select>
                     <label for="profesor">Profesor</label>
