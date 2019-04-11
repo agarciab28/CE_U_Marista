@@ -55,6 +55,10 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
     return view('admin.estadisticas');
   })->name('admin_estadisticas');
 
+  Route::get('/bitacora', function () {
+    return view('admin.bitacora');
+  })->name('admin_bitacora');
+
   Route::get('/listas/alumnos', 'ListaAlumnosController@lista')->name('admin_lalumnos');
 
   Route::get('/listas/profes', 'ListaProfesoresController@lista')->name('admin_lprofes');
