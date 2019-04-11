@@ -86,7 +86,7 @@
     <li id="calendario"><a class="white-text" href="{{ route('admin_calendario') }}"><i class="far fa-calendar-alt white-text" style="margin-right:0;"></i>Calendario</a></li>
     <li id="planes"><a class="white-text" href="{{ route('admin_planes') }}"><i class="far fa-clock white-text" style="margin-right:0;"></i>Planes de estudio</a></li>
     <li id="estadisticas"><a class="white-text" href="{{ route('admin_estadisticas') }}"><i class="fas fa-chart-pie white-text" style="margin-right:0px;"></i>Estadisticas</a></li>
-    <li id="bitacora"><a class="white-text" href="{{ route('admin_bitacora') }}"><i class="material-icons white-text" style="margin-right:0;">dvr</i></i>Bitácora</a></li>
+    <li id="bitacora"><a class="white-text" href="{{ route('admin_bitacora') }}"><i class="fas fa-file-signature white-text" style="margin-right:0px;"></i></i>Bitácora</a></li>
     <li id=" cerrar_sesion"><a class="show-on-small hide-on-med-and-up white-text" href="/">Cerrar Sesion</a></li>
 
     <div class="contenedor">
@@ -123,6 +123,7 @@
 
 
 <!-- Scripts-->
+<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="{{{ asset('js/init.js') }}}"></script>
 
