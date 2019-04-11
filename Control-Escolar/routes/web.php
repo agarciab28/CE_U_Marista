@@ -65,6 +65,10 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
 
   Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
 
+  Route::get('/modificar/usuarios', function(){
+    return view('admin.modificar.usuarios');
+  })->name('admin_musuarios');
+
   Route::get('/asignar', function(){
     return view('admin.asignar');
   })->name('admin_asignar');
