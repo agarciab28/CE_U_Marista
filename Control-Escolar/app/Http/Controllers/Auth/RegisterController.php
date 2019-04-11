@@ -8,6 +8,7 @@ use App\Models\persona;
 use App\Models\alumno;
 use App\Models\coordinador;
 use App\Models\profesor;
+use App\Models\materia;
 use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -184,8 +185,11 @@ class RegisterController extends Controller
     }
     public function showFormG(){
       $carreras= carrera::get(['id_carrera','nombre_carrera']);
+      $profesor=persona::select('persona.id_persona','nombres','apaterno','amaterno')
+      ->join('profesor','persona.id_persona','=','profesor.id_persona')->get();
+      $materia=materia::get(['id_materia','nombre_materia']);
       $registro=false;
-      return view('admin.grupos',compact(['registro','carreras']));
+      return view('admin.grupos',compact(['registro','carreras','profesor','materia']));
     }
 
 }

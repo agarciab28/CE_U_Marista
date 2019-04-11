@@ -124,7 +124,7 @@
                         <!--<input type="text" name="carrera" id="carrera" class="validate">
                         <label for="carrera">Carrera</label>-->
                         <select name="id_carrera" id="carrera_alumno">
-                            <option value="" name="sexo" disabled selected>Carrera</option>
+                            <option value="" name="id_carrera" disabled selected>Carrera</option>
                             @foreach($carreras as $carrera)
                             <option value="{{$carrera->id_carrera}}">{{$carrera->nombre_carrera}}</option>
                             @endforeach
