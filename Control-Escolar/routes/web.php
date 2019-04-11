@@ -47,9 +47,7 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
     return view('admin.calendario');
   })->name('admin_calendario');
 
-  Route::get('/planes', function(){
-    return view('admin.planes');
-  })->name('admin_planes');
+  Route::get('/planes', 'planController@showPlan')->name('admin_planes');
 
   Route::get('/estadisticas', function(){
     return view('admin.estadisticas');
@@ -61,9 +59,7 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
 
   Route::get('/listas/coordinadores', 'ListaCoordinadorController@lista')->name('admin_lcoordinadores');
 
-  Route::get('/listas/grupos', function(){
-    return view('admin.listas.grupos');
-  })->name('admin_lgrupos');
+  Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
 
   Route::get('/asignar', function(){
     return view('admin.asignar');

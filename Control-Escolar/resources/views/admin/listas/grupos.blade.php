@@ -28,17 +28,19 @@
               </tr>
           </thead>
           <tbody>
+            @foreach($grupos as $grupo)
               <tr>
-                  <td>456</td>
-                  <td>safd</td>
-                  <td>sadf</td>
-                  <td>sdfa</td>
-                  <td>sadfad</td>
-                  <td>asd</td>
+                  <td>{{$grupo->id_grupo}}</td>
+                  <td>{{$grupo->seccion}}</td>
+                  <td>{{$grupo->nombre_carrera}}</td>
+                  <td>{{$grupo->nombre_materia}}</td>
+                  <td>{{$grupo->nombres}} {{$grupo->aparterno}} {{$grupo->amaterno}}</td>
+                  <td>{{$grupo->periodo}}</td>
                   <td> <a href="{{ route('admin_asignar') }}" class="btn">Registrar</a> </td>
                   <td> <a href="#" class="btn">Modificar</a> </td>
                   <td> <a href="#" class="btn red">Deshabilitar</a> </td>
               </tr>
+              @endforeach
           </tbody>
       </table>
   </div>

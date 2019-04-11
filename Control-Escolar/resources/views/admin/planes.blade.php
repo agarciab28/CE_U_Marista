@@ -13,7 +13,7 @@
 
 @section('content')
 
-<div class="section container">
+  <div class="section container">
 
     <div class="row">
         <form class="col  s12 m12" id="form_plan" action="" method="post">
@@ -74,7 +74,15 @@
                             </tr>
                         </thead>
                         <tbody>
-
+                          @foreach($planes as $plan)
+                          <tr>
+                            <th>{{$plan->nombre_plan}}</th>
+                            <th>{{$plan->carrera}}</th>
+                            <th>{{$plan->fecha}}</th>
+                            <th> <a href="#" class="btn">Modificar</a> </th>
+                            <th> <a href="#" class="btn red">Deshabilitar</a> </th>
+                          </tr>
+                          @endforeach
                         </tbody>
                     </table>
                 </div>
