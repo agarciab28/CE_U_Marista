@@ -53,13 +53,11 @@
 
       <ul id="grupos" class="collapsible collapsible-accordion">
         <li>
-          <a href="{{ route('docente_grupos') }}" class="collapsible-header white-text" accordion="false" style="margin-left:2em;"> <i class="material-icons white-text">library_books</i>  Mis grupos <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
+          <a class="collapsible-header white-text" accordion="false" style="margin-left:2em;"> <i class="material-icons white-text">library_books</i>  Mis grupos <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
           <div class="collapsible-body">
             <ul class="dropdown_menu">
-              <li><a href="{{ route('admin_registrar') }}" class="white-text">Listado completo</a></li>
-              <li><a href="{{ route('admin_lalumnos') }}" class="white-text">Grupos en extraordinario</a></li>
-              <li><a href="{{ route('admin_lprofes') }}" class="white-text">Profesores</a></li>
-              <li><a href="{{ route('admin_lcoordinadores') }}" class="white-text">Coordinadores</a></li>
+              <li><a href="{{ route('docente_grupos') }}" class="white-text">Listado completo</a></li>
+              <li><a href="" class="white-text">Grupos en extraordinario</a></li>
             </ul>
           </div>
         </li>
@@ -70,10 +68,10 @@
           <a class="collapsible-header white-text" accordion="false" style="margin-left:2em;"> <i class="material-icons white-text">group</i>  Alumnos <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
           <div class="collapsible-body">
             <ul class="dropdown_menu">
-              <li><a href="{{ route('admin_registrar') }}" class="white-text">Registrar Usuario</a></li>
-              <li><a href="{{ route('admin_lalumnos') }}" class="white-text">Alumnos</a></li>
-              <li><a href="{{ route('admin_lprofes') }}" class="white-text">Profesores</a></li>
-              <li><a href="{{ route('admin_lcoordinadores') }}" class="white-text">Coordinadores</a></li>
+              <li><a href="" class="white-text">Registrar Usuario</a></li>
+              <li><a href="" class="white-text">Alumnos</a></li>
+              <li><a href="" class="white-text">Profesores</a></li>
+              <li><a href="" class="white-text">Coordinadores</a></li>
             </ul>
           </div>
         </li>
