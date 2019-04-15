@@ -29,6 +29,5 @@ class persona extends Model
      * @var array
      */
     protected $casts = [
-        'fnaci' => 'date'
     ];
 }

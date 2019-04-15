@@ -18,6 +18,5 @@ class carrera extends Model
   ];
 
   protected $casts = [
-    "fecha" => "date"
   ];
 }

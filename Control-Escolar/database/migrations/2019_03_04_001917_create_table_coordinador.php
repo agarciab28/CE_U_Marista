@@ -14,17 +14,13 @@ class CreateTableCoordinador extends Migration
     public function up()
     {
         Schema::create('coordinador', function (Blueprint $table) {
-            $table->string('id_coordinador',10);
+            $table->increments('id_coordinador',10);
             $table->string('id_carrera',10);
-            $table->integer('id_persona')->unsigned();
-            $table->string('ced_fiscal');
-            $table->string('nssoc')->nullable();
-            $table->text('password');
+            $table->string('username',100);
             $table->timestamps();
 
-            $table->primary('id_coordinador');
             $table->foreign('id_carrera')->references('id_carrera')->on('carrera');
-            $table->foreign('id_persona')->references('id_persona')->on('persona');
+            $table->foreign('username')->references('username')->on('personal');
 
 
         });
