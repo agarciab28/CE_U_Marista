@@ -36,6 +36,8 @@ Route::post('/grupos','Auth\RegisterController@registroG')->name('admin_registra
 
 Route::get('/grupos', 'Auth\RegisterController@showFormG')->name('admin_registrarG');
 
+Route::post('/carreras', 'carrerasController@registro')->name('admin_carreras_registro');
+
 Route::get('/carreras', 'carrerasController@listaGrupos')->name('admin_carreras');
 
 Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_registro');
