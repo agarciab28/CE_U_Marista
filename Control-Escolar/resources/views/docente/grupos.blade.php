@@ -10,25 +10,22 @@
 
 @section('content')
 <div class="section container">
-    <div class="row">
-        <div class="col s6">
-
-            <ul class="collection" >
-                <li class="collection-item avatar">
-                    <a href="#modal1" class="modal-trigger">
-                        <i class="material-icons yellow-text text-darken-3 circle blue darken-4"> book </i>
-                    </a>
-                    <span class="title">Materia</span>
-                    <p>Clave grupo<br>
-                        Horario:
-                    </p>
-                    <a href="#!" class="secondary-content"><i class="material-icons blue-grey-text text-darken-4">picture_as_pdf</i></a>
-
-            </ul>
-
-
-        </div>
-    </div>
+  <div class="row">
+      <div class="col s12 m4">
+          <div class="card card-grupo">
+              <div class="card-content black-text z-depth-3">
+                  <span class="card-title">Grupo:</span>
+                  <p>
+                    Materia: <br>
+                    Horario:
+                  </p>
+              </div>
+              <div class="card-action">
+                  <a href="#modal1" class="modal-trigger"><i class="fas fa-cog"></i> Opciones</a>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
 
 <!--@foreach($carreras as $carrera)<option value="{{$carrera->id_carrera}}">{{$carrera->nombre_carrera}}</option>@endforeach-->
