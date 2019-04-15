@@ -1,8 +1,8 @@
 @extends('layouts.app_admin')
 
 @section('stylesheet')
-<link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css" rel="stylesheet">
-<link href="https://cdn.datatables.net/1.10.19/css/dataTables.material.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.10.19/css/dataTables.material.min.css" rel="stylesheet">
 
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
 <link href="{{{ asset('css/admin/carreras.css') }}}" rel="stylesheet">
@@ -14,7 +14,7 @@
 
 @section('content')
 
-<div class="section container">
+  <div class="section container">
 
       <div class="row">
           <form class="col  s12 m12" id="form_carrera" action="{{route('admin_carreras_registro')}}" method="post">
