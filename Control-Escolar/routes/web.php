@@ -95,3 +95,7 @@ Route::group(["prefix" => 'docente'], function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/alumnosxgrupo', function(){
+  return view('docente.opciones.alumnos');
+})->name('alumnosxgrupo');

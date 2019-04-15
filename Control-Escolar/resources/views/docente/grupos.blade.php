@@ -36,9 +36,7 @@
         <h4>Materia</h4>
         <p>
             <div class="collection">
-                <a href="#!" class="collection-item black-text">Consultar</a>
-                <a href="#!" class="collection-item black-text">Calificaciones</a>
-                <a href="#!" class="collection-item black-text">Faltas</a>
+                <a href="{{ route('alumnosxgrupo') }}" class="collection-item black-text">Consultar</a>
                 <a href="#!" class="collection-item black-text">Método de evaluación</a>
                 <a href="#!" class="collection-item black-text">Obtener acta de calificaciones</a>
                 <a href="#!" class="collection-item black-text">Generar PDF</a>
