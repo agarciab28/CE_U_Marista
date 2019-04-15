@@ -1,0 +1,35 @@
+body{
+  font-family: verdana;
+  color: black ;
+}
+
+div.background{
+  width:100vw;
+  height:100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #E6E6E6;
+  overflow: auto;
+}
+
+div.barra_superior{
+  width:100vw;
+  height:12vh;
+  background-color: rgba(0,55,100);
+}
+
+div.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img.img-logo{
+
+}
+
+div.nav-wrapper{
+  background-color: rgba(0,55,100);
+  overflow: hidden;
+}

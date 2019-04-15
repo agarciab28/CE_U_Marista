@@ -1,39 +1,43 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Auth;
+use App\Models\persona;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
 
-    use AuthenticatesUsers;
+    public function login(){
+      $credentials = $this->validate(request(), [
+        'ncontrol' => 'required|string',
+        'password' => 'required|string'
+      ]);
+      //dd(SHA256($data['password']));
+      if(Auth::attempt($credentials)){
+        return view('dashboard');
+      }
+      return back()->withErrors(['ncontrol' => 'Sin registro']);
+    }
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
+    public function loginAdmin(Request $request){
+      $credentials = $this->validate($request, [
+        'id_admin' => 'required|string',
+        'password' => 'required|string'
+      ]);
+      if(Auth::guard('admins')->attempt($credentials,$request->remember)){
+        $datos=persona::select('nombres','apaterno','amaterno')->where('id_persona',auth('admins')->user()->id_persona)->get();
+        $nombre =$datos[0]->nombres." ".$datos[0]->apaterno." ".$datos[0]->amaterno;
+        $request->session()->regenerate();
+        dd(session('status'));
+        if(session('status')){
+        return view('admin.home');
+      }else return "nelson";
+      }
+      return back()->withErrors(['id_admin' => 'Sin registro']);
     }
 }

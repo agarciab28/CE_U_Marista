@@ -6,9 +6,117 @@ body{
 div.background{
   width:100vw;
   height:100vh;
-  background-color: #003865;
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-color: #003865;  */
 }
 
-img.logo{
-  width: 15em;
+div.color-bg{
+  width:100vw;
+  height:100vh;
+  background-color: rgba(0,56,101, 0.8);
+  overflow: auto;
+}
+
+div.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+img.img-logo{
+  width: 12em;
+  opacity: 1.0;
+}
+
+button.login{
+  margin-top:1em;;
+}
+
+p.bienvenida{
+  text-align: center;
+}
+
+div.contenedor{
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p.footer{
+  font-size: 10px;
+  position: absolute;
+  bottom:0;
+  opacity: 0.5;
+}
+
+form{
+  margin-top: 14px;
+}
+
+.btn{
+  background-color: #FFB500;
+  color: black;
+}
+
+.btn:hover{
+  background-color: rgba(255, 181, 0, .9);
+}
+
+.tabs .tab a{
+  color:#003865;
+}
+
+.tabs .tab a:hover {
+  background-color:rgba(0, 56, 101,1);
+  color:#fff;
+}
+
+.tabs .tab a.active {
+  background-color:white;
+  color:#003865;
+}
+
+.tabs .indicator {
+  background-color:#003865;
+}
+
+#alumno_user:focus + label, #alumno_pass:focus + label, #personal_user:focus + label, #personal_pass:focus + label {
+ color: #003865;
+}
+
+#alumno_user:focus, #alumno_pass:focus, #personal_user:focus, #personal_pass:focus {
+ border-bottom: 1px solid #003865;
+ box-shadow: none;
+}
+
+/* .validate:focus + label {
+ color: #003865;
+}
+
+.validate:focus {
+ border-bottom: 1px solid #003865;
+ box-shadow: none;
+} */
+
+
+@media (min-width:993px){
+  img.img-logo{
+    width: 25em;
+    margin-top: 10em;
+  }
+
+  p.bienvenida{
+    font-size: 24px;
+    margin-top: 10%;
+  }
+
+  p.footer{
+    font-size: 12px;
+  }
+
 }
