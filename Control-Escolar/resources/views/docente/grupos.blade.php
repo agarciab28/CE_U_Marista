@@ -33,7 +33,7 @@
 <!--modal-->
 <div id="modal1" class="modal bottom-sheet">
     <div class="modal-content">
-        <h4>Materia</h4>
+        <h4>Grupo</h4>
         <p>
             <div class="collection">
                 <a href="{{ route('alumnosxgrupo') }}" class="collection-item black-text">Consultar</a>

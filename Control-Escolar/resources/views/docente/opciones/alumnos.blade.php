@@ -2,7 +2,6 @@
 
 @section('stylesheet')
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
-<link href="{{{ asset('css/docente/grupos.css') }}}" rel="stylesheet">
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css" rel="stylesheet">
   <link href="https://cdn.datatables.net/1.10.19/css/dataTables.material.min.css" rel="stylesheet">
@@ -26,14 +25,6 @@
             </tr>
         </thead>
         <tbody>
-          
-            <tr>
-                <td> Jose Antnio Aguilar gonzales </td>
-                <td> <input id="cal_1" name="cal_1" type="text" class=""> </td>
-                <td> <input id="cal_2" name="cal_2" type="text" class=""> </td>
-                <td> <input id="cal_3" name="cal_1" type="text" class=""> </td>
-                <td> <input id="cal_3" name="cal_1" type="text" class=""></td>
-            </tr>
 
             <tr>
                 <td> Jose Antnio Aguilar gonzales </td>
@@ -50,7 +41,15 @@
                 <td> <input id="cal_3" name="cal_1" type="text" class=""> </td>
                 <td> <input id="cal_3" name="cal_1" type="text" class=""></td>
             </tr>
-          
+
+            <tr>
+                <td> Jose Antnio Aguilar gonzales </td>
+                <td> <input id="cal_1" name="cal_1" type="text" class=""> </td>
+                <td> <input id="cal_2" name="cal_2" type="text" class=""> </td>
+                <td> <input id="cal_3" name="cal_1" type="text" class=""> </td>
+                <td> <input id="cal_3" name="cal_1" type="text" class=""></td>
+            </tr>
+
         </tbody>
     </table>
 </div>

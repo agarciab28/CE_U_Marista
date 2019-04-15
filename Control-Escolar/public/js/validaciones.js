@@ -118,48 +118,48 @@ $(document).ready(function() {
 
 
 //Carreras
-$("#data_carrera").hide();
-$('#btn_add_carrera').click(function(){
-  $("#data_carrera").show();
-  $('#btn_add_carrera').hide();
-  $("html, body").scrollTop(0);
-});
-$('#registrar_carrera').click(function(){
-  $("#data_carrera").hide();
-});
-$('#close_registro_carrera').click(function(){
-$("#data_carrera").hide();
-$('#btn_add_carrera').show();
-});
+// $("#data_carrera").hide();
+// $('#btn_add_carrera').click(function(){
+//   $("#data_carrera").show();
+//   $('#btn_add_carrera').hide();
+//   $("html, body").scrollTop(0);
+// });
+// $('#registrar_carrera').click(function(){
+//   $("#data_carrera").hide();
+// });
+// $('#close_registro_carrera').click(function(){
+// $("#data_carrera").hide();
+// $('#btn_add_carrera').show();
+// });
 
 //Materias
-$("#data_materia").hide();
-$('#btn_add_materia').click(function () {
-    $("#data_materia").show();
-    $('#btn_add_materia').hide();
-    $("html, body").scrollTop(5);
-});
-$('#registrar_materia').click(function () {
-    $("#data_materia").hide();
-});
-$('#close_registro_materia').click(function () {
-    $("#data_materia").hide();
-    $('#btn_add_materia').show();
-});
+// $("#data_materia").hide();
+// $('#btn_add_materia').click(function () {
+//     $("#data_materia").show();
+//     $('#btn_add_materia').hide();
+//     $("html, body").scrollTop(5);
+// });
+// $('#registrar_materia').click(function () {
+//     $("#data_materia").hide();
+// });
+// $('#close_registro_materia').click(function () {
+//     $("#data_materia").hide();
+//     $('#btn_add_materia').show();
+// });
 
 //Planes
-$("#data_plan").hide();
-$('#btn_add_plan').click(function () {
-    $("#data_plan").show();
-    $('#btn_add_plan').hide();
-    $("html, body").scrollTop(0);
-});
-$('#registrar_plan').click(function () {
-    $("#data_plan").hide();
-});
-$('#close_registro_plan').click(function () {
-    $("#data_plan").hide();
-    $('#btn_add_plan').show();
-});
+// $("#data_plan").hide();
+// $('#btn_add_plan').click(function () {
+//     $("#data_plan").show();
+//     $('#btn_add_plan').hide();
+//     $("html, body").scrollTop(0);
+// });
+// $('#registrar_plan').click(function () {
+//     $("#data_plan").hide();
+// });
+// $('#close_registro_plan').click(function () {
+//     $("#data_plan").hide();
+//     $('#btn_add_plan').show();
+// });
 
 });
