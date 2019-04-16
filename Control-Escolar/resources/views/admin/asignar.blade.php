@@ -7,13 +7,34 @@
   <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
   <link href="{{{ asset('css/admin/usuarios.css') }}}" rel="stylesheet">
   <link href="{{{ asset('css/admin/alumnos.css') }}}" rel="stylesheet">
-@endsection
+@endsection 
 
 @section('title', 'Asignar Alumnos')
 
 @section('content')
   <div class="container">
     <form class="" action="index.html" method="post">
+
+      <div class="filtros">
+          <div class="row">
+                    <div class="col m6 push-m3 s12" style="text-align: center;">
+                      <h4>Asignación de alumnos a grupo</h4>
+                    </div>
+          </div>
+        <div class="row">
+          <div class="input-field col m6 s12 ">
+            <input type="text" name="fperiodo" id="fperiodo" class="validate" required maxlength="35">
+            <label for="fperiodo">Ciclo escolar</label>
+          </div>
+
+          <div class="input-field col m6 s12 ">
+            <input type="text" name="fcarrera" id="fcarrera" class="validate" required maxlength="35">
+            <label for="fcarrera">Carrera</label>
+          </div>
+        </div>
+      </div>
+
+
       <table id="example" class="responsive-table striped" style="width:100%">
             <thead>
                 <tr>
