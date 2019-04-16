@@ -12,7 +12,7 @@ use App\Models\materia;
 class gruposController extends Controller
 {
   public function showGrupos(){
-    $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','nombre_carrera','periodo','nombres','apaterno','amaterno')
+    $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','nombre_carrera','periodo','nombres','apaterno','amaterno','c.id_carrera as id_carrera')
     ->join('carrera as c','c.id_carrera','=','grupo.id_carrera')
     ->join('materia as m','m.id_materia','=','grupo.id_materia')
     ->join('profesor as p','p.id_prof','=','grupo.id_prof')

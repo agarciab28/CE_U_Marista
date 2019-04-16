@@ -71,10 +71,10 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
     return view('admin.modificar.usuarios');
   })->name('admin_musuarios');
 
-  Route::get('/asignar', function(){
-    return view('admin.asignar');
-  })->name('admin_asignar');
-
+  //Route::get('/asignar', function(){
+//    return view('admin.asignar');
+  //})->name('admin_asignar');
+  Route::get('/asignar/{idg}/{idc}','AlumnosController@lista_as')->name('admin_asignar');
   //rutas de grupos
   Route::post('/grupos','gruposController@registroGrupo')->name('admin_registrar_Grupos');
 

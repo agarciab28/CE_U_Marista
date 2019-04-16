@@ -29,17 +29,19 @@
           </thead>
           <tbody>
             @foreach($grupos as $grupo)
+
               <tr>
                   <td>{{$grupo->grupo}}</td>
-                  <td>{{$grupo->seccion}}</td>
+                  <td>{{$grupo->carrera}}</td>
                   <td>{{$grupo->nombre_carrera}}</td>
                   <td>{{$grupo->nombre_materia}}</td>
                   <td>{{$grupo->nombres}} {{$grupo->aparterno}} {{$grupo->amaterno}}</td>
                   <td>{{$grupo->periodo}}</td>
-                  <td> <a href="{{ route('admin_asignar') }}" class="btn">Asiganar</a> </td>
+                  <td> <a href="{{ route('admin_asignar',[$grupo->grupo,$grupo->id_carrera]) }}" class="btn">Asiganar</a></td>
                   <td> <a href="#modal_modificar" class="btn modal-trigger">Modificar</a> </td>
                   <td> <a href="#" class="btn red">Deshabilitar</a> </td>
               </tr>
+
               @endforeach
           </tbody>
       </table>
