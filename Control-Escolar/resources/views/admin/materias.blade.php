@@ -129,7 +129,7 @@
             <div class="input-field col m2 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
                 <input type="text" id="materia_id" name="id_materia" class="validate" disabled required maxlength="35">
-                <label for="materia_id">Clave de materia</label>
+                <label for="id_materia">Clave de materia</label>
             </div>
 
               <div class="input-field col m3 s12 ">
