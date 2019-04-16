@@ -9,6 +9,7 @@ use App\Models\alumno;
 use App\Models\coordinador;
 use App\Models\profesor;
 use App\Models\materia;
+use App\Models\personal;
 use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -52,11 +53,11 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        /*return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-        ]);
+        ])*/;
     }
 
     /**
@@ -67,11 +68,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' =>($data['password']),
-        ]);
+        //
     }
     public function registro(){
 
@@ -88,14 +85,13 @@ class RegisterController extends Controller
         'id_carrera'=>'string|nullable',
         'semestre'=>'string|nullable',
         'plan_de_estudios'=>'string|nullable',
-        'id_coordinador'=>'string|nullable',
         'id_carrera_coordinador'=>'string|nullable',
         'ced_fiscal'=>'string|nullable',
         'nssoc'=>'string|nullable',
-        'id_prof'=>'string|nullable',
         'especialidad_profe'=>'string|nullable',
         'cedulap'=>'string|nullable',
-        'nssocp'=>'string|nullable'
+        'nssocp'=>'string|nullable',
+        'username'=>'string|nullable'
       ]);
       try {
         $persona=new persona();
@@ -120,25 +116,31 @@ class RegisterController extends Controller
           $alumno->plan_de_estudios=$datos['plan_de_estudios'];
           $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
           $alumno->save();
-        }else if($datos['rol']=='Coordinador'){
-          $coordinador= new coordinador();
-          $coordinador->id_persona=$id_persona['id_persona'];
-          $coordinador->id_coordinador=$datos['id_coordinador'];
-          $coordinador->id_carrera=$datos['id_carrera_coordinador'];
-          $coordinador->ced_fiscal=$datos['ced_fiscal'];
-          $coordinador->nssoc=$datos['nssoc'];
-          $coordinador->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
-          $coordinador->save();
-        }else if($datos['rol']=='Profesor'){
-          $profesor = new profesor();
-          $profesor->id_persona=$id_persona['id_persona'];
-          $profesor->id_prof=$datos['id_prof'];
-          $profesor->especialidad=$datos['especialidad_profe'];
-          $profesor->ced_fiscal=$datos['cedulap'];
-          $profesor->nssoc=$datos['nssocp'];
-          $profesor->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
-          $profesor->save();
+        }else {
+          $personal=new personal();
+          $personal->username=$datos['username'];
+          $personal->ced_fiscal=$datos['ced_fiscal'];
+          $personal->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
+          $personal->nssoc=$datos['nssoc'];
+          $personal->id_persona=$id_persona['id_persona'];
+          $personal->activo='1';
+          $personal->save();
+
+          if($datos['rol']=='Coordinador'){
+            $coordinador= new coordinador();
+            $coordinador->id_carrera=$datos['id_carrera_coordinador'];
+            $coordinador->username=$datos['username'];
+            $coordinador->save();
+
+          }else if($datos['rol']=='Profesor'){
+            $profesor = new profesor();
+            $profesor->especialidad=$datos['especialidad_profe'];
+            $profesor->username=$datos['username'];
+            $profesor->save();
+          }
         }
+
+
       } catch (\Exception $e) {
         $registro=false;
         $carreras= carrera::get(['id_carrera','nombre_carrera']);
@@ -165,9 +167,9 @@ class RegisterController extends Controller
         'periodo'=>'string',
       ]);
       $id_materia= DB::table('materia')->select('id_materia')->where('nombre_materia',$datos['materia'])->get();
- 
+
       try {
-        
+
         DB::insert(
           'insert into grupo (id_grupo,seccion,id_carrera,id_materia,id_prof,periodo)
           values (?,?,?,?,?,?)',[

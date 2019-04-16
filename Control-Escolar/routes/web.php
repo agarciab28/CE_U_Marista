@@ -67,7 +67,7 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
 
   Route::get('/listas/profes', 'ListaProfesoresController@lista')->name('admin_lprofes');
 
-  Route::get('/listas/coordinadores', 'ListaCoordinadorController@lista')->name('admin_lcoordinadores');
+  Route::get('/listas/coordinadores', 'CoordinadorController@lista')->name('admin_lcoordinadores');
 
   Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
 

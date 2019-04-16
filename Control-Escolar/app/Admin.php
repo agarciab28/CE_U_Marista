@@ -17,7 +17,7 @@ class Admin extends Authenticatable
     protected $guard='admins';
     protected $table = 'personal';
     protected $fillable = [
-        'username', 'password',"activo"
+        'username', 'password',"activo",'id_persona'
     ];
 
     /**
@@ -26,7 +26,7 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'contrasena', 'remember_token',
+        'password', 'remember_token',
     ];
 
     /**
@@ -35,6 +35,5 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
     ];
 }
