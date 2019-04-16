@@ -12,6 +12,11 @@
 @section('title', 'Asignar Alumnos')
 
 @section('content')
+
+  <!--Se recibe por URL id de grupo e id_carrera, se necesita un filtrado de alumnos de la carrera del id_carrera y mostrarlos en
+  la tabla. Posteriormente, con el con los check box, seleccionar a los alumnos que formaran parte  del grupo
+
+-->
   <div class="container">
     <form class="" action="index.html" method="post">
 
