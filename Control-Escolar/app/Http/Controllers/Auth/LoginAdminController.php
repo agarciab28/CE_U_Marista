@@ -54,6 +54,7 @@ class LoginAdminController extends Controller
      */
     public function login(Request $request){
         $this->validateLogin($request);
+
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
         // the IP address of the client making these requests into this application.
@@ -120,10 +121,11 @@ class LoginAdminController extends Controller
     protected function sendLoginResponse(Request $request)
     {
         $request->session()->regenerate();
-        $datos=persona::select('nombres','apaterno','amaterno')->where('id_persona',auth('admins')->user()->id_persona)->get();
+        $usuario=auth('admins')->user()->id_persona;
+        $datos=persona::where('id_persona','=',$usuario)->get();
         $nombre =$datos[0]->nombres." ".$datos[0]->apaterno." ".$datos[0]->amaterno;
         //$request->session()->put('id_admin', $request->id_admin);
-        session(['id_admin'=>$request->id_admin,'nombre'=>$nombre]);
+        session(['username'=>$request->username,'nombre'=>$nombre]);
         return $this->authenticated($request, $this->guard()->user())
                 ?: redirect()->intended(route('admin_home'));
     }
@@ -160,7 +162,7 @@ class LoginAdminController extends Controller
      */
     public function username()
     {
-        return 'id_admin';
+        return 'username';
     }
 
     /**

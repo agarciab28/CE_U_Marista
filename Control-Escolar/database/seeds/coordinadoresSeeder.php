@@ -18,21 +18,13 @@ class coordinadoresSeeder extends Seeder
       DB::statement('set foreign_key_checks = 1;');
 
       $coordinador= new coordinador();
-      $coordinador->id_coordinador='moni';
+      $coordinador->username='moni';
       $coordinador->id_carrera='isc';
-      $coordinador->id_persona='6';
-      $coordinador->ced_fiscal='EWRVCNJ23';
-      $coordinador->nssoc='SDJVNR';
-      $coordinador->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $coordinador->save();
 
       $coordinador= new coordinador();
-      $coordinador->id_coordinador='nelly';
+      $coordinador->username='nelly';
       $coordinador->id_carrera='arq';
-      $coordinador->id_persona='7';
-      $coordinador->ced_fiscal='DFUYHY312';
-      $coordinador->nssoc='JKFBHJS';
-      $coordinador->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $coordinador->save();
     }
 }

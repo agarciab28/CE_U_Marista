@@ -29,4 +29,9 @@ class carrerasController extends Controller
       $registro=true;
       return view("admin.carreras",compact(["carreras","registro"]));
     }
+    public function registro(Request $request){
+      dd($request);
+      $carrera= new carrera();
+
+    }
 }

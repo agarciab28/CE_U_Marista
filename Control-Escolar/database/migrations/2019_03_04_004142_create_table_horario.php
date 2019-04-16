@@ -17,7 +17,7 @@ class CreateTableHorario extends Migration
             $table->string('aula',10);
             $table->string('hora_horario');
             $table->string('hora_fin');
-            $table->string('id_grupo',30);
+            $table->integer('id_grupo')->unsigned();
             $table->timestamps();
             $table->primary('aula');
             $table->foreign('id_grupo')->references('id_grupo')->on('grupo');

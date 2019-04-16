@@ -14,13 +14,12 @@ class CreateTableAdministrador extends Migration
     public function up()
     {
         Schema::create('administrador', function (Blueprint $table) {
-            $table->string('id_admin',30);
-            $table->boolean('activo');
-            $table->integer('id_persona')->unsigned();
-            $table->text('password');
+            $table->increments('id_admin',10);
+            $table->string('username',100);
             $table->timestamps();
-            $table->primary('id_admin');
-            $table->foreign('id_persona')->references('id_persona')->on('persona');
+
+            $table->foreign('username')->references('username')->on('personal');
+
         });
     }
 

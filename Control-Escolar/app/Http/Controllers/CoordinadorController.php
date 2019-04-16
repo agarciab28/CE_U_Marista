@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\persona;
 use App\Models\coordinador;
 
-class ListaCoordinadorController extends Controller
+class CoordinadorController extends Controller
 {
   public function lista(){
     $personas = persona::select('id_coordinador as usuario','coordinador.id_persona','nombres','apaterno','amaterno','fnaci','email')

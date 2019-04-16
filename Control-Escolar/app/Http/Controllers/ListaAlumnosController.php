@@ -12,6 +12,5 @@ class ListaAlumnosController extends Controller
       $personas = persona::select('persona.id_persona','nombres','apaterno','amaterno','fnaci','email','ncontrol')
         ->join('alumno','persona.id_persona','=','alumno.id_persona')->get();
         return view('admin.listas.alumnos',compact('personas'));
-
     }
 }
