@@ -91,6 +91,7 @@ Route::group(["prefix" => 'docente'], function(){
     return view('docente.home');
   })->name('docente_home');
 
+  Route::get('/grupos','Auth\RegisterController@gruposProf')->name('docente_grupos');
 
 });
 //Route::get('/admin', function () {
