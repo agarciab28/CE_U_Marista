@@ -156,52 +156,6 @@ class RegisterController extends Controller
       $registro=false;
       return view('admin.registrar',compact(['registro','carreras']));
     }
-    //Seccion de registro de grupos
-    public function registroG(){
-      $datos = $this->validate(request(),[
-        'idgrupo'=>'string',
-        'seccion'=>'string',
-        'carrera'=>'string',
-        'materia'=>'string',
-        'profesor'=>'string',
-        'periodo'=>'string',
-      ]);
-      $id_materia= DB::table('materia')->select('id_materia')->where('nombre_materia',$datos['materia'])->get();
 
-      try {
-
-        DB::insert(
-          'insert into grupo (id_grupo,seccion,id_carrera,id_materia,id_prof,periodo)
-          values (?,?,?,?,?,?)',[
-
-            $datos['idgrupo'],
-            $datos['seccion'],
-            $datos['carrera'],
-            $datos['materia'],
-            $datos['profesor'],
-            $datos['periodo'],
-          ]);
-          $registro=true;
-      } catch (\Exception $e) {
-        dd($e);
-          $registro=false;
-      }
-      $carreras= carrera::get(['id_carrera','nombre_carrera']);
-      return view('admin.asignar',compact(['registro','carreras']));
-    }
-    public function showFormG(){
-      $carreras= carrera::get(['id_carrera','nombre_carrera']);
-      $profesor=persona::select('persona.id_persona','nombres','apaterno','amaterno','id_prof')
-      ->join('profesor','persona.id_persona','=','profesor.id_persona')->get();
-      $materia=materia::get(['id_materia','nombre_materia']);
-      $registro=false;
-      return view('admin.grupos',compact(['registro','carreras','profesor','materia']));
-    }
-
-    public function gruposProf(){
-      $carreras= carrera::get(['id_carrera','nombre_carrera']);
-      $registro=false;
-      return view('docente.grupos',compact(['registro','carreras']));
-    }
 
 }

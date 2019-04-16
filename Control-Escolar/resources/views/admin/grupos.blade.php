@@ -21,44 +21,39 @@
                   </div>
                 </div>
                 <div class="input-field col s12 m3">
-                  <input type="text" name="idgrupo" id="idgrupo" value="">
-                  <label for="idgrupo">Identificador</label>
+                  <input type="text" name="seccion" id="seccion" value="">
+                  <label for="seccion">Seccion</label>
                 </div>
-                  <div class="input-field col s12 m3">
-                    <input type="text" name="seccion" id="seccion" value="">
-                    <label for="seccion">Seccion</label>
-                  </div>
-                  <div class="input-field col s12 m3">
-                    <select class="" name="carrera" id="carrera">
-                      <option value="" disabled>Elige una opcion</option>
-                      @foreach($carreras as $carrera)
-                            <option value="{{$carrera->id_carrera}}">{{$carrera->nombre_carrera}}</option>
-                            @endforeach
+                <div class="input-field col s12 m4">
+                  <select class="" name="carrera" id="carrera">
+                    <option value="" disabled>Elige una opcion</option>
+                    @foreach($carreras as $carrera)
+                        <option value="{{$carrera->id_carrera}}">{{$carrera->nombre_carrera}}</option>
+                    @endforeach()
                     </select>
                     <label for="carrera">Carrera</label>
                   </div>
-                  <div class="input-field col s12 m3">
+                  <div class="input-field col s12 m4">
                     <select class="" name="materia" id="materia">
                       <option value="" disabled>Elige una opcion</option>
-                      @foreach($materia as $materia)
+                        @foreach($materias as $materia)
                             <option value="{{$materia->id_materia}}">{{$materia->nombre_materia}}</option>
-                            @endforeach
+                        @endforeach
                     </select>
                     <label for="materia">Materia</label>
                   </div>
                   <div class="input-field col s12 m6">
                     <select class="" name="profesor" id="profesor">
                       <option value="" disabled>Elige una opcion</option>
-                      @foreach($profesor as $profesor)
-                            <option value="{{$profesor->id_prof}}">{{$profesor->nombres}}{{$profesor->aparterno}}{{$profesor->amaterno}}
-                            </option>   @endforeach
+                        @foreach($profesores as $profesor)
+                            <option value="{{$profesor->id_prof}}">{{$profesor->nombres}} {{$profesor->apaterno}} {{$profesor->amaterno}}</option>
+                        @endforeach
                     </select>
                     <label for="profesor">Profesor</label>
                   </div>
                   <div class="input-field col s12 m6">
                     <input type="text" name="periodo" id="periodo" value="">
 
-                    </select>
                     <label for="periodo">Periodo</label>
                   </div>
 
