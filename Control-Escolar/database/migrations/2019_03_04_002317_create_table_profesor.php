@@ -14,15 +14,13 @@ class CreateTableProfesor extends Migration
     public function up()
     {
         Schema::create('profesor', function (Blueprint $table) {
-            $table->string('id_prof',20);
-            $table->integer('id_persona')->unsigned();
-            $table->text('password');
+            $table->increments('id_prof',20);
             $table->string('especialidad');
-            $table->string('ced_fiscal');
-            $table->string('nssoc')->nullable();
+            $table->string('username',100);
             $table->timestamps();
-            $table->primary('id_prof');
-            $table->foreign('id_persona')->references('id_persona')->on('persona');
+
+            $table->foreign('username')->references('username')->on('personal');
+
         });
     }
 

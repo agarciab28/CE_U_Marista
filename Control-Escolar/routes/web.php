@@ -36,6 +36,8 @@ Route::post('/grupos','Auth\RegisterController@registroG')->name('admin_registra
 
 Route::get('/grupos', 'Auth\RegisterController@showFormG')->name('admin_registrarG');
 
+Route::post('/carreras', 'carrerasController@registro')->name('admin_carreras_registro');
+
 Route::get('/carreras', 'carrerasController@listaGrupos')->name('admin_carreras');
 
 Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_registro');
@@ -65,7 +67,7 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
 
   Route::get('/listas/profes', 'ListaProfesoresController@lista')->name('admin_lprofes');
 
-  Route::get('/listas/coordinadores', 'ListaCoordinadorController@lista')->name('admin_lcoordinadores');
+  Route::get('/listas/coordinadores', 'CoordinadorController@lista')->name('admin_lcoordinadores');
 
   Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
 

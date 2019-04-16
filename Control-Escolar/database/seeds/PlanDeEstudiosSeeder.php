@@ -20,14 +20,14 @@ class PlanDeEstudiosSeeder extends Seeder
         $plan_de_estudios->id_plan="2";
         $plan_de_estudios->id_carrera="anim";
         $plan_de_estudios->nombre_plan="Animacion Digital-2012";
-        $plan_de_estudios->fecha="2012-14-5";
+        $plan_de_estudios->fecha="2012-5-14";
         $plan_de_estudios->save();
 
         $plan_de_estudios = new plan_de_estudios();
         $plan_de_estudios->id_plan="3";
         $plan_de_estudios->id_carrera="arq";
         $plan_de_estudios->nombre_plan="Arquitectura-2010";
-        $plan_de_estudios->fecha="2010-30-4";
+        $plan_de_estudios->fecha="2010-4-4";
         $plan_de_estudios->save();
 
         $plan_de_estudios = new plan_de_estudios();

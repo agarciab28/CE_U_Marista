@@ -17,6 +17,5 @@ class plan_de_estudios extends Model
   ];
 
   protected $casts = [
-    "fecha" => "date"
   ];
 }
