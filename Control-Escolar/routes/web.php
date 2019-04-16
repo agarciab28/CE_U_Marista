@@ -79,7 +79,7 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
   Route::post('/grupos','gruposController@registroGrupo')->name('admin_registrar_Grupos');
 
   Route::get('/grupos','gruposController@showFormGrupo')->name('admin_registrarG');
-  
+
 
 
   Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
@@ -91,6 +91,7 @@ Route::group(["prefix" => 'docente'], function(){
     return view('docente.home');
   })->name('docente_home');
 
+  Route::get('/grupos','Auth\RegisterController@gruposProf')->name('docente_grupos');
 
 });
 //Route::get('/admin', function () {
