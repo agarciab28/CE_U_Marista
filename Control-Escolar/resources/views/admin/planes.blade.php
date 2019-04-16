@@ -111,7 +111,7 @@
 <!--modal modificar plan-->
 <div id="modal_modificar" class="modal bottom-sheet">
     <div class="modal-content">
-      <form class="col  s12 m12" id="form_plan" action="" method="post">
+      <form class="col  s12 m12" id="form_mod_plan" action="" method="post">
           {{ csrf_field() }}
 
           <div class="row">
@@ -125,31 +125,31 @@
 
             <div class="input-field col m2 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="text" id="plan_id" name="id_plan" class="validate" disabled required maxlength="35">
-                <label for="plan_id">Clave de plan</label>
+                <input type="text" id="mod_plan_id" name="id_plan" class="validate" disabled required maxlength="35">
+                <label for="mod_plan_id">Clave de plan</label>
             </div>
 
               <div class="input-field col m3 s12 ">
-                  <input type="text" name="nombrec" id="nombrec" class="validate" required maxlength="35">
-                  <label for="nombrec">Nombre de plan de estudios</label>
+                  <input type="text" name="nombrec" id="mod_nombrec" class="validate" required maxlength="35">
+                  <label for="mod_nombrec">Nombre de plan de estudios</label>
               </div>
 
               <div class="input-field col m4 s12 ">
-                  <select class="" name="carrera" id="carrera">
+                  <select class="" name="carrera" id="mod_carrera">
                     @foreach($carreras as $carrera)
                       <option value="{{$carrera->id_carrera}}">{{$carrera->nombre_carrera}}</option>
                     @endforeach
                   </select>
-                  <label for="carrera">Carrera</label>
+                  <label for="mod_carrera">Carrera</label>
               </div>
 
               <div class="input-field col m3 s12 ">
-                  <input type="text" name="fecha" class="datepicker" id="fecha">
-                  <label for="fecha">Fecha</label>
+                  <input type="text" name="fecha" class="datepicker" id="mod_fecha">
+                  <label for="mod_fecha">Fecha</label>
               </div>
 
               <div class="input-field col m4 s12">
-                  <button class="btn light-blue darken-4" type="submit" id="registrar_plan">Modificar plan de estudios
+                  <button class="btn light-blue darken-4" type="submit" id="mod_registrar_plan">Modificar plan de estudios
                       <i class="material-icons right">send </i>
                   </button>
               </div>

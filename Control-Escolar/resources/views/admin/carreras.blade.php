@@ -111,7 +111,7 @@
       {{-- modal modificar carrera --}}
       <div id="modal_modificar" class="modal bottom-sheet">
           <div class="modal-content">
-            <form class="col  s12 m12" id="form_carrera" action="{{route('admin_carreras_registro')}}" method="post">
+            <form class="col  s12 m12" id="form_mod_carrera" action="{{route('admin_carreras_registro')}}" method="post">
               {{ csrf_field() }}
               <div class="row">
                 <div class="col m4 push-m4 s12">
@@ -121,33 +121,33 @@
               <div class="row" id="data_carrera">
                 <div class="input-field col m4 s12 ">
                   <!--<i class="material-icons prefix">account_circle</i>-->
-                  <input type="text" name="id_carrera" id="idcarrera" class="validate" disabled required maxlength="35">
-                  <label for="idcarrera">ID Carrera</label>
+                  <input type="text" name="id_carrera" id="mod_idcarrera" class="validate" disabled required maxlength="35">
+                  <label for="mod_idcarrera">ID Carrera</label>
                 </div>
                 <div class="input-field col m4 s12 ">
                   <!--<i class="material-icons prefix">account_circle</i>-->
-                  <input type="text" name="nombrec" id="nombrec" class="validate" required maxlength="35">
-                  <label for="nombrec">Nombre de carrera</label>
+                  <input type="text" name="nombrec" id="mod_nombrec" class="validate" required maxlength="35">
+                  <label for="mod_nombrec">Nombre de carrera</label>
                 </div>
                 <div class="input-field col m4 s12 ">
                   <!--<i class="material-icons prefix">account_circle</i>-->
-                  <input type="text" name="creditos" id="creditos" class="validate" required maxlength="35">
-                  <label for="creditos">Creditos</label>
+                  <input type="text" name="creditos" id="mod_creditos" class="validate" required maxlength="35">
+                  <label for="mod_creditos">Creditos</label>
                 </div>
                 <div class="input-field col m4 s12 ">
                   <!--<i class="material-icons prefix">account_circle</i>-->
-                  <input type="text" name="cvervoe" id="cvervoe" class="validate" required maxlength="35">
-                  <label for="cvervoe">Clave RVOE</label>
+                  <input type="text" name="cvervoe" id="mod_cvervoe" class="validate" required maxlength="35">
+                  <label for="mod_cvervoe">Clave RVOE</label>
                 </div>
                 <div class="input-field col m4 s12 ">
                   <!--<i class="material-icons prefix">account_circle</i>-->
-                  <input type="text" id="fechar" name="fechar" class="validate" required maxlength="35">
-                  <label for="fechar">Fecha de registro</label>
+                  <input type="text" id="mod_fechar" name="fechar" class="validate" required maxlength="35">
+                  <label for="mod_fechar">Fecha de registro</label>
                 </div>
                 <div class="row">
                 </div>
                 <div class="input-field col m4 s12">
-                  <button class="btn light-blue darken-4" type="submit" id="registrar_carrera">Modificar carrera
+                  <button class="btn light-blue darken-4" type="submit" id="mod_registrar_carrera">Modificar carrera
                     <i class="material-icons right">send </i>
                   </button>
                 </div>
