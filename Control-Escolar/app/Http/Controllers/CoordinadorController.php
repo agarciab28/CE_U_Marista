@@ -9,8 +9,10 @@ use App\Models\coordinador;
 class CoordinadorController extends Controller
 {
   public function lista(){
-    $personas = persona::select('id_coordinador as usuario','coordinador.id_persona','nombres','apaterno','amaterno','fnaci','email')
-      ->join('coordinador','persona.id_persona','=','coordinador.id_persona')->get();
+    $personas = persona::select('c.username as usuario','p.id_persona','nombres','apaterno','amaterno','fnaci','email')
+      ->join('personal as p','persona.id_persona','=','p.id_persona')
+      ->join('coordinador as c','c.username','=','p.username')
+      ->get();
     return view('admin.listas.coordinadores',compact('personas'));
   }
 }

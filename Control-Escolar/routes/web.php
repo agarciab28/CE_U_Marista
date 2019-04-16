@@ -31,10 +31,6 @@ Route::group(["prefix" => 'admin'], function(){
 Route::post('/registrar','Auth\RegisterController@registro')->name('admin_registrar_envio');
 
 Route::get('/registrar', 'Auth\RegisterController@showForm')->name('admin_registrar');
-//rutas registro de grupos
-Route::post('/grupos','Auth\RegisterController@registroG')->name('admin_registrar_Grupos');
-
-Route::get('/grupos', 'Auth\RegisterController@showFormG')->name('admin_registrarG');
 
 Route::post('/carreras', 'carrerasController@registro')->name('admin_carreras_registro');
 
@@ -63,13 +59,13 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
     return view('admin.bitacora');
   })->name('admin_bitacora');
 
-  Route::get('/listas/alumnos', 'ListaAlumnosController@lista')->name('admin_lalumnos');
+  Route::get('/listas/alumnos', 'AlumnosController@lista')->name('admin_lalumnos');
 
-  Route::get('/listas/profes', 'ListaProfesoresController@lista')->name('admin_lprofes');
+  Route::get('/listas/profes', 'ProfesoresController@lista')->name('admin_lprofes');
 
   Route::get('/listas/coordinadores', 'CoordinadorController@lista')->name('admin_lcoordinadores');
 
-  Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
+
 
   Route::get('/modificar/usuarios', function(){
     return view('admin.modificar.usuarios');
@@ -78,6 +74,15 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
   Route::get('/asignar', function(){
     return view('admin.asignar');
   })->name('admin_asignar');
+
+  //rutas de grupos
+  Route::post('/grupos','gruposController@registroGrupo')->name('admin_registrar_Grupos');
+
+  Route::get('/grupos','gruposController@showFormGrupo')->name('admin_registrarG');
+  
+
+
+  Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
 });
 
 //Rutas Docentes
@@ -86,8 +91,7 @@ Route::group(["prefix" => 'docente'], function(){
     return view('docente.home');
   })->name('docente_home');
 
-  //rutas de grupos
-  Route::get('/grupos','Auth\RegisterController@gruposProf')->name('docente_grupos');
+
 });
 //Route::get('/admin', function () {
 //    return view('admin.admin_registro_alumno');
