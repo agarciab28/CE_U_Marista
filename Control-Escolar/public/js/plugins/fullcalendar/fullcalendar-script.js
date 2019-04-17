@@ -47,8 +47,8 @@
         },
         {
           title: 'Periodo actual',
-          start: '2019-04-07',
-          end: '2019-04-10',
+          start: '2019-01-07',
+          end: '2019-05-10',
           color: '#e91e63'
         }
       ]
