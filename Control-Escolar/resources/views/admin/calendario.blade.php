@@ -41,7 +41,6 @@
               <div class="row">
 
                 <form class="col s12" id="form_evento" action="" method="post">
-                  {{ csrf_field() }}
                   <div class="row">
                     <div class="input-field col m4 s12">
                       <input id="event" type="text" class="validate">
@@ -121,57 +120,53 @@
         </tr>
       </thead>
       <tbody>
-        @foreach($config as $configuracion)
         <tr>
-          <td>{{$configuracion->periodo_actual}}</td>
-          <td>{{$configuracion->fecha_inicio}}</td>
-          <td>{{$configuracion->fecha_terminacion}}</td>
-          <td>{{$configuracion->director}}</td>
-          <td>{{$configuracion->jefe_control_escolar}}</td>
-          <td>{{$configuracion->created_at}}</td>
-          <td>{{$configuracion->updated_at}}</td>
-          <td> <a href="#modal5" class="waves-effect waves-light btn modal-trigger">Modificar</a></td>
-          @endforeach
-          <div id="modal5" class="modal bottom-sheet">
-            <div class="modal-content">
-              <h4>Bitácora de movimientos</h4>
-              <ul class="collection">
-                <li class="collection-item avatar">
-                  <i class="mdi-file-folder circle"></i>
-                  <span class="title">Detalle</span>
-                  <table id="example" class="responsive-table striped" style="width:100%">
-                    <thead>
-                      <tr>
-                        <th>ID movimiento</th>
-                        <th>Usuario</th>
-                        <th>Rol</th>
-                        <th>Fecha y hora</th>
-                        <th>Tipo de moviento</th>
-                        <th>Tabla afectada</th>
-                        <th>Campo alterado</th>
-                        <th>Valor anterior</th>
-                        <th>Valor nuevo</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>U1</td>
-                        <td>adminprueba</td>
-                        <td>administrador</td>
-                        <td>YYYY-MM-DD HH:MI:SS</td>
-                        <td>Update</td>
-                        <td>Materias</td>
-                        <td>Nombre de materia</td>
-                        <td>Introducción a ingeniería</td>
-                        <td>ingeniería aplicada I</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
-                </li>
-              </ul>
+          <td>Ene-Jun2019</td>
+          <td>2019-01-30</td>
+          <td>2019-06-12</td>
+          <td>Paulino Rivas</td>
+          <td>Takeshi</td>
+          <td>2019-01-07 12:30:21</td>
+          <td>2019-02-07 12:30:21</td>
+          <td> <a href="#modal5" class="waves-effect waves-light btn modal-trigger">Actualizar</a>
+
+            <div id="modal5" class="modal bottom-sheet">
+              <div class="modal-content">
+                <h4>Configuración del periodo actual</h4>
+                <ul class="collection">
+                  <li class="collection-item avatar">
+                    <i class="mdi-file-folder circle"></i>
+                    <span class="title">Actualizar</span>
+                    <table id="example" class="responsive-table striped" style="width:100%">
+                      <thead>
+                        <tr>
+                          <th>Periodo actual</th>
+                          <th>Fecha inicio</th>
+                          <th>Fecha terminación</th>
+                          <th>Director</th>
+                          <th>Jefe de control escolar</th>
+                          <th>Fecha y hora de registro</th>
+                          <th>Fecha y hora de actualización</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Ene-Jun2019</td>
+                          <td>2019-01-30</td>
+                          <td>2019-06-12</td>
+                          <td>Paulino Rivas</td>
+                          <td>Takeshi</td>
+                          <td>2019-01-07 12:30:21</td>
+                          <td>2019-02-07 12:30:21</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
+          </td>
         </tr>
       </tbody>
     </table>
