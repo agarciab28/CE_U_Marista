@@ -143,3 +143,30 @@ form p:last-child {
 .fc-state-down {
   color: #ff4081 !important;
 }
+
+.color {
+  background-color: #FFB500 !important;
+}
+#task-card .task-card-title {
+  margin: 0;
+  color: #fff;
+  font-weight: 300;
+}
+#external-events {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+#event:focus+label,
+#descripcion:focus+label,
+#color:focus+label {
+    color: #003865;
+}
+
+#event:focus,
+#descripcion:focus,
+#color:focus {
+    border-bottom: 1px solid #003865;
+    box-shadow: none;
+}
