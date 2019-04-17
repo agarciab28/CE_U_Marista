@@ -51,6 +51,12 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+
+     public function __construct(){
+       $this->middleware('auth');
+
+     }
+
     protected function validator(array $data)
     {
         /*return Validator::make($data, [

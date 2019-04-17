@@ -125,7 +125,7 @@ class LoginAdminController extends Controller
         $datos=persona::where('id_persona','=',$usuario)->get();
         $nombre =$datos[0]->nombres." ".$datos[0]->apaterno." ".$datos[0]->amaterno;
         //$request->session()->put('id_admin', $request->id_admin);
-        session(['username'=>$request->username,'nombre'=>$nombre]);
+        session(['username'=>$request->username,'nombre'=>$nombre,'rol'=>$datos[0]->rol]);
         return $this->authenticated($request, $this->guard()->user())
                 ?: redirect()->intended(route('admin_home'));
     }
