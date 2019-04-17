@@ -22,32 +22,36 @@
                 <th>Calificación segundo parcial</th>
                 <th>Calificación final</th>
                 <th>Faltas</th>
+                <th>Guardar</th>
             </tr>
         </thead>
         <tbody>
 
             <tr>
-                <td> Jose Antnio Aguilar gonzales </td>
+                <td> José Carlos Arrollo Ayala</td>
                 <td> <input id="cal_1" name="cal_1" type="text" class=""> </td>
                 <td> <input id="cal_2" name="cal_2" type="text" class=""> </td>
                 <td> <input id="cal_3" name="cal_1" type="text" class=""> </td>
                 <td> <input id="cal_3" name="cal_1" type="text" class=""></td>
+                <td><a href="#" class="btn">guardar</a></td>
             </tr>
 
             <tr>
-                <td> Jose Antnio Aguilar gonzales </td>
+                <td> Manuel Felipe Acuña Anastacio </td>
                 <td> <input id="cal_1" name="cal_1" type="text" class=""> </td>
                 <td> <input id="cal_2" name="cal_2" type="text" class=""> </td>
                 <td> <input id="cal_3" name="cal_1" type="text" class=""> </td>
                 <td> <input id="cal_3" name="cal_1" type="text" class=""></td>
+                <td><a href="#" class="btn">guardar</a></td>
             </tr>
 
             <tr>
-                <td> Jose Antnio Aguilar gonzales </td>
+                <td> Jesus Aquiles Adenayor Amador</td>
                 <td> <input id="cal_1" name="cal_1" type="text" class=""> </td>
                 <td> <input id="cal_2" name="cal_2" type="text" class=""> </td>
                 <td> <input id="cal_3" name="cal_1" type="text" class=""> </td>
                 <td> <input id="cal_3" name="cal_1" type="text" class=""></td>
+                <td><a href="#" class="btn">guardar</a></td>
             </tr>
 
         </tbody>

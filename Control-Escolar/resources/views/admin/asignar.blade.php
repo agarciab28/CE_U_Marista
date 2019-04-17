@@ -27,14 +27,16 @@
                     </div>
           </div>
         <div class="row">
+
+
           <div class="input-field col m6 s12 ">
-            <input type="number" name="fperiodo" id="fperiodo" class="validate" required maxlength="35">
-            <label for="fperiodo">Semestre</label>
+
+            <label for="fcarrera">Carrera:  aqui iria la consulta de carrera</label>
           </div>
 
           <div class="input-field col m6 s12 ">
-            <input type="text" name="fcarrera" id="fcarrera" class="validate" required maxlength="35">
-            <label for="fcarrera">Carrera</label>
+            <input type="number" name="fperiodo" id="fperiodo" value="1" max="12" min="1" class="validate" required maxlength="35">
+            <label for="fperiodo">Semestre</label>
           </div>
         </div>
       </div>
