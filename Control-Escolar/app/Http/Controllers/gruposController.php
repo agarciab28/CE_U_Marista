@@ -44,7 +44,15 @@ class gruposController extends Controller
    ->get();
    return view('admin.listas.grupos',compact(['grupos']));
  }
-
+ public function showFormGrupoLista(){
+  $car= carrera::get(['id_carrera','nombre_carrera']);
+  $mat=materia::get(['id_materia','nombre_materia']);
+  $prof=profesor::select('nombres','apaterno','amaterno','id_prof')
+   ->join('personal as pe','pe.username','=','profesor.username')
+   ->join('persona as pers','pers.id_persona','=','pe.id_persona')
+   ->get();
+  return view('admin.listas.grupos',compact(['car','mat','prof']));
+}
 
  public function showFormGrupo(){
    $carreras= carrera::get(['id_carrera','nombre_carrera']);

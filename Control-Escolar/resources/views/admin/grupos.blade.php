@@ -12,7 +12,7 @@
 @section('content')
   <div class="section container">
       <div class="row">
-          <form class="col  s12 m12" id="" action="{{route('admin_registrar_Grupos')}}" method="post">
+          <form class="col  s12 m12" id="" action="" method="post">
           {{ csrf_field() }}
               <div class="row card-panel">
                 <div class="row">
@@ -29,7 +29,7 @@
                     <option value="" disabled>Elige una opcion</option>
                     @foreach($carreras as $carrera)
                         <option value="{{$carrera->id_carrera}}">{{$carrera->nombre_carrera}}</option>
-                    @endforeach()
+                    @endforeach
                     </select>
                     <label for="carrera">Carrera</label>
                   </div>

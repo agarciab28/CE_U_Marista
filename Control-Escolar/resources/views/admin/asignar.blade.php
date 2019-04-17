@@ -18,7 +18,7 @@
 
 -->
   <div class="container">
-    <form class="" action="index.html" method="post">
+    <form class="" action="{{route('Aqui va la ruta del controller')}}" method="post">
 
       <div class="filtros">
           <div class="row">
@@ -57,7 +57,7 @@
                 <tr>
                     <td>
                         <label>
-                          <input type="checkbox" class="filled-in" name="" value="">
+                          <input type="checkbox" class="filled-in" name="alumnos[]" value="">
                           <span>Seleccionar</span>
                         </label>
                     </td>
