@@ -72,15 +72,15 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
     return view('admin.modificar.usuarios');
   })->name('admin_musuarios');
 
-  Route::get('/asignar', function(){
-    return view('admin.asignar');
-  })->name('admin_asignar');
-
+  //Route::get('/asignar', function(){
+//    return view('admin.asignar');
+  //})->name('admin_asignar');
+  Route::get('/asignar/{idg}/{idc}','AlumnosController@lista_as')->name('admin_asignar');
   //rutas de grupos
   Route::post('/grupos','gruposController@registroGrupo')->name('admin_registrar_Grupos');
 
   Route::get('/grupos','gruposController@showFormGrupo')->name('admin_registrarG');
-  
+
 
 
   Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
@@ -92,6 +92,7 @@ Route::group(["prefix" => 'docente'], function(){
     return view('docente.home');
   })->name('docente_home');
 
+  Route::get('/grupos','Auth\RegisterController@gruposProf')->name('docente_grupos');
 
 });
 //Route::get('/admin', function () {

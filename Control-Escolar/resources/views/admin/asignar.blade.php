@@ -7,11 +7,16 @@
   <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
   <link href="{{{ asset('css/admin/usuarios.css') }}}" rel="stylesheet">
   <link href="{{{ asset('css/admin/alumnos.css') }}}" rel="stylesheet">
-@endsection 
+@endsection
 
 @section('title', 'Asignar Alumnos')
 
 @section('content')
+
+  <!--Se recibe por URL id de grupo e id_carrera, se necesita un filtrado de alumnos de la carrera del id_carrera y mostrarlos en
+  la tabla. Posteriormente, con el con los check box, seleccionar a los alumnos que formaran parte  del grupo
+
+-->
   <div class="container">
     <form class="" action="index.html" method="post">
 
@@ -23,8 +28,8 @@
           </div>
         <div class="row">
           <div class="input-field col m6 s12 ">
-            <input type="text" name="fperiodo" id="fperiodo" class="validate" required maxlength="35">
-            <label for="fperiodo">Ciclo escolar</label>
+            <input type="number" name="fperiodo" id="fperiodo" class="validate" required maxlength="35">
+            <label for="fperiodo">Semestre</label>
           </div>
 
           <div class="input-field col m6 s12 ">
@@ -39,13 +44,14 @@
             <thead>
                 <tr>
                     <th>Seleccionar</th>
-                    <th>Nombre de Usuario</th>
+                    <th>Número de control</th>
                     <th>Nombre Completo</th>
                     <th>Fecha de Nacimiento</th>
                     <th>Correo Electronico</th>
                 </tr>
             </thead>
             <tbody>
+                          @foreach($personas as $persona)
                 <tr>
                     <td>
                         <label>
@@ -53,11 +59,12 @@
                           <span>Seleccionar</span>
                         </label>
                     </td>
-                    <td>fdghdf</td>
-                    <td>fdghd</td>
-                    <td>dfhg</td>
-                    <td>fdghd</td>
+                    <td>{{$persona->ncontrol}}</td>
+                    <td>{{$persona->nombres}}</td>
+                    <td>{{$persona->fnaci}}</td>
+                    <td>{{$persona->email}}</td>
                 </tr>
+                              @endforeach
             </tbody>
         </table>
         <div class="input-field">
