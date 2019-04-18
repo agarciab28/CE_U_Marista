@@ -129,48 +129,64 @@
           <td>Takeshi</td>
           <td>2019-01-07 12:30:21</td>
           <td>2019-02-07 12:30:21</td>
-          <td> <a href="#modal5" class="waves-effect waves-light btn modal-trigger">Actualizar</a>
+          <td> <a href="#modal5" class="waves-effect waves-light btn modal-trigger">Modificar</a>
 
             <div id="modal5" class="modal bottom-sheet">
               <div class="modal-content">
-                <h4>Configuración del periodo actual</h4>
-                <ul class="collection">
-                  <li class="collection-item avatar">
-                    <i class="mdi-file-folder circle"></i>
-                    <span class="title">Actualizar</span>
-                    <table id="example" class="responsive-table striped" style="width:100%">
-                      <thead>
-                        <tr>
-                          <th>Periodo actual</th>
-                          <th>Fecha inicio</th>
-                          <th>Fecha terminación</th>
-                          <th>Director</th>
-                          <th>Jefe de control escolar</th>
-                          <th>Fecha y hora de registro</th>
-                          <th>Fecha y hora de actualización</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Ene-Jun2019</td>
-                          <td>2019-01-30</td>
-                          <td>2019-06-12</td>
-                          <td>Paulino Rivas</td>
-                          <td>Takeshi</td>
-                          <td>2019-01-07 12:30:21</td>
-                          <td>2019-02-07 12:30:21</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+                <form class="col  s12 m12" id="form_materia" action="" method="post">
+                    {{ csrf_field() }}
+
+                    <div class="row">
+                        <div class="col m4 push-m4 s12">
+                            <h4 style="text-align:center;">Modificar Periodo Escolar Actual</h4>
+                        </div>
+                    </div>
+
+                    <div class="row" >
+
+                      <div class="input-field col m3 s12 ">
+                          <!--<i class="material-icons prefix">account_circle</i>-->
+                          <input type="text" id="periodo_actual" name="periodo_actual" class="validate" required >
+                          <label for="periodo_actual">Periodo Actual</label>
+                      </div>
+
+                      <div class="input-field col m3 s12 ">
+                          <!--<i class="material-icons prefix">date_range</i>-->
+                          <label for="fecha_inicio">Fecha de inicio </label>
+                          <input type="text" name="finicio" class="datepicker" id="fecha_inicio">
+                      </div>
+
+                      <div class="input-field col m3 s12 ">
+                          <!--<i class="material-icons prefix">date_range</i>-->
+                          <label for="fecha_terminacion">Fecha de terminación </label>
+                          <input type="text" name="fterm" class="datepicker" id="fecha_terminacion">
+                      </div>
+
+                      <div class="input-field col m3 s12 ">
+                          <!--<i class="material-icons prefix">account_circle</i>-->
+                          <input type="text" id="director" name="director" class="validate" required >
+                          <label for="director">Director</label>
+                      </div>
+
+                      <div class="input-field col m3 s12 ">
+                          <!--<i class="material-icons prefix">account_circle</i>-->
+                          <input type="text" id="jefe_control" name="jefe_control" class="validate" required >
+                          <label for="jefe_control">Jefe de Control Escolar</label>
+                      </div>
+
+
+
+                      <div class="row">
+
+                      </div>
+
+                        <div class="input-field col m2 s12">
+                            <button class="btn light-blue darken-4" type="submit" id="actualizar_periodo">Actualizar
+                                <i class="material-icons right">send </i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
   </div>
 </div>
 <!--end container-->

@@ -67,9 +67,13 @@ class gruposController extends Controller
 
 
  public function gruposProf(){
-   $carreras= carrera::get(['id_carrera','nombre_carrera']);
-   $registro=false;
-   return view('docente.grupos',compact(['registro','carreras']));
+
+   $grupos_de_profesor= grupo::select('grupo.id_grupo as id_grupo','nombre_materia')
+   ->join('profesor as p','p.id_prof','=','grupo.id_prof')
+   ->join('materia as m','m.id_materia','=','grupo.id_materia')
+   ->where('p.username','=',session('username'))->get();
+
+   return view('docente.grupos',compact('grupos_de_profesor'));
  }
 
 
