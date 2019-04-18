@@ -69,27 +69,27 @@
                   <div class="input-field col s12 m3">
                     <select class="" name="carrera" id="carrera">
                       <option value="" disabled>Elige una opcion</option>
-        
+
                     </select>
                     <label for="carrera">Carrera</label>
                   </div>
                   <div class="input-field col s12 m3">
                     <select class="" name="materia" id="materia">
                       <option value="" disabled>Elige una opcion</option>
-               
+
                     </select>
                     <label for="materia">Materia</label>
                   </div>
                   <div class="input-field col s12 m6">
                     <select class="" name="profesor" id="profesor">
                       <option value="" disabled>Elige una opcion</option>
-      
+
                     </select>
                     <label for="profesor">Profesor</label>
                   </div>
                   <div class="input-field col s12 m6">
                     <input type="text" name="periodo" id="periodo" value="">
-                
+
                     </select>
                     <label for="periodo">Periodo</label>
                   </div>
