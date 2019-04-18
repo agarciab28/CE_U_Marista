@@ -13,13 +13,15 @@
   <div class="row">
       <div class="col s12 m4">
           <div class="card card-grupo">
+            @foreach($grupos_de_profesor as $grupo)
               <div class="card-content black-text z-depth-3">
-                  <span class="card-title">Grupo:</span>
+                  <span class="card-title">Grupo: {{$grupo->id_grupo}}</span>
                   <p>
-                    Materia: <br>
+                    Materia: {{$grupo->nombre_materia}}<br>
                     Horario:
                   </p>
               </div>
+              @endforeach
               <div class="card-action">
                   <a href="#modal1" class="modal-trigger"><i class="fas fa-cog"></i> Opciones</a>
               </div>
@@ -28,7 +30,6 @@
   </div>
 </div>
 
-<!--@foreach($carreras as $carrera)<option value="{{$carrera->id_carrera}}">{{$carrera->nombre_carrera}}</option>@endforeach-->
 
 <!--modal-->
 <div id="modal1" class="modal bottom-sheet">
