@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(profesoresSeeder::class);
         $this->call(coordinadoresSeeder::class);
         $this->call(grupos::class);
+        $this->call(eventosSeeder::class);
 
     }
 }
