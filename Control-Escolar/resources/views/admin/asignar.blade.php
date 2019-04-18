@@ -53,7 +53,7 @@
                 </tr>
             </thead>
             <tbody>
-
+                          @foreach($personas as $persona)
                 <tr>
                     <td>
                         <label>
@@ -61,19 +61,16 @@
                           <span>Seleccionar</span>
                         </label>
                     </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{$persona->ncontrol}}</td>
+                    <td>{{$persona->nombres}}</td>
+                    <td>{{$persona->fnaci}}</td>
+                    <td>{{$persona->email}}</td>
                 </tr>
-
+                              @endforeach
             </tbody>
         </table>
         <div class="input-field">
-          <button type="button" id="asignar_agp" class="btn" name="button">Registrar</button>
-        </div>
-        <div id="wea">
-
+          <button type="button" class="btn" name="button">Registrar</button>
         </div>
     </form>
 
@@ -81,8 +78,8 @@
 @endsection
 
 @section('scripts')
-  <script src="{{{ asset('js/asignar.js') }}}"></script>
-  <script src="{{{ asset('js/validaciones.js') }}}"></script>
+  <script src="{{{ asset('js/datatables.js') }}}"></script>
+
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
