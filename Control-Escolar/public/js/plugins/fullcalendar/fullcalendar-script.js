@@ -44,7 +44,7 @@
         center: 'title',
         right: 'month,basicWeek,basicDay'
       },
-      defaultDate: '2015-05-12',
+      defaultDate: moment(),
       editable: false,
       droppable: false, // this allows things to be dropped onto the calendar
       eventLimit: true, // allow "more" link when too many events
