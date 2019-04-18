@@ -86,6 +86,10 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
 
 
   Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
+
+  Route::get('/get_eventos','calendarioController@eventos')->name('get_eventos');
+
+  Route::post('/nuevo_evento','calendarioController@registra_evento')->name('evento_nuevo');
 });
 
 //Rutas Docentes

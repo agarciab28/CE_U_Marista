@@ -40,23 +40,24 @@
               </div>
               <div class="row">
 
-                <form class="col s12" id="form_evento" action="" method="post">
+                <form class="col s12" id="form_evento" action="{{route('evento_nuevo')}}" method="post">
+                  {{ csrf_field() }}
                   <div class="row">
                     <div class="input-field col m4 s12">
-                      <input id="event" type="text" class="validate">
+                      <input id="event" type="text" name="nombre" class="validate">
                       <label for="event">Nombre del evento</label>
                     </div>
                     <div class="input-field col m3 s12">
                       <label for="fecha1">Fecha de inicio </label>
-                      <input type="text" name="fstart" class="datepicker" id="fstart">
+                      <input type="text" name="inicio" class="datepicker" id="fstart">
                     </div>
                     <div class="input-field col m3 s12">
                       <label for="fecha2">Fecha de cierre </label>
-                      <input type="text" name="fend" class="datepicker" id="fend">
+                      <input type="text" name="fin" class="datepicker" id="fend">
                     </div>
                     <div id="color" class="input-field col m2 s12">
-                      <select>
-                        <option value="" disabled selected>Elija una opción</option>
+                      <select name="color">
+                        <option value="green" disabled selected>Elija una opción</option>
                         <option value="#f44336">Color rojo</option>
                         <option value="#e91e63">Color rosa</option>
                         <option value="#9c27b0">Color purpura</option>
