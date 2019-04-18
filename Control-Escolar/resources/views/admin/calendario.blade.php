@@ -40,23 +40,24 @@
               </div>
               <div class="row">
 
-                <form class="col s12" id="form_evento" action="" method="post">
+                <form class="col s12" id="form_evento" action="{{route('evento_nuevo')}}" method="post">
+                  {{ csrf_field() }}
                   <div class="row">
                     <div class="input-field col m4 s12">
-                      <input id="event" type="text" class="validate">
+                      <input id="event" type="text" name="nombre" class="validate">
                       <label for="event">Nombre del evento</label>
                     </div>
                     <div class="input-field col m3 s12">
                       <label for="fecha1">Fecha de inicio </label>
-                      <input type="text" name="fstart" class="datepicker" id="fstart">
+                      <input type="text" name="inicio" class="datepicker" id="fstart">
                     </div>
                     <div class="input-field col m3 s12">
                       <label for="fecha2">Fecha de cierre </label>
-                      <input type="text" name="fend" class="datepicker" id="fend">
+                      <input type="text" name="fin" class="datepicker" id="fend">
                     </div>
                     <div id="color" class="input-field col m2 s12">
-                      <select>
-                        <option value="" disabled selected>Elija una opción</option>
+                      <select name="color">
+                        <option value="green" disabled selected>Elija una opción</option>
                         <option value="#f44336">Color rojo</option>
                         <option value="#e91e63">Color rosa</option>
                         <option value="#9c27b0">Color purpura</option>
@@ -120,53 +121,57 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Ene-Jun2019</td>
-          <td>2019-01-30</td>
-          <td>2019-06-12</td>
-          <td>Paulino Rivas</td>
-          <td>Takeshi</td>
-          <td>2019-01-07 12:30:21</td>
-          <td>2019-02-07 12:30:21</td>
-          <td> <a href="#modal5" class="waves-effect waves-light btn modal-trigger">Actualizar</a>
 
-            <div id="modal5" class="modal bottom-sheet">
-              <div class="modal-content">
-                <h4>Configuración del periodo actual</h4>
-                <ul class="collection">
-                  <li class="collection-item avatar">
-                    <i class="mdi-file-folder circle"></i>
-                    <span class="title">Actualizar</span>
-                    <table id="example" class="responsive-table striped" style="width:100%">
-                      <thead>
-                        <tr>
-                          <th>Periodo actual</th>
-                          <th>Fecha inicio</th>
-                          <th>Fecha terminación</th>
-                          <th>Director</th>
-                          <th>Jefe de control escolar</th>
-                          <th>Fecha y hora de registro</th>
-                          <th>Fecha y hora de actualización</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Ene-Jun2019</td>
-                          <td>2019-01-30</td>
-                          <td>2019-06-12</td>
-                          <td>Paulino Rivas</td>
-                          <td>Takeshi</td>
-                          <td>2019-01-07 12:30:21</td>
-                          <td>2019-02-07 12:30:21</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
-                  </li>
-                </ul>
-              </div>
+        <tr>
+          <td>periodo_actual</td>
+          <td>fecha_inicio</td>
+          <td>fecha_terminacion</td>
+          <td>director</td>
+          <td>jefe_control_escolar</td>
+          <td>registro</td>
+          <td>actualización</td>
+          <td> <a href="#modal5" class="waves-effect waves-light btn modal-trigger">Modificar</a></td>
+
+          <div id="modal5" class="modal bottom-sheet">
+            <div class="modal-content">
+              <h4>Bitácora de movimientos</h4>
+              <ul class="collection">
+                <li class="collection-item avatar">
+                  <i class="mdi-file-folder circle"></i>
+                  <span class="title">Detalle</span>
+                  <table id="example" class="responsive-table striped" style="width:100%">
+                    <thead>
+                      <tr>
+                        <th>ID movimiento</th>
+                        <th>Usuario</th>
+                        <th>Rol</th>
+                        <th>Fecha y hora</th>
+                        <th>Tipo de moviento</th>
+                        <th>Tabla afectada</th>
+                        <th>Campo alterado</th>
+                        <th>Valor anterior</th>
+                        <th>Valor nuevo</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>U1</td>
+                        <td>adminprueba</td>
+                        <td>administrador</td>
+                        <td>YYYY-MM-DD HH:MI:SS</td>
+                        <td>Update</td>
+                        <td>Materias</td>
+                        <td>Nombre de materia</td>
+                        <td>Introducción a ingeniería</td>
+                        <td>ingeniería aplicada I</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
+                </li>
+              </ul>
             </div>
-          </td>
+          </div>
         </tr>
       </tbody>
     </table>

@@ -1,5 +1,7 @@
 
   $(document).ready(function() {
+
+
     /* initialize the external events
     -----------------------------------------------------------------*/
     $('#external-events .fc-event').each(function() {
@@ -20,8 +22,15 @@
 
     });
 
-    
-
+    var eventos=[];
+    $.ajax({
+      url:"/admin/get_eventos",
+      type:"GET",
+      dataType:"JSON",
+      async:false
+    }).done(function(response){
+      eventos = response;
+    })
     /* initialize the calendar
     -----------------------------------------------------------------*/
     var fecha = new Date();
@@ -35,23 +44,11 @@
         center: 'title',
         right: 'month,basicWeek,basicDay'
       },
-      defaultDate: $fecha,
-      editable: true,
-      droppable: true, // this allows things to be dropped onto the calendar
+      defaultDate: '2015-05-12',
+      editable: false,
+      droppable: false, // this allows things to be dropped onto the calendar
       eventLimit: true, // allow "more" link when too many events
-      events: [
-        {
-          title: 'All Day Event',
-          start: '2019-04-01',
-          color: '#9c27b0'
-        },
-        {
-          title: 'Periodo actual',
-          start: '2019-01-07',
-          end: '2019-05-10',
-          color: '#e91e63'
-        }
-      ]
+      events: eventos
     });
-    
+
   });
