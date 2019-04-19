@@ -100,6 +100,13 @@ Route::group(["prefix" => 'docente'], function(){
 
   Route::get('/grupos','gruposController@gruposProf')->name('docente_grupos');
 
+  Route::get('/pdf', function(){
+    $pdf = PDF::loadview('docente.pdfA');
+    return $pdf->download('Boleta de Calificaciones.pdf');
+  })->name('docente_pdfA');
+
+  Route::get('/pdf','genPDFController@index')->name('docente_pdf');
+
 });
 //Route::get('/admin', function () {
 //    return view('admin.admin_registro_alumno');

@@ -1,0 +1,27 @@
+body{
+  font-family: "Times New Roman";
+  color: black ;
+}
+
+.headPDF{
+  text-align: center;
+  color: rgb(8,58,99);
+  font-family: Century;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.subHeadPDF {
+  text-align: center;
+  font-family: Century;
+  font-size: 14px;
+  color: white;
+  background: rgb(8,58,99);
+  margin: 0 0 15px;
+  overflow: hidden;
+  padding: 5px;
+  border-radius: 25px 25px 25px 25px;
+  -moz-border-radius: 25px 25px 25px 25px;
+  -webkit-border-radius: 25px 25px 25px 25px;
+  border: 2px solid #5878ca;
+}
