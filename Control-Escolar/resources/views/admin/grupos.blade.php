@@ -52,10 +52,27 @@
                     <label for="profesor">Profesor</label>
                   </div>
                   <div class="input-field col s12 m6">
+                    <input type="text" name="aula" id="aula" value="">
+                    <label for="aula">Aula</label>
+                  </div>
+                  <div class="input-field col s12 m3">
+                    <input type="text" class="timepicker" name="hora_ini" id="hora_ini" value="">
+                    <label for="hora_ini">Hora Inicio</label>
+                  </div>
+                  <div class="input-field col s12 m3">
+                    <input type="text" class="timepicker" name="hora_fin" id="hora_fin" value="">
+                    <label for="hora_fin">Hora Final</label>
+                  </div>
+                  <div class="input-field col s12 m6">
                     <input type="text" name="periodo" id="periodo" value="">
 
                     <label for="periodo">Periodo</label>
                   </div>
+                  <div class="row">
+
+                  </div>
+
+                  <a href="#modal_asignar" class="btn modal-trigger">Asignar Alumnos</a>
 
                   <div class="row">
                   </div>
@@ -68,6 +85,53 @@
               </div>
           </form>
       </div>
+  </div>
+
+  <!-- Modal asignar -->
+  <div id="modal_asignar" class="modal">
+    <div class="modal-content">
+      form class="" action="" method="post">
+
+        <div class="filtros">
+            <div class="row">
+                      <div class="col m6 push-m3 s12" style="text-align: center;">
+                        <h4>Asignación de alumnos a grupo</h4>
+                      </div>
+            </div>
+          <div class="row">
+
+
+            <div class="input-field col m6 s12 ">
+
+              <label for="fcarrera">Carrera:  aqui iria la consulta de carrera</label>
+            </div>
+
+            <div class="input-field col m6 s12 ">
+              <input type="number" name="fperiodo" id="fperiodo" value="1" max="12" min="1" class="validate" required maxlength="35">
+              <label for="fperiodo">Semestre</label>
+            </div>
+          </div>
+        </div>
+
+
+        <table id="example" class="responsive-table striped" style="width:100%">
+              <thead>
+                  <tr>
+                      <th>Seleccionar</th>
+                      <th>Número de control</th>
+                      <th>Nombre Completo</th>
+                      <th>Fecha de Nacimiento</th>
+                      <th>Correo Electronico</th>
+                  </tr>
+              </thead>
+              <tbody>
+              </tbody>
+          </table>
+          <div class="input-field">
+            <button type="button" class="btn modal-close" name="button">Registrar</button>
+          </div>
+      </form>
+    </div>
   </div>
 @endsection
 
