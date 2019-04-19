@@ -52,6 +52,18 @@
                     <label for="profesor">Profesor</label>
                   </div>
                   <div class="input-field col s12 m6">
+                    <input type="text" name="aula" id="aula" value="">
+                    <label for="aula">Aula</label>
+                  </div>
+                  <div class="input-field col s12 m3">
+                    <input type="text" class="timepicker" name="hora_ini" id="hora_ini" value="">
+                    <label for="hora_ini">Hora Inicio</label>
+                  </div>
+                  <div class="input-field col s12 m3">
+                    <input type="text" class="timepicker" name="hora_fin" id="hora_fin" value="">
+                    <label for="hora_fin">Hora Final</label>
+                  </div>
+                  <div class="input-field col s12 m6">
                     <input type="text" name="periodo" id="periodo" value="">
 
                     <label for="periodo">Periodo</label>
