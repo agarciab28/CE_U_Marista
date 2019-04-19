@@ -40,7 +40,7 @@
                 <a href="{{ route('alumnosxgrupo') }}" class="collection-item black-text">Consultar</a>
                 <a href="#!" class="collection-item black-text">Método de evaluación</a>
                 <a href="#!" class="collection-item black-text">Obtener acta de calificaciones</a>
-                <a href="#!" class="collection-item black-text">Generar PDF</a>
+                <a href="{{ route('docente_pdf') }}" class="collection-item black-text">Generar PDF</a>
             </div>
         </p>
     </div>
