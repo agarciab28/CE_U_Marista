@@ -18,10 +18,8 @@
         <thead>
             <tr>
                 <th>Nombre de alumno</th>
-                <th>Calificación primer parcial</th>
-                <th>Calificación segundo parcial</th>
-                <th>Examen Final</th>
-                <th>Faltas</th>
+                <th>Calificación Sugerida</th>
+                <th>Calificacion Final</th>
                 <th>Guardar</th>
             </tr>
         </thead>
@@ -29,28 +27,22 @@
 
             <tr>
                 <td> José Carlos Arrollo Ayala</td>
-                <td> <input id="cal_1" name="cal_1" type="text" class=""> </td>
-                <td> <input id="cal_2" name="cal_2" type="text" class=""> </td>
-                <td> <input id="examen" name="examen" type="text" class=""> </td>
-                <td> <input id="faltas" name="faltas" type="text" class=""></td>
+                <td>100</td>
+                <td> <input id="calif" name="calif" type="text" class=""></td>
                 <td><a href="#" class="btn">guardar</a></td>
             </tr>
 
             <tr>
                 <td> Manuel Felipe Acuña Anastacio </td>
-                <td> <input id="cal_1" name="cal_1" type="text" class=""> </td>
-                <td> <input id="cal_2" name="cal_2" type="text" class=""> </td>
-                <td> <input id="examen" name="examen" type="text" class=""> </td>
-                <td> <input id="faltas" name="faltas" type="text" class=""></td>
+                <td>100</td>
+                <td> <input id="calif" name="calif" type="text" class=""></td>
                 <td><a href="#" class="btn">guardar</a></td>
             </tr>
 
             <tr>
                 <td> Jesus Aquiles Adenayor Amador</td>
-                <td> <input id="cal_1" name="cal_1" type="text" class=""> </td>
-                <td> <input id="cal_2" name="cal_2" type="text" class=""> </td>
-                <td> <input id="examen" name="examen" type="text" class=""> </td>
-                <td> <input id="faltas" name="faltas" type="text" class=""></td>
+                <td>100</td>
+                <td> <input id="calif" name="calif" type="text" class=""></td>
                 <td><a href="#" class="btn">guardar</a></td>
             </tr>
 

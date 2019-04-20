@@ -100,6 +100,14 @@ Route::group(["prefix" => 'docente'], function(){
     return view('docente.home');
   })->name('docente_home');
 
+  Route::get('/consulta', function(){
+    return view('docente.opciones.alumnos');
+  })->name('docente_consulta');
+
+  Route::get('/calif_finales', function(){
+    return view('docente.opciones.calif_finales');
+  })->name('docente_calif');
+
   Route::get('/grupos','gruposController@gruposProf')->name('docente_grupos');
 
   Route::get('/pdf2', function(){
@@ -124,7 +132,3 @@ Route::get('/pba', function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/alumnosxgrupo', function(){
-  return view('docente.opciones.alumnos');
-})->name('alumnosxgrupo');
