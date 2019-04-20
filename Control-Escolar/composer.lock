@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b953c6925f12f1846bde9534acc6209d",
+    "content-hash": "0740a93f861c458781dbe582b899a5be",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -1081,6 +1081,74 @@
                 "psysh"
             ],
             "time": "2018-10-12T19:39:35+00:00"
+        },
+        {
+            "name": "laravelcollective/html",
+            "version": "5.7.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "fd12a0ef760c0ee07a98ff033caf74ae080cfbf0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/fd12a0ef760c0ee07a98ff033caf74ae080cfbf0",
+                "reference": "fd12a0ef760c0ee07a98ff033caf74ae080cfbf0",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "5.7.*",
+                "illuminate/routing": "5.7.*",
+                "illuminate/session": "5.7.*",
+                "illuminate/support": "5.7.*",
+                "illuminate/view": "5.7.*",
+                "php": ">=7.1.3"
+            },
+            "require-dev": {
+                "illuminate/database": "5.7.*",
+                "mockery/mockery": "~1.0",
+                "phpunit/phpunit": "~7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.7-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Collective\\Html\\HtmlServiceProvider"
+                    ],
+                    "aliases": {
+                        "Form": "Collective\\Html\\FormFacade",
+                        "Html": "Collective\\Html\\HtmlFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                },
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                }
+            ],
+            "description": "HTML and Form Builders for the Laravel Framework",
+            "homepage": "https://laravelcollective.com",
+            "time": "2019-01-25T18:42:58+00:00"
         },
         {
             "name": "lcobucci/jwt",

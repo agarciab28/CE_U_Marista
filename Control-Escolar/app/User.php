@@ -26,7 +26,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
@@ -34,4 +34,9 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+     public function scopeSemestre ($query, $semestre){
+       if($semestre)
+        return $query->where("semestre", $semestre);
+     }
 }
