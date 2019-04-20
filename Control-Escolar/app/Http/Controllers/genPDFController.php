@@ -6,7 +6,15 @@ use Illuminate\Http\Request;
 
 class genPDFController extends Controller
 {
-    public function index(){
+    public function pdfA(){
       return view('docente.pdfA');
+    }
+
+    public function pdfB(){
+      return view('docente.pdfB');
+    }
+
+    public function pdfF(){
+      return view('docente.pdfF');
     }
 }

@@ -7,7 +7,7 @@
       <div class="col s12 m4 l2"><img src="{{{ asset('img/logos/logo_1_a.png') }}}" alt="" width="150%" style="margin:20px"></div>
       <div class="col s12 m4 l8"><div class="tabPDF center" style="margin:20px">UNIVERSIDAD MARISTA VALLADOLID</div></div>
       <div class="col s12 m4 l8"><div class="headPDF">BOLETA DE CALIFICACIONES</div></div>
-      <div class="col s12"><div class="tabPDF center">EVALUACIÓN ORDINARIA</div></div>
+      <div class="col s12"><div class="tabPDF center">EVALUACIÓN FINAL</div></div>
     </div>
     <br>
     <div class="subHeadPDF">DATOS DEL GRUPO</div>
@@ -38,10 +38,8 @@
               <th class="tabPDF">No</th>
               <th class="tabPDF">No CTRL</th>
               <th class="tabPDF">Nombre del alumno</th>
-              <th class="tabPDF">Primer parcial</th>
-              <th class="tabPDF">Segundo parcial</th>
-              <th class="tabPDF">Tercer parcial</th>
-              <th class="tabPDF">Calificación final</th>
+              <th class="tabPDF">Tipo de evaluación</th>
+              <th class="tabPDF">Calificación</th>
           </tr>
         </thead>
 
@@ -50,18 +48,13 @@
             <td>1</td>
             <td>15121183</td>
             <td>Samuel Alejandro López Becerra</td>
-            <td>80</td>
-            <td>76</td>
-            <td>84</td>
+            <td>2DO EXTRAORDINARIO</td>
             <td>80</td>
           </tr>
           <tr>
             <td></td>
             <td></td>
             <td class="tabPDF">Promedio grupal</td>
-            <td class="tabPDF">80</td>
-            <td class="tabPDF">76</td>
-            <td class="tabPDF">84</td>
             <td class="tabPDF">80</td>
           </tr>
         </tbody>
