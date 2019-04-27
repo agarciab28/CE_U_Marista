@@ -37,7 +37,7 @@
                   {!! Form::open(['route'=> array('admin_asignar', $idg,$idc), 'method'=>'GET', 'files' => true, 'role' => 'form']) !!}
                   <div class="input-field col m4 s12 ">
 
-                    <label for="fcarrera">Carrera:  aqui iria la consulta de carrera</label>
+                    <label for="fcarrera">Carrera:</label>
                   </div>
                   <div class="input-field col m4 s12 ">
                     {!! Form::number('semestre',null,['class'=>'form-control', 'placeholder'=>'1', 'max' => '12', 'min' => '1']) !!}
@@ -55,8 +55,8 @@
 
 
 
-<form class="" action="" method="post">
-
+<form class="" action="{{route('admin_asignar_grupo')}}" method="post">
+{{ csrf_field() }}
       <table id="example" class="responsive-table striped" style="width:100%">
             <thead>
                 <tr>
@@ -72,7 +72,7 @@
     <tr>
         <td>
             <label>
-              <input type="checkbox" class="filled-in" name="alumnos[]" value="">
+              <input type="checkbox" class="filled-in" name="alumnos[]" value="{{$persona->ncontrol}},{{$persona->nombres}},{{$idg}}">
               <span>Seleccionar</span>
             </label>
         </td>
@@ -85,7 +85,7 @@
             </tbody>
         </table>
         <div class="input-field">
-          <button type="button" class="btn" name="button">Registrar</button>
+          <button type="submit" class="btn" name="button">Registrar</button>
         </div>
 
     </form>
@@ -98,7 +98,6 @@
 @section('scripts')
   <script src="{{{ asset('js/datatables.js') }}}"></script>
   <script src="{{{ asset('js/asignar.js') }}}"></script>
-
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>

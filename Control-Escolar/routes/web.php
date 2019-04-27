@@ -85,13 +85,15 @@ Route::get('/asignar/{idg}/{idc}','AlumnosController@lista_as')->name('admin_asi
 
   Route::get('/grupos','gruposController@showFormGrupo')->name('admin_registrarG');
 
-
+  Route::post('/asig','asignarController@guardar')->name('admin_asignar_grupo');
 
   Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
 
   Route::get('/get_eventos','calendarioController@eventos')->name('get_eventos');
 
   Route::post('/nuevo_evento','calendarioController@registra_evento')->name('evento_nuevo');
+
+
 });
 
 //Rutas Docentes

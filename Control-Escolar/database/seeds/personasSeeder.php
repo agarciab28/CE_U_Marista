@@ -157,7 +157,25 @@ class personasSeeder extends Seeder
         $persona->num_cel='443444121';
         $persona->save();
 
-
+        $persona= new persona();
+        $persona->rol='alumno';
+        $persona->nombres='Javier';
+        $persona->apaterno='Perez';
+        $persona->amaterno='Santos';
+        $persona->curp='yyxxxxxxxxxxxxxxxx';
+        $persona->fnaci='1996-8-12';
+        $persona->sexo='M';
+        $persona->email='Javier@example.example.com';
+        $persona->calle='Independencia';
+        $persona->num_int='503';
+        $persona->num_ext='503';
+        $persona->colonia='Revolucion';
+        $persona->codigo_postal='58337';
+        $persona->ciudad='Morelia';
+        $persona->estado='Michoacan';
+        $persona->num_tel='443321313';
+        $persona->num_cel='443321121';
+        $persona->save();
 
     }
 }

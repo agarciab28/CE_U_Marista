@@ -13,13 +13,13 @@ class ListaGrupo extends Migration
      */
     public function up()
     {
-        Schema::create('lg', function (Blueprint $table) {
-            $table->increments('id_lg');
-            $table->integer('id_grupo');
-            $table->integer('id_persona');
+        Schema::create('lista_grupo', function (Blueprint $table) {
+            $table->increments('id_lista_grupo',10);
+            $table->integer('ncontrol')->unique();
+            $table->string('nombres');
+            $table->integer('id_grupo')->unsigned();
             $table->timestamps();
             
-            $table->foreign('id_persona')->references('id_persona')->on('persona');
             $table->foreign('id_grupo')->references('id_grupo')->on('grupo');
         });
     }
@@ -31,6 +31,6 @@ class ListaGrupo extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lg');
+        Schema::dropIfExists('lista_grupo');
     }
 }
