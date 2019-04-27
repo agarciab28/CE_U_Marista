@@ -24,7 +24,14 @@
             </tr>
         </thead>
         <tbody>
-
+        <!-- @foreach($alumnos as $alumno)
+        <tr>
+                <td>{{$alumno->nombres}}</td>
+                <td>{{$alumno->calif}}</td>
+                <td> <input id="calif" name="calif" type="text" class=""></td>
+                <td><a href="#" class="btn">guardar</a></td>
+            </tr>
+      @endforeach-->
             <tr>
                 <td> José Carlos Arrollo Ayala</td>
                 <td>100</td>
