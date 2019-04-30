@@ -15,7 +15,7 @@ class CreateTableCarrera extends Migration
     {
         Schema::create('carrera', function (Blueprint $table) {
             $table->string('id_carrera',10);
-            $table->string('nombre_carrera',40);
+            $table->string('nombre_carrera',100);
             $table->string('rvoe',20);
             $table->integer('total_creditos');
             $table->date('fecha');
