@@ -74,7 +74,7 @@
             </div>
 
               <div class="input-field col m3 s12 ">
-                  <input type="text" name="nombrec" id="nombrec" class="validate" required maxlength="35">
+                  <input type="text" name="nombrec" id="nombrec" class="validate" required maxlength="70">
                   <label for="nombrec">Nombre de plan de estudios</label>
               </div>
 
