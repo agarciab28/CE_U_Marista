@@ -13,7 +13,7 @@ class CalificacionesSeeder extends Seeder
     public function run()
     {
     DB::statement('set foreign_key_checks = 0;');
-    DB::table('calificaiones')->truncate();
+    DB::table('calificaciones')->truncate();
     DB::statement('set foreign_key_checks = 1;');
 
     $calificaciones = new calificaciones();
@@ -33,7 +33,7 @@ class CalificacionesSeeder extends Seeder
     $calificaciones->examen_final="8";
     $calificaciones->opcion_calificacion="1";
     $calificaciones->save();
-    
+
 
 
     }
