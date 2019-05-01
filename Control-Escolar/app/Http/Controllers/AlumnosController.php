@@ -14,14 +14,21 @@ class AlumnosController extends Controller
         return view('admin.listas.alumnos',compact('personas'));
     }
 
-    public function lista_as ($idg,$idc) {
+    public function lista_as ($idg,$idc,Request $request) {
       //idg
       //idc
+        $semestre = $request->get('semestre');
+        if($semestre==null){
+        $semestre = 1;
+        }
 
       $personas = persona::select('persona.id_persona','nombres','apaterno','amaterno','fnaci','email','ncontrol')
         ->join('alumno','persona.id_persona','=','alumno.id_persona')
         ->where('id_carrera',$idc)
+      //  ->semestre($semestre)
+        ->where('semestre',$semestre)
         ->get();
-        return view('admin.asignar',compact('personas'));
+        return view('admin.asignar',compact('personas','idc','idg'))
+        ->withInput(request(['semestre']));
     }
 }

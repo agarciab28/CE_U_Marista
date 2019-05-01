@@ -37,10 +37,11 @@
         <h4>Grupo</h4>
         <p>
             <div class="collection">
-                <a href="{{ route('alumnosxgrupo') }}" class="collection-item black-text">Consultar</a>
+                <a href="{{ route('docente_consulta') }}" class="collection-item black-text">Consultar</a>
+                <a href="{{ route('docente_calif') }}" class="collection-item black-text">Calificaciones Finales</a>
                 <a href="#!" class="collection-item black-text">Método de evaluación</a>
                 <a href="#!" class="collection-item black-text">Obtener acta de calificaciones</a>
-                <a href="{{ route('docente_pdf') }}" class="collection-item black-text">Generar PDF</a>
+                <a href="#!" class="collection-item black-text">Generar PDF</a>
             </div>
         </p>
     </div>

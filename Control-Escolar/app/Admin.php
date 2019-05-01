@@ -36,4 +36,8 @@ class Admin extends Authenticatable
      */
     protected $casts = [
     ];
+    public function scopeSemestre ($query, $semestre){
+      if($semestre)
+       return $query->where("semestre", $semestre);
+    }
 }

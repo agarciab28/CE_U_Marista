@@ -103,7 +103,7 @@
 
             <div class="input-field col m6 s12 ">
 
-              <label for="fcarrera">Carrera:  aqui iria la consulta de carrera</label>
+              <label for="fcarrera">Carrera:</label>
             </div>
 
             <div class="input-field col m6 s12 ">

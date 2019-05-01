@@ -18,30 +18,45 @@
 
 -->
   <div class="container">
-    <form class="" action="" method="post">
+
+
+
+    @if(isset($success))
+        <div class="alert alert-success"> {{$success}} </div>
+    @endif
+
+<!-- FILTRO DE ALUMNOS POR CARRERA Y SEMESTRE-->
 
       <div class="filtros">
-          <div class="row">
-                    <div class="col m6 push-m3 s12" style="text-align: center;">
-                      <h4>Asignación de alumnos a grupo</h4>
-                    </div>
-          </div>
-        <div class="row">
+            <div class="row">
+                  <div class="col m6 push-m3 s12" style="text-align: center;">
+                    <h4>Asignación de alumnos a grupo</h4>
+                  </div>
+            </div>
+            <div class="row">
+                  {!! Form::open(['route'=> array('admin_asignar', $idg,$idc), 'method'=>'GET', 'files' => true, 'role' => 'form']) !!}
+                  <div class="input-field col m4 s12 ">
 
+                    <label for="fcarrera">Carrera:</label>
+                  </div>
+                  <div class="input-field col m4 s12 ">
+                    {!! Form::number('semestre',null,['class'=>'form-control', 'placeholder'=>'1', 'max' => '12', 'min' => '1']) !!}
 
-          <div class="input-field col m6 s12 ">
-
-            <label for="fcarrera">Carrera:  aqui iria la consulta de carrera</label>
-          </div>
-
-          <div class="input-field col m6 s12 ">
-            <input type="number" name="fperiodo" id="fperiodo" value="1" max="12" min="1" class="validate" required maxlength="35">
-            <label for="fperiodo">Semestre</label>
-          </div>
-        </div>
+                  </div>
+                  <div class="input-field col m4 s12 ">
+                    <button type="submit" class="btn" name="button">Filtrar</button>
+                  </div>
+                  {!! Form::close() !!}
+            </div>
       </div>
 
 
+<!-- FIN DEL FILTRO-->
+
+
+
+<form class="" action="{{route('admin_asignar_grupo')}}" method="post">
+{{ csrf_field() }}
       <table id="example" class="responsive-table striped" style="width:100%">
             <thead>
                 <tr>
@@ -53,23 +68,36 @@
                 </tr>
             </thead>
             <tbody class="body_forich">
-<div class="" id="cont_t">
-
-</div>
+              @foreach($personas as $persona)
+    <tr>
+        <td>
+            <label>
+              <input type="checkbox" class="filled-in" name="alumnos[]" value="{{$persona->ncontrol}},{{$persona->nombres}},{{$idg}}">
+              <span>Seleccionar</span>
+            </label>
+        </td>
+        <td>{{$persona->ncontrol}}</td>
+        <td>{{$persona->nombres}}</td>
+        <td>{{$persona->fnaci}}</td>
+        <td>{{$persona->email}}</td>
+    </tr>
+                  @endforeach
             </tbody>
         </table>
         <div class="input-field">
-          <button type="button" class="btn" name="button">Registrar</button>
+          <button type="submit" class="btn" name="button">Registrar</button>
         </div>
-    </form>
 
+    </form>
+    <div class="" id="cont_t">
+
+    </div>
   </div>
 @endsection
 
 @section('scripts')
   <script src="{{{ asset('js/datatables.js') }}}"></script>
   <script src="{{{ asset('js/asignar.js') }}}"></script>
-
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>

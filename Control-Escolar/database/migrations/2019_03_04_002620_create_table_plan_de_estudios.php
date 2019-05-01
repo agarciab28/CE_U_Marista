@@ -16,7 +16,7 @@ class CreateTablePlanDeEstudios extends Migration
         Schema::create('plan_de_estudios', function (Blueprint $table) {
             $table->string('id_plan',30);
             $table->string('id_carrera',10);
-            $table->string('nombre_plan',70);
+            $table->string('nombre_plan',100);
             $table->date('fecha');
             $table->timestamps();
             $table->primary('id_plan');

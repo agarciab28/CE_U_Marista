@@ -2,7 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use  \App\Models\grupo;
-class grupos extends Seeder
+
+class GruposSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,7 +17,8 @@ class grupos extends Seeder
         DB::statement('set foreign_key_checks = 1;');
 
         $grupo= new grupo();
-        $grupo->seccion='1';
+        $grupo->id_grupo="1";
+        $grupo->seccion='A';
         $grupo->id_carrera='adm';
         $grupo->id_materia='1';
         $grupo->id_prof='1';
@@ -24,7 +26,8 @@ class grupos extends Seeder
         $grupo->save();
 
         $grupo= new grupo();
-        $grupo->seccion='1';
+        $grupo->id_grupo="2";
+        $grupo->seccion='A';
         $grupo->id_carrera='anim';
         $grupo->id_materia='DGD-1';
         $grupo->id_prof='2';

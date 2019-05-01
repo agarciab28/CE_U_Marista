@@ -28,6 +28,7 @@
               </tr>
           </thead>
           <tbody>
+ 
             @foreach($grupos as $grupo)
 
               <tr>

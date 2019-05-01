@@ -21,6 +21,8 @@ Route::post('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/', 'Auth\LoginAdminController@login')->name('loginAdmin');
 Route::get('/cerrar_sesion', 'Auth\LoginAdminController@logout')->name('logout');
 
+//Route::get('/asignara','AlumnosController@lista_as')->name('asignara');
+
 // Rutas Admin
 Route::group(["prefix" => 'admin'], function(){
   Route::get('/', function(){
@@ -72,24 +74,26 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
     return view('admin.modificar.usuarios');
   })->name('admin_musuarios');
 
-  Route::get('/asignar/{idg}/{idc}', function(){
-    return view('admin.asignar');
-  })->name('admin_asignar');
+//  Route::get('/asignar/{idg}/{idc}', function(){
+//    return view('admin.asignar');
+//  })->name('admin_asignar');
 
-
-//Route::get('/asignar/{idg}/{idc}','AlumnosController@lista_as')->name('admin_asignar');
+Route::get('/asignar/{idg}/{idc}','AlumnosController@lista_as')->name('admin_asignar');
+ //Route::get('/asignara','AlumnosController@lista_as')->name('asignara');
   //rutas de grupos
   Route::post('/grupos','gruposController@registroGrupo')->name('admin_registrar_Grupos');
 
   Route::get('/grupos','gruposController@showFormGrupo')->name('admin_registrarG');
 
-
+  Route::post('/asig','asignarController@guardar')->name('admin_asignar_grupo');
 
   Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
 
   Route::get('/get_eventos','calendarioController@eventos')->name('get_eventos');
 
   Route::post('/nuevo_evento','calendarioController@registra_evento')->name('evento_nuevo');
+
+
 });
 
 //Rutas Docentes
@@ -97,6 +101,14 @@ Route::group(["prefix" => 'docente'], function(){
   Route::get('/', function(){
     return view('docente.home');
   })->name('docente_home');
+
+  Route::get('/consulta', function(){
+    return view('docente.opciones.alumnos');
+  })->name('docente_consulta');
+
+  Route::get('/calif_finales', function(){
+    return view('docente.opciones.calif_finales');
+  })->name('docente_calif');
 
   Route::get('/grupos','gruposController@gruposProf')->name('docente_grupos');
 
@@ -115,11 +127,10 @@ Route::group(["prefix" => 'docente'], function(){
 //    return view('admin.admin_registro_alumno');
 //});
 
+Route::get('/pba', function(){
+  return view('admin.modificar.usuarios');
+})->name('pba');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/alumnosxgrupo', function(){
-  return view('docente.opciones.alumnos');
-})->name('alumnosxgrupo');
