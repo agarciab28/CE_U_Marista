@@ -1,20 +1,22 @@
 <?php
 
-namespace App\Http\Controllers;
+  namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+  use Illuminate\Http\Request;
 
-class genPDFController extends Controller
-{
-    public function pdfA(){
-      return view('docente.pdfA');
-    }
+  class genPDFController extends Controller
+  {
+      public function pdfA(){
+        return view('docente.pdfA');
+      }
 
-    public function pdfB(){
-      return view('docente.pdfB');
-    }
+      public function pdfB(){
+        return view('docente.pdfB');
+      }
 
-    public function pdfF(){
-      return view('docente.pdfF');
-    }
-}
+      public function pdfF(){
+        return view('docente.pdfF');
+      }
+  }
+
+?>
