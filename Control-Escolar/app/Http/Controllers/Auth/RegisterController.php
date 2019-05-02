@@ -103,6 +103,7 @@ $nombre=$file->getClientOriginalName();
           $alumno->semestre=$datos['semestre'];
           $alumno->plan_de_estudios=$datos['plan_de_estudios'];
           $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
+          $alumno->activo='1';
           $alumno->save();
         }else {
 
