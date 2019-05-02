@@ -33,7 +33,7 @@
                 @if (session('username'))
               
                 <li class="chip">
-                  <img src="session('ruta')" alt="Contact Person">
+                  <img src="{{{ asset('img/user9.png')}}}" alt="Contact Person">
                   Bienvenido {{session('nombre')}}
                 </li>
                 @endif
