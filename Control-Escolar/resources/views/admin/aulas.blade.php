@@ -106,7 +106,7 @@
             <div class="row" id="data_aula">
                 <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
-                    <input type="text" name="aula" id="mod_aula class=" validate" disabled required maxlength="35">
+                    <input type="text" name="aula" id="mod_aula class=" validate=" disabled required maxlength='3'">
                     <label for="mod_aula">Aula</label>
                 </div>
                 <div class="input-field col m4 s12 ">
@@ -148,9 +148,4 @@
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
 <script src="https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"></script>
-@if($registro)
-<script type="text/javascript">
-    swal('Registro Exitoso!', 'Presione OK!', 'success');
-</script>
-@endif
 @endsection
