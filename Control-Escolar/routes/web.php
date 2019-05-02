@@ -49,6 +49,7 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
     return view('admin.calendario');
   })->name('admin_calendario');
 
+  Route::get('/aulas', 'aulasControler@showAulas')->name('admin_aulas');
 
   Route::get('/planes', 'planController@showPlan')->name('admin_planes');
 
@@ -62,11 +63,19 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
     return view('admin.bitacora');
   })->name('admin_bitacora');
 
+  Route::get('/alumno/eliminar/{ncontrol}', 'AlumnosController@eliminar')
+    ->where(["ncontrol"=>'[0-9]+'])
+    ->name('eliminaAlumno');
+
   Route::get('/listas/alumnos', 'AlumnosController@lista')->name('admin_lalumnos');
 
   Route::get('/listas/profes', 'ProfesoresController@lista')->name('admin_lprofes');
 
+  Route::get('/profe/elimina/{usuario}','ProfesoresController@elimina')->where(['usuario'=>'[A-z]+'])->name('eliminaProfe');
+
   Route::get('/listas/coordinadores', 'CoordinadorController@lista')->name('admin_lcoordinadores');
+
+  Route::get('/coordinador/elimina/{usuario}','CoordinadorController@elimina')->where(['usuario'=>'[A-z]+'])->name('eliminaCoordinador');
 
 
 

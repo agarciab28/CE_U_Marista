@@ -31,8 +31,9 @@
             <div class="section">
               <ul class="left hide-on-med-and-down">
                 @if (session('username'))
+              
                 <li class="chip">
-                  <img src="{{{ asset('img/user.png') }}}" alt="Contact Person">
+                  <img src="session('ruta')" alt="Contact Person">
                   Bienvenido {{session('nombre')}}
                 </li>
                 @endif
@@ -74,6 +75,14 @@
       </li>
     </ul>
 
+    <li id="carreras"><a class="white-text" href="{{ route('admin_carreras') }}"><i class="fas fa-book white-text" style="margin-right:0;"></i>Carreras</a></li>
+
+    <li id="materias"><a class="white-text" href="{{ route('admin_materias') }}"><i class="fas fa-book-open white-text" style="margin-right:0;"></i>Materias</a></li>
+
+    <li id="planes"><a class="white-text" href="{{ route('admin_planes') }}"><i class="far fa-clock white-text" style="margin-right:0;"></i>Planes de estudio</a></li>
+
+    <li id="aulas"><a class="white-text" href="{{ route('admin_aulas') }}"><i class="fas fa-school white-text" style="margin-right:0;"></i>Aulas</a></li>
+
     <ul id="grupos" class="collapsible collapsible-accordion in">
       <li>
         <a class="collapsible-header white-text" style="margin-left:2em;"> Grupos<i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
@@ -86,14 +95,14 @@
       </li>
     </ul>
 
-
-
-    <li id="carreras"><a class="white-text" href="{{ route('admin_carreras') }}"><i class="fas fa-book white-text" style="margin-right:0;"></i>Carreras</a></li>
-    <li id="materias"><a class="white-text" href="{{ route('admin_materias') }}"><i class="fas fa-book-open white-text" style="margin-right:0;"></i>Materias</a></li>
     <li id="calendario"><a class="white-text" href="{{ route('admin_calendario') }}"><i class="far fa-calendar-alt white-text" style="margin-right:0;"></i>Calendario</a></li>
-    <li id="planes"><a class="white-text" href="{{ route('admin_planes') }}"><i class="far fa-clock white-text" style="margin-right:0;"></i>Planes de estudio</a></li>
+
     <li id="estadisticas"><a class="white-text" href="{{ route('admin_estadisticas') }}"><i class="fas fa-chart-pie white-text" style="margin-right:0px;"></i>Estadisticas</a></li>
+
     <li id="bitacora"><a class="white-text" href="{{ route('admin_bitacora') }}"><i class="fas fa-file-signature white-text" style="margin-right:0px;"></i></i>Bitácora</a></li>
+
+    <li id="misdatos"><a class="white-text" href="#"><i class="fas fa-user-cog white-text" style="margin-right:0;"></i>Mis datos</a></li>
+
     <li id=" cerrar_sesion"><a class="show-on-small hide-on-med-and-up white-text" href="/">Cerrar Sesion</a></li>
 
     <div class="contenedor">
@@ -135,9 +144,9 @@
 
   function myFunction() {
     //myVar = setTimeout(showPage, 0);
-  //}
+    //}
 
-  //function showPage() {
+    //function showPage() {
     document.getElementById("loader").style.display = "none";
     document.getElementById("calendar").style.display = "block";
   }

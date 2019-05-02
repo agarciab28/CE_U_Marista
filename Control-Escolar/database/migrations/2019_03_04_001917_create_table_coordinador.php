@@ -16,7 +16,7 @@ class CreateTableCoordinador extends Migration
         Schema::create('coordinador', function (Blueprint $table) {
             $table->increments('id_coordinador',10);
             $table->string('id_carrera',10);
-            $table->string('username',100);
+            $table->string('username',100)->unique();
             $table->timestamps();
 
             $table->foreign('id_carrera')->references('id_carrera')->on('carrera');
