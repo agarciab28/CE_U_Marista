@@ -84,7 +84,7 @@ Route::get('/asignar/{idg}/{idc}','AlumnosController@lista_as')->name('admin_asi
   Route::post('/grupos','gruposController@registroGrupo')->name('admin_registrar_Grupos');
 
   Route::get('/grupos','gruposController@showFormGrupo')->name('admin_registrarG');
-
+ Route::post('/asig','asignarController@guardar')->name('admin_asignar_grupo');
 
 
   Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
