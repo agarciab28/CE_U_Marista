@@ -1,0 +1,65 @@
+@extends('layouts.app_pdf')
+@section('stylesheet')
+<link href="{{{ asset('css/style_pdf.css') }}}" rel="stylesheet">
+<body>
+  <div class="container" style="width: 18cm">
+    <div class="row">
+      <div class="col s12 m4 l2"><img src="{{{ asset('img/logos/logo_3_a.png') }}}" alt="" width="70%" style="margin:20px"></div>
+      <div class="col s12 m4 l8"><div class="headPDF center" style="margin:20px 0px 0px 0px; font-size:20px">UNIVERSIDAD</div></div>
+      <div class="col s12 m4 l8"><div class="headPDF">MARISTA VALLADOLID</div></div>
+      <div class="col s12"><div class="head2PDF center">RELACIÓN DE ALUMNOS NO APROBADOS</div></div>
+    </div>
+    <br>
+    <div class="subHeadPDF">DATOS DEL GRUPO</div>
+    <div class="row">
+      <div class="col s12 m4 l2 tabPDF">CLAVE DE GRUPO</div>
+      <div class="col s12 m4 l2" id="clave">XXXX</div>
+      <div class="col s12 m4 l2 tabPDF">SECCIÓN</div>
+      <div class="col s12 m4 l2" id="seccion">XXXX</div>
+      <div class="col s12 m4 l2 tabPDF">PERIODO</div>
+      <div class="col s12 m4 l2" id="seccion">XXXX</div>
+    </div>
+    <div class="row">
+      <div class="col s12 m6 l3 tabPDF">CARRERA</div>
+      <div class="col s12 m6 l3" id="carrera">XXXX</div>
+      <div class="col s12 m6 l3 tabPDF">MATERIA</div>
+      <div class="col s12 m6 l3" id="materia">XXXX</div>
+    </div>
+    <div class="row">
+      <div class="col s12 m4 l2 tabPDF">PROFESOR</div>
+      <div class="col s12 m4 l10" id="profesor">XXXX</div>
+    </div>
+
+    <div class="row">
+      <div class="subHeadPDF">CALIFICACIONES</div>
+      <table class="">
+        <thead>
+          <tr>
+              <th class="tabPDF center">NO</th>
+              <th class="tabPDF center">NO CTRL</th>
+              <th class="tabPDF center">NOMBRE DEL ALUMNO</th>
+              <th class="tabPDF center">RESULTADO</th>
+              <th class="tabPDF center">CALIFICACIÓN</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td class="bodyPDF center">1</td>
+            <td class="bodyPDF center">15121183</td>
+            <td class="bodyPDF">Samuel Alejandro López Becerra</td>
+            <td class="bodyPDF center">A 2DO EXTRAORDINARIO</td>
+            <td class="bodyPDF center">55</td>
+          </tr>
+          <tr>
+            <td class="bodyPDF center">2</td>
+            <td class="bodyPDF center">15121189</td>
+            <td class="bodyPDF">Diego Ulises Martínez Aguilar</td>
+            <td class="bodyPDF center">A 1ER EXTRAORDINARIO</td>
+            <td class="bodyPDF center">59</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>

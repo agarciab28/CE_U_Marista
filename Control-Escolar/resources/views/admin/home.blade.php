@@ -12,6 +12,7 @@
 <div class="center-elements">
     <div class="row container
     section">
+
         <div class="col s12">
             Bienvenido al Sistema de Control Escolar de la Universidad Marista
         </div>
