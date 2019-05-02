@@ -14,6 +14,7 @@
 @section('title', 'Lista de Alumno')
 
 @section('content')
+
 <div class="container">
   <table id="example" class="responsive-table striped" style="width:100%">
     <thead>
@@ -29,12 +30,14 @@
     <tbody>
       @foreach($personas as $persona)
       <tr>
-        <td>{{$persona->ncontrol}}</td>
+        <td class="numero">{{$persona->ncontrol}}</td>
         <td>{{$persona->nombres}} {{$persona->apaterno}} {{$persona->amaterno}}</td>
         <td>{{$persona->fnaci}}</td>
         <td>{{$persona->email}}</td>
         <td> <a href="{{ route('admin_musuarios') }}" class="btn">Modificar</a> </td>
-        <td> <a href="#" class="btn green" id="habilitar">Habilitado</a> </td>
+        <td> <a href="{{route('eliminaAlumno',['ncontrol'=>$persona->ncontrol])}}" class="btn habilitar {{($persona->activo>0)?' green':'red'}} ">
+          {{($persona->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>
+
       </tr>
       @endforeach
     </tbody>
@@ -45,7 +48,13 @@
 <!--sweetalert -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="{{{ asset('js/datatables.js')}}}"></script>
-<script src="{{{ asset('js/funciones.js')}}}"></script>
+@if($cambio==1)
+<script type="text/javascript">
+swal("¡El usuario a cambiado de estado de manera correcta!", {
+    icon: "success",
+});
+</script>
+@endif
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>

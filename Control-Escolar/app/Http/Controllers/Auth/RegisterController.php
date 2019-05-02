@@ -10,6 +10,7 @@ use App\Models\coordinador;
 use App\Models\profesor;
 use App\Models\materia;
 use App\Models\personal;
+use App\Models\plan_de_estudios;
 use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -73,7 +74,7 @@ class RegisterController extends Controller
     public function registro(Request $request){
 
       $datos=$request;
-      
+
       try {
 $file=$datos->file('imagen');
 $nombre=$file->getClientOriginalName();
@@ -90,6 +91,8 @@ $nombre=$file->getClientOriginalName();
         $persona->save();
         \Storage::disk('local')->put($nombre, \File::get($file));
         $id_persona=persona::where('curp',$datos['curp'])->get(['id_persona'])->first();
+
+        $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
 
         if($datos['rol']=='Alumno'){
 
@@ -113,7 +116,7 @@ $nombre=$file->getClientOriginalName();
           $personal->save();
 
           if($datos['rol']=='Coordinador'){
-  
+
             $coordinador= new coordinador();
             $coordinador->id_carrera=$datos['id_carrera_coordinador'];
             $coordinador->username=$datos['username'];
@@ -134,20 +137,21 @@ $nombre=$file->getClientOriginalName();
 
         $registro=false;
         $carreras= carrera::get(['id_carrera','nombre_carrera']);
-        return view('admin.registrar',compact(['registro','carreras']));
+        return view('admin.registrar',compact(['registro','carreras','planes']));
       }
- 
+
 
       $registro=true;
       $carreras= carrera::get(['id_carrera','nombre_carrera']);
-      return view('admin.registrar',compact(['registro','carreras']));
+      return view('admin.registrar',compact(['registro','carreras','planes']));
 
     }
-    
+
     public function showForm(){
       $carreras= carrera::get(['id_carrera','nombre_carrera']);
+      $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
       $registro=false;
-      return view('admin.registrar',compact(['registro','carreras']));
+      return view('admin.registrar',compact(['registro','carreras','planes']));
     }
 
 

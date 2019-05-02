@@ -1,11 +1,12 @@
 <?php
+  namespace App\Http\Controllers;
+  use Dompdf\Dompdf;
+  use Illuminate\Http\Request;
+  require '../vendor/autoload.php';
+  require '../config/database.php';
 
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-class genPDFController extends Controller
-{
+  class genPDFController extends Controller
+  {
     //PDF's DOCENTES
     public function pdfA_docente(){
       return view('docente.pdfA');
@@ -46,5 +47,14 @@ class genPDFController extends Controller
 
     public function pdfFM_coordi(){
       return view('coordinador.pdfFM');
+    }
+
+    //PDF's ALUMNOS
+    public function pdfA_al(){
+      return view('alumno.pdfA');
+    }
+
+    public function pdfB_al(){
+      return view('alumno.pdfB');
     }
 }
