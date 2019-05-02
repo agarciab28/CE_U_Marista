@@ -1,4 +1,4 @@
-$("#habilitar").click(function () {
+/*$(".habilitar").click(function () {
     swal({
             title: "¿Estás seguro?",
             text: "Una vez deshabilitado, el usuario no podrá acceder al sistema",
@@ -17,4 +17,4 @@ $("#habilitar").click(function () {
                 swal("¡El usuario se mantendrá activo!");
             }
         });
-});
+});*/

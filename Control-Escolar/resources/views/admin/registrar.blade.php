@@ -157,7 +157,11 @@
                         <!--<i class="material-icons prefix">account_circle</i>
 Listar Planes de estudio !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                       -->
-                        <input type="text" name="plan_de_estudios" id="plan_est" class="validate">
+                      <select name="plan_de_estudios" id="plan_est">
+                        @foreach($planes as $plan)
+                          <option value="{{$plan->id_plan}}">{{$plan->nombre_plan}}</option>
+                        @endforeach
+                      </select>
                         <label for="plan_est">Plan de estudios</label>
                     </div>
                 </div>
