@@ -49,6 +49,7 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
     return view('admin.calendario');
   })->name('admin_calendario');
 
+  Route::get('/aulas', 'planController@showAulas')->name('admin_aulas');
 
   Route::get('/planes', 'planController@showPlan')->name('admin_planes');
 
