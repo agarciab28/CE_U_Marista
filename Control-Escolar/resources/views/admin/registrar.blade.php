@@ -232,7 +232,18 @@ Listar Planes de estudio !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     </div>
 </div>
 
-
+<!--BOTÓN REGISTROS-->
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large amber pulse tooltipped" data-position="top" data-tooltip="Registrar lista" onclick="upFile()">
+    <i class="large material-icons">file_upload</i>
+  </a>
+  <ul>
+    <li>
+      <a class="btn-floating light-blue darken-4 tooltipped" data-position="top" data-tooltip="Descargar plantilla alumnos" href="{{{ asset('csv/Alumno.xlsx') }}}" download="">
+      <i class="material-icons">file_download</i></a>
+    </li>
+  </ul>
+</div>
 
 
 @endsection
@@ -246,6 +257,13 @@ Listar Planes de estudio !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     $(document).ready(function() {
         // Basic
         $('.dropify').dropify();
+        $('.fixed-action-btn').floatingActionButton();
+        $('.tooltipped').tooltip();
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.fixed-action-btn');
+      var instances = M.FloatingActionButton.init(elems, {direction: 'left'});
     });
 </script>
 
