@@ -7,39 +7,6 @@
 
   class genPDFController extends Controller
   {
-      public function pdfA(){
-        return view('docente.pdfA');
-      }
-
-      public function pdfB(){
-        return view('docente.pdfB');
-      }
-
-<<<<<<< HEAD
-      public function pdfF(){
-        return view('docente.pdfF');
-      }
-
-      public function pdfC()
-      {
-        ob_start();
-        include "../resources/views/docente/pdfA.blade.php";
-        // instantiate and use the dompdf class
-        $dompdf = new Dompdf();
-        $dompdf->loadHtml(ob_get_clean());
-
-        // Render the HTML as PDF
-        $dompdf->render();
-
-        // Output the generated PDF to Browser
-        $dompdf->stream();
-      }
-  }
-
-?>
-=======
-class genPDFController extends Controller
-{
     //PDF's DOCENTES
     public function pdfA_docente(){
       return view('docente.pdfA');
@@ -81,5 +48,13 @@ class genPDFController extends Controller
     public function pdfFM_coordi(){
       return view('coordinador.pdfFM');
     }
+
+    //PDF's ALUMNOS
+    public function pdfA_al(){
+      return view('alumno.pdfA');
+    }
+
+    public function pdfB_al(){
+      return view('alumno.pdfB');
+    }
 }
->>>>>>> 2b34e53247d829019d5737e8650108a47acfc0ed
