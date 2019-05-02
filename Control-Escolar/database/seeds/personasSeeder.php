@@ -34,6 +34,7 @@ class personasSeeder extends Seeder
         $persona->estado='Michoacan';
         $persona->num_tel='443333333';
         $persona->num_cel='443412121';
+        $persona->imagen='jumtest.jpg';
         $persona->save();
 
         $persona= new persona();
@@ -54,6 +55,7 @@ class personasSeeder extends Seeder
         $persona->estado='Michoacan';
         $persona->num_tel='443333333';
         $persona->num_cel='443412121';
+        $persona->imagen='jumtest.jpg';
         $persona->save();
 
         $persona= new persona();
@@ -74,6 +76,7 @@ class personasSeeder extends Seeder
         $persona->estado='Michoacan';
         $persona->num_tel='443223233';
         $persona->num_cel='443444121';
+        $persona->imagen='jumtest.jpg';
         $persona->save();
 
 
@@ -95,6 +98,7 @@ class personasSeeder extends Seeder
         $persona->estado='Michoacan';
         $persona->num_tel='443223233';
         $persona->num_cel='443444121';
+        $persona->imagen='jumtest.jpg';
         $persona->save();
 
         $persona= new persona();
@@ -115,6 +119,7 @@ class personasSeeder extends Seeder
         $persona->estado='Michoacan';
         $persona->num_tel='443223233';
         $persona->num_cel='443444121';
+        $persona->imagen='jumtest.jpg';
         $persona->save();
 
         $persona= new persona();
@@ -135,6 +140,7 @@ class personasSeeder extends Seeder
         $persona->estado='Michoacan';
         $persona->num_tel='443223233';
         $persona->num_cel='443444121';
+        $persona->imagen='jumtest.jpg';
         $persona->save();
 
         $persona= new persona();
@@ -155,6 +161,7 @@ class personasSeeder extends Seeder
         $persona->estado='Michoacan';
         $persona->num_tel='443223233';
         $persona->num_cel='443444121';
+        $persona->imagen='jumtest.jpg';
         $persona->save();
 
         $persona= new persona();
@@ -175,6 +182,7 @@ class personasSeeder extends Seeder
         $persona->estado='Michoacan';
         $persona->num_tel='443321313';
         $persona->num_cel='443321121';
+        $persona->imagen='jumtest.jpg';
         $persona->save();
 
     }
