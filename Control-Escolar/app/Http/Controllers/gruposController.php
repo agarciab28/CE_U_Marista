@@ -8,6 +8,8 @@ use App\Models\carrera;
 use App\Models\profesor;
 use App\Models\persona;
 use App\Models\materia;
+use App\Models\lista_grupo;
+use App\Models\alumno;
 
 class gruposController extends Controller
 {
@@ -76,5 +78,16 @@ class gruposController extends Controller
    return view('docente.grupos',compact('grupos_de_profesor'));
  }
 
+ public function describeGruposProf(Request $request){
+   //dd($request);
+   $alumnos=alumno::select('l.ncontrol as ncontrol','p.nombres as nombres','p.apaterno as apaterno','p.amaterno as amaterno')
+    ->join('lista_grupo as l','l.ncontrol','=','alumno.ncontrol')
+    ->join('persona as p','p.id_persona','=','alumno.id_persona')
+    ->where('l.id_grupo',$request->id_grupo);
+   return view('docente.opciones.alumnos',compact(['alumnos']));
+ }
+ public function calificacionesFinalesGrupo(Request $request){
 
+   return view('docente.opciones.calif_finales');
+ }
 }

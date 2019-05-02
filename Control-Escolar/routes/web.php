@@ -84,7 +84,7 @@ Route::get('/asignar/{idg}/{idc}','AlumnosController@lista_as')->name('admin_asi
   Route::post('/grupos','gruposController@registroGrupo')->name('admin_registrar_Grupos');
 
   Route::get('/grupos','gruposController@showFormGrupo')->name('admin_registrarG');
-
+ Route::post('/asig','asignarController@guardar')->name('admin_asignar_grupo');
 
 
   Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
@@ -100,13 +100,9 @@ Route::group(["prefix" => 'docente'], function(){
     return view('docente.home');
   })->name('docente_home');
 
-  Route::get('/consulta', function(){
-    return view('docente.opciones.alumnos');
-  })->name('docente_consulta');
+  Route::post('/consulta', 'gruposController@describeGruposProf')->name('docente_consulta');
 
-  Route::get('/calif_finales', function(){
-    return view('docente.opciones.calif_finales');
-  })->name('docente_calif');
+  Route::post('/calif_finales', 'gruposController@calificacionesFinalesGrupo')->name('docente_calif');
 
   Route::get('/grupos','gruposController@gruposProf')->name('docente_grupos');
 

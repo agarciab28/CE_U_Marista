@@ -28,32 +28,15 @@
         <tbody>
 
             <tr>
-                <td> José Carlos Arrollo Ayala</td>
+              @foreach($alumnos as $alumno)
+                <td> {{$alumno->nombres}} {{$alumno->apaterno}} {{$alumno->amaterno}}</td>
                 <td> <input id="cal_1" name="cal_1" type="text" class=""> </td>
                 <td> <input id="cal_2" name="cal_2" type="text" class=""> </td>
                 <td> <input id="examen" name="examen" type="text" class=""> </td>
                 <td> <input id="faltas" name="faltas" type="text" class=""></td>
                 <td><a href="#" class="btn">guardar</a></td>
+              @endforeach
             </tr>
-
-            <tr>
-                <td> Manuel Felipe Acuña Anastacio </td>
-                <td> <input id="cal_1" name="cal_1" type="text" class=""> </td>
-                <td> <input id="cal_2" name="cal_2" type="text" class=""> </td>
-                <td> <input id="examen" name="examen" type="text" class=""> </td>
-                <td> <input id="faltas" name="faltas" type="text" class=""></td>
-                <td><a href="#" class="btn">guardar</a></td>
-            </tr>
-
-            <tr>
-                <td> Jesus Aquiles Adenayor Amador</td>
-                <td> <input id="cal_1" name="cal_1" type="text" class=""> </td>
-                <td> <input id="cal_2" name="cal_2" type="text" class=""> </td>
-                <td> <input id="examen" name="examen" type="text" class=""> </td>
-                <td> <input id="faltas" name="faltas" type="text" class=""></td>
-                <td><a href="#" class="btn">guardar</a></td>
-            </tr>
-
         </tbody>
     </table>
 </div>
@@ -62,7 +45,6 @@
 
 @section('scripts')
 <script src="{{{ asset('js/datatables.js') }}}"></script>
-
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
