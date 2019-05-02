@@ -13,7 +13,7 @@
 <div class="section container">
 
     <div class="row">
-        <form class="col  s12 m12" id="pb" action="{{route('admin_registrar_envio')}}" method="post">
+        <form class="col  s12 m12" id="pb" action="{{route('admin_registrar_envio')}}" method="post" form enctype="multipart/form-data">
             {{ csrf_field() }}
 
             <div class="row card-panel">
@@ -25,7 +25,7 @@
               </div>
 
             <div class="input-field col m4 s12 ">
-                    <input type="file" id="input-file-now" name="imagen" class="dropify"   >
+                    <input type="file" id="imagen" name="imagen" class="dropify"  >
                     <!--<i class="material-icons prefix">account_circle</i>-->
 
                 </div>

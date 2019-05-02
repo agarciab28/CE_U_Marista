@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Illuminate\Http\Request;
 use App\User;
 use App\Models\carrera;
 use App\Models\persona;
@@ -70,44 +70,29 @@ class RegisterController extends Controller
     {
         //
     }
-    public function registro(){
+    public function registro(Request $request){
 
-      $datos = $this->validate(request(),[
-        'rol'=>'string',
-        'nombres'=>'string',
-        'apaterno'=>'string',
-        'amaterno'=>'string',
-        'sexo'=>'string',
-        'email'=>'string',
-        'fnaci'=>'string',
-        'curp'=>'string',
-        'ncontrol'=>'string|nullable',
-        'id_carrera'=>'string|nullable',
-        'semestre'=>'string|nullable',
-        'plan_de_estudios'=>'string|nullable',
-        'id_carrera_coordinador'=>'string|nullable',
-        'ced_fiscal'=>'string|nullable',
-        'nssoc'=>'string|nullable',
-        'especialidad_profe'=>'string|nullable',
-        'cedulap'=>'string|nullable',
-        'nssocp'=>'string|nullable',
-        'username'=>'string|nullable'
-      ]);
+      $datos=$request;
+      
       try {
+$file=$datos->file('imagen');
+$nombre=$file->getClientOriginalName();
         $persona=new persona();
-        $persona->rol=$datos['rol'];
-        $persona->nombres=$datos['nombres'];
-        $persona->apaterno=$datos['apaterno'];
-        $persona->amaterno=$datos['amaterno'];
-        $persona->sexo=$datos['sexo'];
-        $persona->email=$datos['email'];
-        $persona->fnaci=$datos['fnaci'];
-        $persona->curp=$datos['curp'];
+        $persona->rol=$request['rol'];
+        $persona->nombres=$request['nombres'];
+        $persona->apaterno=$request['apaterno'];
+        $persona->amaterno=$request['amaterno'];
+        $persona->sexo=$request['sexo'];
+        $persona->email=$request['email'];
+        $persona->fnaci=$request['fnaci'];
+        $persona->curp=$request['curp'];
+        $persona->imagen=$nombre;
         $persona->save();
-
+        \Storage::disk('local')->put($nombre, \File::get($file));
         $id_persona=persona::where('curp',$datos['curp'])->get(['id_persona'])->first();
 
         if($datos['rol']=='Alumno'){
+
           $alumno= new alumno();
           $alumno->id_persona=$id_persona['id_persona'];
           $alumno->ncontrol=$datos['ncontrol'];
@@ -117,6 +102,7 @@ class RegisterController extends Controller
           $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
           $alumno->save();
         }else {
+
           $personal=new personal();
           $personal->username=$datos['username'];
           $personal->ced_fiscal=$datos['ced_fiscal'];
@@ -127,12 +113,15 @@ class RegisterController extends Controller
           $personal->save();
 
           if($datos['rol']=='Coordinador'){
+  
             $coordinador= new coordinador();
             $coordinador->id_carrera=$datos['id_carrera_coordinador'];
             $coordinador->username=$datos['username'];
             $coordinador->save();
 
           }else if($datos['rol']=='Profesor'){
+
+
             $profesor = new profesor();
             $profesor->especialidad=$datos['especialidad_profe'];
             $profesor->username=$datos['username'];
@@ -142,15 +131,19 @@ class RegisterController extends Controller
 
 
       } catch (\Exception $e) {
+
         $registro=false;
         $carreras= carrera::get(['id_carrera','nombre_carrera']);
         return view('admin.registrar',compact(['registro','carreras']));
       }
+ 
+
       $registro=true;
       $carreras= carrera::get(['id_carrera','nombre_carrera']);
       return view('admin.registrar',compact(['registro','carreras']));
 
     }
+    
     public function showForm(){
       $carreras= carrera::get(['id_carrera','nombre_carrera']);
       $registro=false;

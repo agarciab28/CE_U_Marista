@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var fecha = new Date();
     var yyyy = fecha.getFullYear();
-    var mm = fecha.getMonth()+1;
+    var mm = fecha.getMonth();
     var dd = fecha.getDate();
     //Configuración del date picker
     $('.datepicker').datepicker({

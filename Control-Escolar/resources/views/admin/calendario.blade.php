@@ -3,6 +3,7 @@
 @section('stylesheet')
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
 <link href="{{{ asset('css/admin/calendario.css') }}}" rel="stylesheet">
+<link href="{{{ asset('css/admin/loader.css') }}}" rel="stylesheet">
 <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
 <link href="{{{ asset('js/plugins/prism/prism.css') }}}" type="text/css" rel="stylesheet" media="screen,projection">
 <link href="{{{ asset('js/plugins/chartist-js/chartist.min.css') }}}" type="text/css" rel="stylesheet" media="screen,projection">
@@ -99,6 +100,7 @@
         </div>
         <div class="col m10 push-m1 s10">
           <div id='calendar'></div>
+          <div id="loader"></div>
         </div>
       </div>
     </div>
@@ -134,84 +136,84 @@
             <div id="modal5" class="modal bottom-sheet">
               <div class="modal-content">
                 <form class="col  s12 m12" id="form_materia" action="" method="post">
-                    {{ csrf_field() }}
+                  {{ csrf_field() }}
+
+                  <div class="row">
+                    <div class="col m4 push-m4 s12">
+                      <h4 style="text-align:center;">Modificar Periodo Escolar Actual</h4>
+                    </div>
+                  </div>
+
+                  <div class="row">
+
+                    <div class="input-field col m3 s12 ">
+                      <!--<i class="material-icons prefix">account_circle</i>-->
+                      <input type="text" id="periodo_actual" name="periodo_actual" class="validate" required>
+                      <label for="periodo_actual">Periodo Actual</label>
+                    </div>
+
+                    <div class="input-field col m3 s12 ">
+                      <!--<i class="material-icons prefix">date_range</i>-->
+                      <label for="fecha_inicio">Fecha de inicio </label>
+                      <input type="text" name="finicio" class="datepicker" id="fecha_inicio">
+                    </div>
+
+                    <div class="input-field col m3 s12 ">
+                      <!--<i class="material-icons prefix">date_range</i>-->
+                      <label for="fecha_terminacion">Fecha de terminación </label>
+                      <input type="text" name="fterm" class="datepicker" id="fecha_terminacion">
+                    </div>
+
+                    <div class="input-field col m3 s12 ">
+                      <!--<i class="material-icons prefix">account_circle</i>-->
+                      <input type="text" id="director" name="director" class="validate" required>
+                      <label for="director">Director</label>
+                    </div>
+
+                    <div class="input-field col m3 s12 ">
+                      <!--<i class="material-icons prefix">account_circle</i>-->
+                      <input type="text" id="jefe_control" name="jefe_control" class="validate" required>
+                      <label for="jefe_control">Jefe de Control Escolar</label>
+                    </div>
+
+
 
                     <div class="row">
-                        <div class="col m4 push-m4 s12">
-                            <h4 style="text-align:center;">Modificar Periodo Escolar Actual</h4>
-                        </div>
+
                     </div>
 
-                    <div class="row" >
-
-                      <div class="input-field col m3 s12 ">
-                          <!--<i class="material-icons prefix">account_circle</i>-->
-                          <input type="text" id="periodo_actual" name="periodo_actual" class="validate" required >
-                          <label for="periodo_actual">Periodo Actual</label>
-                      </div>
-
-                      <div class="input-field col m3 s12 ">
-                          <!--<i class="material-icons prefix">date_range</i>-->
-                          <label for="fecha_inicio">Fecha de inicio </label>
-                          <input type="text" name="finicio" class="datepicker" id="fecha_inicio">
-                      </div>
-
-                      <div class="input-field col m3 s12 ">
-                          <!--<i class="material-icons prefix">date_range</i>-->
-                          <label for="fecha_terminacion">Fecha de terminación </label>
-                          <input type="text" name="fterm" class="datepicker" id="fecha_terminacion">
-                      </div>
-
-                      <div class="input-field col m3 s12 ">
-                          <!--<i class="material-icons prefix">account_circle</i>-->
-                          <input type="text" id="director" name="director" class="validate" required >
-                          <label for="director">Director</label>
-                      </div>
-
-                      <div class="input-field col m3 s12 ">
-                          <!--<i class="material-icons prefix">account_circle</i>-->
-                          <input type="text" id="jefe_control" name="jefe_control" class="validate" required >
-                          <label for="jefe_control">Jefe de Control Escolar</label>
-                      </div>
-
-
-
-                      <div class="row">
-
-                      </div>
-
-                        <div class="input-field col m2 s12">
-                            <button class="btn light-blue darken-4" type="submit" id="actualizar_periodo">Actualizar
-                                <i class="material-icons right">send </i>
-                            </button>
-                        </div>
+                    <div class="input-field col m2 s12">
+                      <button class="btn light-blue darken-4" type="submit" id="actualizar_periodo">Actualizar
+                        <i class="material-icons right">send </i>
+                      </button>
                     </div>
+                  </div>
                 </form>
-  </div>
-</div>
-<!--end container-->
+              </div>
+            </div>
+            <!--end container-->
 
 
-@endsection
+            @endsection
 
-@section('scripts')
-<!--prism-->
-<script type="text/javascript" src="{{{ asset('js/plugins/prism/prism.js') }}}"></script>
-<!--scrollbar-->
-<script type="text/javascript" src="{{{ asset('js/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}}"></script>
+            @section('scripts')
+            <!--prism-->
+            <script type="text/javascript" src="{{{ asset('js/plugins/prism/prism.js') }}}"></script>
+            <!--scrollbar-->
+            <script type="text/javascript" src="{{{ asset('js/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}}"></script>
 
-<!-- chartist -->
-<script type="text/javascript" src="{{{ asset('js/plugins/chartist-js/chartist.min.js') }}}"></script>
+            <!-- chartist -->
+            <script type="text/javascript" src="{{{ asset('js/plugins/chartist-js/chartist.min.js') }}}"></script>
 
-<!-- Calendar Script -->
-<script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/lib/jquery-ui.custom.min.js') }}}"></script>
-<script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/lib/moment.min.js') }}}"></script>
-<script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/js/fullcalendar.min.js') }}}"></script>
-<script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/fullcalendar-script.js') }}}"></script>
-<script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/lang/es.js') }}}"></script>
+            <!-- Calendar Script -->
+            <script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/lib/jquery-ui.custom.min.js') }}}"></script>
+            <script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/lib/moment.min.js') }}}"></script>
+            <script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/js/fullcalendar.min.js') }}}"></script>
+            <script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/fullcalendar-script.js') }}}"></script>
+            <script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/lang/es.js') }}}"></script>
 
-<!--plugins.js - Some Specific JS codes for Plugin Settings-->
-<script type="text/javascript" src="js/plugins.js') }}}"></script>
+            <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+            <script type="text/javascript" src="js/plugins.js') }}}"></script>
 
-<script type="text/javascript" src="{{{ asset('js/picker.js') }}}"></script>
-@endsection
+            <script type="text/javascript" src="{{{ asset('js/picker.js') }}}"></script>
+            @endsection
