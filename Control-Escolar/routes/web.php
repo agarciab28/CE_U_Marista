@@ -62,6 +62,10 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
     return view('admin.bitacora');
   })->name('admin_bitacora');
 
+  Route::get('/alumno/eliminar/{ncontrol}', 'AlumnosController@eliminar')
+    ->where(["ncontrol"=>'[0-9]+'])
+    ->name('eliminaAlumno');
+
   Route::get('/listas/alumnos', 'AlumnosController@lista')->name('admin_lalumnos');
 
   Route::get('/listas/profes', 'ProfesoresController@lista')->name('admin_lprofes');
