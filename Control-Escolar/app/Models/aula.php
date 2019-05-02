@@ -9,7 +9,7 @@ class aula extends Model
     protected $table = "aula";
 
     protected $fillable = [
-        "aula", "edificio", "tipo"
+        "id","aula", "edificio", "tipo"
     ];
 
     protected $hidden = [];

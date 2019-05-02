@@ -34,7 +34,7 @@
                   <td>{{$persona->fnaci}}</td>
                   <td>{{$persona->email}}</td>
                   <td> <a href="{{ route('admin_musuarios') }}" class="btn">Modificar</a> </td>
-                  <td> <a href="#" class="btn red">Deshabilitar</a> </td>
+                  <td> <a href="{{ route('eliminaProfe',['usuario'=>$persona->usuario]) }}" class="btn {{($persona->activo>0)?' green':'red'}}">{{($persona->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>
 
               </tr>
               @endforeach
@@ -45,7 +45,14 @@
 
 @section('scripts')
   <script src="{{{ asset('js/datatables.js') }}}"></script>
-
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  @if($cambio==1)
+  <script type="text/javascript">
+  swal("¡El usuario a cambiado de estado de manera correcta!", {
+      icon: "success",
+  });
+  </script>
+  @endif
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
