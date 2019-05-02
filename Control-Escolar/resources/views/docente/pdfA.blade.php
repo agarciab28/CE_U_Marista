@@ -4,10 +4,10 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col s12 m4 l2"><img src="{{{ asset('img/logos/logo_1_a.png') }}}" alt="" width="150%" style="margin:20px"></div>
-      <div class="col s12 m4 l8"><div class="tabPDF center" style="margin:20px">UNIVERSIDAD MARISTA VALLADOLID</div></div>
-      <div class="col s12 m4 l8"><div class="headPDF">BOLETA DE CALIFICACIONES</div></div>
-      <div class="col s12"><div class="tabPDF center">EVALUACIÓN ORDINARIA</div></div>
+      <div class="col s12 m4 l2"><img src="{{{ asset('img/logos/logo_3_a.png') }}}" alt="" width="50%" style="margin:20px"></div>
+      <div class="col s12 m4 l8"><div class="headPDF center" style="margin:20px 0px 0px 0px; font-size:20px">UNIVERSIDAD</div></div>
+      <div class="col s12 m4 l8"><div class="headPDF">MARISTA VALLADOLID</div></div>
+      <div class="col s12"><div class="head2PDF center">BOLETA DE CALIFICACIONES: EVALUACIÓN ORDINARIA</div></div>
     </div>
     <br>
     <div class="subHeadPDF">DATOS DEL GRUPO</div>
@@ -32,37 +32,46 @@
 
     <div class="row">
       <div class="subHeadPDF">CALIFICACIONES</div>
-      <table class="centered">
+      <table class="">
         <thead>
           <tr>
-              <th class="tabPDF">No</th>
-              <th class="tabPDF">No CTRL</th>
-              <th class="tabPDF">Nombre del alumno</th>
-              <th class="tabPDF">Primer parcial</th>
-              <th class="tabPDF">Segundo parcial</th>
-              <th class="tabPDF">Tercer parcial</th>
-              <th class="tabPDF">Calificación final</th>
+              <th class="tabPDF center">No</th>
+              <th class="tabPDF center">No CTRL</th>
+              <th class="tabPDF center">Nombre del alumno</th>
+              <th class="tabPDF center">Primer parcial</th>
+              <th class="tabPDF center">Segundo parcial</th>
+              <th class="tabPDF center">Tercer parcial</th>
+              <th class="tabPDF center">Calificación final</th>
           </tr>
         </thead>
 
         <tbody>
           <tr>
-            <td>1</td>
-            <td>15121183</td>
-            <td>Samuel Alejandro López Becerra</td>
-            <td>80</td>
-            <td>76</td>
-            <td>84</td>
-            <td>80</td>
+            <td class="bodyPDF center">1</td>
+            <td class="bodyPDF center">15121183</td>
+            <td class="bodyPDF">Samuel Alejandro López Becerra</td>
+            <td class="bodyPDF center">75</td>
+            <td class="bodyPDF center">80</td>
+            <td class="bodyPDF center">85</td>
+            <td class="bodyPDF center">80</td>
+          </tr>
+          <tr>
+            <td class="bodyPDF center">2</td>
+            <td class="bodyPDF center">15121189</td>
+            <td class="bodyPDF">Diego Ulises Martínez Aguilar</td>
+            <td class="bodyPDF center">75</td>
+            <td class="bodyPDF center">80</td>
+            <td class="bodyPDF center">85</td>
+            <td class="bodyPDF center">80</td>
           </tr>
           <tr>
             <td></td>
             <td></td>
-            <td class="tabPDF">Promedio grupal</td>
-            <td class="tabPDF">80</td>
-            <td class="tabPDF">76</td>
-            <td class="tabPDF">84</td>
-            <td class="tabPDF">80</td>
+            <td class="tabPDF center">Promedio grupal</td>
+            <td class="tabPDF center">80</td>
+            <td class="tabPDF center">76</td>
+            <td class="tabPDF center">84</td>
+            <td class="tabPDF center">80</td>
           </tr>
         </tbody>
       </table>

@@ -14,6 +14,10 @@ class genPDFController extends Controller
       return view('docente.pdfB');
     }
 
+    public function pdfC(){
+      return view('docente.pdfC');
+    }
+
     public function pdfF(){
       return view('docente.pdfF');
     }

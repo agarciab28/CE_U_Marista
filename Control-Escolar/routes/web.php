@@ -119,6 +119,8 @@ Route::group(["prefix" => 'docente'], function(){
 
   Route::get('/pdfB','genPDFController@pdfB')->name('docente_pdfB');
 
+  Route::get('/pdfC','genPDFController@pdfC')->name('docente_pdfC');
+
   Route::get('/pdfF','genPDFController@pdfF')->name('docente_pdfF');
 });
 
