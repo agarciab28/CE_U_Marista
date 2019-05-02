@@ -2,9 +2,9 @@
 @section('stylesheet')
 <link href="{{{ asset('css/style_pdf.css') }}}" rel="stylesheet">
 <body>
-  <div class="container">
+  <div class="container" style="width: 18cm">
     <div class="row">
-      <div class="col s12 m4 l2"><img src="{{{ asset('img/logos/logo_3_a.png') }}}" alt="" width="50%" style="margin:20px"></div>
+      <div class="col s12 m4 l2"><img src="{{{ asset('img/logos/logo_3_a.png') }}}" alt="" width="70%" style="margin:20px"></div>
       <div class="col s12 m4 l8"><div class="headPDF center" style="margin:20px 0px 0px 0px; font-size:20px">UNIVERSIDAD</div></div>
       <div class="col s12 m4 l8"><div class="headPDF">MARISTA VALLADOLID</div></div>
       <div class="col s12"><div class="head2PDF center">BOLETA DE CALIFICACIONES: EVALUACIÓN ORDINARIA</div></div>
