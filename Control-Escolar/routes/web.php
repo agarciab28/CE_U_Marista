@@ -115,13 +115,14 @@ Route::group(["prefix" => 'docente'], function(){
     return $pdf->download('Boleta de Calificaciones.pdf');
   })->name('docente_pdfA2');
 
-  Route::get('/pdfA','genPDFController@pdfA')->name('docente_pdfA');
-
-  Route::get('/pdfB','genPDFController@pdfB')->name('docente_pdfB');
-
-  Route::get('/pdfC','genPDFController@pdfC')->name('docente_pdfC');
-
-  Route::get('/pdfF','genPDFController@pdfF')->name('docente_pdfF');
+  //calificaciones ordinarias grupo
+  Route::get('/pdfA','genPDFController@pdfA_docente')->name('docente_pdfA');
+  //calificaciones extraordinarias grupo
+  Route::get('/pdfB','genPDFController@pdfB_docente')->name('docente_pdfB');
+  //alumnos repetidores grupo
+  Route::get('/pdfC','genPDFController@pdfC_docente')->name('docente_pdfC');
+  //calificaciones finales grupo
+  Route::get('/pdfF','genPDFController@pdfF_docente')->name('docente_pdfF');
 });
 
 // Rutas Coordinador
@@ -130,6 +131,19 @@ Route::group(["prefix" => 'coordinador'], function(){
     return view('coordinador.home');
   })->name('coordinador_home');
 
+  //calificaciones ordinarias grupo
+  Route::get('/pdfA','genPDFController@pdfA_coordi')->name('coordinador_pdfA');
+  //calificaciones extraordinarias grupo
+  Route::get('/pdfB','genPDFController@pdfB_coordi')->name('coordinador_pdfB');
+  //calificaciones finales grupo
+  Route::get('/pdfF','genPDFController@pdfF_coordi')->name('coordinador_pdfF');
+
+  //calificaciones ordinarias materia
+  Route::get('/pdfAM','genPDFController@pdfAM_coordi')->name('coordinador_pdfAM');
+  //calificaciones extraordinarias materia
+  Route::get('/pdfBM','genPDFController@pdfBM_coordi')->name('coordinador_pdfBM');
+  //calificaciones finales materia
+  Route::get('/pdfFM','genPDFController@pdfFM_coordi')->name('coordinador_pdfFM');
 });
 
 // Rutas Alumno
