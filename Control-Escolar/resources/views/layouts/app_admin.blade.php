@@ -31,8 +31,9 @@
             <div class="section">
               <ul class="left hide-on-med-and-down">
                 @if (session('username'))
+              
                 <li class="chip">
-                  <img src="{{{ asset('img/user.png') }}}" alt="Contact Person">
+                  <img src="session('ruta')" alt="Contact Person">
                   Bienvenido {{session('nombre')}}
                 </li>
                 @endif

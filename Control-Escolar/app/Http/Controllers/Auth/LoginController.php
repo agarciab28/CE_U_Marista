@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 use Auth;
 use App\Models\persona;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -30,13 +31,16 @@ class LoginController extends Controller
         'password' => 'required|string'
       ]);
       if(Auth::guard('admins')->attempt($credentials,$request->remember)){
-        $datos=persona::select('nombres','apaterno','amaterno')->where('id_persona',auth('admins')->user()->id_persona)->get();
+        $datos=persona::select('nombres','apaterno','amaterno','imagen')->where('id_persona',auth('admins')->user()->id_persona)->get();
         $nombre =$datos[0]->nombres." ".$datos[0]->apaterno." ".$datos[0]->amaterno;
+        $imagen=$datos[0]->imagen;
+        $url=Storage::url($imagen);
+        $ruta=$url.$imagen;
         $request->session()->regenerate();
         dd(session('status'));
         if(session('status')){
         return view('admin.home');
-      }else return "nelson";
+      }else return "error";
       }
       return back()->withErrors(['id_admin' => 'Sin registro']);
     }
