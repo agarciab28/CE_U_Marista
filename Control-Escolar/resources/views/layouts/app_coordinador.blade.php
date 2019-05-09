@@ -47,7 +47,7 @@
       </li>
 
 
-    	<li id="home"><a class="white-text" href="{{ route('coordinador_home') }}" ><i class="fas fa-home white-text" style="margin-right:0;"></i>Inicio</a></li>
+    	<li id="home"><a class="white-text" href="{{ route('coordinador_home') }}" ><i class="fas fa-home white-text" style="margin-right:1.5em; margin-left:0.5em; font-size:1.5em;"></i>Inicio</a></li>
       <li id="cerrar_sesion"><a class="show-on-small hide-on-med-and-up white-text" href="/">Cerrar Sesion</a></li>
 
         <div class="contenedor">
