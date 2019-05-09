@@ -13,8 +13,8 @@ class CreateTablePersona extends Migration
      */
     public function up()
     {
-        
-    
+
+
         Schema::create('persona', function (Blueprint $table) {
             $table->increments('id_persona',10);
             $table->string('rol',30);
@@ -38,14 +38,14 @@ class CreateTablePersona extends Migration
             $table->timestamps();
         });
 
-        
-    DB::unprepared("
+
+    /*DB::unprepared("
     CREATE TRIGGER updatenombres BEFORE UPDATE ON persona
     FOR EACH ROW IF (NEW.nombres != OLD.nombres) THEN
-    insert into bitacora(usuario,tipoderol,tipodemov,fecha,tablaafectada, campoalter,valorant,valornuevo) 
+    insert into bitacora(usuario,tipoderol,tipodemov,fecha,tablaafectada, campoalter,valorant,valornuevo)
     values (user(), NEW.rol,'UPDATE',now(),'Persona','Nombres',old.nombres, new.nombres);
-    END IF 
-    
+    END IF
+
     ");
 
     DB::unprepared("
@@ -58,14 +58,14 @@ class CreateTablePersona extends Migration
 
     DB::unprepared("
     CREATE TRIGGER `insertpersona` BEFORE INSERT ON `persona`
-    FOR EACH ROW insert into bitacora(usuario,tipoderol,fecha,tipodemov,tablaafectada,campoalter,valorant,valornuevo) 
+    FOR EACH ROW insert into bitacora(usuario,tipoderol,fecha,tipodemov,tablaafectada,campoalter,valorant,valornuevo)
     values (user(),NEW.rol,now(),'INSERT','Persona','No aplica','No aplica','No aplica')
     ");
 
 
     DB::unprepared("
     CREATE TRIGGER `deletepersona` BEFORE DELETE ON `persona`
-    FOR EACH ROW insert into bitacora(usuario,tipoderol,fecha,tipodemov,tablaafectada,campoalter,valorant,valornuevo) 
+    FOR EACH ROW insert into bitacora(usuario,tipoderol,fecha,tipodemov,tablaafectada,campoalter,valorant,valornuevo)
     values (user(),old.rol,now(),'DELETE','Persona',old.curp,'No aplica','No aplica')
 
     ");
@@ -109,8 +109,8 @@ class CreateTablePersona extends Migration
     insert into bitacora(usuario,tipoderol,tipodemov,fecha,tablaafectada, campoalter,valorant,valornuevo)
     values (user(), NEW.rol,'UPDATE',now(),'Persona','Numero Telefonico',old.num_tel, new.num_tel);
     END IF
-    ");
-    
+    ");*/
+
 
 
 

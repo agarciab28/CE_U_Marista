@@ -36,12 +36,16 @@ Route::get('/registrar', 'Auth\RegisterController@showForm')->name('admin_regist
 
 Route::post('/carreras', 'carrerasController@registro')->name('admin_carreras_registro');
 
-Route::get('/carreras', 'carrerasController@listaGrupos')->name('admin_carreras');
+Route::get('/carreras', 'carrerasController@listaCarreras')->name('admin_carreras');
 
 Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_registro');
 
+Route::get('/carreras/elimina/{carrera}','carrerasController@elimina')
+  ->where(["carrera"=>'[0-9]+'])
+  ->name('eliminaCarrera');
 
-  Route::get('/materias', 'materiasController@showMaterias')->name('admin_materias');
+
+Route::get('/materias', 'materiasController@showMaterias')->name('admin_materias');
 
   Route::post('/materias','materiasController@registrar')->name('registrar_materia');
 
@@ -62,6 +66,8 @@ Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_reg
   Route::get('/bitacora', function () {
     return view('admin.bitacora');
   })->name('admin_bitacora');
+
+Route::get('/datos','adminController@showDatos')->name('mis_datos');
 
   Route::get('/alumno/eliminar/{ncontrol}', 'AlumnosController@eliminar')
     ->where(["ncontrol"=>'[0-9]+'])
