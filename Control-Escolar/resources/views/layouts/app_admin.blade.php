@@ -31,7 +31,7 @@
             <div class="section">
               <ul class="left hide-on-med-and-down">
                 @if (session('username'))
-              
+
                 <li class="chip">
                   <img src="session('ruta')" alt="Contact Person">
                   Bienvenido {{session('nombre')}}
@@ -101,7 +101,7 @@
 
     <li id="bitacora"><a class="white-text" href="{{ route('admin_bitacora') }}"><i class="fas fa-file-signature white-text" style="margin-right:0px;"></i></i>Bitácora</a></li>
 
-    <li id="misdatos"><a class="white-text" href="#"><i class="fas fa-user-cog white-text" style="margin-right:0;"></i>Mis datos</a></li>
+    <li id="misdatos"><a class="white-text" href="{{ route('mis_datos') }}"><i class="fas fa-user-cog white-text" style="margin-right:0;"></i>Mis datos</a></li>
 
     <li id=" cerrar_sesion"><a class="show-on-small hide-on-med-and-up white-text" href="/">Cerrar Sesion</a></li>
 

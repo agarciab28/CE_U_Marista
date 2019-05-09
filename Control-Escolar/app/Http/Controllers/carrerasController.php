@@ -7,7 +7,7 @@ use App\Models\carrera;
 
 class carrerasController extends Controller
 {
-    public function listaGrupos(){
+    public function listaCarreras(){
       $carreras = carrera::get();
       $registro=false;
       return view("admin.carreras",compact(["carreras","registro"]));
@@ -33,5 +33,9 @@ class carrerasController extends Controller
       dd($request);
       $carrera= new carrera();
 
+    }
+
+    public function elimina($carrera){
+      dd($carrera);
     }
 }

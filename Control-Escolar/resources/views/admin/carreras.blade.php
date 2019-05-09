@@ -46,7 +46,7 @@
                 <th>{{$carrera->rvoe}}</th>
                 <th>{{$carrera->fecha}}</th>
                 <th> <a href="#modal_modificar" class="btn modal-trigger">Modificar</a> </th>
-                <th> <a href="#" class="btn red">Deshabilitar</a> </th>
+                <th> <a href="{{route('eliminaCarrera',['carrera'=>$carrera->id_carrera])}}" class="btn {{($carrera->activo>0)?' green':'red'}}">{{($carrera->activo>0)?' Habilitado':'Deshabilitado'}}</a> </th>
               </tr>
               @endforeach
             </tbody>
