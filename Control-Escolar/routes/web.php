@@ -40,14 +40,16 @@ Route::get('/carreras', 'carrerasController@listaCarreras')->name('admin_carrera
 
 Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_registro');
 
-Route::get('/carreras/elimina/{carrera}','carrerasController@elimina')
-  ->where(["carrera"=>'[0-9]+'])
-  ->name('eliminaCarrera');
+Route::get('/carreras/elimina/{carrera}','carrerasController@elimina')->name('eliminaCarrera');
+
+Route::post('/carreras/editar','carrerasController@editar')->name('edita_carrera');
 
 
 Route::get('/materias', 'materiasController@showMaterias')->name('admin_materias');
 
-  Route::post('/materias','materiasController@registrar')->name('registrar_materia');
+Route::post('/materias','materiasController@registrar')->name('registrar_materia');
+
+Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('eliminaMateria');
 
   Route::get('/calendario', function(){
     return view('admin.calendario');
@@ -67,7 +69,7 @@ Route::get('/materias', 'materiasController@showMaterias')->name('admin_materias
     return view('admin.bitacora');
   })->name('admin_bitacora');
 
-Route::get('/datos','adminController@showDatos')->name('mis_datos');
+  Route::get('/datos','adminController@showDatos')->name('mis_datos');
 
   Route::get('/alumno/eliminar/{ncontrol}', 'AlumnosController@eliminar')
     ->where(["ncontrol"=>'[0-9]+'])

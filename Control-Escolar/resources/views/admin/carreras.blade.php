@@ -45,7 +45,7 @@
                 <th>{{$carrera->nombre_carrera}}</th>
                 <th>{{$carrera->rvoe}}</th>
                 <th>{{$carrera->fecha}}</th>
-                <th> <a href="#modal_modificar" class="btn modal-trigger">Modificar</a> </th>
+                <th> <a onclick="modificar_carrera('{{$carrera->id_carrera}}')" href="#modal_modificar" class="btn modal-trigger">Modificar</a> </th>
                 <th> <a href="{{route('eliminaCarrera',['carrera'=>$carrera->id_carrera])}}" class="btn {{($carrera->activo>0)?' green':'red'}}">{{($carrera->activo>0)?' Habilitado':'Deshabilitado'}}</a> </th>
               </tr>
               @endforeach
@@ -108,10 +108,10 @@
           </div>
       </div>
 
-      {{-- modal modificar carrera --}}
+      <!-- Modal modificar-->
       <div id="modal_modificar" class="modal bottom-sheet">
           <div class="modal-content">
-            <form class="col  s12 m12" id="form_mod_carrera" action="{{route('admin_carreras_registro')}}" method="post">
+            <form class="col  s12 m12" id="form_mod_carrera" action="{{route('edita_carrera')}}" method="post">
               {{ csrf_field() }}
               <div class="row">
                 <div class="col m4 push-m4 s12">
@@ -121,7 +121,7 @@
               <div class="row" id="data_carrera">
                 <div class="input-field col m4 s12 ">
                   <!--<i class="material-icons prefix">account_circle</i>-->
-                  <input type="text" name="id_carrera" id="mod_idcarrera" class="validate" disabled required maxlength="35">
+                  <input type="text" name="id_carrera" id="mod_idcarrera" class="validate" placeholder="" readonly required maxlength="35">
                   <label for="mod_idcarrera">ID Carrera</label>
                 </div>
                 <div class="input-field col m4 s12 ">
@@ -169,13 +169,14 @@
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="{{{ asset('js/datatables.js') }}}"></script>
+<script src="{{{asset('js/asigna.js')}}}"></script>
 <script src="{{{ asset('js/validaciones.js') }}}"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
 <script src="https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"></script>
 @if($registro)
 <script type="text/javascript">
-    swal('Registro Exitoso!', 'Presione OK!', 'success');
+    swal('Cambio Exitoso!', 'Presione OK!', 'success');
 </script>
 @endif
 @endsection

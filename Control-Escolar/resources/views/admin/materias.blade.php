@@ -45,7 +45,7 @@
                     <th>{{$materia->plan}}</th>
                     <th>{{$materia->horas_materia}}</th>
                     <td> <a href="#modal_modificar" class="btn modal-trigger">Modificar</a> </td>
-                    <td> <a href="#" class="btn red">Deshabilitar</a> </td>
+                    <td> <a href="{{route('eliminaMateria',['materia'=>$materia->id_materia])}}" class="btn {{($materia->activo>0)?' green':'red'}}">{{($materia->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>
                 </tr>
                 @endforeach
             </tbody>
@@ -128,7 +128,7 @@
 
             <div class="input-field col m2 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="text" id="materia_id" name="mod_id_materia" class="validate" disabled required maxlength="35">
+                <input type="text" id="materia_id" name="mod_id_materia" class="validate" readonly required maxlength="35">
                 <label for="mod_id_materia">Clave de materia</label>
             </div>
 
@@ -176,6 +176,7 @@
 
 @section('scripts')
 <script src="{{{ asset('js/datatables.js') }}}"></script>
+<script src="{{{asset('js/asigna.js')}}}"></script>
 <script src="{{{ asset('js/validaciones.js') }}}"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>

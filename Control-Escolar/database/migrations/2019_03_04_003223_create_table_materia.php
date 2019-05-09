@@ -18,6 +18,7 @@ class CreateTableMateria extends Migration
             $table->string('id_plan',30);
             $table->string('nombre_materia');
             $table->integer('horas_materia');
+            $table->boolean('activo')->default('1');
             $table->timestamps();
 
             $table->primary('id_materia');

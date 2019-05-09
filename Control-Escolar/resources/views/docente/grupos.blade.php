@@ -67,8 +67,6 @@ $grupo_seleccionado=0;
 @endsection
 
 @section('scripts')
-<script src="{{{asset('js/asigna.js')}}}">
-
-</script>
+<script src="{{{asset('js/asigna.js')}}}"></script>
 
 @endsection
