@@ -177,6 +177,22 @@ Route::group(["prefix" => 'alumno'], function(){
     return view('alumno.home');
   })->name('alumno_home');
 
+  Route::get('/boletas', function(){
+    return view('alumno.boletas');
+  })->name('alumno_boletas');
+
+  Route::get('/kardex', function(){
+    return view('alumno.kardex');
+  })->name('alumno_kardex');
+
+  Route::get('/grupos', function(){
+    return view('alumno.grupos');
+  })->name('alumno_grupos');
+
+  Route::get('/misdatos', function(){
+    return view('alumno.misdatos');
+  })->name('alumno_datos');
+
   //boleta de calificaciones
   Route::get('/pdfA','genPDFController@pdfA_al')->name('alumno_pdfA');
   //kárdex de calificaciones

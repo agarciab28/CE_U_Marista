@@ -3,7 +3,7 @@
 @section('stylesheet')
 
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
-<link href="{{{ asset('css/admin/perfil.css') }}}" rel="stylesheet">
+<link href="{{{ asset('css/admin/misdatos.css') }}}" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="{{{ asset('https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css') }}}" rel="stylesheet">
 
@@ -61,7 +61,7 @@
     </div>
 </div>
 
-<!-- Modal Trigger 
+<!-- Modal Trigger
 <a class="waves-effect waves-light btn modal-trigger" href="#modaluser">Modal</a>-->
 
 <!-- Modal Structure -->

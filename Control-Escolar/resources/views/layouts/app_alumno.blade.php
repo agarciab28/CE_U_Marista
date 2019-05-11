@@ -47,7 +47,11 @@
       </li>
 
 
-    	<li id="home"><a class="white-text" href="{{ route('alumno_home') }}" ><i class="fas fa-home white-text" style="margin-right:1.5em; margin-left:0.5em; font-size:1.5em;"></i>Inicio</a></li>
+    	<li id="home"><a class="white-text" href="{{ route('alumno_home') }}" ><i class="fas fa-home white-text menu-icon"></i>Inicio</a></li>
+      <li id="grupos"><a class="white-text" href="{{ route('alumno_grupos') }}" ><i class="fas fa-users white-text menu-icon"></i>Grupos</a></li>
+      <li id="boletas"><a class="white-text" href="{{ route('alumno_boletas') }}" ><i class="fas fa-address-card white-text menu-icon"></i>Boletas</a></li>
+      <li id="kardex"><a class="white-text" href="{{ route('alumno_kardex') }}" ><i class="far fa-address-card white-text menu-icon"></i>Kardex</a></li>
+      <li id="misdatos"><a class="white-text" href="{{ route('alumno_datos') }}" ><i class="fas fa-user-cog white-text menu-icon"></i>Mis Datos</a></li>
       <li id="cerrar_sesion"><a class="show-on-small hide-on-med-and-up white-text" href="/">Cerrar Sesion</a></li>
 
         <div class="contenedor">
