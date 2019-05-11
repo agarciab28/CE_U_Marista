@@ -45,4 +45,36 @@ class AlumnosController extends Controller
       $cambio=1;
         return view('admin.listas.alumnos',compact(['personas','cambio']));
     }
+
+    public function modificar_alumno(Request $request, $id){
+      //metodo para actualizar registros
+  try{
+        $usuario = Usuario::find($id);
+  $usuario_n = [
+    'nombre' => $request->get('nombre'),
+    'apellidoP' => $request->get('apellidoP'),
+    'apellidoM' => $request->get('apellidoM'),
+    'correoElectronico' => $request->get('correoElectronico'),
+    'nombreDeUsuario' => $request->get('nombreDeUsuario'),
+    'password' => bcrypt($request->get('password')),
+    'cedulaProfesional' => $request->get('cedulaProfesional'),
+    'cedulaMoE' => $request->get('cedulaMoE'),
+    'telefono' => $request->get('telefono'),
+    'curp' => $request->get('curp')
+    ];
+  //dd($usuario_n);
+  //dd($request->except('_token'));
+  $usuario->update($usuario_n);
+}catch(\Exception $e){
+    $message="Algo salio mal al actualizar";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+    return redirect()->route('listu');
+
+}
+$message="Actualizacion de datos exitosa";
+echo "<script type='text/javascript'>alert('$message');</script>";
+    return redirect()->route('listu');
+
+
+    }
 }
