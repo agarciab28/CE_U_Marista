@@ -4,7 +4,24 @@
 
 .contenedor{
   text-align: center;
+  align-items: center;
 }
+
+.content-horario{
+  margin-left: 1em;
+  margin-right: 1em;
+  /* background-color: rgba(0, 0, 0, 0.1); */
+}
+
 a{
   color: rgba(8,58,99,1);
+}
+
+.card-dia{
+  background-color: #FFB500;
+  border-radius: 1em;
+}
+
+.card-materia{
+  border-radius: 2em;
 }

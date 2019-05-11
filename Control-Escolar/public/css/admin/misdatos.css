@@ -332,3 +332,10 @@ i.icon-blue {
 #misdatos{
   background-color: #FFB500;
 }
+
+.contenedor{
+  text-align: center;
+}
+a{
+  color: rgba(8,58,99,1);
+}
