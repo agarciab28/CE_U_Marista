@@ -89,9 +89,9 @@ Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('el
 
 
 
-//  Route::get('/modificar/usuarios', function(){
-//    return view('admin.modificar.usuarios');
-//  })->name('admin_musuarios');
+  Route::get('/modificar/usuarios', function(){
+    return view('admin.modificar.usuarios');
+  })->name('admin_musuarios');
 
   Route::get('/coordinador/elimina/{usuario}','CoordinadorController@elimina')->where(['usuario'=>'[A-z]+'])->name('eliminaCoordinador');
 
@@ -120,6 +120,10 @@ Route::group(["prefix" => 'docente'], function(){
   Route::get('/', function(){
     return view('docente.home');
   })->name('docente_home');
+
+  Route::get('/misdatos', function(){
+    return view('docente.misdatos');
+  })->name('docente_datos');
 
   Route::post('/consulta', 'gruposController@describeGruposProf')->name('docente_consulta');
 
@@ -158,6 +162,22 @@ Route::group(["prefix" => 'coordinador'], function(){
     return view('coordinador.home');
   })->name('coordinador_home');
 
+  Route::get('/alumnos', function(){
+    return view('coordinador.alumnos');
+  })->name('coordinador_alumnos');
+
+  Route::get('/grupos', function(){
+    return view('coordinador.grupos');
+  })->name('coordinador_grupos');
+
+  Route::get('/profesores', function(){
+    return view('coordinador.profesores');
+  })->name('coordinador_profesores');
+
+  Route::get('/misdatos', function(){
+    return view('coordinador.misdatos');
+  })->name('coordinador_datos');
+
   //calificaciones ordinarias grupo
   Route::get('/pdfA','genPDFController@pdfA_coordi')->name('coordinador_pdfA');
   //calificaciones extraordinarias grupo
@@ -178,6 +198,22 @@ Route::group(["prefix" => 'alumno'], function(){
   Route::get('/', function(){
     return view('alumno.home');
   })->name('alumno_home');
+
+  Route::get('/boletas', function(){
+    return view('alumno.boletas');
+  })->name('alumno_boletas');
+
+  Route::get('/kardex', function(){
+    return view('alumno.kardex');
+  })->name('alumno_kardex');
+
+  Route::get('/grupos', function(){
+    return view('alumno.grupos');
+  })->name('alumno_grupos');
+
+  Route::get('/misdatos', function(){
+    return view('alumno.misdatos');
+  })->name('alumno_datos');
 
   //boleta de calificaciones
   Route::get('/pdfA','genPDFController@pdfA_al')->name('alumno_pdfA');

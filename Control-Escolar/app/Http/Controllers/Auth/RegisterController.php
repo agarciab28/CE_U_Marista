@@ -73,70 +73,67 @@ class RegisterController extends Controller
     }
     public function registro(Request $request){
 
-      $datos=$request;
-
       try {
-$file=$datos->file('imagen');
-$nombre=$file->getClientOriginalName();
+//$file=$datos->file('imagen');
+//$nombre=$file->getClientOriginalName();
+
         $persona=new persona();
-        $persona->rol=$request['rol'];
-        $persona->nombres=$request['nombres'];
-        $persona->apaterno=$request['apaterno'];
-        $persona->amaterno=$request['amaterno'];
-        $persona->sexo=$request['sexo'];
-        $persona->email=$request['email'];
-        $persona->fnaci=$request['fnaci'];
-        $persona->curp=$request['curp'];
-        $persona->imagen=$nombre;
+        $persona->rol=$request->rol;
+        $persona->nombres=$request->nombres;
+        $persona->apaterno=$request->apaterno;
+        $persona->amaterno=$request->amaterno;
+        $persona->sexo=$request->sexo;
+        $persona->email=$request->email;
+        $persona->fnaci=$request->fnaci;
+        $persona->curp=$request->curp;
         $persona->save();
-        \Storage::disk('local')->put($nombre, \File::get($file));
-        $id_persona=persona::where('curp',$datos['curp'])->get(['id_persona'])->first();
+        $id_persona=persona::where('curp',$request->curp)->get(['id_persona'])->first();
 
         $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
 
-        if($datos['rol']=='Alumno'){
+        if($request->rol=='Alumno'){
 
           $alumno= new alumno();
-          $alumno->id_persona=$id_persona['id_persona'];
-          $alumno->ncontrol=$datos['ncontrol'];
-          $alumno->id_carrera=$datos['id_carrera'];
-          $alumno->semestre=$datos['semestre'];
-          $alumno->plan_de_estudios=$datos['plan_de_estudios'];
-          $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
+          $alumno->id_persona=$id_persona->id_persona;
+          $alumno->ncontrol=$request->ncontrol;
+          $alumno->id_carrera=$request->id_carrera;
+          $alumno->semestre=$request->semestre;
+          $alumno->plan_de_estudios=$request->plan_de_estudios;
+          $alumno->password=hash_hmac('sha256', $request->pass, env('HASH_KEY'));
           $alumno->activo='1';
           $alumno->save();
         }else {
 
           $personal=new personal();
-          $personal->username=$datos['username'];
-          $personal->ced_fiscal=$datos['ced_fiscal'];
-          $personal->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
-          $personal->nssoc=$datos['nssoc'];
-          $personal->id_persona=$id_persona['id_persona'];
+          $personal->username=$request->username;
+          $personal->ced_fiscal=$request->ced_fiscal;
+          $personal->password=hash_hmac('sha256', $request->pass, env('HASH_KEY'));
+          $personal->nssoc=$request->nssoc;
+          $personal->id_persona=$id_persona->id_persona;
           $personal->activo='1';
           $personal->save();
 
-          if($datos['rol']=='Coordinador'){
+          if($request->rol=='Coordinador'){
 
             $coordinador= new coordinador();
-            $coordinador->id_carrera=$datos['id_carrera_coordinador'];
-            $coordinador->username=$datos['username'];
+            $coordinador->id_carrera=$request->id_carrera_coordinador;
+            $coordinador->username=$request->username;
             $coordinador->save();
 
-          }else if($datos['rol']=='Profesor'){
+          }else if($request->rol=='Profesor'){
 
 
             $profesor = new profesor();
-            $profesor->especialidad=$datos['especialidad_profe'];
-            $profesor->username=$datos['username'];
+            $profesor->especialidad=$request->especialidad_profe;
+            $profesor->username=$request->username;
             $profesor->save();
           }
         }
 
-
       } catch (\Exception $e) {
 
         $registro=false;
+        $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
         $carreras= carrera::get(['id_carrera','nombre_carrera']);
         return view('admin.registrar',compact(['registro','carreras','planes']));
       }

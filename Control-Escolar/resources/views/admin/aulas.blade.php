@@ -17,14 +17,14 @@
 <div class="section container">
 
     <div class="fixed-action-btn">
-        <a class="btn-floating btn-large  waves-effect waves-light light-blue darken-4 modal-trigger" href="#modal_nueva" id="btn_add_aula">
+        <a class="btn-floating btn-large  waves-effect waves-light light-blue darken-4 modal-trigger tooltipped" data-position="left" data-tooltip="Registrar nueva aula" href="#modal_nueva" id="btn_add_aula">
             <i class="large material-icons">add</i>
         </a>
     </div>
 
-    <div class="row">
-        <div class="col m4 push-m4 s12">
-            <h4>Control de Aulas</h4>
+    <div class="row contenedor">
+        <div class="col m6 push-m3 s12">
+            <h5>Control de Aulas</h5>
         </div>
     </div>
 
@@ -44,8 +44,8 @@
                     <th>K5</th>
                     <th>K</th>
                     <th>Salon</th>
-                    <th> <a href="#modal_modificar" class="btn modal-trigger">Modificar</a> </th>
-                    <th> <a href="#" class="btn red">Deshabilitar</a> </th>
+                    <th> <a href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Nombre de aula, edificio o tipo de aula (laboratorio, salon, etc.)">Modificar</a> </th>
+                    <th> <a href="#" class="btn red tooltipped" data-position="bottom" data-tooltip="Cambiar el estado disponible del aula en el periodo escolar actual">Deshabilitar</a> </th>
                 </tr>
             </tbody>
         </table>
@@ -148,4 +148,10 @@
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
 <script src="https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.tooltipped');
+         
+    });
+</script>
 @endsection

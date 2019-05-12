@@ -28,9 +28,9 @@
 <!-- FILTRO DE ALUMNOS POR CARRERA Y SEMESTRE-->
 
       <div class="filtros">
-            <div class="row">
-                  <div class="col m6 push-m3 s12" style="text-align: center;">
-                    <h4>Asignación de alumnos a grupo</h4>
+            <div class="row contenedor">
+                  <div class="col m6 push-m3 s12">
+                    <h5>Asignación de alumnos a grupo</h5>
                   </div>
             </div>
             <div class="row">

@@ -10,19 +10,19 @@
 @section('content')
 
   <div class="section container">
-    <div class="row section container">
+    <div class="row">
       <div class="contenedor col s12 m6 push-m3">
         <h5>Carreras</h5>
       </div>
     </div>
     <canvas id="chart1" width="400" height="200"></canvas>
-    <div class="row section container">
+    <div class="row">
       <div class="contenedor col s12 m6 push-m3">
         <h5>Genero</h5>
       </div>
     </div>
     <canvas id="chart2" width="400" height="200"></canvas>
-    <div class="row section container">
+    <div class="row">
       <div class="contenedor col s12 m6 push-m3">
         <h5>Grupos</h5>
       </div>

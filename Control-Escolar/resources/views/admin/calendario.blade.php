@@ -18,13 +18,13 @@
 <!--start container-->
 <div class="container">
   <div class="fixed-action-btn">
-    <a class="btn-floating btn-large  waves-effect waves-light light-blue darken-4 modal-trigger" href="#task-modal" id="btn_add_evento">
+    <a class="btn-floating btn-large  waves-effect waves-light light-blue darken-4 modal-trigger tooltipped" href="#task-modal" data-position="left" data-tooltip="Crear nuevo evento" id="btn_add_evento">
       <i class="large material-icons">add</i>
     </a>
   </div>
   <div class="section">
-    <div class="row">
-      <div class="col m6 push-m3 s12" style="text-align: center;">
+    <div class="row contenedor">
+      <div class="col m6 push-m3 s12">
         <h5>Control de Calendario Escolar</h5>
       </div>
     </div>
@@ -58,7 +58,6 @@
                     </div>
                     <div id="color" class="input-field col m2 s12">
                       <select name="color">
-                        <option value="green" disabled selected>Elija una opción</option>
                         <option value="#f44336">Color rojo</option>
                         <option value="#e91e63">Color rosa</option>
                         <option value="#9c27b0">Color purpura</option>
@@ -68,7 +67,7 @@
                         <option value="#03a9f4">Color azul claro</option>
                         <option value="#00bcd4">Color cian</option>
                         <option value="#009688">Color turquesa</option>
-                        <option value="#4caf50">Color verde</option>
+                        <option value="#4caf50" disabled selected>Color verde</option>
                         <option value="#8bc34a">Color verde claro</option>
                         <option value="#ffeb3b">Color lima</option>
                         <option value="#ffeb3b">Color amarillo</option>
@@ -105,8 +104,8 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col m8 push-m2 s12" style="text-align: center;">
+  <div class="row contenedor">
+    <div class="col m8 push-m2 s12">
       <h5>Configuración del periodo escolar actual</h5>
     </div>
     <table id="example" class="responsive-table striped" style="width:100%">
@@ -131,7 +130,7 @@
           <td>Takeshi</td>
           <td>2019-01-07 12:30:21</td>
           <td>2019-02-07 12:30:21</td>
-          <td> <a href="#modal5" class="waves-effect waves-light btn modal-trigger">Modificar</a>
+          <td> <a href="#modal5" class="waves-effect waves-light btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Actualizar la configuración del periodo escolar actual">Modificar</a>
 
             <div id="modal5" class="modal bottom-sheet">
               <div class="modal-content">
@@ -216,4 +215,15 @@
             <script type="text/javascript" src="js/plugins.js') }}}"></script>
 
             <script type="text/javascript" src="{{{ asset('js/picker.js') }}}"></script>
+
+            <script>
+              document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.tooltipped');
+
+              });
+              window.onload = function() {
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("calendar").style.display = "block";
+              };
+            </script>
             @endsection

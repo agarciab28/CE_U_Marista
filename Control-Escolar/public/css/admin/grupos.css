@@ -4,6 +4,9 @@
 a{
   color: rgba(8,58,99,1);
 }
+.contenedor{
+  text-align: center;
+}
 .tabs .tab a {
     color: rgba(0, 0, 0, 1);
 }

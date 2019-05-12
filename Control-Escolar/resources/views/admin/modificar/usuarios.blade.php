@@ -2,6 +2,7 @@
 
 @section('stylesheet')
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
+<link href="{{{ asset('css/admin/usuarios.css') }}}" rel="stylesheet">
 <link href="{{{ asset('https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css') }}}" rel="stylesheet">
 @endsection
 
@@ -22,9 +23,11 @@
             </div>
           </div>
 
-        <div class="input-field col m4 s12 ">
-                <input type="file" id="imagen" name="imagen" class="dropify"  >
-                <!--<i class="material-icons prefix">account_circle</i>-->
+              <div class="row contenedor">
+                <div class="col m6 push-m3 s12">
+                  <h5>Modificar Usuarios</h5>
+                </div>
+              </div>
 
             </div>
 
