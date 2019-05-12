@@ -63,8 +63,7 @@
                 <th class="tabPDF center blue-grey" style="color:white;">PRIMER PARCIAL</th>
                 <th class="tabPDF center blue-grey" style="color:white;">SEGUNDO PARCIAL</th>
                 <th class="tabPDF center blue-grey" style="color:white;">TERCER PARCIAL</th>
-                <th class="tabPDF center blue-grey" style="color:white;">PRIMER EXTRAORDINARIO</th>
-                <th class="tabPDF center blue-grey" style="color:white;">SEGUNDO EXTRAORDINARIO</th>
+                <th class="tabPDF center blue-grey" style="color:white;">FALTAS</th>
                 <th class="tabPDF center blue-grey" style="color:white;">Calificación final</th>
             </tr>
           </thead>
@@ -76,8 +75,7 @@
               <td class="bodyPDF center">80</td>
               <td class="bodyPDF center">75</td>
               <td class="bodyPDF center">85</td>
-              <td class="bodyPDF center">-</td>
-              <td class="bodyPDF center">-</td>
+              <td class="bodyPDF center">2</td>
               <td class="bodyPDF center">80</td>
             </tr>
             <tr>
@@ -86,8 +84,7 @@
               <td class="bodyPDF center">60</td>
               <td class="bodyPDF center">55</td>
               <td class="bodyPDF center">50</td>
-              <td class="bodyPDF center">75</td>
-              <td class="bodyPDF center">-</td>
+              <td class="bodyPDF center">1</td>
               <td class="bodyPDF center">75</td>
             </tr>
             <tr>
@@ -96,8 +93,7 @@
               <td class="bodyPDF center">60</td>
               <td class="bodyPDF center">55</td>
               <td class="bodyPDF center">50</td>
-              <td class="bodyPDF center">58</td>
-              <td class="bodyPDF center">75</td>
+              <td class="bodyPDF center">3</td>
               <td class="bodyPDF center">75</td>
             </tr>
             <tr style="border: black 1px solid;">
@@ -106,15 +102,18 @@
               <td class="tabPDF center blue-grey" style="color:white;">70</td>
               <td class="tabPDF center blue-grey" style="color:white;">65</td>
               <td class="tabPDF center blue-grey" style="color:white;">67.5</td>
-              <td class="tabPDF center blue-grey" style="color:white;">58</td>
-              <td class="tabPDF center blue-grey" style="color:white;">75</td>
+              <td class="tabPDF center blue-grey" style="color:white;">-</td>
               <td class="tabPDF center blue-grey" style="color:white;">77.5</td>
             </tr>
           </tbody>
         </table>
+        <br>
+        <a href="#" class="btn"><i class="fas fa-file-pdf"></i> Generar PDF</a>
       </div>
     </div>
   </div>
+
+
 
 @endsection
 
