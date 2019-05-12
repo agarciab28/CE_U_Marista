@@ -23,7 +23,13 @@ class gruposController extends Controller
     ->join('personal as per','per.username','p.username')
     ->join('persona as pe','pe.id_persona','=','per.id_persona')
     ->get();
-    return view('admin.listas.grupos',compact(['grupos']));
+    $carrerasl= carrera::get(['id_carrera','nombre_carrera']);
+   $materiasl=materia::get(['id_materia','nombre_materia']);
+   $profesoresl=profesor::select('nombres','apaterno','amaterno','id_prof')
+    ->join('personal as pe','pe.username','=','profesor.username')
+    ->join('persona as pers','pers.id_persona','=','pe.id_persona')
+    ->get();
+   return view('admin.listas.grupos',compact(['grupos','carrerasl','materiasl','profesoresl']));
  }
 
 
