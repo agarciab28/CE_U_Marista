@@ -57,7 +57,7 @@
 <div id="modal_modificar" class="modal bottom-sheet">
   <div class="modal-content">
     <div class="row">
-      <form class="col  s12 m12" id="form_mod_grupos" action="{{route('admin_registrar_Grupos')}}" method="post">
+      <form class="col  s12 m12" id="form_mod_grupos" action="" method="post">
         {{ csrf_field() }}
         <div class="row">
           <div class="col m6 push-m3 s12" style="text-align: center;">
@@ -74,22 +74,25 @@
         </div>
         <div class="input-field col s12 m3">
           <select class="" name="carrera" id="carrera">
-            <option value="" disabled>Elige una opcion</option>
-
+          @foreach($carrerasl as $carrera)
+            <option value="{{$carrera->id_carrera}}">{{$carrera->nombre_carrera}}</option disabled>Elige una opcion</option>
+            @endforeach
           </select>
           <label for="carrera">Carrera</label>
         </div>
         <div class="input-field col s12 m3">
           <select class="" name="materia" id="materia">
-            <option value="" disabled>Elige una opcion</option>
-
+          @foreach($materiasl as $materia)
+            <option value="{{$materia->id_materia}}">{{$materia->nombre_materia}}</option disabled>Elige una opcion</option>
+            @endforeach
           </select>
           <label for="materia">Materia</label>
         </div>
         <div class="input-field col s12 m6">
           <select class="" name="profesor" id="profesor">
-            <option value="" disabled>Elige una opcion</option>
-
+          @foreach($profesoresl as $profesor)
+            <option value="{{$profesor->id_prof}}">{{$profesor->nombres}} {{$profesor->apaterno}} {{$profesor->amaterno}}</option disabled>Elige una opcion</option>
+            @endforeach
           </select>
           <label for="profesor">Profesor</label>
         </div>
@@ -143,7 +146,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.tooltipped');
-    var instances = M.Tooltip.init(elems, options);
+     
   });
 </script>
 @endsection

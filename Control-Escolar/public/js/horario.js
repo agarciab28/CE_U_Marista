@@ -42,3 +42,10 @@ function mostrarViernes(){
   $( "#horario_jueves" ).hide();
   $( "#horario_viernes" ).show();
 }
+
+$( ".card-materia" ).hover(function() {
+  $(this).addClass("z-depth-4");
+},
+function(){
+  $(this).removeClass("z-depth-4");
+});
