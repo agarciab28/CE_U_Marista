@@ -57,3 +57,6 @@ a{
  border-bottom: 1px solid #003865;
  box-shadow: none;
 }
+.modal {
+    width: 85% !important;
+}

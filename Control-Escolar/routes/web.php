@@ -30,6 +30,8 @@ Route::group(["prefix" => 'admin'], function(){
   })->name('admin_home');
 
 //rutas registro de usuarios
+Route::get('/modificar_alumno/{ida}','AlumnosController@liat_modificar')->name('modificar_alumno');
+
 Route::post('/registrar','Auth\RegisterController@registro')->name('admin_registrar_envio');
 
 Route::get('/registrar', 'Auth\RegisterController@showForm')->name('admin_registrar');
