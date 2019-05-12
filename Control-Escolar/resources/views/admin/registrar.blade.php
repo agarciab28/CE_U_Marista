@@ -18,12 +18,11 @@
 
             <div class="row card-panel">
 
-              <div class="row">
-                <div class="col m6 push-m3 s12" style="text-align: center;">
-                  <h4>Registro de usuarios</h4>
+              <div class="contenedor row">
+                <div class="col m6 push-m3 s12">
+                  <h5>Registro de Usuarios</h5>
                 </div>
               </div>
-
             <div class="input-field col m4 s12 ">
                     <input type="file" id="imagen" name="imagen" class="dropify"  >
                     <!--<i class="material-icons prefix">account_circle</i>-->
@@ -42,7 +41,7 @@
                     </select>
                     <label>Tipo de usuario</label>
                 </div>
-                
+
                 <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="text" name="nombres" id="nombre" class="validate" maxlength="35">

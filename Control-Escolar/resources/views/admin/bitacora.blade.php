@@ -15,9 +15,9 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col m4 push-m4 s12">
-            <h4>Bitácora de movimientos</h4>
+    <div class="row contenedor">
+        <div class="col m6 push-m3 s12">
+            <h5>Bitácora de movimientos</h5>
         </div>
     </div>
     <table id="example" class="responsive-table striped" style="width:100%">

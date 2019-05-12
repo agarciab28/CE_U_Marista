@@ -9,6 +9,11 @@
 
 
 @section('content')
+  <div class="row contenedor">
+    <div class="col m6 push-m3 s12">
+      <h5>Mis Grupos</h5>
+    </div>
+  </div>
   <div class="section container">
     <div class="row">
         <div class="col s12 m4">
@@ -24,13 +29,11 @@
     </div>
   </div>
 
-<div class="contenedor">
-  <div class="row">
-    <div class="col s6 push-s3">
-      <h3>Horario</h3>
+  <div class="row contenedor">
+    <div class="col m6 push-m3 s12">
+      <h5>Horario</h5>
     </div>
   </div>
-</div>
 
 <div class="contenedor content-horario show-on-large hide-on-med-and-down">
   <div class="row">
@@ -169,7 +172,7 @@
   <div class="row" id="horario_lunes">
     <div class="col s12">
       <div class="contenedor">
-        <h5>Lunes</h5>
+        <h6>Lunes</h6>
       </div>
     </div>
     <div class="col s12">
@@ -237,7 +240,7 @@
   <div class="row" id="horario_martes">
     <div class="col s12">
       <div class="contenedor">
-        <h5>Martes</h5>
+        <h6>Martes</h6>
       </div>
     </div>
     <div class="col s12">
@@ -293,7 +296,7 @@
   <div class="row" id="horario_miercoles">
     <div class="col s12">
       <div class="contenedor">
-        <h5>Miércoles</h5>
+        <h6>Miércoles</h6>
       </div>
     </div>
     <div class="col s12">
@@ -337,7 +340,7 @@
   <div class="row" id="horario_jueves">
     <div class="col s12">
       <div class="contenedor">
-        <h5>Jueves</h5>
+        <h6>Jueves</h6>
       </div>
     </div>
     <div class="col s12">
@@ -369,7 +372,7 @@
   <div class="row" id="horario_viernes">
     <div class="col s12">
       <div class="contenedor">
-        <h5>Viernes</h5>
+        <h6>Viernes</h6>
       </div>
     </div>
     <div class="col s12">

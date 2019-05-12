@@ -13,6 +13,11 @@
 @section('title', 'Mis datos')
 
 @section('content')
+  <div class="row contenedor">
+    <div class="col m6 push-m3 s12">
+      <h5>Mis datos</h5>
+    </div>
+  </div>
 <div class="container">
     <div class="row">
         <div class="col m4 push-m4 s12">

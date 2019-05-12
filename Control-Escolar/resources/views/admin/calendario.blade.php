@@ -23,8 +23,8 @@
     </a>
   </div>
   <div class="section">
-    <div class="row">
-      <div class="col m6 push-m3 s12" style="text-align: center;">
+    <div class="row contenedor">
+      <div class="col m6 push-m3 s12">
         <h5>Control de Calendario Escolar</h5>
       </div>
     </div>
@@ -104,8 +104,8 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col m8 push-m2 s12" style="text-align: center;">
+  <div class="row contenedor">
+    <div class="col m8 push-m2 s12">
       <h5>Configuración del periodo escolar actual</h5>
     </div>
     <table id="example" class="responsive-table striped" style="width:100%">

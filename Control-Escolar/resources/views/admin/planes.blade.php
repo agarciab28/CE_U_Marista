@@ -20,9 +20,9 @@
         </a>
     </div>
 
-    <div class="row">
-        <div class="col m6 push-m3 s12" style="text-align: center;">
-            <h4>Control de Planes de Estudio</h4>
+    <div class="row contenedor">
+        <div class="col m6 push-m3 s12">
+            <h5>Control de Planes de Estudio</h5>
         </div>
     </div>
 

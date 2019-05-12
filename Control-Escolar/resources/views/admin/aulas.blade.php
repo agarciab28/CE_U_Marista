@@ -22,9 +22,9 @@
         </a>
     </div>
 
-    <div class="row">
-        <div class="col m4 push-m4 s12">
-            <h4>Control de Aulas</h4>
+    <div class="row contenedor">
+        <div class="col m6 push-m3 s12">
+            <h5>Control de Aulas</h5>
         </div>
     </div>
 

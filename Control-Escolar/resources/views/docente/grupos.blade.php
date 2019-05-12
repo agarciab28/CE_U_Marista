@@ -9,6 +9,11 @@
 @section('title', 'Mis grupos')
 
 @section('content')
+  <div class="row contenedor">
+    <div class="col m6 push-m3 s12">
+      <h5>Mis Grupos</h5>
+    </div>
+  </div>
 @php
 $grupo_seleccionado=0;
 @endphp

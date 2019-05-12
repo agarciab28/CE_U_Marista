@@ -5,7 +5,9 @@ a{
   color: rgba(8,58,99,1);
 }
 
-
+.contenedor{
+  text-align: center;
+}
 
 #nombrec:focus + label, #cvervoe:focus + label, #fechar:focus + label{
 

@@ -2,6 +2,7 @@
 
 @section('stylesheet')
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
+<link href="{{{ asset('css/admin/usuarios.css') }}}" rel="stylesheet">
 <link href="{{{ asset('https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css') }}}" rel="stylesheet">
 @endsection
 
@@ -16,9 +17,9 @@
 
             <div class="row card-panel">
 
-              <div class="row">
-                <div class="col m6 push-m3 s12" style="text-align: center;">
-                  <h4>Modificar Usuarios</h4>
+              <div class="row contenedor">
+                <div class="col m6 push-m3 s12">
+                  <h5>Modificar Usuarios</h5>
                 </div>
               </div>
 
