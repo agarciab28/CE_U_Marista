@@ -155,13 +155,13 @@
 
         </div>
 
-        <a href="#modal_asignar" class="btn modal-trigger">Asignar Alumnos</a>
+        <a href="#modal_asignar" class="btn modal-trigger tooltipped" data-position="right" data-tooltip="Selecciona los alumnos que conforman el grupo a registrar">Asignar Alumnos</a>
 
         <div class="row">
         </div>
 
         <div class="input-field col m3 s12">
-          <button class="btn light-blue darken-4" type="submit">Registrar
+          <button class="btn light-blue darken-4 tooltipped" data-position="right" data-tooltip="Una vez registrado dirijase a Grupos -> Listar grupos" type="submit">Registrar
             <i class="material-icons right">send </i>
           </button>
         </div>
@@ -219,5 +219,10 @@
 @endsection
 
 @section('scripts')
-
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.tooltipped');
+    var instances = M.Tooltip.init(elems, options);
+  });
+</script>
 @endsection

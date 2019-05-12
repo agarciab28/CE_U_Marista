@@ -4,6 +4,7 @@
 
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
 <link href="{{{ asset('css/admin/misdatos.css') }}}" rel="stylesheet">
+<link href="{{{ asset('css/tooltips.css') }}}" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="{{{ asset('https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css') }}}" rel="stylesheet">
 
@@ -19,7 +20,7 @@
         </div>
     </div>
     <div class="fixed-action-btn">
-        <a class="btn-floating btn-large  waves-effect waves-light light-blue darken-4 modal-trigger" href="#modaluser" id="btn_add_aula">
+        <a class="btn-floating btn-large  waves-effect waves-light light-blue darken-4 modal-trigger tooltipped" href="#modaluser" id="btn_edit" data-position="left" data-tooltip="Modificar mis datos">
             <i class="large material-icons">edit</i>
         </a>
     </div>
@@ -46,7 +47,7 @@
                     </p>
                 </div>
                 <div class="col s1 right-align">
-                    <a class="btn-floating activator waves-effect waves-light darken-2 right">
+                    <a class="btn-floating activator waves-effect waves-light darken-2 right tooltipped" data-position="left" data-tooltip="Mostrar datos de contacto">
                         <i class="material-icons">perm_identity</i>
                     </a>
                 </div>
@@ -220,7 +221,7 @@
         </div>
     </div>
     <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick="confirmPass()">Aceptar</a>
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat tooltipped" onclick="confirmPass()" data-position="left" data-tooltip="Necesitará ingresar su contraseña para guardar los cambios">Aceptar</a>
     </div>
 </div>
 
@@ -266,15 +267,6 @@
                 )
             }
         })()
-        /*
-        swal("Write something here:", {
-                content: "input",
-            })
-            .then((value) => {
-                //swal(`You typed: ${value}`);
-                swal('Se han guardado los cambios!', 'Presione OK!', 'success');
-            });
-            */
     }
 </script>
 <script>
@@ -291,5 +283,20 @@
             direction: 'left'
         });
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.tooltipped');
+        var instances = M.Tooltip.init(elems, options);
+    });
+
+    window.onload = function() {
+        //alert("evento load detectado!");
+        setTimeout(function() {
+            M.toast({html: 'Puedes actualizar la información de tu cuenta aquí.'});
+        }, 1500);
+        setTimeout(function() {
+            M.toast({html: 'Recuerda cambiar tu contraseña de manera periódica.'});
+        }, 5000);
+    };
 </script>
 @endsection

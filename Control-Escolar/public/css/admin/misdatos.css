@@ -325,6 +325,7 @@
 i.icon-blue {
     color: rgb(8, 58, 99);
 }
+
 .modal {
     width: 85% !important;
 }
@@ -338,4 +339,11 @@ i.icon-blue {
 }
 a{
   color: rgba(8,58,99,1);
+}
+
+#toast-container {
+    top: auto !important;
+    right: auto !important;
+    bottom: 10%;
+    left: 25%;
 }

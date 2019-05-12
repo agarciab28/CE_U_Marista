@@ -10,7 +10,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}" />
+    <link rel="shortcut icon" href="{{ asset('/Logo Marista.ico') }}" />
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer>
