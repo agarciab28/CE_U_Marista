@@ -26,6 +26,12 @@
     </div>
   </div>
 
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large  waves-effect waves-light light-blue darken-4 tooltipped" data-position="left" data-tooltip="Generar PDF" href="" id="btn_pdf">
+      <i class="far fa-file-pdf"></i>
+    </a>
+  </div>
+
 
   <div id="boleta" class="boleta">
     <div class="container" style="width: 24.1cm">
@@ -108,7 +114,6 @@
           </tbody>
         </table>
         <br>
-        <a href="#" class="btn"><i class="fas fa-file-pdf"></i> Generar PDF</a>
       </div>
     </div>
   </div>
