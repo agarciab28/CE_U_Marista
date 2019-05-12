@@ -219,7 +219,11 @@
             <script>
               document.addEventListener('DOMContentLoaded', function() {
                 var elems = document.querySelectorAll('.tooltipped');
-                 
+
               });
+              window.onload = function() {
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("calendar").style.display = "block";
+              };
             </script>
             @endsection
