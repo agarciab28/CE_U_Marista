@@ -13,7 +13,11 @@ function modificar_carrera(id){
 }
 
 //Modal para modificar materia
-function modificar_carrera(id){
-  var x=document.getElementById('mod_idcarrera');
-  x.value=id;
+function modificar_materia(id){
+  document.getElementById('materia_mod_id').value=id;
+}
+
+//Modal para modificar plan de estudios
+function modificar_plan(id){
+  document.getElementById('materia_mod_id').value=id;
 }
