@@ -30,16 +30,19 @@
           <div class="card-image waves-effect waves-block waves-light">
               <img class="activator" src="{{{ asset('img/a1.jpg')}}}" alt="user background">
           </div>
-          <figure class="card-profile-image">
-              <img src="{{{ asset('img/user9.png')}}}" alt="profile image" class="circle z-depth-2 responsive-img activator">
-          </figure>
+          <div class="row">
+            <figure class="card-profile-image col s12">
+                <img src="{{{ asset('img/user9.png')}}}" alt="profile image" class="circle z-depth-2 responsive-img activator">
+            </figure>
+          </div>
+
           <div class="card-content">
               <div class="row">
-                  <div class="col s9 offset-s2">
+                  <div class="col m9 offset-m2 s12">
                       <h4 class="card-title grey-text text-darken-4">Diego Ramirez Rodriguez</h4>
                       <p class="medium-small grey-text">Alumno</p>
                   </div>
-                  <div class="col s1 right-align">
+                  <div class="right-align">
                       <a class="btn-floating activator waves-effect waves-light darken-2 right">
                           <i class="material-icons">perm_identity</i>
                       </a>
