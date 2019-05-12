@@ -51,6 +51,9 @@
 
 
     <li id="home"><a class="white-text" href="{{ route('coordinador_home') }}"><i class="fas fa-home white-text menu-icon"></i>Inicio</a></li>
+    <li id="grupos"><a class="white-text" href="{{ route('coordinador_grupos') }}"><i class="fas fa-users white-text menu-icon"></i>Grupos</a></li>
+    <li id="profesores"><a class="white-text" href="{{ route('coordinador_profesores') }}"><i class="fas fa-user white-text menu-icon"></i>Profesores</a></li>
+    <li id="alumnos"><a class="white-text" href="{{ route('coordinador_alumnos') }}"><i class="fas fa-user-graduate white-text menu-icon"></i>Alumnos</a></li>
     <li id="cerrar_sesion"><a class="show-on-small hide-on-med-and-up white-text" href="/">Cerrar Sesion</a></li>
 
     <div class="contenedor">

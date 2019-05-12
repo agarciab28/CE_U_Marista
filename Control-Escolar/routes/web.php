@@ -156,6 +156,18 @@ Route::group(["prefix" => 'coordinador'], function(){
     return view('coordinador.home');
   })->name('coordinador_home');
 
+  Route::get('/alumnos', function(){
+    return view('coordinador.alumnos');
+  })->name('coordinador_alumnos');
+
+  Route::get('/grupos', function(){
+    return view('coordinador.grupos');
+  })->name('coordinador_grupos');
+
+  Route::get('/profesores', function(){
+    return view('coordinador.profesores');
+  })->name('coordinador_profesores');
+
   //calificaciones ordinarias grupo
   Route::get('/pdfA','genPDFController@pdfA_coordi')->name('coordinador_pdfA');
   //calificaciones extraordinarias grupo
