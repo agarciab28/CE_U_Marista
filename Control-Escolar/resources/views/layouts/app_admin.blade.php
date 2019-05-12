@@ -15,6 +15,8 @@
 
   @yield('stylesheet')
   <title>CE - @yield('title')</title>
+
+  <link rel="shortcut icon" href="{{ asset('/Logo Marista.ico') }}" />
 </head>
 
 <body onload="myFunction()">
@@ -150,6 +152,7 @@
     document.getElementById("loader").style.display = "none";
     document.getElementById("calendar").style.display = "block";
   }
+
 </script>
 <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
