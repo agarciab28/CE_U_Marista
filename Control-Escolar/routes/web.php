@@ -119,6 +119,10 @@ Route::group(["prefix" => 'docente'], function(){
     return view('docente.home');
   })->name('docente_home');
 
+  Route::get('/misdatos', function(){
+    return view('docente.misdatos');
+  })->name('docente_datos');
+
   Route::post('/consulta', 'gruposController@describeGruposProf')->name('docente_consulta');
 
   Route::post('/calif_finales', 'gruposController@calificacionesFinalesGrupo')->name('docente_calif');
@@ -167,6 +171,10 @@ Route::group(["prefix" => 'coordinador'], function(){
   Route::get('/profesores', function(){
     return view('coordinador.profesores');
   })->name('coordinador_profesores');
+
+  Route::get('/misdatos', function(){
+    return view('coordinador.misdatos');
+  })->name('coordinador_datos');
 
   //calificaciones ordinarias grupo
   Route::get('/pdfA','genPDFController@pdfA_coordi')->name('coordinador_pdfA');

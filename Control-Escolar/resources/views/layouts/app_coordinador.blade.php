@@ -54,6 +54,7 @@
     <li id="grupos"><a class="white-text" href="{{ route('coordinador_grupos') }}"><i class="fas fa-users white-text menu-icon"></i>Grupos</a></li>
     <li id="profesores"><a class="white-text" href="{{ route('coordinador_profesores') }}"><i class="fas fa-user white-text menu-icon"></i>Profesores</a></li>
     <li id="alumnos"><a class="white-text" href="{{ route('coordinador_alumnos') }}"><i class="fas fa-user-graduate white-text menu-icon"></i>Alumnos</a></li>
+    <li id="misdatos"><a class="white-text" href="{{ route('coordinador_datos') }}"><i class="fas fa-user-cog white-text menu-icon"></i>Mis Datos</a></li>
     <li id="cerrar_sesion"><a class="show-on-small hide-on-med-and-up white-text" href="/">Cerrar Sesion</a></li>
 
     <div class="contenedor">

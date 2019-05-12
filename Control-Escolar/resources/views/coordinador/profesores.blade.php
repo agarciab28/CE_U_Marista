@@ -29,13 +29,11 @@
               </tr>
           </thead>
           <tbody>
-
                 <tr>
                   <td>anubis</td>
                   <td>sadf asdfsa asdf</td>
                   <td>asdfa</td>
                   <td>asdfas@dfasd.com</td>
-
               </tr>
           </tbody>
       </table>
