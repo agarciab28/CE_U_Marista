@@ -34,8 +34,16 @@
         <div class="card-content">
             <div class="row">
                 <div class="col s9 offset-s2">
-                    <h4 class="card-title grey-text text-darken-4">Diego Ramirez Rodriguez</h4>
-                    <p class="medium-small grey-text">Administrador de control escolar</p>
+                    <h4 class="card-title grey-text text-darken-4">{{$datos->nombres}} {{$datos->apaterno}} {{$datos->amaterno}}</h4>
+                    <p class="medium-small grey-text">
+                      @if($datos->rol=='Admin')
+                      Administrador de control escolar
+                      @elseif($datos->rol=='Coord')
+                      Coordinador de carrera
+                      @elseif($datos->rol=='Prof')
+                      Profesor de la institución
+                      @endif
+                    </p>
                 </div>
                 <div class="col s1 right-align">
                     <a class="btn-floating activator waves-effect waves-light darken-2 right">
@@ -46,17 +54,25 @@
         </div>
         <div class="card-reveal">
             <p>
-                <span class="card-title grey-text text-darken-4">Diego Ramirez Rodriguez <i class="material-icons right icon-blue">close</i></span>
-                <span><i class="material-icons icon-blue">perm_identity</i> Administrador de control escolar</span>
+                <span class="card-title grey-text text-darken-4">{{$datos->nombres}} {{$datos->apaterno}} {{$datos->amaterno}} <i class="material-icons right icon-blue">close</i></span>
+                <span><i class="material-icons icon-blue">perm_identity</i>
+                  @if($datos->rol=='Admin')
+                  Administrador de control escolar
+                  @elseif($datos->rol=='Coord')
+                  Coordinador de carrera
+                  @elseif($datos->rol=='Prof')
+                  Profesor de la institución
+                  @endif
+                </span>
 
             </p>
 
-            <p>Tiene como objetivos, registrar, controlar y gestionar una serie de actividades enfocadas al bienestar académico-administrativo.</p>
+            <p>Tiene como objetivos, registrar cosas.</p>
 
-            <p><i class="material-icons icon-blue">verified_user</i> admin</p>
-            <p><i class="material-icons icon-blue">perm_phone_msg</i> +1 (612) 222 8989</p>
-            <p><i class="material-icons icon-blue">email</i> mail@domain.com</p>
-            <p><i class="material-icons icon-blue">cake</i> 18th 1990</p>
+            <p><i class="material-icons icon-blue">verified_user</i> {{$datos->rol}}</p>
+            <p><i class="material-icons icon-blue">perm_phone_msg</i>{{$datos->num_cel}}</p>
+            <p><i class="material-icons icon-blue">email</i>{{$datos->email}}</p>
+            <p><i class="material-icons icon-blue">cake</i>{{$datos->fnaci}}</p>
         </div>
     </div>
 </div>
