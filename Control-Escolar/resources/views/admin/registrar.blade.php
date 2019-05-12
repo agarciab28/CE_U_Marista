@@ -42,7 +42,7 @@
                     </select>
                     <label>Tipo de usuario</label>
                 </div>
-
+                
                 <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="text" name="nombres" id="nombre" class="validate" maxlength="35">

@@ -87,9 +87,9 @@ Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('el
 
 
 
-//  Route::get('/modificar/usuarios', function(){
-//    return view('admin.modificar.usuarios');
-//  })->name('admin_musuarios');
+  Route::get('/modificar/usuarios', function(){
+    return view('admin.modificar.usuarios');
+  })->name('admin_musuarios');
 
   Route::get('/coordinador/elimina/{usuario}','CoordinadorController@elimina')->where(['usuario'=>'[A-z]+'])->name('eliminaCoordinador');
 
