@@ -146,7 +146,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.tooltipped');
-     
+
   });
 </script>
 @endsection
