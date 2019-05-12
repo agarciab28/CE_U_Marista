@@ -329,4 +329,13 @@ i.icon-blue {
     width: 85% !important;
 }
 
-/* increase the height and width as you desire */
+#misdatos{
+  background-color: #FFB500;
+}
+
+.contenedor{
+  text-align: center;
+}
+a{
+  color: rgba(8,58,99,1);
+}

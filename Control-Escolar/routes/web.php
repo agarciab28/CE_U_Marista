@@ -87,9 +87,11 @@ Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('el
 
 
 
-  Route::get('/modificar/usuarios', function(){
-    return view('admin.modificar.usuarios');
-  })->name('admin_musuarios');
+//  Route::get('/modificar/usuarios', function(){
+//    return view('admin.modificar.usuarios');
+//  })->name('admin_musuarios');
+
+  Route::get('/coordinador/elimina/{usuario}','CoordinadorController@elimina')->where(['usuario'=>'[A-z]+'])->name('eliminaCoordinador');
 
 //  Route::get('/asignar/{idg}/{idc}', function(){
 //    return view('admin.asignar');
@@ -174,6 +176,22 @@ Route::group(["prefix" => 'alumno'], function(){
   Route::get('/', function(){
     return view('alumno.home');
   })->name('alumno_home');
+
+  Route::get('/boletas', function(){
+    return view('alumno.boletas');
+  })->name('alumno_boletas');
+
+  Route::get('/kardex', function(){
+    return view('alumno.kardex');
+  })->name('alumno_kardex');
+
+  Route::get('/grupos', function(){
+    return view('alumno.grupos');
+  })->name('alumno_grupos');
+
+  Route::get('/misdatos', function(){
+    return view('alumno.misdatos');
+  })->name('alumno_datos');
 
   //boleta de calificaciones
   Route::get('/pdfA','genPDFController@pdfA_al')->name('alumno_pdfA');

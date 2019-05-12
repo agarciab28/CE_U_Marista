@@ -43,16 +43,28 @@ $grupo_seleccionado=0;
               <form class="" action="{{ route('docente_consulta') }}" method="post">
                 @csrf
                 <input type="text" name="id_grupo" value="" hidden>
-                <button type="submit" class="collection-item black-text">Consultar</button>
+                <button type="submit" class="collection-item black-text botonModal">Consultar</button>
               </form>
               <form class="" action="{{ route('docente_calif') }}" method="post">
                 @csrf
                 <input type="text" name="id_grupo" value="" hidden>
-                <button type="submit" class="collection-item black-text">Calificaciones Finales</button>
+                <button type="submit" class="collection-item black-text botonModal">Calificaciones Finales</button>
               </form>
-                <a href="#!" class="collection-item black-text">Método de evaluación</a>
-                <a href="#!" class="collection-item black-text">Obtener acta de calificaciones</a>
-                <a href="#!" class="collection-item black-text">Generar PDF</a>
+              <form class="" action="" method="post">
+                @csrf
+                <input type="text" name="id_grupo" value="" hidden>
+                <button type="submit" class="collection-item black-text botonModal">Método de evaluación</button>
+              </form>
+              <form class="" action="" method="post">
+                @csrf
+                <input type="text" name="id_grupo" value="" hidden>
+                <button type="submit" class="collection-item black-text botonModal">Obtener acta de calificaciones</button>
+              </form>
+              <form class="" action="" method="post">
+                @csrf
+                <input type="text" name="id_grupo" value="" hidden>
+                <button type="submit" class="collection-item black-text botonModal">Generar PDF</button>
+              </form>
             </div>
         </p>
     </div>

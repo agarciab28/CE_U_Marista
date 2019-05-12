@@ -49,11 +49,11 @@
       </li>
 
 
-    	<li id="home"><a class="white-text" href="{{ route('docente_home') }}" ><i class="fas fa-home white-text" style="margin-right:0;"></i>Inicio</a></li>
+    	<li id="home"><a class="white-text" href="{{ route('docente_home') }}" ><i class="fas fa-home white-text menu-icon"></i>Inicio</a></li>
 
       <ul id="grupos" class="collapsible collapsible-accordion">
         <li>
-          <a class="collapsible-header white-text" accordion="false" style="margin-left:2em;"> <i class="material-icons white-text">library_books</i>  Mis grupos <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
+          <a class="collapsible-header white-text" accordion="false" style="margin-left:1.3em;"> <i class="material-icons white-text" style="font-size:1.5em;">library_books</i>  Mis grupos <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
           <div class="collapsible-body">
             <ul class="dropdown_menu">
               <li><a href="{{ route('docente_grupos') }}" class="white-text">Listado completo</a></li>
@@ -65,7 +65,7 @@
 
       <ul id="alumnos" class="collapsible collapsible-accordion">
         <li>
-          <a class="collapsible-header white-text" accordion="false" style="margin-left:2em;"> <i class="material-icons white-text">group</i>  Alumnos <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
+          <a class="collapsible-header white-text" accordion="false" style="margin-left:1.3em;"> <i class="material-icons white-text" style="font-size:1.5em;">group</i>  Alumnos <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
           <div class="collapsible-body">
             <ul class="dropdown_menu">
               <li><a href="" class="white-text">Registrar Usuario</a></li>

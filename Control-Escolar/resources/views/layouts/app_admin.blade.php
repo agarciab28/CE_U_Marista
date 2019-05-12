@@ -59,11 +59,11 @@
     </li>
 
 
-    <li id="home"><a class="white-text" href="{{ route('admin_home') }}"><i class="fas fa-home white-text" style="margin-right:0;"></i>Inicio</a></li>
+    <li id="home"><a class="white-text" href="{{ route('admin_home') }}"><i class="fas fa-home white-text menu-icon"></i>Inicio</a></li>
 
     <ul id="usuarios" class="collapsible collapsible-accordion">
       <li>
-        <a class="collapsible-header white-text" accordion="false" style="margin-left:2em;"> Usuarios <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
+        <a class="collapsible-header white-text" accordion="false" style="margin-left:1.3em;"> <i class="fas fa-user white-text" style="font-size:1.5em;"></i> Usuarios <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
         <div class="collapsible-body">
           <ul class="dropdown_menu">
             <li><a href="{{ route('admin_registrar') }}" class="white-text">Registrar Usuario</a></li>
@@ -75,17 +75,17 @@
       </li>
     </ul>
 
-    <li id="carreras"><a class="white-text" href="{{ route('admin_carreras') }}"><i class="fas fa-book white-text" style="margin-right:0;"></i>Carreras</a></li>
+    <li id="carreras"><a class="white-text" href="{{ route('admin_carreras') }}"><i class="fas fa-book white-text menu-icon"></i>Carreras</a></li>
 
-    <li id="materias"><a class="white-text" href="{{ route('admin_materias') }}"><i class="fas fa-book-open white-text" style="margin-right:0;"></i>Materias</a></li>
+    <li id="materias"><a class="white-text" href="{{ route('admin_materias') }}"><i class="fas fa-book-open white-text menu-icon"></i>Materias</a></li>
 
-    <li id="planes"><a class="white-text" href="{{ route('admin_planes') }}"><i class="far fa-clock white-text" style="margin-right:0;"></i>Planes de estudio</a></li>
+    <li id="planes"><a class="white-text" href="{{ route('admin_planes') }}"><i class="far fa-clock white-text menu-icon"></i>Planes de estudio</a></li>
 
-    <li id="aulas"><a class="white-text" href="{{ route('admin_aulas') }}"><i class="fas fa-school white-text" style="margin-right:0;"></i>Aulas</a></li>
+    <li id="aulas"><a class="white-text" href="{{ route('admin_aulas') }}"><i class="fas fa-school white-text menu-icon"></i>Aulas</a></li>
 
     <ul id="grupos" class="collapsible collapsible-accordion in">
       <li>
-        <a class="collapsible-header white-text" style="margin-left:2em;"> Grupos<i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
+        <a class="collapsible-header white-text" style="margin-left:1.3em;"> <i class="fas fa-users white-text" style="font-size:1.5em;"></i> Grupos<i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
         <div class="collapsible-body">
           <ul class="dropdown_menu">
             <li><a href="{{ route('admin_registrarG') }}" class="white-text">Crear Grupo</a></li>
@@ -95,13 +95,13 @@
       </li>
     </ul>
 
-    <li id="calendario"><a class="white-text" href="{{ route('admin_calendario') }}"><i class="far fa-calendar-alt white-text" style="margin-right:0;"></i>Calendario</a></li>
+    <li id="calendario"><a class="white-text" href="{{ route('admin_calendario') }}"><i class="far fa-calendar-alt white-text menu-icon"></i>Calendario</a></li>
 
-    <li id="estadisticas"><a class="white-text" href="{{ route('admin_estadisticas') }}"><i class="fas fa-chart-pie white-text" style="margin-right:0px;"></i>Estadisticas</a></li>
+    <li id="estadisticas"><a class="white-text" href="{{ route('admin_estadisticas') }}"><i class="fas fa-chart-pie white-text menu-icon"></i>Estadisticas</a></li>
 
-    <li id="bitacora"><a class="white-text" href="{{ route('admin_bitacora') }}"><i class="fas fa-file-signature white-text" style="margin-right:0px;"></i></i>Bitácora</a></li>
+    <li id="bitacora"><a class="white-text" href="{{ route('admin_bitacora') }}"><i class="fas fa-file-signature white-text menu-icon"></i></i>Bitácora</a></li>
 
-    <li id="misdatos"><a class="white-text" href="{{ route('mis_datos') }}"><i class="fas fa-user-cog white-text" style="margin-right:0;"></i>Mis datos</a></li>
+    <li id="misdatos"><a class="white-text" href="{{ route('mis_datos') }}"><i class="fas fa-user-cog white-text menu-icon"></i>Mis datos</a></li>
 
     <li id=" cerrar_sesion"><a class="show-on-small hide-on-med-and-up white-text" href="/">Cerrar Sesion</a></li>
 

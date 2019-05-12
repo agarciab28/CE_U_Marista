@@ -3,7 +3,7 @@
 @section('stylesheet')
 
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
-<link href="{{{ asset('css/admin/perfil.css') }}}" rel="stylesheet">
+<link href="{{{ asset('css/admin/misdatos.css') }}}" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="{{{ asset('https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css') }}}" rel="stylesheet">
 
@@ -61,7 +61,7 @@
     </div>
 </div>
 
-<!-- Modal Trigger 
+<!-- Modal Trigger
 <a class="waves-effect waves-light btn modal-trigger" href="#modaluser">Modal</a>-->
 
 <!-- Modal Structure -->
@@ -78,10 +78,22 @@
 
             <div class="input-field col s12 m4">
                 <i class="material-icons prefix">
-                    verified_user
+                    account_circle
                 </i>
                 <input type="text" name="user" id="user" class="validate" maxlength="35">
                 <label for="user">Usuario</label>
+            </div>
+
+            <div class="input-field col m4 s12 ">
+                <!--<i class="material-icons prefix">account_circle</i>-->
+                <input type="password" name="pass" id="pass" class="validate" maxlength="35">
+                <label for="pass">Contraseña</label>
+            </div>
+
+            <div class="input-field col m4 s12 ">
+                <i class="material-icons prefix">email</i>
+                <input type="text" id="correo" class="validate" name="email" maxlength="150">
+                <label for="correo">Correo electrónico</label>
             </div>
 
             <div class="input-field col m4 s12 ">
@@ -99,12 +111,6 @@
                 <!--<i class="material-icons prefix">account_circle</i>-->
                 <input type="text" id="apellidom" name="amaterno" class="validate" maxlength="35">
                 <label for="apellidom">Apellido materno</label>
-            </div>
-
-            <div class="input-field col m4 s12 ">
-                <i class="material-icons prefix">email</i>
-                <input type="text" id="correo" class="validate" name="email" maxlength="150">
-                <label for="correo">Correo electrónico</label>
             </div>
 
             <div class="input-field col s12 m4">
@@ -133,12 +139,12 @@
 
             <div class="input-field col m4 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="text" name="tel" id="tel" class="tel" maxlength="35">
+                <input type="tel" name="tel" id="tel" class="tel" maxlength="35">
                 <label for="tel">Teléfono</label>
             </div>
             <div class="input-field col m4 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="text" name="cel" id="cel" class="cel" maxlength="25">
+                <input type="tel" name="cel" id="cel" class="cel" maxlength="25">
                 <label for="cel">Celular</label>
             </div>
 
@@ -177,13 +183,13 @@
                 <label for="postal">Código postal</label>
             </div>
 
-            <div class="input-field col m4 s12 ">
+            <div class="input-field col m2 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
                 <input type="number" name="interior" id="interior" class="interior" maxlength="25">
                 <label for="interior">Número interior</label>
             </div>
 
-            <div class="input-field col m4 s12 ">
+            <div class="input-field col m2 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
                 <input type="number" name="exterior" id="exterior" class="exterior" maxlength="25">
                 <label for="exterior">Número exterior</label>
@@ -218,7 +224,7 @@
             const {
                 value: password
             } = await Swal.fire({
-                title: 'Para guardar los cambios ingrese su contraseña',
+                title: 'Ingrese su contraseña',
                 input: 'password',
                 inputPlaceholder: 'Ingrese su contraseña',
                 inputAttributes: {
