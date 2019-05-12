@@ -29,10 +29,8 @@ Route::group(["prefix" => 'admin'], function(){
     return view('admin.home');
   })->name('admin_home');
 
-//rutas registro de usuarios
-Route::get('/modificar_alumno/{ida}','AlumnosController@liat_modificar')->name('modificar_alumno');
-
-Route::post('/registrar','Auth\RegisterController@registro')->name('admin_registrar_envio');
+  //rutas registro de usuarios
+  Route::post('/registrar','Auth\RegisterController@registro')->name('admin_registrar_envio');
 
   Route::get('/registrar', 'Auth\RegisterController@showForm')->name('admin_registrar');
 
@@ -45,7 +43,6 @@ Route::post('/registrar','Auth\RegisterController@registro')->name('admin_regist
   Route::get('/carreras/elimina/{carrera}','carrerasController@elimina')->name('eliminaCarrera');
 
   Route::post('/carreras/editar','carrerasController@editar')->name('edita_carrera');
-
 
   Route::get('/materias', 'materiasController@showMaterias')->name('admin_materias');
 
@@ -64,6 +61,8 @@ Route::post('/registrar','Auth\RegisterController@registro')->name('admin_regist
   Route::get('/planes', 'planController@showPlan')->name('admin_planes');
 
   Route::post('/planes', 'planController@registrar')->name('registrar_plan');
+
+  Route::post('planes/editar','planController@editar')->name('edita_plan');
 
   Route::get('/planes/elimina/{plan}','planController@elimina')->name('eliminaPlan');
 
@@ -96,6 +95,8 @@ Route::post('/registrar','Auth\RegisterController@registro')->name('admin_regist
   Route::get('/modificar/usuarios', function(){
     return view('admin.modificar.usuarios');
     })->name('admin_musuarios');
+
+  Route::get('/modificar_alumno/{ida}','AlumnosController@liat_modificar')->name('modificar_alumno');
 
   Route::get('/coordinador/elimina/{usuario}','CoordinadorController@elimina')->where(['usuario'=>'[A-z]+'])->name('eliminaCoordinador');
 

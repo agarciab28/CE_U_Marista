@@ -19,7 +19,7 @@ function modificar_materia(id){
 
 //Modal para modificar plan de estudios
 function modificar_plan(id){
-  document.getElementById('materia_mod_id').value=id;
+  document.getElementById('mod_plan_id').value=id;
 }
 
 //modificar Alumnos rol,nombres,apaterno,amaterno,fnaci,sexo,email,calle,num_int,num_ext,colonia,codigo_postal,ciudad,estado,num_tel,num_cel,imagen

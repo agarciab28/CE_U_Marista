@@ -9,7 +9,7 @@ use App\Models\carrera;
 class planController extends Controller
 {
   public function showPlan(){
-    $planes=plan_de_estudios::select('c.nombre_carrera as carrera','nombre_plan','plan_de_estudios.fecha as fecha')
+    $planes=plan_de_estudios::select('plan_de_estudios.id_plan as id_plan','c.nombre_carrera as carrera','nombre_plan','plan_de_estudios.fecha as fecha','plan_de_estudios.activo as activo')
     ->join('carrera as c','plan_de_estudios.id_carrera','=','c.id_carrera')
     ->get();
     $carreras=carrera::select('id_carrera','nombre_carrera')->get();
@@ -21,9 +21,10 @@ class planController extends Controller
     $plan->id_carrera=$request->carrera;
     $plan->nombre_plan=$request->nombrec;
     $plan->fecha=$request->fecha;
+    $plan->activo='1';
     $plan->save();
 
-    $planes=plan_de_estudios::select('c.nombre_carrera as carrera','nombre_plan','plan_de_estudios.fecha as fecha')
+    $planes=plan_de_estudios::select('plan_de_estudios.id_plan as id_plan','c.nombre_carrera as carrera','nombre_plan','plan_de_estudios.fecha as fecha','plan_de_estudios.activo as activo')
     ->join('carrera as c','plan_de_estudios.id_carrera','=','c.id_carrera')
     ->get();
     $carreras=carrera::select('id_carrera','nombre_carrera')->get();
@@ -40,7 +41,7 @@ class planController extends Controller
     }else{
       plan_de_estudios::where('id_plan',$plan)->update(['activo'=>1]);
     }
-    $planes=plan_de_estudios::select('c.nombre_carrera as carrera','nombre_plan','plan_de_estudios.fecha as fecha')
+    $planes=plan_de_estudios::select('plan_de_estudios.id_plan as id_plan','c.nombre_carrera as carrera','nombre_plan','plan_de_estudios.fecha as fecha','plan_de_estudios.activo as activo')
     ->join('carrera as c','plan_de_estudios.id_carrera','=','c.id_carrera')
     ->get();
     $carreras=carrera::select('id_carrera','nombre_carrera')->get();
@@ -49,16 +50,15 @@ class planController extends Controller
 
 
   public function editar(Request $request){
-    dd($request);
-    /*plan_de_estudios::where('id_plan',$request->id_carrera)->update([
-      'nombre_carrera'=>$request->nombrec,
-      'rvoe'=>$request->cvervoe,
-      'total_creditos'=>$request->creditos,
-      'fecha'=>$request->fechar
+    plan_de_estudios::where('id_plan',$request->id_plan)->update([
+      'id_carrera'=>$request->carrera,
+      'nombre_plan'=>$request->nombrec,
+      'fecha'=>$request->fecha
     ]);
-    $carreras = carrera::get();
-    //dd($personas);
-    $registro=true;
-    return view('admin.carreras',compact(['carreras','registro']));*/
+    $planes=plan_de_estudios::select('plan_de_estudios.id_plan as id_plan','c.nombre_carrera as carrera','nombre_plan','plan_de_estudios.fecha as fecha','plan_de_estudios.activo as activo')
+    ->join('carrera as c','plan_de_estudios.id_carrera','=','c.id_carrera')
+    ->get();
+    $carreras=carrera::select('id_carrera','nombre_carrera')->get();
+    return view('admin.planes',compact(['planes','carreras']));
   }
 }
