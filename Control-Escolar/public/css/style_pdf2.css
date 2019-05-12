@@ -2,7 +2,7 @@ body{
   font-family: Verdana;
   font-size: 10px;
   color: black;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .bodyPDF{

@@ -9,6 +9,11 @@
 
 
 @section('content')
+<div class="row contenedor">
+  <div class="col m6 push-m3 s12">
+    <h5>Kardex</h5>
+  </div>
+</div>
 
 
 @endsection
