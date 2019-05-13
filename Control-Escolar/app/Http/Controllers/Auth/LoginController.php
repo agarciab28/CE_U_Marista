@@ -35,7 +35,6 @@ class LoginController extends Controller
         $nombre =$datos[0]->nombres." ".$datos[0]->apaterno." ".$datos[0]->amaterno;
         $imagen=$datos[0]->imagen;
         $url=Storage::url($imagen);
-        $ruta=$url.$imagen;
         $request->session()->regenerate();
         dd(session('status'));
         if(session('status')){

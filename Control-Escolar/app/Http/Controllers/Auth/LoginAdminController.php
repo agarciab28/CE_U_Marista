@@ -6,6 +6,7 @@ use App\Models\persona;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 
 class LoginAdminController extends Controller
@@ -123,9 +124,11 @@ class LoginAdminController extends Controller
         $request->session()->regenerate();
         $usuario=auth('admins')->user()->id_persona;
         $datos=persona::where('id_persona','=',$usuario)->get();
+        $imagen=$datos[0]->imagen;
+        $url=Storage::url($imagen);
         $nombre =$datos[0]->nombres." ".$datos[0]->apaterno." ".$datos[0]->amaterno;
         //$request->session()->put('id_admin', $request->id_admin);
-        session(['username'=>$request->username,'nombre'=>$nombre]);
+        session(['username'=>$request->username,'nombre'=>$nombre,'url'=>$url]);
         return $this->authenticated($request, $this->guard()->user())
                 ?: redirect()->intended(route('admin_home'));
     }
