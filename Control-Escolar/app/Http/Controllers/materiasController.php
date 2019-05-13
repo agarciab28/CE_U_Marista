@@ -47,4 +47,18 @@ class materiasController extends Controller
       $planes=plan_de_estudios::select('id_plan','nombre_plan')->get();
       return view('admin.materias',compact(['materias','planes']));
     }
+
+    public function modifica(Request $request){
+      materia::where('id_materia',$request->mod_id_materia)->update([
+        'nombre_materia'=>$request->nombrec,
+        'id_plan'=>$request->plan,
+        'horas_materia'=>$request->materiasm
+      ]);
+      $materias=materia::select('materia.id_materia as id_materia','nombre_materia','p.nombre_plan as plan','horas_materia','materia.activo as activo')
+      ->join('plan_de_estudios as p','p.id_plan','=','materia.id_plan')
+      ->get();
+      $planes=plan_de_estudios::select('id_plan','nombre_plan')->get();
+
+      return view('admin.materias',compact(['materias','planes']));
+    }
 }

@@ -12,6 +12,11 @@
 @section('title', 'Lista de Coordinadores')
 
 @section('content')
+  <div class="contenedor row">
+    <div class="col m6 push-m3 s12">
+      <h5>Lista de Coordinadores</h5>
+    </div>
+  </div>
   <div class="container">
     <table id="example" class="responsive-table striped" style="width:100%">
           <thead>
@@ -31,7 +36,7 @@
               <td>{{$persona->nombres}} {{$persona->apaterno}} {{$persona->amaterno}}</td>
               <td>{{$persona->fnaci}}</td>
               <td>{{$persona->email}}</td>
-              <td> <a href="{{ route('admin_musuarios') }}" class="btn">Modificar</a> </td>
+              <td> <a href="#" class="btn">Modificar</a> </td>
               <td> <a href="{{ route('eliminaCoordinador',['usuario'=>$persona->usuario]) }}" class="btn {{($persona->activo>0)?' green':'red'}}">{{($persona->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>
 
           </tr>

@@ -8,6 +8,10 @@
   left:80%;
 }
 
+.contenedor{
+  text-align: center;
+}
+
 a{
   color: rgba(8,58,99,1);
 }
@@ -56,4 +60,7 @@ a{
 #clavec:focus, #carrera_coo:focus, #cedulac:focus, #nsocc:focus, #pass:focus {
  border-bottom: 1px solid #003865;
  box-shadow: none;
+}
+.modal {
+    width: 85% !important;
 }

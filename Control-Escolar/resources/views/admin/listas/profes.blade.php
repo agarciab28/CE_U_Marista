@@ -12,6 +12,11 @@
 @section('title', 'Lista de Profesores')
 
 @section('content')
+  <div class="contenedor row">
+    <div class="col m6 push-m3 s12">
+      <h5>Lista de Profesores</h5>
+    </div>
+  </div>
   <div class="container">
     <table id="example" class="responsive-table striped" style="width:100%">
           <thead>

@@ -154,14 +154,11 @@
         <div class="row">
 
         </div>
-
-        <a href="#modal_asignar" class="btn modal-trigger">Asignar Alumnos</a>
-
         <div class="row">
         </div>
 
         <div class="input-field col m3 s12">
-          <button class="btn light-blue darken-4" type="submit">Registrar
+          <button class="btn light-blue darken-4 tooltipped" data-position="right" data-tooltip="Una vez registrado dirijase a Grupos -> Listar grupos" type="submit">Registrar
             <i class="material-icons right">send </i>
           </button>
         </div>
@@ -170,54 +167,14 @@
   </div>
 </div>
 
-<!-- Modal asignar -->
-<div id="modal_asignar" class="modal">
-  <div class="modal-content">
-    form class="" action="" method="post">
 
-    <div class="filtros">
-      <div class="row">
-        <div class="col m6 push-m3 s12" style="text-align: center;">
-          <h4>Asignación de alumnos a grupo</h4>
-        </div>
-      </div>
-      <div class="row">
-
-
-        <div class="input-field col m6 s12 ">
-
-          <label for="fcarrera">Carrera:</label>
-        </div>
-
-        <div class="input-field col m6 s12 ">
-          <input type="number" name="fperiodo" id="fperiodo" value="1" max="12" min="1" class="validate" required maxlength="35">
-          <label for="fperiodo">Semestre</label>
-        </div>
-      </div>
-    </div>
-
-
-    <table id="example" class="responsive-table striped" style="width:100%">
-      <thead>
-        <tr>
-          <th>Seleccionar</th>
-          <th>Número de control</th>
-          <th>Nombre Completo</th>
-          <th>Fecha de Nacimiento</th>
-          <th>Correo Electronico</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
-    <div class="input-field">
-      <button type="button" class="btn modal-close" name="button">Registrar</button>
-    </div>
-    </form>
-  </div>
-</div>
 @endsection
 
 @section('scripts')
-
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.tooltipped');
+     
+  });
+</script>
 @endsection

@@ -3,7 +3,8 @@
 @section('stylesheet')
 
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
-<link href="{{{ asset('css/admin/perfil.css') }}}" rel="stylesheet">
+<link href="{{{ asset('css/admin/misdatos.css') }}}" rel="stylesheet">
+<link href="{{{ asset('css/tooltips.css') }}}" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="{{{ asset('https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css') }}}" rel="stylesheet">
 
@@ -12,6 +13,11 @@
 @section('title', 'Mis datos')
 
 @section('content')
+  <div class="row contenedor">
+    <div class="col m6 push-m3 s12">
+      <h5>Mis datos</h5>
+    </div>
+  </div>
 <div class="container">
     <div class="row">
         <div class="col m4 push-m4 s12">
@@ -19,7 +25,7 @@
         </div>
     </div>
     <div class="fixed-action-btn">
-        <a class="btn-floating btn-large  waves-effect waves-light light-blue darken-4 modal-trigger" href="#modaluser" id="btn_add_aula">
+        <a class="btn-floating btn-large  waves-effect waves-light light-blue darken-4 modal-trigger tooltipped" href="#modaluser" id="btn_edit" data-position="left" data-tooltip="Modificar mis datos">
             <i class="large material-icons">edit</i>
         </a>
     </div>
@@ -28,17 +34,28 @@
         <div class="card-image waves-effect waves-block waves-light">
             <img class="activator" src="{{{ asset('img/a1.jpg')}}}" alt="user background">
         </div>
-        <figure class="card-profile-image">
-            <img src="{{{ asset('img/user9.png')}}}" alt="profile image" class="circle z-depth-2 responsive-img activator">
-        </figure>
+        <div class="row">
+          <figure class="card-profile-image col s12">
+              <img src="{{{ asset('img/user9.png')}}}" alt="profile image" class="circle z-depth-2 responsive-img activator">
+          </figure>
+        </div>
+
         <div class="card-content">
             <div class="row">
-                <div class="col s9 offset-s2">
-                    <h4 class="card-title grey-text text-darken-4">Diego Ramirez Rodriguez</h4>
-                    <p class="medium-small grey-text">Administrador de control escolar</p>
+                <div class="col m9 offset-m2 s12">
+                    <h4 class="card-title grey-text text-darken-4">{{$datos->nombres}} {{$datos->apaterno}} {{$datos->amaterno}}</h4>
+                    <p class="medium-small grey-text">
+                      @if($datos->rol=='Admin')
+                      Administrador de control escolar
+                      @elseif($datos->rol=='Coord')
+                      Coordinador de carrera
+                      @elseif($datos->rol=='Prof')
+                      Profesor de la institución
+                      @endif
+                    </p>
                 </div>
-                <div class="col s1 right-align">
-                    <a class="btn-floating activator waves-effect waves-light darken-2 right">
+                <div class=" right-align">
+                    <a class="btn-floating activator waves-effect waves-light darken-2 right tooltipped" data-position="left" data-tooltip="Mostrar datos de contacto">
                         <i class="material-icons">perm_identity</i>
                     </a>
                 </div>
@@ -46,22 +63,30 @@
         </div>
         <div class="card-reveal">
             <p>
-                <span class="card-title grey-text text-darken-4">Diego Ramirez Rodriguez <i class="material-icons right icon-blue">close</i></span>
-                <span><i class="material-icons icon-blue">perm_identity</i> Administrador de control escolar</span>
+                <span class="card-title grey-text text-darken-4">{{$datos->nombres}} {{$datos->apaterno}} {{$datos->amaterno}} <i class="material-icons right icon-blue">close</i></span>
+                <span><i class="material-icons icon-blue">perm_identity</i>
+                  @if($datos->rol=='Admin')
+                  Administrador de control escolar
+                  @elseif($datos->rol=='Coord')
+                  Coordinador de carrera
+                  @elseif($datos->rol=='Prof')
+                  Profesor de la institución
+                  @endif
+                </span>
 
             </p>
 
-            <p>Tiene como objetivos, registrar, controlar y gestionar una serie de actividades enfocadas al bienestar académico-administrativo.</p>
+            <p>Tiene como objetivos, registrar cosas.</p>
 
-            <p><i class="material-icons icon-blue">verified_user</i> admin</p>
-            <p><i class="material-icons icon-blue">perm_phone_msg</i> +1 (612) 222 8989</p>
-            <p><i class="material-icons icon-blue">email</i> mail@domain.com</p>
-            <p><i class="material-icons icon-blue">cake</i> 18th 1990</p>
+            <p><i class="material-icons icon-blue">verified_user</i> {{$datos->rol}}</p>
+            <p><i class="material-icons icon-blue">perm_phone_msg</i>{{$datos->num_cel}}</p>
+            <p><i class="material-icons icon-blue">email</i>{{$datos->email}}</p>
+            <p><i class="material-icons icon-blue">cake</i>{{$datos->fnaci}}</p>
         </div>
     </div>
 </div>
 
-<!-- Modal Trigger 
+<!-- Modal Trigger
 <a class="waves-effect waves-light btn modal-trigger" href="#modaluser">Modal</a>-->
 
 <!-- Modal Structure -->
@@ -204,7 +229,7 @@
         </div>
     </div>
     <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick="confirmPass()">Aceptar</a>
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat tooltipped" onclick="confirmPass()" data-position="left" data-tooltip="Necesitará ingresar su contraseña para guardar los cambios">Aceptar</a>
     </div>
 </div>
 
@@ -250,15 +275,6 @@
                 )
             }
         })()
-        /*
-        swal("Write something here:", {
-                content: "input",
-            })
-            .then((value) => {
-                //swal(`You typed: ${value}`);
-                swal('Se han guardado los cambios!', 'Presione OK!', 'success');
-            });
-            */
     }
 </script>
 <script>
@@ -275,5 +291,19 @@
             direction: 'left'
         });
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.tooltipped');
+    });
+
+    window.onload = function() {
+        //alert("evento load detectado!");
+        setTimeout(function() {
+            M.toast({html: 'Puedes actualizar la información de tu cuenta aquí.'});
+        }, 1500);
+        setTimeout(function() {
+            M.toast({html: 'Recuerda cambiar tu contraseña de manera periódica.'});
+        }, 5000);
+    };
 </script>
 @endsection

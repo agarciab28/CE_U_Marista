@@ -34,12 +34,12 @@ class CreateTablePersona extends Migration
             $table->string('estado',30)->nullable();
             $table->string('num_tel',10)->nullable();
             $table->string('num_cel',10)->nullable();
-            $table->string('imagen',90);
+            $table->string('imagen',90)->nullable();
             $table->timestamps();
         });
 
 
-    /*DB::unprepared("
+  /*  DB::unprepared("
     CREATE TRIGGER updatenombres BEFORE UPDATE ON persona
     FOR EACH ROW IF (NEW.nombres != OLD.nombres) THEN
     insert into bitacora(usuario,tipoderol,tipodemov,fecha,tablaafectada, campoalter,valorant,valornuevo)

@@ -6,6 +6,14 @@ a{
   color: rgba(8,58,99,1);
 }
 
+.contenedor{
+  text-align: center;
+}
+
 .card-grupo{
   background-color: white;
+}
+
+.botonModal{
+  width: 100%;
 }
