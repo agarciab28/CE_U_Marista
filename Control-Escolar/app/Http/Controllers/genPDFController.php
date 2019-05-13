@@ -40,14 +40,6 @@
       return $pdf->stream('Acta de calificaciones.pdf');
     }
 
-    public function pdf2_docente(){
-      $pdf = \PDF::loadView('docente.pdf');
-      $pdf->setPaper('letter');
-
-      //return $pdf->download('ejemplo.pdf');
-      return $pdf->stream('Acta de calificaciones.pdf');
-    }
-
     //PDF'S COORDINADOR
     public function pdfA_coordi(){
       return view('coordinador.pdfA');
@@ -75,10 +67,18 @@
 
     //PDF's ALUMNOS
     public function pdfA_al(){
-      return view('alumno.pdfA');
+      $pdf = \PDF::loadView('alumno.pdfA');
+      $pdf->setPaper('letter','landscape');
+
+      //return $pdf->download('ejemplo.pdf');
+      return $pdf->stream('Acta de calificaciones.pdf');
     }
 
     public function pdfB_al(){
-      return view('alumno.pdfB');
+      $pdf = \PDF::loadView('alumno.pdfB');
+      $pdf->setPaper('letter');
+
+      //return $pdf->download('ejemplo.pdf');
+      return $pdf->stream('Kárdex de calificaciones.pdf');
     }
 }
