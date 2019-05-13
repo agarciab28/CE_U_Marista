@@ -129,6 +129,12 @@ Route::group(["prefix" => 'admin'], function(){
   Route::get('/get_eventos','calendarioController@eventos')->name('get_eventos');
 
   Route::post('/nuevo_evento','calendarioController@registra_evento')->name('evento_nuevo');
+
+  Route::get('/grupos/elimina/{grupo}','gruposController@eliminagrupos')->name('elimina_grupo');
+
+
+  Route::post('/grupos/editar' ,'gruposController@modificagrupos')->name('edita_grupo');
+
 });
 
 //Rutas Docentes
