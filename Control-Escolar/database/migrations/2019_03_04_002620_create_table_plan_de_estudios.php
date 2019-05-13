@@ -18,6 +18,7 @@ class CreateTablePlanDeEstudios extends Migration
             $table->string('id_carrera',10);
             $table->string('nombre_plan',100);
             $table->date('fecha');
+            $table->boolean('activo')->default('1');
             $table->timestamps();
             $table->primary('id_plan');
             $table->foreign('id_carrera')->references('id_carrera')->on('carrera');

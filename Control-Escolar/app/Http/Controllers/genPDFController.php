@@ -9,52 +9,100 @@
   {
     //PDF's DOCENTES
     public function pdfA_docente(){
-      return view('docente.pdfA');
+      $pdf = \PDF::loadView('docente.pdfA');
+      $pdf->setPaper('letter', 'landscape');
+
+      //return $pdf->download('ejemplo.pdf');
+      return $pdf->stream('Acta de calificaciones.pdf');
     }
 
     public function pdfB_docente(){
-      return view('docente.pdfB');
+      $pdf = \PDF::loadView('docente.pdfB');
+      $pdf->setPaper('letter');
+
+      //return $pdf->download('ejemplo.pdf');
+      return $pdf->stream('Acta de calificaciones.pdf');
     }
 
-    public function pdfC_Doc(){
-      return view('docente.pdfC');
+    public function pdfC_docente(){
+      $pdf = \PDF::loadView('docente.pdfC');
+      $pdf->setPaper('letter');
+
+      //return $pdf->download('ejemplo.pdf');
+      return $pdf->stream('Acta de calificaciones.pdf');
     }
 
-    public function pdfF_Doc(){
-      return view('docente.pdfF');
+    public function pdfF_docente(){
+      $pdf = \PDF::loadView('docente.pdfF');
+      $pdf->setPaper('letter');
+
+      //return $pdf->download('ejemplo.pdf');
+      return $pdf->stream('Acta de calificaciones.pdf');
     }
 
     //PDF'S COORDINADOR
     public function pdfA_coordi(){
-      return view('coordinador.pdfA');
+      $pdf = \PDF::loadView('coordinador.pdfA');
+      $pdf->setPaper('letter','landscape');
+
+      //return $pdf->download('ejemplo.pdf');
+      return $pdf->stream('Acta de calificaciones.pdf');
     }
 
     public function pdfB_coordi(){
-      return view('coordinador.pdfB');
+      $pdf = \PDF::loadView('coordinador.pdfB');
+      $pdf->setPaper('letter');
+
+      //return $pdf->download('ejemplo.pdf');
+      return $pdf->stream('Acta de calificaciones.pdf');
     }
 
     public function pdfF_coordi(){
-      return view('coordinador.pdfF');
+      $pdf = \PDF::loadView('coordinador.pdfF');
+      $pdf->setPaper('letter');
+
+      //return $pdf->download('ejemplo.pdf');
+      return $pdf->stream('Acta de calificaciones.pdf');
     }
 
     public function pdfAM_coordi(){
-      return view('coordinador.pdfAM');
+      $pdf = \PDF::loadView('coordinador.pdfAM');
+      $pdf->setPaper('letter', 'landscape');
+
+      //return $pdf->download('ejemplo.pdf');
+      return $pdf->stream('Acta de calificaciones.pdf');
     }
 
     public function pdfBM_coordi(){
-      return view('coordinador.pdfBM');
+      $pdf = \PDF::loadView('coordinador.pdfBM');
+      $pdf->setPaper('letter');
+
+      //return $pdf->download('ejemplo.pdf');
+      return $pdf->stream('Acta de calificaciones.pdf');
     }
 
     public function pdfFM_coordi(){
-      return view('coordinador.pdfFM');
+      $pdf = \PDF::loadView('coordinador.pdfFM');
+      $pdf->setPaper('letter', 'landscape');
+
+      //return $pdf->download('ejemplo.pdf');
+      return $pdf->stream('Acta de calificaciones.pdf');
     }
 
     //PDF's ALUMNOS
     public function pdfA_al(){
-      return view('alumno.pdfA');
+      $pdf = \PDF::loadView('alumno.pdfA');
+      $pdf->setPaper('letter','landscape');
+
+      //return $pdf->download('ejemplo.pdf');
+      return $pdf->stream('Acta de calificaciones.pdf');
     }
 
     public function pdfB_al(){
-      return view('alumno.pdfB');
+      $pdf = \PDF::loadView('alumno.pdfB');
+      $pdf->setPaper('letter');
+
+      //return $pdf->download('ejemplo.pdf');
+      return $pdf->stream('Kárdex de calificaciones.pdf');
     }
 }

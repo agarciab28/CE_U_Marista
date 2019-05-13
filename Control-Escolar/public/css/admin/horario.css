@@ -1,0 +1,33 @@
+.contenedor{
+  text-align: center;
+}
+
+.content-horario{
+  margin-left: 1em;
+  margin-right: 1em;
+  border-radius: 1em;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+a{
+  color: rgba(8,58,99,1);
+}
+
+.p_horario{
+  color: #003865;
+}
+
+.card-dia{
+  background-color: #003865;
+  color: white;
+  border-radius: 1em;
+}
+
+.card-materia{
+  border-radius: 2em;
+}
+
+.btn-horario{
+  width: 20%;
+  overflow: visible;
+}

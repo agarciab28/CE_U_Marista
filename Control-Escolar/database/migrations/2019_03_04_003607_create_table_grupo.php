@@ -20,6 +20,7 @@ class CreateTableGrupo extends Migration
             $table->string('id_materia',18);
             $table->integer('id_prof')->unsigned();
             $table->string('periodo');
+            $table->boolean('activo')->default('1');
             $table->timestamps();
 
             $table->foreign('id_prof')->references('id_prof')->on('profesor');

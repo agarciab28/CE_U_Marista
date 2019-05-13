@@ -74,19 +74,22 @@ class RegisterController extends Controller
     public function registro(Request $request){
 
       try {
-//$file=$datos->file('imagen');
-//$nombre=$file->getClientOriginalName();
-
-        $persona=new persona();
-        $persona->rol=$request->rol;
-        $persona->nombres=$request->nombres;
-        $persona->apaterno=$request->apaterno;
-        $persona->amaterno=$request->amaterno;
-        $persona->sexo=$request->sexo;
-        $persona->email=$request->email;
-        $persona->fnaci=$request->fnaci;
-        $persona->curp=$request->curp;
-        $persona->save();
+        $file=$request->file('imagen');
+        $nombre=time().$file->getClientOriginalName();
+        
+                $persona=new persona();
+                $persona->rol=$request->rol;
+                $persona->nombres=$request->nombres;
+                $persona->apaterno=$request->apaterno;
+                $persona->amaterno=$request->amaterno;
+                $persona->sexo=$request->sexo;
+                $persona->email=$request->email;
+                $persona->fnaci=$request->fnaci;
+                $persona->curp=$request->curp;
+                $persona->imagen=$nombre;
+                $persona->save();
+                $file->storeAs('public', $nombre);
+              //\Storage::disk('local')->put($nombre,\File::get($file));
         $id_persona=persona::where('curp',$request->curp)->get(['id_persona'])->first();
 
         $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
@@ -131,6 +134,7 @@ class RegisterController extends Controller
         }
 
       } catch (\Exception $e) {
+        report($e);
 
         $registro=false;
         $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
