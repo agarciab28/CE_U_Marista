@@ -9,6 +9,9 @@ input, textarea, select {
     font-weight: inherit;
     *font-size: 100%;
 }
+.contenedor{
+  text-align: center;
+}
 
 user agent stylesheet
 select:not(:-internal-list-box) {

@@ -29,6 +29,14 @@ Route::group(["prefix" => 'admin'], function(){
     return view('admin.home');
   })->name('admin_home');
 
+  Route::get('/horario', function(){
+    return view('admin.horario');
+  })->name('admin_horario');
+
+  Route::get('/alumnosGrupo', function(){
+    return view('admin.listas.alumnosxgrupo');
+  })->name('admin_alumnosGrupo');
+
   //rutas registro de usuarios
   Route::post('/registrar','Auth\RegisterController@registro')->name('admin_registrar_envio');
 
@@ -131,6 +139,7 @@ Route::group(["prefix" => 'docente'], function(){
   Route::get('/misdatos', function(){
     return view('docente.misdatos');
   })->name('docente_datos');
+
 
   Route::post('/consulta', 'gruposController@describeGruposProf')->name('docente_consulta');
 
