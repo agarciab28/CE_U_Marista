@@ -82,6 +82,8 @@ Route::group(["prefix" => 'admin'], function(){
     return view('admin.bitacora');
     })->name('admin_bitacora');
 
+  Route::get('/bitacora', 'bitacoraController@listaBitacora')->name('admin_bitacora');
+
   Route::get('/datos','adminController@showDatos')->name('mis_datos');
 
   Route::get('/alumno/eliminar/{ncontrol}', 'AlumnosController@eliminar')
