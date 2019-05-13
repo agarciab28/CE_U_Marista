@@ -39,7 +39,7 @@ class CreateTablePersona extends Migration
         });
 
 
-  /*  DB::unprepared("
+   /* DB::unprepared("
     CREATE TRIGGER updatenombres BEFORE UPDATE ON persona
     FOR EACH ROW IF (NEW.nombres != OLD.nombres) THEN
     insert into bitacora(usuario,tipoderol,tipodemov,fecha,tablaafectada, campoalter,valorant,valornuevo)

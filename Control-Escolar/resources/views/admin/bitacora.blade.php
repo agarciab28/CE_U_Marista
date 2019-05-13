@@ -32,13 +32,18 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($bitacora as $bitacora)   
             <tr>
-                <td>adminprueba</td>
-                <td>administrador</td>
-                <td>YYYY-MM-DD HH:MI:SS</td>
-                <td>Update</td>
-                <td>Materias</td>
+                <th>{{$bitacora->usuario}}</th>
+                <td>{{$bitacora->tipoderol}}</th>
+                <th>{{$bitacora->fecha}}</th>
+                <th>{{$bitacora->tipodemov}}</th>
+                <th>{{$bitacora->tablaafectada}}</th>
+
                 <td> <a href="#modal5" class="waves-effect waves-light btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Muestra información adicional">Detalle</a>
+                </tr>
+                    @endforeach  
+
                     <div id="modal5" class="modal bottom-sheet">
                         <div class="modal-content">
                             <h4>Bitácora de movimientos</h4>
@@ -48,6 +53,7 @@
                                     <span class="title">Detalle</span>
                                     <table id="example" class="responsive-table striped" style="width:100%">
                                         <thead>
+                                             
                                             <tr>
                                                 <th>ID movimiento</th>
                                                 <th>Usuario</th>
@@ -61,17 +67,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>U1</td>
-                                                <td>adminprueba</td>
-                                                <td>administrador</td>
-                                                <td>YYYY-MM-DD HH:MI:SS</td>
-                                                <td>Update</td>
-                                                <td>Materias</td>
-                                                <td>Nombre de materia</td>
-                                                <td>Introducción a ingeniería</td>
-                                                <td>ingeniería aplicada I</td>
-                                            </tr>
+                                           
                                         </tbody>
                                     </table>
                                     <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
