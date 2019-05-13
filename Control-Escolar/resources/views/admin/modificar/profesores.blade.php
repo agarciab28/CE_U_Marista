@@ -104,54 +104,30 @@
                 <span>Nueva contraseña</span>
             </div>
 
-
-            <div id="alumno_ext">
-                <div class="input-field col m4 s12 ">
-                    <input type="text" name="ncontrol" id="ncontrol" value="{{ $persona->ncontrol }}" class="validate" maxlength="12">
-                    <span>Número de control</span>
-                </div>
+            <div id="profe_ext">
 
                 <div class="input-field col m4 s12 ">
-                    <select name="id_carrera" id="carrera_alumno">
-                      <option value="{{ $persona->id_carrera }}" default selected>{{ $persona->nombre_carrera  }}</option>
-                        @foreach($carreras as $carrera)
-                        <option value="{{$carrera->id_carrera}}">{{$carrera->nombre_carrera}}</option>
-                        @endforeach
-                    </select>
-                    <span>Carrera</span>
+                    <!--<i class="material-icons prefix">account_circle</i>-->
+                    <input type="text" name="username" id="clavep" class="validate" maxlength="30">
+                    <span for="clavep">Clave de profesor</span>
                 </div>
-
-                <div class="col m4 s12 ">
-                    <select name="semestre" id="semestre">
-                        <option selected value="{{ $persona->semestre }}">{{ $persona->semestre }}</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                    </select>
-                    <span>Semestre</span>
+                <!--fila-->
+                <div class="input-field col m4 s12 ">
+                    <!--<i class="material-icons prefix">account_circle</i>-->
+                    <input type="text" name="especialidad_profe" id="especialidad_profe" class="validate" maxlength="35">
+                    <span for="especialidad_profe">Especialidad</span>
                 </div>
                 <div class="input-field col m4 s12 ">
-
-
-                  <select name="plan_de_estudios" id="plan_est">
-                    <option selected value="{{ $persona->id_plan }}">{{ $persona->nombre_plan }}</option>
-                    @foreach($planes as $plan)
-                      <option value="{{$plan->id_plan}}">{{$plan->nombre_plan}}</option>
-                    @endforeach
-                  </select>
-                    <span>Plan de estudios</span>
+                    <!--<i class="material-icons prefix">account_circle</i>-->
+                    <input type="text" name="cedulap" id="cedulap" class="cedula" maxlength="35">
+                    <span for="cedulap">Cédula fiscal</span>
+                </div>
+                <div class="input-field col m4 s12 ">
+                    <!--<i class="material-icons prefix">account_circle</i>-->
+                    <input type="text" name="nssocp" id="nsocp" class="validate" maxlength="25">
+                    <span for="nsocp">Número de seguro socal</span>
                 </div>
             </div>
-
 
 
 
