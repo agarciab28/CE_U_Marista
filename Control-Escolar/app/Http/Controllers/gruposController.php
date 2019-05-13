@@ -47,7 +47,7 @@ class gruposController extends Controller
      $horario->hora_i_lu=$request->hora_ini_lunes;
      $horario->hora_f_lu=$request->hora_fin_lunes;
      $horario->aula_lu=$request->aula_lunes;
-
+    
      $horario->hora_i_ma=$request->hora_ini_martes;
      $horario->hora_f_ma=$request->hora_fin_martes;
      $horario->aula_ma=$request->aula_martes;
@@ -71,11 +71,54 @@ class gruposController extends Controller
      ->orderBy('id_grupo', 'desc')->limit(1)
      ->value('id_grupo');
      $horario->id_grupo=$idg;
+     if (horario::where('hora_i_lu', '=', $request->hora_ini_lunes)->count() > 0) {
+      if (horario::where('aula_lu', '=', $request->aula_lunes)->count() > 0) {
+        $message="No se pudo registrar el grupo hay un empalme en el horario y grupo";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+        showFormGrupo();
+      }
+    }
+    if (horario::where('hora_i_ma', '=', $request->hora_ini_martes)->count() > 0) {
+      if (horario::where('aula_ma', '=', $request->aula_martes)->count() > 0) {
+        $message="No se pudo registrar el grupo hay un empalme en el horario y grupo";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+        showFormGrupo();
+      }
+    }
+    if (horario::where('hora_i_mi', '=', $request->hora_ini_miercoles)->count() > 0) {
+      if (horario::where('aula_mi', '=', $request->aula_miercoles)->count() > 0) {
+        $message="No se pudo registrar el grupo hay un empalme en el horario y grupo";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+        showFormGrupo();
+      }
+    }
+    if (horario::where('hora_i_ju', '=', $request->hora_ini_jueves)->count() > 0) {
+      if (horario::where('aula_ju', '=', $request->aula_jueves)->count() > 0) {
+        $message="No se pudo registrar el grupo hay un empalme en el horario y grupo";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+        showFormGrupo();
+      }
+    }
+    if (horario::where('hora_i_vi', '=', $request->hora_ini_viernes)->count() > 0) {
+      if (horario::where('aula_vi', '=', $request->aula_viernes)->count() > 0) {
+        $message="No se pudo registrar el grupo hay un empalme en el horario y grupo";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+        showFormGrupo();
+      }
+    }
+    if (horario::where('hora_i_sa', '=', $request->hora_ini_sabado)->count() > 0) {
+      if (horario::where('aula_sa', '=', $request->aula_sabado)->count() > 0) {
+        $message="No se pudo registrar el grupo hay un empalme en el horario y grupo";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+        showFormGrupo();
+      }
+    }
      $horario->save();
 
    } catch (Exception $e) {
-    report($e);
-    return false;
+     $message="Hubo un error al guardar el grupo";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+    showFormGrupo();
    }
 
    $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','nombre_carrera','periodo','nombres','apaterno','amaterno','c.id_carrera as id_carrera')
@@ -129,4 +172,5 @@ class gruposController extends Controller
 
    return view('docente.opciones.calif_finales');
  }
+
 }

@@ -138,8 +138,6 @@ Route::group(["prefix" => 'docente'], function(){
 
   Route::get('/grupos','gruposController@gruposProf')->name('docente_grupos');
 
-  Route::get('/pdf2','genPDFController@pdf2_docente')->name('docente_pdf2');
-
   Route::get('/pdfC','genPDFController@pdfC')->name('docente_pdfC');
 
   Route::get('/pdfA','genPDFController@pdfA')->name('docente_pdfA');
@@ -194,6 +192,8 @@ Route::group(["prefix" => 'coordinador'], function(){
   Route::get('/pdfBM','genPDFController@pdfBM_coordi')->name('coordinador_pdfBM');
   //calificaciones finales materia
   Route::get('/pdfFM','genPDFController@pdfFM_coordi')->name('coordinador_pdfFM');
+
+  Route::get('/pdf2','genPDFController@pdf2_coordi')->name('coordinador_pdf2');
 });
 
 // Rutas Alumno
