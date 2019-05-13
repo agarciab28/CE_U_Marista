@@ -40,28 +40,28 @@
 
       <tr>
         <td>{{$grupo->grupo}}</td>
+        <td>{{$grupo->seccion}}</td>
         <td>{{$grupo->carrera}}</td>
         <td>{{$grupo->nombre_carrera}}</td>
         <td>{{$grupo->nombre_materia}}</td>
         <td>{{$grupo->nombres}} {{$grupo->aparterno}} {{$grupo->amaterno}}</td>
         <td>{{$grupo->periodo}}</td>
-        <td> <a href="{{ route('admin_asignar',[$grupo->grupo,$grupo->id_carrera]) }}" class="btn tooltipped" data-position="bottom" data-tooltip="Selecciona los alumnos que conforman el grupo a registrar"><i class="fas fa-user-plus"></i></a></td>
-        <td> <a href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Reasignación de profesor, actualizar horario, cambio de carrera o materia"><i class="fas fa-pencil-ruler"></i></a> </td>
-        <td> <a href="{{ route('admin_alumnosGrupo')}}" class="btn tooltipped" data-position="bottom" data-tooltip="Ver los alumnos registrados en este grupo"><i class="fas fa-users"> </td>
+        <td> <a onclick="modificar_grupo('{{$grupo->grupo}}')" href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Reasignación de profesor, cambio de carrera o materia">Modificar</a> </td>
+        <td> <a href="{{route('elimina_grupo',['grupo'=>$grupo->grupo])}}" class="btn {{($grupo->activo>0)?' green':'red'}} tooltipped" data-position="bottom" data-tooltip="Cambiar el estado del grupo en el periodo escolar actual">{{($grupo->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>
         <td> <a href="{{ route('admin_horario')}}" class="btn tooltipped" data-position="bottom" data-tooltip="Ver los horarios de este grupo"><i class="fas fa-clock"></td>
-        <td> <a href="#" class="btn red tooltipped" data-position="bottom" data-tooltip="Cambiar el estado del grupo en el periodo escolar actual">Deshabilitar</a> </td>
+        <td> <a href="{{ route('admin_alumnosGrupo')}}" class="btn tooltipped" data-position="bottom" data-tooltip="Ver los alumnos registrados en este grupo"><i class="fas fa-users"> </td>
+        <td> <a href="{{ route('admin_asignar',[$grupo->grupo,$grupo->id_carrera]) }}" class="btn tooltipped" data-position="bottom" data-tooltip="Selecciona los alumnos que conforman el grupo a registrar"><i class="fas fa-user-plus"></i></a></td>
       </tr>
 
       @endforeach
     </tbody>
   </table>
 </div>
-
 <!--modal modificar grupos-->
 <div id="modal_modificar" class="modal bottom-sheet">
   <div class="modal-content">
     <div class="row">
-      <form class="col  s12 m12" id="form_mod_grupos" action="" method="post">
+      <form class="col  s12 m12" id="form_mod_grupos" action="{{route('edita_grupo')}}" method="post">
         {{ csrf_field() }}
         <div class="row">
           <div class="col m6 push-m3 s12" style="text-align: center;">
@@ -69,7 +69,7 @@
           </div>
         </div>
         <div class="input-field col s12 m3">
-          <input type="text" name="idgrupo" id="idgrupo" value="" disabled>
+          <input type="text" name="idgrupo" id="idgrupo"  placeholder="" readonly required maxlength="35">
           <label for="idgrupo">Identificador</label>
         </div>
         <div class="input-field col s12 m3">
@@ -101,18 +101,6 @@
           <label for="profesor">Profesor</label>
         </div>
         <div class="input-field col s12 m6">
-          <input type="text" name="aula" id="aula" value="">
-          <label for="aula">Aula</label>
-        </div>
-        <div class="input-field col s12 m3">
-          <input type="text" class="timepicker" name="hora_ini" id="hora_ini" value="">
-          <label for="hora_ini">Hora Inicio</label>
-        </div>
-        <div class="input-field col s12 m3">
-          <input type="text" class="timepicker" name="hora_fin" id="hora_fin" value="">
-          <label for="hora_fin">Hora Final</label>
-        </div>
-        <div class="input-field col s12 m6">
           <input type="text" name="periodo" id="periodo" value="">
 
           </select>
@@ -142,6 +130,7 @@
 
 @section('scripts')
 <script src="{{{ asset('js/datatables.js') }}}"></script>
+<script src="{{{asset('js/asigna.js')}}}"></script>
 <script src="{{{ asset('js/validaciones.js') }}}"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>

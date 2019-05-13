@@ -16,7 +16,7 @@ use App\Models\alumno;
 class gruposController extends Controller
 {
   public function showGrupos(){
-    $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','nombre_carrera','periodo','nombres','apaterno','amaterno','c.id_carrera as id_carrera')
+    $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','nombre_carrera','periodo','nombres','apaterno','amaterno','grupo.activo as activo','c.id_carrera as id_carrera')
     ->join('carrera as c','c.id_carrera','=','grupo.id_carrera')
     ->join('materia as m','m.id_materia','=','grupo.id_materia')
     ->join('profesor as p','p.id_prof','=','grupo.id_prof')
@@ -136,7 +136,96 @@ class gruposController extends Controller
     ->get();
    return view('admin.listas.grupos',compact(['grupos','carrerasl','materiasl','profesoresl']));
  }
+ //funcion eliminar
+ public function eliminagrupos($grupo){
+   try{
+  $seleccion=grupo::select('activo')->where('id_grupo',$grupo)->first();
 
+  if($seleccion->activo>0){
+    grupo::where('id_grupo',$grupo)->update(['activo'=>0]);
+
+  }else{
+    grupo::where('id_grupo',$grupo)->update(['activo'=>1]);
+  }
+}catch(Exception $e){
+  $message="Hubo un error al guardar el grupo";
+  echo "<script type='text/javascript'>alert('$message');</script>";
+  $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','nombre_carrera','periodo','nombres','apaterno','amaterno','grupo.activo as activo','c.id_carrera as id_carrera')
+    ->join('carrera as c','c.id_carrera','=','grupo.id_carrera')
+    ->join('materia as m','m.id_materia','=','grupo.id_materia')
+    ->join('profesor as p','p.id_prof','=','grupo.id_prof')
+    ->join('personal as per','per.username','p.username')
+    ->join('persona as pe','pe.id_persona','=','per.id_persona')
+    ->get();
+    $carrerasl= carrera::get(['id_carrera','nombre_carrera']);
+   $materiasl=materia::get(['id_materia','nombre_materia']);
+   $profesoresl=profesor::select('nombres','apaterno','amaterno','id_prof')
+    ->join('personal as pe','pe.username','=','profesor.username')
+    ->join('persona as pers','pers.id_persona','=','pe.id_persona')
+    ->get();
+   return view('admin.listas.grupos',compact(['grupos','carrerasl','materiasl','profesoresl']));
+
+}
+$grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','nombre_carrera','periodo','nombres','apaterno','amaterno','grupo.activo as activo','c.id_carrera as id_carrera')
+    ->join('carrera as c','c.id_carrera','=','grupo.id_carrera')
+    ->join('materia as m','m.id_materia','=','grupo.id_materia')
+    ->join('profesor as p','p.id_prof','=','grupo.id_prof')
+    ->join('personal as per','per.username','p.username')
+    ->join('persona as pe','pe.id_persona','=','per.id_persona')
+    ->get();
+    $carrerasl= carrera::get(['id_carrera','nombre_carrera']);
+   $materiasl=materia::get(['id_materia','nombre_materia']);
+   $profesoresl=profesor::select('nombres','apaterno','amaterno','id_prof')
+    ->join('personal as pe','pe.username','=','profesor.username')
+    ->join('persona as pers','pers.id_persona','=','pe.id_persona')
+    ->get();
+   return view('admin.listas.grupos',compact(['grupos','carrerasl','materiasl','profesoresl']));
+}
+
+//funcion modificar
+ public function modificagrupos(Request $request){
+   try{
+  grupo::where('id_grupo',$request->idgrupo)->update([
+    'seccion'=>$request->seccion,
+    'id_carrera'=>$request->carrera,
+    'id_materia'=>$request->materia,
+    'id_prof'=>$request->profesor,
+    'periodo'=>$request->periodo
+  ]);}catch(Exception $e){
+    $message="Hubo un error al guardar el grupo";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+    $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','nombre_carrera','periodo','nombres','apaterno','amaterno','grupo.activo as activo','c.id_carrera as id_carrera')
+    ->join('carrera as c','c.id_carrera','=','grupo.id_carrera')
+    ->join('materia as m','m.id_materia','=','grupo.id_materia')
+    ->join('profesor as p','p.id_prof','=','grupo.id_prof')
+    ->join('personal as per','per.username','p.username')
+    ->join('persona as pe','pe.id_persona','=','per.id_persona')
+    ->get();
+    $carrerasl= carrera::get(['id_carrera','nombre_carrera']);
+   $materiasl=materia::get(['id_materia','nombre_materia']);
+   $profesoresl=profesor::select('nombres','apaterno','amaterno','id_prof')
+    ->join('personal as pe','pe.username','=','profesor.username')
+    ->join('persona as pers','pers.id_persona','=','pe.id_persona')
+    ->get();
+   return view('admin.listas.grupos',compact(['grupos','carrerasl','materiasl','profesoresl']));
+
+  }
+  $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','nombre_carrera','periodo','nombres','apaterno','amaterno','grupo.activo as activo','c.id_carrera as id_carrera')
+    ->join('carrera as c','c.id_carrera','=','grupo.id_carrera')
+    ->join('materia as m','m.id_materia','=','grupo.id_materia')
+    ->join('profesor as p','p.id_prof','=','grupo.id_prof')
+    ->join('personal as per','per.username','p.username')
+    ->join('persona as pe','pe.id_persona','=','per.id_persona')
+    ->get();
+    $carrerasl= carrera::get(['id_carrera','nombre_carrera']);
+   $materiasl=materia::get(['id_materia','nombre_materia']);
+   $profesoresl=profesor::select('nombres','apaterno','amaterno','id_prof')
+    ->join('personal as pe','pe.username','=','profesor.username')
+    ->join('persona as pers','pers.id_persona','=','pe.id_persona')
+    ->get();
+   return view('admin.listas.grupos',compact(['grupos','carrerasl','materiasl','profesoresl']));
+ 
+}
 
  public function showFormGrupo(){
    $carreras= carrera::get(['id_carrera','nombre_carrera']);

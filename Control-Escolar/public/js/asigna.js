@@ -17,6 +17,11 @@ function modificar_materia(id){
   document.getElementById('materia_mod_id').value=id;
 }
 
+//Modal para modificar grupo
+function modificar_grupo(id){
+  document.getElementById('idgrupo').value=id;
+}
+
 //Modal para modificar plan de estudios
 function modificar_plan(id){
   document.getElementById('mod_plan_id').value=id;
