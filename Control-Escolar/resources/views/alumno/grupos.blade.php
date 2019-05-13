@@ -37,7 +37,7 @@
 
 <div class="contenedor content-horario show-on-large hide-on-med-and-down">
   <div class="row">
-    <div class="col m2 push-m1">
+    <div class="col m2">
       <div class="card card-dia">
         <div class="card-content">
           <span>Lunes</span>
@@ -84,7 +84,7 @@
         </div>
       </div>
     </div>
-    <div class="col m2 push-m1">
+    <div class="col m2 ">
       <div class="card card-dia">
         <div class="card-content">
           <span>Martes</span>
@@ -107,7 +107,7 @@
         </div>
       </div>
     </div>
-    <div class="col m2 push-m1">
+    <div class="col m2 ">
       <div class="card card-dia">
         <div class="card-content">
           <span>Miércoles</span>
@@ -138,17 +138,24 @@
         </div>
       </div>
     </div>
-    <div class="col m2 push-m1">
+    <div class="col m2 ">
       <div class="card card-dia">
         <div class="card-content">
           <span>Jueves</span>
         </div>
       </div>
     </div>
-    <div class="col m2 push-m1">
+    <div class="col m2 ">
       <div class="card card-dia">
         <div class="card-content">
           <span>Viernes</span>
+        </div>
+      </div>
+    </div>
+    <div class="col m2 ">
+      <div class="card card-dia">
+        <div class="card-content">
+          <span>Sábado</span>
         </div>
       </div>
     </div>
@@ -165,8 +172,9 @@
   </div>
 
   <div class="row">
-    <a onclick="mostrarJueves()" class="col s4 btn push-s2">Jueves</a>
-    <a onclick="mostrarViernes()" class="col s4 btn push-s2">Viernes</a>
+    <a onclick="mostrarJueves()" class="col s4 btn ">Jueves</a>
+    <a onclick="mostrarViernes()" class="col s4 btn">Viernes</a>
+    <a onclick="mostrarSabado()" class="col s4 btn ">Sábado</a>
   </div>
 
   <div class="row" id="horario_lunes">
@@ -373,6 +381,26 @@
     <div class="col s12">
       <div class="contenedor">
         <h6>Viernes</h6>
+      </div>
+    </div>
+    <div class="col s12">
+      <div class="card card-materia">
+        <div class="card-content">
+          <div class="contenedor">
+            <p class="p_horario"><i class="fas fa-clock"></i> 9:00-10:00</p>
+            <p>Aula</p>
+            <p>Docente</p>
+            <span>Materia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" id="horario_sabado">
+    <div class="col s12">
+      <div class="contenedor">
+        <h6>Sábado</h6>
       </div>
     </div>
     <div class="col s12">
