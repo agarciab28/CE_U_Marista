@@ -40,17 +40,17 @@
 
       <tr>
         <td>{{$grupo->grupo}}</td>
-        <td>{{$grupo->seccion}}</td>
         <td>{{$grupo->carrera}}</td>
         <td>{{$grupo->nombre_carrera}}</td>
         <td>{{$grupo->nombre_materia}}</td>
         <td>{{$grupo->nombres}} {{$grupo->aparterno}} {{$grupo->amaterno}}</td>
         <td>{{$grupo->periodo}}</td>
+        <td> <a href="{{ route('admin_asignar',[$grupo->grupo,$grupo->id_carrera]) }}" class="btn tooltipped" data-position="bottom" data-tooltip="Selecciona los alumnos que conforman el grupo a registrar"><i class="fas fa-user-plus"></i></a></td>
         <td> <a onclick="modificar_grupo('{{$grupo->grupo}}')" href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Reasignación de profesor, cambio de carrera o materia">Modificar</a> </td>
-        <td> <a href="{{route('elimina_grupo',['grupo'=>$grupo->grupo])}}" class="btn {{($grupo->activo>0)?' green':'red'}} tooltipped" data-position="bottom" data-tooltip="Cambiar el estado del grupo en el periodo escolar actual">{{($grupo->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>
         <td> <a href="{{ route('admin_horario')}}" class="btn tooltipped" data-position="bottom" data-tooltip="Ver los horarios de este grupo"><i class="fas fa-clock"></td>
         <td> <a href="{{ route('admin_alumnosGrupo')}}" class="btn tooltipped" data-position="bottom" data-tooltip="Ver los alumnos registrados en este grupo"><i class="fas fa-users"> </td>
-        <td> <a href="{{ route('admin_asignar',[$grupo->grupo,$grupo->id_carrera]) }}" class="btn tooltipped" data-position="bottom" data-tooltip="Selecciona los alumnos que conforman el grupo a registrar"><i class="fas fa-user-plus"></i></a></td>
+        <td> <a href="{{route('elimina_grupo',['grupo'=>$grupo->grupo])}}" class="btn {{($grupo->activo>0)?' green':'red'}} tooltipped" data-position="bottom" data-tooltip="Cambiar el estado del grupo en el periodo escolar actual">{{($grupo->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>
+
       </tr>
 
       @endforeach
