@@ -186,7 +186,7 @@ Listar Planes de estudio !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
                         <input type="text" name="nssocp" id="nsocp" class="validate" maxlength="25">
-                        <label for="nsocp">Número de seguro socal</label>
+                        <label for="nsocp">Número de seguro social</label>
                     </div>
                 </div>
 
@@ -217,7 +217,7 @@ Listar Planes de estudio !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
                         <input type="text" name="nssoc" id="nsocc" class="validate" maxlength="25">
-                        <label for="nsocc">Número de seguro socal</label>
+                        <label for="nsocc">Número de seguro social</label>
                     </div>
                 </div>
 
