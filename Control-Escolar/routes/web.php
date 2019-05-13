@@ -123,11 +123,7 @@ Route::group(["prefix" => 'docente'], function(){
 
   Route::get('/grupos','gruposController@gruposProf')->name('docente_grupos');
 
-  Route::get('/pdf2', function(){
-    $pdf = PDF::loadView('docente.pdfF');
-    return $pdf->stream('Calificaciones.pdf');
-  })->name('docente_pdfA2');
-
+  Route::get('/pdf2','genPDFController@pdf2_docente')->name('docente_pdf2');
 
   Route::get('/pdfC','genPDFController@pdfC')->name('docente_pdfC');
 

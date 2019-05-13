@@ -9,19 +9,43 @@
   {
     //PDF's DOCENTES
     public function pdfA_docente(){
-      return view('docente.pdfA');
+      $pdf = \PDF::loadView('docente.pdfA');
+      $pdf->setPaper('letter', 'landscape');
+
+      //return $pdf->download('ejemplo.pdf');
+      return $pdf->stream('Acta de calificaciones.pdf');
     }
 
     public function pdfB_docente(){
-      return view('docente.pdfB');
+      $pdf = \PDF::loadView('docente.pdfB');
+      $pdf->setPaper('letter');
+
+      //return $pdf->download('ejemplo.pdf');
+      return $pdf->stream('Acta de calificaciones.pdf');
     }
 
-    public function pdfC_Doc(){
-      return view('docente.pdfC');
+    public function pdfC_docente(){
+      $pdf = \PDF::loadView('docente.pdfC');
+      $pdf->setPaper('letter');
+
+      //return $pdf->download('ejemplo.pdf');
+      return $pdf->stream('Acta de calificaciones.pdf');
     }
 
-    public function pdfF_Doc(){
-      return view('docente.pdfF');
+    public function pdfF_docente(){
+      $pdf = \PDF::loadView('docente.pdfF');
+      $pdf->setPaper('letter');
+
+      //return $pdf->download('ejemplo.pdf');
+      return $pdf->stream('Acta de calificaciones.pdf');
+    }
+
+    public function pdf2_docente(){
+      $pdf = \PDF::loadView('docente.pdf');
+      $pdf->setPaper('letter');
+
+      //return $pdf->download('ejemplo.pdf');
+      return $pdf->stream('Acta de calificaciones.pdf');
     }
 
     //PDF'S COORDINADOR
