@@ -17,7 +17,7 @@ class AulasSeeder extends Seeder
       DB::statement('set foreign_key_checks = 1;');
 
       $aula= new aula();
-      $aula->aula='5';
+      $aula->aula='k5';
       $aula->edificio='k';
       $aula->tipo='salón';
       $aula->save();
