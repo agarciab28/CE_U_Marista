@@ -38,8 +38,8 @@ class CreateTablePersona extends Migration
             $table->timestamps();
         });
 
-
-   /*DB::unprepared("
+/* 
+    DB::unprepared("
     CREATE TRIGGER updatenombres BEFORE UPDATE ON persona
     FOR EACH ROW IF (NEW.nombres != OLD.nombres) THEN
     insert into bitacora(usuario,tipoderol,tipodemov,fecha,tablaafectada, campoalter,valorant,valornuevo)
@@ -109,7 +109,7 @@ class CreateTablePersona extends Migration
     insert into bitacora(usuario,tipoderol,tipodemov,fecha,tablaafectada, campoalter,valorant,valornuevo)
     values (user(), NEW.rol,'UPDATE',now(),'Persona','Numero Telefonico',old.num_tel, new.num_tel);
     END IF
-    ");*/
+    "); */
 
 
 
