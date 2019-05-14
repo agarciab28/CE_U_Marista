@@ -21,7 +21,7 @@ class ConfiguracionSeeder extends Seeder
       $configuracion->director='Paulino Rivas';
       $configuracion->fecha_inicio='2019-06-01';
       $configuracion->fecha_terminacion='2019-12-12';
-      $configuracion->jefe_control_escolar='Alejandro García Barajas';
+      $configuracion->Jefe_control_escolar='Alejandro García Barajas';
       $configuracion->save();
     }
 }
