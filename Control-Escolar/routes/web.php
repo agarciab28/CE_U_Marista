@@ -25,44 +25,40 @@ Route::get('/cerrar_sesion', 'Auth\LoginAdminController@logout')->name('logout')
 
 // Rutas Admin
 Route::group(["prefix" => 'admin'], function(){
+  
   Route::get('/', function(){
     return view('admin.home');
   })->name('admin_home');
 
-  Route::get('/horario', function(){
-    return view('admin.horario');
-  })->name('admin_horario');
+//rutas registro de usuarios
+Route::get('/modificar_alumno/{ida}','AlumnosController@liat_modificar')->name('modificar_alumno');
 
-  Route::get('/alumnosGrupo', function(){
-    return view('admin.listas.alumnosxgrupo');
-  })->name('admin_alumnosGrupo');
+Route::get('/modificar_profe/{ida}','ProfesoresController@liat_modificar')->name('modificar_profe');
 
-  //rutas registro de usuarios
-  Route::post('/registrar','Auth\RegisterController@registro')->name('admin_registrar_envio');
+Route::post('/registrar','Auth\RegisterController@registro')->name('admin_registrar_envio');
 
-  Route::get('/registrar', 'Auth\RegisterController@showForm')->name('admin_registrar');
+Route::get('/registrar', 'Auth\RegisterController@showForm')->name('admin_registrar');
 
-  Route::post('/carreras', 'carrerasController@registro')->name('admin_carreras_registro');
+Route::post('/carreras', 'carrerasController@registro')->name('admin_carreras_registro');
 
-  Route::get('/carreras', 'carrerasController@listaCarreras')->name('admin_carreras');
+Route::get('/carreras', 'carrerasController@listaCarreras')->name('admin_carreras');
 
-  Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_registro');
+Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_registro');
 
-  Route::get('/carreras/elimina/{carrera}','carrerasController@elimina')->name('eliminaCarrera');
+Route::get('/carreras/elimina/{carrera}','carrerasController@elimina')->name('eliminaCarrera');
 
-  Route::post('/carreras/editar','carrerasController@editar')->name('edita_carrera');
+Route::post('/carreras/editar','carrerasController@editar')->name('edita_carrera');
 
-  Route::get('/materias', 'materiasController@showMaterias')->name('admin_materias');
 
-  Route::post('/materias','materiasController@registrar')->name('registrar_materia');
+Route::get('/materias', 'materiasController@showMaterias')->name('admin_materias');
 
-  Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('eliminaMateria');
+Route::post('/materias','materiasController@registrar')->name('registrar_materia');
 
-  Route::post('/materias/editar' ,'materiasController@modifica')->name('edita_materia');
+Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('eliminaMateria');
 
   Route::get('/calendario', function(){
     return view('admin.calendario');
-    })->name('admin_calendario');
+  })->name('admin_calendario');
 
   Route::get('/aulas', 'aulasControler@showAulas')->name('admin_aulas');
 
@@ -70,19 +66,13 @@ Route::group(["prefix" => 'admin'], function(){
 
   Route::post('/planes', 'planController@registrar')->name('registrar_plan');
 
-  Route::post('planes/editar','planController@editar')->name('edita_plan');
-
-  Route::get('/planes/elimina/{plan}','planController@elimina')->name('eliminaPlan');
-
   Route::get('/estadisticas', function(){
     return view('admin.estadisticas');
-    })->name('admin_estadisticas');
+  })->name('admin_estadisticas');
 
   Route::get('/bitacora', function () {
     return view('admin.bitacora');
-    })->name('admin_bitacora');
-
-  Route::get('/bitacora', 'bitacoraController@listaBitacora')->name('admin_bitacora');
+  })->name('admin_bitacora');
 
   Route::get('/datos','adminController@showDatos')->name('mis_datos');
 
@@ -104,24 +94,21 @@ Route::group(["prefix" => 'admin'], function(){
 
   Route::get('/modificar/usuarios', function(){
     return view('admin.modificar.usuarios');
-    })->name('admin_musuarios');
-
-  Route::get('/modificar_alumno/{ida}','AlumnosController@liat_modificar')->name('modificar_alumno');
+  })->name('admin_musuarios');
 
   Route::get('/coordinador/elimina/{usuario}','CoordinadorController@elimina')->where(['usuario'=>'[A-z]+'])->name('eliminaCoordinador');
 
-  //  Route::get('/asignar/{idg}/{idc}', function(){
-  //    return view('admin.asignar');
-  //  })->name('admin_asignar');
+//  Route::get('/asignar/{idg}/{idc}', function(){
+//    return view('admin.asignar');
+//  })->name('admin_asignar');
 
-  Route::get('/asignar/{idg}/{idc}','AlumnosController@lista_as')->name('admin_asignar');
-   //Route::get('/asignara','AlumnosController@lista_as')->name('asignara');
-    //rutas de grupos
+Route::get('/asignar/{idg}/{idc}','AlumnosController@lista_as')->name('admin_asignar');
+ //Route::get('/asignara','AlumnosController@lista_as')->name('asignara');
+  //rutas de grupos
   Route::post('/grupos','gruposController@registroGrupo')->name('admin_registrar_Grupos');
 
   Route::get('/grupos','gruposController@showFormGrupo')->name('admin_registrarG');
-
-  Route::post('/asig','asignarController@guardar')->name('admin_asignar_grupo');
+ Route::post('/asig','asignarController@guardar')->name('admin_asignar_grupo');
 
 
   Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
@@ -129,17 +116,10 @@ Route::group(["prefix" => 'admin'], function(){
   Route::get('/get_eventos','calendarioController@eventos')->name('get_eventos');
 
   Route::post('/nuevo_evento','calendarioController@registra_evento')->name('evento_nuevo');
-
-  Route::get('/grupos/elimina/{grupo}','gruposController@eliminagrupos')->name('elimina_grupo');
-
-
-  Route::post('/grupos/editar' ,'gruposController@modificagrupos')->name('edita_grupo');
-
 });
 
 //Rutas Docentes
 Route::group(["prefix" => 'docente'], function(){
-
   Route::get('/', function(){
     return view('docente.home');
   })->name('docente_home');
@@ -148,12 +128,17 @@ Route::group(["prefix" => 'docente'], function(){
     return view('docente.misdatos');
   })->name('docente_datos');
 
-
   Route::post('/consulta', 'gruposController@describeGruposProf')->name('docente_consulta');
 
   Route::post('/calif_finales', 'gruposController@calificacionesFinalesGrupo')->name('docente_calif');
 
   Route::get('/grupos','gruposController@gruposProf')->name('docente_grupos');
+
+  Route::get('/pdf2', function(){
+    $pdf = PDF::loadView('docente.pdfF');
+    return $pdf->stream('Calificaciones.pdf');
+  })->name('docente_pdfA2');
+
 
   Route::get('/pdfC','genPDFController@pdfC')->name('docente_pdfC');
 
@@ -209,8 +194,6 @@ Route::group(["prefix" => 'coordinador'], function(){
   Route::get('/pdfBM','genPDFController@pdfBM_coordi')->name('coordinador_pdfBM');
   //calificaciones finales materia
   Route::get('/pdfFM','genPDFController@pdfFM_coordi')->name('coordinador_pdfFM');
-
-  Route::get('/pdf2','genPDFController@pdf2_coordi')->name('coordinador_pdf2');
 });
 
 // Rutas Alumno

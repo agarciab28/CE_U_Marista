@@ -40,8 +40,7 @@
         <td>{{$persona->nombres}} {{$persona->apaterno}} {{$persona->amaterno}}</td>
         <td>{{$persona->fnaci}}</td>
         <td>{{$persona->email}}</td>
-        <!--<td> <a href="#modificar_alumno_modal" onclick="modificar_alumno('{{$persona->id_persona}}','{{$persona->rol}};{{$persona->nombres}};{{$persona->apaterno}};{{$persona->amaterno}};{{$persona->email}};{{$persona->sexo}};{{$persona->fnaci}};{{$persona->curp}};{{$persona->ncontrol}};{{$persona->id_carrera}};{{$persona->semestre}};{{$persona->id_plan}}')" class="btn modal-trigger">Modificar</a> </td>-->
-        <td> <a href="{{route('modificar_alumno',[$persona->id_persona])}}"  class="btn modal-trigger">Modificar</a> </td>
+        <td> <a href="{{route('modificar_alumno',[$persona->id_persona])}}"  class="btn">Modificar</a> </td>
         <td> <a href="{{route('eliminaAlumno',['ncontrol'=>$persona->ncontrol])}}" class="btn habilitar {{($persona->activo>0)?' green':'red'}} ">
           {{($persona->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>
 

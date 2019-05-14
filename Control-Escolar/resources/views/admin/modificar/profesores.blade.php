@@ -18,7 +18,7 @@
 
           <div class="row">
             <div class="col m6 push-m3 s12" style="text-align: center;">
-              <h4>Modificar Alumno</h4>
+              <h4>Modificar Profesor</h4>
             </div>
           </div>
 
@@ -33,7 +33,7 @@
                     supervised_user_circle
                 </i>
                 <select class="validate" name="rol" id="rol">
-                    <option value="Alumno">Alumno</option>
+                    <option value="Profesor">Profesor</option>
                 </select>
                 <label>Tipo de usuario</label>
             </div>
