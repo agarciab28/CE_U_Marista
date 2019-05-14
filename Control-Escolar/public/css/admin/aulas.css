@@ -26,3 +26,9 @@ a {
 .contenedor{
   text-align: center;
 }
+
+th, td{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}

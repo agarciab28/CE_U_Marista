@@ -38,6 +38,10 @@ Route::group(["prefix" => 'admin'], function(){
     return view('admin.listas.alumnosxgrupo');
   })->name('admin_alumnosGrupo');
 
+  Route::get('/kardexAlumno', function(){
+    return view('admin.kardex');
+  })->name('admin_kardex');
+
 //rutas registro de usuarios
 Route::get('/modificar_alumno/{ida}','AlumnosController@liat_modificar')->name('modificar_alumno');
 
@@ -198,7 +202,7 @@ Route::group(["prefix" => 'coordinador'], function(){
   })->name('coordinador_datos');
 
   //calificaciones ordinarias grupo
-  //calificaciones - grupo - alumno - persona 
+  //calificaciones - grupo - alumno - persona
   Route::get('/pdfA','genPDFController@pdfA_coordi')->name('coordinador_pdfA');
   //calificaciones extraordinarias grupo
   Route::get('/pdfB','genPDFController@pdfB_coordi')->name('coordinador_pdfB');

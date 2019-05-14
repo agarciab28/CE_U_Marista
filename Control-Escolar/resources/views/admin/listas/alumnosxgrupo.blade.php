@@ -27,6 +27,7 @@
         <th>Nombre Completo</th>
         <th>Fecha de Nacimiento</th>
         <th>Correo Electrónico</th>
+        <th>Kardex</th>
         <th>Modificar</th>
         <th>Deshabilitar</th>
       </tr>
@@ -38,6 +39,7 @@
         <td>asdfas sadfasa asdva</td>
         <td>2662</td>
         <td>asdfad@asdfa.com</td>
+        <td> <a href="{{route('admin_kardex')}}" class="btn">Kardex</a> </td>
         <td> <a href="#modificar_alumno_modal" class="btn modal-trigger">Modificar</a> </td>
         {{-- <!--<td> <a href="{{route('modificar_alumno',[$persona->id_persona])}}" onclick="modificar_alumno('{{$persona->id_persona}}','{{$persona->rol}};{{$persona->nombres}};{{$persona->apaterno}};{{$persona->amaterno}};{{$persona->email}};{{$persona->sexo}};{{$persona->fnaci}};{{$persona->curp}};{{$persona->ncontrol}};{{$persona->id_carrera}};{{$persona->semestre}};{{$persona->id_plan}}')" class="btn modal-trigger">Modificar</a> </td>--> --}}
         <td> <a href="" class="btn habilitar">

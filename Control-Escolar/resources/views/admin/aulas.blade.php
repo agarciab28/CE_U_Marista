@@ -41,11 +41,11 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>K5</th>
-                    <th>K</th>
-                    <th>Salon</th>
-                    <th> <a href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Nombre de aula, edificio o tipo de aula (laboratorio, salon, etc.)">Modificar</a> </th>
-                    <th> <a href="#" class="btn red tooltipped" data-position="bottom" data-tooltip="Cambiar el estado disponible del aula en el periodo escolar actual">Deshabilitar</a> </th>
+                    <td>K5</td>
+                    <td>K</td>
+                    <td>Salon</td>
+                    <td> <a href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Nombre de aula, edificio o tipo de aula (laboratorio, salon, etc.)">Modificar</a> </td>
+                    <td> <a href="#" class="btn red tooltipped" data-position="bottom" data-tooltip="Cambiar el estado disponible del aula en el periodo escolar actual">Deshabilitar</a> </td>
                 </tr>
             </tbody>
         </table>
@@ -151,7 +151,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.tooltipped');
-         
+
     });
 </script>
 @endsection
