@@ -19,6 +19,11 @@ class CreateTableCalificaciones extends Migration
             $table->float('primer_parcial',8,2);
             $table->float('segundo_parcial',8,2);
             $table->float('examen_final',8,2);
+            $table->integer('faltas_primer',2);
+            $table->integer('faltas_segundo',2);
+            $table->integer('faltas_tercer',2);            
+            $table->integer('promedio_faltas',2);
+            $table->float('promedio_calificacion',8,2);
             $table->string('opcion_calificacion',10);
             $table->timestamps();
             $table->foreign('id_grupo')->references('id_grupo')->on('grupo');
