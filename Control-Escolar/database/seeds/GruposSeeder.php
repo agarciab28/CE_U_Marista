@@ -33,5 +33,95 @@ class GruposSeeder extends Seeder
         $grupo->id_prof='2';
         $grupo->periodo='agosto-diciembre';
         $grupo->save();
+
+        $grupo= new grupo();
+        $grupo->seccion='A';
+        $grupo->id_carrera='arq';
+        $grupo->id_materia='DGD-1';
+        $grupo->id_prof='2';
+        $grupo->periodo='agosto-diciembre';
+        $grupo->save();
+
+        $grupo= new grupo();
+        $grupo->seccion='A';
+        $grupo->id_carrera='der';
+        $grupo->id_materia='DGD-1';
+        $grupo->id_prof='2';
+        $grupo->periodo='agosto-diciembre';
+        $grupo->save();
+
+        $grupo= new grupo();
+        $grupo->seccion='A';
+        $grupo->id_carrera='fis';
+        $grupo->id_materia='DGD-1';
+        $grupo->id_prof='2';
+        $grupo->periodo='agosto-diciembre';
+        $grupo->save();
+
+        $grupo= new grupo();
+        $grupo->seccion='A';
+        $grupo->id_carrera='anim';
+        $grupo->id_materia='DGD-1';
+        $grupo->id_prof='2';
+        $grupo->periodo='agosto-diciembre';
+        $grupo->save();
+
+        $grupo= new grupo();
+        $grupo->seccion='A';
+        $grupo->id_carrera='for';
+        $grupo->id_materia='DGD-1';
+        $grupo->id_prof='2';
+        $grupo->periodo='agosto-diciembre';
+        $grupo->save();
+
+        $grupo= new grupo();
+        $grupo->seccion='A';
+        $grupo->id_carrera='anim';
+        $grupo->id_materia='DGD-1';
+        $grupo->id_prof='2';
+        $grupo->periodo='agosto-diciembre';
+        $grupo->save();
+
+        $grupo= new grupo();
+        $grupo->seccion='A';
+        $grupo->id_carrera='ind';
+        $grupo->id_materia='DGD-1';
+        $grupo->id_prof='2';
+        $grupo->periodo='agosto-diciembre';
+        $grupo->save();
+
+        $grupo= new grupo();
+        $grupo->seccion='A';
+        $grupo->id_carrera='anim';
+        $grupo->id_materia='DGD-1';
+        $grupo->id_prof='2';
+        $grupo->periodo='agosto-diciembre';
+        $grupo->save();
+
+        $grupo= new grupo();
+        $grupo->seccion='A';
+        $grupo->id_carrera='isc';
+        $grupo->id_materia='DGD-1';
+        $grupo->id_prof='2';
+        $grupo->periodo='agosto-diciembre';
+        $grupo->save();
+
+        $grupo= new grupo();
+        $grupo->seccion='A';
+        $grupo->id_carrera='mer';
+        $grupo->id_materia='DGD-1';
+        $grupo->id_prof='2';
+        $grupo->periodo='agosto-diciembre';
+        $grupo->save();
+        
+        $grupo= new grupo();
+        $grupo->seccion='A';
+        $grupo->id_carrera='neg';
+        $grupo->id_materia='DGD-1';
+        $grupo->id_prof='2';
+        $grupo->periodo='agosto-diciembre';
+        $grupo->save();
+
+        
     }
 }
