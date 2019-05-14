@@ -5,7 +5,7 @@ td {
 }
   .column {
     float: left;
-    width: 16.66%;
+    width: 10%;
   }
 
   body{
@@ -89,12 +89,12 @@ td {
   <br><br>
   <div class="subHeadPDF">datos del alumno</div>
     <div class="row">
-      <div class="column tabPDF" style="text-align:left; width:10%">ALUMNO</div>
-      <div class="column" id="alumno" style="width:40%">XXXX</div>
+      <div class="column tabPDF" style="text-align:left;">ALUMNO</div>
+      <div class="column" id="alumno" style="width:40%">RODRIGUEZ HERNANDEZ ALEJANDRO MAXIMILIANO</div>
       <div class="column tabPDF" style="text-align:left; width:10%">no CTRL</div>
-      <div class="column" id="noCtrl" style="width:15%">XXXX</div>
+      <div class="column" id="noCtrl" style="width:10%">XXXX</div>
       <div class="column tabPDF" style="text-align:left; width:10%">CARRERA</div>
-      <div class="column" id="carrera" style="width:15%">XXXX</div>
+      <div class="column" id="carrera" style="width:20%">XXXX</div>
       <br>
     </div>
   <br><br><br>
