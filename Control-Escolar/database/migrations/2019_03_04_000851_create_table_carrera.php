@@ -24,7 +24,7 @@ class CreateTableCarrera extends Migration
             $table->primary('id_carrera');
         });
 
-       DB::unprepared("
+       /*DB::unprepared("
         CREATE TRIGGER `insertcarrera` BEFORE INSERT ON `carrera`
         FOR EACH ROW insert into bitacora(usuario,tipoderol,fecha,tipodemov,tablaafectada,campoalter,valorant,valornuevo)
        values (user(),'Administrador',now(),'INSERT','Carrera','No aplica','No aplica','No aplica')
@@ -67,7 +67,7 @@ class CreateTableCarrera extends Migration
        values(user(),'Administrador','UPDATE',now(),'Carrera','Activo',old.activo, new.activo);
        END IF
        ");
-
+*/
 
     }
 

@@ -30,6 +30,14 @@ Route::group(["prefix" => 'admin'], function(){
     return view('admin.home');
   })->name('admin_home');
 
+  Route::get('/horario', function(){
+    return view('admin.horario');
+  })->name('admin_horario');
+
+  Route::get('/alumnosGrupo', function(){
+    return view('admin.listas.alumnosxgrupo');
+  })->name('admin_alumnosGrupo');
+
 //rutas registro de usuarios
 Route::get('/modificar_alumno/{ida}','AlumnosController@liat_modificar')->name('modificar_alumno');
 
@@ -112,12 +120,16 @@ Route::get('/asignar/{idg}/{idc}','AlumnosController@lista_as')->name('admin_asi
   Route::post('/grupos','gruposController@registroGrupo')->name('admin_registrar_Grupos');
 
   Route::get('/grupos','gruposController@showFormGrupo')->name('admin_registrarG');
+
  Route::post('/asig','asignarController@guardar')->name('admin_asignar_grupo');
 
+Route::get('/grupos/elimina/{grupo}','gruposController@eliminagrupos')->name('elimina_grupo');
 
   Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
 
   Route::get('/get_eventos','calendarioController@eventos')->name('get_eventos');
+
+  Route::post('/grupos/editar' ,'gruposController@modificagrupos')->name('edita_grupo');
 
   Route::post('/nuevo_evento','calendarioController@registra_evento')->name('evento_nuevo');
 });

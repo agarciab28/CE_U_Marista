@@ -20,13 +20,11 @@ class profesoresSeeder extends Seeder
       $profesor= new profesor();
       $profesor->username='nancy';
       $profesor->especialidad='Ventas';
-      $profesor->activo='1';
       $profesor->save();
 
       $profesor= new profesor();
       $profesor->username='ruby';
       $profesor->especialidad='Ventas';
-      $profesor->activo='1';
       $profesor->save();
 
     }

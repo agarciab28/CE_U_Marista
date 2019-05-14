@@ -17,7 +17,6 @@ class CreateTableProfesor extends Migration
             $table->increments('id_prof',20);
             $table->string('especialidad');
             $table->string('username',100);
-            $table->boolean('activo');
             $table->timestamps();
 
             $table->foreign('username')->references('username')->on('personal');
