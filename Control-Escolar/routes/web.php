@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('login');
 })->name('start');
 
+Route::get('/ejemplo','graficasController@alumnosCarrera');
+
 // Route::get('dashboard','DashboarController@index')->name('dashboard');
 //
 Route::post('/login', 'Auth\LoginController@login')->name('login');
@@ -90,9 +92,7 @@ Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('el
 
   Route::post('/planes', 'planController@registrar')->name('registrar_plan');
 
-  Route::get('/estadisticas', function(){
-    return view('admin.estadisticas');
-  })->name('admin_estadisticas');
+  Route::get('/estadisticas','graficasController@show')->name('admin_estadisticas');
 
   Route::get('/bitacora', 'bitacoraController@listaBitacora')->name('admin_bitacora');
 
