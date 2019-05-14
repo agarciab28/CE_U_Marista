@@ -20,8 +20,8 @@ $grupo_seleccionado=0;
 <div class="section container">
   <div class="row">
       <div class="col s12 m4">
+        @foreach($grupos_de_profesor as $grupo)
           <div class="card card-grupo">
-            @foreach($grupos_de_profesor as $grupo)
               <div class="card-content black-text z-depth-3">
                   <span class="card-title">Grupo: {{$grupo->id_grupo}}</span>
                   <p>
@@ -29,11 +29,11 @@ $grupo_seleccionado=0;
                     Horario:
                   </p>
               </div>
-              @endforeach
               <div class="card-action">
                   <a onclick="abreModal({{$grupo->id_grupo}})" href="#modal1" class="modal-trigger"><i class="fas fa-cog"></i> Opciones</a>
               </div>
           </div>
+          @endforeach
       </div>
   </div>
 </div>
