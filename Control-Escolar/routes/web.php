@@ -180,6 +180,7 @@ Route::group(["prefix" => 'coordinador'], function(){
   })->name('coordinador_datos');
 
   //calificaciones ordinarias grupo
+  //calificaciones - grupo - alumno - persona 
   Route::get('/pdfA','genPDFController@pdfA_coordi')->name('coordinador_pdfA');
   //calificaciones extraordinarias grupo
   Route::get('/pdfB','genPDFController@pdfB_coordi')->name('coordinador_pdfB');
