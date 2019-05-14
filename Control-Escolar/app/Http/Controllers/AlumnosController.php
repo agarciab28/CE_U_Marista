@@ -11,12 +11,9 @@ use App\Models\plan_de_estudios;
 class AlumnosController extends Controller
 {
     public function lista () {
-      $personas = persona::select('persona.id_persona','nombres','apaterno','amaterno','fnaci','email','ncontrol','rol','alumno.activo as activo','curp','sexo',
-      'nombre_carrera','semestre','nombre_plan','id_plan','carrera.id_carrera as id_carrera')
+      $personas = persona::select('persona.id_persona','nombres','apaterno','amaterno','fnaci','email','ncontrol','rol','alumno.activo as activo','curp')
         ->join('alumno','persona.id_persona','=','alumno.id_persona')
-        ->join('carrera','alumno.id_carrera','=','carrera.id_carrera')
-        ->join('plan_de_estudios','carrera.id_carrera','=','plan_de_estudios.id_carrera')->get();
-
+        ->get();
         $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
         $carreras= carrera::get(['id_carrera','nombre_carrera']);
         $cambio=-1;
@@ -24,7 +21,7 @@ class AlumnosController extends Controller
     }
 
     public function liat_modificar ($ida) {
-      $personas = persona::select('persona.id_persona','nombres','apaterno','amaterno','fnaci','email','ncontrol','rol','alumno.activo as activo','curp','sexo',
+      $personas = persona::select('persona.id_persona','nombres','imagen','apaterno','amaterno','fnaci','email','ncontrol','rol','alumno.activo as activo','curp','sexo',
       'nombre_carrera','semestre','nombre_plan','id_plan','carrera.id_carrera as id_carrera')
         ->join('alumno','persona.id_persona','=','alumno.id_persona')
         ->join('carrera','alumno.id_carrera','=','carrera.id_carrera')
@@ -33,7 +30,7 @@ class AlumnosController extends Controller
 
         $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
         $carreras= carrera::get(['id_carrera','nombre_carrera']);
-        return view('admin.modificar.usuarios',compact(['personas','cambio','planes','carreras']));
+        return view('admin.modificar.usuarios',compact(['personas','planes','carreras']));
     }
 
     public function lista_as ($idg,$idc,Request $request) {

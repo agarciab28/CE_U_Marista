@@ -3,6 +3,8 @@
 @section('stylesheet')
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
 <link href="{{{ asset('css/alumno/misdatos.css') }}}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="{{{ asset('https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css') }}}" rel="stylesheet">
 @endsection
 
 @section('title', 'Mis Datos')
@@ -275,7 +277,7 @@
 
       document.addEventListener('DOMContentLoaded', function() {
           var elems = document.querySelectorAll('.tooltipped');
-           
+
       });
 
       window.onload = function() {

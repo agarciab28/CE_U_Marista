@@ -9,7 +9,7 @@ class profesor extends Model
   protected $table = "profesor";
 
   protected $fillable = [
-    "id_prof","especialidad","username"
+    "id_prof","especialidad","username","activo"
   ];
 
   protected $hidden = [

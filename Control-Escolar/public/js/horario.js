@@ -9,6 +9,7 @@ function mostrarLunes(){
   $( "#horario_miercoles" ).hide();
   $( "#horario_jueves" ).hide();
   $( "#horario_viernes" ).hide();
+  $( "#horario_sabado" ).hide();
 }
 
 function mostarMartes(){
@@ -17,6 +18,7 @@ function mostarMartes(){
   $( "#horario_miercoles" ).hide();
   $( "#horario_jueves" ).hide();
   $( "#horario_viernes" ).hide();
+  $( "#horario_sabado" ).hide();
 }
 
 function mostrarMiercoles(){
@@ -25,6 +27,7 @@ function mostrarMiercoles(){
   $( "#horario_miercoles" ).show();
   $( "#horario_jueves" ).hide();
   $( "#horario_viernes" ).hide();
+  $( "#horario_sabado" ).hide();
 }
 
 function mostrarJueves(){
@@ -33,6 +36,7 @@ function mostrarJueves(){
   $( "#horario_miercoles" ).hide();
   $( "#horario_jueves" ).show();
   $( "#horario_viernes" ).hide();
+  $( "#horario_sabado" ).hide();
 }
 
 function mostrarViernes(){
@@ -41,6 +45,16 @@ function mostrarViernes(){
   $( "#horario_miercoles" ).hide();
   $( "#horario_jueves" ).hide();
   $( "#horario_viernes" ).show();
+  $( "#horario_sabado" ).hide();
+}
+
+function mostrarSabado(){
+  $( "#horario_lunes" ).hide();
+  $( "#horario_martes" ).hide();
+  $( "#horario_miercoles" ).hide();
+  $( "#horario_jueves" ).hide();
+  $( "#horario_viernes" ).hide();
+  $( "#horario_sabado" ).show();
 }
 
 $( ".card-materia" ).hover(function() {

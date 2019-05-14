@@ -17,6 +17,11 @@ function modificar_materia(id){
   document.getElementById('materia_mod_id').value=id;
 }
 
+//Modal para modificar grupo
+function modificar_grupo(id){
+  document.getElementById('idgrupo').value=id;
+}
+
 //Modal para modificar plan de estudios
 function modificar_plan(id){
   document.getElementById('mod_plan_id').value=id;
@@ -26,7 +31,6 @@ function modificar_plan(id){
 
 function modificar_alumno(idp,y){
 arr = y.split(";");
-alert(arr[10]);
 var x=document.getElementById('nombre');
 x.value=arr[1];
 var x=document.getElementById('apellidop');
@@ -37,9 +41,17 @@ var x=document.getElementById('correo');
 x.value=arr[4];
 //var x=document.getElementById('sexo');
 //x.value=arr[5];
+var sx = "";
+if (arr[5]=='M') {
+ sx = "Masculino";
+}else{
+  sx = "Femenino";
+}
 
-var select = document.getElementById("sexo");
-select.options[select.options.length] = new Option('Text 1', 'F');
+var select=document.getElementById("sexo");
+select.value=arr[5];
+(document.getElementById("df_sexo").text = sx).selectedIndex;
+//o_sex.text = sx;
 
 var x=document.getElementById('fecha1');
 x.value=arr[6];
@@ -56,7 +68,5 @@ document.getElementById("semestre").value = arr[10];
 
 var x=document.getElementById('plan_est');
 x.value=arr[11];
-$(function(){
-    $("#sexo").val(arr[5]);
-});
+
 }

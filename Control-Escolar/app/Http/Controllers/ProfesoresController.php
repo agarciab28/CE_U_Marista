@@ -18,6 +18,20 @@ class ProfesoresController extends Controller
     return view('admin.listas.profes',compact(['personas','cambio']));
 
   }
+
+  public function liat_modificar ($ida) {
+    $personas = persona::select('pe.username as usuario','persona.id_persona as persona','nombres','apaterno','amaterno','fnaci','email','pe.activo as activo','sexo','curp')
+      ->join('personal as pe','pe.id_persona','=','persona.id_persona')
+      ->join('profesor as pr','pr.username','=','pe.username')
+      ->where('persona.id_persona',$ida)
+      ->get();
+      //dd($personas);
+      $cambio=-1;
+      return view('admin.modificar.profesores',compact(['personas','cambio']));
+
+  }
+
+
   public function elimina($usuario){
     $persona=personal::select('activo')->where('username',$usuario)->first();
 

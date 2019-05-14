@@ -1,41 +1,21 @@
-@extends('layouts.app_alumno')
+@extends('layouts.app_admin')
 
 @section('stylesheet')
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
-<link href="{{{ asset('css/alumno/grupos.css') }}}" rel="stylesheet">
+<link href="{{{ asset('css/admin/horario.css') }}}" rel="stylesheet">
 @endsection
 
-@section('title', 'Grupos Alumno')
+@section('title', 'Horario')
 
 
 @section('content')
   <div class="row contenedor">
     <div class="col m6 push-m3 s12">
-      <h5>Mis Grupos</h5>
-    </div>
-  </div>
-  <div class="section container">
-    <div class="row">
-        <div class="col s12 m4">
-            <div class="card card-grupo">
-                <div class="card-content black-text z-depth-3">
-                    <span class="card-title">Grupo: </span>
-                    <p>
-                      Materia: <br>
-                    </p>
-                </div>
-            </div>
-        </div>
+      <h5>Horario Grupo X</h5>
     </div>
   </div>
 
-  <div class="row contenedor">
-    <div class="col m6 push-m3 s12">
-      <h5>Horario</h5>
-    </div>
-  </div>
-
-<div class="contenedor content-horario show-on-large hide-on-med-and-down">
+  <div class="contenedor content-horario show-on-large hide-on-med-and-down">
   <div class="row">
     <div class="col m2">
       <div class="card card-dia">
@@ -160,11 +140,11 @@
       </div>
     </div>
   </div>
-</div>
+  </div>
 
-{{-- Horario Moviles --}}
+  {{-- Horario Moviles --}}
 
-<div class="content-horario show-on-medium-and-down hide-on-large-only">
+  <div class="content-horario show-on-medium-and-down hide-on-large-only">
   <div class="row">
     <a onclick="mostrarLunes()" class="col s4 btn">Lunes</a>
     <a onclick="mostarMartes()" class="col s4 btn">Martes</a>
@@ -417,14 +397,13 @@
     </div>
   </div>
 
-</div>
+  </div>
 
 
 
 @endsection
 
 @section('scripts')
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="{{{ asset('js/horario.js') }}}"></script>
-
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="{{{ asset('js/horario.js') }}}"></script>
 @endsection
