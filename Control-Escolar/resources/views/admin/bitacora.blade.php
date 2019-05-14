@@ -23,24 +23,32 @@
     <table id="example" class="responsive-table striped" style="width:100%">
         <thead>
             <tr>
+                <th>ID Movimiento</th>
                 <th>Usuario</th>
                 <th>Rol</th>
                 <th>Fecha y hora</th>
                 <th>Tipo de moviento</th>
                 <th>Tabla afectada</th>
-                <th>Detalle</th>
+                <th>Campo alterado</th>
+                <th>Valor anterior</th>
+                <th>Valor Nuevo</th>
+            
             </tr>
         </thead>
         <tbody>
             @foreach ($bitacora as $bitacora)   
             <tr>
+                <th>{{$bitacora->id_mov}}</th>
                 <th>{{$bitacora->usuario}}</th>
                 <td>{{$bitacora->tipoderol}}</th>
                 <th>{{$bitacora->fecha}}</th>
                 <th>{{$bitacora->tipodemov}}</th>
                 <th>{{$bitacora->tablaafectada}}</th>
+                <th>{{$bitacora->campoalter}}</th>
+                <th>{{$bitacora->valorant}}</th>
+                <th>{{$bitacora->valornuevo}}</th>
 
-                <td> <a href="#modal5" class="waves-effect waves-light btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Muestra información adicional">Detalle</a>
+               
                 </tr>
                     @endforeach
 
