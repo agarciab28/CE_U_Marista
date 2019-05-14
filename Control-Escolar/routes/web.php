@@ -25,7 +25,7 @@ Route::get('/cerrar_sesion', 'Auth\LoginAdminController@logout')->name('logout')
 
 // Rutas Admin
 Route::group(["prefix" => 'admin'], function(){
-  
+
   Route::get('/', function(){
     return view('admin.home');
   })->name('admin_home');
@@ -54,6 +54,8 @@ Route::get('/materias', 'materiasController@showMaterias')->name('admin_materias
 
 Route::post('/materias','materiasController@registrar')->name('registrar_materia');
 
+Route::post('/materias/editar' ,'materiasController@modifica')->name('edita_materia');
+
 Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('eliminaMateria');
 
   Route::get('/calendario', function(){
@@ -64,15 +66,17 @@ Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('el
 
   Route::get('/planes', 'planController@showPlan')->name('admin_planes');
 
+  Route::post('planes/editar','planController@editar')->name('edita_plan');
+
+  Route::get('/planes/elimina/{plan}','planController@elimina')->name('eliminaPlan');
+
   Route::post('/planes', 'planController@registrar')->name('registrar_plan');
 
   Route::get('/estadisticas', function(){
     return view('admin.estadisticas');
   })->name('admin_estadisticas');
 
-  Route::get('/bitacora', function () {
-    return view('admin.bitacora');
-  })->name('admin_bitacora');
+  Route::get('/bitacora', 'bitacoraController@listaBitacora')->name('admin_bitacora');
 
   Route::get('/datos','adminController@showDatos')->name('mis_datos');
 

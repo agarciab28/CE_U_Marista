@@ -24,10 +24,10 @@ class CreateTableCarrera extends Migration
             $table->primary('id_carrera');
         });
 
-       /* DB::unprepared("
+       DB::unprepared("
         CREATE TRIGGER `insertcarrera` BEFORE INSERT ON `carrera`
         FOR EACH ROW insert into bitacora(usuario,tipoderol,fecha,tipodemov,tablaafectada,campoalter,valorant,valornuevo)
-       values (user(),'Administrador',now(),'INSERT','Carrera','No aplica','No aplica','No aplica')    
+       values (user(),'Administrador',now(),'INSERT','Carrera','No aplica','No aplica','No aplica')
         ");
 
         DB::unprepared("
@@ -35,7 +35,7 @@ class CreateTableCarrera extends Migration
         FOR EACH ROW IF (NEW.fecha != OLD.fecha) THEN
        insert into bitacora(usuario,tipoderol,tipodemov,fecha,tablaafectada, campoalter,valorant,valornuevo)
        values(user(),'Admin','UPDATE',now(),'Carrera','Fecha',old.fecha, new.fecha);
-       END IF    
+       END IF
         ");
 
         DB::unprepared("
@@ -51,13 +51,13 @@ class CreateTableCarrera extends Migration
         FOR EACH ROW IF (NEW.rvoe != OLD.rvoe) THEN
        insert into bitacora(usuario,tipoderol,tipodemov,fecha,tablaafectada, campoalter,valorant,valornuevo)
        values(user(),'Admin','UPDATE',now(),'Carrera','RVOE',old.rvoe, new.rvoe);
-       END IF    
+       END IF
         ");
 
         DB::unprepared("
         CREATE TRIGGER `deletecarrera` BEFORE DELETE ON `carrera`
         FOR EACH ROW insert into bitacora(usuario,tipoderol,fecha,tipodemov,tablaafectada,campoalter,valorant,valornuevo)
-       values (user(),'Administrador',now(),'DELETE','Carrera','ID Carrera',old.id_carrera,'No aplica')    
+       values (user(),'Administrador',now(),'DELETE','Carrera','ID Carrera',old.id_carrera,'No aplica')
         ");
 
         DB::unprepared("
@@ -66,7 +66,7 @@ class CreateTableCarrera extends Migration
        insert into bitacora(usuario,tipoderol,tipodemov,fecha,tablaafectada, campoalter,valorant,valornuevo)
        values(user(),'Administrador','UPDATE',now(),'Carrera','Activo',old.activo, new.activo);
        END IF
-       "); */
+       ");
 
 
     }

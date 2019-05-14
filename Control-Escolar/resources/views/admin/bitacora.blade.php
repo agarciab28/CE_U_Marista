@@ -42,7 +42,7 @@
 
                 <td> <a href="#modal5" class="waves-effect waves-light btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Muestra información adicional">Detalle</a>
                 </tr>
-                    @endforeach  
+                    @endforeach
 
                     <div id="modal5" class="modal bottom-sheet">
                         <div class="modal-content">
@@ -53,7 +53,7 @@
                                     <span class="title">Detalle</span>
                                     <table id="example" class="responsive-table striped" style="width:100%">
                                         <thead>
-                                             
+
                                             <tr>
                                                 <th>ID movimiento</th>
                                                 <th>Usuario</th>
@@ -67,7 +67,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                           
+
                                         </tbody>
                                     </table>
                                     <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
@@ -93,7 +93,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.tooltipped');
-         
+
     });
 </script>
 @endsection
