@@ -42,7 +42,7 @@ class alumnoSeeder extends Seeder
 
       $alumno= new alumno();
       $alumno->ncontrol='987212';
-      $alumno->id_carrera="anim";
+      $alumno->id_carrera="ind";
       $alumno->num_tel_fam="44321608";
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
@@ -220,6 +220,92 @@ class alumnoSeeder extends Seeder
       $alumno->activo="0";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
+
+      $alumno= new alumno();
+      $alumno->ncontrol='15562344';
+      $alumno->id_carrera="ind";
+      $alumno->num_tel_fam="44321608";
+      $alumno->plan_de_estudios="Animacion Digital-2012";
+      $alumno->nombre_fam="Sandra Alieri";
+      $alumno->id_persona="24";
+      $alumno->semestre="2";
+      $alumno->activo="0";
+      $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
+      $alumno->save();
+
+      $alumno= new alumno();
+      $alumno->ncontrol='15568923';
+      $alumno->id_carrera="for";
+      $alumno->num_tel_fam="44321608";
+      $alumno->plan_de_estudios="Animacion Digital-2012";
+      $alumno->nombre_fam="Sandra Alieri";
+      $alumno->id_persona="25";
+      $alumno->semestre="2";
+      $alumno->activo="0";
+      $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
+      $alumno->save();
+
+      $alumno= new alumno();
+      $alumno->ncontrol='15563465';
+      $alumno->id_carrera="mer";
+      $alumno->num_tel_fam="44321608";
+      $alumno->plan_de_estudios="Animacion Digital-2012";
+      $alumno->nombre_fam="Sandra Alieri";
+      $alumno->id_persona="26";
+      $alumno->semestre="2";
+      $alumno->activo="0";
+      $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
+      $alumno->save();
+
+      $alumno= new alumno();
+      $alumno->ncontrol='15587643';
+      $alumno->id_carrera="neg";
+      $alumno->num_tel_fam="44321608";
+      $alumno->plan_de_estudios="Animacion Digital-2012";
+      $alumno->nombre_fam="Sandra Alieri";
+      $alumno->id_persona="27";
+      $alumno->semestre="2";
+      $alumno->activo="0";
+      $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
+      $alumno->save();
+
+      $alumno= new alumno();
+      $alumno->ncontrol='15560863';
+      $alumno->id_carrera="neg";
+      $alumno->num_tel_fam="44321608";
+      $alumno->plan_de_estudios="Animacion Digital-2012";
+      $alumno->nombre_fam="Sandra Alieri";
+      $alumno->id_persona="28";
+      $alumno->semestre="2";
+      $alumno->activo="0";
+      $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
+      $alumno->save();
+
+      $alumno= new alumno();
+      $alumno->ncontrol='87761265';
+      $alumno->id_carrera="for";
+      $alumno->num_tel_fam="44321608";
+      $alumno->plan_de_estudios="Animacion Digital-2012";
+      $alumno->nombre_fam="Sandra Alieri";
+      $alumno->id_persona="29";
+      $alumno->semestre="2";
+      $alumno->activo="0";
+      $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
+      $alumno->save();
+
+      $alumno= new alumno();
+      $alumno->ncontrol='15568993';
+      $alumno->id_carrera="mer";
+      $alumno->num_tel_fam="44321608";
+      $alumno->plan_de_estudios="Animacion Digital-2012";
+      $alumno->nombre_fam="Sandra Alieri";
+      $alumno->id_persona="30";
+      $alumno->semestre="2";
+      $alumno->activo="0";
+      $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
+      $alumno->save();
+
+    
 
 
       

@@ -504,6 +504,156 @@ class personasSeeder extends Seeder
         $persona->imagen='jumtest.jpg';
         $persona->save();
 
+        $persona= new persona();
+        $persona->rol='Alumno';
+        $persona->nombres='Paulino';
+        $persona->apaterno='Rivas';
+        $persona->amaterno='Perez';
+        $persona->curp='yuxaaosspowxloxwex';
+        $persona->fnaci='1996-12-11';
+        $persona->sexo='M';
+        $persona->email='Pepe@example.com';
+        $persona->calle='Pinol Suarez';
+        $persona->num_int='12';
+        $persona->num_ext='10';
+        $persona->colonia='Cantera';
+        $persona->codigo_postal='58023';
+        $persona->ciudad='Morelia';
+        $persona->estado='Michoacan';
+        $persona->num_tel='443333333';
+        $persona->num_cel='443412121';
+        $persona->imagen='jumtest.jpg';
+        $persona->save();
+
+        $persona= new persona();
+        $persona->rol='Alumno';
+        $persona->nombres='Terry';
+        $persona->apaterno='Johnson';
+        $persona->amaterno='Gonzales';
+        $persona->curp='yuxaaeporneroxwex';
+        $persona->fnaci='1996-12-11';
+        $persona->sexo='M';
+        $persona->email='Pepe@example.com';
+        $persona->calle='Pinol Suarez';
+        $persona->num_int='12';
+        $persona->num_ext='10';
+        $persona->colonia='Cantera';
+        $persona->codigo_postal='58023';
+        $persona->ciudad='Morelia';
+        $persona->estado='Michoacan';
+        $persona->num_tel='443333333';
+        $persona->num_cel='443412121';
+        $persona->imagen='jumtest.jpg';
+        $persona->save();
+
+        $persona= new persona();
+        $persona->rol='Alumno';
+        $persona->nombres='Cassandra';
+        $persona->apaterno='Werever';
+        $persona->amaterno='Tumorrow';
+        $persona->curp='yuxaaeosrnroxwex';
+        $persona->fnaci='1996-12-11';
+        $persona->sexo='F';
+        $persona->email='Pepe@example.com';
+        $persona->calle='Pinol Suarez';
+        $persona->num_int='12';
+        $persona->num_ext='10';
+        $persona->colonia='Cantera';
+        $persona->codigo_postal='58023';
+        $persona->ciudad='Morelia';
+        $persona->estado='Michoacan';
+        $persona->num_tel='443333333';
+        $persona->num_cel='443412121';
+        $persona->imagen='jumtest.jpg';
+        $persona->save();
+
+        $persona= new persona();
+        $persona->rol='Alumno';
+        $persona->nombres='Sandro';
+        $persona->apaterno='Zavala';
+        $persona->amaterno='Suarez';
+        $persona->curp='yuxarnosrnroxwex';
+        $persona->fnaci='1996-12-11';
+        $persona->sexo='M';
+        $persona->email='Pepe@example.com';
+        $persona->calle='Pinol Suarez';
+        $persona->num_int='12';
+        $persona->num_ext='10';
+        $persona->colonia='Cantera';
+        $persona->codigo_postal='58023';
+        $persona->ciudad='Morelia';
+        $persona->estado='Michoacan';
+        $persona->num_tel='443333333';
+        $persona->num_cel='443412121';
+        $persona->imagen='jumtest.jpg';
+        $persona->save();
+
+        $persona= new persona();
+        $persona->rol='Alumno';
+        $persona->nombres='Alejandro';
+        $persona->apaterno='Elma';
+        $persona->amaterno='Canon';
+        $persona->curp='yuxarnosrwerowex';
+        $persona->fnaci='1996-12-11';
+        $persona->sexo='M';
+        $persona->email='Pepe@example.com';
+        $persona->calle='Pinol Suarez';
+        $persona->num_int='12';
+        $persona->num_ext='10';
+        $persona->colonia='Cantera';
+        $persona->codigo_postal='58023';
+        $persona->ciudad='Morelia';
+        $persona->estado='Michoacan';
+        $persona->num_tel='443333333';
+        $persona->num_cel='443412121';
+        $persona->imagen='jumtest.jpg';
+        $persona->save();
+
+
+        $persona= new persona();
+        $persona->rol='Alumno';
+        $persona->nombres='Linsko';
+        $persona->apaterno='Soas';
+        $persona->amaterno='Caps';
+        $persona->curp='yuxarnwewerrowex';
+        $persona->fnaci='1996-12-11';
+        $persona->sexo='M';
+        $persona->email='Pepe@example.com';
+        $persona->calle='Pinol Suarez';
+        $persona->num_int='12';
+        $persona->num_ext='10';
+        $persona->colonia='Cantera';
+        $persona->codigo_postal='58023';
+        $persona->ciudad='Morelia';
+        $persona->estado='Michoacan';
+        $persona->num_tel='443333333';
+        $persona->num_cel='443412121';
+        $persona->imagen='jumtest.jpg';
+        $persona->save();
+
+        $persona= new persona();
+        $persona->rol='Alumno';
+        $persona->nombres='Badabbum';
+        $persona->apaterno='Vega';
+        $persona->amaterno='Pinol';
+        $persona->curp='yuxarnoaatsmrowex';
+        $persona->fnaci='1996-12-11';
+        $persona->sexo='M';
+        $persona->email='Pepe@example.com';
+        $persona->calle='Pinol Suarez';
+        $persona->num_int='12';
+        $persona->num_ext='10';
+        $persona->colonia='Cantera';
+        $persona->codigo_postal='58023';
+        $persona->ciudad='Morelia';
+        $persona->estado='Michoacan';
+        $persona->num_tel='443333333';
+        $persona->num_cel='443412121';
+        $persona->imagen='jumtest.jpg';
+        $persona->save();
+
+
+
 
 
 
