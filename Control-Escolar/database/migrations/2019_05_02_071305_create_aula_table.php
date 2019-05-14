@@ -17,6 +17,7 @@ class CreateAulaTable extends Migration
             $table->increments('id');
             $table->string('aula',20)->unique();
             $table->string('edificio');
+            $table->boolean('activo')->default('1');
             $table->string('tipo');
             $table->timestamps();
         });

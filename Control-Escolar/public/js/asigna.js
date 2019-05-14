@@ -27,6 +27,11 @@ function modificar_plan(id){
   document.getElementById('mod_plan_id').value=id;
 }
 
+//Modal para modificar aulas
+function modificar_aula(aula){
+  document.getElementById('mod_aula').value=aula;
+}
+
 //modificar Alumnos rol,nombres,apaterno,amaterno,fnaci,sexo,email,calle,num_int,num_ext,colonia,codigo_postal,ciudad,estado,num_tel,num_cel,imagen
 
 function modificar_alumno(idp,y){

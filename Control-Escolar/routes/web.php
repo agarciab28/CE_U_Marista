@@ -70,11 +70,17 @@ Route::post('/materias/editar' ,'materiasController@modifica')->name('edita_mate
 
 Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('eliminaMateria');
 
-  Route::get('/calendario', function(){
-    return view('admin.calendario');
-  })->name('admin_calendario');
+  Route::get('/calendario', 'calendarioController@showCalendario')->name('admin_calendario');
+
+  Route::post('/calendario/configuracion','calendarioController@modificaConfiguracion')->name('modifica_configuracion');
 
   Route::get('/aulas', 'aulasControler@showAulas')->name('admin_aulas');
+
+  Route::post('/aulas/registrar','aulasControler@registro')->name('nueva_aula');
+
+  Route::post('/aulas/editar' ,'aulasControler@modifica')->name('edita_aula');
+
+  Route::get('/aulas/elimina/{aula}','aulasControler@elimina')->name('eliminaAula');
 
   Route::get('/planes', 'planController@showPlan')->name('admin_planes');
 
@@ -118,16 +124,16 @@ Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('el
 //    return view('admin.asignar');
 //  })->name('admin_asignar');
 
-Route::get('/asignar/{idg}/{idc}','AlumnosController@lista_as')->name('admin_asignar');
+  Route::get('/asignar/{idg}/{idc}','AlumnosController@lista_as')->name('admin_asignar');
  //Route::get('/asignara','AlumnosController@lista_as')->name('asignara');
   //rutas de grupos
   Route::post('/grupos','gruposController@registroGrupo')->name('admin_registrar_Grupos');
 
   Route::get('/grupos','gruposController@showFormGrupo')->name('admin_registrarG');
 
- Route::post('/asig','asignarController@guardar')->name('admin_asignar_grupo');
+  Route::post('/asig','asignarController@guardar')->name('admin_asignar_grupo');
 
-Route::get('/grupos/elimina/{grupo}','gruposController@eliminagrupos')->name('elimina_grupo');
+  Route::get('/grupos/elimina/{grupo}','gruposController@eliminagrupos')->name('elimina_grupo');
 
   Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
 

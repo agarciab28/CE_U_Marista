@@ -40,13 +40,16 @@
                 </tr>
             </thead>
             <tbody>
+              @foreach($aulas as $aula)
                 <tr>
-                    <td>K5</td>
-                    <td>K</td>
-                    <td>Salon</td>
-                    <td> <a href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Nombre de aula, edificio o tipo de aula (laboratorio, salon, etc.)">Modificar</a> </td>
-                    <td> <a href="#" class="btn red tooltipped" data-position="bottom" data-tooltip="Cambiar el estado disponible del aula en el periodo escolar actual">Deshabilitar</a> </td>
+                    <td>{{$aula->aula}}</td>
+                    <td>{{$aula->edificio}}</td>
+                    <td>{{$aula->tipo}}</td>
+                    <td> <a onclick="modificar_aula('{{$aula->aula}}')" href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Nombre de aula, edificio o tipo de aula (laboratorio, salon, etc.)">Modificar</a> </td>
+                    <td> <a href="{{route('eliminaAula',['aula'=>$aula->aula])}}" class="btn {{($aula->activo>0)?' green':'red'}} tooltipped" data-position="bottom" data-tooltip="Cambiar el estado disponible del aula en el periodo escolar actual">{{($aula->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>
+
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
@@ -55,7 +58,8 @@
 <!--modal nueva aula-->
 <div id="modal_nueva" class="modal bottom-sheet">
     <div class="modal-content">
-        <form class="col  s12 m12" id="form_aula" action="" method="post">
+        <form class="col  s12 m12" id="form_aula" action="{{route('nueva_aula')}}" method="post">
+          @csrf
             <div class="row">
                 <div class="col m4 push-m4 s12">
                     <h4>Registrar Aula</h4>
@@ -97,7 +101,8 @@
 
 <div id="modal_modificar" class="modal bottom-sheet">
     <div class="modal-content">
-        <form class="col  s12 m12" id="form_mod_aula" action="" method="post">
+        <form class="col  s12 m12" id="form_mod_aula" action="{{route('edita_aula')}}" method="post">
+          @csrf
             <div class="row">
                 <div class="col m4 push-m4 s12">
                     <h4>Modificar Aula</h4>
@@ -106,7 +111,7 @@
             <div class="row" id="data_aula">
                 <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
-                    <input type="text" name="aula" id="mod_aula class=" validate=" disabled required maxlength='3'">
+                    <input type="text" name="aula" id="mod_aula" placeholder="" readonly required maxlength='10'>
                     <label for="mod_aula">Aula</label>
                 </div>
                 <div class="input-field col m4 s12 ">
@@ -144,6 +149,7 @@
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="{{{ asset('js/datatables.js') }}}"></script>
+<script src="{{{asset('js/asigna.js')}}}"></script>
 <script src="{{{ asset('js/validaciones.js') }}}"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
