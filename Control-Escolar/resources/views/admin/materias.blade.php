@@ -41,9 +41,9 @@
             <tbody>
                 @foreach($materias as $materia)
                 <tr>
-                    <th>{{$materia->nombre_materia}}</th>
-                    <th>{{$materia->plan}}</th>
-                    <th>{{$materia->horas_materia}}</th>
+                    <td>{{$materia->nombre_materia}}</td>
+                    <td>{{$materia->plan}}</td>
+                    <td>{{$materia->horas_materia}}</td>
                     <td> <a onclick="modificar_materia('{{$materia->id_materia}}')" href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Nombre de la materia, clave, plan de estudios al que corresponde o número de horas de la materia al semestre">Modificar</a> </td>
                     <td> <a href="{{route('eliminaMateria',['materia'=>$materia->id_materia])}}" class="btn {{($materia->activo>0)?' green':'red'}} tooltipped" data-position="bottom" data-tooltip="Cambiar el estado activo de la materia">{{($materia->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>
                 </tr>
@@ -184,7 +184,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.tooltipped');
-         
+
     });
 </script>
 @endsection

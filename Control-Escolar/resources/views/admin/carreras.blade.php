@@ -42,11 +42,11 @@
       <tbody>
         @foreach($carreras as $carrera)
         <tr>
-          <th>{{$carrera->nombre_carrera}}</th>
-          <th>{{$carrera->rvoe}}</th>
-          <th>{{$carrera->fecha}}</th>
-          <th> <a onclick="modificar_carrera('{{$carrera->id_carrera}}')" href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Nombre de carrera, clave RVOE, número de créditos de la materia o fecha de registro">Modificar</a> </th>
-          <th> <a href="{{route('eliminaCarrera',['carrera'=>$carrera->id_carrera])}}" class="btn {{($carrera->activo>0)?' green':'red'}} tooltipped" data-position="bottom" data-tooltip="Cambiar estatus de la carrera">{{($carrera->activo>0)?' Habilitado':'Deshabilitado'}}</a> </th>
+          <td>{{$carrera->nombre_carrera}}</td>
+          <td>{{$carrera->rvoe}}</td>
+          <td>{{$carrera->fecha}}</td>
+          <td> <a onclick="modificar_carrera('{{$carrera->id_carrera}}')" href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Nombre de carrera, clave RVOE, número de créditos de la materia o fecha de registro">Modificar</a> </td>
+          <td> <a href="{{route('eliminaCarrera',['carrera'=>$carrera->id_carrera])}}" class="btn {{($carrera->activo>0)?' green':'red'}} tooltipped" data-position="bottom" data-tooltip="Cambiar estatus de la carrera">{{($carrera->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>
         </tr>
         @endforeach
       </tbody>
@@ -177,7 +177,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.tooltipped');
-     
+
   });
 </script>
 @if($registro)
