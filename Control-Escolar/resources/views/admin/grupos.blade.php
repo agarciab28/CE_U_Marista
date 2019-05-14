@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="input-field col s12 m3">
-          <input type="text" name="seccion" id="seccion" value="">
+          <input type="text" name="seccion" id="seccion" value="" required>
           <label for="seccion">Seccion</label>
         </div>
         <div class="input-field col s12 m5">
@@ -52,7 +52,7 @@
           <label for="profesor">Profesor</label>
         </div>
         <div class="input-field col s12 m6">
-          <input type="text" name="periodo" id="periodo" value="">
+          <input type="text" name="periodo" id="periodo" value="" required>
           <label for="periodo">Periodo</label>
         </div>
         <div class="col s12" style="text-align: center;">
