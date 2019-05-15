@@ -237,9 +237,7 @@ Route::group(["prefix" => 'alumno'], function(){
     return view('alumno.home');
   })->name('alumno_home');
 
-  Route::get('/boletas', function(){
-    return view('alumno.boletas');
-  })->name('alumno_boletas');
+  Route::get('/boletas', 'genPDFController@showBoleta')->name('alumno_boletas');
 
   Route::get('/kardex', function(){
     return view('alumno.kardex');

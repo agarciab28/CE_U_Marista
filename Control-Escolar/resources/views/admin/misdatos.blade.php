@@ -36,7 +36,7 @@
         </div>
         <div class="row">
           <figure class="card-profile-image col s12">
-              <img src="{{{ asset('img/user9.png')}}}" alt="profile image" class="circle z-depth-2 responsive-img activator">
+              <img src="{{{ session('url')}}}" alt="profile image" class="circle z-depth-2 responsive-img activator">
           </figure>
         </div>
 
@@ -98,14 +98,14 @@
         <form class="col  s12 m12" id="pb" action="{{route('admin_registrar_envio')}}" method="post" form enctype="multipart/form-data">
 -->
             <div class="input-field col m4 s12 ">
-                <input type="file" id="imagen" name="imagen" class="dropify">
+                <input type="file" id="imagen" name="imagen" value="{{session('url')}}" class="dropify">
             </div>
 
             <div class="input-field col s12 m4">
                 <i class="material-icons prefix">
                     account_circle
                 </i>
-                <input type="text" name="user" id="user" class="validate" maxlength="35">
+                <input type="text" name="user" id="user" class="validate"  maxlength="35">
                 <label for="user">Usuario</label>
             </div>
 
