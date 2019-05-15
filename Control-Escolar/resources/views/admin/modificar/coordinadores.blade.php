@@ -21,8 +21,7 @@
           </div>
 
           <div class="input-field col m4 s12 ">
-            <!--{{ $persona->imgeng }}  esta wea traè de la base de datos de persona el campo de la imagen-->
-
+          <img src="{{{$url}}}" alt="Contact Person">
                   <input type="file" id="imagen" name="imagen" value="" class="dropify"  >
                   <!--<i class="material-icons prefix">account_circle</i>-->
 

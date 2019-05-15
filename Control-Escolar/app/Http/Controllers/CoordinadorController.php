@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\persona;
+use Illuminate\Support\Facades\Storage;
 use App\Models\coordinador;
 use App\Models\personal;
 use App\Models\carrera;
@@ -28,14 +29,17 @@ class CoordinadorController extends Controller
         ->join('carrera as ca','ca.id_carrera','=','c.id_carrera')
         ->where('persona.id_persona',$ida)
         ->get();
+        $imagen=$personas[0]->imagen;
+        $url=storage::url($imagen);
         $carreras= carrera::get(['id_carrera','nombre_carrera']);
-      return view('admin.modificar.coordinadores',compact(['personas','carreras']));
+      return view('admin.modificar.coordinadores',compact(['personas','carreras','url']));
     }
 
 
 public function modificar_coordinador($ida, Request $req){
 try {
-
+  $file=$req->file('imagen');
+  $nombre=time().$file->getClientOriginalName();
   $coor_persona = [
     'curp' => $req->get('curp'),
     'nombres' => $req->get('nombres'),
@@ -43,7 +47,8 @@ try {
     'amaterno' => $req->get('amaterno'),
     'fnaci' => $req->get('fnaci'),
     'sexo' => $req->get('sexo'),
-    'email' => $req->get('email')
+    'email' => $req->get('email'),
+    'imagen'=>$nombre
   ];
   $coor_personal = [
     'username' => $req->get('username'),
@@ -54,7 +59,7 @@ try {
 
   persona::where('id_persona',$ida)->update($coor_persona);
   personal::where('id_persona',$ida)->update($coor_personal);
-
+  $file->storeAs('public', $nombre);
   $aux = personal::where('id_persona',$ida)->get()->first();
 
   coordinador::where('username',$aux->username)->update(['id_carrera' => $req->get('id_carrera_coordinador')]);
