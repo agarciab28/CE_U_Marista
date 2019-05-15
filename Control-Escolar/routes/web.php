@@ -191,6 +191,8 @@ Route::group(["prefix" => 'docente'], function(){
   //calificaciones finales grupo
   Route::get('/pdfF','genPDFController@pdfF_docente')->name('docente_pdfF');
 
+  Route::get('/lista','Auth\RegisterController@regAlumnoCSV')->name('docente_regAlumnoCSV');
+
 });
 
 // Rutas Coordinador
