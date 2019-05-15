@@ -20,7 +20,7 @@ class CoordinadorController extends Controller
     return view('admin.listas.coordinadores',compact(['personas','cambio','modif']));
   }
 
-
+//el controlador para mostrar datos, aquì saco la imagen
     public function lista_mod($ida){
       $personas = persona::select('c.username as usuario','p.id_persona as persona','imagen','nombres','rol','ced_fiscal','nssoc','ca.id_carrera as id_carrera','nombre_carrera','sexo','curp','apaterno','amaterno','fnaci','email','p.activo as activo')
         ->join('personal as p','persona.id_persona','=','p.id_persona')
