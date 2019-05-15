@@ -20,40 +20,34 @@ class kardexSeeder extends Seeder
       $kardex->ncontrol='1111';
       $kardex->obj_calificacion='
       {
-      	"semestre": "1",
-      	"calificaciones": {
-      		"1": "10",
-      		"IC-1": "8",
-      		"PEET-1": "6"
-      	},
-      	"intentos": {
-      		"1": "0",
-      		"IC-1": "1",
-      		"PEET-1": "0"
-      	}
+      	"id_materia":"1",
+        "nombre_materia":"Calculo diferencial",
+        "primer_parcial":"10",
+        "segundo_parcial":"9",
+        "examen_final":"6",
+        "total_faltas":"2",
+        "promedio_calificacion":"8",
+        "opcion_calificacion":"0"
       }
       ';
-      $kardex->periodo='agosto-diciembre 2019'
+      $kardex->periodo='agosto-diciembre 2019';
       $kardex->save();
 
       $kardex= new kardex();
       $kardex->ncontrol='1111';
       $kardex->obj_calificacion='
       {
-      	"semestre": "2",
-      	"calificaciones": {
-      		"II-1": "10",
-      		"TID-1": "8",
-      		"QMC-1": "6"
-      	},
-      	"intentos": {
-      		"II-1": "0",
-      		"TID-1": "0",
-      		"QMC-1": "0"
-      	},
+        "id_materia":"DGD-1",
+        "nombre_materia":"Dibujo y Geometria Descriptiva",
+        "primer_parcial":"10",
+        "segundo_parcial":"7",
+        "examen_final":"6",
+        "total_faltas":"2",
+        "promedio_calificacion":"8",
+        "opcion_calificacion":"0"
       }
       ';
-      $kardex->periodo='agosto-diciembre 2019'
+      $kardex->periodo='agosto-diciembre 2019';
       $kardex->save();
 
     }

@@ -16,7 +16,6 @@ class CreateTableKardex extends Migration
         Schema::create('kardex', function (Blueprint $table) {
             $table->string('ncontrol',10);
             $table->text('obj_calificacion');
-            $table->string('intento');
             $table->string('periodo');
             $table->timestamps();
             $table->foreign('ncontrol')->references('ncontrol')->on('alumno');

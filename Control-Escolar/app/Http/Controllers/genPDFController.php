@@ -1,6 +1,10 @@
 <?php
   namespace App\Http\Controllers;
   use Dompdf\Dompdf;
+  use App\Models\kardex;
+  use App\Models\persona;
+  use App\Models\materia;
+  use App\Models\configuracion;
   use Illuminate\Http\Request;
   require '../vendor/autoload.php';
   require '../config/database.php';
@@ -110,7 +114,22 @@
       //aquí se va a obtener el ncontrol de la variable de sesión $ncontrol=session('ncontrol');
       //en lo mientras el ejemplo va a ser con el men con ncontrol 1111 que está en los seeders
       $ncontrol='1111';
-      
-      return view('alumno.boletas');
+      //También ya hay una variable de sesión con el nombre pero como todavía no funciona chido
+      //el back en alumno lo wa sacar manual
+      $datos=persona::select('nombres','apaterno','amaterno','semestre','nombre_carrera as carrera')
+        ->join('alumno as a','persona.id_persona','=','a.id_persona')
+        ->join('carrera as c','a.id_carrera','=','c.id_carrera')
+        ->where('a.ncontrol',$ncontrol)->get()->first();
+        //sacamos el kardex del vato
+      $kardex=kardex::where('ncontrol',$ncontrol)->get();
+      $calificaciones=array();
+      foreach ($kardex as $key) {
+        array_push($calificaciones,json_decode($key->obj_calificacion));
+      }
+
+      //sacamos la configuración del semestre actual
+      $configuracion=configuracion::get()->first();
+      //llamamos a la vista y enviamos las variables
+      return view('alumno.boletas',compact(['ncontrol','datos','calificaciones','configuracion']));
     }
 }

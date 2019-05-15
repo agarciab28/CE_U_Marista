@@ -19,7 +19,7 @@ class LoginController extends Controller
       ]);
       //dd(SHA256($data['password']));
       if(Auth::attempt($credentials)){
-        return view('dashboard');
+        return view('alumno.home');
       }
       return back()->withErrors(['ncontrol' => 'Sin registro']);
     }
