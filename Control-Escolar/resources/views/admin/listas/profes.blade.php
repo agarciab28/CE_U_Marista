@@ -58,6 +58,14 @@
   });
   </script>
   @endif
+  @if($modif)
+  <script type="text/javascript">
+  swal("¡El usuario se ha modificado correctamente!", {
+      icon: "success",
+  });
+  </script>
+  @endif
+
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>

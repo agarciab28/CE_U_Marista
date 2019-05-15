@@ -36,7 +36,7 @@
               <td>{{$persona->nombres}} {{$persona->apaterno}} {{$persona->amaterno}}</td>
               <td>{{$persona->fnaci}}</td>
               <td>{{$persona->email}}</td>
-              <td> <a href="#" class="btn">Modificar</a> </td>
+              <td> <a href="{{route('modificar_coor_lst',[$persona->persona])}}" class="btn">Modificar</a> </td>
               <td> <a href="{{ route('eliminaCoordinador',['usuario'=>$persona->usuario]) }}" class="btn {{($persona->activo>0)?' green':'red'}}">{{($persona->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>
 
           </tr>
@@ -56,6 +56,14 @@
   });
   </script>
   @endif
+  @if($modif)
+  <script type="text/javascript">
+  swal("¡El usuario se ha modificado correctamente!", {
+      icon: "success",
+  });
+  </script>
+  @endif
+
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>

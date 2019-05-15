@@ -20,7 +20,7 @@ class CreateTableCoordinador extends Migration
             $table->timestamps();
 
             $table->foreign('id_carrera')->references('id_carrera')->on('carrera');
-            $table->foreign('username')->references('username')->on('personal');
+            $table->foreign('username')->references('username')->on('personal')->onUpdate('cascade');
 
 
         });

@@ -9,21 +9,19 @@
 
 @section('content')
   <div class="container">
-    <form class="col  s12 m12" id="pb" action="{{route('admin_registrar_envio')}}" method="post" form enctype="multipart/form-data">
+    @foreach ($personas as $persona)
+    <form class="col  s12 m12" id="pb" action="{{route('admin_modificar_coordinador',[$persona->persona])}}" method="post" form enctype="multipart/form-data">
         {{ csrf_field() }}
-@foreach ($personas as $persona)
-
-
         <div class="row">
 
           <div class="row">
             <div class="col m6 push-m3 s12" style="text-align: center;">
-              <h4>Modificar Alumno</h4>
+              <h4>Modificar Coordinador</h4>
             </div>
           </div>
 
           <div class="input-field col m4 s12 ">
-                  <input type="file" id="imagen" name="imagen" value="{{ $persona->imagen }}" class="dropify"  >
+                  <input type="file" id="imagen" name="imagen" value="" class="dropify"  >
                   <!--<i class="material-icons prefix">account_circle</i>-->
 
               </div>
@@ -33,7 +31,7 @@
                     supervised_user_circle
                 </i>
                 <select class="validate" name="rol" id="rol">
-                    <option value="Alumno">Alumno</option>
+                <option value="Coordinador">Coordinador</option>
                 </select>
                 <label>Tipo de usuario</label>
             </div>
@@ -104,54 +102,38 @@
                 <span>Nueva contraseña</span>
             </div>
 
-
-            <div id="alumno_ext">
+            <div id="coor_ext">
                 <div class="input-field col m4 s12 ">
-                    <input type="text" name="ncontrol" id="ncontrol" value="{{ $persona->ncontrol }}" class="validate" maxlength="12">
-                    <span>Número de control</span>
+                    <!--<i class="material-icons prefix">account_circle</i>-->
+                    <input type="text" name="username" id="clavec" value="{{ $persona->usuario }}" class="validate" maxlength="25">
+                    <span for="clavec">Clave de coordinador</span>
                 </div>
-
+                <!--fila-->
                 <div class="input-field col m4 s12 ">
-                    <select name="id_carrera" id="carrera_alumno">
-                      <option value="{{ $persona->id_carrera }}" default selected>{{ $persona->nombre_carrera  }}</option>
+                    <!--<i class="material-icons prefix">account_circle</i>-->
+                    <!--<input type="text" name="especialidad_coo" id="especialidad_coo" class="validate">
+                    <label for="especialidad_coo">Carrera</label>-->
+                    <select name="id_carrera_coordinador" id="carrera_coordinador">
+                        <option value="{{ $persona->id_carrera }}" default selected>{{ $persona->nombre_carrera  }}</option>
                         @foreach($carreras as $carrera)
                         <option value="{{$carrera->id_carrera}}">{{$carrera->nombre_carrera}}</option>
                         @endforeach
+
                     </select>
+
                     <span>Carrera</span>
                 </div>
-
-                <div class="col m4 s12 ">
-                    <select name="semestre" id="semestre">
-                        <option selected value="{{ $persona->semestre }}">{{ $persona->semestre }}</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                    </select>
-                    <span>Semestre</span>
+                <div class="input-field col m4 s12 ">
+                    <!--<i class="material-icons prefix">account_circle</i>-->
+                    <input type="text" value="{{ $persona->ced_fiscal}}" name="ced_fiscal" id="cedulac" class="cedula" maxlength="35">
+                    <span for="cedulac">Cédula fiscal</span>
                 </div>
                 <div class="input-field col m4 s12 ">
-
-
-                  <select name="plan_de_estudios" id="plan_est">
-                    <option selected value="{{ $persona->id_plan }}">{{ $persona->nombre_plan }}</option>
-                    @foreach($planes as $plan)
-                      <option value="{{$plan->id_plan}}">{{$plan->nombre_plan}}</option>
-                    @endforeach
-                  </select>
-                    <span>Plan de estudios</span>
+                    <!--<i class="material-icons prefix">account_circle</i>-->
+                    <input type="text" name="nssoc" id="nsocc" value="{{ $persona->nssoc}}" class="validate" maxlength="25">
+                    <span for="nsocc">Número de seguro social</span>
                 </div>
             </div>
-
 
 
 
@@ -160,13 +142,13 @@
 
 
             <div class="input-field col m3 s12">
-                <button class="btn light-blue darken-4" type="submit">Registrar
+                <button class="btn light-blue darken-4" type="submit">Modificar
                     <i class="material-icons right">send</i>
                 </button>
             </div>
         </div>
-        @endforeach
     </form>
+        @endforeach
   </div>
 @endsection
 
