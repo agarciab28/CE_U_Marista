@@ -30,7 +30,7 @@ class CoordinadorController extends Controller
         ->where('persona.id_persona',$ida)
         ->get();
         $imagen=$personas[0]->imagen;
-        dd($imagen);
+  
         $url=storage::url($imagen);
         $carreras= carrera::get(['id_carrera','nombre_carrera']);
       return view('admin.modificar.coordinadores',compact(['personas','carreras','url']));
