@@ -24,7 +24,7 @@
                 </div>
               </div>
             <div class="input-field col m4 s12 ">
-                    <input type="file" id="imagen" name="imagen" class="dropify"  >
+                    <input type="file" id="imagen" name="imagen" class="dropify" required >
                     <!--<i class="material-icons prefix">account_circle</i>-->
 
                 </div>

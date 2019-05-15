@@ -11,7 +11,7 @@ use App\Models\carrera;
 class CoordinadorController extends Controller
 {
   public function lista(){
-    $personas = persona::select('c.username as usuario','p.id_persona as persona','id_carrera','nombres','apaterno','amaterno','fnaci','email','p.activo as activo')
+    $personas = persona::select('c.username as usuario','p.id_persona as persona','imagen','id_carrera','nombres','apaterno','amaterno','fnaci','email','p.activo as activo')
       ->join('personal as p','persona.id_persona','=','p.id_persona')
       ->join('coordinador as c','c.username','=','p.username')
       ->get();
@@ -22,12 +22,13 @@ class CoordinadorController extends Controller
 
 
     public function lista_mod($ida){
-      $personas = persona::select('c.username as usuario','p.id_persona as persona','nombres','rol','ced_fiscal','nssoc','ca.id_carrera as id_carrera','nombre_carrera','sexo','curp','apaterno','amaterno','fnaci','email','p.activo as activo')
+      $personas = persona::select('c.username as usuario','p.id_persona as persona','imagen','nombres','rol','ced_fiscal','nssoc','ca.id_carrera as id_carrera','nombre_carrera','sexo','curp','apaterno','amaterno','fnaci','email','p.activo as activo')
         ->join('personal as p','persona.id_persona','=','p.id_persona')
         ->join('coordinador as c','c.username','=','p.username')
         ->join('carrera as ca','ca.id_carrera','=','c.id_carrera')
         ->where('persona.id_persona',$ida)
         ->get();
+        $img = Storage::url($imagen);
         $carreras= carrera::get(['id_carrera','nombre_carrera']);
       return view('admin.modificar.coordinadores',compact(['personas','carreras']));
     }
