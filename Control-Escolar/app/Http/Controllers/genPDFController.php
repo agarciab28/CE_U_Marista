@@ -105,4 +105,8 @@
       //return $pdf->download('ejemplo.pdf');
       return $pdf->stream('Kárdex de calificaciones.pdf');
     }
+
+    public function showBoleta(){
+      return view('alumno.boletas');
+    }
 }
