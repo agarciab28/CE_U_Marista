@@ -40,13 +40,13 @@
             <tbody>
                 @foreach($planes as $plan)
                 <tr>
-                    <th>{{$plan->nombre_plan}}</th>
-                    <th>{{$plan->carrera}}</th>
-                    <th>{{$plan->fecha}}</th>
-                    <th> <a onclick="modificar_plan('{{$plan->id_plan}}')" href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Clave, nombre de plan de estudios, carrera o fecha de registro">Modificar</a> </th>
-                    <th> <a href="{{route('eliminaPlan',['plan'=>$plan->id_plan])}}"
+                    <td>{{$plan->nombre_plan}}</td>
+                    <td>{{$plan->carrera}}</td>
+                    <td>{{$plan->fecha}}</td>
+                    <td> <a onclick="modificar_plan('{{$plan->id_plan}}')" href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Clave, nombre de plan de estudios, carrera o fecha de registro">Modificar</a> </td>
+                    <td> <a href="{{route('eliminaPlan',['plan'=>$plan->id_plan])}}"
                         class="btn {{($plan->activo>0)?' green':'red'}} tooltipped" data-position="bottom"
-                        data-tooltip="Cambiar el estado vigente del plan de estudios">{{($plan->activo>0)?' Habilitado':'Deshabilitado'}}</a> </th>
+                        data-tooltip="Cambiar el estado vigente del plan de estudios">{{($plan->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>
                 </tr>
                 @endforeach
             </tbody>

@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('login');
 })->name('start');
 
+Route::get('/ejemplo','graficasController@alumnosCarrera');
+
 // Route::get('dashboard','DashboarController@index')->name('dashboard');
 //
 Route::post('/login', 'Auth\LoginController@login')->name('login');
@@ -37,6 +39,10 @@ Route::group(["prefix" => 'admin'], function(){
   Route::get('/alumnosGrupo', function(){
     return view('admin.listas.alumnosxgrupo');
   })->name('admin_alumnosGrupo');
+
+  Route::get('/kardexAlumno', function(){
+    return view('admin.kardex');
+  })->name('admin_kardex');
 
 //rutas registro de usuarios
 Route::get('/modificar_alumno/{ida}','AlumnosController@liat_modificar')->name('modificar_alumno');
@@ -74,11 +80,17 @@ Route::post('/materias/editar' ,'materiasController@modifica')->name('edita_mate
 
 Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('eliminaMateria');
 
-  Route::get('/calendario', function(){
-    return view('admin.calendario');
-  })->name('admin_calendario');
+  Route::get('/calendario', 'calendarioController@showCalendario')->name('admin_calendario');
+
+  Route::post('/calendario/configuracion','calendarioController@modificaConfiguracion')->name('modifica_configuracion');
 
   Route::get('/aulas', 'aulasControler@showAulas')->name('admin_aulas');
+
+  Route::post('/aulas/registrar','aulasControler@registro')->name('nueva_aula');
+
+  Route::post('/aulas/editar' ,'aulasControler@modifica')->name('edita_aula');
+
+  Route::get('/aulas/elimina/{aula}','aulasControler@elimina')->name('eliminaAula');
 
   Route::get('/planes', 'planController@showPlan')->name('admin_planes');
 
@@ -88,9 +100,7 @@ Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('el
 
   Route::post('/planes', 'planController@registrar')->name('registrar_plan');
 
-  Route::get('/estadisticas', function(){
-    return view('admin.estadisticas');
-  })->name('admin_estadisticas');
+  Route::get('/estadisticas','graficasController@show')->name('admin_estadisticas');
 
   Route::get('/bitacora', 'bitacoraController@listaBitacora')->name('admin_bitacora');
 
@@ -122,16 +132,16 @@ Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('el
 //    return view('admin.asignar');
 //  })->name('admin_asignar');
 
-Route::get('/asignar/{idg}/{idc}','AlumnosController@lista_as')->name('admin_asignar');
+  Route::get('/asignar/{idg}/{idc}','AlumnosController@lista_as')->name('admin_asignar');
  //Route::get('/asignara','AlumnosController@lista_as')->name('asignara');
   //rutas de grupos
   Route::post('/grupos','gruposController@registroGrupo')->name('admin_registrar_Grupos');
 
   Route::get('/grupos','gruposController@showFormGrupo')->name('admin_registrarG');
 
- Route::post('/asig','asignarController@guardar')->name('admin_asignar_grupo');
+  Route::post('/asig','asignarController@guardar')->name('admin_asignar_grupo');
 
-Route::get('/grupos/elimina/{grupo}','gruposController@eliminagrupos')->name('elimina_grupo');
+  Route::get('/grupos/elimina/{grupo}','gruposController@eliminagrupos')->name('elimina_grupo');
 
   Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
 

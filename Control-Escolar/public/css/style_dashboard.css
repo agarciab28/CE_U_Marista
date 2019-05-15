@@ -152,3 +152,11 @@ h5.breadcrumbs-header {
  span{
 	 color: #808080;
  }
+
+ span.date-text{
+	 color: white;
+ }
+
+ .select-month input {
+    width: 80px !important;
+}

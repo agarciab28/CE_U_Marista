@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\evento;
+use App\Models\configuracion;
+use DB;
 
 class calendarioController extends Controller
 {
@@ -19,7 +21,25 @@ class calendarioController extends Controller
       $evento->fecha_final=$request->fin;
       $evento->color=$request->color;
       $evento->save();
-      
+
       return view("admin.calendario");
+    }
+
+    public function showCalendario(){
+      $configuracion = configuracion::get()->first();
+      return view('admin.calendario',compact('configuracion'));
+    }
+    public function modificaConfiguracion(Request $request){
+      $seleccion=configuracion::get()->first();
+      DB::table('configuracion')->update(['periodo_actual'=>$request->periodo_actual,
+        'director'=>$request->director,
+        'fecha_inicio'=>$request->finicio,
+        'fecha_terminacion'=>$request->fterm,
+        'Jefe_control_escolar'=>$request->jefe_control
+        ]);
+
+
+
+        return redirect()->route('admin_calendario');
     }
 }

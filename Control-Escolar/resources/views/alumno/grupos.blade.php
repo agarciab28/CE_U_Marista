@@ -40,7 +40,7 @@
     <div class="col m2">
       <div class="card card-dia">
         <div class="card-content">
-          <span>Lunes</span>
+          <span class="white-text">Lunes</span>
         </div>
       </div>
       <div class="card card-materia">
@@ -87,7 +87,7 @@
     <div class="col m2 ">
       <div class="card card-dia">
         <div class="card-content">
-          <span>Martes</span>
+          <span class="white-text">Martes</span>
         </div>
       </div>
       <div class="card card-materia">
@@ -110,7 +110,7 @@
     <div class="col m2 ">
       <div class="card card-dia">
         <div class="card-content">
-          <span>Miércoles</span>
+          <span class="white-text">Miércoles</span>
         </div>
       </div>
       <div class="card card-materia">
@@ -141,21 +141,21 @@
     <div class="col m2 ">
       <div class="card card-dia">
         <div class="card-content">
-          <span>Jueves</span>
+          <span class="white-text">Jueves</span>
         </div>
       </div>
     </div>
     <div class="col m2 ">
       <div class="card card-dia">
         <div class="card-content">
-          <span>Viernes</span>
+          <span class="white-text">Viernes</span>
         </div>
       </div>
     </div>
     <div class="col m2 ">
       <div class="card card-dia">
         <div class="card-content">
-          <span>Sábado</span>
+          <span class="white-text">Sábado</span>
         </div>
       </div>
     </div>

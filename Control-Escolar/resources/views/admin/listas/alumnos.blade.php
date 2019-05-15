@@ -29,6 +29,7 @@
         <th>Nombre Completo</th>
         <th>Fecha de Nacimiento</th>
         <th>Correo Electrónico</th>
+        <th>Kardex</th>
         <th>Modificar</th>
         <th>Deshabilitar</th>
       </tr>
@@ -40,6 +41,7 @@
         <td>{{$persona->nombres}} {{$persona->apaterno}} {{$persona->amaterno}}</td>
         <td>{{$persona->fnaci}}</td>
         <td>{{$persona->email}}</td>
+        <td> <a href="{{route('admin_kardex')}}" class="btn">Kardex</a> </td>
         <td> <a href="{{route('modificar_alumno',[$persona->id_persona])}}"  class="btn">Modificar</a> </td>
         <td> <a href="{{route('eliminaAlumno',['ncontrol'=>$persona->ncontrol])}}" class="btn habilitar {{($persona->activo>0)?' green':'red'}} ">
           {{($persona->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>

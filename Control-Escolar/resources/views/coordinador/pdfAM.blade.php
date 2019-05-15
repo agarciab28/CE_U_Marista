@@ -18,7 +18,7 @@ td {
 
   .bodyPDF{
     font-family: "Verdana, Geneva, sans-serif";
-    font-size: 10px;
+    font-size: 9px;
     color: black;
     text-align: center;
     text-transform: uppercase;
@@ -61,19 +61,31 @@ td {
     font-family: "Verdana, Geneva, sans-serif";
     font-weight: bold;
     text-align: center;
-    font-size: 10px;
+    font-size: 8px;
   }
   table td:nth-child(1n) {
   	width: 1.2cm;
   }
   table td:nth-child(1) {
-  	width: 1cm;
+  	width: 0.5cm;
   }
   table td:nth-child(3) {
-  	width: 6.9cm;
+  	width: 5.5cm;
   }
   table td:nth-child(4) {
-  	width: 6cm;
+  	width: 5cm;
+  }
+  table td:nth-child(7) {
+  	width: 1cm;
+  }
+  table td:nth-child(9) {
+  	width: 1cm;
+  }
+  table td:nth-child(11) {
+  	width: 1cm;
+  }
+  table td:nth-child(12) {
+  	width: 1.5cm;
   }
 </style>
 
@@ -104,8 +116,12 @@ td {
               <th class="tabPDF">Carrera</th>
               <th class="tabPDF">Grupo</th>
               <th class="tabPDF">Primer parcial</th>
+              <th class="tabPDF">Faltas</th>
               <th class="tabPDF">Segundo parcial</th>
+              <th class="tabPDF">Faltas</th>
               <th class="tabPDF">Tercer parcial</th>
+              <th class="tabPDF">Faltas</th>
+              <th class="tabPDF">Faltas totales</th>
               <th class="tabPDF">Calificación final</th>
           </tr>
           <tr>
@@ -115,8 +131,12 @@ td {
             <td class="bodyPDF center">Sistemas Computacionales</td>
             <td class="bodyPDF center">PROLOG2314</td>
             <td class="bodyPDF center">75</td>
+            <td class="bodyPDF center">0</td>
             <td class="bodyPDF center">80</td>
+            <td class="bodyPDF center">0</td>
             <td class="bodyPDF center">85</td>
+            <td class="bodyPDF center">0</td>
+            <td class="bodyPDF center">0</td>
             <td class="bodyPDF center">80</td>
           </tr>
           <tr>
@@ -126,8 +146,12 @@ td {
             <td class="bodyPDF center">gestión empresarial</td>
             <td class="bodyPDF center">PROLOG2314</td>
             <td class="bodyPDF center">75</td>
+            <td class="bodyPDF center">0</td>
             <td class="bodyPDF center">80</td>
+            <td class="bodyPDF center">0</td>
             <td class="bodyPDF center">85</td>
+            <td class="bodyPDF center">0</td>
+            <td class="bodyPDF center">0</td>
             <td class="bodyPDF center">80</td>
           </tr>
           <tr>
@@ -137,8 +161,12 @@ td {
             <td></td>
             <td></td>
             <td class="tabPDF center">80</td>
+            <td class="tabPDF center">0</td>
             <td class="tabPDF center">76</td>
+            <td class="tabPDF center">0</td>
             <td class="tabPDF center">84</td>
+            <td class="tabPDF center">0</td>
+            <td class="tabPDF center">0</td>
             <td class="tabPDF center">80</td>
           </tr>
       </table>

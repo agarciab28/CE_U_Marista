@@ -66,20 +66,6 @@
       </li>
     </ul>
 
-    <ul id="alumnos" class="collapsible collapsible-accordion">
-      <li>
-        <a class="collapsible-header white-text" accordion="false" style="margin-left:1.3em;"> <i class="material-icons white-text" style="font-size:1.5em;">group</i> Alumnos <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
-        <div class="collapsible-body">
-          <ul class="dropdown_menu">
-            <li><a href="" class="white-text">Registrar Usuario</a></li>
-            <li><a href="" class="white-text">Alumnos</a></li>
-            <li><a href="" class="white-text">Profesores</a></li>
-            <li><a href="" class="white-text">Coordinadores</a></li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-
     <li id="misdatos"><a class="white-text" href="{{ route('docente_datos') }}"><i class="fas fa-user-cog white-text menu-icon"></i>Mis Datos</a></li>
 
 
