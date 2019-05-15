@@ -7,6 +7,7 @@ use App\Models\persona;
 use App\Models\alumno;
 use App\Models\carrera;
 use App\Models\plan_de_estudios;
+use Illuminate\Support\Facades\Storage;
 
 class AlumnosController extends Controller
 {
@@ -27,17 +28,18 @@ class AlumnosController extends Controller
         ->join('alumno','persona.id_persona','=','alumno.id_persona')
         ->join('carrera','alumno.id_carrera','=','carrera.id_carrera')
         ->join('plan_de_estudios','carrera.id_carrera','=','plan_de_estudios.id_carrera')
-        ->where("persona.id_persona",$ida)->get();
+        ->where("persona.id_persona",$ida)
+        ->get();
 
+        $imagen=$personas[0]->imagen;
+        $url=storage::url($imagen);
         $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
         $carreras= carrera::get(['id_carrera','nombre_carrera']);
-        return view('admin.modificar.usuarios',compact(['personas','planes','carreras']));
+        return view('admin.modificar.usuarios',compact(['personas','planes','carreras','url']));
     }
 
     public function modificar_alu ($ida,Request $req) {
 try {
-
-
 
       $alumno_persona = [
        'nombres' => $req->get('nombres'),
