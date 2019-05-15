@@ -107,6 +107,10 @@
     }
 
     public function showBoleta(){
+      //aquí se va a obtener el ncontrol de la variable de sesión $ncontrol=session('ncontrol');
+      //en lo mientras el ejemplo va a ser con el men con ncontrol 1111 que está en los seeders
+      $ncontrol='1111';
+      
       return view('alumno.boletas');
     }
 }
