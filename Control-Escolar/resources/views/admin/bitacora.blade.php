@@ -59,25 +59,7 @@
                                 <li class="collection-item avatar">
                                     <i class="mdi-file-folder circle"></i>
                                     <span class="title">Detalle</span>
-                                    <table id="example" class="responsive-table striped" style="width:100%">
-                                        <thead>
-
-                                            <tr>
-                                                <th>ID movimiento</th>
-                                                <th>Usuario</th>
-                                                <th>Rol</th>
-                                                <th>Fecha y hora</th>
-                                                <th>Tipo de moviento</th>
-                                                <th>Tabla afectada</th>
-                                                <th>Campo alterado</th>
-                                                <th>Valor anterior</th>
-                                                <th>Valor nuevo</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-                                        </tbody>
-                                    </table>
+                                    <table id="example" class="responsive-table striped" style="width:100%"></table>
                                     <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
                                 </li>
                             </ul>
