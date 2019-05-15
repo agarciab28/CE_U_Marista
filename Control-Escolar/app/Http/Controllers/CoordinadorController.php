@@ -28,7 +28,6 @@ class CoordinadorController extends Controller
         ->join('carrera as ca','ca.id_carrera','=','c.id_carrera')
         ->where('persona.id_persona',$ida)
         ->get();
-        $img = Storage::url($imagen);
         $carreras= carrera::get(['id_carrera','nombre_carrera']);
       return view('admin.modificar.coordinadores',compact(['personas','carreras']));
     }
