@@ -169,7 +169,7 @@ Listar Planes de estudio !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="username" id="clavep" class="validate" maxlength="30">
+                        <input type="text" name="usernamep" id="clavep" class="validate" maxlength="30">
                         <label for="clavep">Clave de profesor</label>
                     </div>
                     <!--fila-->
@@ -193,7 +193,7 @@ Listar Planes de estudio !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 <div id="coor_ext">
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
-                        <input type="text" name="username" id="clavec" class="validate" maxlength="25">
+                        <input type="text" name="usernamec" id="clavec" class="validate" maxlength="25">
                         <label for="clavec">Clave de coordinador</label>
                     </div>
                     <!--fila-->
