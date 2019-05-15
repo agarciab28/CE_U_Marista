@@ -1,6 +1,7 @@
 @extends('layouts.app_admin')
 
 @section('stylesheet')
+    <link href="{{{ asset('css/admin/usuarios.css') }}}" rel="stylesheet">
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
 <link href="{{{ asset('https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css') }}}" rel="stylesheet">
 @endsection
@@ -8,23 +9,26 @@
 @section('title', 'Modificar Usuario')
 
 @section('content')
-  <div class="container">
+<div class="container">
     @foreach ($personas as $persona)
     <form class="col  s12 m12" id="pb" action="{{route('admin_modificar_profesor',[$persona->persona])}}" method="post" form enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="row">
 
-          <div class="row">
-            <div class="col m6 push-m3 s12" style="text-align: center;">
-              <h4>Modificar Profesor</h4>
+            <div class="row">
+                <div class="col m6 push-m3 s12" style="text-align: center;">
+                    <h4>Modificar Profesor</h4>
+                </div>
             </div>
-          </div>
 
-          <div class="input-field col m4 s12 ">
-                  <input type="file" id="imagen" name="imagen" value="{{ $persona->imagen }}" class="dropify"  >
-                  <!--<i class="material-icons prefix">account_circle</i>-->
+            <div class="input-field col m4 s12 ">
+                <img src="{{{$url}}}" alt="Contact Person" class="input-field col s12 ">
 
-              </div>
+                <!--<input type="file" id="imagen" name="imagen" value="{{ $persona->imagen }}" class="dropify">
+
+                <i class="material-icons prefix">account_circle</i>-->
+
+            </div>
 
             <div class="input-field col s12 m4">
                 <i class="material-icons prefix">
@@ -70,13 +74,13 @@
                     wc
                 </i>
                 <select name="sexo" id="sexo">
-@if ($persona->sexo=="F")
-  <option value="F" selected>Femenino</option>
-  <option value="M">Masculino</option>
-@else
-  <option value="M" selected>Masculino</option>
-  <option value="F">Femenino</option>
-@endif
+                    @if ($persona->sexo=="F")
+                    <option value="F" selected>Femenino</option>
+                    <option value="M">Masculino</option>
+                    @else
+                    <option value="M" selected>Masculino</option>
+                    <option value="F">Femenino</option>
+                    @endif
                 </select>
                 <span>Sexo</span>
             </div>
@@ -95,7 +99,7 @@
             </div>
 
 
-<!--Registrar contraseña-->
+            <!--Registrar contraseña-->
             <div class="input-field col m4 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
                 <input type="password" name="pass" id="pass" class="validate" maxlength="20" required>
@@ -140,8 +144,8 @@
             </div>
         </div>
     </form>
-        @endforeach
-  </div>
+    @endforeach
+</div>
 @endsection
 
 @section('scripts')
@@ -158,15 +162,17 @@
     });
 
     document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.fixed-action-btn');
-      var instances = M.FloatingActionButton.init(elems, {direction: 'left'});
+        var elems = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(elems, {
+            direction: 'left'
+        });
     });
 </script>
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="{{{ asset('js/datatables.js')}}}"></script>
 
-  <script src="{{{asset('js/asigna.js')}}}"></script>
+<script src="{{{asset('js/asigna.js')}}}"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
 @endsection

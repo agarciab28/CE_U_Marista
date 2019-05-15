@@ -149,9 +149,7 @@ h5.breadcrumbs-header {
     width: 32px;
     border-radius: 50%;
 }
- span{
-	 color: #808080;
- }
+
 
  span.date-text{
 	 color: white;
@@ -159,4 +157,8 @@ h5.breadcrumbs-header {
 
  .select-month input {
     width: 80px !important;
+}
+
+.modal {
+    height: 50% !important;
 }
