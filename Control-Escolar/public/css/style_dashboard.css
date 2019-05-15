@@ -160,3 +160,7 @@ h5.breadcrumbs-header {
  .select-month input {
     width: 80px !important;
 }
+
+.modal {
+    height: 50% !important;
+}
