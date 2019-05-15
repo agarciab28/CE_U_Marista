@@ -50,7 +50,7 @@ class kardexSeeder extends Seeder
       		"II-1": "0",
       		"TID-1": "0",
       		"QMC-1": "0"
-      	}
+      	},
       }
       ';
       $kardex->periodo='agosto-diciembre 2019'

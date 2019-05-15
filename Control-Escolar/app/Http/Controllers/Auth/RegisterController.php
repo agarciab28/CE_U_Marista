@@ -72,11 +72,10 @@ class RegisterController extends Controller
         //
     }
     public function registro(Request $request){
-
       try {
         $file=$request->file('imagen');
         $nombre=time().$file->getClientOriginalName();
-        
+
                 $persona=new persona();
                 $persona->rol=$request->rol;
                 $persona->nombres=$request->nombres;
@@ -108,10 +107,16 @@ class RegisterController extends Controller
         }else {
 
           $personal=new personal();
-          $personal->username=$request->username;
-          $personal->ced_fiscal=$request->ced_fiscal;
+          if($request->rol=='Coordinador'){
+            $personal->username=$request->username;
+            $personal->ced_fiscal=$request->ced_fiscal;
+            $personal->nssoc=$request->nssoc;
+          }else if($request->rol=='Profesor'){
+            $personal->username=$request->usernamep;
+            $personal->ced_fiscal=$request->cedulap;
+            $personal->nssoc=$request->nssocp;
+          }
           $personal->password=hash_hmac('sha256', $request->pass, env('HASH_KEY'));
-          $personal->nssoc=$request->nssoc;
           $personal->id_persona=$id_persona->id_persona;
           $personal->activo='1';
           $personal->save();
@@ -128,13 +133,13 @@ class RegisterController extends Controller
 
             $profesor = new profesor();
             $profesor->especialidad=$request->especialidad_profe;
-            $profesor->username=$request->username;
+            $profesor->username=$request->usernamep;
             $profesor->save();
           }
         }
 
       } catch (\Exception $e) {
-        report($e);
+        dd($e);
 
         $registro=false;
         $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
