@@ -9,11 +9,9 @@
 
 @section('content')
   <div class="container">
-    <form class="col  s12 m12" id="pb" action="{{route('admin_registrar_envio')}}" method="post" form enctype="multipart/form-data">
+    @foreach ($personas as $persona)
+    <form class="col  s12 m12" id="pb" action="{{route('admin_modificar_profesor',[$persona->persona])}}" method="post" form enctype="multipart/form-data">
         {{ csrf_field() }}
-@foreach ($personas as $persona)
-
-
         <div class="row">
 
           <div class="row">
@@ -108,23 +106,23 @@
 
                 <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
-                    <input type="text" name="username" id="clavep" class="validate" maxlength="30">
+                    <input type="text" name="username" id="clavep" value="{{ $persona->username }}" class="validate" maxlength="30">
                     <span for="clavep">Clave de profesor</span>
                 </div>
                 <!--fila-->
                 <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
-                    <input type="text" name="especialidad_profe" id="especialidad_profe" class="validate" maxlength="35">
+                    <input type="text" name="especialidad_profe" id="especialidad_profe" value="{{ $persona->especialidad }}" class="validate" maxlength="35">
                     <span for="especialidad_profe">Especialidad</span>
                 </div>
                 <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
-                    <input type="text" name="cedulap" id="cedulap" class="cedula" maxlength="35">
+                    <input type="text" name="cedulap" id="cedulap" class="cedula" value="{{ $persona->ced_fiscal }}" maxlength="35">
                     <span for="cedulap">Cédula fiscal</span>
                 </div>
                 <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
-                    <input type="text" name="nssocp" id="nsocp" class="validate" maxlength="25">
+                    <input type="text" name="nssocp" id="nsocp" value="{{ $persona->nssoc }}" class="validate" maxlength="25">
                     <span for="nsocp">Número de seguro socal</span>
                 </div>
             </div>
@@ -136,13 +134,13 @@
 
 
             <div class="input-field col m3 s12">
-                <button class="btn light-blue darken-4" type="submit">Registrar
+                <button class="btn light-blue darken-4" type="submit">Modificar
                     <i class="material-icons right">send</i>
                 </button>
             </div>
         </div>
-        @endforeach
     </form>
+        @endforeach
   </div>
 @endsection
 

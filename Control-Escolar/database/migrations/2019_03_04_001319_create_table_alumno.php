@@ -24,9 +24,9 @@ class CreateTableAlumno extends Migration
             $table->text('password');
             $table->boolean('activo');
             $table->timestamps();
-            $table->primary('ncontrol');
-            $table->foreign('id_carrera')->references('id_carrera')->on('carrera');
-            $table->foreign('id_persona')->references('id_persona')->on('persona');
+            $table->primary('ncontrol')->onUpdate('cascade');;
+            $table->foreign('id_carrera')->references('id_carrera')->on('carrera')->onUpdate('cascade');
+            $table->foreign('id_persona')->references('id_persona')->on('persona')->onUpdate('cascade');
         });
     }
 

@@ -27,7 +27,7 @@ class CreateTableCalificaciones extends Migration
             $table->string('opcion_calificacion',10);
             $table->timestamps();
             $table->foreign('id_grupo')->references('id_grupo')->on('grupo');
-            $table->foreign('ncontrol')->references('ncontrol')->on('alumno');
+            $table->foreign('ncontrol')->references('ncontrol')->on('alumno')->onUpdate('cascade');
         });
     }
 

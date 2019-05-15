@@ -19,7 +19,7 @@ class CreateTableProfesor extends Migration
             $table->string('username',100);
             $table->timestamps();
 
-            $table->foreign('username')->references('username')->on('personal');
+            $table->foreign('username')->references('username')->on('personal')->onUpdate('cascade');
 
         });
     }
