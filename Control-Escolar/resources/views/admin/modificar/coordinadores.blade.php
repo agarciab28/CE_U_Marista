@@ -21,6 +21,7 @@
           </div>
 
           <div class="input-field col m4 s12 ">
+          <img src="{{{$url}}}" alt="Contact Person">
                   <input type="file" id="imagen" name="imagen" value="" class="dropify"  >
                   <!--<i class="material-icons prefix">account_circle</i>-->
 
