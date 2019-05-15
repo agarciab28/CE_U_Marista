@@ -44,11 +44,11 @@
       data: {
           labels: [
             @foreach($alumnos as $alumno)
-            '{{$alumno->nombre_carrera}}',
+            '{{$alumno->id}}',
             @endforeach
           ],
           datasets: [{
-              label: 'Carreras',
+              label: 'Catidad de estudiantes',
               data: [
                 @foreach($alumnos as $alumno)
                 '{{$alumno->cantidad}}',
@@ -59,8 +59,14 @@
                 'rgba(54, 162, 235, 1)',
                 'rgba(255, 206, 86, 1)',
                 'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
                 'rgba(153, 102, 255, 1)'
               ]
+
           }]
       },
       options: {
@@ -77,10 +83,18 @@
   var myChart2 = new Chart(ctx2, {
       type: 'doughnut',
       data: {
-          labels: ['Masculino', 'Femenino'],
+          labels: [
+            @foreach($sexos as $sexo)
+            '{{$sexo->sexo}}',
+            @endforeach
+          ],
           datasets: [{
               label: 'Genero',
-              data: [154, 180],
+              data: [
+                @foreach($sexos as $sexo)
+                '{{$sexo->cantidad}}',
+                @endforeach
+              ],
               backgroundColor: [
                 'rgba(255, 206, 86, 1)',
                 'rgba(153, 102, 255, 1)'
