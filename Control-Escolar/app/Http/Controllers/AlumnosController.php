@@ -17,7 +17,8 @@ class AlumnosController extends Controller
         $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
         $carreras= carrera::get(['id_carrera','nombre_carrera']);
         $cambio=-1;
-        return view('admin.listas.alumnos',compact(['personas','cambio','planes','carreras']));
+        $modif=false;
+        return view('admin.listas.alumnos',compact(['personas','cambio','planes','carreras','modif']));
     }
 
     public function liat_modificar ($ida) {
@@ -32,6 +33,48 @@ class AlumnosController extends Controller
         $carreras= carrera::get(['id_carrera','nombre_carrera']);
         return view('admin.modificar.usuarios',compact(['personas','planes','carreras']));
     }
+
+    public function modificar_alu ($ida,Request $req) {
+try {
+
+
+
+      $alumno_persona = [
+       'nombres' => $req->get('nombres'),
+       'apaterno' => $req->get('apaterno'),
+       'amaterno' => $req->get('amaterno'),
+       'fnaci' => $req->get('fnaci'),
+       'sexo' => $req->get('sexo'),
+       'email' => $req->get('email'),
+       'curp' => $req->get('curp')
+      ];
+
+      $alumno_alumno = [
+        'ncontrol' => $req->get('ncontrol'),
+        'password' => hash_hmac('sha256', $req->get('pass'), env('HASH_KEY')),
+        'semestre' => $req->get('semestre'),
+        'id_carrera' => $req->get('id_carrera'),
+        'plan_de_estudios' => $req->get('plan_de_estudios')
+      ];
+
+        persona::where("id_persona",$ida)->update($alumno_persona);
+        alumno::where("id_persona",$ida)->update($alumno_alumno);
+
+        $modif = true;
+
+      }  catch (\Exception $e) {
+        $modif = false;
+       }
+
+      $personas = persona::select('persona.id_persona','nombres','apaterno','amaterno','fnaci','email','ncontrol','rol','alumno.activo as activo','curp')
+        ->join('alumno','persona.id_persona','=','alumno.id_persona')
+        ->get();
+        $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
+        $carreras= carrera::get(['id_carrera','nombre_carrera']);
+        $cambio=-1;
+        return view('admin.listas.alumnos',compact(['personas','cambio','planes','carreras','modif']));
+    }
+
 
     public function lista_as ($idg,$idc,Request $request) {
       //idg
@@ -61,7 +104,8 @@ class AlumnosController extends Controller
       $personas = persona::select('persona.id_persona','nombres','apaterno','amaterno','fnaci','email','ncontrol','alumno.activo as activo')
         ->join('alumno','persona.id_persona','=','alumno.id_persona')->get();
       $cambio=1;
-        return view('admin.listas.alumnos',compact(['personas','cambio']));
+      $modif=false;
+        return view('admin.listas.alumnos',compact(['personas','cambio','modif']));
     }
 
     public function modificar_alumno(Request $request, $id){

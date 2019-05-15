@@ -84,6 +84,13 @@ swal("¡El usuario a cambiado de estado de manera correcta!", {
 });
 </script>
 @endif
+@if($modif)
+<script type="text/javascript">
+swal("¡El usuario se ha modificado correctamente!", {
+    icon: "success",
+});
+</script>
+@endif
   <script src="{{{asset('js/asigna.js')}}}"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>

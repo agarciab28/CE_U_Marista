@@ -9,10 +9,9 @@
 
 @section('content')
   <div class="container">
-    <form class="col  s12 m12" id="pb" action="{{route('admin_registrar_envio')}}" method="post" form enctype="multipart/form-data">
+    @foreach ($personas as $persona)
+    <form class="col  s12 m12" id="pb" action="{{route('modificar_alumnoc',[$persona->id_persona])}}" method="post" form enctype="multipart/form-data">
         {{ csrf_field() }}
-@foreach ($personas as $persona)
-
 
         <div class="row">
 
@@ -23,7 +22,7 @@
           </div>
 
           <div class="input-field col m4 s12 ">
-                  <input type="file" id="imagen" name="imagen" value="{{ $persona->imagen }}" class="dropify"  >
+                  <input type="file" id="imagen" name="imagen" class="dropify"  >
                   <!--<i class="material-icons prefix">account_circle</i>-->
 
               </div>
@@ -160,13 +159,13 @@
 
 
             <div class="input-field col m3 s12">
-                <button class="btn light-blue darken-4" type="submit">Registrar
+                <button class="btn light-blue darken-4" type="submit">Modificar
                     <i class="material-icons right">send</i>
                 </button>
             </div>
         </div>
-        @endforeach
     </form>
+      @endforeach
   </div>
 @endsection
 

@@ -22,7 +22,7 @@ class CreatePersonalTable extends Migration
             $table->boolean('activo');
             $table->timestamps();
 
-            $table->foreign('id_persona')->references('id_persona')->on('persona');
+            $table->foreign('id_persona')->references('id_persona')->on('persona')->onUpdate('cascade');
 
         });
     }
