@@ -113,30 +113,38 @@
   });
 
   var myChart3 = new Chart(ctx3, {
-      type: 'radar',
-      data: {
-          labels: ['Grupo 1', 'Grupo 2', 'Grupo 3', 'Grupo 4', 'Grupo 5'],
-          datasets: [{
-              label: 'Grupos',
-              data: [150, 135, 180, 53, 75],
-              backgroundColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)'
-              ]
-          }]
-      },
-      options: {
-          scales: {
-              yAxes: [{
-                  ticks: {
-                      beginAtZero: true
-                  }
-              }]
-          }
-      }
-  });
+    type: 'pie',
+    data: {
+        labels: [
+          @foreach($grupos as $grupo)
+          '{{$grupo->materia}}',
+          @endforeach
+        ],
+        datasets: [{
+            label: 'Grupos',
+            data: [
+              @foreach($grupos as $grupo)
+              '{{$grupo->cantidad}}',
+              @endforeach
+            ],
+            backgroundColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)'
+            ]
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
   </script>
 @endsection

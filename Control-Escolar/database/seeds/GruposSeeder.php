@@ -45,7 +45,7 @@ class GruposSeeder extends Seeder
         $grupo= new grupo();
         $grupo->seccion='A';
         $grupo->id_carrera='der';
-        $grupo->id_materia='DGD-1';
+        $grupo->id_materia='II-1';
         $grupo->id_prof='2';
         $grupo->periodo='agosto-diciembre';
         $grupo->save();
@@ -53,7 +53,7 @@ class GruposSeeder extends Seeder
         $grupo= new grupo();
         $grupo->seccion='A';
         $grupo->id_carrera='fis';
-        $grupo->id_materia='DGD-1';
+        $grupo->id_materia='TID-1';
         $grupo->id_prof='2';
         $grupo->periodo='agosto-diciembre';
         $grupo->save();
@@ -61,7 +61,7 @@ class GruposSeeder extends Seeder
         $grupo= new grupo();
         $grupo->seccion='A';
         $grupo->id_carrera='anim';
-        $grupo->id_materia='DGD-1';
+        $grupo->id_materia='QMC-1';
         $grupo->id_prof='2';
         $grupo->periodo='agosto-diciembre';
         $grupo->save();
@@ -113,7 +113,7 @@ class GruposSeeder extends Seeder
         $grupo->id_prof='2';
         $grupo->periodo='agosto-diciembre';
         $grupo->save();
-        
+
         $grupo= new grupo();
         $grupo->seccion='A';
         $grupo->id_carrera='neg';
@@ -122,6 +122,6 @@ class GruposSeeder extends Seeder
         $grupo->periodo='agosto-diciembre';
         $grupo->save();
 
-        
+
     }
 }
