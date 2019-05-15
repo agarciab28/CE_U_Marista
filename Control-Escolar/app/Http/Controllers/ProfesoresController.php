@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\persona;
 use App\Models\profesor;
 use App\Models\personal;
+use Illuminate\Support\Facades\Storage;
 
 class ProfesoresController extends Controller
 {
@@ -21,14 +22,15 @@ class ProfesoresController extends Controller
   }
 
   public function liat_modificar ($ida) {
-    $personas = persona::select('pe.username as usuario','persona.id_persona as persona','nombres','apaterno','amaterno','fnaci','email','pe.activo as activo','sexo','curp','pe.username as username','especialidad','ced_fiscal','nssoc')
+    $personas = persona::select('pe.username as usuario','persona.id_persona as persona','nombres','imagen','apaterno','amaterno','fnaci','email','pe.activo as activo','sexo','curp','pe.username as username','especialidad','ced_fiscal','nssoc')
       ->join('personal as pe','pe.id_persona','=','persona.id_persona')
       ->join('profesor as pr','pr.username','=','pe.username')
       ->where('persona.id_persona',$ida)
       ->get();
-      //dd($personas);
+      $imagen=$personas[0]->imagen;
+      $url=storage::url($imagen);
       $cambio=-1;
-      return view('admin.modificar.profesores',compact(['personas','cambio']));
+      return view('admin.modificar.profesores',compact(['personas','cambio','url']));
 
   }
 

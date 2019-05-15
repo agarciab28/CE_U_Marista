@@ -45,17 +45,17 @@
       <div class="subHeadPDF">DATOS DEL GRUPO</div>
       <div class="row">
         <div class="col s12 m6 l2 tabPDF">ALUMNO</div>
-        <div class="col s12 m6 l6" id="alumno">XXXX</div>
+        <div class="col s12 m6 l6" id="alumno">{{$datos->apaterno}} {{$datos->amaterno}} {{$datos->nombres}}</div>
         <div class="col s12 m6 l2 tabPDF">NO CTRL</div>
-        <div class="col s12 m6 l2" id="noctrl">XXXX</div>
+        <div class="col s12 m6 l2" id="noctrl">{{$ncontrol}}</div>
       </div>
       <div class="row">
         <div class="col s12 m4 l2 tabPDF">CARRERA</div>
-        <div class="col s12 m4 l2" id="carrera">XXXX</div>
+        <div class="col s12 m4 l2" id="carrera">{{$datos->carrera}}</div>
         <div class="col s12 m4 l2 tabPDF">SEMESTRE</div>
-        <div class="col s12 m4 l2" id="semestre">XXXX</div>
+        <div class="col s12 m4 l2" id="semestre">{{$datos->semestre}}</div>
         <div class="col s12 m4 l2 tabPDF">PERIODO</div>
-        <div class="col s12 m4 l2" id="periodo">XXXX</div>
+        <div class="col s12 m4 l2" id="periodo">{{$configuracion->periodo_actual}}</div>
       </div>
 
 
@@ -64,44 +64,31 @@
         <table class="striped" bgcolor="#cfd8dc" style="border: black 1px solid;">
           <thead>
             <tr>
+
                 <th class="tabPDF center blue-grey" style="color:white;">CLAVE MATERIA</th>
                 <th class="tabPDF center blue-grey" style="color:white;">MATERIA</th>
                 <th class="tabPDF center blue-grey" style="color:white;">PRIMER PARCIAL</th>
                 <th class="tabPDF center blue-grey" style="color:white;">SEGUNDO PARCIAL</th>
-                <th class="tabPDF center blue-grey" style="color:white;">TERCER PARCIAL</th>
+                <th class="tabPDF center blue-grey" style="color:white;">eXAMEN FINAL</th>
                 <th class="tabPDF center blue-grey" style="color:white;">FALTAS</th>
                 <th class="tabPDF center blue-grey" style="color:white;">Calificación final</th>
             </tr>
           </thead>
 
           <tbody>
+            @foreach($calificaciones as $calificacion)
             <tr>
-              <td class="bodyPDF center">ABC123</td>
-              <td class="bodyPDF center">CÁLCULO INTEGRAL</td>
-              <td class="bodyPDF center">80</td>
-              <td class="bodyPDF center">75</td>
-              <td class="bodyPDF center">85</td>
-              <td class="bodyPDF center">2</td>
-              <td class="bodyPDF center">80</td>
+
+              <td class="bodyPDF center">{{$calificacion->id_materia}}</td>
+              <td class="bodyPDF center">{{$calificacion->nombre_materia}}</td>
+              <td class="bodyPDF center">{{$calificacion->primer_parcial}}</td>
+              <td class="bodyPDF center">{{$calificacion->segundo_parcial}}</td>
+              <td class="bodyPDF center">{{$calificacion->examen_final}}</td>
+              <td class="bodyPDF center">{{$calificacion->total_faltas}}</td>
+              <td class="bodyPDF center">{{$calificacion->promedio_calificacion}}</td>
+
             </tr>
-            <tr>
-              <td class="bodyPDF center">ABC123</td>
-              <td class="bodyPDF center">ÉTICAPROGRAMACIÓN AVANZADA</td>
-              <td class="bodyPDF center">60</td>
-              <td class="bodyPDF center">55</td>
-              <td class="bodyPDF center">50</td>
-              <td class="bodyPDF center">1</td>
-              <td class="bodyPDF center">75</td>
-            </tr>
-            <tr>
-              <td class="bodyPDF center">ABC123</td>
-              <td class="bodyPDF center">ÉTICA</td>
-              <td class="bodyPDF center">60</td>
-              <td class="bodyPDF center">55</td>
-              <td class="bodyPDF center">50</td>
-              <td class="bodyPDF center">3</td>
-              <td class="bodyPDF center">75</td>
-            </tr>
+            @endforeach
             <tr style="border: black 1px solid;">
               <th class="tabPDF center blue-grey" style="color:white;"></th>
               <th class="tabPDF center blue-grey" style="color:white;">PROMEDIO</th>

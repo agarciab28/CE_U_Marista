@@ -54,7 +54,7 @@
 </div>
 
 <!--modal nueva materia-->
-<div id="modal_nueva" class="modal bottom-sheet">
+<div id="modal_nueva" class="modal modal-fixed-footer">
     <div class="modal-content">
         <form class="col  s12 m12" id="form_materia" action="{{route('registrar_materia')}}" method="post">
             {{ csrf_field() }}
@@ -66,19 +66,19 @@
 
             <div class="row" id="data_materia">
 
-                <div class="input-field col m2 s12 ">
+                <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="text" id="materia_id" name="id_materia" class="validate" required maxlength="35">
                     <label for="materia_id">clave de materia</label>
                 </div>
 
-                <div class="input-field col m3 s12 ">
+                <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="text" name="nombrec" id="nombrec" class="validate" required maxlength="35">
                     <label for="nombrec">Nombre de materia</label>
                 </div>
 
-                <div class="input-field col m2 s12 ">
+                <div class="col m4 s12 ">
                     <select class="" name="plan" id="plan">
                         @foreach($planes as $plan)
                         <option value="{{$plan->id_plan}}">{{$plan->nombre_plan}}</option>
@@ -89,13 +89,13 @@
 
 
 
-                <div class="input-field col m3 s12 ">
+                <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="number" id="materiasm" name="materiasm" class="validate" required maxlength="35">
                     <label for="materiasm">Horas de materia</label>
                 </div>
 
-                <div class="input-field col m2 s12">
+                <div class="input-field col m4 s12">
                     <button class="btn light-blue darken-4" type="submit" id="registrar_materia">Registrar Materia
                         <i class="material-icons right">send </i>
                     </button>
@@ -112,7 +112,7 @@
 </div>
 
 <!--modal modificar materia-->
-<div id="modal_modificar" class="modal bottom-sheet">
+<div id="modal_modificar" class="modal modal-fixed-footer">
     <div class="modal-content">
         <form class="col  s12 m12" id="form_mod_materia" action="{{route('edita_materia')}}" method="post">
             {{ csrf_field() }}
@@ -125,36 +125,36 @@
 
             <div class="row" id="data_materia">
 
-                <div class="input-field col m2 s12 ">
+                <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="text" id="materia_mod_id" name="mod_id_materia"  placeholder="" readonly required maxlength="35">
-                    <label for="mod_id_materia">Clave de materia</label>
+                    <span for="mod_id_materia">Clave de materia</span>
                 </div>
 
-                <div class="input-field col m3 s12 ">
+                <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="text" name="nombrec" id="mod_nombrec" class="validate" required maxlength="35">
-                    <label for="mod_nombrec">Nombre de materia</label>
+                    <span for="mod_nombrec">Nombre de materia</span>
                 </div>
 
-                <div class="input-field col m2 s12 ">
+                <div class="input-field col m4 s12 ">
                     <select class="" name="plan" id="mod_plan">
                         @foreach($planes as $plan)
                         <option value="{{$plan->id_plan}}">{{$plan->nombre_plan}}</option>
                         @endforeach
                     </select>
-                    <label for="mod_plan">Plan de estudios</label>
+                    <span for="mod_plan">Plan de estudios</span>
                 </div>
 
 
 
-                <div class="input-field col m3 s12 ">
+                <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="number" id="mod_materiasm" name="materiasm" class="validate" required maxlength="35">
-                    <label for="mod_materiasm">Horas de materia</label>
+                    <span for="mod_materiasm">Horas de materia</span>
                 </div>
 
-                <div class="input-field col m2 s12">
+                <div class="input-field col m4 s12">
                     <button class="btn light-blue darken-4" type="submit" id="mod_registrar_materia">Modificar Materia
                         <i class="material-icons right">send </i>
                     </button>

@@ -22,7 +22,8 @@ class calendarioController extends Controller
       $evento->color=$request->color;
       $evento->save();
 
-      return view("admin.calendario");
+      $configuracion = configuracion::get()->first();
+      return view('admin.calendario',compact('configuracion'));
     }
 
     public function showCalendario(){
