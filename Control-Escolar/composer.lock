@@ -1153,7 +1153,7 @@
             ],
             "description": "HTML and Form Builders for the Laravel Framework",
             "homepage": "https://laravelcollective.com",
-            "time": "2019-01-25T18:42:58+00:00"
+            "time": "2019-03-03T19:50:25+00:00"
         },
         {
             "name": "lcobucci/jwt",
