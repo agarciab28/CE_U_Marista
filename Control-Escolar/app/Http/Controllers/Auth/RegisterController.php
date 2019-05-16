@@ -203,9 +203,7 @@ class RegisterController extends Controller
         $insertaPersona->save();
 
         //sacar el id_persona del men que acamos de ingresar
-        $id=persona::select('id_persona')->where('curp',$alumno['CURP'])->get()->first();
-
-        //crear objeto alumno
+        $id=persona::select('id_persona')->where('curp',$insertaPersona->curp)->get()->first();
         $insertaAlumno=new alumno();
         $insertaAlumno->id_persona=$id->id_persona;
         $insertaAlumno->ncontrol=$alumno['No Ctrl'];
@@ -216,13 +214,13 @@ class RegisterController extends Controller
         $insertaAlumno->num_tel_fam=$alumno['Num Familiar'];
         $insertaAlumno->password=hash_hmac('sha256', $alumno['Contraseña'], env('HASH_KEY'));
         $insertaAlumno->activo=$alumno['Activo'];
-
-        //insertar en db
         $insertaAlumno->save();
 
-        return redirect()->route('admin_lalumnos');
+
+
       //fin foreach
       }
+      return redirect()->route('admin_lalumnos');
 
     }
 
