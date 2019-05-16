@@ -144,6 +144,12 @@ Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('el
   Route::post('/asig','asignarController@guardar')->name('admin_asignar_grupo');
 
   Route::get('/grupos/elimina/{grupo}','gruposController@eliminagrupos')->name('elimina_grupo');
+  
+  Route::get('/admin/horarios{idg}','horarioController@showhorarios')->name('admin_show_horarios');
+
+  Route::get('/admin/lista_alumnos/{idg}','gruposController@showlista')->name('admin_show_lista');
+
+  Route::get('/admin/lista/eliminar/{idg}/{ncontrol}','gruposController@eraselista')->name('admin_eliminaral');
 
   Route::get('/listas/grupos','gruposController@showGrupos')->name('admin_lgrupos');
 
