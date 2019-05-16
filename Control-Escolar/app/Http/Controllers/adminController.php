@@ -13,6 +13,4 @@ class adminController extends Controller
       ->get()->first();
       return view('admin.misdatos',compact('datos'));
     }
-
-
 }

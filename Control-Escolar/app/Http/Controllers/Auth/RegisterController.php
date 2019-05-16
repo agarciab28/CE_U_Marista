@@ -16,6 +16,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use League\Csv\Reader;
+use League\Csv\Statement;
 
 class RegisterController extends Controller
 {
@@ -161,5 +163,16 @@ class RegisterController extends Controller
       return view('admin.registrar',compact(['registro','carreras','planes']));
     }
 
+    public function regAlumnoCSV(){
+      $csv = Reader::createFromPath('../storage/app/files/Alumno.csv', 'r');
 
+      $csv->setHeaderOffset(0);
+
+      $stmt = (new Statement());
+
+      $records = $stmt->process($csv);
+
+      $response = json_encode($csv);
+      echo $response;
+    }
 }
