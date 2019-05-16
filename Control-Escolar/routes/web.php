@@ -199,6 +199,8 @@ Route::group(["prefix" => 'docente','middleware'=>'profelogin'], function(){
   //calificaciones finales grupo
   Route::get('/pdfF','genPDFController@pdfF_docente')->name('docente_pdfF');
 
+  Route::get('/lista','Auth\RegisterController@regAlumnoCSV')->name('regAlumnoCSV');
+
 });
 
 // Rutas Coordinador

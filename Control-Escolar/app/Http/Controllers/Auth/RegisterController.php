@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use League\Csv\Reader;
 use League\Csv\Statement;
+use League\Csv\CharsetConverter;
+use League\Csv\Writer;
 
 class RegisterController extends Controller
 {
@@ -164,16 +166,13 @@ class RegisterController extends Controller
     }
 
     public function regAlumnoCSV(){
-      $csv = Reader::createFromPath('../storage/app/files/Alumno.csv', 'r');
+      $csv = Reader::createFromPath('../storage/app/files/Alumno.csv', 'r')->setHeaderOffset(0);
+      $csv->setOutputBOM(Reader::BOM_UTF8);
 
-      $csv->setHeaderOffset(0);
+      $csv->addStreamFilter('convert.iconv.ISO-8859-15/UTF-8');
+      $json = json_encode($csv);
 
-      $stmt = (new Statement());
-
-      $records = $stmt->process($csv);
-
-      $response = json_encode($csv);
-      echo $response;
+      dd($json);
     }
 
     public function registrarExcel($json){
