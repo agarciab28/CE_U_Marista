@@ -18,8 +18,8 @@ class calificaciones extends Model
   ];
 
   protected $casts = [
-    "primer_parcial" => "float"
-    "segundo_parcial" => "float"
+    "primer_parcial" => "float",
+    "segundo_parcial" => "float",
     "examen_final" => "float"
   ];
 }

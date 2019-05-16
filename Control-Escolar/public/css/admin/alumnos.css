@@ -9,6 +9,9 @@ input, textarea, select {
     font-weight: inherit;
     *font-size: 100%;
 }
+.contenedor{
+  text-align: center;
+}
 
 user agent stylesheet
 select:not(:-internal-list-box) {
@@ -39,7 +42,7 @@ select {
     border-radius: 5px;
 }
 user agent stylesheet
-input, textarea, select, button {
+input, textarea, button {
     text-rendering: auto;
     color: initial;
     letter-spacing: normal;

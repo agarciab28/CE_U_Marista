@@ -10,7 +10,7 @@ class carrera extends Model
 
   protected $fillable = [
     "id_carrera","nombre_carrera","rvoe","total_creditos",
-    "fecha"
+    "fecha","activo"
   ];
 
   protected $hidden = [

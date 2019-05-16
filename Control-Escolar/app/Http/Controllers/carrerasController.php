@@ -7,7 +7,7 @@ use App\Models\carrera;
 
 class carrerasController extends Controller
 {
-    public function listaGrupos(){
+    public function listaCarreras(){
       $carreras = carrera::get();
       $registro=false;
       return view("admin.carreras",compact(["carreras","registro"]));
@@ -22,11 +22,44 @@ class carrerasController extends Controller
         $carrera->total_creditos=$request->creditos;
         $carrera->fecha=$request->fechar;
         $carrera->save();
+        $registro=true;
       } catch (\Exception $e) {
         dd($e);
         $registro=false;
       }
-      $registro=true;
+
       return view("admin.carreras",compact(["carreras","registro"]));
+    }
+    public function registro(Request $request){
+      dd($request);
+      $carrera= new carrera();
+
+    }
+
+    public function elimina($carrera){
+      $seleccion=carrera::select('activo')->where('id_carrera',$carrera)->first();
+
+      if($seleccion->activo>0){
+        carrera::where('id_carrera',$carrera)->update(['activo'=>0]);
+
+      }else{
+        carrera::where('id_carrera',$carrera)->update(['activo'=>1]);
+      }
+      $carreras = carrera::get();
+      //dd($personas);
+      $registro=true;
+      return view('admin.carreras',compact(['carreras','registro']));
+    }
+    public function editar(Request $request){
+      carrera::where('id_carrera',$request->id_carrera)->update([
+        'nombre_carrera'=>$request->nombrec,
+        'rvoe'=>$request->cvervoe,
+        'total_creditos'=>$request->creditos,
+        'fecha'=>$request->fechar
+      ]);
+      $carreras = carrera::get();
+      //dd($personas);
+      $registro=true;
+      return view('admin.carreras',compact(['carreras','registro']));
     }
 }

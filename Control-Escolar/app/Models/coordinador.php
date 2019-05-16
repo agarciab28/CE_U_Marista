@@ -9,7 +9,7 @@ class coordinador extends Model
   protected $table = "coordinador";
 
   protected $fillable = [
-    "id_coordinador","id_carrera","id_persona","password"
+    "id_coordinador","id_carrera","username"
   ];
 
   protected $hidden = [

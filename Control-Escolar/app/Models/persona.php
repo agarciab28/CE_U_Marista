@@ -8,10 +8,10 @@ class persona extends Model
 {
     protected $table ="persona";
     protected $fillable = [
-        'rol', 'nombres','apaterno','amaterno',
+        'curp','rol', 'nombres','apaterno','amaterno',
         'fnaci','sexo','email','calle','num_int',
         'num_ext','colonia','codigo_postal','ciudad',
-        'estado','num_tel','num_cel'
+        'estado','num_tel','num_cel','imagen'
     ];
 
     /**

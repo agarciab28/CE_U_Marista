@@ -12,6 +12,11 @@
 @section('title', 'Lista de Coordinadores')
 
 @section('content')
+  <div class="contenedor row">
+    <div class="col m6 push-m3 s12">
+      <h5>Lista de Coordinadores</h5>
+    </div>
+  </div>
   <div class="container">
     <table id="example" class="responsive-table striped" style="width:100%">
           <thead>
@@ -31,8 +36,8 @@
               <td>{{$persona->nombres}} {{$persona->apaterno}} {{$persona->amaterno}}</td>
               <td>{{$persona->fnaci}}</td>
               <td>{{$persona->email}}</td>
-              <td> <a href="{{ route('admin_musuarios') }}" class="btn">Modificar</a> </td>
-              <td> <a href="#" class="btn red">Deshabilitar</a> </td>
+              <td> <a href="{{route('modificar_coor_lst',[$persona->persona])}}" class="btn">Modificar</a> </td>
+              <td> <a href="{{ route('eliminaCoordinador',['usuario'=>$persona->usuario]) }}" class="btn {{($persona->activo>0)?' green':'red'}}">{{($persona->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>
 
           </tr>
           @endforeach
@@ -43,6 +48,21 @@
 
 @section('scripts')
   <script src="{{{ asset('js/datatables.js') }}}"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  @if($cambio==1)
+  <script type="text/javascript">
+  swal("¡El usuario a cambiado de estado de manera correcta!", {
+      icon: "success",
+  });
+  </script>
+  @endif
+  @if($modif)
+  <script type="text/javascript">
+  swal("¡El usuario se ha modificado correctamente!", {
+      icon: "success",
+  });
+  </script>
+  @endif
 
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>

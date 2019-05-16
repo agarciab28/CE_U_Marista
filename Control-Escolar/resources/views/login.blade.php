@@ -50,7 +50,7 @@
                    {{ csrf_field() }}
                   <div class="row">
                     <div class="input-field col s12 l8 push-l2 pull-l2   ">
-                      <input id="personal_user" type="text" name ="id_admin" class="validate">
+                      <input id="personal_user" type="text" name ="username" class="validate">
                       <label for="personal_user"><i class="fas fa-user" style="margin-right:0.5em;"></i>Nombre de Usuario</label>
                     </div>
                     <div class="input-field col s12 l8 push-l2 pull-l2   ">

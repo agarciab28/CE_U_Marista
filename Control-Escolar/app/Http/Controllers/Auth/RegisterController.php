@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Illuminate\Http\Request;
 use App\User;
 use App\Models\carrera;
 use App\Models\persona;
@@ -9,11 +9,15 @@ use App\Models\alumno;
 use App\Models\coordinador;
 use App\Models\profesor;
 use App\Models\materia;
+use App\Models\personal;
+use App\Models\plan_de_estudios;
 use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use League\Csv\Reader;
+use League\Csv\Statement;
 
 class RegisterController extends Controller
 {
@@ -52,11 +56,11 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        /*return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-        ]);
+        ])*/;
     }
 
     /**
@@ -67,139 +71,108 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' =>($data['password']),
-        ]);
+        //
     }
-    public function registro(){
-
-      $datos = $this->validate(request(),[
-        'rol'=>'string',
-        'nombres'=>'string',
-        'apaterno'=>'string',
-        'amaterno'=>'string',
-        'sexo'=>'string',
-        'email'=>'string',
-        'fnaci'=>'string',
-        'curp'=>'string',
-        'ncontrol'=>'string|nullable',
-        'id_carrera'=>'string|nullable',
-        'semestre'=>'string|nullable',
-        'plan_de_estudios'=>'string|nullable',
-        'id_coordinador'=>'string|nullable',
-        'id_carrera_coordinador'=>'string|nullable',
-        'ced_fiscal'=>'string|nullable',
-        'nssoc'=>'string|nullable',
-        'id_prof'=>'string|nullable',
-        'especialidad_profe'=>'string|nullable',
-        'cedulap'=>'string|nullable',
-        'nssocp'=>'string|nullable'
-      ]);
+    public function registro(Request $request){
       try {
-        $persona=new persona();
-        $persona->rol=$datos['rol'];
-        $persona->nombres=$datos['nombres'];
-        $persona->apaterno=$datos['apaterno'];
-        $persona->amaterno=$datos['amaterno'];
-        $persona->sexo=$datos['sexo'];
-        $persona->email=$datos['email'];
-        $persona->fnaci=$datos['fnaci'];
-        $persona->curp=$datos['curp'];
-        $persona->save();
+        $file=$request->file('imagen');
+        $nombre=time().$file->getClientOriginalName();
 
-        $id_persona=persona::where('curp',$datos['curp'])->get(['id_persona'])->first();
+                $persona=new persona();
+                $persona->rol=$request->rol;
+                $persona->nombres=$request->nombres;
+                $persona->apaterno=$request->apaterno;
+                $persona->amaterno=$request->amaterno;
+                $persona->sexo=$request->sexo;
+                $persona->email=$request->email;
+                $persona->fnaci=$request->fnaci;
+                $persona->curp=$request->curp;
+                $persona->imagen=$nombre;
+                $persona->save();
+                $file->storeAs('public', $nombre);
+              //\Storage::disk('local')->put($nombre,\File::get($file));
+        $id_persona=persona::where('curp',$request->curp)->get(['id_persona'])->first();
 
-        if($datos['rol']=='Alumno'){
+        $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
+
+        if($request->rol=='Alumno'){
+
           $alumno= new alumno();
-          $alumno->id_persona=$id_persona['id_persona'];
-          $alumno->ncontrol=$datos['ncontrol'];
-          $alumno->id_carrera=$datos['id_carrera'];
-          $alumno->semestre=$datos['semestre'];
-          $alumno->plan_de_estudios=$datos['plan_de_estudios'];
-          $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
+          $alumno->id_persona=$id_persona->id_persona;
+          $alumno->ncontrol=$request->ncontrol;
+          $alumno->id_carrera=$request->id_carrera;
+          $alumno->semestre=$request->semestre;
+          $alumno->plan_de_estudios=$request->plan_de_estudios;
+          $alumno->password=hash_hmac('sha256', $request->pass, env('HASH_KEY'));
+          $alumno->activo='1';
           $alumno->save();
-        }else if($datos['rol']=='Coordinador'){
-          $coordinador= new coordinador();
-          $coordinador->id_persona=$id_persona['id_persona'];
-          $coordinador->id_coordinador=$datos['id_coordinador'];
-          $coordinador->id_carrera=$datos['id_carrera_coordinador'];
-          $coordinador->ced_fiscal=$datos['ced_fiscal'];
-          $coordinador->nssoc=$datos['nssoc'];
-          $coordinador->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
-          $coordinador->save();
-        }else if($datos['rol']=='Profesor'){
-          $profesor = new profesor();
-          $profesor->id_persona=$id_persona['id_persona'];
-          $profesor->id_prof=$datos['id_prof'];
-          $profesor->especialidad=$datos['especialidad_profe'];
-          $profesor->ced_fiscal=$datos['cedulap'];
-          $profesor->nssoc=$datos['nssocp'];
-          $profesor->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
-          $profesor->save();
+        }else {
+
+          $personal=new personal();
+          if($request->rol=='Coordinador'){
+            $personal->username=$request->username;
+            $personal->ced_fiscal=$request->ced_fiscal;
+            $personal->nssoc=$request->nssoc;
+          }else if($request->rol=='Profesor'){
+            $personal->username=$request->usernamep;
+            $personal->ced_fiscal=$request->cedulap;
+            $personal->nssoc=$request->nssocp;
+          }
+          $personal->password=hash_hmac('sha256', $request->pass, env('HASH_KEY'));
+          $personal->id_persona=$id_persona->id_persona;
+          $personal->activo='1';
+          $personal->save();
+
+          if($request->rol=='Coordinador'){
+
+            $coordinador= new coordinador();
+            $coordinador->id_carrera=$request->id_carrera_coordinador;
+            $coordinador->username=$request->username;
+            $coordinador->save();
+
+          }else if($request->rol=='Profesor'){
+
+
+            $profesor = new profesor();
+            $profesor->especialidad=$request->especialidad_profe;
+            $profesor->username=$request->usernamep;
+            $profesor->save();
+          }
         }
-      } catch (\Exception $e) {
-        $registro=false;
-        $carreras= carrera::get(['id_carrera','nombre_carrera']);
-        return view('admin.registrar',compact(['registro','carreras']));
-      }
-      $registro=true;
-      $carreras= carrera::get(['id_carrera','nombre_carrera']);
-      return view('admin.registrar',compact(['registro','carreras']));
 
-    }
-    public function showForm(){
-      $carreras= carrera::get(['id_carrera','nombre_carrera']);
-      $registro=false;
-      return view('admin.registrar',compact(['registro','carreras']));
-    }
-    //Seccion de registro de grupos
-    public function registroG(){
-      $datos = $this->validate(request(),[
-        'idgrupo'=>'string',
-        'seccion'=>'string',
-        'carrera'=>'string',
-        'materia'=>'string',
-        'profesor'=>'string',
-        'periodo'=>'string',
-      ]);
-      $id_materia= DB::table('materia')->select('id_materia')->where('nombre_materia',$datos['materia'])->get();
- 
-      try {
-        
-        DB::insert(
-          'insert into grupo (id_grupo,seccion,id_carrera,id_materia,id_prof,periodo)
-          values (?,?,?,?,?,?)',[
-
-            $datos['idgrupo'],
-            $datos['seccion'],
-            $datos['carrera'],
-            $datos['materia'],
-            $datos['profesor'],
-            $datos['periodo'],
-          ]);
-          $registro=true;
       } catch (\Exception $e) {
         dd($e);
-          $registro=false;
+
+        $registro=false;
+        $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
+        $carreras= carrera::get(['id_carrera','nombre_carrera']);
+        return view('admin.registrar',compact(['registro','carreras','planes']));
       }
+
+
+      $registro=true;
       $carreras= carrera::get(['id_carrera','nombre_carrera']);
-      return view('admin.asignar',compact(['registro','carreras']));
-    }
-    public function showFormG(){
-      $carreras= carrera::get(['id_carrera','nombre_carrera']);
-      $profesor=persona::select('persona.id_persona','nombres','apaterno','amaterno','id_prof')
-      ->join('profesor','persona.id_persona','=','profesor.id_persona')->get();
-      $materia=materia::get(['id_materia','nombre_materia']);
-      $registro=false;
-      return view('admin.grupos',compact(['registro','carreras','profesor','materia']));
+      return view('admin.registrar',compact(['registro','carreras','planes']));
+
     }
 
-    public function gruposProf(){
+    public function showForm(){
       $carreras= carrera::get(['id_carrera','nombre_carrera']);
+      $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
       $registro=false;
-      return view('docente.grupos',compact(['registro','carreras']));
+      return view('admin.registrar',compact(['registro','carreras','planes']));
     }
 
+    public function regAlumnoCSV(){
+      $csv = Reader::createFromPath('../storage/app/files/Alumno.csv', 'r');
+
+      $csv->setHeaderOffset(0);
+
+      $stmt = (new Statement());
+
+      $records = $stmt->process($csv);
+
+      $response = json_encode($csv);
+      echo $response;
+    }
 }

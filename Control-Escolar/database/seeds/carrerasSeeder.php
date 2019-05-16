@@ -27,16 +27,16 @@ class carrerasSeeder extends Seeder
 
       $carrera = new carrera();
       $carrera->id_carrera="anim";
-      $carrera->nombre_carrera="Animacion Digital";
-      $carrera->rvoe="2001";
+      $carrera->nombre_carrera="Licenciatura en Animación Digital Video juegos";
+      $carrera->rvoe="20130269";
       $carrera->total_creditos="200";
       $carrera->fecha="2010-06-01";
       $carrera->save();
 
       $carrera = new carrera();
       $carrera->id_carrera="arq";
-      $carrera->nombre_carrera="Arquitectura";
-      $carrera->rvoe="2002";
+      $carrera->nombre_carrera="Licenciatura en Arquitectura";
+      $carrera->rvoe="20130270";
       $carrera->total_creditos="200";
       $carrera->fecha="2010-06-01";
       $carrera->save();
@@ -44,8 +44,8 @@ class carrerasSeeder extends Seeder
 
       $carrera = new carrera();
       $carrera->id_carrera="der";
-      $carrera->nombre_carrera="Derecho";
-      $carrera->rvoe="2003";
+      $carrera->nombre_carrera="Licenciatura en Derecho";
+      $carrera->rvoe="20130271";
       $carrera->total_creditos="200";
       $carrera->fecha="2010-06-01";
       $carrera->save();
@@ -53,8 +53,8 @@ class carrerasSeeder extends Seeder
 
       $carrera = new carrera();
       $carrera->id_carrera="fis";
-      $carrera->nombre_carrera="Fisioterapia y Rehabilitacion";
-      $carrera->rvoe="2004";
+      $carrera->nombre_carrera="Licenciatura en Fisioterapia y Rehabilitacion";
+      $carrera->rvoe="20122400";
       $carrera->total_creditos="200";
       $carrera->fecha="2010-06-01";
       $carrera->save();
@@ -62,8 +62,8 @@ class carrerasSeeder extends Seeder
 
       $carrera = new carrera();
       $carrera->id_carrera="for";
-      $carrera->nombre_carrera="Formacion catequetica";
-      $carrera->rvoe="2005";
+      $carrera->nombre_carrera="Licenciatura en Formacion Catequetica";
+      $carrera->rvoe="20121315";
       $carrera->total_creditos="200";
       $carrera->fecha="2010-06-01";
       $carrera->save();
@@ -71,24 +71,24 @@ class carrerasSeeder extends Seeder
 
       $carrera = new carrera();
       $carrera->id_carrera="ind";
-      $carrera->nombre_carrera="Industrial y sistemas";
-      $carrera->rvoe="2000";
+      $carrera->nombre_carrera="Ingenieria Industrial y en Sistemas Organizacionales";
+      $carrera->rvoe="20130272";
       $carrera->total_creditos="200";
       $carrera->fecha="2010-06-01";
       $carrera->save();
 
       $carrera = new carrera();
       $carrera->id_carrera="mer";
-      $carrera->nombre_carrera="Mercadotecnia y publicidad";
-      $carrera->rvoe="2006";
+      $carrera->nombre_carrera="Licenciatura en Mercadotecnia y Publicidad";
+      $carrera->rvoe="20130270";
       $carrera->total_creditos="200";
       $carrera->fecha="2010-06-01";
       $carrera->save();
 
       $carrera = new carrera();
       $carrera->id_carrera="neg";
-      $carrera->nombre_carrera="Negocios Internacionales";
-      $carrera->rvoe="2007";
+      $carrera->nombre_carrera="Licenciatura en Negocios Internacionales";
+      $carrera->rvoe="20130274";
       $carrera->total_creditos="200";
       $carrera->fecha="2010-06-01";
       $carrera->save();

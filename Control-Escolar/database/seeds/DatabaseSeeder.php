@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         $this->call(personasSeeder::class);
+        $this->call(personalSeeder::class);
         $this->call(adminSeeder::class);
         $this->call(carrerasSeeder::class);
         $this->call(alumnoSeeder::class);
@@ -20,7 +21,12 @@ class DatabaseSeeder extends Seeder
         $this->call(MateriasSeeder::class);
         $this->call(profesoresSeeder::class);
         $this->call(coordinadoresSeeder::class);
-        $this->call(grupos::class);
+        $this->call(GruposSeeder::class);
+        $this->call(eventosSeeder::class);
+        $this->call(CalificacionesSeeder::class);
+        $this->call(AulasSeeder::class);
+        $this->call(ConfiguracionSeeder::class);
+        $this->call(kardexSeeder::class);
 
     }
 }

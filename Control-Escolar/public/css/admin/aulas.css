@@ -1,0 +1,34 @@
+#aulas {
+    background-color: #FFB500;
+}
+
+a {
+    color: rgba(8, 58, 99, 1);
+}
+
+
+
+#aula:focus+label,
+#edifio:focus+label,
+#tipo:focus+label {}
+
+#aula:focus,
+#edificio:focus,
+#tipo:focus {
+    border-bottom: 1px solid #003865;
+    box-shadow: none;
+}
+
+.nav-wrapper.x {
+    background-color: #fff;
+}
+
+.contenedor{
+  text-align: center;
+}
+
+th, td{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}

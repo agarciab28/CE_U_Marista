@@ -49,6 +49,12 @@ a{
   background-color: rgba(0, 56, 101, 0.9);
 }
 
+.menu-icon{
+	margin-right:1.5em;
+	margin-left:0.5em;
+	font-size:1.5em;
+}
+
 .footer{
 	margin-top: 4em;
 	font-size: 10px;
@@ -142,4 +148,17 @@ h5.breadcrumbs-header {
     height: 32px;
     width: 32px;
     border-radius: 50%;
+}
+
+
+ span.date-text{
+	 color: white;
+ }
+
+ .select-month input {
+    width: 80px !important;
+}
+
+.modal {
+    height: 90% !important;
 }

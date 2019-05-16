@@ -1,0 +1,23 @@
+.container{
+  text-align: center;
+  align-items: center;
+}
+
+.center-elements{
+	margin-top: 10em;
+}
+
+#grupos{
+  background-color: #FFB500;
+}
+a{
+  color: rgba(8,58,99,1);
+}
+
+.contenedor{
+  text-align: center;
+}
+
+.botonModal{
+  width: 100%;
+}
