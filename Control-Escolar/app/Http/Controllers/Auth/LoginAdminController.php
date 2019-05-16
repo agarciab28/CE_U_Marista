@@ -143,7 +143,10 @@ class LoginAdminController extends Controller
           return $this->authenticated($request, $this->guard()->user())
                   ?: redirect()->intended(route('coordinador_home'));
         }
-    
+        elseif($datos->rol=='alumno'){
+          return $this->authenticated($request, $this->guard()->user())
+                  ?: redirect()->intended(route('alumno_home'));
+        }
 
 
     }
