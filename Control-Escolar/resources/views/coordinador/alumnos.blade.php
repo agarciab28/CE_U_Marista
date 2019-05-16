@@ -21,20 +21,22 @@
     <table id="example" class="responsive-table striped" style="width:100%">
       <thead>
         <tr>
-          <th>Nombre de Usuario</th>
+          <th>Numero de Control</th>
           <th>Nombre Completo</th>
           <th>Fecha de Nacimiento</th>
           <th>Correo Electronico</th>
         </tr>
       </thead>
       <tbody>
+      @foreach($personas as $persona)
         <tr>
-          <td class="numero">sdfgsgf</td>
-          <td>sdfgsd</td>
-          <td>sdfgdsf</td>
-          <td>sdfgsdfd</td>
+          <td class="numero">{{$persona->ncontrol}}</td>
+          <td>{{$persona->nombres}}{{$persona->apaterno}}{{$persona->amaterno}}</td>
+          <td>{{$persona->fnaci}}</td>
+          <td>{{$persona->email}}</td>
 
         </tr>
+        @endforeach
       </tbody>
     </table>
   </div>

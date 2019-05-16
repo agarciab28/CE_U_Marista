@@ -296,10 +296,6 @@ $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','nomb
     ->where('l.id_grupo',$request->id_grupo);
    return view('docente.opciones.alumnos',compact(['alumnos']));
  }
- public function calificacionesFinalesGrupo(Request $request){
-
-   return view('docente.opciones.calif_finales');
- }
  public function showlista($idg){
 $listag=lista_grupo::select('ncontrol','nombres','id_grupo')
   ->where('id_grupo',$idg)
@@ -315,5 +311,23 @@ $listag=lista_grupo::select('ncontrol','nombres','id_grupo')
     ->where('id_grupo',$idg)
     ->get();
     return view('admin.listas.alumnosxgrupo',compact(['listag']));
+   }
+
+   public function grupos_coordinador($idp){
+   $idc=persona::select('id_carrera')
+   ->join('personal as pe','pe.id_persona','=','persona.id_persona')
+   ->join('coordinador as co','co.username','=','pe.username')
+   ->where('persona.id_persona',$idp)
+   ->value('id_carrera');
+
+    $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','nombre_carrera','periodo','nombres','apaterno','amaterno','grupo.activo as activo','c.id_carrera as id_carrera')
+    ->join('carrera as c','c.id_carrera','=','grupo.id_carrera')
+    ->join('materia as m','m.id_materia','=','grupo.id_materia')
+    ->join('profesor as p','p.id_prof','=','grupo.id_prof')
+    ->join('personal as per','per.username','p.username')
+    ->join('persona as pe','pe.id_persona','=','per.id_persona')
+    ->where('c.id_carrera',$idc)
+    ->get();
+    return view('coordinador.grupos',compact(['grupos']));
    }
 }

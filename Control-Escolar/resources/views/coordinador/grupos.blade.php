@@ -14,21 +14,23 @@
       <h5>Grupos de Carrera</h5>
     </div>
   </div>
+  {{ csrf_field() }}
   <div class="section container">
     <div class="row">
+    @foreach($grupos as $grupo)
         <div class="col s12 m4">
             <div class="card card-grupo">
                 <div class="card-content black-text z-depth-3">
                     <span class="card-title">Grupo:</span>
-                    <p>Materia</p>
-                    <p>Horario</p>
-                    <p>Profesor</p>
+                    <p>{{$grupo->nombre_materia}}</p>
+                    <p>{{$grupo->nombres}} {{$grupo->aparterno}} {{$grupo->amaterno}}</p>
                 </div>
                 <div class="card-action">
                     <a href="#modal1" class="modal-trigger"><i class="fas fa-cog"></i> Opciones</a>
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
   </div>
 
@@ -40,27 +42,16 @@
           <p>
               <div class="collection">
                 <form class="" action="" method="post">
-                  @csrf
-                  <input type="text" name="id_grupo" value="" hidden>
-                  <button type="submit" class="collection-item black-text botonModal">Consultar</button>
-                </form>
-                <form class="" action="{{ route('docente_calif') }}" method="post">
-                  @csrf
-                  <input type="text" name="id_grupo" value="" hidden>
-                  <button type="submit" class="collection-item black-text botonModal">Calificaciones Finales</button>
-                </form>
+                {{ csrf_field() }}
                 <form class="" action="" method="post">
-                  @csrf
-                  <input type="text" name="id_grupo" value="" hidden>
-                  <button type="submit" class="collection-item black-text botonModal">Método de evaluación</button>
-                </form>
-                <form class="" action="" method="post">
-                  @csrf
+                {{ csrf_field() }}
+
                   <input type="text" name="id_grupo" value="" hidden>
                   <button type="submit" class="collection-item black-text botonModal">Obtener acta de calificaciones</button>
                 </form>
                 <form class="" action="" method="post">
-                  @csrf
+                {{ csrf_field() }}
+
                   <input type="text" name="id_grupo" value="" hidden>
                   <button type="submit" class="collection-item black-text botonModal">Generar PDF</button>
                 </form>
