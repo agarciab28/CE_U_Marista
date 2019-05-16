@@ -40,7 +40,7 @@
             <tr>
                 <th>{{$bitacora->id_mov}}</th>
                 <th>{{$bitacora->usuario}}</th>
-                <td>{{$bitacora->tipoderol}}</th>
+                <th>{{$bitacora->tipoderol}}</th>
                 <th>{{$bitacora->fecha}}</th>
                 <th>{{$bitacora->tipodemov}}</th>
                 <th>{{$bitacora->tablaafectada}}</th>
@@ -52,19 +52,6 @@
                 </tr>
                     @endforeach
 
-                    <div id="modal5" class="modal bottom-sheet">
-                        <div class="modal-content">
-                            <h4>Bitácora de movimientos</h4>
-                            <ul class="collection">
-                                <li class="collection-item avatar">
-                                    <i class="mdi-file-folder circle"></i>
-                                    <span class="title">Detalle</span>
-                                    <table id="example" class="responsive-table striped" style="width:100%"></table>
-                                    <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </td>
 
             </tr>
