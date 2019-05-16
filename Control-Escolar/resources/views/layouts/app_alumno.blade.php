@@ -58,7 +58,7 @@
 
 
     <li id="home"><a class="white-text" href="{{ route('alumno_home') }}"><i class="fas fa-home white-text menu-icon"></i>Inicio</a></li>
-    <li id="grupos"><a class="white-text" href="{{ route('horario_lgrupos',[session('id_persona')]) }}"><i class="fas fa-users white-text menu-icon"></i>Grupos</a></li>
+    <li id="grupos"><a class="white-text" href="{{ route('horario_lgrupos',[session('idp')]) }}"><i class="fas fa-users white-text menu-icon"></i>Grupos</a></li>
     <li id="boletas"><a class="white-text" href="{{ route('alumno_boletas') }}"><i class="fas fa-address-card white-text menu-icon"></i>Boletas</a></li>
     <li id="kardex"><a class="white-text" href="{{ route('alumno_kardex') }}"><i class="far fa-address-card white-text menu-icon"></i>Kardex</a></li>
     <li id="misdatos"><a class="white-text" href="{{ route('alumn_datos') }}"><i class="fas fa-user-cog white-text menu-icon"></i>Mis Datos</a></li>
