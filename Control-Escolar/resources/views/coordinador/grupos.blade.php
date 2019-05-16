@@ -35,36 +35,6 @@
   </div>
 
 
-  <!--modal-->
-  <div id="modal1" class="modal bottom-sheet">
-      <div class="modal-content">
-          <h4>Grupo</h4>
-          <p>
-              <div class="collection">
-                <form class="" action="" method="post">
-                {{ csrf_field() }}
-                <form class="" action="" method="post">
-                {{ csrf_field() }}
-
-                  <input type="text" name="id_grupo" value="" hidden>
-                  <button type="submit" class="collection-item black-text botonModal">Obtener acta de calificaciones</button>
-                </form>
-                <form class="" action="" method="post">
-                {{ csrf_field() }}
-
-                  <input type="text" name="id_grupo" value="" hidden>
-                  <button type="submit" class="collection-item black-text botonModal">Generar PDF</button>
-                </form>
-              </div>
-          </p>
-      </div>
-      <div class="modal-footer">
-          <a href="#" class="modal-close waves-effect waves-green btn-flat">
-              <i class="material-icons blue-text text-darken-4"> fullscreen_exit </i>
-              <b> Salir </b>
-            </a>
-      </div>
-  </div>
 
 
 
