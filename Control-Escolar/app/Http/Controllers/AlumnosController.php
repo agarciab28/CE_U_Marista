@@ -21,6 +21,19 @@ class AlumnosController extends Controller
         $modif=false;
         return view('admin.listas.alumnos',compact(['personas','cambio','planes','carreras','modif']));
     }
+    public function listacoord ($idp) {
+      $idc=persona::select('id_carrera')
+      ->join('personal as pe','pe.id_persona','=','persona.id_persona')
+      ->join('coordinador as co','co.username','=','pe.username')
+      ->where('persona.id_persona',$idp)
+      ->value('id_carrera');
+      $personas = persona::select('persona.id_persona','nombres','apaterno','amaterno','fnaci','email','ncontrol','rol','alumno.activo as activo','curp')
+        ->join('alumno','persona.id_persona','=','alumno.id_persona')
+        ->where('id_carrera',$idc)
+        ->get();
+        return view('coordinador.alumnos',compact(['personas']));
+        
+    }
 
     public function liat_modificar ($ida) {
       $personas = persona::select('persona.id_persona','nombres','imagen','apaterno','amaterno','fnaci','email','ncontrol','rol','alumno.activo as activo','curp','sexo',
