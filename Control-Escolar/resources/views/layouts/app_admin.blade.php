@@ -33,7 +33,6 @@
             <div class="section">
               <ul class="left hide-on-med-and-down">
                 @if (session('username'))
-
                 <li class="chip">
                   <img src="{{{ session('url')}}}" alt="Contact Person">
                   Bienvenido {{session('nombre')}}
