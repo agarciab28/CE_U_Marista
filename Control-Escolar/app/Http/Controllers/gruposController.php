@@ -297,10 +297,13 @@ $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','p.id
 
  public function describeGruposProf(Request $request){
    //dd($request);
-   $alumnos=alumno::select('l.ncontrol as ncontrol','p.nombres as nombres','p.apaterno as apaterno','p.amaterno as amaterno')
-    ->join('lista_grupo as l','l.ncontrol','=','alumno.ncontrol')
-    ->join('persona as p','p.id_persona','=','alumno.id_persona')
-    ->where('l.id_grupo',$request->id_grupo);
+   $alumnos=lista_grupo::select('p.nombres as nombres','p.apaterno as apaterno','p.amaterno as amaterno')
+    ->join('alumno as a','a.ncontrol','=','lista_grupo.ncontrol')
+    ->join('persona as p','p.id_persona','=','a.id_persona')
+    ->join('grupo as g','g.id_grupo','=','lista_grupo.id_grupo')
+    ->join('profesor as pr','pr.id_prof','=','g.id_prof')
+    ->join('personal as pe','pe.username','pr.username')
+    ->where('pe.username',session('username'))->get();
    return view('docente.opciones.alumnos',compact(['alumnos']));
  }
 

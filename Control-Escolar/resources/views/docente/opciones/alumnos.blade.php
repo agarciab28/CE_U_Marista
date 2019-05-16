@@ -25,17 +25,18 @@
             </tr>
         </thead>
         <tbody>
-
+          @foreach($alumnos as $alumno)
             <tr>
-              @foreach($alumnos as $alumno)
+
                 <td> {{$alumno->nombres}} {{$alumno->apaterno}} {{$alumno->amaterno}}</td>
                 <td> <input id="cal_1" name="cal_1" type="text" class=""> </td>
                 <td> <input id="cal_2" name="cal_2" type="text" class=""> </td>
                 <td> <input id="examen" name="examen" type="text" class=""> </td>
                 <td> <input id="faltas" name="faltas" type="text" class=""></td>
                 <td><a href="#" class="btn">guardar</a></td>
-              @endforeach
+
             </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
