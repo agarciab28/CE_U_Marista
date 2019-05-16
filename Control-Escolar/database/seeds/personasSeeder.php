@@ -34,7 +34,7 @@ class personasSeeder extends Seeder
         $persona->estado='Michoacan';
         $persona->num_tel='443333333';
         $persona->num_cel='443412121';
-        $persona->imagen='jumtest.jpg';
+        $persona->imagen='io.jpg';
         $persona->save();
 
         $persona= new persona();
@@ -182,7 +182,7 @@ class personasSeeder extends Seeder
         $persona->estado='Michoacan';
         $persona->num_tel='443321313';
         $persona->num_cel='443321121';
-        $persona->imagen='jumtest.jpg';
+        $persona->imagen='io.jpg';
         $persona->save();
 
         $persona= new persona();

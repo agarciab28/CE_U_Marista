@@ -40,7 +40,17 @@ function modificar_materia(id){
 
 //Modal para modificar grupo
 function modificar_grupo(id){
-  document.getElementById('idgrupo').value=id;
+a = id.split(';');
+
+  document.getElementById('idgrupo').value=a[0];
+    document.getElementById('seccion').value=a[1];
+          document.getElementById('carr_spn').innerHTML=a[2];
+      document.getElementById('carrera').value=a[3];
+          document.getElementById('mat_spn').innerHTML=a[4];
+        document.getElementById('materia').value=a[5];
+                document.getElementById('prf_spn').innerHTML=a[6];
+          document.getElementById('profesor').value=a[7];
+            document.getElementById('periodo').value=a[8];
 }
 
 //Modal para modificar plan de estudios
