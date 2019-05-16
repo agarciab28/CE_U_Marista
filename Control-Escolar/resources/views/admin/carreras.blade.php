@@ -45,7 +45,7 @@
           <td>{{$carrera->nombre_carrera}}</td>
           <td>{{$carrera->rvoe}}</td>
           <td>{{$carrera->fecha}}</td>
-          <td> <a onclick="modificar_carrera('{{$carrera->id_carrera}}')" href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Nombre de carrera, clave RVOE, número de créditos de la materia o fecha de registro">Modificar</a> </td>
+          <td> <a onclick="modificar_carrera('{{$carrera->id_carrera}};{{$carrera->nombre_carrera}};{{$carrera->total_creditos}};{{$carrera->rvoe}};{{$carrera->fecha}}')" href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Nombre de carrera, clave RVOE, número de créditos de la materia o fecha de registro">Modificar</a> </td>
           <td> <a href="{{route('eliminaCarrera',['carrera'=>$carrera->id_carrera])}}" class="btn {{($carrera->activo>0)?' green':'red'}} tooltipped" data-position="bottom" data-tooltip="Cambiar estatus de la carrera">{{($carrera->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>
         </tr>
         @endforeach
@@ -122,27 +122,27 @@
         <div class="input-field col m4 s12 ">
           <!--<i class="material-icons prefix">account_circle</i>-->
           <input type="text" name="id_carrera" id="mod_idcarrera" class="validate" placeholder="" readonly required maxlength="35">
-          <label for="mod_idcarrera">ID Carrera</label>
+          <span for="mod_idcarrera">ID Carrera</span>
         </div>
         <div class="input-field col m4 s12 ">
           <!--<i class="material-icons prefix">account_circle</i>-->
           <input type="text" name="nombrec" id="mod_nombrec" class="validate" required maxlength="100">
-          <label for="mod_nombrec">Nombre de carrera</label>
+          <span for="mod_nombrec">Nombre de carrera</span>
         </div>
         <div class="input-field col m4 s12 ">
           <!--<i class="material-icons prefix">account_circle</i>-->
           <input type="text" name="creditos" id="mod_creditos" class="validate" required maxlength="35">
-          <label for="mod_creditos">Creditos</label>
+          <span for="mod_creditos">Creditos</span>
         </div>
         <div class="input-field col m4 s12 ">
           <!--<i class="material-icons prefix">account_circle</i>-->
           <input type="text" name="cvervoe" id="mod_cvervoe" class="validate" required maxlength="35">
-          <label for="mod_cvervoe">Clave RVOE</label>
+          <span for="mod_cvervoe">Clave RVOE</span>
         </div>
         <div class="input-field col m4 s12 ">
           <!--<i class="material-icons prefix">account_circle</i>-->
           <input type="date" id="mod_fechar" name="fechar" class="validate datepicker" required maxlength="35">
-          <label for="mod_fechar">Fecha de registro</label>
+          <span for="mod_fechar">Fecha de registro</span>
         </div>
         <div class="row">
         </div>

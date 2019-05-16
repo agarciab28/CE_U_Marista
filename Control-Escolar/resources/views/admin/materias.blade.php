@@ -44,7 +44,7 @@
                     <td>{{$materia->nombre_materia}}</td>
                     <td>{{$materia->plan}}</td>
                     <td>{{$materia->horas_materia}}</td>
-                    <td> <a onclick="modificar_materia('{{$materia->id_materia}}')" href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Nombre de la materia, clave, plan de estudios al que corresponde o número de horas de la materia al semestre">Modificar</a> </td>
+                    <td> <a onclick="modificar_materia('{{$materia->id_materia}};{{$materia->nombre_materia}};{{$materia->id_plan}};{{$materia->horas_materia}};{{$materia->plan}}')" href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Nombre de la materia, clave, plan de estudios al que corresponde o número de horas de la materia al semestre">Modificar</a> </td>
                     <td> <a href="{{route('eliminaMateria',['materia'=>$materia->id_materia])}}" class="btn {{($materia->activo>0)?' green':'red'}} tooltipped" data-position="bottom" data-tooltip="Cambiar el estado activo de la materia">{{($materia->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>
                 </tr>
                 @endforeach
@@ -143,7 +143,8 @@
                         <option value="{{$plan->id_plan}}">{{$plan->nombre_plan}}</option>
                         @endforeach
                     </select>
-                    <span for="mod_plan">Plan de estudios</span>
+                    <span for="mod_plan">Plan actual: <div class="" id='plan_act'></div>
+                    </span>
                 </div>
 
 

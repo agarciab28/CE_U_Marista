@@ -9,7 +9,7 @@ use App\Models\plan_de_estudios;
 class materiasController extends Controller
 {
     public function showMaterias(){
-      $materias=materia::select('materia.id_materia as id_materia','nombre_materia','p.nombre_plan as plan','horas_materia' ,'materia.activo as activo')
+      $materias=materia::select('materia.id_materia as id_materia','nombre_materia','p.id_plan as id_plan','p.nombre_plan as plan','horas_materia' ,'materia.activo as activo')
       ->join('plan_de_estudios as p','p.id_plan','=','materia.id_plan')
       ->get();
       $planes=plan_de_estudios::select('id_plan','nombre_plan')->get();
@@ -24,7 +24,7 @@ class materiasController extends Controller
       $materia->horas_materia=$request->materiasm;
       $materia->save();
 
-      $materias=materia::select('materia.id_materia as id_materia','nombre_materia','p.nombre_plan as plan','horas_materia','materia.activo as activo')
+      $materias=materia::select('materia.id_materia as id_materia','nombre_materia','p.id_plan as id_plan','p.nombre_plan as plan','horas_materia' ,'materia.activo as activo')
       ->join('plan_de_estudios as p','p.id_plan','=','materia.id_plan')
       ->get();
       $planes=plan_de_estudios::select('id_plan','nombre_plan')->get();

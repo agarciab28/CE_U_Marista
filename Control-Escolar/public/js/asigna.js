@@ -8,13 +8,35 @@ function abreModal(id){
 
 //Modal para modificar carreras
 function modificar_carrera(id){
+
+arr = id.split(';');
+
   var x=document.getElementById('mod_idcarrera');
-  x.value=id;
+  x.value=arr[0];
+  var x=document.getElementById('mod_nombrec');
+  x.value=arr[1];
+  var x=document.getElementById('mod_creditos');
+  x.value=arr[2];
+  var x=document.getElementById('mod_cvervoe');
+  x.value=arr[3];
+  var x=document.getElementById('mod_fechar');
+  x.value=arr[4];
+
+
+
+
 }
 
 //Modal para modificar materia
 function modificar_materia(id){
-  document.getElementById('materia_mod_id').value=id;
+  arr = id.split(';');
+alert(arr[2]);
+  document.getElementById('materia_mod_id').value=arr[0];
+    document.getElementById('mod_nombrec').value=arr[1];
+      document.getElementById('mod_plan').value=arr[2];
+        document.getElementById('mod_materiasm').value=arr[3];
+          document.getElementById('plan_act').innerHTML=arr[4];
+
 }
 
 //Modal para modificar grupo
