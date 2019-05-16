@@ -56,7 +56,7 @@
 </div>
 
 <!--modal nueva aula-->
-<div id="modal_nueva" class="modal bottom-sheet">
+<div id="modal_nueva" class="modal modal-fixed-footer">
     <div class="modal-content">
         <form class="col  s12 m12" id="form_aula" action="{{route('nueva_aula')}}" method="post">
           @csrf
@@ -99,7 +99,7 @@
     </div>
 </div>
 
-<div id="modal_modificar" class="modal bottom-sheet">
+<div id="modal_modificar" class="modal modal-fixed-footer">
     <div class="modal-content">
         <form class="col  s12 m12" id="form_mod_aula" action="{{route('edita_aula')}}" method="post">
           @csrf

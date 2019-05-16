@@ -55,7 +55,7 @@
 </div>
 
 <!--modal nueva carrera-->
-<div id="modal_nueva" class="modal bottom-sheet">
+<div id="modal_nueva" class="modal modal-fixed-footer">
   <div class="modal-content">
     <form class="col  s12 m12" id="form_carrera" action="{{route('admin_carreras_registro')}}" method="post">
       {{ csrf_field() }}
@@ -87,7 +87,7 @@
         </div>
         <div class="input-field col m4 s12 ">
           <!--<i class="material-icons prefix">account_circle</i>-->
-          <input type="text" id="fechar" name="fechar" class="validate" required maxlength="35">
+          <input type="date" id="fechar" name="fechar" class="validate datepicker" required maxlength="35">
           <label for="fechar">Fecha de registro</label>
         </div>
         <div class="row">
@@ -109,7 +109,7 @@
 </div>
 
 <!-- Modal modificar-->
-<div id="modal_modificar" class="modal bottom-sheet">
+<div id="modal_modificar" class="modal modal-fixed-footer">
   <div class="modal-content">
     <form class="col  s12 m12" id="form_mod_carrera" action="{{route('edita_carrera')}}" method="post">
       {{ csrf_field() }}
@@ -141,7 +141,7 @@
         </div>
         <div class="input-field col m4 s12 ">
           <!--<i class="material-icons prefix">account_circle</i>-->
-          <input type="text" id="mod_fechar" name="fechar" class="validate" required maxlength="35">
+          <input type="date" id="mod_fechar" name="fechar" class="validate datepicker" required maxlength="35">
           <label for="mod_fechar">Fecha de registro</label>
         </div>
         <div class="row">

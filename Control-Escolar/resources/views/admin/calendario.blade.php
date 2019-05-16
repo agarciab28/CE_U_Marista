@@ -32,7 +32,7 @@
     <div id="full-calendar">
       <div class="row">
         <div class="col s12 m4 l3">
-          <div id="task-modal" class="modal bottom-sheet">
+          <div id="task-modal" class="modal modal-fixed-footer">
             <div class="modal-content">
               <div class="row">
                 <div class="col m6 push-m3 s12" style="text-align: center;">
@@ -44,7 +44,7 @@
                 <form class="col s12" id="form_evento" action="{{route('evento_nuevo')}}" method="post">
                   {{ csrf_field() }}
                   <div class="row">
-                    <div class="input-field col m4 s12">
+                    <div class="input-field col m6 s12">
                       <input id="event" type="text" name="nombre" class="validate">
                       <label for="event">Nombre del evento</label>
                     </div>
@@ -56,7 +56,7 @@
                       <label for="fecha2">Fecha de cierre </label>
                       <input type="text" name="fin" class="datepicker" id="fend">
                     </div>
-                    <div id="color" class="input-field col m2 s12">
+                    <div id="color" class="input-field col m6 s12">
                       <select name="color">
                         <option value="#f44336">Color rojo</option>
                         <option value="#e91e63">Color rosa</option>
@@ -132,7 +132,7 @@
           <td>{{$configuracion->updated_at}}</td>
           <td> <a href="#modal5" class="waves-effect waves-light btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Actualizar la configuración del periodo escolar actual">Modificar</a>
 
-            <div id="modal5" class="modal bottom-sheet">
+            <div id="modal5" class="modal modal-fixed-footer">
               <div class="modal-content">
                 <form class="col  s12 m12" id="form_materia" action="{{route('modifica_configuracion')}}" method="post">
                   {{ csrf_field() }}
@@ -145,31 +145,31 @@
 
                   <div class="row">
 
-                    <div class="input-field col m3 s12 ">
+                    <div class="input-field col m4 s12 ">
                       <!--<i class="material-icons prefix">account_circle</i>-->
                       <input type="text" id="periodo_actual" name="periodo_actual" class="validate" value="{{$configuracion->periodo_actual}}" required>
                       <label for="periodo_actual">Periodo Actual</label>
                     </div>
 
-                    <div class="input-field col m3 s12 ">
+                    <div class="input-field col m4 s12 ">
                       <!--<i class="material-icons prefix">date_range</i>-->
                       <label for="fecha_inicio">Fecha de inicio </label>
                       <input type="text" name="finicio" id="fecha_inicio"  class="datepicker" value="{{$configuracion->fecha_inicio}}" >
                     </div>
 
-                    <div class="input-field col m3 s12 ">
+                    <div class="input-field col m4 s12 ">
                       <!--<i class="material-icons prefix">date_range</i>-->
                       <label for="fecha_terminacion">Fecha de terminación </label>
                       <input type="text" name="fterm" class="datepicker" id="fecha_terminacion" value="{{$configuracion->fecha_terminacion}}">
                     </div>
 
-                    <div class="input-field col m3 s12 ">
+                    <div class="input-field col m4 s12 ">
                       <!--<i class="material-icons prefix">account_circle</i>-->
                       <input type="text" id="director" name="director" class="validate" value="{{$configuracion->director}}" required>
                       <label for="director">Director</label>
                     </div>
 
-                    <div class="input-field col m3 s12 ">
+                    <div class="input-field col m4 s12 ">
                       <!--<i class="material-icons prefix">account_circle</i>-->
                       <input type="text" id="jefe_control" name="jefe_control" class="validate" value="{{$configuracion->Jefe_control_escolar}}" required>
                       <label for="jefe_control">Jefe de Control Escolar</label>
@@ -177,11 +177,9 @@
 
 
 
-                    <div class="row">
 
-                    </div>
 
-                    <div class="input-field col m2 s12">
+                    <div class="input-field col m4 s12">
                       <button class="btn light-blue darken-4" type="submit" id="actualizar_periodo">Actualizar
                         <i class="material-icons right">send </i>
                       </button>

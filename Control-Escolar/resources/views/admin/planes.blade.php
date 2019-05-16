@@ -55,7 +55,7 @@
 </div>
 
 <!--modal nuevo plan-->
-<div id="modal_nueva" class="modal bottom-sheet">
+<div id="modal_nueva" class="modal modal-fixed-footer">
     <div class="modal-content">
         <form class="col  s12 m12" id="form_plan" action="{{route('registrar_plan')}}" method="post">
             {{ csrf_field() }}
@@ -69,13 +69,13 @@
 
             <div class="row" id="data_plan">
 
-                <div class="input-field col m2 s12 ">
+                <div class="input-field col m6 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="text" id="plan_id" name="id_plan" class="validate" required maxlength="35">
                     <label for="plan_id">clave de plan</label>
                 </div>
 
-                <div class="input-field col m3 s12 ">
+                <div class="input-field col m6 s12 ">
                     <input type="text" name="nombrec" id="nombrec" class="validate" required maxlength="100">
                     <label for="nombrec">Nombre de plan de estudios</label>
                 </div>
@@ -89,7 +89,7 @@
                     <label for="carrera">Carrera</label>
                 </div>
 
-                <div class="input-field col m3 s12 ">
+                <div class="input-field col m4 s12 ">
                     <input type="text" name="fecha" class="datepicker" id="fecha">
                     <label for="fecha">Fecha</label>
                 </div>
@@ -111,7 +111,7 @@
 </div>
 
 <!--modal modificar plan-->
-<div id="modal_modificar" class="modal bottom-sheet">
+<div id="modal_modificar" class="modal modal-fixed-footer">
     <div class="modal-content">
         <form class="col  s12 m12" id="form_mod_plan" action="{{route('edita_plan')}}" method="post">
             {{ csrf_field() }}
@@ -125,13 +125,13 @@
 
             <div class="row" id="data_plan">
 
-                <div class="input-field col m2 s12 ">
+                <div class="input-field col m6 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="text" id="mod_plan_id" name="id_plan" placeholder="" readonly required maxlength="35">
                     <label for="mod_plan_id">Clave de plan</label>
                 </div>
 
-                <div class="input-field col m3 s12 ">
+                <div class="input-field col m6 s12 ">
                     <input type="text" name="nombrec" id="mod_nombrec" class="validate" required maxlength="100">
                     <label for="mod_nombrec">Nombre de plan de estudios</label>
                 </div>
@@ -145,7 +145,7 @@
                     <label for="mod_carrera">Carrera</label>
                 </div>
 
-                <div class="input-field col m3 s12 ">
+                <div class="input-field col m4 s12 ">
                     <input type="text" name="fecha" class="datepicker" id="mod_fecha">
                     <label for="mod_fecha">Fecha</label>
                 </div>

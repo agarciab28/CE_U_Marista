@@ -78,7 +78,7 @@
                     <label for="nombrec">Nombre de materia</label>
                 </div>
 
-                <div class="col m4 s12 ">
+                <div class="input-field col m4 s12 ">
                     <select class="" name="plan" id="plan">
                         @foreach($planes as $plan)
                         <option value="{{$plan->id_plan}}">{{$plan->nombre_plan}}</option>
@@ -89,13 +89,13 @@
 
 
 
-                <div class="input-field col m4 s12 ">
+                <div class="input-field col m6 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="number" id="materiasm" name="materiasm" class="validate" required maxlength="35">
                     <label for="materiasm">Horas de materia</label>
                 </div>
 
-                <div class="input-field col m4 s12">
+                <div class="input-field col m6 s12">
                     <button class="btn light-blue darken-4" type="submit" id="registrar_materia">Registrar Materia
                         <i class="material-icons right">send </i>
                     </button>
@@ -148,13 +148,13 @@
 
 
 
-                <div class="input-field col m4 s12 ">
+                <div class="input-field col m6 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="number" id="mod_materiasm" name="materiasm" class="validate" required maxlength="35">
                     <span for="mod_materiasm">Horas de materia</span>
                 </div>
 
-                <div class="input-field col m4 s12">
+                <div class="input-field col m6 s12">
                     <button class="btn light-blue darken-4" type="submit" id="mod_registrar_materia">Modificar Materia
                         <i class="material-icons right">send </i>
                     </button>

@@ -58,7 +58,7 @@
   </table>
 </div>
 <!--modal modificar grupos-->
-<div id="modal_modificar" class="modal bottom-sheet">
+<div id="modal_modificar" class="modal modal-fixed-footer">
   <div class="modal-content">
     <div class="row">
       <form class="col  s12 m12" id="form_mod_grupos" action="{{route('edita_grupo')}}" method="post">
@@ -111,7 +111,7 @@
         </div>
 
         <div class="input-field col m3 s12">
-          <button class="btn light-blue darken-4" type="submit">Registrar
+          <button class="btn light-blue darken-4" type="submit">Modificar
             <i class="material-icons right">send </i>
           </button>
         </div>
