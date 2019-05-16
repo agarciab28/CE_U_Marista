@@ -263,7 +263,7 @@ Route::group(["prefix" => 'alumno','middleware'=>'alumnologin'], function(){
 
   //boleta de calificaciones
   Route::get('/pdfA','genPDFController@pdfA_al')->name('alumno_pdfA');
-  //kárdex de calificaciones
+  //kárdex de calificacionesreg
   Route::get('/pdfB','genPDFController@pdfB_al')->name('alumno_pdfB');
 });
 
