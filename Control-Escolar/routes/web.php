@@ -225,7 +225,7 @@ Route::group(["prefix" => 'coordinador','middleware'=>'coordinadorlogin'], funct
  //ver mis datos
  Route::get('/coordinador/datos','coordController@showDatos')->name('coord_datos');
  //editar datos
- Route::post('coordinador/datos','coorController@editar')->name('coord_modifica_datos');
+ Route::post('coordinador/datos','coordController@editar')->name('coord_modifica_datos');
  //listar alumnos
  Route::get('coordinador/listas/alumnos/{idp}', 'AlumnosController@listacoord')->name('coord_lista_alumnos');
   //calificaciones - grupo - alumno - persona
@@ -265,6 +265,12 @@ Route::group(["prefix" => 'alumno','middleware'=>'alumnologin'], function(){
 
   //boleta de calificaciones
   Route::get('/pdfA','genPDFController@pdfA_al')->name('alumno_pdfA');
+  //ruta horario
+  
+  //editar datos
+  Route::post('alumno/datos/modifica','alumnController@editar')->name('alumn_modifica_datos');
+  //ruta mis datos
+  Route::get('/alumno/datos','alumnController@showDatos')->name('alumn_datos');
   //kárdex de calificaciones
   Route::get('/pdfB','genPDFController@pdfB_al')->name('alumno_pdfB');
 });

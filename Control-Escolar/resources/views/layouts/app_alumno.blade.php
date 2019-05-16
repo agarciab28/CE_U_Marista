@@ -27,8 +27,15 @@
         <div class="row">
           <div class="col s12">
             <a href="#" data-target="sidenav-1" class="left sidenav-trigger hide-on-medium-and-up"><i class="material-icons">menu</i></a>
-            <a class="left black-text show-on-small-and-up">Bienvenido</a>
-            <div class="section ">
+            <!--<a class="left black-text show-on-small-and-up">Bienvenido {{session('nombre')}}</a>-->
+
+            <div class="section">
+              <ul class="left hide-on-med-and-down">
+                <li class="chip">
+                  <img src="{{{ session('url')}}}" alt="Contact Person">
+                  Bienvenido {{session('nombre')}}
+                </li>
+              </ul>
               <ul class="right hide-on-med-and-down">
                 <li>
                   <a href="/cerrar_sesion" class="waves-effect waves-light btn right show-on-medium-and-up hide-on-small-only">Cerrar Sesion</a>
@@ -54,7 +61,7 @@
     <li id="grupos"><a class="white-text" href="{{ route('alumno_grupos') }}"><i class="fas fa-users white-text menu-icon"></i>Grupos</a></li>
     <li id="boletas"><a class="white-text" href="{{ route('alumno_boletas') }}"><i class="fas fa-address-card white-text menu-icon"></i>Boletas</a></li>
     <li id="kardex"><a class="white-text" href="{{ route('alumno_kardex') }}"><i class="far fa-address-card white-text menu-icon"></i>Kardex</a></li>
-    <li id="misdatos"><a class="white-text" href="{{ route('alumno_datos') }}"><i class="fas fa-user-cog white-text menu-icon"></i>Mis Datos</a></li>
+    <li id="misdatos"><a class="white-text" href="{{ route('alumn_datos') }}"><i class="fas fa-user-cog white-text menu-icon"></i>Mis Datos</a></li>
     <li id="cerrar_sesion"><a class="show-on-small hide-on-med-and-up white-text" href="/">Cerrar Sesion</a></li>
 
     <div class="contenedor">
