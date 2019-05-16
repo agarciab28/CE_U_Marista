@@ -113,7 +113,7 @@
     public function showBoleta(){
       //aquí se va a obtener el ncontrol de la variable de sesión $ncontrol=session('ncontrol');
       //en lo mientras el ejemplo va a ser con el men con ncontrol 1111 que está en los seeders
-      $ncontrol='1111';
+      $ncontrol=session('ncontrol');
       //También ya hay una variable de sesión con el nombre pero como todavía no funciona chido
       //el back en alumno lo wa sacar manual
       $datos=persona::select('nombres','apaterno','amaterno','semestre','nombre_carrera as carrera')

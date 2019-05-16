@@ -292,7 +292,6 @@ $modif=false;
    ->join('profesor as p','p.id_prof','=','grupo.id_prof')
    ->join('materia as m','m.id_materia','=','grupo.id_materia')
    ->where('p.username','=',session('username'))->get();
-
    return view('docente.grupos',compact('grupos_de_profesor'));
  }
 
