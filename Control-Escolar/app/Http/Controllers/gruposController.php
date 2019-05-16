@@ -76,42 +76,78 @@ class gruposController extends Controller
       if (horario::where('aula_lu', '=', $request->aula_lunes)->count() > 0) {
         $message="No se pudo registrar el grupo hay un empalme en el horario y grupo";
         echo "<script type='text/javascript'>alert('$message');</script>";
-        showFormGrupo();
+        $carreras= carrera::get(['id_carrera','nombre_carrera']);
+        $materias=materia::get(['id_materia','nombre_materia']);
+        $profesores=profesor::select('nombres','apaterno','amaterno','id_prof')
+         ->join('personal as pe','pe.username','=','profesor.username')
+         ->join('persona as pers','pers.id_persona','=','pe.id_persona')
+         ->get();
+        return view('admin.grupos',compact(['carreras','materias','profesores']));
       }
     }
     if (horario::where('hora_i_ma', '=', $request->hora_ini_martes)->count() > 0) {
       if (horario::where('aula_ma', '=', $request->aula_martes)->count() > 0) {
         $message="No se pudo registrar el grupo hay un empalme en el horario y grupo";
         echo "<script type='text/javascript'>alert('$message');</script>";
-        showFormGrupo();
+        $carreras= carrera::get(['id_carrera','nombre_carrera']);
+        $materias=materia::get(['id_materia','nombre_materia']);
+        $profesores=profesor::select('nombres','apaterno','amaterno','id_prof')
+         ->join('personal as pe','pe.username','=','profesor.username')
+         ->join('persona as pers','pers.id_persona','=','pe.id_persona')
+         ->get();
+        return view('admin.grupos',compact(['carreras','materias','profesores']));
       }
     }
     if (horario::where('hora_i_mi', '=', $request->hora_ini_miercoles)->count() > 0) {
       if (horario::where('aula_mi', '=', $request->aula_miercoles)->count() > 0) {
         $message="No se pudo registrar el grupo hay un empalme en el horario y grupo";
         echo "<script type='text/javascript'>alert('$message');</script>";
-        showFormGrupo();
+        $carreras= carrera::get(['id_carrera','nombre_carrera']);
+        $materias=materia::get(['id_materia','nombre_materia']);
+        $profesores=profesor::select('nombres','apaterno','amaterno','id_prof')
+         ->join('personal as pe','pe.username','=','profesor.username')
+         ->join('persona as pers','pers.id_persona','=','pe.id_persona')
+         ->get();
+        return view('admin.grupos',compact(['carreras','materias','profesores']));
       }
     }
     if (horario::where('hora_i_ju', '=', $request->hora_ini_jueves)->count() > 0) {
       if (horario::where('aula_ju', '=', $request->aula_jueves)->count() > 0) {
         $message="No se pudo registrar el grupo hay un empalme en el horario y grupo";
         echo "<script type='text/javascript'>alert('$message');</script>";
-        showFormGrupo();
+        $carreras= carrera::get(['id_carrera','nombre_carrera']);
+        $materias=materia::get(['id_materia','nombre_materia']);
+        $profesores=profesor::select('nombres','apaterno','amaterno','id_prof')
+         ->join('personal as pe','pe.username','=','profesor.username')
+         ->join('persona as pers','pers.id_persona','=','pe.id_persona')
+         ->get();
+        return view('admin.grupos',compact(['carreras','materias','profesores']));
       }
     }
     if (horario::where('hora_i_vi', '=', $request->hora_ini_viernes)->count() > 0) {
       if (horario::where('aula_vi', '=', $request->aula_viernes)->count() > 0) {
         $message="No se pudo registrar el grupo hay un empalme en el horario y grupo";
         echo "<script type='text/javascript'>alert('$message');</script>";
-        showFormGrupo();
+        $carreras= carrera::get(['id_carrera','nombre_carrera']);
+   $materias=materia::get(['id_materia','nombre_materia']);
+   $profesores=profesor::select('nombres','apaterno','amaterno','id_prof')
+    ->join('personal as pe','pe.username','=','profesor.username')
+    ->join('persona as pers','pers.id_persona','=','pe.id_persona')
+    ->get();
+   return view('admin.grupos',compact(['carreras','materias','profesores']));
       }
     }
     if (horario::where('hora_i_sa', '=', $request->hora_ini_sabado)->count() > 0) {
       if (horario::where('aula_sa', '=', $request->aula_sabado)->count() > 0) {
         $message="No se pudo registrar el grupo hay un empalme en el horario y grupo";
         echo "<script type='text/javascript'>alert('$message');</script>";
-        showFormGrupo();
+        $carreras= carrera::get(['id_carrera','nombre_carrera']);
+        $materias=materia::get(['id_materia','nombre_materia']);
+        $profesores=profesor::select('nombres','apaterno','amaterno','id_prof')
+         ->join('personal as pe','pe.username','=','profesor.username')
+         ->join('persona as pers','pers.id_persona','=','pe.id_persona')
+         ->get();
+        return view('admin.grupos',compact(['carreras','materias','profesores']));
       }
     }
      $horario->save();
@@ -122,7 +158,7 @@ class gruposController extends Controller
     showFormGrupo();
    }
 
-   $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','nombre_carrera','periodo','nombres','apaterno','amaterno','c.id_carrera as id_carrera')
+   $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','nombre_carrera','periodo','nombres','apaterno','amaterno','grupo.activo as activo','c.id_carrera as id_carrera')
    ->join('carrera as c','c.id_carrera','=','grupo.id_carrera')
    ->join('materia as m','m.id_materia','=','grupo.id_materia')
    ->join('profesor as p','p.id_prof','=','grupo.id_prof')
@@ -130,12 +166,12 @@ class gruposController extends Controller
    ->join('persona as pe','pe.id_persona','=','per.id_persona')
    ->get();
    $carrerasl= carrera::get(['id_carrera','nombre_carrera']);
-   $materiasl=materia::get(['id_materia','nombre_materia']);
-   $profesoresl=profesor::select('nombres','apaterno','amaterno','id_prof')
-    ->join('personal as pe','pe.username','=','profesor.username')
-    ->join('persona as pers','pers.id_persona','=','pe.id_persona')
-    ->get();
-   return view('admin.listas.grupos',compact(['grupos','carrerasl','materiasl','profesoresl']));
+  $materiasl=materia::get(['id_materia','nombre_materia']);
+  $profesoresl=profesor::select('nombres','apaterno','amaterno','id_prof')
+   ->join('personal as pe','pe.username','=','profesor.username')
+   ->join('persona as pers','pers.id_persona','=','pe.id_persona')
+   ->get();
+  return view('admin.listas.grupos',compact(['grupos','carrerasl','materiasl','profesoresl']));
  }
  //funcion eliminar
  public function eliminagrupos($grupo){
@@ -264,5 +300,20 @@ $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','nomb
 
    return view('docente.opciones.calif_finales');
  }
-
+ public function showlista($idg){
+$listag=lista_grupo::select('ncontrol','nombres','id_grupo')
+  ->where('id_grupo',$idg)
+  ->get();
+  return view('admin.listas.alumnosxgrupo',compact(['listag']));
+ }
+ public function eraselista($idg,$ncontrol){
+   DB::table('lista_grupo')
+   ->where('ncontrol',$ncontrol)
+   ->where('id_grupo',$idg)
+   ->delete();
+  $listag=lista_grupo::select('ncontrol','nombres','id_grupo')
+    ->where('id_grupo',$idg)
+    ->get();
+    return view('admin.listas.alumnosxgrupo',compact(['listag']));
+   }
 }

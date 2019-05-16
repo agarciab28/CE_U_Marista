@@ -92,7 +92,9 @@ try {
       //  ->semestre($semestre)
         ->where('semestre',$semestre)
         ->get();
-        return view('admin.asignar',compact('personas','idc','idg'))
+        $carrera=carrera::select('nombre_carrera')
+        ->where('id_carrera',$idc)->value('nombre_carrera');
+        return view('admin.asignar',compact('personas','idc','idg','carrera'))
         ->withInput(request(['semestre']));
     }
     public function eliminar(Request $request){
