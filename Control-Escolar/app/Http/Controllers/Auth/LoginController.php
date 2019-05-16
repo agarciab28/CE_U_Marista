@@ -12,14 +12,25 @@ use Illuminate\Http\Request;
 class LoginController extends Controller
 {
 
-    public function login(){
+    public function login(Request $request){
       $credentials = $this->validate(request(), [
         'ncontrol' => 'required|string',
         'password' => 'required|string'
       ]);
       //dd(SHA256($data['password']));
       if(Auth::attempt($credentials)){
-        return view('alumno.home');
+        $request->session()->regenerate();
+        $usuario=auth()->user()->id_persona;
+        $datos=persona::join('alumno as a','a.id_persona','=','persona.id_persona')
+          ->where('a.id_persona','=',$usuario)->get()->first();
+        $imagen=$datos->imagen;
+        $idp=$datos->id_persona;
+        $url=Storage::url($imagen);
+        $nombre =$datos->nombres." ".$datos->apaterno." ".$datos->amaterno;
+
+        //$request->session()->put('id_admin', $request->id_admin);
+        session(['ncontrol'=>$datos->ncontrol,'nombre'=>$nombre,'url'=>$url,'rol'=>$datos->rol,'id_persona'=>$idp]);
+        return redirect()->route('alumno_home');
       }
       return back()->withErrors(['ncontrol' => 'Sin registro']);
     }
