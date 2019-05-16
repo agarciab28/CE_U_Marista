@@ -33,7 +33,7 @@
                 <td> <input id="cal_2" name="cal_2" type="text" class=""> </td>
                 <td> <input id="examen" name="examen" type="text" class=""> </td>
                 <td> <input id="faltas" name="faltas" type="text" class=""></td>
-                <td><a href="#" class="btn">guardar</a></td>
+                <td><a href="#" class="btn">Guardar</a></td>
               @endforeach
             </tr>
         </tbody>
