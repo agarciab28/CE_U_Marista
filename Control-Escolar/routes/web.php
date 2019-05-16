@@ -144,7 +144,7 @@ Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('el
   Route::post('/asig','asignarController@guardar')->name('admin_asignar_grupo');
 
   Route::get('/grupos/elimina/{grupo}','gruposController@eliminagrupos')->name('elimina_grupo');
-  
+
   Route::get('/admin/horarios{idg}','horarioController@showhorarios')->name('admin_show_horarios');
 
   Route::get('/admin/lista_alumnos/{idg}','gruposController@showlista')->name('admin_show_lista');
@@ -198,6 +198,8 @@ Route::group(["prefix" => 'docente'], function(){
   Route::get('/pdfC','genPDFController@pdfC_docente')->name('docente_pdfC');
   //calificaciones finales grupo
   Route::get('/pdfF','genPDFController@pdfF_docente')->name('docente_pdfF');
+
+  Route::get('/lista','Auth\RegisterController@regAlumnoCSV')->name('regAlumnoCSV');
 
 });
 
