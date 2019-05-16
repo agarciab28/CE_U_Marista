@@ -91,50 +91,51 @@
 
 <!-- Modal Structure -->
 <div id="modaluser" class="modal modal-fixed-footer">
+  <form id="pb" action="{{route('modifica_datos')}}" method="post">
+    @csrf
     <div class="modal-content">
         <h4>Mis datos</h4>
         <div class="row">
-            <!--
-        <form class="col  s12 m12" id="pb" action="{{route('admin_registrar_envio')}}" method="post" form enctype="multipart/form-data">
--->
+
+
             <div class="input-field col m4 s12 ">
-                <input type="file" id="imagen" name="imagen" value="{{session('url')}}" class="dropify">
+                <img src="{{session('url')}}" id="imagen" alt="Contact Person" class="input-field col s12" >
             </div>
 
             <div class="input-field col s12 m4">
                 <i class="material-icons prefix">
                     account_circle
                 </i>
-                <input type="text" name="user" id="user" class="validate"  maxlength="35">
+                <input type="text" name="user" id="user" class="validate" value="{{$datos->username}}"  maxlength="35">
                 <label for="user">Usuario</label>
             </div>
 
             <div class="input-field col m4 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="password" name="pass" id="pass" class="validate" maxlength="35">
-                <label for="pass">Contraseña</label>
+                <!--<input type="password" name="pass" id="pass" class="validate" maxlength="35">
+                <label for="pass">Contraseña</label>-->
             </div>
 
             <div class="input-field col m4 s12 ">
                 <i class="material-icons prefix">email</i>
-                <input type="text" id="correo" class="validate" name="email" maxlength="150">
+                <input type="text" id="correo" class="validate" value="{{$datos->email}}" name="email" maxlength="150">
                 <label for="correo">Correo electrónico</label>
             </div>
 
             <div class="input-field col m4 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="text" name="nombres" id="nombre" class="validate" maxlength="35">
+                <input type="text" id="nombre" value="{{$datos->nombres}}" maxlength="35" readonly>
                 <label for="nombre">Nombre</label>
             </div>
             <div class="input-field col m4 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="text" id="apellidop" name="apaterno" class="validate" maxlength="35">
+                <input type="text" id="apellidop"  value="{{$datos->apaterno}}" maxlength="35" readonly>
                 <label for="apellidop">Apellido paterno</label>
             </div>
 
             <div class="input-field col m4 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="text" id="apellidom" name="amaterno" class="validate" maxlength="35">
+                <input type="text" id="apellidom"  value="{{$datos->amaterno}}" maxlength="35" readonly>
                 <label for="apellidom">Apellido materno</label>
             </div>
 
@@ -143,9 +144,13 @@
                     wc
                 </i>
                 <select name="sexo" id="sexo">
-                    <option value="" name="sexo" disabled selected>Sexo</option>
-                    <option value="M">Masculino</option>
-                    <option value="F">Femenino</option>
+                  @if ($datos->sexo=="F")
+                  <option value="F" selected>Femenino</option>
+                  <option value="M">Masculino</option>
+                  @else
+                  <option value="M" selected>Masculino</option>
+                  <option value="F">Femenino</option>
+                  @endif
                 </select>
                 <label>Sexo</label>
             </div>
@@ -153,70 +158,70 @@
             <div class="input-field col m4 s12 ">
                 <!--<i class="material-icons prefix">date_range</i>-->
                 <label for="fecha1">Fecha de nacimiento </label>
-                <input type="text" name="fnaci" class="datepicker" id="fecha1">
+                <input type="text" name="fnaci" value="{{$datos->fnaci}}" class="datepicker" id="fecha1">
             </div>
 
             <div class="input-field col m4 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="text" name="curp" id="curp" class="validate" maxlength="20">
+                <input type="text" id="curp" name="curp" value="{{$datos->curp}}" class="validate" maxlength="20">
                 <label for="curp">CURP</label>
             </div>
 
             <div class="input-field col m4 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="tel" name="tel" id="tel" class="tel" maxlength="35">
+                <input type="tel" name="tel" id="tel" value="{{$datos->num_tel}}" class="tel" maxlength="35">
                 <label for="tel">Teléfono</label>
             </div>
             <div class="input-field col m4 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="tel" name="cel" id="cel" class="cel" maxlength="25">
+                <input type="tel" name="cel" id="cel" class="cel" value="{{$datos->num_cel}}" maxlength="25">
                 <label for="cel">Celular</label>
             </div>
 
             <div class="input-field col m4 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="text" name="cedulap" id="cedulap" class="cedula" maxlength="35">
+                <input type="text" name="cedulap" id="cedulap" value="{{$datos->ced_fiscal}}" class="cedula" maxlength="35">
                 <label for="cedulap">Cédula fiscal</label>
             </div>
             <div class="input-field col m4 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="text" name="nssocp" id="nsocp" class="validate" maxlength="25">
+                <input type="text" name="nssocp" id="nsocp" value="{{$datos->nssoc}}" class="validate" maxlength="25">
                 <label for="nsocp">Número de seguro socal</label>
             </div>
 
             <div class="input-field col m4 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="text" name="estado" id="estado" class="estado" maxlength="25">
+                <input type="text" name="estado" value="{{$datos->estado}}" id="estado" class="estado" maxlength="25">
                 <label for="estado">Estado</label>
             </div>
 
             <div class="input-field col m4 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="text" name="ciudad" id="ciudad" class="ciudad" maxlength="25">
+                <input type="text" name="ciudad" id="ciudad" value="{{$datos->ciudad}}" class="ciudad" maxlength="25">
                 <label for="ciudad">Ciudad</label>
             </div>
 
             <div class="input-field col m4 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="text" name="colonia" id="colonia" class="colonia" maxlength="25">
+                <input type="text" name="colonia" id="colonia" value="{{$datos->colonia}}" class="colonia" maxlength="25">
                 <label for="colonia">Colonia</label>
             </div>
 
             <div class="input-field col m4 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="number" name="postal" id="postal" class="postal" maxlength="25">
+                <input type="number" name="postal" id="postal" value="{{$datos->codigo_postal}}" class="postal" maxlength="25">
                 <label for="postal">Código postal</label>
             </div>
 
             <div class="input-field col m2 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="number" name="interior" id="interior" class="interior" maxlength="25">
+                <input type="number" name="interior" id="interior" value="{{$datos->num_int}}" class="interior" maxlength="25">
                 <label for="interior">Número interior</label>
             </div>
 
             <div class="input-field col m2 s12 ">
                 <!--<i class="material-icons prefix">account_circle</i>-->
-                <input type="number" name="exterior" id="exterior" class="exterior" maxlength="25">
+                <input type="number" name="exterior" id="exterior" value="{{$datos->num_ext}}" class="exterior" maxlength="25">
                 <label for="exterior">Número exterior</label>
             </div>
             <!--
@@ -224,13 +229,14 @@
                 <button class="btn light-blue darken-4" type="submit">Guardar
                     <i class="material-icons right">send </i>
                 </button>
-            </div>
-            </form>-->
+            </div>-->
+
         </div>
     </div>
     <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat tooltipped" onclick="confirmPass()" data-position="left" data-tooltip="Necesitará ingresar su contraseña para guardar los cambios">Aceptar</a>
+        <button type="submit" class="modal-close waves-effect waves-green btn-flat tooltipped" data-position="left" data-tooltip="Necesitará ingresar su contraseña para guardar los cambios">Aceptar</button>
     </div>
+  </form>
 </div>
 
 
@@ -243,40 +249,6 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
 
-<script>
-    function confirmPass() {
-        (async function getPassword() {
-            const {
-                value: password
-            } = await Swal.fire({
-                title: 'Ingrese su contraseña',
-                input: 'password',
-                inputPlaceholder: 'Ingrese su contraseña',
-                inputAttributes: {
-                    maxlength: 10,
-                    autocapitalize: 'off',
-                    autocorrect: 'off'
-                }
-            })
-
-            if (password) {
-                Swal.fire(
-                    'Contraseña correcta!',
-                    'Se han guardado los cambios!',
-                    'success'
-                )
-                //swal('Se han guardado los cambios!', 'Presione OK!', 'success');
-                //Swal.fire('Entered password: ' + password)
-            } else {
-                Swal.fire(
-                    'Contraseña incorrecta!',
-                    'No se han guardado los cambios!',
-                    'error'
-                )
-            }
-        })()
-    }
-</script>
 <script>
     $(document).ready(function() {
         // Basic
