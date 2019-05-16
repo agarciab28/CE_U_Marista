@@ -125,11 +125,12 @@ class LoginAdminController extends Controller
         $usuario=auth('admins')->user()->id_persona;
         $datos=persona::where('id_persona','=',$usuario)->get()->first();
         $imagen=$datos->imagen;
+        $idp=$datos->id_persona;
         $url=Storage::url($imagen);
         $nombre =$datos->nombres." ".$datos->apaterno." ".$datos->amaterno;
 
         //$request->session()->put('id_admin', $request->id_admin);
-        session(['username'=>$request->username,'nombre'=>$nombre,'url'=>$url,'rol'=>$datos->rol]);
+        session(['username'=>$request->username,'nombre'=>$nombre,'url'=>$url,'rol'=>$datos->rol,'id_persona'=>$idp]);
         if($datos->rol=='admin'){
           return $this->authenticated($request, $this->guard()->user())
                   ?: redirect()->intended(route('admin_home'));
@@ -142,6 +143,8 @@ class LoginAdminController extends Controller
           return $this->authenticated($request, $this->guard()->user())
                   ?: redirect()->intended(route('coordinador_home'));
         }
+    
+
 
     }
 

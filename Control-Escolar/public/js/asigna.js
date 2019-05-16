@@ -30,7 +30,6 @@ arr = id.split(';');
 //Modal para modificar materia
 function modificar_materia(id){
   arr = id.split(';');
-alert(arr[2]);
   document.getElementById('materia_mod_id').value=arr[0];
     document.getElementById('mod_nombrec').value=arr[1];
       document.getElementById('mod_plan').value=arr[2];
@@ -41,17 +40,35 @@ alert(arr[2]);
 
 //Modal para modificar grupo
 function modificar_grupo(id){
-  document.getElementById('idgrupo').value=id;
+a = id.split(';');
+
+  document.getElementById('idgrupo').value=a[0];
+    document.getElementById('seccion').value=a[1];
+          document.getElementById('carr_spn').innerHTML=a[2];
+      document.getElementById('carrera').value=a[3];
+          document.getElementById('mat_spn').innerHTML=a[4];
+        document.getElementById('materia').value=a[5];
+                document.getElementById('prf_spn').innerHTML=a[6];
+          document.getElementById('profesor').value=a[7];
+            document.getElementById('periodo').value=a[8];
 }
 
 //Modal para modificar plan de estudios
 function modificar_plan(id){
-  document.getElementById('mod_plan_id').value=id;
+arr = id.split(';');
+  document.getElementById('mod_plan_id').value=arr[0];
+    document.getElementById('mod_nombrec').value=arr[1];
+      document.getElementById('mod_carrera').value=arr[2];
+        document.getElementById('mod_fecha').value=arr[3];
+         document.getElementById('car_act').innerHTML=arr[4];
 }
 
 //Modal para modificar aulas
 function modificar_aula(aula){
-  document.getElementById('mod_aula').value=aula;
+  arr = aula.split(';');
+  document.getElementById('mod_aula').value=arr[0];
+    document.getElementById('mod_edificio').value=arr[1];
+      document.getElementById('mod_tipo').value=arr[2];
 }
 
 //modificar Alumnos rol,nombres,apaterno,amaterno,fnaci,sexo,email,calle,num_int,num_ext,colonia,codigo_postal,ciudad,estado,num_tel,num_cel,imagen

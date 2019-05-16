@@ -13,7 +13,8 @@ class materiasController extends Controller
       ->join('plan_de_estudios as p','p.id_plan','=','materia.id_plan')
       ->get();
       $planes=plan_de_estudios::select('id_plan','nombre_plan')->get();
-      return view('admin.materias',compact(['materias','planes']));
+      $modif=false;
+      return view('admin.materias',compact(['materias','planes','modif']));
     }
 
     public function registrar(Request $request){
@@ -23,12 +24,12 @@ class materiasController extends Controller
       $materia->id_plan=$request->plan;
       $materia->horas_materia=$request->materiasm;
       $materia->save();
-
+      $modif=false;
       $materias=materia::select('materia.id_materia as id_materia','nombre_materia','p.id_plan as id_plan','p.nombre_plan as plan','horas_materia' ,'materia.activo as activo')
       ->join('plan_de_estudios as p','p.id_plan','=','materia.id_plan')
       ->get();
       $planes=plan_de_estudios::select('id_plan','nombre_plan')->get();
-      return view('admin.materias',compact(['materias','planes']));
+      return view('admin.materias',compact(['materias','planes','modif']));
     }
 
 
@@ -41,11 +42,12 @@ class materiasController extends Controller
       }else{
         materia::where('id_materia',$materia)->update(['activo'=>1]);
       }
-      $materias=materia::select('materia.id_materia as id_materia','nombre_materia','p.nombre_plan as plan','horas_materia','materia.activo as activo')
+      $materias=materia::select('materia.id_materia as id_materia','nombre_materia','p.id_plan as id_plan','p.nombre_plan as plan','horas_materia' ,'materia.activo as activo')
       ->join('plan_de_estudios as p','p.id_plan','=','materia.id_plan')
       ->get();
       $planes=plan_de_estudios::select('id_plan','nombre_plan')->get();
-      return view('admin.materias',compact(['materias','planes']));
+      $modif=false;
+      return view('admin.materias',compact(['materias','planes','modif']));
     }
 
     public function modifica(Request $request){
@@ -54,11 +56,11 @@ class materiasController extends Controller
         'id_plan'=>$request->plan,
         'horas_materia'=>$request->materiasm
       ]);
-      $materias=materia::select('materia.id_materia as id_materia','nombre_materia','p.nombre_plan as plan','horas_materia','materia.activo as activo')
+      $materias=materia::select('materia.id_materia as id_materia','nombre_materia','p.id_plan as id_plan','p.nombre_plan as plan','horas_materia' ,'materia.activo as activo')
       ->join('plan_de_estudios as p','p.id_plan','=','materia.id_plan')
       ->get();
       $planes=plan_de_estudios::select('id_plan','nombre_plan')->get();
-
-      return view('admin.materias',compact(['materias','planes']));
+$modif=true;
+      return view('admin.materias',compact(['materias','planes','modif']));
     }
 }

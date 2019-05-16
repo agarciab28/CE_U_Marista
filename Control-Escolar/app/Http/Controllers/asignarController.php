@@ -12,7 +12,7 @@ class asignarController extends Controller
         $var=0;
         $var2=0;
         foreach ($request->alumnos as $alumnos){
-           $datos=preg_split("/[\s,]+/",$request->alumnos[$var]);    
+           $datos=preg_split("/[\s,]+/",$request->alumnos[$var]);
            $lista = new lista_grupo();
             $lista->ncontrol=$datos[0];
             $lista->nombres=$datos[1];
@@ -35,7 +35,7 @@ class asignarController extends Controller
           echo "<script type='text/javascript'>alert('$message');</script>";
           return view('admin.home');
     }
-      
-      
+
+
 
 }

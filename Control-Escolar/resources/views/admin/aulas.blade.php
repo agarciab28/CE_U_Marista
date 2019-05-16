@@ -45,7 +45,7 @@
                     <td>{{$aula->aula}}</td>
                     <td>{{$aula->edificio}}</td>
                     <td>{{$aula->tipo}}</td>
-                    <td> <a onclick="modificar_aula('{{$aula->aula}}')" href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Nombre de aula, edificio o tipo de aula (laboratorio, salon, etc.)">Modificar</a> </td>
+                    <td> <a onclick="modificar_aula('{{$aula->aula}};{{$aula->edificio}};{{$aula->tipo}}')" href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Nombre de aula, edificio o tipo de aula (laboratorio, salon, etc.)">Modificar</a> </td>
                     <td> <a href="{{route('eliminaAula',['aula'=>$aula->aula])}}" class="btn {{($aula->activo>0)?' green':'red'}} tooltipped" data-position="bottom" data-tooltip="Cambiar el estado disponible del aula en el periodo escolar actual">{{($aula->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>
 
                 </tr>
@@ -112,17 +112,17 @@
                 <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="text" name="aula" id="mod_aula" placeholder="" readonly required maxlength='10'>
-                    <label for="mod_aula">Aula</label>
+                    <span for="mod_aula">Aula</span>
                 </div>
                 <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="text" name="edificio" id="mod_edificio" class="validate" required maxlength="100">
-                    <label for="mod_edificio">Edificio</label>
+                    <span for="mod_edificio">Edificio</span>
                 </div>
                 <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="text" name="tipo" id="mod_tipo" class="validate" required maxlength="35">
-                    <label for="mod_tipo">Tipo</label>
+                    <span for="mod_tipo">Tipo</span>
                 </div>
                 <div class="row">
                 </div>
@@ -160,4 +160,11 @@
 
     });
 </script>
+@if($modif)
+<script type="text/javascript">
+swal("¡El aula se ha modificado correctamente!", {
+    icon: "success",
+});
+</script>
+@endif
 @endsection
