@@ -38,7 +38,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Admin';
+        $persona->rol='admin';
         $persona->nombres='Diego';
         $persona->apaterno='Ramirez';
         $persona->amaterno='Rodriguez';
@@ -59,7 +59,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Admin';
+        $persona->rol='admin';
         $persona->nombres='Roberto';
         $persona->apaterno='Gonzalez';
         $persona->amaterno='Rodriguez';
@@ -81,7 +81,7 @@ class personasSeeder extends Seeder
 
 
         $persona= new persona();
-        $persona->rol='Prof';
+        $persona->rol='prof';
         $persona->nombres='Nancy';
         $persona->apaterno='Martinez';
         $persona->amaterno='Gil';
@@ -102,7 +102,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Prof';
+        $persona->rol='prof';
         $persona->nombres='Rubén';
         $persona->apaterno='Regil';
         $persona->amaterno='Tecla';
@@ -123,7 +123,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Coord';
+        $persona->rol='coord';
         $persona->nombres='Monica';
         $persona->apaterno='Mordisco';
         $persona->amaterno='Gomez';
@@ -144,7 +144,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Coord';
+        $persona->rol='coord';
         $persona->nombres='Nelly';
         $persona->apaterno='Aguilar';
         $persona->amaterno='Ramirez';
@@ -186,7 +186,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Pepillo';
         $persona->apaterno='Robledo';
         $persona->amaterno='Padillon';
@@ -207,7 +207,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Eduardo';
         $persona->apaterno='Gonzales';
         $persona->amaterno='Padilla';
@@ -229,7 +229,7 @@ class personasSeeder extends Seeder
 
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Raul';
         $persona->apaterno='Gonz';
         $persona->amaterno='Lopez';
@@ -251,7 +251,7 @@ class personasSeeder extends Seeder
 
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Raule';
         $persona->apaterno='Sean';
         $persona->amaterno='Ibarra';
@@ -273,7 +273,7 @@ class personasSeeder extends Seeder
 
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Jaye';
         $persona->apaterno='Sean';
         $persona->amaterno='Lopez';
@@ -295,7 +295,7 @@ class personasSeeder extends Seeder
 
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Jose';
         $persona->apaterno='Rayon';
         $persona->amaterno='Lopez';
@@ -316,7 +316,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Raymundo';
         $persona->apaterno='Martinez';
         $persona->amaterno='Luz';
@@ -337,7 +337,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Maria';
         $persona->apaterno='Aguilar';
         $persona->amaterno='Luz';
@@ -358,7 +358,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Guadalupe';
         $persona->apaterno='Martinez';
         $persona->amaterno='Luz';
@@ -379,7 +379,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Luis';
         $persona->apaterno='Garcia';
         $persona->amaterno='Luz';
@@ -400,7 +400,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Ema';
         $persona->apaterno='Rumbo';
         $persona->amaterno='Perez';
@@ -421,7 +421,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Emiliano';
         $persona->apaterno='Ibarra';
         $persona->amaterno='Bejar';
@@ -442,7 +442,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Diego';
         $persona->apaterno='Galeana';
         $persona->amaterno='Luz';
@@ -463,7 +463,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Mina';
         $persona->apaterno='Galeana';
         $persona->amaterno='Luz';
@@ -484,7 +484,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Patricia';
         $persona->apaterno='Luz';
         $persona->amaterno='Aguilar';
@@ -505,7 +505,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Paulino';
         $persona->apaterno='Rivas';
         $persona->amaterno='Perez';
@@ -526,7 +526,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Terry';
         $persona->apaterno='Johnson';
         $persona->amaterno='Gonzales';
@@ -547,7 +547,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Cassandra';
         $persona->apaterno='Werever';
         $persona->amaterno='Tumorrow';
@@ -568,7 +568,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Sandro';
         $persona->apaterno='Zavala';
         $persona->amaterno='Suarez';
@@ -589,7 +589,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Alejandro';
         $persona->apaterno='Elma';
         $persona->amaterno='Canon';
@@ -611,7 +611,7 @@ class personasSeeder extends Seeder
 
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Linsko';
         $persona->apaterno='Soas';
         $persona->amaterno='Caps';
@@ -632,7 +632,7 @@ class personasSeeder extends Seeder
         $persona->save();
 
         $persona= new persona();
-        $persona->rol='Alumno';
+        $persona->rol='alumno';
         $persona->nombres='Badabbum';
         $persona->apaterno='Vega';
         $persona->amaterno='Pinol';

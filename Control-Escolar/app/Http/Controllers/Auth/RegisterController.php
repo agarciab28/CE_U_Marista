@@ -178,8 +178,29 @@ class RegisterController extends Controller
 
     public function registrarExcel($json){
       $alumnos=json_decode($json);
+      //Por cada alumno en el array del json insertar datos
       foreach ($alumnos as $alumno) {
-        
+        //crear objeto persona
+        $insetaPersona= new persona();
+        $insetaPersona->rol="alumno",
+        $insertaPersona->nombres=$alumno->nombres;
+
+        //más insert en persona
+
+        //insertar en db
+        $insertaPersona->save();
+
+        //sacar el id_persona del men que acamos de ingresar
+        $id=persona::select('id_persona')->where('curp',$alumno->curp)->get()->first();
+
+        //crear objeto alumno
+        $insertaAlumno=new alumno();
+        $insertaAlumno->id_persona=$id;
+        // más insert en alumno
+
+        //insertar en db
+        $insertaAlumno->save();
+      //fin foreach
       }
     }
 }
