@@ -142,11 +142,6 @@
 
   });
 </script>
-@if($modif)
-<script type="text/javascript">
-swal("¡El grupo se ha modificado correctamente!", {
-    icon: "success",
-});
-</script>
-@endif
+
+
 @endsection
