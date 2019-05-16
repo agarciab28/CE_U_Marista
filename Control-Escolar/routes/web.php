@@ -266,7 +266,7 @@ Route::group(["prefix" => 'alumno','middleware'=>'alumnologin'], function(){
   //boleta de calificaciones
   Route::get('/pdfA','genPDFController@pdfA_al')->name('alumno_pdfA');
   //ruta horario
-  
+  Route::get('/alumno/horario/{idp}','alumnohController@showGrupos')->name('horario_lgrupos');
   //editar datos
   Route::post('alumno/datos/modifica','alumnController@editar')->name('alumn_modifica_datos');
   //ruta mis datos
