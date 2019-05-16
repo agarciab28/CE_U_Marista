@@ -63,11 +63,11 @@
                         <option value="#9c27b0">Color purpura</option>
                         <option value="#673ab7">Color purpura obscuro</option>
                         <option value="#3f51b5">Color indigo</option>
-                        <option value="#2196f3">Color azul</option>
+                        <option value="#2196f3"  default selected>Color azul</option>
                         <option value="#03a9f4">Color azul claro</option>
                         <option value="#00bcd4">Color cian</option>
                         <option value="#009688">Color turquesa</option>
-                        <option value="#4caf50" disabled selected>Color verde</option>
+                        <option value="#4caf50">Color verde</option>
                         <option value="#8bc34a">Color verde claro</option>
                         <option value="#ffeb3b">Color lima</option>
                         <option value="#ffeb3b">Color amarillo</option>

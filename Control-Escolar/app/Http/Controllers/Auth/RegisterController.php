@@ -175,4 +175,11 @@ class RegisterController extends Controller
       $response = json_encode($csv);
       echo $response;
     }
+
+    public function registrarExcel($json){
+      $alumnos=json_decode($json);
+      foreach ($alumnos as $alumno) {
+        
+      }
+    }
 }

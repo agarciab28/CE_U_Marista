@@ -37,7 +37,7 @@
                   {!! Form::open(['route'=> array('admin_asignar', $idg,$idc), 'method'=>'GET', 'files' => true, 'role' => 'form']) !!}
                   <div class="input-field col m4 s12 ">
 
-                    <label for="fcarrera">Carrera:</label>
+                    <label for="fcarrera">{{$carrera}}</label>
                   </div>
                   <div class="input-field col m4 s12 ">
                     {!! Form::number('semestre',null,['class'=>'form-control', 'placeholder'=>'1', 'max' => '12', 'min' => '1']) !!}
