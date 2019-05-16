@@ -165,39 +165,67 @@ class RegisterController extends Controller
 
     public function regAlumnoCSV(){
       $csv = Reader::createFromPath('../storage/app/files/Alumno.csv', 'r');
+      $csv->setOutputBOM(Reader::BOM_UTF8);
+      $csv->addStreamFilter('convert.iconv.ISO-8859-15/UTF-8');
+
       $csv->setHeaderOffset(0);
 
-      $stmt = (new Statement());
-      $records = $stmt->process($csv);
-      $response = json_encode($csv);
-      dd($response);
-    }
 
-    public function registrarExcel($json){
-      $alumnos=json_decode($json);
+      $stmt = (new Statement());
+
+      $records = $stmt->process($csv);
+
+      $response = json_encode($csv);
+
+      $alumnos=json_decode($response,true);
       //Por cada alumno en el array del json insertar datos
       foreach ($alumnos as $alumno) {
         //crear objeto persona
         $insertaPersona= new persona();
         $insertaPersona->rol="alumno";
-        $insertaPersona->nombres=$alumno->nombres;
-
-        //más insert en persona
-
-        //insertar en db
+        $insertaPersona->nombres=$alumno['Nombre'];
+        $insertaPersona->apaterno=$alumno['Ap Paterno'];
+        $insertaPersona->amaterno=$alumno['Ap Materno'];
+        $insertaPersona->curp=$alumno['CURP'];
+        $insertaPersona->fnaci=$alumno['Fecha Nac'];
+        $insertaPersona->sexo=$alumno['Sexo (M/F)'];
+        $insertaPersona->email=$alumno['Correo'];
+        $insertaPersona->calle=$alumno['Calle'];
+        $insertaPersona->num_int=$alumno['No Int'];
+        $insertaPersona->num_ext=$alumno['No Ext'];
+        $insertaPersona->colonia=$alumno['Colonia'];
+        $insertaPersona->codigo_postal=$alumno['CP'];
+        $insertaPersona->ciudad=$alumno['Ciudad'];
+        $insertaPersona->estado=$alumno['Estado'];
+        $insertaPersona->num_tel=$alumno['Teléfono'];
+        $insertaPersona->num_cel=$alumno['Celular'];
+        $insertaPersona->imagen=$alumno['Foto'];
         $insertaPersona->save();
 
         //sacar el id_persona del men que acamos de ingresar
-        $id=persona::select('id_persona')->where('curp',$alumno->curp)->get()->first();
+        $id=persona::select('id_persona')->where('curp',$alumno['CURP'])->get()->first();
 
         //crear objeto alumno
         $insertaAlumno=new alumno();
-        $insertaAlumno->id_persona=$id;
-        // más insert en alumno
+        $insertaAlumno->id_persona=$id->id_persona;
+        $insertaAlumno->ncontrol=$alumno['No Ctrl'];
+        $insertaAlumno->id_carrera=$alumno['ID Carrera'];
+        $insertaAlumno->plan_de_estudios=$alumno['Plan de estudios'];
+        $insertaAlumno->semestre=$alumno['Semestre'];
+        $insertaAlumno->nombre_fam=$alumno['Nombre Familiar'];
+        $insertaAlumno->num_tel_fam=$alumno['Num Familiar'];
+        $insertaAlumno->password=hash_hmac('sha256', $alumno['Contraseña'], env('HASH_KEY'));
+        $insertaAlumno->activo=$alumno['Activo'];
 
         //insertar en db
         $insertaAlumno->save();
+
+        return redirect()->route('admin_lalumnos');
       //fin foreach
       }
+
     }
+
+
+
 }

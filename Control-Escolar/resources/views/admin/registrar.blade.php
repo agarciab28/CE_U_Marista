@@ -237,12 +237,12 @@ Listar Planes de estudio !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 <!--BOTÓN REGISTROS-->
 <div class="fixed-action-btn">
-  <a class="btn-floating btn-large amber pulse tooltipped" data-position="top" data-tooltip="Registrar lista" onclick="upFile()">
+  <a class="btn-floating btn-large amber pulse tooltipped" data-position="top" data-tooltip="Registrar lista" href="{{route('regAlumnoCSV')}}">
     <i class="large material-icons">file_upload</i>
   </a>
   <ul>
     <li>
-      <a class="btn-floating light-blue darken-4 tooltipped" data-position="top" data-tooltip="Descargar plantilla alumnos" href="{{{ asset('csv/Alumno.xlsx') }}}" download="">
+      <a class="btn-floating light-blue darken-4 tooltipped" data-position="top" data-tooltip="Descargar plantilla alumnos" href="{{{ asset('csv/Alumno.csv') }}}" download="">
       <i class="material-icons">file_download</i></a>
     </li>
   </ul>

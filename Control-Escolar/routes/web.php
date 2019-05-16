@@ -158,6 +158,8 @@ Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('el
   Route::post('/grupos/editar' ,'gruposController@modificagrupos')->name('edita_grupo');
 
   Route::post('/nuevo_evento','calendarioController@registra_evento')->name('evento_nuevo');
+
+  Route::get('/csv','Auth\RegisterController@regAlumnoCSV')->name('regAlumnoCSV');
 });
 
 //Rutas Docentes
@@ -198,8 +200,6 @@ Route::group(["prefix" => 'docente','middleware'=>'profelogin'], function(){
   Route::get('/pdfC','genPDFController@pdfC_docente')->name('docente_pdfC');
   //calificaciones finales grupo
   Route::get('/pdfF','genPDFController@pdfF_docente')->name('docente_pdfF');
-
-  Route::get('/lista','Auth\RegisterController@regAlumnoCSV')->name('regAlumnoCSV');
 
 });
 

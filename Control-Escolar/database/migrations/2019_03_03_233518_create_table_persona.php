@@ -18,27 +18,27 @@ class CreateTablePersona extends Migration
         Schema::create('persona', function (Blueprint $table) {
             $table->increments('id_persona',10);
             $table->string('rol',30);
-            $table->string('nombres',50);
-            $table->string('apaterno',30);
-            $table->string('amaterno',30)->nullable();
+            $table->string('nombres',150);
+            $table->string('apaterno',130);
+            $table->string('amaterno',130)->nullable();
             $table->string('curp',18)->unique();
             $table->date('fnaci');
             $table->enum('sexo',['M','F'])->nullable();
-            $table->string('email',30)->nullable();
-            $table->string('calle',30)->nullable();
-            $table->string('num_int',20)->nullable();
-            $table->string('num_ext',20)->nullable();
-            $table->string('colonia',50)->nullable();
+            $table->string('email',130)->nullable();
+            $table->string('calle',130)->nullable();
+            $table->string('num_int',120)->nullable();
+            $table->string('num_ext',120)->nullable();
+            $table->string('colonia',150)->nullable();
             $table->string('codigo_postal',10)->nullable();
-            $table->string('ciudad',30)->nullable();
-            $table->string('estado',30)->nullable();
-            $table->string('num_tel',10)->nullable();
-            $table->string('num_cel',10)->nullable();
-            $table->string('imagen',90)->nullable();
+            $table->string('ciudad',130)->nullable();
+            $table->string('estado',130)->nullable();
+            $table->string('num_tel',110)->nullable();
+            $table->string('num_cel',110)->nullable();
+            $table->string('imagen',190)->nullable();
             $table->timestamps();
         });
 
-/* 
+/*
     DB::unprepared("
     CREATE TRIGGER updatenombres BEFORE UPDATE ON persona
     FOR EACH ROW IF (NEW.nombres != OLD.nombres) THEN
