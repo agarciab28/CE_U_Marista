@@ -35,7 +35,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="8";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="0";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -47,7 +47,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="8";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -59,7 +59,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="10";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -71,7 +71,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Saens";
       $alumno->id_persona="11";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -95,7 +95,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="13";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -107,7 +107,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="14";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -119,7 +119,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="15";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -131,7 +131,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="16";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -144,7 +144,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="17";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -156,7 +156,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="18";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -168,7 +168,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="19";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -180,7 +180,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="20";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -192,7 +192,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="21";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -204,7 +204,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="22";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -216,7 +216,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="23";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -228,7 +228,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="24";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -240,7 +240,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="25";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -252,7 +252,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="26";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -264,7 +264,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="27";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -276,7 +276,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="28";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -288,7 +288,7 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="29";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
@@ -300,15 +300,15 @@ class alumnoSeeder extends Seeder
       $alumno->plan_de_estudios="Animacion Digital-2012";
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="30";
-      $alumno->semestre="2";
+      $alumno->semestre="1";
       $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
 
-    
 
 
-      
+
+
 
     }
 }
