@@ -123,14 +123,26 @@ class LoginAdminController extends Controller
     {
         $request->session()->regenerate();
         $usuario=auth('admins')->user()->id_persona;
-        $datos=persona::where('id_persona','=',$usuario)->get();
-        $imagen=$datos[0]->imagen;
+        $datos=persona::where('id_persona','=',$usuario)->get()->first();
+        $imagen=$datos->imagen;
         $url=Storage::url($imagen);
-        $nombre =$datos[0]->nombres." ".$datos[0]->apaterno." ".$datos[0]->amaterno;
+        $nombre =$datos->nombres." ".$datos->apaterno." ".$datos->amaterno;
+
         //$request->session()->put('id_admin', $request->id_admin);
-        session(['username'=>$request->username,'nombre'=>$nombre,'url'=>$url]);
-        return $this->authenticated($request, $this->guard()->user())
-                ?: redirect()->intended(route('admin_home'));
+        session(['username'=>$request->username,'nombre'=>$nombre,'url'=>$url,'rol'=>$datos->rol]);
+        if($datos->rol=='admin'){
+          return $this->authenticated($request, $this->guard()->user())
+                  ?: redirect()->intended(route('admin_home'));
+        }
+        elseif($datos->rol=='prof'){
+          return $this->authenticated($request, $this->guard()->user())
+                  ?: redirect()->intended(route('docente_home'));
+        }
+        elseif($datos->rol=='coord'){
+          return $this->authenticated($request, $this->guard()->user())
+                  ?: redirect()->intended(route('coordinador_home'));
+        }
+
     }
 
     /**

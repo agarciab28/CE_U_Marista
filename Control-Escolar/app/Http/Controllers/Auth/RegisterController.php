@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use League\Csv\Reader;
 use League\Csv\Statement;
+use League\Csv\CharsetConverter;
+use League\Csv\Writer;
 
 class RegisterController extends Controller
 {
@@ -164,22 +166,40 @@ class RegisterController extends Controller
     }
 
     public function regAlumnoCSV(){
-      $csv = Reader::createFromPath('../storage/app/files/Alumno.csv', 'r');
+      $csv = Reader::createFromPath('../storage/app/files/Alumno.csv', 'r')->setHeaderOffset(0);
+      $csv->setOutputBOM(Reader::BOM_UTF8);
 
-      $csv->setHeaderOffset(0);
+      $csv->addStreamFilter('convert.iconv.ISO-8859-15/UTF-8');
+      $json = json_encode($csv);
 
-      $stmt = (new Statement());
-
-      $records = $stmt->process($csv);
-
-      $response = json_encode($csv);
-      echo $response;
+      dd($json);
     }
 
     public function registrarExcel($json){
       $alumnos=json_decode($json);
+      //Por cada alumno en el array del json insertar datos
       foreach ($alumnos as $alumno) {
-        
+        //crear objeto persona
+        $insetaPersona= new persona();
+        $insetaPersona->rol="alumno",
+        $insertaPersona->nombres=$alumno->nombres;
+
+        //más insert en persona
+
+        //insertar en db
+        $insertaPersona->save();
+
+        //sacar el id_persona del men que acamos de ingresar
+        $id=persona::select('id_persona')->where('curp',$alumno->curp)->get()->first();
+
+        //crear objeto alumno
+        $insertaAlumno=new alumno();
+        $insertaAlumno->id_persona=$id;
+        // más insert en alumno
+
+        //insertar en db
+        $insertaAlumno->save();
+      //fin foreach
       }
     }
 }

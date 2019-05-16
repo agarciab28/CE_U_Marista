@@ -35,9 +35,9 @@
                     </i>
                     <select class="validate" name="rol" id="rol">
                         <option value="" disabled selected>Seleccione</option>
-                        <option value="Coordinador">Coordinador</option>
-                        <option value="Profesor">Profesor</option>
-                        <option value="Alumno">Alumno</option>
+                        <option value="coord">Coordinador</option>
+                        <option value="prof">Profesor</option>
+                        <option value="alumno">Alumno</option>
                     </select>
                     <label>Tipo de usuario</label>
                 </div>

@@ -26,7 +26,7 @@ Route::get('/cerrar_sesion', 'Auth\LoginAdminController@logout')->name('logout')
 //Route::get('/asignara','AlumnosController@lista_as')->name('asignara');
 
 // Rutas Admin
-Route::group(["prefix" => 'admin'], function(){
+Route::group(["prefix" => 'admin' , 'middleware'=>'adminlogin'], function(){
 
   Route::get('/', function(){
     return view('admin.home');
@@ -144,7 +144,7 @@ Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('el
   Route::post('/asig','asignarController@guardar')->name('admin_asignar_grupo');
 
   Route::get('/grupos/elimina/{grupo}','gruposController@eliminagrupos')->name('elimina_grupo');
-  
+
   Route::get('/admin/horarios{idg}','horarioController@showhorarios')->name('admin_show_horarios');
 
   Route::get('/admin/lista_alumnos/{idg}','gruposController@showlista')->name('admin_show_lista');
@@ -161,7 +161,7 @@ Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('el
 });
 
 //Rutas Docentes
-Route::group(["prefix" => 'docente'], function(){
+Route::group(["prefix" => 'docente','middleware'=>'profelogin'], function(){
   Route::get('/', function(){
     return view('docente.home');
   })->name('docente_home');
@@ -199,10 +199,12 @@ Route::group(["prefix" => 'docente'], function(){
   //calificaciones finales grupo
   Route::get('/pdfF','genPDFController@pdfF_docente')->name('docente_pdfF');
 
+  Route::get('/lista','Auth\RegisterController@regAlumnoCSV')->name('regAlumnoCSV');
+
 });
 
 // Rutas Coordinador
-Route::group(["prefix" => 'coordinador'], function(){
+Route::group(["prefix" => 'coordinador','middleware'=>'coordinadorlogin'], function(){
   Route::get('/', function(){
     return view('coordinador.home');
   })->name('coordinador_home');
@@ -240,7 +242,7 @@ Route::group(["prefix" => 'coordinador'], function(){
 });
 
 // Rutas Alumno
-Route::group(["prefix" => 'alumno'], function(){
+Route::group(["prefix" => 'alumno','middleware'=>'alumnologin'], function(){
   Route::get('/', function(){
     return view('alumno.home');
   })->name('alumno_home');
@@ -274,6 +276,6 @@ Route::get('/pba', function(){
   return view('admin.modificar.usuarios');
 })->name('pba');
 
-Auth::routes();
+/*Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');*/
