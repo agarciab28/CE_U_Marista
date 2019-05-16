@@ -106,6 +106,8 @@ Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('el
 
   Route::get('/datos','adminController@showDatos')->name('mis_datos');
 
+  Route::post('/datos','adminController@editar')->name('modifica_datos');
+
   Route::get('/alumno/eliminar/{ncontrol}', 'AlumnosController@eliminar')
     ->where(["ncontrol"=>'[0-9]+'])
     ->name('eliminaAlumno');
@@ -190,8 +192,6 @@ Route::group(["prefix" => 'docente'], function(){
   Route::get('/pdfC','genPDFController@pdfC_docente')->name('docente_pdfC');
   //calificaciones finales grupo
   Route::get('/pdfF','genPDFController@pdfF_docente')->name('docente_pdfF');
-
-  Route::get('/lista','Auth\RegisterController@regAlumnoCSV')->name('docente_regAlumnoCSV');
 
 });
 
