@@ -93,25 +93,25 @@ td {
   <div class="subHeadPDF">datos del grupo</div>
     <div class="row">
       <div class="column tabPDF" style="text-align:left">CLAVE DE GRUPO</div>
-      <div class="column" id="clave">XXXX</div>
+      <div class="column" id="clave">{{$datos->id_grupo}}</div>
       <div class="column tabPDF" style="text-align:left">SECCIÓN</div>
-      <div class="column" id="seccion">XXXX</div>
-      <div class="column tabPDF" style="text-align:left">PERIODO</div>
-      <div class="column" id="periodo">XXXX</div>
+      <div class="column" id="seccion">{{$datos->seccion}}</div>
+      <div class="column tabPDF" style="width:10%; text-align:left">PERIODO</div>
+      <div class="column" id="periodo" style="width:23%">{{$datos->periodo}}</div>
       <br>
     </div>
     <br>
     <div class="row">
-      <div class="column tabPDF" style="width:20%; text-align:left">CARRERA</div>
-      <div class="column" id="carrera" style="width:30%">XXXX</div>
-      <div class="column tabPDF" style="width:20%; text-align:left">MATERIA</div>
-      <div class="column" id="materia" style="width:30%">XXXX</div>
+      <div class="column tabPDF" style="width:10%; text-align:left">CARRERA</div>
+      <div class="column" id="carrera" style="width:56.66%">{{$datos->nombre_carrera}}</div>
+      <div class="column tabPDF" style="width:10%; text-align:left">MATERIA</div>
+      <div class="column" id="materia" style="width:23%">{{$datos->nombre_materia}}</div>
       <br>
     </div>
     <br>
     <div class="row">
       <div class="column tabPDF"style="text-align:left">PROFESOR</div>
-      <div class="column" id="profesor" style="width:80%">SAMUEL ALEJANDRO LÓPEZ BECERRA</div>
+      <div class="column" id="profesor" style="width:80%">{{$datos->apaterno}} {{$datos->amaterno}} {{$datos->nombres}}</div>
       <br>
     </div>
   <br><br><br>
@@ -124,23 +124,18 @@ td {
               <th class="tabPDF">Resultado</th>
               <th class="tabPDF">Calificación final</th>
           </tr>
+          @foreach($calificaciones as $calificacion)
           <tr>
             <td class="bodyPDF">1</td>
-            <td class="bodyPDF">15121183</td>
-            <td class="bodyPDF" style="text-align:left;">Samuel Alejandro López Becerra</td>
-            <td class="bodyPDF">a primer extraordinario</td>
-            <td class="bodyPDF">80</td>
+            <td class="bodyPDF">{{$calificacion->ncontrol}}</td>
+            <td class="bodyPDF" style="text-align:left;">{{$calificacion->apaterno}} {{$calificacion->amaterno}} {{$calificacion->nombres}}</td>
+            <td class="bodyPDF">a {{$calificacion->opcion_calificacion}} extraordinario</td>
+            <td class="bodyPDF">{{$calificacion->promedio_calificacion}}</td>
           </tr>
-          <tr>
-            <td class="bodyPDF">2</td>
-            <td class="bodyPDF">15121189</td>
-            <td class="bodyPDF" style="text-align:left;">Diego Ulises Martínez Aguilar</td>
-            <td class="bodyPDF">a segundo extraordinario</td>
-            <td class="bodyPDF">80</td>
-          </tr>
+          @endforeach
           <tr>
             <td colspan="4" class="tabPDF">Promedio grupal</td>
-            <td class="bodyPDF">80</td>
+            <td class="bodyPDF"></td>
           </tr>
       </table>
 </body>

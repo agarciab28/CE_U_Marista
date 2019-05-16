@@ -84,19 +84,19 @@ td {
   <div class="subHeadPDF">datos del alumno</div>
     <div class="row">
       <div class="column tabPDF" style="text-align:left;">ALUMNO</div>
-      <div class="column" id="alumno" style="width:70%;">XXXX</div>
+      <div class="column" id="alumno" style="width:70%;">{{$datos->apaterno}} {{$datos->amaterno}} {{$datos->nombres}}</div>
       <div class="column tabPDF" style="text-align:left;">no CTRL</div>
-      <div class="column" id="noCtrl">XXXX</div>
+      <div class="column" id="noCtrl">{{$ncontrol}}</div>
       <br>
     </div>
     <br>
     <div class="row">
       <div class="column tabPDF" style="text-align:left">CARRERA</div>
-      <div class="column" id="carrera" style="width:50%;">XXXX</div>
-      <div class="column tabPDF" style="text-align:left">semestre</div>
-      <div class="column" id="semestre">XXXX</div>
+      <div class="column" id="carrera" style="width:50%;">{{$datos->carrera}}</div>
+      <div class="column tabPDF" style="text-align:left; width:8%;">semestre</div>
+      <div class="column" id="semestre" style="width:5%;">{{$datos->semestre}}</div>
       <div class="column tabPDF" style="text-align:left">PERIODO</div>
-      <div class="column" id="periodo">XXXX</div>
+      <div class="column" id="periodo" style="width:15%;">{{$configuracion->periodo_actual}}</div>
       <br>
     </div>
   <br><br><br>
@@ -118,53 +118,32 @@ td {
     </thead>
 
     <tbody>
+      @foreach($calificaciones as $calificacion)
       <tr>
-        <td class="bodyPDF">ABC123</td>
-        <td class="bodyPDF">CÁLCULO INTEGRAL</td>
-        <td class="bodyPDF">80</td>
-        <td class="bodyPDF">2</td>
-        <td class="bodyPDF">75</td>
-        <td class="bodyPDF">2</td>
-        <td class="bodyPDF">85</td>
-        <td class="bodyPDF">1</td>
-        <td class="bodyPDF">5</td>
-        <td class="bodyPDF">80</td>
+        <td class="bodyPDF center">{{$calificacion->id_materia}}</td>
+        <td class="bodyPDF center">{{$calificacion->nombre_materia}}</td>
+        <td class="bodyPDF center" name="primPar">{{$calificacion->primer_parcial}}</td>
+        <td class="bodyPDF center">0</td>
+        <td class="bodyPDF center">{{$calificacion->segundo_parcial}}</td>
+        <td class="bodyPDF center">0</td>
+        <td class="bodyPDF center">{{$calificacion->examen_final}}</td>
+        <td class="bodyPDF center">0</td>
+        <td class="bodyPDF center">{{$calificacion->total_faltas}}</td>
+        <td class="bodyPDF center">{{$calificacion->promedio_calificacion}}</td>
       </tr>
-      <tr>
-        <td class="bodyPDF">ABC123</td>
-        <td class="bodyPDF">PROGRAMACIÓN AVANZADA</td>
-        <td class="bodyPDF">80</td>
-        <td class="bodyPDF">2</td>
-        <td class="bodyPDF">75</td>
-        <td class="bodyPDF">2</td>
-        <td class="bodyPDF">85</td>
-        <td class="bodyPDF">1</td>
-        <td class="bodyPDF">5</td>
-        <td class="bodyPDF">80</td>
-      </tr>
-      <tr>
-        <td class="bodyPDF">ABC123</td>
-        <td class="bodyPDF">ÉTICA</td>
-        <td class="bodyPDF">80</td>
-        <td class="bodyPDF">2</td>
-        <td class="bodyPDF">75</td>
-        <td class="bodyPDF">2</td>
-        <td class="bodyPDF">85</td>
-        <td class="bodyPDF">1</td>
-        <td class="bodyPDF">5</td>
-        <td class="bodyPDF">80</td>
-      </tr>
+      @endforeach
+
       <tr style="border: black 1px solid;">
         <th class="tabPDF" style="background: rgba(96, 125, 139); color:white;"></th>
         <th class="tabPDF" style="background: rgba(96, 125, 139); color:white;">PROMEDIO</th>
-        <td class="tabPDF" style="background: rgba(96, 125, 139); color:white;">70</td>
-        <td class="tabPDF" style="background: rgba(96, 125, 139); color:white;">2</td>
-        <td class="tabPDF" style="background: rgba(96, 125, 139); color:white;">65</td>
-        <td class="tabPDF" style="background: rgba(96, 125, 139); color:white;">2</td>
-        <td class="tabPDF" style="background: rgba(96, 125, 139); color:white;">67.5</td>
-        <td class="tabPDF" style="background: rgba(96, 125, 139); color:white;">1</td>
-        <td class="tabPDF" style="background: rgba(96, 125, 139); color:white;">5</td>
-        <td class="tabPDF" style="background: rgba(96, 125, 139); color:white;">77.5</td>
+        <td class="tabPDF" id="primParF" style="background: rgba(96, 125, 139); color:white;">0</td>
+        <td class="tabPDF" style="background: rgba(96, 125, 139); color:white;">0</td>
+        <td class="tabPDF" style="background: rgba(96, 125, 139); color:white;">0</td>
+        <td class="tabPDF" style="background: rgba(96, 125, 139); color:white;">0</td>
+        <td class="tabPDF" style="background: rgba(96, 125, 139); color:white;">0</td>
+        <td class="tabPDF" style="background: rgba(96, 125, 139); color:white;">0</td>
+        <td class="tabPDF" style="background: rgba(96, 125, 139); color:white;">0</td>
+        <td class="tabPDF" style="background: rgba(96, 125, 139); color:white;">0</td>
       </tr>
     </tbody>
   </table>

@@ -20,8 +20,13 @@ class CalificacionesSeeder extends Seeder
     $calificaciones->ncontrol="1111";
     $calificaciones->id_grupo="1";
     $calificaciones->primer_parcial="10";
+    $calificaciones->faltas_primer="0";
     $calificaciones->segundo_parcial="7";
+    $calificaciones->faltas_segundo="0";
     $calificaciones->examen_final="8";
+    $calificaciones->faltas_tercer="0";
+    $calificaciones->total_faltas="0";
+    $calificaciones->promedio_calificacion="0";
     $calificaciones->opcion_calificacion="1";
     $calificaciones->save();
 
@@ -29,8 +34,13 @@ class CalificacionesSeeder extends Seeder
     $calificaciones->ncontrol="1234";
     $calificaciones->id_grupo="2";
     $calificaciones->primer_parcial="9";
+    $calificaciones->faltas_primer="0";
     $calificaciones->segundo_parcial="7";
+    $calificaciones->faltas_segundo="0";
     $calificaciones->examen_final="8";
+    $calificaciones->faltas_tercer="0";
+    $calificaciones->faltas_tercer="0";
+    $calificaciones->promedio_calificacion="0";
     $calificaciones->opcion_calificacion="1";
     $calificaciones->save();
 
