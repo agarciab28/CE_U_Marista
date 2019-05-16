@@ -76,10 +76,14 @@
             <input type="text" class="timepicker" name="hora_fin_lunes" id="hora_fin_lunes" value="">
             <label for="hora_fin_lunes">Hora Final</label>
           </div>
-          <div class="input-field col s12 m6">
-            <input type="text" name="aula_lunes" id="aula_lunes" value="">
-            <label for="aula_lunes">Aula</label>
-          </div>
+            <div class="input-field col s12 m6">
+              <select class="" name="aula_lunes" id="aula_lunes">
+                  <option value="0" default >Seleccione un aula</option>
+          @foreach ($aulas as $aula )
+                  <option value="{{ $aula->id }}">{{ $aula->aula }}</option>
+          @endforeach
+              </select>
+            </div>
         </div>
         <div id="test2" class="col s12">
           <div class="input-field col s12 m3">
@@ -91,8 +95,12 @@
             <label for="hora_fin_martes">Hora Final</label>
           </div>
           <div class="input-field col s12 m6">
-            <input type="text" name="aula_martes" id="aula_martes" value="">
-            <label for="aula_martes">Aula</label>
+            <select class=""  name="aula_martes" id="aula_martes">
+              <option value="0" default >Seleccione un aula</option>
+      @foreach ($aulas as $aula )
+              <option value="{{ $aula->id }}">{{ $aula->aula }}</option>
+      @endforeach
+            </select>
           </div>
         </div>
         <div id="test3" class="col s12">
@@ -105,7 +113,12 @@
             <label for="hora_fin_miercoles">Hora Final</label>
           </div>
           <div class="input-field col s12 m6">
-            <input type="text" name="aula_miercoles" id="aula_miercoles" value="">
+            <select class="" name="aula_miercoles" id="aula_miercoles">
+              <option value="0" default >Seleccione un aula</option>
+      @foreach ($aulas as $aula )
+              <option value="{{ $aula->id }}">{{ $aula->aula }}</option>
+      @endforeach
+            </select>
             <label for="aula_miercoles">Aula</label>
           </div>
         </div>
@@ -119,8 +132,11 @@
             <label for="hora_fin_jueves">Hora Final</label>
           </div>
           <div class="input-field col s12 m6">
-            <input type="text" name="aula_jueves" id="aula_jueves" value="">
-            <label for="aula_jueves">Aula</label>
+            <select class=""  name="aula_jueves" id="aula_jueves">
+              @foreach ($aulas as $aula )
+                      <option value="{{ $aula->id }}">{{ $aula->aula }}</option>
+              @endforeach
+            </select>
           </div>
         </div>
         <div id="test5" class="col s12">
@@ -133,8 +149,11 @@
             <label for="hora_fin_viernes">Hora Final</label>
           </div>
           <div class="input-field col s12 m6">
-            <input type="text" name="aula_viernes" id="aula_viernes" value="">
-            <label for="aula_viernes">Aula</label>
+            <select class="" name="aula_viernes" id="aula_viernes">
+              @foreach ($aulas as $aula )
+                      <option value="{{ $aula->id }}">{{ $aula->aula }}</option>
+              @endforeach
+            </select>
           </div>
         </div>
         <div id="test6" class="col s12">
@@ -147,8 +166,11 @@
             <label for="hora_fin_sabado">Hora Final</label>
           </div>
           <div class="input-field col s12 m6">
-            <input type="text" name="aula_sabado" id="aula_sabado" value="">
-            <label for="aula_sabado">Aula</label>
+            <select class="" name="aula_sabado" id="aula_sabado">
+              @foreach ($aulas as $aula )
+                      <option value="{{ $aula->id }}">{{ $aula->aula }}</option>
+              @endforeach
+            </select>
           </div>
         </div>
         <div class="row">
@@ -174,7 +196,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.tooltipped');
-     
+
   });
 </script>
 @endsection
