@@ -171,7 +171,7 @@ class RegisterController extends Controller
 
       $csv->addStreamFilter('convert.iconv.ISO-8859-15/UTF-8');
       $json = json_encode($csv);
-      
-      echo $json;
+
+      dd($json);
     }
 }
