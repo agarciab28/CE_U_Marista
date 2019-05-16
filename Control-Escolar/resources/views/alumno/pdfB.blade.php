@@ -90,11 +90,11 @@ td {
   <div class="subHeadPDF">datos del alumno</div>
     <div class="row">
       <div class="column tabPDF" style="text-align:left;">ALUMNO</div>
-      <div class="column" id="alumno" style="width:40%">RODRIGUEZ HERNANDEZ ALEJANDRO MAXIMILIANO</div>
+      <div class="column" id="alumno" style="width:40%">{{$datos->apaterno}} {{$datos->amaterno}} {{$datos->nombres}}</div>
       <div class="column tabPDF" style="text-align:left; width:10%">no CTRL</div>
-      <div class="column" id="noCtrl" style="width:10%">XXXX</div>
+      <div class="column" id="noCtrl" style="width:10%">{{$ncontrol}}</div>
       <div class="column tabPDF" style="text-align:left; width:10%">CARRERA</div>
-      <div class="column" id="carrera" style="width:20%">XXXX</div>
+      <div class="column" id="carrera" style="width:20%">{{$datos->carrera}}</div>
       <br>
     </div>
   <br><br><br>
@@ -102,7 +102,7 @@ td {
   <table bgcolor="#cfd8dc" style="border: black 1px solid;">
     <thead style="background: rgba(96, 125, 139);">
       <tr>
-          <th class="tabPDF" style="color:white;" colspan="4" scope="rowgroup">AGO-DIC 2019</th>
+          <th class="tabPDF" style="color:white;" colspan="4" scope="rowgroup">{{$configuracion->periodo_actual}}</th>
       </tr>
       <tr>
           <th class="tabPDF" style="color:white;">CLAVE MATERIA</th>
@@ -113,29 +113,19 @@ td {
     </thead>
 
     <tbody>
+      @foreach($calificaciones as $calificacion)
       <tr>
-        <td class="bodyPDF center">ABC123</td>
-        <td class="bodyPDF center">CÁLCULO INTEGRAL</td>
-        <td class="bodyPDF center">ORDINARIA</td>
+        <td class="bodyPDF center">{{$calificacion->id_materia}}</td>
+        <td class="bodyPDF center">{{$calificacion->nombre_materia}}</td>
+        <td class="bodyPDF center">{{$calificacion->opcion_calificacion}}</td>
         <td class="bodyPDF center">80</td>
       </tr>
-      <tr>
-        <td class="bodyPDF center">ABC123</td>
-        <td class="bodyPDF center">ÉTICAPROGRAMACIÓN AVANZADA</td>
-        <td class="bodyPDF center">1RA EXTRAORDINARIA</td>
-        <td class="bodyPDF center">75</td>
-      </tr>
-      <tr>
-        <td class="bodyPDF center">ABC123</td>
-        <td class="bodyPDF center">ÉTICA</td>
-        <td class="bodyPDF center">2DA EXTRAORDINARIA</td>
-        <td class="bodyPDF center">75</td>
-      </tr>
+      @endforeach
       <tr style="border: black 1px solid;">
         <th class="tabPDF" style="background: rgba(96, 125, 139); color:white;"></th>
         <th class="tabPDF" style="background: rgba(96, 125, 139); color:white;"></th>
         <th class="tabPDF" style="background: rgba(96, 125, 139); color:white;">PROMEDIO</th>
-        <td class="tabPDF" style="background: rgba(96, 125, 139); color:white;">77.5</td>
+        <td class="tabPDF" style="background: rgba(96, 125, 139); color:white;">0</td>
       </tr>
     </tbody>
   </table>
@@ -144,7 +134,7 @@ td {
     <tbody style="background: rgba(96, 125, 139);">
       <tr style="border: black 1px solid;">
         <th class="tabPDF" style="color:white; width:15.85cm">PROMEDIO FINAL</th>
-        <td class="tabPDF" style="color:white; width:3cm">77.5</td>
+        <td class="tabPDF" style="color:white; width:3cm">0</td>
       </tr>
     </tbody>
   </table>
