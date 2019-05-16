@@ -43,7 +43,7 @@
                     <td>{{$plan->nombre_plan}}</td>
                     <td>{{$plan->carrera}}</td>
                     <td>{{$plan->fecha}}</td>
-                    <td> <a onclick="modificar_plan('{{$plan->id_plan}}')" href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Clave, nombre de plan de estudios, carrera o fecha de registro">Modificar</a> </td>
+                    <td> <a onclick="modificar_plan('{{$plan->id_plan}};{{$plan->nombre_plan}};{{$plan->id_carrera}};{{$plan->fecha}};{{$plan->carrera}}')" href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Clave, nombre de plan de estudios, carrera o fecha de registro">Modificar</a> </td>
                     <td> <a href="{{route('eliminaPlan',['plan'=>$plan->id_plan])}}"
                         class="btn {{($plan->activo>0)?' green':'red'}} tooltipped" data-position="bottom"
                         data-tooltip="Cambiar el estado vigente del plan de estudios">{{($plan->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>
@@ -128,12 +128,12 @@
                 <div class="input-field col m6 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="text" id="mod_plan_id" name="id_plan" placeholder="" readonly required maxlength="35">
-                    <label for="mod_plan_id">Clave de plan</label>
+                    <span for="mod_plan_id">Clave de plan</span>
                 </div>
 
                 <div class="input-field col m6 s12 ">
                     <input type="text" name="nombrec" id="mod_nombrec" class="validate" required maxlength="100">
-                    <label for="mod_nombrec">Nombre de plan de estudios</label>
+                    <span for="mod_nombrec">Nombre de plan de estudios</span>
                 </div>
 
                 <div class="input-field col m4 s12 ">
@@ -142,12 +142,13 @@
                         <option value="{{$carrera->id_carrera}}">{{$carrera->nombre_carrera}}</option>
                         @endforeach
                     </select>
-                    <label for="mod_carrera">Carrera</label>
+                    <span for="mod_carrera">Carrera actual: <div id='car_act'></div>
+                    </span>
                 </div>
 
                 <div class="input-field col m4 s12 ">
                     <input type="text" name="fecha" class="datepicker" id="mod_fecha">
-                    <label for="mod_fecha">Fecha</label>
+                    <span for="mod_fecha">Fecha</span>
                 </div>
 
                 <div class="input-field col m4 s12">
@@ -181,4 +182,11 @@
 
     });
 </script>
+@if($modif)
+<script type="text/javascript">
+swal("¡El plan de estudios se ha modificado correctamente!", {
+    icon: "success",
+});
+</script>
+@endif
 @endsection

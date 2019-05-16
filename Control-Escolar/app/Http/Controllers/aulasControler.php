@@ -9,7 +9,8 @@ class aulasControler extends Controller
 {
     public function showAulas(){
       $aulas=aula::get();
-      return view('admin.aulas',compact('aulas'));
+      $modif=false;
+      return view('admin.aulas',compact(['aulas','modif']));
     }
 
     public function registro(Request $request){
@@ -19,9 +20,10 @@ class aulasControler extends Controller
       $aula->tipo=$request->tipo;
       $aula->activo='1';
       $aula->save();
+      $modif=false;
 
       $aulas=aula::get();
-      return view('admin.aulas',compact('aulas'));
+      return view('admin.aulas',compact(['aulas','modif']));
     }
 
 
@@ -34,8 +36,9 @@ class aulasControler extends Controller
       }else{
         aula::where('aula',$aula)->update(['activo'=>1]);
       }
+      $modif=false;
       $aulas=aula::get();
-      return view('admin.aulas',compact('aulas'));
+      return view('admin.aulas',compact(['aulas','modif']));
 
     }
 
@@ -47,6 +50,7 @@ class aulasControler extends Controller
       $aulas = aula::get();
       //dd($personas);
       $registro=true;
-      return view('admin.aulas',compact(['aulas']));
+      $modif=true;
+      return view('admin.aulas',compact(['aulas','modif']));
     }
 }

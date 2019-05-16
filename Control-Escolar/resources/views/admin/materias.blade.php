@@ -26,7 +26,6 @@
         </div>
     </div>
 
-
     <div class="row">
         <table id="example" class="responsive-table striped" style="width:100%">
             <thead>
@@ -175,17 +174,23 @@
 
 
 @section('scripts')
-<script src="{{{ asset('js/datatables.js') }}}"></script>
-<script src="{{{asset('js/asigna.js')}}}"></script>
-<script src="{{{ asset('js/validaciones.js') }}}"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
-<script src="https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.tooltipped');
+  <script src="{{{ asset('js/datatables.js') }}}"></script>
+  <script src="{{{asset('js/asigna.js')}}}"></script>
+  <script src="{{{ asset('js/validaciones.js') }}}"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          var elems = document.querySelectorAll('.tooltipped');
 
-    });
-</script>
+      });
+  </script>
+  @if($modif)
+  <script type="text/javascript">
+  swal("¡La materia se ha modificado correctamente!", {
+      icon: "success",
+  });
+  </script>
+  @endif
 @endsection
