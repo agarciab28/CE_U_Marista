@@ -252,23 +252,10 @@ Listar Planes de estudio !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 @endsection
 @section('scripts')
 <!--sweetalert -->
+{{-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> --}}
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="{{{ asset('js/validaciones.js') }}}"></script>
 <script src="{{{ asset('js/plugins/dropify/js/dropify.min.js') }}}"></script>
-
-<script>
-    $(document).ready(function() {
-        // Basic
-        $('.dropify').dropify();
-        $('.fixed-action-btn').floatingActionButton();
-        $('.tooltipped').tooltip();
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.fixed-action-btn');
-      var instances = M.FloatingActionButton.init(elems, {direction: 'left'});
-    });
-</script>
 
 @if($registro)
 <script type="text/javascript">

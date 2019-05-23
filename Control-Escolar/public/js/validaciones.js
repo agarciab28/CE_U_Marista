@@ -13,6 +13,7 @@ $(document).ready(function() {
         }
     });
 
+
     //validaciones
 
 
@@ -74,92 +75,49 @@ $(document).ready(function() {
             //swal('Registro Exitoso!', 'Presione OK!', 'success');
         }
     });
-    /*
-      $("#nombre").keyup(function() {
-        var Max_Length = 5;
-        var length = $("#nombre").val().length;
-        if (length > Max_Length) {
-          $("#nombre").after("<p style='color:red'>the max length of "+Max_Length + " characters is reached, you typed in  " + length + "characters</p>");
-        }
-      });
-    */
     $('#coor_ext').hide();
     $('#profe_ext').hide();
     $('#alumno_ext').hide();
-    $('#rol').change(function() {
-        var x = document.getElementById('rol').value;
-
-        switch (x) {
-            case 'Alumno':
-                $('#coor_ext').hide();
-                $('#profe_ext').hide();
-                $('#alumno_ext').show();
-                break;
-            case 'Profesor':
-                $('#coor_ext').hide();
-                $('#alumno_ext').hide();
-                $('#profe_ext').show();
-                break;
-            case 'Coordinador':
-                $('#profe_ext').hide();
-                $('#alumno_ext').hide();
-                $('#coor_ext').show();
-                break;
-            default:
-                $('#coor_ext').hide();
-                $('#profe_ext').hide();
-                $('#alumno_ext').hide();
-                break;
-
-        }
 
 
-    });
+    // Basic
+    $('.dropify').dropify();
+    $('.fixed-action-btn').floatingActionButton();
+    $('.tooltipped').tooltip();
 
+});
 
-//Carreras
-// $("#data_carrera").hide();
-// $('#btn_add_carrera').click(function(){
-//   $("#data_carrera").show();
-//   $('#btn_add_carrera').hide();
-//   $("html, body").scrollTop(0);
-// });
-// $('#registrar_carrera').click(function(){
-//   $("#data_carrera").hide();
-// });
-// $('#close_registro_carrera').click(function(){
-// $("#data_carrera").hide();
-// $('#btn_add_carrera').show();
-// });
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.fixed-action-btn');
+  var instances = M.FloatingActionButton.init(elems, {direction: 'left'});
+});
 
-//Materias
-// $("#data_materia").hide();
-// $('#btn_add_materia').click(function () {
-//     $("#data_materia").show();
-//     $('#btn_add_materia').hide();
-//     $("html, body").scrollTop(5);
-// });
-// $('#registrar_materia').click(function () {
-//     $("#data_materia").hide();
-// });
-// $('#close_registro_materia').click(function () {
-//     $("#data_materia").hide();
-//     $('#btn_add_materia').show();
-// });
+$('#rol').change(function() {
+    var x = document.getElementById('rol').value;
 
-//Planes
-// $("#data_plan").hide();
-// $('#btn_add_plan').click(function () {
-//     $("#data_plan").show();
-//     $('#btn_add_plan').hide();
-//     $("html, body").scrollTop(0);
-// });
-// $('#registrar_plan').click(function () {
-//     $("#data_plan").hide();
-// });
-// $('#close_registro_plan').click(function () {
-//     $("#data_plan").hide();
-//     $('#btn_add_plan').show();
-// });
+    switch (x) {
+        case 'alumno':
+            $('#coor_ext').hide();
+            $('#profe_ext').hide();
+            $('#alumno_ext').show();
+            break;
+        case 'prof':
+            $('#coor_ext').hide();
+            $('#alumno_ext').hide();
+            $('#profe_ext').show();
+            break;
+        case 'coord':
+            $('#profe_ext').hide();
+            $('#alumno_ext').hide();
+            $('#coor_ext').show();
+            break;
+        default:
+            $('#coor_ext').hide();
+            $('#profe_ext').hide();
+            $('#alumno_ext').hide();
+            break;
+
+    }
+
 
 });
