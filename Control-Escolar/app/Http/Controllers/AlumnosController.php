@@ -7,6 +7,7 @@ use App\Models\persona;
 use App\Models\alumno;
 use App\Models\carrera;
 use App\Models\lista_grupo;
+use App\Models\coordinador;
 use App\Models\plan_de_estudios;
 use App\Models\calificaciones;
 use Illuminate\Support\Facades\Storage;
@@ -23,18 +24,13 @@ class AlumnosController extends Controller
         $modif=false;
         return view('admin.listas.alumnos',compact(['personas','cambio','planes','carreras','modif']));
     }
-    public function listacoord ($idp) {
-      $idc=persona::select('id_carrera')
-      ->join('personal as pe','pe.id_persona','=','persona.id_persona')
-      ->join('coordinador as co','co.username','=','pe.username')
-      ->where('persona.id_persona',$idp)
-      ->value('id_carrera');
-      $personas = persona::select('persona.id_persona','nombres','apaterno','amaterno','fnaci','email','ncontrol','rol','alumno.activo as activo','curp')
-        ->join('alumno','persona.id_persona','=','alumno.id_persona')
-        ->where('id_carrera',$idc)
-        ->get();
-        return view('coordinador.alumnos',compact(['personas']));
-
+    public function listacoord() {
+      $carrera=coordinador::select('id_carrera')->where('username',session('username'))->get()->first();
+      $personas=alumno::select('nombres','apaterno','amaterno','fnaci','alumno.ncontrol as ncontrol')
+      ->join('persona as p','p.id_persona','=','alumno.id_persona')
+      ->where('id_carrera',$carrera->id_carrera)
+      ->get();
+      return view('coordinador.alumnos',compact(['personas']));
     }
 
     public function liat_modificar ($ida) {

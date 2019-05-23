@@ -215,21 +215,21 @@ Route::group(["prefix" => 'coordinador','middleware'=>'coordinadorlogin'], funct
     return view('coordinador.alumnos');
   })->name('coordinador_alumnos');
 
-  Route::get('/grupos', function(){
+  /*Route::get('/grupos', function(){
     return view('coordinador.grupos');
-  })->name('coordinador_grupos');
+  })->name('coordinador_grupos');*/
   Route::get('/misdatos', function(){
     return view('coordinador.misdatos');
   })->name('coordinador_datos');
   //ver los grupos de la carrera
-  Route::get('/coordinador/grupos/{idp}','gruposController@grupos_coordinador')->name('lista_grupos_coordinador');
+  Route::get('/grupos','gruposController@grupos_coordinador')->name('lista_grupos_coordinador');
   //calificaciones ordinarias grupo
  //ver mis datos
  Route::get('/coordinador/datos','coordController@showDatos')->name('coord_datos');
  //editar datos
  Route::post('coordinador/datos','coordController@editar')->name('coord_modifica_datos');
  //listar alumnos
- Route::get('coordinador/listas/alumnos/{idp}', 'AlumnosController@listacoord')->name('coord_lista_alumnos');
+ Route::get('coordinador/listas/alumnos', 'AlumnosController@listacoord')->name('coord_lista_alumnos');
   //calificaciones - grupo - alumno - persona
   Route::get('/pdfA','genPDFController@pdfA_coordi')->name('coordinador_pdfA');
   //calificaciones extraordinarias grupo

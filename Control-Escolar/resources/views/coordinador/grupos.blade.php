@@ -26,7 +26,7 @@
                     <p>{{$grupo->nombres}} {{$grupo->aparterno}} {{$grupo->amaterno}}</p>
                 </div>
                 <div class="card-action">
-                    <a href="#modal1" class="modal-trigger"><i class="fas fa-cog"></i> Opciones</a>
+                    <a href="#" class="modal-trigger"><i class="fas fa-cog"></i> Opciones</a>
                 </div>
             </div>
         </div>

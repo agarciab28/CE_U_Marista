@@ -4,7 +4,6 @@
 
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
 <link href="{{{ asset('css/coordinador/misdatos.css') }}}" rel="stylesheet">
-<link href="{{{ asset('css/tooltips.css') }}}" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="{{{ asset('https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css') }}}" rel="stylesheet">
 
@@ -24,11 +23,7 @@
             <h4></h4>
         </div>
     </div>
-    <div class="fixed-action-btn">
-        <a class="btn-floating btn-large  waves-effect waves-light light-blue darken-4 modal-trigger tooltipped" href="#modaluser" id="btn_edit" data-position="left" data-tooltip="Modificar mis datos">
-            <i class="large material-icons">edit</i>
-        </a>
-    </div>
+
     <!-- profile-page-header -->
     <div id="profile-page-header" class="card">
         <div class="card-image waves-effect waves-block waves-light">
@@ -87,9 +82,9 @@
 </div>
   <!-- Modal Trigger
   <a class="waves-effect waves-light btn modal-trigger" href="#modaluser">Modal</a>-->
-  
+
   <!-- Modal Structure -->
-  div id="modaluser" class="modal modal-fixed-footer">
+  <div id="modaluser" class="modal modal-fixed-footer">
   <form id="pb" action="{{route('coord_modifica_datos')}}" method="post">
     @csrf
     <div class="modal-content">
@@ -298,7 +293,7 @@
 
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.tooltipped');
-         
+
     });
 
     window.onload = function() {

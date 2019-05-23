@@ -346,4 +346,14 @@ $listag=lista_grupo::select('ncontrol','nombres','id_grupo')
     ->get();
     return view('admin.listas.alumnosxgrupo',compact(['listag']));
    }
+   public function grupos_coordinador(){
+     $grupos=persona::select()
+      ->join('personal as p','p.id_persona','=','persona.id_persona')
+      ->join('coordinador as c','c.username','=','p.username')
+      ->join('grupo as g','g.id_carrera','=','c.id_carrera')
+      ->join('materia as m','m.id_materia','=','g.id_materia')
+      ->where('p.id_persona',session('id_persona'))
+      ->get();
+     return view('coordinador.grupos',compact('grupos'));
+   }
 }
