@@ -55,7 +55,7 @@ $grupo_seleccionado=0;
                 <input type="text" name="id_grupo" value="" hidden>
                 <button type="submit" class="collection-item black-text botonModal">Calificaciones Finales</button>
               </form>
-              <form class="" action="" method="post">
+              <!--<form class="" action="" method="post">
                 @csrf
                 <input type="text" name="id_grupo" value="" hidden>
                 <button type="submit" class="collection-item black-text botonModal">Método de evaluación</button>
@@ -69,7 +69,7 @@ $grupo_seleccionado=0;
                 @csrf
                 <input type="text" name="id_grupo" value="" hidden>
                 <button type="submit" class="collection-item black-text botonModal">Generar PDF</button>
-              </form>
+              </form>-->
             </div>
         </p>
     </div>

@@ -18,33 +18,31 @@
         <thead>
             <tr>
                 <th>Nombre de alumno</th>
+                <th>N° Control</th>
+                <th>Grupo</th>
                 <th>Calificación Sugerida</th>
                 <th>Calificacion Final</th>
                 <th>Guardar</th>
             </tr>
         </thead>
         <tbody>
-        
-            <tr>
-                <td> José Carlos Arrollo Ayala</td>
-                <td>100</td>
-                <td> <input id="calif" name="calif" type="text" class=""></td>
-                <td><a href="#" class="btn">guardar</a></td>
-            </tr>
+        @foreach($sugerencias as $sugerencia)
 
             <tr>
-                <td> Manuel Felipe Acuña Anastacio </td>
-                <td>100</td>
-                <td> <input id="calif" name="calif" type="text" class=""></td>
-                <td><a href="#" class="btn">guardar</a></td>
+              <form class="" action="{{route('actualizaFinal')}}" method="post">
+                @csrf
+
+                <td>{{$sugerencia['alumno']}}</td>
+                <td> <input type="text" name="ncontrol" value="{{$sugerencia['ncontrol']}}" readonly></td>
+                <td> <input type="text" name="grupo" value="{{$sugerencia['grupo']}}" readonly></td>
+                <td>{{$sugerencia['sug']}}</td>
+                <td> <input id="calif" value="{{$sugerencia['final']}}" name="calif" type="number" class=""></td>
+                <td><button type="submit" class="btn">guardar</button></td>
+
+              </form>
+              @endforeach
             </tr>
 
-            <tr>
-                <td> Jesus Aquiles Adenayor Amador</td>
-                <td>100</td>
-                <td> <input id="calif" name="calif" type="text" class=""></td>
-                <td><a href="#" class="btn">guardar</a></td>
-            </tr>
 
         </tbody>
     </table>

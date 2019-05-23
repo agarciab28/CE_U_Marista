@@ -168,13 +168,15 @@ Route::group(["prefix" => 'docente','middleware'=>'profelogin'], function(){
     return view('docente.home');
   })->name('docente_home');
 
-  Route::get('/misdatos', function(){
-    return view('docente.misdatos');
-  })->name('docente_datos');
+  Route::get('/misdatos','ProfesoresController@misdatos')->name('docente_datos');
 
   Route::post('/consulta', 'gruposController@describeGruposProf')->name('docente_consulta');
 
+  Route::post('/actualizaCalificacion','AlumnosController@actualizaCalificacion')->name('actualizaCalificacion');
+
   Route::post('/calif_finales', 'gruposController@calificacionesFinalesGrupo')->name('docente_calif');
+
+  Route::post('/actualizaFinal','AlumnosController@actualizaFinal')->name('actualizaFinal');
 
   Route::get('/grupos','gruposController@gruposProf')->name('docente_grupos');
 
@@ -220,7 +222,7 @@ Route::group(["prefix" => 'coordinador','middleware'=>'coordinadorlogin'], funct
     return view('coordinador.misdatos');
   })->name('coordinador_datos');
   //ver los grupos de la carrera
-  Route::get('/coordinador/grupos/{idp}','gruposController@grupos_coordinador')->name('lista_grupos_coordinador'); 
+  Route::get('/coordinador/grupos/{idp}','gruposController@grupos_coordinador')->name('lista_grupos_coordinador');
   //calificaciones ordinarias grupo
  //ver mis datos
  Route::get('/coordinador/datos','coordController@showDatos')->name('coord_datos');

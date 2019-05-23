@@ -91,4 +91,10 @@ try {
           $modif=false;
     return view('admin.listas.profes',compact(['personas','cambio','modif']));
   }
+  public function misdatos(){
+
+    $datos=persona::where('id_persona',session('id_persona'))->get()->first();
+
+    return view('docente.misdatos',compact('datos'));
+  }
 }

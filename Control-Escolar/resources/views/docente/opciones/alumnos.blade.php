@@ -17,6 +17,8 @@
         <thead>
             <tr>
                 <th>Nombre de alumno</th>
+                <th>N° control</th>
+                <th>Grupo</th>
                 <th>Calificación primer parcial</th>
                 <th>Calificación segundo parcial</th>
                 <th>Examen Final</th>
@@ -27,16 +29,22 @@
         <tbody>
           @foreach($alumnos as $alumno)
             <tr>
+              <form class="" action="{{route('actualizaCalificacion')}}" method="post">
+                @csrf
+
 
                 <td> {{$alumno->nombres}} {{$alumno->apaterno}} {{$alumno->amaterno}}</td>
-                <td> <input id="cal_1" name="cal_1" type="text" class=""> </td>
-                <td> <input id="cal_2" name="cal_2" type="text" class=""> </td>
-                <td> <input id="examen" name="examen" type="text" class=""> </td>
-                <td> <input id="faltas" name="faltas" type="text" class=""></td>
-                <td><a href="#" class="btn">guardar</a></td>
-
+                <td><input type="text" name="ncontrol" value="{{$alumno->ncontrol}}" readonly></td>
+                <td><input type="text" name="grupo" value="{{$alumno->grupo}}" readonly></td>
+                <td> <input  name="cal1" type="text" value="{{$alumno->primero}}" class=""></td>
+                <td> <input  name="cal2" type="text" value="{{$alumno->segundo}}" class=""></td>
+                <td> <input  name="examen" type="text" value="{{$alumno->examen}}" class=""></td>
+                <td> <input  name="faltas" type="text" value="{{$alumno->faltas}}" class=""></td>
+                <td><button type="submit" class="btn">guardar</button></td>
+              </form>
+              @endforeach
             </tr>
-            @endforeach
+
         </tbody>
     </table>
 </div>

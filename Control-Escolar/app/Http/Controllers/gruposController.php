@@ -297,19 +297,38 @@ $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','p.id
 
  public function describeGruposProf(Request $request){
    //dd($request);
-   $alumnos=lista_grupo::select('p.nombres as nombres','p.apaterno as apaterno','p.amaterno as amaterno')
+   $alumnos=lista_grupo::select('p.nombres as nombres','p.apaterno as apaterno','p.amaterno as amaterno','c.primer_parcial as primero','c.segundo_parcial as segundo','c.examen_final as examen','c.total_faltas as faltas','a.ncontrol as ncontrol','g.id_grupo as grupo')
     ->join('alumno as a','a.ncontrol','=','lista_grupo.ncontrol')
     ->join('persona as p','p.id_persona','=','a.id_persona')
     ->join('grupo as g','g.id_grupo','=','lista_grupo.id_grupo')
-    ->join('profesor as pr','pr.id_prof','=','g.id_prof')
-    ->join('personal as pe','pe.username','pr.username')
-    ->where('pe.username',session('username'))->get();
+    ->join('calificaciones as c','c.ncontrol','=','a.ncontrol')
+    ->where('g.id_grupo',$request->id_grupo)->get();
    return view('docente.opciones.alumnos',compact(['alumnos']));
  }
 
  public function calificacionesFinalesGrupo(Request $request){
+   $alumnos=lista_grupo::select('p.nombres as nombres','p.apaterno as apaterno','p.amaterno as amaterno','c.primer_parcial as primero','c.segundo_parcial as segundo','c.examen_final as examen','c.total_faltas as faltas','c.promedio_calificacion as final','a.ncontrol as ncontrol','g.id_grupo as grupo')
+    ->join('alumno as a','a.ncontrol','=','lista_grupo.ncontrol')
+    ->join('persona as p','p.id_persona','=','a.id_persona')
+    ->join('grupo as g','g.id_grupo','=','lista_grupo.id_grupo')
+    ->join('calificaciones as c','c.ncontrol','=','a.ncontrol')
+    ->where('g.id_grupo',$request->id_grupo)->get();
+    $sugerencias=array();
+    foreach ($alumnos as $alumno) {
+      $promedio=($alumno->primero*30/100)+($alumno->segundo*30/100)+($alumno->examen*40/100);
+      $final=$promedio;
+      if($alumno->final!=0){
+        $final=$alumno->final;
+      }
+      array_push($sugerencias,['alumno'=>$alumno->nombres.' '.$alumno->apaterno.' '.$alumno->amaterno,
+        'ncontrol'=>$alumno->ncontrol,
+        'sug'=>$promedio,
+        'final'=>$final,
+        'grupo'=>$alumno->grupo
+      ]);
+    }
 
-   return view('docente.opciones.calif_finales');
+   return view('docente.opciones.calif_finales',compact('sugerencias'));
  }
  public function showlista($idg){
 $listag=lista_grupo::select('ncontrol','nombres','id_grupo')

@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\persona;
 use App\Models\alumno;
 use App\Models\carrera;
+use App\Models\lista_grupo;
 use App\Models\plan_de_estudios;
+use App\Models\calificaciones;
 use Illuminate\Support\Facades\Storage;
 
 class AlumnosController extends Controller
@@ -32,7 +34,7 @@ class AlumnosController extends Controller
         ->where('id_carrera',$idc)
         ->get();
         return view('coordinador.alumnos',compact(['personas']));
-        
+
     }
 
     public function liat_modificar ($ida) {
@@ -156,4 +158,54 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 
 
     }
+
+    public function actualizaCalificacion(Request $request){
+      //dd([$request]);
+      calificaciones::where('ncontrol',$request->ncontrol)
+        ->update(['primer_parcial'=>$request->cal1,
+        'segundo_parcial'=>$request->cal2,
+        'examen_final'=>$request->examen,
+        'total_faltas'=>$request->faltas,
+        ]);
+      $alumnos=lista_grupo::select('p.nombres as nombres','p.apaterno as apaterno','p.amaterno as amaterno','c.primer_parcial as primero','c.segundo_parcial as segundo','c.examen_final as examen','c.total_faltas as faltas','a.ncontrol as ncontrol','g.id_grupo as grupo','a.ncontrol as ncontrol')
+       ->join('alumno as a','a.ncontrol','=','lista_grupo.ncontrol')
+       ->join('persona as p','p.id_persona','=','a.id_persona')
+       ->join('grupo as g','g.id_grupo','=','lista_grupo.id_grupo')
+       ->join('profesor as pr','pr.id_prof','=','g.id_prof')
+       ->join('personal as pe','pe.username','pr.username')
+       ->join('calificaciones as c','c.ncontrol','=','a.ncontrol')
+       ->where('pe.username',session('username'))
+       ->where('g.id_grupo',$request->grupo)
+       ->get();
+      return view('docente.opciones.alumnos',compact(['alumnos']));
+
+
+    }
+    public function actualizaFinal(Request $request){
+      if($request->calif<=10 && $request->calif>=0){
+        calificaciones::where('ncontrol',$request->ncontrol)
+          ->update(['promedio_calificacion'=>$request->calif]);
+      }
+      $alumnos=lista_grupo::select('p.nombres as nombres','p.apaterno as apaterno','p.amaterno as amaterno','c.primer_parcial as primero','c.segundo_parcial as segundo','c.examen_final as examen','c.total_faltas as faltas','c.promedio_calificacion as final','a.ncontrol as ncontrol','g.id_grupo as grupo')
+       ->join('alumno as a','a.ncontrol','=','lista_grupo.ncontrol')
+       ->join('persona as p','p.id_persona','=','a.id_persona')
+       ->join('grupo as g','g.id_grupo','=','lista_grupo.id_grupo')
+        ->join('calificaciones as c','c.ncontrol','=','a.ncontrol')
+        ->where('g.id_grupo',$request->grupo)->get();
+      $sugerencias=array();
+      foreach ($alumnos as $alumno) {
+        $promedio=($alumno->primero*30/100)+($alumno->segundo*30/100)+($alumno->examen*40/100);
+        $final=$promedio;
+        if($alumno->final!=0){
+          $final=$alumno->final;
+        }
+        array_push($sugerencias,['alumno'=>$alumno->nombres.' '.$alumno->apaterno.' '.$alumno->amaterno,
+          'ncontrol'=>$alumno->ncontrol,
+          'sug'=>$promedio,
+          'final'=>$final,
+          'grupo'=>$alumno->grupo
+        ]);
+    }
+    return view('docente.opciones.calif_finales',compact('sugerencias'));
+  }
 }

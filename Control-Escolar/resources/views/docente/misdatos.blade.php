@@ -4,7 +4,6 @@
 
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
 <link href="{{{ asset('css/docente/misdatos.css') }}}" rel="stylesheet">
-<link href="{{{ asset('css/tooltips.css') }}}" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="{{{ asset('https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css') }}}" rel="stylesheet">
 
@@ -24,11 +23,7 @@
               <h4></h4>
           </div>
       </div>
-      <div class="fixed-action-btn">
-          <a class="btn-floating btn-large  waves-effect waves-light light-blue darken-4 modal-trigger" href="#modaluser" id="btn_add_aula">
-              <i class="large material-icons">edit</i>
-          </a>
-      </div>
+
       <!-- profile-page-header -->
       <div id="profile-page-header" class="card">
           <div class="card-image waves-effect waves-block waves-light">
@@ -36,15 +31,23 @@
           </div>
           <div class="row">
             <figure class="card-profile-image col s12">
-                <img src="{{{ asset('img/user9.png')}}}" alt="profile image" class="circle z-depth-2 responsive-img activator">
+                <img src="{{{ session('url')}}}" alt="profile image" class="circle z-depth-2 responsive-img activator">
             </figure>
           </div>
 
           <div class="card-content">
               <div class="row">
                   <div class="col m9 offset-m2 s12">
-                      <h4 class="card-title grey-text text-darken-4">Diego Ramirez Rodriguez</h4>
-                      <p class="medium-small grey-text">Docente</p>
+                      <h4 class="card-title grey-text text-darken-4">{{session('nombre')}}</h4>
+                      <p class="medium-small grey-text">
+                        @if($datos->rol=='Admin')
+                        Administrador de control escolar
+                        @elseif($datos->rol=='Coord')
+                        Coordinador de carrera
+                        @elseif($datos->rol=='Prof')
+                        Profesor de la institución
+                        @endif
+                      </p>
                   </div>
                   <div class="right-align">
                       <a class="btn-floating activator waves-effect waves-light darken-2 right">
@@ -55,17 +58,25 @@
           </div>
           <div class="card-reveal">
               <p>
-                  <span class="card-title grey-text text-darken-4">Diego Ramirez Rodriguez <i class="material-icons right icon-blue">close</i></span>
-                  <span><i class="material-icons icon-blue">perm_identity</i> Administrador de control escolar</span>
+                  <span class="card-title grey-text text-darken-4">{{session('nombre')}} <i class="material-icons right icon-blue">close</i></span>
+                  <span><i class="material-icons icon-blue">perm_identity</i>
+                    @if($datos->rol=='Admin')
+                    Administrador de control escolar
+                    @elseif($datos->rol=='Coord')
+                    Coordinador de carrera
+                    @elseif($datos->rol=='Prof')
+                    Profesor de la institución
+                    @endif
+                  </span>
 
               </p>
 
-              <p>Tiene como objetivos, registrar, controlar y gestionar una serie de actividades enfocadas al bienestar académico-administrativo.</p>
+              <p>Tiene como objetivos, calificar alumnos</p>
 
-              <p><i class="material-icons icon-blue">verified_user</i> admin</p>
-              <p><i class="material-icons icon-blue">perm_phone_msg</i> +1 (612) 222 8989</p>
-              <p><i class="material-icons icon-blue">email</i> mail@domain.com</p>
-              <p><i class="material-icons icon-blue">cake</i> 18th 1990</p>
+              <p><i class="material-icons icon-blue">verified_user</i>{{$datos->rol}}</p>
+              <p><i class="material-icons icon-blue">perm_phone_msg</i>{{$datos->num_cel}}</p>
+              <p><i class="material-icons icon-blue">email</i>{{$datos->email}}</p>
+              <p><i class="material-icons icon-blue">cake</i>{{$datos->fnaci}}</p>
           </div>
       </div>
   </div>
@@ -277,7 +288,7 @@
 
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.tooltipped');
-         
+
     });
 
     window.onload = function() {

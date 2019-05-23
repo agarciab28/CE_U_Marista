@@ -16,15 +16,15 @@ class CreateTableCalificaciones extends Migration
         Schema::create('calificaciones', function (Blueprint $table) {
             $table->string('ncontrol',10);
             $table->integer('id_grupo')->unsigned();
-            $table->float('primer_parcial',8,2);
-            $table->float('segundo_parcial',8,2);
-            $table->float('examen_final',8,2);
-            $table->integer('faltas_primer')->nullable();
-            $table->integer('faltas_segundo')->nullable();
-            $table->integer('faltas_tercer')->nullable();
-            $table->integer('total_faltas')->nullable();
-            $table->float('promedio_calificacion',8,2)->nullable();
-            $table->string('opcion_calificacion',10);
+            $table->float('primer_parcial',8,2)->default('0');
+            $table->float('segundo_parcial',8,2)->default('0');
+            $table->float('examen_final',8,2)->default('0');
+            $table->integer('faltas_primer')->default('0');
+            $table->integer('faltas_segundo')->default('0');
+            $table->integer('faltas_tercer')->default('0');
+            $table->integer('total_faltas')->default('0');
+            $table->float('promedio_calificacion',8,2)->default('0');
+            $table->string('opcion_calificacion',10)->default('0');
             $table->timestamps();
             $table->foreign('id_grupo')->references('id_grupo')->on('grupo');
             $table->foreign('ncontrol')->references('ncontrol')->on('alumno')->onUpdate('cascade');

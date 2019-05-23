@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\grupo;
 use App\Models\lista_grupo;
+use App\Models\calificaciones;
+
 class asignarController extends Controller
 {
     public function guardar (Request $request) {
@@ -19,6 +21,11 @@ class asignarController extends Controller
             $lista->id_grupo=$datos[2];
             $var2++;
             $lista->save();
+            $calificaciones= new calificaciones();
+            $calificaciones->ncontrol=$datos[0];
+            $calificaciones->id_grupo=$datos[2];
+            $calificaciones->save();
+
             $var++;
         }
           } catch (\Exception $e) {
