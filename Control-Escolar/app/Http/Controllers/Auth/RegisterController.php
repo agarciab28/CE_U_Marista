@@ -95,7 +95,7 @@ class RegisterController extends Controller
 
         $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
 
-        if($request->rol=='Alumno'){
+        if($request->rol=='alumno'){
 
           $alumno= new alumno();
           $alumno->id_persona=$id_persona->id_persona;
@@ -109,11 +109,11 @@ class RegisterController extends Controller
         }else {
 
           $personal=new personal();
-          if($request->rol=='Coordinador'){
+          if($request->rol=='coord'){
             $personal->username=$request->username;
             $personal->ced_fiscal=$request->ced_fiscal;
             $personal->nssoc=$request->nssoc;
-          }else if($request->rol=='Profesor'){
+          }else if($request->rol=='prof'){
             $personal->username=$request->usernamep;
             $personal->ced_fiscal=$request->cedulap;
             $personal->nssoc=$request->nssocp;
@@ -123,14 +123,14 @@ class RegisterController extends Controller
           $personal->activo='1';
           $personal->save();
 
-          if($request->rol=='Coordinador'){
+          if($request->rol=='coord'){
 
             $coordinador= new coordinador();
             $coordinador->id_carrera=$request->id_carrera_coordinador;
             $coordinador->username=$request->username;
             $coordinador->save();
 
-          }else if($request->rol=='Profesor'){
+          }else if($request->rol=='prof'){
 
 
             $profesor = new profesor();

@@ -22,11 +22,7 @@
             <h4></h4>
         </div>
     </div>
-    <div class="fixed-action-btn">
-        <a class="btn-floating btn-large  waves-effect waves-light light-blue darken-4 modal-trigger tooltipped" href="#modaluser" id="btn_edit" data-position="left" data-tooltip="Modificar mis datos">
-            <i class="large material-icons">edit</i>
-        </a>
-    </div>
+    
     <!-- profile-page-header -->
     <div id="profile-page-header" class="card">
         <div class="card-image waves-effect waves-block waves-light">
@@ -61,7 +57,7 @@
 
             </p>
 
-            <p>Tiene como objetivos, registrar cosas.</p>
+            <p>Tiene como objetivos, estudiar</p>
 
             <p><i class="material-icons icon-blue">verified_user</i> {{$datos->rol}}</p>
             <p><i class="material-icons icon-blue">perm_phone_msg</i>{{$datos->num_cel}}</p>
@@ -71,7 +67,7 @@
     </div>
 </div>
 
- 
+
 
 
 @endsection
