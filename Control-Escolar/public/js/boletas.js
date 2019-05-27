@@ -3,12 +3,12 @@ $( document ).ready(function() {
 });
 
 function mostrarBoleta(){
-  $( "#boleta" ).show();
+  $( ".boleta" ).show();
   $( "#btn_pdf" ).show();
 }
 
 function ocultarBoleta(){
-  $( "#boleta" ).hide();
+  $( ".boleta" ).hide();
   $( "#btn_pdf" ).hide();
 }
 
