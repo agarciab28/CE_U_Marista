@@ -75,11 +75,11 @@ class RegisterController extends Controller
     }
     public function registro(Request $request){
       try {
-        $this->validate($request, [
-          'input_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-      ]); 
-        $file=$request->file('imagen');
-
+  
+       $file=$request->file('imagen');
+        //$this->validate($file, [
+       //   'input_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+     // ]); 
         $nombre=time().$file->getClientOriginalName();
 
                 $persona=new persona();
