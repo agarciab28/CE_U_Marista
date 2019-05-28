@@ -67,7 +67,7 @@
         </div>
       </div>
       <div class="contenedor">
-        <a href="#modalCreditos" class="creditos footer modal-trigger"><i class="fas fa-chevron-up"></i></a>
+        <a href="#modalCreditos" class="creditos footer modal-trigger tooltipped" data-position="top" data-tooltip="Créditos"><i class="fas fa-chevron-up"></i></a>
         <p class="footer">Todos los derechos reservados © 2019.</p>
       </div>
     </div>
@@ -120,17 +120,5 @@
 @endsection
 
 @section('scripts')
-  <script type="text/javascript" src="{{{ asset('js/jquery.touchSwipe.js') }}}"></script>
-  <script type="text/javascript">
-  $("body").swipe( {
-  swipeUp:function(event, direction, distance, duration) {
-    $('#modalCreditos').modal('open');
-    // instance.open();
-  },
-  click:function(event, target) {
-  },
-  threshold:100,
-  allowPageScroll:"vertical"
-});
-  </script>
+
 @endsection
