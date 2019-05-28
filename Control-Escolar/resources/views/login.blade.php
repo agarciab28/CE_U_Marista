@@ -95,7 +95,7 @@
         <span><i class="fab fa-twitter"></i> <a href="https://twitter.com/DiegoUlisesMtzA" target="_blank">Twitter</a> </span> <br>
         <span><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/diego.ulises.mtz.a/" target="_blank">Instagram</a> </span> <br>
         <hr>
-        <h5>Alex Herrera Ramírez</h5>
+        <h5>Alexis Herrera Ramirez</h5>
         <span><i class="fas fa-envelope"></i> alex.herrera361@gmail.com</span> <br>
         <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/alextremo-08" target="_blank">LinkedIn</a> </span> <br>
         <hr>

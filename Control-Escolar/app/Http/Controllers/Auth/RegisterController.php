@@ -75,7 +75,11 @@ class RegisterController extends Controller
     }
     public function registro(Request $request){
       try {
-        $file=$request->file('imagen');
+  
+       $file=$request->file('imagen');
+        //$this->validate($file, [
+       //   'input_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+     // ]); 
         $nombre=time().$file->getClientOriginalName();
 
                 $persona=new persona();
@@ -91,6 +95,9 @@ class RegisterController extends Controller
                 $persona->save();
                 $file->storeAs('public', $nombre);
               //\Storage::disk('local')->put($nombre,\File::get($file));
+
+            
+
         $id_persona=persona::where('curp',$request->curp)->get(['id_persona'])->first();
 
         $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
@@ -141,8 +148,8 @@ class RegisterController extends Controller
         }
 
       } catch (\Exception $e) {
-        dd($e);
-
+        $message = "Tipo de archivo no valido";
+        echo "<script type='text/javascript'>alert('$message');</script>";
         $registro=false;
         $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
         $carreras= carrera::get(['id_carrera','nombre_carrera']);
