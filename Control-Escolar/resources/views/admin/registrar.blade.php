@@ -241,7 +241,33 @@
     </li>
 </ul>
 </div> --}}
+<div class="row">
+  <form class="col s12" action="{{route('subirCSV')}}" method="post" enctype="multipart/form-data">
+    @csrf
+    <div class = "row">
+      <div class="col s6 push-s3">
+        <div class = "file-field input-field">
+           <div class = "btn">
+              <span class="white-text">Buscar</span>
+              <input type = "file" name="file"/>
+           </div>
 
+           <div class = "file-path-wrapper">
+              <input class = "file-path validate" type = "text" placeholder = "Buscar Archvio" name="alumnos" />
+           </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s3 push-s5">
+        <a href="{{route('descargaCSV')}}" class="btn"><i class="fas fa-download"></i></a>
+      </div>
+      <div class="col s3 push-s3">
+        <button type="submit" class="btn"><i class="fas fa-upload"></i></button>
+      </div>
+    </div>
+  </form>
+</div>
 
 
 @endsection

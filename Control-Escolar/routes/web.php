@@ -44,6 +44,10 @@ Route::group(["prefix" => 'admin' , 'middleware'=>'adminlogin'], function(){
     return view('admin.kardex');
   })->name('admin_kardex');
 
+  Route::get('/descargaFormato','adminController@descarga')->name('descargaCSV');
+
+  Route::post('/sube','adminController@sube')->name('subirCSV');
+
 //rutas registro de usuarios
 Route::get('/modificar_alumno/{ida}','AlumnosController@liat_modificar')->name('modificar_alumno');
 
