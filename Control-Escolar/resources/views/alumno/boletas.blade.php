@@ -33,7 +33,7 @@
   </div>
 
 
-  <div id="boleta" class="boleta">
+  <div class="boleta">
     <div class="container" style="width: 24.1cm">
       <div class="row">
         <div class="col s12 m4 l2"><img src="{{{ asset('img/logos/logo_3_a.png') }}}" alt="" width="70%" style="margin:20px"></div>
@@ -69,7 +69,7 @@
                 <th class="tabPDF center blue-grey" style="color:white;">MATERIA</th>
                 <th class="tabPDF center blue-grey" style="color:white;">PRIMER PARCIAL</th>
                 <th class="tabPDF center blue-grey" style="color:white;">SEGUNDO PARCIAL</th>
-                <th class="tabPDF center blue-grey" style="color:white;">eXAMEN FINAL</th>
+                <th class="tabPDF center blue-grey" style="color:white;">EXAMEN FINAL</th>
                 <th class="tabPDF center blue-grey" style="color:white;">FALTAS</th>
                 <th class="tabPDF center blue-grey" style="color:white;">Calificación final</th>
             </tr>

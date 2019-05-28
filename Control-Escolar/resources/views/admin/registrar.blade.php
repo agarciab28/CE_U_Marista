@@ -276,7 +276,6 @@ Listar Planes de estudio !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 </div>
 
 
-
 @endsection
 @section('scripts')
 <!--sweetalert -->

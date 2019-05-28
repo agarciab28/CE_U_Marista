@@ -18,10 +18,22 @@
 <!--start container-->
 <div class="container">
   <div class="fixed-action-btn">
-    <a class="btn-floating btn-large  waves-effect waves-light light-blue darken-4 modal-trigger tooltipped" href="#task-modal" data-position="left" data-tooltip="Crear nuevo evento" id="btn_add_evento">
-      <i class="large material-icons">add</i>
+    <a class="btn-floating btn-large waves-effect waves-light light-blue darken-4 modal-trigger" data-position="left">
+      <i class="fas fa-cog"></i>
     </a>
+    <ul>
+      <li>
+        <a class="btn-floating waves-effect waves-light red darken-3 tooltipped" data-position="left" data-tooltip="Cierre de Semestre" href="" ><i class="fas fa-times"></i></a>
+      </li>
+      <li>
+        <a class="btn-floating waves-effect waves-light light-blue darken-4 modal-trigger tooltipped" href="#task-modal" data-position="left" data-tooltip="Crear nuevo evento" id="btn_add_evento">
+          <i class="large material-icons">add</i>
+        </a>
+      </li>
+    </ul>
   </div>
+
+
   <div class="section">
     <div class="row contenedor">
       <div class="col m6 push-m3 s12">
@@ -208,9 +220,6 @@
             <script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/js/fullcalendar.min.js') }}}"></script>
             <script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/fullcalendar-script.js') }}}"></script>
             <script type="text/javascript" src="{{{ asset('js/plugins/fullcalendar/lang/es.js') }}}"></script>
-
-            <!--plugins.js - Some Specific JS codes for Plugin Settings-->
-            <script type="text/javascript" src="js/plugins.js') }}}"></script>
 
             <script type="text/javascript" src="{{{ asset('js/picker.js') }}}"></script>
 
