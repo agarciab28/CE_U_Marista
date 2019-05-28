@@ -93,5 +93,6 @@ class calendarioController extends Controller
 
 
       });
+      return redirect()->route('admin_home');
     }
 }
