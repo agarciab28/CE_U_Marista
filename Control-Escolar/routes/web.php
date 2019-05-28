@@ -263,9 +263,7 @@ Route::group(["prefix" => 'alumno','middleware'=>'alumnologin'], function(){
 
   Route::get('/boletas', 'genPDFController@showBoleta')->name('alumno_boletas');
 
-  Route::get('/kardex', function(){
-    return view('alumno.kardex');
-  })->name('alumno_kardex');
+  Route::get('/kardex', 'AlumnosController@kardexAlumno')->name('alumno_kardex');
 
   Route::get('/grupos', function(){
     return view('alumno.grupos');

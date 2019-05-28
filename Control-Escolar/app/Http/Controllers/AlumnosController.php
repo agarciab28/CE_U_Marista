@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\persona;
+use App\Models\kardex;
 use App\Models\alumno;
 use App\Models\carrera;
 use App\Models\lista_grupo;
 use App\Models\coordinador;
 use App\Models\plan_de_estudios;
 use App\Models\calificaciones;
+use App\Models\configuracion;
 use Illuminate\Support\Facades\Storage;
 
 class AlumnosController extends Controller
@@ -203,5 +205,27 @@ echo "<script type='text/javascript'>alert('$message');</script>";
         ]);
     }
     return view('docente.opciones.calif_finales',compact('sugerencias'));
+  }
+  public function kardexAlumno(){
+    $kardex=kardex::where('ncontrol',session('ncontrol'))->get();
+    $calificacioness=array();
+    foreach ($kardex as $semestre) {
+      //dd($semestre->obj_calificacion);
+      array_push($calificacioness,$semestre->obj_calificacion);
+    }
+    //$calificaciones=json_decode($json->obj_calificacionn,true);
+
+    $datos=alumno::select('nombres','apaterno','amaterno','ncontrol')
+      ->join('persona as p','p.id_persona','=','alumno.id_persona')
+      ->where('alumno.ncontrol',session('ncontrol'))
+      ->get()->first();
+      //dd($datos);
+      $calificaciones=array();
+      foreach ($calificacioness as $calif) {
+        array_push($calificaciones,json_decode($calif));
+      }
+      
+      $configuracion=configuracion::get()->first();
+    return view('alumno.kardex',compact(['datos','calificaciones','configuracion']));
   }
 }

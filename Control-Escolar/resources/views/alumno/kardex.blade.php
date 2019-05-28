@@ -9,6 +9,86 @@
 
 
 @section('content')
+
+<style>
+td {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+  .column {
+    float: left;
+    width: 10%;
+  }
+
+  body{
+    font-family: "Verdana, Geneva, sans-serif";
+    font-style: normal;
+    font-size: 10px;
+    color: black;
+    text-transform: uppercase;
+  }
+
+  .bodyPDF{
+    font-family: "Verdana, Geneva, sans-serif";
+    font-size: 10px;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .headPDF{
+    text-align: center;
+    color: rgb(8,58,99);
+    font-family: "Calibri";
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .head2PDF{
+    font-family: "Verdana, Geneva, sans-serif";
+    font-weight: bold;
+    font-size: 12px;
+    color: black;
+    text-transform: uppercase;
+  }
+
+  .subHeadPDF {
+    text-align: center;
+    font-family: "Verdana, Geneva, sans-serif";
+    font-weight: bold;
+    font-size: 12px;
+    color: white;
+    background: rgb(8,58,99);
+    margin: 0 0 15px;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    border: 2px solid #5878ca;
+  }
+
+  .tabPDF{
+    color: rgb(8,58,99);
+    font-family: "Verdana, Geneva, sans-serif";
+    font-weight: bold;
+    text-align: center;
+    font-size: 10px;
+  }
+
+  table td:nth-child(1) {
+  	width: 2cm;
+  }
+  table td:nth-child(2) {
+  	width: 8.5cm;
+  }
+  table td:nth-child(3) {
+  	width: 5cm;
+  }
+  table td:nth-child(4) {
+  	width: 3cm;
+  }
+</style>
 <div class="row contenedor">
   <div class="col m6 push-m3 s12">
     <h5>Kardex</h5>
@@ -27,7 +107,7 @@
     <div class="column tabPDF" style="text-align:left;">ALUMNO</div>
     <div class="column" id="alumno" style="width:40%">{{$datos->apaterno}} {{$datos->amaterno}} {{$datos->nombres}}</div>
     <div class="column tabPDF" style="text-align:left; width:10%">no CTRL</div>
-    <div class="column" id="noCtrl" style="width:10%">{{$ncontrol}}</div>
+    <div class="column" id="noCtrl" style="width:10%">{{$datos->ncontrol}}</div>
     <div class="column tabPDF" style="text-align:left; width:10%">CARRERA</div>
     <div class="column" id="carrera" style="width:20%">{{$datos->carrera}}</div>
     <br>
