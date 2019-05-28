@@ -187,18 +187,17 @@
                       <label for="jefe_control">Jefe de Control Escolar</label>
                     </div>
 
-
-
-
-
-                    <div class="input-field col m4 s12">
-                      <button class="btn light-blue darken-4" type="submit" id="actualizar_periodo">Actualizar
-                        <i class="material-icons right">send </i>
-                      </button>
-                    </div>
                   </div>
                 </form>
               </div>
+              <div class="modal-footer">
+                <div class="input-field col m4 s12">
+                  <button class="btn light-blue darken-4" type="submit" id="actualizar_periodo">Actualizar
+                    <i class="material-icons right">send </i>
+                  </button>
+                </div>
+              </div>
+
             </div>
             <!--end container-->
 

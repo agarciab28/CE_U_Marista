@@ -67,8 +67,70 @@
         </div>
       </div>
       <div class="contenedor">
+        <a href="#modalCreditos" class="creditos footer modal-trigger"><i class="fas fa-chevron-up"></i></a>
         <p class="footer">Todos los derechos reservados © 2019.</p>
       </div>
     </div>
   </div>
+
+  <!-- Modal Structure -->
+  <div id="modalCreditos" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Desarrollado Por:</h4>
+      <hr>
+      <p>
+        <h5>Alejandro García Barajas</h5>
+        <span><i class="fas fa-envelope"></i> agarciab28@gmail.com</span> <br>
+        <span><i class="fas fa-globe"></i> <a href="https://www.alejandrogb.com" target="_blank">www.alejandrogb.com</a> </span> <br>
+        <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/alejandro-garcia/" target="_blank">LinkedIn</a> </span> <br>
+        <hr>
+        <h5>Gerardo Takeshi Nakamura Ramírez</h5>
+        <span><i class="fas fa-envelope"></i> g.t.n.ramirez@gmail.com</span> <br>
+        <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/g-takeshi-nakamura/" target="_blank">LinkedIn</a> </span> <br>
+        <hr>
+        <h5>Diego Ulises Martínez Aguilar</h5>
+        <span><i class="fas fa-envelope"></i> diegoulisesmartinezaguilar@gmail.com</span> <br>
+        <span><i class="fas fa-envelope"></i> 15121185@tecmor.mx</span> <br>
+        <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/diego-ulises-martínez-aguilar" target="_blank">LinkedIn</a> </span> <br>
+        <span><i class="fab fa-twitter"></i> <a href="https://twitter.com/DiegoUlisesMtzA" target="_blank">Twitter</a> </span> <br>
+        <span><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/diego.ulises.mtz.a/" target="_blank">Instagram</a> </span> <br>
+        <hr>
+        <h5>Alex Herrera Ramírez</h5>
+        <span><i class="fas fa-envelope"></i> alex.herrera361@gmail.com</span> <br>
+        <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/alextremo-08" target="_blank">LinkedIn</a> </span> <br>
+        <hr>
+        <h5>Luis Antonio Bautista Rendon</h5>
+        <span><i class="fas fa-envelope"></i> luisantoniobr97@gmail.com</span> <br>
+        <span><i class="fab fa-linkedin"></i> <a href="http://www.linkedin.com/in/LuisAntonioBautistaRendon" target="_blank">LinkedIn</a> </span> <br>
+        <hr>
+        <h5>Raúl Eduardo Ibarra Luz</h5>
+        <span><i class="fas fa-envelope"></i> ibarraluzraul@gmail.com</span> <br>
+        <span><i class="fab fa-twitter"></i> <a href="https://twitter.com/Linskky" target="_blank">Twitter</a> </span> <br>
+        <span><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/linskky" target="_blank">Instagram</a> </span> <br>
+        <hr>
+        <h5>Samuel Alejandro López Becerra</h5>
+
+        <hr>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
+  </div>
+@endsection
+
+@section('scripts')
+  <script type="text/javascript" src="{{{ asset('js/jquery.touchSwipe.js') }}}"></script>
+  <script type="text/javascript">
+  $("body").swipe( {
+  swipeUp:function(event, direction, distance, duration) {
+    $('#modalCreditos').modal('open');
+    // instance.open();
+  },
+  click:function(event, target) {
+  },
+  threshold:100,
+  allowPageScroll:"vertical"
+});
+  </script>
 @endsection
