@@ -13,18 +13,18 @@
 <div class="section container">
 
     <div class="row">
-        <form class="col  s12 m12" id="pb" action="{{route('admin_registrar_envio')}}" method="post" form enctype="multipart/form-data">
+        <form class="col  s12 m12" id="pb" action="{{route('admin_registrar_envio')}}" method="post" form enctype="multipart/form-data" onsubmit="return validarFormulario()">
             {{ csrf_field() }}
 
             <div class="row card-panel">
 
-              <div class="contenedor row">
-                <div class="col m6 push-m3 s12">
-                  <h5>Registro de Usuarios</h5>
+                <div class="contenedor row">
+                    <div class="col m6 push-m3 s12">
+                        <h5>Registro de Usuarios</h5>
+                    </div>
                 </div>
-              </div>
-            <div class="input-field col m4 s12 ">
-                    <input type="file" id="imagen" name="imagen" class="dropify" required >
+                <div class="input-field col m4 s12 ">
+                    <input type="file" id="imagen" name="imagen" class="dropify" required>
                     <!--<i class="material-icons prefix">account_circle</i>-->
 
                 </div>
@@ -99,7 +99,7 @@
                 </div>
 
 
-<!--Registrar contraseña-->
+                <!--Registrar contraseña-->
                 <div class="input-field col m4 s12 ">
                     <!--<i class="material-icons prefix">account_circle</i>-->
                     <input type="text" name="pass" id="pass" class="validate" maxlength="20">
@@ -127,7 +127,6 @@
                             @foreach($carreras as $carrera)
                             <option value="{{$carrera->id_carrera}}">{{$carrera->nombre_carrera}}</option>
                             @endforeach
-
                         </select>
                     </div>
 
@@ -150,23 +149,18 @@
                             <option value="11">11</option>
                             <option value="12">12</option>
                         </select>
-
                     </div>
                     <div class="input-field col m4 s12 ">
-                        <!--<i class="material-icons prefix">account_circle</i>
-Listar Planes de estudio !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                      -->
-                      <select name="plan_de_estudios" id="plan_est">
-                        @foreach($planes as $plan)
-                          <option value="{{$plan->id_plan}}">{{$plan->nombre_plan}}</option>
-                        @endforeach
-                      </select>
+                        <select name="plan_de_estudios" id="plan_est">
+                            @foreach($planes as $plan)
+                            <option value="{{$plan->id_plan}}">{{$plan->nombre_plan}}</option>
+                            @endforeach
+                        </select>
                         <label for="plan_est">Plan de estudios</label>
                     </div>
                 </div>
 
                 <div id="profe_ext">
-
                     <div class="input-field col m4 s12 ">
                         <!--<i class="material-icons prefix">account_circle</i>-->
                         <input type="text" name="usernamep" id="clavep" class="validate" maxlength="30">
@@ -238,14 +232,14 @@ Listar Planes de estudio !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 <!--BOTÓN REGISTROS-->
 {{-- <div class="fixed-action-btn">
   <a class="btn-floating btn-large amber pulse tooltipped" data-position="top" data-tooltip="Registrar lista" href="{{route('regAlumnoCSV')}}">
-    <i class="large material-icons">file_upload</i>
-  </a>
-  <ul>
+<i class="large material-icons">file_upload</i>
+</a>
+<ul>
     <li>
-      <a class="btn-floating light-blue darken-4 tooltipped" data-position="top" data-tooltip="Descargar plantilla alumnos" href="{{{ asset('csv/Alumno.csv') }}}" download="">
-      <i class="material-icons">file_download</i></a>
+        <a class="btn-floating light-blue darken-4 tooltipped" data-position="top" data-tooltip="Descargar plantilla alumnos" href="{{{ asset('csv/Alumno.csv') }}}" download="">
+            <i class="material-icons">file_download</i></a>
     </li>
-  </ul>
+</ul>
 </div> --}}
 <div class="row">
   <form class="col s12" action="{{route('subirCSV')}}" method="post" enctype="multipart/form-data">
@@ -281,8 +275,92 @@ Listar Planes de estudio !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 <!--sweetalert -->
 {{-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> --}}
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="{{{ asset('js/validaciones.js') }}}"></script>
 <script src="{{{ asset('js/plugins/dropify/js/dropify.min.js') }}}"></script>
+<script>
+    function validarFormulario() {
+        var nombre = document.getElementById("nombre").value;
+        var apellidop = document.getElementById("apellidop").value;
+        var apellidom = document.getElementById("apellidom").value;
+        var correo = document.getElementById("correo").value;
+        var rol = document.getElementById('rol').selectedIndex;
+        var curp = document.getElementById('curp').value;
+        var sexo = document.getElementById('sexo').selectedIndex;
+        var pass = document.getElementById('pass').value;
+
+        var exp_correo = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
+        var exp_curp = /^(([A-Z]{4})([0-9]{2})((04|06|09|11)(0[1-9]|1[0-9]|2[0-9]|30)|(01|03|05|07|08|10|12)(0[1-9]|1[0-9]|2[0-9]|3[0-1])|(02)(0[1-9]|1[0-9]|2[0-9]))(H|M)(AS|BC|BS|CC|CS|CH|DF|CL|CM|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QO|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)((B|C|D|F|G|H|J|K|L|M|N|P|Q|R|S|T|V|W|X|Y|Z){3})([\d]{2}))$/
+        var exp_nom = /^[A-Za-zñÑ-áéíóúÁÉÍÓÚ\s\t-]+$/
+
+        //Test comboBox
+        if (rol == null || rol == 0) {
+            M.toast({
+                html: 'Debe seleccionar un rol',
+                classes: 'rounded red'
+            });
+            return false;
+        }
+        //Test nombre completo
+        if (nombre == "" || apellidop == "" || apellidom == "") {
+            M.toast({
+                html: 'Existen campos vacios',
+                classes: 'rounded red'
+            });
+            return false;
+        } else if (!exp_nom.test(nombre)) {
+            M.toast({
+                html: 'Formato de nombre incorrecto',
+                classes: 'rounded red'
+            });
+            return false;
+        } else if (!exp_nom.test(apellidop)) {
+            M.toast({
+                html: 'Formato de apellido paterno incorrecto',
+                classes: 'rounded red'
+            });
+            return false;
+        } else if (!exp_nom.test(apellidom)) {
+            M.toast({
+                html: 'Formato de apellido materno incorrecto',
+                classes: 'rounded red'
+            });
+            return false;
+        }
+        //Test correo
+        if (!(exp_correo.test(correo))) {
+            M.toast({
+                html: 'Debe escribir un correo válido',
+                classes: 'rounded red'
+            });
+            return false;
+        }
+        //Test curp
+        if (!(exp_curp.test(curp))) {
+            M.toast({
+                html: 'Debe escribir una curp válida',
+                classes: 'rounded red'
+            });
+            return false;
+        }
+        //Test sexo
+        if (sexo == null || sexo == 0) {
+            M.toast({
+                html: 'Debe seleccionar un sexo',
+                classes: 'rounded red'
+            });
+            return false;
+        }
+
+        if (pass == "") {
+            M.toast({
+                html: 'Debe escribir una contraseña válida',
+                classes: 'rounded red'
+            });
+            return false;
+        }
+        return true;
+    }
+</script>
+<script src="{{{ asset('js/validaciones.js') }}}"></script>
 
 @if($registro)
 <script type="text/javascript">

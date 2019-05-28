@@ -13,6 +13,10 @@ div.background{
   /* background-color: #003865;  */
 }
 
+.modal-content{
+  color: black;
+}
+
 div.color-bg{
   width:100vw;
   height:100vh;
@@ -36,6 +40,16 @@ button.login{
   margin-top:1em;;
 }
 
+a.creditos{
+  color: white;
+  text-decoration: underline;
+  opacity:1;
+}
+
+a.creditos:hover{
+  color: #FFB500;
+}
+
 p.bienvenida{
   text-align: center;
 }
@@ -47,11 +61,23 @@ div.contenedor{
   justify-content: center;
 }
 
-p.footer{
+.footer{
   font-size: 10px;
   position: absolute;
-  bottom:0;
   opacity: 0.5;
+}
+
+a.footer{
+  font-size: 1.5em;
+  bottom: 1.5em;
+}
+
+p.footer{
+  bottom:0;
+}
+
+button.footer{
+  bottom:5em;
 }
 
 form{
