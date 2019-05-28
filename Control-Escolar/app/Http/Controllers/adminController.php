@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Models\personal;
 use App\Models\persona;
@@ -39,6 +40,14 @@ class adminController extends Controller
       return redirect()->route('mis_datos');
 
     }
+    public function descarga(){
+      return response()->download(public_path('Alumno.csv'));
+    }
 
+    public function sube(Request $request){
+      Storage::put('files', $request->file('file'), 'public');
+       return redirect()->route('admin_home');
+
+    }
 
 }
