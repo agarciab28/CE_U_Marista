@@ -23,7 +23,7 @@
     </a>
     <ul>
       <li>
-        <a class="btn-floating waves-effect waves-light red darken-3 tooltipped" data-position="left" data-tooltip="Cierre de Semestre" href="" ><i class="fas fa-times"></i></a>
+        <a class="btn-floating waves-effect waves-light red darken-3 tooltipped" data-position="left" data-tooltip="Cerrar semestre (envía los datos de calificaciones a kardex)" href="{{route('a_kardex')}}" ><i class="fas fa-times"></i></a>
       </li>
       <li>
         <a class="btn-floating waves-effect waves-light light-blue darken-4 modal-trigger tooltipped" href="#task-modal" data-position="left" data-tooltip="Crear nuevo evento" id="btn_add_evento">

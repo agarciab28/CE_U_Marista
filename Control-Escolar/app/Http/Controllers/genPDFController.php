@@ -7,8 +7,8 @@
   use App\Models\calificaciones;
   use App\Models\configuracion;
   use Illuminate\Http\Request;
-  require '../vendor/autoload.php';
-  require '../config/database.php';
+  //require '../vendor/autoload.php';
+  //require '../config/database.php';
 
   class genPDFController extends Controller
   {

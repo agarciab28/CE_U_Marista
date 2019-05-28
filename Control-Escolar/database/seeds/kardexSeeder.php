@@ -21,6 +21,7 @@ class kardexSeeder extends Seeder
       $kardex->obj_calificacion='
       {
       	"id_materia":"1",
+        "semestre":"1",
         "nombre_materia":"Calculo diferencial",
         "primer_parcial":"10",
         "segundo_parcial":"9",
@@ -38,6 +39,7 @@ class kardexSeeder extends Seeder
       $kardex->obj_calificacion='
       {
         "id_materia":"DGD-1",
+        "semestre":"1",
         "nombre_materia":"Dibujo y Geometria Descriptiva",
         "primer_parcial":"10",
         "segundo_parcial":"7",
