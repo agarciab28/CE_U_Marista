@@ -23,7 +23,7 @@
     </a>
     <ul>
       <li>
-        <a class="btn-floating waves-effect waves-light red darken-3 tooltipped" data-position="left" data-tooltip="Cierre de Semestre" href="" ><i class="fas fa-times"></i></a>
+        <a class="btn-floating waves-effect waves-light red darken-3 tooltipped" data-position="left" data-tooltip="Cierre de Semestre" href=""><i class="fas fa-times"></i></a>
       </li>
       <li>
         <a class="btn-floating waves-effect waves-light light-blue darken-4 modal-trigger tooltipped" href="#task-modal" data-position="left" data-tooltip="Crear nuevo evento" id="btn_add_evento">
@@ -44,76 +44,78 @@
     <div id="full-calendar">
       <div class="row">
         <div class="col s12 m4 l3">
-          <div id="task-modal" class="modal modal-fixed-footer">
-            <div class="modal-content">
-              <div class="row">
-                <div class="col m6 push-m3 s12" style="text-align: center;">
-                  <h4>Registrar evento</h4>
-                </div>
-              </div>
-              <div class="row">
 
-                <form class="col s12" id="form_evento" action="{{route('evento_nuevo')}}" method="post">
-                  {{ csrf_field() }}
-                  <div class="row">
-                    <div class="input-field col m6 s12">
-                      <input id="event" type="text" name="nombre" class="validate">
-                      <label for="event">Nombre del evento</label>
-                    </div>
-                    <div class="input-field col m3 s12">
-                      <label for="fecha1">Fecha de inicio </label>
-                      <input type="text" name="inicio" class="datepicker" id="fstart">
-                    </div>
-                    <div class="input-field col m3 s12">
-                      <label for="fecha2">Fecha de cierre </label>
-                      <input type="text" name="fin" class="datepicker" id="fend">
-                    </div>
-                    <div id="color" class="input-field col m6 s12">
-                      <select name="color">
-                        <option value="#f44336">Color rojo</option>
-                        <option value="#e91e63">Color rosa</option>
-                        <option value="#9c27b0">Color purpura</option>
-                        <option value="#673ab7">Color purpura obscuro</option>
-                        <option value="#3f51b5">Color indigo</option>
-                        <option value="#2196f3"  default selected>Color azul</option>
-                        <option value="#03a9f4">Color azul claro</option>
-                        <option value="#00bcd4">Color cian</option>
-                        <option value="#009688">Color turquesa</option>
-                        <option value="#4caf50">Color verde</option>
-                        <option value="#8bc34a">Color verde claro</option>
-                        <option value="#ffeb3b">Color lima</option>
-                        <option value="#ffeb3b">Color amarillo</option>
-                        <option value="#ffc107">Color ambar</option>
-                        <option value="#ff9800">Color naranja</option>
-                        <option value="#ff5722">Color naranja obscuro</option>
-                        <option value="#795548">Color cafe</option>
-                        <option value="#9e9e9e">Color gris</option>
-                        <option value="#607d8b">Color verde-azul</option>
-                        <option value="#ffffff">Color negro</option>
-                        <option value="#000000">Color blanco</option>
-                      </select>
-                    </div>
-                  </div>
-
-
-                  <div class="modal-footer">
-                    <button class="btn light-blue darken-4 left" type="submit" id="registrar_evento">Registrar Evento
-                      <i class="material-icons right">send </i>
-                    </button>
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">
-                      <i class="material-icons blue-text text-darken-4"> fullscreen_exit </i>
-                      <b> Salir </b></a>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
         </div>
         <div class="col m10 push-m1 s10">
           <div id='calendar'></div>
           <div id="loader"></div>
         </div>
       </div>
+    </div>
+  </div>
+  <div id="task-modal" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <div class="row">
+        <div class="col m6 push-m3 s12" style="text-align: center;">
+          <h4>Registrar evento</h4>
+        </div>
+      </div>
+      <div class="row">
+
+        <form class="col s12" id="form_evento" action="{{route('evento_nuevo')}}" method="post">
+          {{ csrf_field() }}
+          <div class="row">
+            <div class="input-field col m6 s12">
+              <input id="event" type="text" name="nombre" class="validate">
+              <label for="event">Nombre del evento</label>
+            </div>
+            <div class="input-field col m3 s12">
+              <label for="fecha1">Fecha de inicio </label>
+              <input type="text" name="inicio" class="datepicker" id="fstart">
+            </div>
+            <div class="input-field col m3 s12">
+              <label for="fecha2">Fecha de cierre </label>
+              <input type="text" name="fin" class="datepicker" id="fend">
+            </div>
+            <div id="color" class="input-field col m6 s12">
+              <select name="color">
+                <option value="#f44336">Color rojo</option>
+                <option value="#e91e63">Color rosa</option>
+                <option value="#9c27b0">Color purpura</option>
+                <option value="#673ab7">Color purpura obscuro</option>
+                <option value="#3f51b5">Color indigo</option>
+                <option value="#2196f3" default selected>Color azul</option>
+                <option value="#03a9f4">Color azul claro</option>
+                <option value="#00bcd4">Color cian</option>
+                <option value="#009688">Color turquesa</option>
+                <option value="#4caf50">Color verde</option>
+                <option value="#8bc34a">Color verde claro</option>
+                <option value="#ffeb3b">Color lima</option>
+                <option value="#ffeb3b">Color amarillo</option>
+                <option value="#ffc107">Color ambar</option>
+                <option value="#ff9800">Color naranja</option>
+                <option value="#ff5722">Color naranja obscuro</option>
+                <option value="#795548">Color cafe</option>
+                <option value="#9e9e9e">Color gris</option>
+                <option value="#607d8b">Color verde-azul</option>
+                <option value="#ffffff">Color negro</option>
+                <option value="#000000">Color blanco</option>
+              </select>
+            </div>
+            <div class="input-field col m6 s12">
+              <button class="btn light-blue darken-4 left" type="submit" id="registrar_evento">Registrar Evento
+                <i class="material-icons right">send </i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">
+        <i class="material-icons blue-text text-darken-4"> fullscreen_exit </i>
+        <b> Salir </b></a>
+
     </div>
   </div>
   <div class="row contenedor">
@@ -166,7 +168,7 @@
                     <div class="input-field col m4 s12 ">
                       <!--<i class="material-icons prefix">date_range</i>-->
                       <label for="fecha_inicio">Fecha de inicio </label>
-                      <input type="text" name="finicio" id="fecha_inicio"  class="datepicker" value="{{$configuracion->fecha_inicio}}" >
+                      <input type="text" name="finicio" id="fecha_inicio" class="datepicker" value="{{$configuracion->fecha_inicio}}">
                     </div>
 
                     <div class="input-field col m4 s12 ">
@@ -190,6 +192,7 @@
                   </div>
                 </form>
               </div>
+
               <div class="modal-footer">
                 <div class="input-field col m4 s12">
                   <button class="btn light-blue darken-4" type="submit" id="actualizar_periodo">Actualizar
