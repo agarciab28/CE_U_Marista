@@ -64,6 +64,7 @@ class Kernel extends HttpKernel
         'alumnologin'=> \App\Http\Middleware\alumnologin::class,
         'coordinadorlogin'=> \App\Http\Middleware\coordinadorlogin::class,
         'profelogin'=> \App\Http\Middleware\profelogin::class,
+        'logprincipal'=>\App\Http\Middleware\logparalogin::class,
     ];
 
     /**

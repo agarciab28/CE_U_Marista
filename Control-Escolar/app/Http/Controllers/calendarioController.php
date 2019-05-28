@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\evento;
 use App\Models\configuracion;
+use App\Models\kardex;
+use App\Models\calificaciones;
+use App\Models\alumno;
 use DB;
 
 class calendarioController extends Controller
@@ -38,9 +41,57 @@ class calendarioController extends Controller
         'fecha_terminacion'=>$request->fterm,
         'Jefe_control_escolar'=>$request->jefe_control
         ]);
-
-
-
         return redirect()->route('admin_calendario');
+    }
+    public function aKardex(){
+      $calificaciones=calificaciones::select('calificaciones.ncontrol as ncontrol','g.id_materia as id_materia','a.semestre as semestre','nombre_materia','primer_parcial','segundo_parcial','examen_final','promedio_calificacion','total_faltas','opcion_calificacion')
+        ->join('grupo as g','g.id_grupo','=','calificaciones.id_grupo')
+        ->join('materia as m','g.id_materia','=','m.id_materia')
+        ->join('alumno as a','a.ncontrol','=','calificaciones.ncontrol')
+        ->get();
+        $alumnos=alumno::all();
+        $periodo=configuracion::get()->first();
+
+      //dd($calificaciones);
+      DB::transaction(function ()  use ($calificaciones,$alumnos,$periodo){
+        foreach ($calificaciones as $calificacion) {
+          /*dd(json_encode(['id_materia'=>$calificacion->id_materia,
+            'semestre'=>$calificacion->semestre,
+            'nombre_materia'=>$calificacion->nombre_materia,
+            'primer_parcial'=>$calificacion->primer_parcial,
+            'segundo_parcial'=>$calificacion->segundo_parcial,
+            'examen_final'=>$calificacion->examen_final,
+            'total_faltas'=>$calificacion->total_faltas,
+            'promedio_calificacion'=>$calificacion->promedio_calificacion,
+            'opcion_calificacion'=>$calificacion->opcion_calificacion
+          ]));*/
+          $kardex= new kardex();
+          $kardex->ncontrol=$calificacion->ncontrol;
+          $kardex->obj_calificacion=json_encode(['id_materia'=>$calificacion->id_materia,
+            'semestre'=>$calificacion->semestre,
+            'nombre_materia'=>$calificacion->nombre_materia,
+            'primer_parcial'=>$calificacion->primer_parcial,
+            'segundo_parcial'=>$calificacion->segundo_parcial,
+            'examen_final'=>$calificacion->examen_final,
+            'total_faltas'=>$calificacion->total_faltas,
+            'promedio_calificacion'=>$calificacion->promedio_calificacion,
+            'opcion_calificacion'=>$calificacion->opcion_calificacion
+          ]);
+          $kardex->periodo=$periodo->periodo_actual;
+          $kardex->save();
+        }
+
+        DB::statement('set foreign_key_checks = 0;');
+        DB::table('calificaciones')->truncate();
+        DB::table('grupo')->truncate();
+        DB::table('lista_grupo')->truncate();
+        DB::statement('set foreign_key_checks = 1;');
+
+        foreach ($alumnos as $alumno ) {
+          alumno::where('ncontrol',$alumno->ncontrol)->update(['semestre'=>$alumno->semestre+1]);
+        }
+
+
+      });
     }
 }

@@ -11,14 +11,18 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', ['middleware'=>'logprincipal',function () {
     return view('login');
-})->name('start');
-
-Route::get('/ejemplo','graficasController@alumnosCarrera');
+}])->name('start');
 
 // Route::get('dashboard','DashboarController@index')->name('dashboard');
 //
+
+// !!!!! ruta que redirige a login !!!!!
+Route::get('/login',function(){
+  return redirect()->route('start');
+});
+
 Route::post('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/', 'Auth\LoginAdminController@login')->name('loginAdmin');
 Route::get('/cerrar_sesion', 'Auth\LoginAdminController@logout')->name('logout');
@@ -87,6 +91,8 @@ Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('el
   Route::get('/calendario', 'calendarioController@showCalendario')->name('admin_calendario');
 
   Route::post('/calendario/configuracion','calendarioController@modificaConfiguracion')->name('modifica_configuracion');
+
+  Route::get('/calendario/cierre','calendarioController@aKardex')->name('a_kardex');
 
   Route::get('/aulas', 'aulasControler@showAulas')->name('admin_aulas');
 
