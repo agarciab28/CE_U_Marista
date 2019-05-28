@@ -30,7 +30,7 @@ class CoordinadorController extends Controller
         ->where('persona.id_persona',$ida)
         ->get();
         $imagen=$personas[0]->imagen;
-  
+
         $url=storage::url($imagen);
         $carreras= carrera::get(['id_carrera','nombre_carrera']);
       return view('admin.modificar.coordinadores',compact(['personas','carreras','url']));
@@ -69,7 +69,7 @@ try {
         $modif=false;
 }
 
-  $personas = persona::select('c.username as usuario','p.id_persona as persona','id_carrera','nombres','apaterno','amaterno','fnaci','email','p.activo as activo')
+  $personas = persona::select('c.username as usuario','p.id_persona as persona','id_carrera','nombres','apaterno','amaterno','fnaci','persona.email as email','p.activo as activo')
     ->join('personal as p','persona.id_persona','=','p.id_persona')
     ->join('coordinador as c','c.username','=','p.username')
     ->get();

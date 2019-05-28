@@ -26,7 +26,7 @@
                     <p>{{$grupo->nombres}} {{$grupo->aparterno}} {{$grupo->amaterno}}</p>
                 </div>
                 <div class="card-action">
-                    <a href="#" class="modal-trigger"><i class="fas fa-cog"></i> Opciones</a>
+                    <a onclick="abreModal({{$grupo->id_grupo}})" href="#modal1" class="modal-trigger"><i class="fas fa-cog"></i> Opciones</a>
                 </div>
             </div>
         </div>
@@ -36,10 +36,56 @@
 
 
 
-
+  <!--modal-->
+  <div id="modal1" class="modal bottom-sheet">
+      <div class="modal-content">
+          <h4>Grupo</h4>
+          <p>
+              <div class="collection">
+                <form class="" action="{{ route('coordinador_pdfA') }}" method="get">
+                  @csrf
+                  <input type="text" name="id_grupo" value="" hidden>
+                  <button type="submit" class="collection-item black-text botonModal">PDF BOLETA DE CALIFICACIONES: EVALUACIÓN ORDINARIA</button>
+                </form>
+                <form class="" action="{{ route('coordinador_pdfB') }}" method="get">
+                  @csrf
+                  <input type="text" name="id_grupo" value="" hidden>
+                  <button type="submit" class="collection-item black-text botonModal">PDF BOLETA DE CALIFICACIONES: PRIMERA EVALUACIÓN EXTRAORDINARIA</button>
+                </form>
+                <form class="" action="{{ route('coordinador_pdfF') }}" method="get">
+                  @csrf
+                  <input type="text" name="id_grupo" value="" hidden>
+                  <button type="submit" class="collection-item black-text botonModal">PDF BOLETA DE CALIFICACIONES FINALES</button>
+                </form>
+                <form class="" action="{{ route('coordinador_pdfAM') }}" method="get">
+                  @csrf
+                  <input type="text" name="id_grupo" value="" hidden>
+                  <button type="submit" class="collection-item black-text botonModal">PDF BOLETA DE CALIFICACIONES: EVALUACIÓN ORDINARIA</button>
+                </form>
+                <form class="" action="{{ route('coordinador_pdfBM') }}" method="get">
+                  @csrf
+                  <input type="text" name="id_grupo" value="" hidden>
+                  <button type="submit" class="collection-item black-text botonModal">PDF BOLETA DE CALIFICACIONES: PRIMERA EVALUACIÓN EXTRAORDINARIA</button>
+                </form>
+                <form class="" action="{{ route('coordinador_pdfFM') }}" method="get">
+                  @csrf
+                  <input type="text" name="id_grupo" value="" hidden>
+                  <button type="submit" class="collection-item black-text botonModal">PDF BOLETA DE CALIFICACIONES FINALES</button>
+                </form>
+              </div>
+          </p>
+      </div>
+      <div class="modal-footer">
+          <a href="#" class="modal-close waves-effect waves-green btn-flat">
+              <i class="material-icons blue-text text-darken-4"> fullscreen_exit </i>
+              <b> Salir </b>
+            </a>
+      </div>
+  </div>
 
 @endsection
 
 @section('scripts')
+  <script src="{{{asset('js/asigna.js')}}}"></script>
 
 @endsection

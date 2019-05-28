@@ -31,7 +31,7 @@
       @foreach($personas as $persona)
         <tr>
           <td class="numero">{{$persona->ncontrol}}</td>
-          <td>{{$persona->nombres}}{{$persona->apaterno}}{{$persona->amaterno}}</td>
+          <td>{{$persona->nombres}} {{$persona->apaterno}} {{$persona->amaterno}}</td>
           <td>{{$persona->fnaci}}</td>
           <td>{{$persona->email}}</td>
 

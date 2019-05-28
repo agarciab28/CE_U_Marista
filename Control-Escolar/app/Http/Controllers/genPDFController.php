@@ -346,6 +346,27 @@
       return $pdf->stream('Kárdex de calificaciones.pdf');
     }
 
+    public function pdfB_k(){
+      $ncontrol='1111';
+
+      $datos=persona::select('nombres','apaterno','amaterno','semestre','nombre_carrera as carrera')
+        ->join('alumno as a','persona.id_persona','=','a.id_persona')
+        ->join('carrera as c','a.id_carrera','=','c.id_carrera')
+        ->where('a.ncontrol',$ncontrol)->get()->first();
+
+      $kardex=kardex::where('ncontrol',$ncontrol)->get();
+      $calificaciones=array();
+      foreach ($kardex as $key) {
+        array_push($calificaciones,json_decode($key->obj_calificacion));
+      }
+
+      $configuracion=configuracion::get()->first();
+
+      $pdf = \PDF::loadView('alumno.pdfB', compact('ncontrol','datos','calificaciones','configuracion'));
+      $pdf->setPaper('letter');
+
+      return $pdf->stream('Kárdex de calificaciones.pdf');
+    }
     public function showBoleta(){
       //aquí se va a obtener el ncontrol de la variable de sesión $ncontrol=session('ncontrol');
       //en lo mientras el ejemplo va a ser con el men con ncontrol 1111 que está en los seeders

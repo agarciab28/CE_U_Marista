@@ -141,7 +141,7 @@ class RegisterController extends Controller
         }
 
       } catch (\Exception $e) {
-        dd($e);
+        //dd($e);
 
         $registro=false;
         $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
