@@ -1,0 +1,78 @@
+/*----------------------------------------
+    Error Page
+------------------------------------------*/
+#site-layout-example-left {
+    background-color: #90a4ae;
+    height: 300px;
+}
+
+#site-layout-example-right {
+    background-color: #f9f9f9;
+    height: 300px;
+}
+
+#site-layout-example-top {
+    background-color: #FFB500;
+    height: 50px;
+}
+
+.flat-text-header {
+    height: 35px;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.15);
+    display: block;
+    margin: 27px auto;
+}
+
+.flat-text {
+    height: 25px;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.15);
+    display: block;
+    margin: 27px auto;
+}
+
+.flat-text.small {
+    width: 25%;
+    height: 25px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.browser-window {
+    text-align: left;
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    -webkit-border-radius: 5px 5px 2px 2px;
+    -moz-border-radius: 5px 5px 2px 2px;
+    border-radius: 5px 5px 2px 2px;
+    background-clip: padding-box;
+    background-color: transparent;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.browser-window .top-bar {
+    height: 30px;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    background-clip: padding-box;
+    border-top: thin solid #eaeae9;
+    border-bottom: thin solid #ddd;
+    background: linear-gradient(#e7e7e6, #e0e0e0);
+}
+
+
+.browser-window .content {
+    margin: 0;
+    width: 100%;
+    display: inline-block;
+    border-radius: 0 0 5px 5px;
+    background-color: #fafafa;
+}
+
+.browser-window .row {
+    margin: 0;
+}
+
