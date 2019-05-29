@@ -181,6 +181,7 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 
     }
     public function actualizaFinal(Request $request){
+      $grupo=$request->id_grupo;
       if($request->calif<=10 && $request->calif>=0){
         calificaciones::where('ncontrol',$request->ncontrol)
           ->update(['promedio_calificacion'=>$request->calif]);
@@ -205,7 +206,7 @@ echo "<script type='text/javascript'>alert('$message');</script>";
           'grupo'=>$alumno->grupo
         ]);
     }
-    return view('docente.opciones.calif_finales',compact('sugerencias'));
+    return view('docente.opciones.calif_finales',compact('sugerencias','grupo'));
   }
   public function kardexAlumno(){
 

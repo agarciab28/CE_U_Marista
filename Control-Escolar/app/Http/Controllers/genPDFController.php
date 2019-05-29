@@ -13,8 +13,8 @@
   class genPDFController extends Controller
   {
     //PDF's DOCENTES
-    public function pdfA_docente(){
-      $id_grupo='1';
+    public function pdfA_docente($grupo){
+      $id_grupo=$grupo;
 
       $datos=calificaciones::select('gr.id_grupo', 'gr.seccion', 'gr.periodo', 'nombres', 'apaterno', 'amaterno', 'car.nombre_carrera', 'ma.nombre_materia')
         ->join('grupo as gr', 'calificaciones.id_grupo', '=', 'gr.id_grupo')
@@ -31,12 +31,26 @@
       ->join('alumno as al', 'calificaciones.ncontrol', '=', 'al.ncontrol')
       ->join('persona as pe', 'al.id_persona', '=', 'pe.id_persona')
       ->where('id_grupo', $id_grupo)
-      ->where('opcion_calificacion', '1')
       ->get();
 
       $configuracion=configuracion::get()->first();
 
-      $pdf = \PDF::loadView('docente.pdfA', compact('id_grupo','datos','calificaciones','configuracion', 'promedio1','promedio2','promedio3'));
+      $promedio1=calificaciones::where('id_grupo', $id_grupo)
+      ->avg('primer_parcial');
+
+      $promedio2=calificaciones::where('id_grupo', $id_grupo)
+      ->avg('segundo_parcial');
+
+      $promedio3=calificaciones::where('id_grupo', $id_grupo)
+      ->avg('examen_final');
+
+      $promfaltas=calificaciones::where('id_grupo', $id_grupo)
+      ->avg('total_faltas');
+
+      $promfinal=calificaciones::where('id_grupo', $id_grupo)
+      ->avg('promedio_calificacion');
+
+      $pdf = \PDF::loadView('docente.pdfA', compact('id_grupo','datos','calificaciones','configuracion', 'promedio1','promedio2','promedio3','promfaltas','promfinal'));
       $pdf->setPaper('letter', 'landscape');
 
       return $pdf->stream('Acta de calificaciones.pdf');
@@ -131,8 +145,8 @@
       return $pdf->stream('Lista de alumnos.pdf');
     }
 
-    public function pdfF_docente(){
-      $id_grupo='1';
+    public function pdfF_docente($grupo){
+      $id_grupo=$grupo;
 
       $datos=calificaciones::select('gr.id_grupo', 'gr.seccion', 'gr.periodo', 'nombres', 'apaterno', 'amaterno', 'car.nombre_carrera', 'ma.nombre_materia')
         ->join('grupo as gr', 'calificaciones.id_grupo', '=', 'gr.id_grupo')
@@ -152,7 +166,6 @@
       ->get();
 
       $promedio=calificaciones::where('id_grupo', $id_grupo)
-      ->first()
       ->avg('promedio_calificacion');
 
 

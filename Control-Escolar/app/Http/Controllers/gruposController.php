@@ -336,8 +336,8 @@ $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','p.id
         'grupo'=>$alumno->grupo
       ]);
     }
-
-   return view('docente.opciones.calif_finales',compact('sugerencias'));
+    $grupo=$request->id_grupo;
+   return view('docente.opciones.calif_finales',compact('sugerencias','grupo'));
  }
  public function showlista($idg){
 $listag=lista_grupo::select('ncontrol','nombres','id_grupo')
