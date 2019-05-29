@@ -17,8 +17,9 @@ use Illuminate\Support\Facades\Storage;
 class AlumnosController extends Controller
 {
     public function lista () {
-      $personas = persona::select('persona.id_persona','nombres','apaterno','amaterno','fnaci','email','ncontrol','rol','alumno.activo as activo','curp')
+      $personas = persona::select('persona.id_persona','nombres','apaterno','carrera.nombre_carrera as ncarrera','amaterno','fnaci','email','ncontrol','rol','alumno.activo as activo','curp')
         ->join('alumno','persona.id_persona','=','alumno.id_persona')
+        ->join('carrera','alumno.id_carrera','=','carrera.id_carrera')
         ->get();
         $planes= plan_de_estudios::select('id_plan','id_carrera','nombre_plan')->get();
         $carreras= carrera::get(['id_carrera','nombre_carrera']);

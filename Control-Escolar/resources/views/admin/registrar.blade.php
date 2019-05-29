@@ -1,7 +1,7 @@
 @extends('layouts.app_admin')
 
 @section('stylesheet')
-<link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
+  
 <link href="{{{ asset('css/admin/usuarios.css') }}}" rel="stylesheet">
 <link href="{{{ asset('https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css') }}}" rel="stylesheet">
 @endsection
@@ -229,45 +229,6 @@
     </div>
 </div>
 
-<!--BOTÓN REGISTROS-->
-{{-- <div class="fixed-action-btn">
-  <a class="btn-floating btn-large amber pulse tooltipped" data-position="top" data-tooltip="Registrar lista" href="{{route('regAlumnoCSV')}}">
-<i class="large material-icons">file_upload</i>
-</a>
-<ul>
-    <li>
-        <a class="btn-floating light-blue darken-4 tooltipped" data-position="top" data-tooltip="Descargar plantilla alumnos" href="{{{ asset('csv/Alumno.csv') }}}" download="">
-            <i class="material-icons">file_download</i></a>
-    </li>
-</ul>
-</div> --}}
-<div class="row">
-  <form class="col s12" action="{{route('subirCSV')}}" method="post" enctype="multipart/form-data">
-    @csrf
-    <div class = "row">
-      <div class="col s6 push-s3">
-        <div class = "file-field input-field">
-           <div class = "btn">
-              <span class="white-text">Buscar</span>
-              <input type = "file" name="file"/>
-           </div>
-
-           <div class = "file-path-wrapper">
-              <input class = "file-path validate" type = "text" placeholder = "Buscar Archvio" name="alumnos" />
-           </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col s3 push-s5">
-        <a href="{{route('descargaCSV')}}" class="btn"><i class="fas fa-download"></i></a>
-      </div>
-      <div class="col s3 push-s3">
-        <button type="submit" class="btn"><i class="fas fa-upload"></i></button>
-      </div>
-    </div>
-  </form>
-</div>
 
 
 @endsection
