@@ -161,6 +161,7 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 
     public function actualizaCalificacion(Request $request){
       //dd([$request]);
+      $id_grupo=$request->id_grupo;
       calificaciones::where('ncontrol',$request->ncontrol)
         ->update(['primer_parcial'=>$request->cal1,
         'segundo_parcial'=>$request->cal2,
@@ -177,15 +178,16 @@ echo "<script type='text/javascript'>alert('$message');</script>";
        ->where('pe.username',session('username'))
        ->where('g.id_grupo',$request->grupo)
        ->get();
-      return view('docente.opciones.alumnos',compact(['alumnos']));
+      return view('docente.opciones.alumnos',compact(['alumnos','id_grupo']));
 
 
     }
     public function actualizaFinal(Request $request){
-    //  dd($request->grupo);
+      //dd($request->grupo);
+      $grupo=$request->grupo;
       if($request->calif<=10 && $request->calif>=0){
         $gp = grupo::where('id_grupo',$request->grupo)->first();
-  
+
         calificaciones::where('ncontrol',$request->ncontrol)
           ->update(['promedio_calificacion'=>$request->calif]);
       }
