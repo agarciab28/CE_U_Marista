@@ -8,6 +8,7 @@ use App\Models\configuracion;
 use App\Models\kardex;
 use App\Models\calificaciones;
 use App\Models\alumno;
+use App\Models\grupo;
 use DB;
 
 class calendarioController extends Controller
@@ -31,7 +32,17 @@ class calendarioController extends Controller
 
     public function showCalendario(){
       $configuracion = configuracion::get()->first();
-      return view('admin.calendario',compact('configuracion'));
+      $yas = grupo::where('check_calif','1')
+      ->join('profesor as p','p.id_prof','=','grupo.id_prof')
+      ->join('personal as pr','pr.username','=','p.username')
+      ->join('persona as pe','pe.id_persona','=','pr.id_persona')
+      ->get();
+      $nop = grupo::where('check_calif','0')
+      ->join('profesor as p','p.id_prof','=','grupo.id_prof')
+      ->join('personal as pr','pr.username','=','p.username')
+      ->join('persona as pe','pe.id_persona','=','pr.id_persona')
+      ->get();
+      return view('admin.calendario',compact(['configuracion','yas','nop']));
     }
     public function modificaConfiguracion(Request $request){
       $seleccion=configuracion::get()->first();

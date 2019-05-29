@@ -187,7 +187,9 @@ echo "<script type='text/javascript'>alert('$message');</script>";
       $grupo=$request->grupo;
       if($request->calif<=10 && $request->calif>=0){
         $gp = grupo::where('id_grupo',$request->grupo)->first();
-
+if (!$gp->check_calif) {
+grupo::where('id_grupo',$request->grupo)->update(['check_calif' => '1']);
+}
         calificaciones::where('ncontrol',$request->ncontrol)
           ->update(['promedio_calificacion'=>$request->calif]);
       }

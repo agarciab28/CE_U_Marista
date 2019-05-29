@@ -22,6 +22,11 @@
     </a>
     <ul>
       <li>
+        <a class="btn-floating waves-effect waves-light light-blue darken-1 modal-trigger tooltipped" href="#cal-modal" data-position="left" data-tooltip="Relación de grupos con calificaciones asignadas" id="btn_add_evento">
+          <i class="large material-icons">people_outline</i>
+        </a>
+      </li>
+      <li>
         <a class="btn-floating waves-effect waves-light red darken-3 tooltipped" data-position="left" data-tooltip="Cerrar semestre (envía los datos de calificaciones a kardex)" href="{{route('a_kardex')}}" ><i class="fas fa-times"></i></a>
       </li>
       <li>
@@ -43,6 +48,7 @@
     <div id="full-calendar">
       <div class="row">
         <div class="col s12 m4 l3">
+
           <div id="task-modal" class="modal modal-fixed-footer">
             <div class="modal-content">
               <div class="row">
@@ -107,6 +113,68 @@
               </div>
             </div>
           </div>
+
+          <div id="cal-modal" class="modal modal-fixed-footer">
+            <div class="modal-content">
+              <div class="row">
+                <div class="col m6 push-m3 s12" style="text-align: center;">
+                  <h4>Asignación de calificaciones</h4>
+                </div>
+              </div>
+              <div class="row">
+
+                <div class="col m6 s12">
+                  <h6>Grupos con calificaciones asignadas</h6>
+                  <table id="example" class="responsive-table striped">
+                      <thead>
+                          <tr>
+                            <th>ID grupo</th>
+                            <th>Profesor</th>
+                            <th>Estado</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        @foreach ($yas as $y)
+                          <tr>
+                            <td>{{ $y->id_grupo }}</td>
+                            <td>{{ $y->nombres }} {{ $y->apaterno }} {{ $y->amaterno }}</td>
+                            <td>
+                              <button type="button" class="btn waves-effect waves-light btn-large tooltipped"  data-tooltip="Este profesor ya ha registrado al menos una calificación" name="button">Calificado</button>
+                            </td>
+                          </tr>
+                        @endforeach
+                      </tbody>
+                  </table>
+                </div>
+
+                <div class="col m6 s12">
+                  <h6>Grupos sin calificaciones asignadas</h6>
+                  <table id="example" class="responsive-table striped">
+                      <thead>
+                          <tr>
+                            <th>ID grupo</th>
+                            <th>Profesor</th>
+                            <th>Estado</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        @foreach ($nop as $n)
+                          <tr>
+                            <td>{{ $n->id_grupo }}</td>
+                            <td>{{ $n->nombres }} {{ $n->apaterno }} {{ $n->amaterno }}</td>
+                            <td>
+                              <button type="button" class="btn waves-effect waves-light red darken-3 btn-large tooltipped" data-tooltip="Este profesor no ha registrado calificaciones" name="button">No calificado</button>
+                            </td>
+                          </tr>
+                        @endforeach
+                      </tbody>
+                  </table>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
         </div>
         <div class="col m10 push-m1 s10">
           <div id='calendar'></div>
