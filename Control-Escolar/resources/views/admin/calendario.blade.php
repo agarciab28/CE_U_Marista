@@ -227,9 +227,12 @@
                   <div class="row">
 
                     <div class="input-field col m4 s12 ">
-                      <!--<i class="material-icons prefix">account_circle</i>-->
-                      <input type="text" id="periodo_actual" name="periodo_actual" class="validate" value="{{$configuracion->periodo_actual}}" required>
-                      <label for="periodo_actual">Periodo Actual</label>
+                      <select class="" name="periodo" id="periodo">
+                        <option value="" disabled>Elige una opcion</option>
+                        <option value="Agosto-Diciembre {{ now()->year }}">Agosto-Diciembre {{ now()->year }}</option>
+                        <option value="Enero-Junio {{ now()->year }}">Enero-Junio {{ now()->year }}</option>
+                      </select>
+                      <label for="periodo">Periodo</label>
                     </div>
 
                     <div class="input-field col m4 s12 ">
