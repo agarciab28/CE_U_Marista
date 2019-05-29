@@ -44,7 +44,7 @@ $grupo_seleccionado=0;
                       <input type="text" name="id_grupo" value="" hidden>
                       <button type="submit" class="collection-item black-text botonModal">Calificaciones Finales</button>
                     </form>
-                    <form class="" action="{{ route('docente_pdfC') }}" method="post">
+                    <form class="" action="{{ route('docente_pdfC') }}" method="get">
                       @csrf
                       <input type="text" name="id_grupo" value="" hidden>
                       <button type="submit" class="collection-item black-text botonModal">Relación de Alumnos no Aprobados</button>
