@@ -22,11 +22,11 @@ class CreateTableAdministrador extends Migration
 
         });
         
-        /* DB::unprepared("
+        DB::unprepared("
         CREATE TRIGGER `updateidadmin` BEFORE UPDATE ON `administrador`
         FOR EACH ROW IF (NEW.id_admin != OLD.id_admin) THEN
        insert into bitacora(usuario,tipoderol,tipodemov,fecha,tablaafectada, campoalter,valorant,valornuevo)
-       values(user(),'Administrador','UPDATE',now(),'Administrador','ID Admin',old.id_admin, new.id_admin);
+       values(user(),'Administrador','ACTUALIZACION',now(),'Administrador','ID Admin',old.id_admin, new.id_admin);
        END IF    
         ");
 
@@ -34,7 +34,7 @@ class CreateTableAdministrador extends Migration
         CREATE TRIGGER `updateusername` BEFORE UPDATE ON `administrador`
         FOR EACH ROW IF (NEW.username != OLD.username) THEN
        insert into bitacora(usuario,tipoderol,tipodemov,fecha,tablaafectada, campoalter,valorant,valornuevo)
-       values(user(),'Administrador','UPDATE',now(),'Administrador','Username',old.username, new.username);
+       values(user(),'Administrador','ACTUALIZACION',now(),'Administrador','Username',old.username, new.username);
        END IF
         ");
 
@@ -47,13 +47,11 @@ class CreateTableAdministrador extends Migration
         DB::unprepared("
         CREATE TRIGGER `deleteadministrador` BEFORE DELETE ON `administrador`
         FOR EACH ROW insert into bitacora(usuario,tipoderol,fecha,tipodemov,tablaafectada,campoalter,valorant,valornuevo)
-        values (user(),'Administrador',now(),'DELETE','Administrador',old.username,'No aplica','No aplica')
+        values (user(),'Administrador',now(),'ELIMINACION','Administrador',old.username,'No aplica','No aplica')
             
         ");
 
-        DB::unprepared("
-
-        "); */
+     
 
     }
 

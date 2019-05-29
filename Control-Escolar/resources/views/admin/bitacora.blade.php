@@ -26,7 +26,7 @@
                 <th>ID Movimiento</th>
                 <th>Usuario</th>
                 <th>Rol</th>
-                <th>Fecha y hora</th>
+                <th>Fecha y Hora</th>
                 <th>Tipo de moviento</th>
                 <th>Tabla afectada</th>
                 <th>Campo alterado</th>
