@@ -12,6 +12,7 @@ use App\Models\coordinador;
 use App\Models\plan_de_estudios;
 use App\Models\calificaciones;
 use App\Models\configuracion;
+use App\Models\grupo;
 use Illuminate\Support\Facades\Storage;
 
 class AlumnosController extends Controller
@@ -181,7 +182,10 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 
     }
     public function actualizaFinal(Request $request){
+    //  dd($request->grupo);
       if($request->calif<=10 && $request->calif>=0){
+        $gp = grupo::where('id_grupo',$request->grupo)->first();
+  
         calificaciones::where('ncontrol',$request->ncontrol)
           ->update(['promedio_calificacion'=>$request->calif]);
       }
