@@ -118,11 +118,8 @@ td {
               <th class="tabPDF">No CTRL</th>
               <th class="tabPDF">Nombre del alumno</th>
               <th class="tabPDF">Primer parcial</th>
-              <th class="tabPDF">Faltas</th>
               <th class="tabPDF">Segundo parcial</th>
-              <th class="tabPDF">Faltas</th>
               <th class="tabPDF">Tercer parcial</th>
-              <th class="tabPDF">Faltas</th>
               <th class="tabPDF">Faltas totales</th>
               <th class="tabPDF">Calificación final</th>
           </tr>
@@ -132,11 +129,8 @@ td {
             <td class="bodyPDF">{{$calificacion->ncontrol}}</td>
             <td class="bodyPDF" style="text-align:left;">{{$calificacion->apaterno}} {{$calificacion->amaterno}} {{$calificacion->nombres}}</td>
             <td class="bodyPDF">{{$calificacion->primer_parcial}}</td>
-            <td class="bodyPDF">0</td>
             <td class="bodyPDF">{{$calificacion->segundo_parcial}}</td>
-            <td class="bodyPDF">0</td>
             <td class="bodyPDF">{{$calificacion->examen_final}}</td>
-            <td class="bodyPDF">0</td>
             <td class="bodyPDF">{{$calificacion->total_faltas}}</td>
             <td class="bodyPDF">{{$calificacion->promedio_calificacion}}</td>
           </tr>
@@ -145,14 +139,11 @@ td {
             <td></td>
             <td></td>
             <td class="tabPDF">Promedio grupal</td>
-            <td class="bodyPDF">0</td>
-            <td class="bodyPDF">0</td>
-            <td class="bodyPDF">0</td>
-            <td class="bodyPDF">0</td>
-            <td class="bodyPDF">0</td>
-            <td class="bodyPDF">0</td>
-            <td class="bodyPDF">0</td>
-            <td class="bodyPDF">0</td>
+            <td class="bodyPDF">{{$promedio1}}</td>
+            <td class="bodyPDF">{{$promedio2}}</td>
+            <td class="bodyPDF">{{$promedio3}}</td>
+            <td class="bodyPDF">{{$promfaltas}}</td>
+            <td class="bodyPDF">{{$promfinal}}</td>
           </tr>
       </table>
 </body>

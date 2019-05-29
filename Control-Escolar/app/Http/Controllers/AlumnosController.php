@@ -209,7 +209,7 @@ echo "<script type='text/javascript'>alert('$message');</script>";
           'grupo'=>$alumno->grupo
         ]);
     }
-    return view('docente.opciones.calif_finales',compact('sugerencias'));
+    return view('docente.opciones.calif_finales',compact('sugerencias','grupo'));
   }
   public function kardexAlumno(){
 
