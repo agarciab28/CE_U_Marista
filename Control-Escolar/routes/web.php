@@ -44,9 +44,7 @@ Route::group(["prefix" => 'admin' , 'middleware'=>'adminlogin'], function(){
     return view('admin.listas.alumnosxgrupo');
   })->name('admin_alumnosGrupo');
 
-  Route::get('/kardexAlumno', function(){
-    return view('admin.kardex');
-  })->name('admin_kardex');
+  Route::get('/kardexAlumno/{ncontrol}', 'genPDFController@kardexAlumno')->name('admin_kardex');
 
   Route::get('/calificacionesGrupales/{grupo}','genPDFController@pdfF_admin')->name('admin_calificaciones');
 

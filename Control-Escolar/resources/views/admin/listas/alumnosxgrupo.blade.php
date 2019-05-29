@@ -25,7 +25,7 @@
       <tr>
         <th>Número de control</th>
         <th>Nombre Completo</th>
-        <th>eliminar</th>
+        <th>Eliminar</th>
       </tr>
     </thead>
     <tbody>
@@ -39,11 +39,11 @@
       </div>
       @endforeach
     </tbody>
-    
+
   </table>
   </div>
 
-  
+
 
 
 @endsection
