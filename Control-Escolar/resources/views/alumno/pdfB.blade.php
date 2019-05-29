@@ -89,12 +89,16 @@ td {
   <br><br>
   <div class="subHeadPDF">datos del alumno</div>
     <div class="row">
+      <div class="column tabPDF" style="text-align:left;">no CTRL</div>
+      <div class="column" id="noCtrl">{{$ncontrol}}</div>
       <div class="column tabPDF" style="text-align:left;">ALUMNO</div>
-      <div class="column" id="alumno" style="width:40%">{{$datos->apaterno}} {{$datos->amaterno}} {{$datos->nombres}}</div>
-      <div class="column tabPDF" style="text-align:left; width:10%">no CTRL</div>
-      <div class="column" id="noCtrl" style="width:10%">{{$ncontrol}}</div>
-      <div class="column tabPDF" style="text-align:left; width:10%">CARRERA</div>
-      <div class="column" id="carrera" style="width:20%">{{$datos->carrera}}</div>
+      <div class="column" id="alumno" style="width:70%;">{{$datos->apaterno}} {{$datos->amaterno}} {{$datos->nombres}}</div>
+      <br>
+    </div>
+    <br>
+    <div class="row">
+      <div class="column tabPDF" style="text-align:left; width:20%">CARRERA</div>
+      <div class="column" id="carrera" style="width:80%">{{$datos->carrera}}</div>
       <br>
     </div>
   <br><br><br>

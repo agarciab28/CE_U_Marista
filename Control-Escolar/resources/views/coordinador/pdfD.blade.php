@@ -1,7 +1,11 @@
 <style>
-td {
+table{
+  border-collapse: collapse;
+}
+td, th {
   padding-top: 7px;
   padding-bottom: 7px;
+  border: 1px solid black;
 }
   .column {
     float: left;
@@ -64,21 +68,25 @@ td {
     font-size: 10px;
   }
 
+  .tabPDF2{
+    color: rgb(255,255,255);
+    font-family: "Verdana, Geneva, sans-serif";
+    font-weight: bold;
+    text-align: center;
+    font-size: 10px;
+  }
+
+  table td:nth-child(1n) {
+    width: 2cm;
+  }
   table td:nth-child(1) {
-  	width: 1cm;
+  	width: 2cm;
   }
   table td:nth-child(2) {
-  	width: 2cm;
+  	width: 9.5cm;
   }
-  table td:nth-child(3) {
-  	width: 8.5cm;
-  }
-  table td:nth-child(4) {
-  	width: 5cm;
-  }
-  table td:nth-child(5) {
-  	width: 2cm;
-  }
+
+
 </style>
 
 <title>Acta de calificaciones.pdf</title>
@@ -115,22 +123,51 @@ td {
       <br>
     </div>
   <br><br><br>
-  <div class="subHeadPDF">CALIFICACIONES</div>
+  <div class="subHeadPDF">lista de alumnos</div>
       <table>
           <tr>
-              <th class="tabPDF">No</th>
               <th class="tabPDF">No CTRL</th>
               <th class="tabPDF">Nombre del alumno</th>
-              <th class="tabPDF">Resultado</th>
-              <th class="tabPDF">Calificación final</th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> XXXXX </th>
           </tr>
           @foreach($calificaciones as $calificacion)
           <tr>
-            <td class="bodyPDF">1</td>
             <td class="bodyPDF">{{$calificacion->ncontrol}}</td>
             <td class="bodyPDF" style="text-align:left;">{{$calificacion->apaterno}} {{$calificacion->amaterno}} {{$calificacion->nombres}}</td>
-            <td class="bodyPDF">a {{$calificacion->opcion_calificacion}} extraordinario</td>
-            <td class="bodyPDF">{{$calificacion->promedio_calificacion}}</td>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+
           </tr>
           @endforeach
 

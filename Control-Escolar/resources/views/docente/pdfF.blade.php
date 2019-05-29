@@ -135,7 +135,7 @@ td {
           @endforeach
           <tr>
             <td colspan="4" class="tabPDF">Promedio grupal</td>
-            <td class="bodyPDF"></td>
+            <td class="bodyPDF">{{$promedio}}</td>
           </tr>
       </table>
 </body>
