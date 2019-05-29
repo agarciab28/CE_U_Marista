@@ -32,22 +32,12 @@
                   <div class="contenedor">
                     <br>
                     <div class="collection">
-                      <form class="" action="{{ route('coordinador_pdfA') }}" method="get">
+                      <form class="" action="{{ route('coordinador_pdfA') }}" method="post">
                         @csrf
                         <input type="text" name="id_grupo" value="" hidden>
                         <button type="submit" class="collection-item black-text botonModal">Calificaciones Evaluación Ordinaria</button>
                       </form>
-                      <form class="" action="{{ route('coordinador_pdfF') }}" method="get">
-                        @csrf
-                        <input type="text" name="id_grupo" value="" hidden>
-                        <button type="submit" class="collection-item black-text botonModal">Calificaciones Finales</button>
-                      </form>
-                      <form class="" action="{{ route('coordinador_pdfAM') }}" method="get">
-                        @csrf
-                        <input type="text" name="id_grupo" value="" hidden>
-                        <button type="submit" class="collection-item black-text botonModal">Calificaciones Evaluacion Ordianaria</button>
-                      </form>
-                      <form class="" action="{{ route('coordinador_pdfFM') }}" method="get">
+                      <form class="" action="{{ route('coordinador_pdfF') }}" method="post">
                         @csrf
                         <input type="text" name="id_grupo" value="" hidden>
                         <button type="submit" class="collection-item black-text botonModal">Calificaciones Finales</button>
@@ -56,7 +46,7 @@
                   </div>
                 </div>
                 <div class="card-action" style="background-color:#FFB500">
-                  <div class="contenedor activator contenedor-card">
+                  <div class="contenedor activator contenedor-card" onclick="abreModal({{$grupo->id_grupo}})">
                     <a class="white-text activator" ><i class="fas fa-cog "></i> Acciones</a> <br>
                   </div>
                 </div>
