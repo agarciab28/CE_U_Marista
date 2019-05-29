@@ -305,6 +305,7 @@ $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','p.id
  }
 
  public function describeGruposProf(Request $request){
+   $id_grupo=$request->id_grupo;
    $alumnos=lista_grupo::select('p.nombres as nombres','p.apaterno as apaterno','p.amaterno as amaterno','c.primer_parcial as primero','c.segundo_parcial as segundo','c.examen_final as examen','c.total_faltas as faltas','a.ncontrol as ncontrol','g.id_grupo as grupo')
     ->join('alumno as a','a.ncontrol','=','lista_grupo.ncontrol')
     ->join('persona as p','p.id_persona','=','a.id_persona')

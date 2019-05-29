@@ -34,7 +34,7 @@ $grupo_seleccionado=0;
                 <div class="contenedor">
                   <br>
                   <div class="collection">
-                    <form class="" action="{{ route('docente_consulta',[$grupo->id_grupo]) }}" method="get">
+                    <form class="" action="{{ route('docente_consulta') }}" method="post">
                       @csrf
                       <input type="text" name="id_grupo" value="" hidden>
                       <button type="submit" class="collection-item black-text botonModal">Calificaciones Parciales</button>
