@@ -20,13 +20,6 @@ td {
     width: 10%;
   }
 
-  body{
-    font-family: "Verdana, Geneva, sans-serif";
-    font-style: normal;
-    font-size: 10px;
-    color: black;
-    text-transform: uppercase;
-  }
 
   .bodyPDF{
     font-family: "Verdana, Geneva, sans-serif";
