@@ -192,7 +192,6 @@
   </div>
 </div>
 
-<input type="text" class="timepicker" name="hora_fin_lunes" id="hora_fin_lunes" value="">
 @endsection
 
 @section('scripts')

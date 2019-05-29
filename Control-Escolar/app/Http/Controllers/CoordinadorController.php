@@ -39,8 +39,6 @@ class CoordinadorController extends Controller
 
 public function modificar_coordinador($ida, Request $req){
 try {
-  $file=$req->file('imagen');
-  $nombre=time().$file->getClientOriginalName();
   $coor_persona = [
     'curp' => $req->get('curp'),
     'nombres' => $req->get('nombres'),
@@ -48,8 +46,7 @@ try {
     'amaterno' => $req->get('amaterno'),
     'fnaci' => $req->get('fnaci'),
     'sexo' => $req->get('sexo'),
-    'email' => $req->get('email'),
-    'imagen'=>$nombre
+    'email' => $req->get('email')
   ];
   $coor_personal = [
     'username' => $req->get('username'),
@@ -60,12 +57,12 @@ try {
 
   persona::where('id_persona',$ida)->update($coor_persona);
   personal::where('id_persona',$ida)->update($coor_personal);
-  $file->storeAs('public', $nombre);
   $aux = personal::where('id_persona',$ida)->get()->first();
 
   coordinador::where('username',$aux->username)->update(['id_carrera' => $req->get('id_carrera_coordinador')]);
       $modif=true;
 } catch (\Exception $e) {
+  dd($e);
         $modif=false;
 }
 
