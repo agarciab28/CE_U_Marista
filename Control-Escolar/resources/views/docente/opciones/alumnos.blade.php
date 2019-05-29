@@ -13,7 +13,7 @@
 @section('content')
 
   <div class="fixed-action-btn">
-    <a class="btn-floating btn-large  waves-effect waves-light light-blue darken-4 tooltipped" data-position="left" data-tooltip="Generar PDF" href="{{ route('docente_pdfA',['grupo'=>$id_grupo]) }}" id="btn_pdf">
+    <a class="btn-floating btn-large  waves-effect waves-light light-blue darken-4 tooltipped" data-position="left" data-tooltip="Generar PDF" href="{{ route('docente_pdfA',['grupo' => $id_grupo]) }}" id="btn_pdf">
       <i class="far fa-file-pdf"></i>
     </a>
   </div>

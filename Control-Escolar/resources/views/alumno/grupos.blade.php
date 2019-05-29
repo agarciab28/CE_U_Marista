@@ -17,14 +17,16 @@
   <div class="section container">
     <div class="row">
         <div class="col s12 m4">
+          @foreach($materias as $materia)
             <div class="card card-grupo">
                 <div class="card-content black-text z-depth-3">
-                    <span class="card-title">Grupo: </span>
+                    <span class="card-title">Grupo: {{$materia->id_grupo}}{{$materia->seccion}} </span>
                     <p>
-                      Materia: <br>
+                      Materia: {{$materia->nombre_materia}} <br>
                     </p>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
   </div>
@@ -52,10 +54,10 @@
           <p>{{$horarioslu->nombres}}{{$horarioslu->aparterno}} {{$horarioslu->amaterno}}</p>
           <span>{{$horarioslu->nombre_materia}}</span>
         </div>
-      </div> 
-      @endforeach 
+      </div>
+      @endforeach
     </div>
-     
+
 
     <div class="col m2 ">
       <div class="card card-dia">
@@ -71,8 +73,8 @@
           <p>{{$horariosma->nombres}}{{$horariosma->aparterno}} {{$horariosma->amaterno}}</p>
           <span>{{$horariosma->nombre_materia}}</span>
         </div>
-      </div> 
-      @endforeach 
+      </div>
+      @endforeach
     </div>
 
     <div class="col m2 ">
@@ -89,8 +91,8 @@
           <p>{{$horariosmi->nombres}}{{$horariosmi->aparterno}} {{$horariosmi->amaterno}}</p>
           <span>{{$horariosmi->nombre_materia}}</span>
         </div>
-      </div> 
-      @endforeach 
+      </div>
+      @endforeach
     </div>
 
     <div class="col m2 ">
@@ -107,8 +109,8 @@
           <p>{{$horariosju->nombres}}{{$horariosju->aparterno}} {{$horariosju->amaterno}}</p>
           <span>{{$horariosju->nombre_materia}}</span>
         </div>
-      </div> 
-      @endforeach 
+      </div>
+      @endforeach
     </div>
 
       <div class="col m2 ">
@@ -125,8 +127,8 @@
           <p>{{$horariosvi->nombres}}{{$horariosvi->aparterno}} {{$horariosvi->amaterno}}</p>
           <span>{{$horariosvi->nombre_materia}}</span>
         </div>
-      </div> 
-      @endforeach 
+      </div>
+      @endforeach
     </div>
 
       <div class="col m2 ">
@@ -144,8 +146,8 @@
           <p>{{$horariossa->nombres}}{{$horariossa->aparterno}} {{$horariossa->amaterno}}</p>
           <span>{{$horariossa->nombre_materia}}</span>
         </div>
-      </div> 
-      @endforeach 
+      </div>
+      @endforeach
     </div>
   </div>
   </div>
@@ -184,7 +186,7 @@
         </div>
       </div>
     </div>
-    @endforeach 
+    @endforeach
   </div>
 
   <div class="row" id="horario_martes">
