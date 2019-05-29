@@ -119,12 +119,14 @@
               <div class="row">
                 <div class="col m6 push-m3 s12" style="text-align: center;">
                   <h4>Asignación de calificaciones</h4>
+
+                  <span>Asegúrese de que cada profesor halla registrado calificaciones a sus grupos antes del cierre de semestre.</span>
                 </div>
               </div>
               <div class="row">
 
                 <div class="col m6 s12">
-                  <h6>Grupos con calificaciones asignadas</h6>
+                  <h6>Grupos con calificaciones finales asignadas</h6>
                   <table id="example" class="responsive-table striped">
                       <thead>
                           <tr>
@@ -148,7 +150,7 @@
                 </div>
 
                 <div class="col m6 s12">
-                  <h6>Grupos sin calificaciones asignadas</h6>
+                  <h6>Grupos sin calificaciones finales asignadas</h6>
                   <table id="example" class="responsive-table striped">
                       <thead>
                           <tr>
