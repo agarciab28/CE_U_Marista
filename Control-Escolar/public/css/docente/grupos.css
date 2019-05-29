@@ -3,7 +3,11 @@
 }
 
 a{
-  color: rgba(8,58,99,1);
+  color:#003865;
+}
+
+a:hover{
+  opacity: 0.8;
 }
 
 .contenedor{
@@ -14,6 +18,20 @@ a{
   background-color: white;
 }
 
+.card-content{
+  height: 15em;
+  overflow: scroll;
+}
+
 .botonModal{
   width: 100%;
+}
+
+.contenedor-card:hover{
+  cursor: pointer;
+  opacity: 0.8
+}
+
+.titulo{
+  font-weight: bold;
 }
