@@ -13,8 +13,9 @@ class asignarController extends Controller
 
         $var=0;
         $var2=0;
-        foreach ($request->alumnos as $alumnos){
-          $datos=preg_split("/[\s,]+/",$request->alumnos[$var]);
+        $alumnos=$request->alumnos;
+        foreach ($alumnos as $alumno){
+          $datos=preg_split("/[\s,]+/",$alumno);
           $existe=lista_grupo::select()->where(['ncontrol'=>$datos[0],'id_grupo'=>$datos[2]])->get()->first();
           if($existe['ncontrol']==null){
           $lista = new lista_grupo();

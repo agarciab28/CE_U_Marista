@@ -35,3 +35,8 @@ a:hover{
 .titulo{
   font-weight: bold;
 }
+
+.botonModal:hover{
+  cursor: pointer;
+  opacity: 0.4;
+}

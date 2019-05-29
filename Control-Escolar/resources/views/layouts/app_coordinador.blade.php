@@ -61,7 +61,7 @@
     <li id="grupos"><a class="white-text" href="{{ route('lista_grupos_coordinador',[session('id_persona')]) }}"><i class="fas fa-users white-text menu-icon"></i>Grupos</a></li>
     <li id="alumnos"><a class="white-text" href="{{ route('coord_lista_alumnos',[session('id_persona')]) }}"><i class="fas fa-user-graduate white-text menu-icon"></i>Alumnos</a></li>
     <li id="misdatos"><a class="white-text" href="{{ route('coord_datos') }}"><i class="fas fa-user-cog white-text menu-icon"></i>Mis Datos</a></li>
-    <li id="cerrar_sesion"><a class="show-on-small hide-on-med-and-up white-text" href="/">Cerrar Sesion</a></li>
+    <li id="cerrar_sesion"><a class="show-on-small hide-on-med-and-up white-text" href="/cerrar_sesion">Cerrar Sesion</a></li>
 
     <div class="contenedor">
       <div class="white-text footer">

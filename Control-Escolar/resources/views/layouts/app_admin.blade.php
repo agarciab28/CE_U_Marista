@@ -104,7 +104,7 @@
 
     <li id="misdatos"><a class="white-text" href="{{ route('mis_datos') }}"><i class="fas fa-user-cog white-text menu-icon"></i>Mis datos</a></li>
 
-    <li id=" cerrar_sesion"><a class="show-on-small hide-on-med-and-up white-text" href="/">Cerrar Sesion</a></li>
+    <li id=" cerrar_sesion"><a class="show-on-small hide-on-med-and-up white-text" href="/cerrar_sesion">Cerrar Sesion</a></li>
 
     <div class="contenedor">
       <div class="white-text footer">
