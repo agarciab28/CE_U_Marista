@@ -161,7 +161,7 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 
     public function actualizaCalificacion(Request $request){
       //dd([$request]);
-      $id_grupo=$request->id_grupo;
+      $id_grupo=$request->grupo;
       calificaciones::where('ncontrol',$request->ncontrol)
         ->update(['primer_parcial'=>$request->cal1,
         'segundo_parcial'=>$request->cal2,
