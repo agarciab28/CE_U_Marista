@@ -109,7 +109,7 @@ td {
     <div class="column tabPDF" style="text-align:left; width:10%">no CTRL</div>
     <div class="column" id="noCtrl" style="width:10%">{{$datos->ncontrol}}</div>
     <div class="column tabPDF" style="text-align:left; width:10%">CARRERA</div>
-    <div class="column" id="carrera" style="width:20%">{{$datos->carrera}}</div>
+    <div class="column" id="carrera" style="width:20%">{{$datos->nombre_carrera}}</div>
     <br>
   </div>
 <br><br><br>
@@ -153,7 +153,7 @@ td {
   <tbody style="background: rgba(96, 125, 139);">
     <tr style="border: black 1px solid;">
       <th class="tabPDF" style="color:white; width:15.85cm">PROMEDIO FINAL</th>
-      <td class="tabPDF" style="color:white; width:3cm">0</td>
+      <td class="tabPDF" style="color:white; width:3cm">{{$promedio}}</td>
     </tr>
   </tbody>
 </table>

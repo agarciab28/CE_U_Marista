@@ -230,17 +230,26 @@ echo "<script type='text/javascript'>alert('$message');</script>";
     //dd($kardex);
     $calificaciones=array();
     //dd($semestres);
+    $promedio=0;
+    $contador=0;
     foreach ($kardex as $semestress) {
       foreach ($semestress as $semestre) {
-        array_push($calificaciones,['calificaciones'=>json_decode($semestre->obj_calificacion),'periodo'=>$semestre->periodo]);
-      }
+        $aux=json_decode($semestre['obj_calificacion']);
+        $aux2=$aux->promedio_calificacion;
+        $promedio+=$aux2;
+        $contador++;
 
+        array_push($calificaciones,['calificaciones'=>json_decode($semestre->obj_calificacion),'periodo'=>$semestre->periodo,'pr'=>$aux2]);
+      }
+      $promedio=$promedio/$contador;
 
     }
+    //dd( $calificaciones);
     //$calificaciones=json_decode($json->obj_calificacionn,true);
 
-    $datos=alumno::select('nombres','apaterno','amaterno','ncontrol')
+    $datos=alumno::select('nombres','apaterno','amaterno','ncontrol','nombre_carrera')
       ->join('persona as p','p.id_persona','=','alumno.id_persona')
+      ->join('carrera as c','c.id_carrera','=','alumno.id_carrera')
       ->where('alumno.ncontrol',session('ncontrol'))
       ->get()->first();
       //dd($datos);
@@ -251,6 +260,15 @@ echo "<script type='text/javascript'>alert('$message');</script>";
       //dd($calificaciones);
       $configuracion=configuracion::get()->first();
       //dd([$datos,$calificaciones,$configuracion,$semestres]);
-    return view('alumno.kardex',compact(['datos','calificaciones','configuracion','semestres']));
+      $califfin=array();
+      foreach ($calificaciones as $calificacion) {
+        //dd($calificacion['calificaciones']->promedio_calificacion);
+        array_push($califfin, $calificacion['calificaciones']->promedio_calificacion);
+      }
+      //dd($califfin);
+
+
+
+    return view('alumno.kardex',compact(['datos','calificaciones','configuracion','semestres','califfin','promedio']));
   }
 }
