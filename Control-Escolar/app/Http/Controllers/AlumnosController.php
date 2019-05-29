@@ -207,7 +207,7 @@ echo "<script type='text/javascript'>alert('$message');</script>";
         $promedio=($alumno->primero*30/100)+($alumno->segundo*30/100)+($alumno->examen*40/100);
         $final=$promedio;
         //detalle, si se recomienda algo que no sea cero, no puedes regisyrar ceros
-        if($alumno->final!=0){
+        if($alumno->final>=0){
           $final=$alumno->final;
         }
         array_push($sugerencias,['alumno'=>$alumno->nombres.' '.$alumno->apaterno.' '.$alumno->amaterno,
