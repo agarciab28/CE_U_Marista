@@ -24,10 +24,10 @@ $grupo_seleccionado=0;
           <div class="card card-grupo">
               <div class="card-content black-text z-depth-1">
                   <span class="card-title activator">Grupo: {{$grupo->id_grupo}}</span>
-                  <span class="titulo">Seccion:</span> 01 <br>
+                  <span class="titulo">Seccion:</span> {{$grupo->seccion}} <br>
                   <span class="titulo">Materia: </span> {{$grupo->nombre_materia}} <br>
-                  <span class="titulo">Nombre del Profesor: </span> Nancy asdf <br>
-                  <span class="titulo">Carrera: </span> Sistemas Computacionales <br>
+                  <span class="titulo">Nombre del Profesor: </span> {{$grupo->nombres}} {{$grupo->amaterno}} {{$grupo->apaterno}} <br>
+                  <span class="titulo">Carrera: </span> {{$grupo->nombre_materia}} <br>
               </div>
               <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">Acciones<i class="material-icons right">close</i></span>
@@ -44,7 +44,7 @@ $grupo_seleccionado=0;
                       <input type="text" name="id_grupo" value="" hidden>
                       <button type="submit" class="collection-item black-text botonModal">Calificaciones Finales</button>
                     </form>
-                    <form class="" action="{{ route('docente_pdfC') }}" method="get">
+                    <form class="" action="{{ route('docente_pdfC') }}" method="post">
                       @csrf
                       <input type="text" name="id_grupo" value="" hidden>
                       <button type="submit" class="collection-item black-text botonModal">Relación de Alumnos no Aprobados</button>
@@ -52,8 +52,8 @@ $grupo_seleccionado=0;
                   </div>
                 </div>
               </div>
-              <div class="card-action" style="background-color:#FFB500">
-                <div class="contenedor activator contenedor-card">
+              <div class="card-action"  style="background-color:#FFB500">
+                <div class="contenedor activator contenedor-card" onclick="abreModal({{$grupo->id_grupo}})">
                   <a class="white-text activator" ><i class="fas fa-cog "></i> Acciones</a> <br>
                 </div>
               </div>

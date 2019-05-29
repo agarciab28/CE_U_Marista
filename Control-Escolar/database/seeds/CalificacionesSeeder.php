@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use \App\Models\calificaciones;
+use App\Models\calificaciones;
+use App\Models\lista_grupo;
 
 class CalificacionesSeeder extends Seeder
 {
@@ -14,6 +15,7 @@ class CalificacionesSeeder extends Seeder
     {
     DB::statement('set foreign_key_checks = 0;');
     DB::table('calificaciones')->truncate();
+    DB::table('lista_grupo')->truncate();
     DB::statement('set foreign_key_checks = 1;');
 
     $calificaciones = new calificaciones();
@@ -43,6 +45,21 @@ class CalificacionesSeeder extends Seeder
     $calificaciones->promedio_calificacion="0";
     $calificaciones->opcion_calificacion="1";
     $calificaciones->save();
+
+    $lista= new lista_grupo();
+    $lista->ncontrol='1111';
+    $lista->nombres='Pepe';
+    $lista->id_grupo='1';
+    $lista->save();
+
+    $lista= new lista_grupo();
+    $lista->ncontrol='1234';
+    $lista->nombres='Javier';
+    $lista->id_grupo='2';
+    $lista->save();
+
+
+
 
 
 

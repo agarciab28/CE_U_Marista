@@ -36,7 +36,7 @@ class alumnoSeeder extends Seeder
       $alumno->nombre_fam="Sandra Alieri";
       $alumno->id_persona="8";
       $alumno->semestre="1";
-      $alumno->activo="0";
+      $alumno->activo="1";
       $alumno->password=hash_hmac('sha256', "secret", env('HASH_KEY'));
       $alumno->save();
 

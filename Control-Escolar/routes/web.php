@@ -198,7 +198,7 @@ Route::group(["prefix" => 'docente','middleware'=>'profelogin'], function(){
   })->name('docente_pdfA2');
 
 
-  Route::get('/pdfC','genPDFController@pdfC')->name('docente_pdfC');
+  //Route::get('/pdfC','genPDFController@pdfC')->name('docente_pdfC');
 
   Route::get('/pdfA','genPDFController@pdfA')->name('docente_pdfA');
 
@@ -211,7 +211,7 @@ Route::group(["prefix" => 'docente','middleware'=>'profelogin'], function(){
   //calificaciones extraordinarias grupo
   Route::get('/pdfB','genPDFController@pdfB_docente')->name('docente_pdfB');
   //alumnos repetidores grupo
-  Route::get('/pdfC','genPDFController@pdfC_docente')->name('docente_pdfC');
+  Route::post('/pdfC','genPDFController@pdfC_docente')->name('docente_pdfC');
   //calificaciones finales grupo
   Route::get('/pdfF','genPDFController@pdfF_docente')->name('docente_pdfF');
 

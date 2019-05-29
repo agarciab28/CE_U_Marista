@@ -27,16 +27,23 @@
         <div class="row">
           <div class="col s12">
             <a href="#" data-target="sidenav-1" class="left sidenav-trigger hide-on-medium-and-up"><i class="material-icons">menu</i></a>
-            @if (session('id_prof'))
-            <a class="left black-text show-on-small-and-up">Bienvenido {{session('nombre')}}</a>
-            @endif
-            <div class="section ">
+
+            <div class="section">
+              <ul class="left hide-on-med-and-down">
+                @if (session('username'))
+                <li class="chip">
+                  <img src="{{{ session('url')}}}" alt="Contact Person">
+                  Bienvenido {{session('nombre')}}
+                </li>
+                @endif
+              </ul>
               <ul class="right hide-on-med-and-down">
                 <li>
                   <a href="/cerrar_sesion" class="waves-effect waves-light btn right show-on-medium-and-up hide-on-small-only">Cerrar Sesion</a>
                 </li>
               </ul>
             </div>
+
           </div>
         </div>
       </div>
@@ -60,7 +67,6 @@
         <div class="collapsible-body">
           <ul class="dropdown_menu">
             <li><a href="{{ route('docente_grupos') }}" class="white-text">Listado completo</a></li>
-            <li><a href="" class="white-text">Grupos en extraordinario</a></li>
           </ul>
         </div>
       </li>

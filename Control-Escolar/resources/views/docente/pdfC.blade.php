@@ -129,13 +129,17 @@ td {
             <td class="bodyPDF">1</td>
             <td class="bodyPDF">{{$calificacion->ncontrol}}</td>
             <td class="bodyPDF" style="text-align:left;">{{$calificacion->apaterno}} {{$calificacion->amaterno}} {{$calificacion->nombres}}</td>
-            <td class="bodyPDF">a {{$calificacion->opcion_calificacion}} extraordinario</td>
+            <td class="bodyPDF">
+              @if($calificacion->opcion_calificacion==0)
+              {{'a primer extraordinario'}}
+              @elseif($calificacion->opcion_calificacion==1)
+              {{'a segundo extraordinario'}}
+              @elseif($calificacion->opcion_calificacion==2)
+              {{ 'Baja' }}
+              @endif
+               </td>
             <td class="bodyPDF">{{$calificacion->promedio_calificacion}}</td>
           </tr>
           @endforeach
-          <tr>
-            <td colspan="4" class="tabPDF">Promedio grupal</td>
-            <td class="bodyPDF"></td>
-          </tr>
       </table>
 </body>

@@ -73,10 +73,9 @@
       return $pdf->stream('Acta de calificaciones.pdf');
     }
 
-    public function pdfC_docente(){
-      $id_grupo='1';
-      $opcion="primera";
-      $opc='2';
+    public function pdfC_docente(Request $request){
+
+      $id_grupo=$request->id_grupo;
 
       $datos=calificaciones::select('gr.id_grupo', 'gr.seccion', 'gr.periodo', 'nombres', 'apaterno', 'amaterno', 'car.nombre_carrera', 'ma.nombre_materia')
         ->join('grupo as gr', 'calificaciones.id_grupo', '=', 'gr.id_grupo')
@@ -93,13 +92,12 @@
       ->join('alumno as al', 'calificaciones.ncontrol', '=', 'al.ncontrol')
       ->join('persona as pe', 'al.id_persona', '=', 'pe.id_persona')
       ->where('id_grupo', $id_grupo)
-      ->where('opcion_calificacion', $opc)
       ->where('promedio_calificacion','<','6')
       ->get();
 
       $configuracion=configuracion::get()->first();
 
-      $pdf = \PDF::loadView('docente.pdfC', compact('id_grupo','datos','calificaciones','configuracion', 'opcion'));
+      $pdf = \PDF::loadView('docente.pdfC', compact('id_grupo','datos','calificaciones','configuracion'));
       $pdf->setPaper('letter');
 
       return $pdf->stream('Acta de calificaciones.pdf');

@@ -295,15 +295,16 @@ $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','p.id
 
  public function gruposProf(){
 
-   $grupos_de_profesor= grupo::select('grupo.id_grupo as id_grupo','nombre_materia')
+   $grupos_de_profesor= grupo::select('grupo.id_grupo as id_grupo','nombre_materia','seccion','nombres','amaterno','apaterno','nombre_materia','seccion')
    ->join('profesor as p','p.id_prof','=','grupo.id_prof')
+   ->join('personal as per','per.username','=','p.username')
+   ->join('persona as pe','pe.id_persona','=','per.id_persona')
    ->join('materia as m','m.id_materia','=','grupo.id_materia')
    ->where('p.username','=',session('username'))->get();
    return view('docente.grupos',compact('grupos_de_profesor'));
  }
 
  public function describeGruposProf(Request $request){
-   //dd($request);
    $alumnos=lista_grupo::select('p.nombres as nombres','p.apaterno as apaterno','p.amaterno as amaterno','c.primer_parcial as primero','c.segundo_parcial as segundo','c.examen_final as examen','c.total_faltas as faltas','a.ncontrol as ncontrol','g.id_grupo as grupo')
     ->join('alumno as a','a.ncontrol','=','lista_grupo.ncontrol')
     ->join('persona as p','p.id_persona','=','a.id_persona')
