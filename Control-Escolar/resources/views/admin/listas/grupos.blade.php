@@ -105,10 +105,12 @@
           <span for="profesor">Profesor actual: <div class="" id="prf_spn"></div></span>
         </div>
         <div class="input-field col s12 m6">
-          <input type="text" name="periodo" id="periodo" value="">
-
+          <select class="" name="periodo" id="periodo">
+            <option value="" disabled>Elige una opcion</option>
+            <option value="Agosto-Diciembre {{ now()->year }}">Agosto-Diciembre {{ now()->year }}</option>
+            <option value="Enero-Junio {{ now()->year }}">Enero-Junio {{ now()->year }}</option>
           </select>
-          <span for="periodo">Periodo</span>
+          <label for="periodo">Periodo</label>
         </div>
 
         <div class="row">
