@@ -14,38 +14,56 @@
   class genPDFController extends Controller
   {
     public function kardexAlumno($ncontrol){
-      $semestres=kardex::select('periodo')->where('ncontrol',session('ncontrol'))->groupBy('periodo')->get();
-      //dd($semestres);
-      $kardex=array();
-      foreach ($semestres as $semestre) {
-        array_push($kardex,kardex::where('ncontrol',session('ncontrol'))->where('periodo',$semestre->periodo)->get());
+
+    $semestres = kardex::select('periodo')->where('ncontrol', session('ncontrol'))->groupBy('periodo')->get();
+    //dd($semestres);
+    $kardex = array();
+    foreach ($semestres as $semestre) {
+      array_push($kardex, kardex::where('ncontrol', $ncontrol)->where('periodo', $semestre->periodo)->get());
+    }
+    //dd($kardex);
+    $calificaciones = array();
+    //dd($semestres);
+    $promedio = 0;
+    $contador = 0;
+    foreach ($kardex as $semestress) {
+      foreach ($semestress as $semestre) {
+        $aux = json_decode($semestre['obj_calificacion']);
+        $aux2 = $aux->promedio_calificacion;
+        $promedio += $aux2;
+        $contador++;
+
+        array_push($calificaciones, ['calificaciones' => json_decode($semestre->obj_calificacion), 'periodo' => $semestre->periodo, 'pr' => $aux2]);
       }
-      //dd($kardex);
-      $calificaciones=array();
-      //dd($semestres);
-      foreach ($kardex as $semestress) {
-        foreach ($semestress as $semestre) {
-          array_push($calificaciones,['calificaciones'=>json_decode($semestre->obj_calificacion),'periodo'=>$semestre->periodo]);
-        }
+      $promedio = $promedio / $contador;
+    }
+    //dd( $calificaciones);
+    //$calificaciones=json_decode($json->obj_calificacionn,true);
+
+    $datos = alumno::select('nombres', 'apaterno', 'amaterno', 'ncontrol', 'nombre_carrera')
+      ->join('persona as p', 'p.id_persona', '=', 'alumno.id_persona')
+      ->join('carrera as c', 'c.id_carrera', '=', 'alumno.id_carrera')
+      ->where('alumno.ncontrol', $ncontrol)
+      ->get()->first();
+    //dd($datos);
+    /*$calificaciones=array();
+      foreach ($calificacioness as $calif) {
+        array_push($calificaciones,json_decode($calif));
+      }*/
+    //dd($calificaciones);
+    $configuracion = configuracion::get()->first();
+    //dd([$datos,$calificaciones,$configuracion,$semestres]);
+    $califfin = array();
+    foreach ($calificaciones as $calificacion) {
+      //dd($calificacion['calificaciones']->promedio_calificacion);
+      array_push($califfin, $calificacion['calificaciones']->promedio_calificacion);
+    }
+    //dd($califfin);
 
 
-      }
-      //$calificaciones=json_decode($json->obj_calificacionn,true);
 
-      $datos=alumno::select('nombres','apaterno','amaterno','ncontrol')
-        ->join('persona as p','p.id_persona','=','alumno.id_persona')
-        ->where('alumno.ncontrol',$ncontrol)
-        ->get()->first();
-        //dd($datos);
-        /*$calificaciones=array();
-        foreach ($calificacioness as $calif) {
-          array_push($calificaciones,json_decode($calif));
-        }*/
-        //dd($calificaciones);
-        $configuracion=configuracion::get()->first();
-        //dd([$datos,$calificaciones,$configuracion,$semestres]);
 
-      $pdf = \PDF::loadView('admin.kardex', compact(['datos','calificaciones','configuracion','semestres']));
+      $pdf = \PDF::loadView('admin.kardex', compact(['datos', 'calificaciones', 'configuracion', 'semestres', 'califfin', 'promedio']));
       $pdf->setPaper('letter', 'landscape');
 
       return $pdf->stream('Acta de calificaciones.pdf');
