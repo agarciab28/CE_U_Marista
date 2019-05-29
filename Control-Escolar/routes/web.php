@@ -48,6 +48,8 @@ Route::group(["prefix" => 'admin' , 'middleware'=>'adminlogin'], function(){
     return view('admin.kardex');
   })->name('admin_kardex');
 
+  Route::get('/calificacionesGrupales','genPDFController@pdfF_admin')->name('admin_calificaciones');
+
   Route::get('/descargaFormato','adminController@descarga')->name('descargaCSV');
 
   Route::post('/sube','adminController@sube')->name('subirCSV');

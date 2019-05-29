@@ -35,7 +35,7 @@
                   <div class="row">
                     <div class="input-field col s12 l8 push-l2 pull-l2   ">
                       <input id="alumno_user" name="ncontrol" type="text" class="{{ $errors->has('ncontrol') ? 'input-field col s12  red lighten-1' : 'input-field col s12' }}">
-                      <label for="alumno_user"><i class="fas fa-user" style="margin-right:0.5em;"></i>Nombre de Usuario</label>
+                      <label for="alumno_user"><i class="fas fa-user" style="margin-right:0.5em;"></i>Número de Control</label>
                     </div>
                     <div class="input-field col s12 l8 push-l2 pull-l2   ">
                       <input id="alumno_pass" type="password" name="password" class="{{ $errors->has('ncontrol') ? 'input-field col s12 red lighten-1' : 'input-field col s12' }}">

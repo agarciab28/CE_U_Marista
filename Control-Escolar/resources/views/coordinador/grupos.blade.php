@@ -45,32 +45,22 @@
                 <form class="" action="{{ route('coordinador_pdfA') }}" method="get">
                   @csrf
                   <input type="text" name="id_grupo" value="" hidden>
-                  <button type="submit" class="collection-item black-text botonModal">PDF BOLETA DE CALIFICACIONES: EVALUACIÓN ORDINARIA</button>
-                </form>
-                <form class="" action="{{ route('coordinador_pdfB') }}" method="get">
-                  @csrf
-                  <input type="text" name="id_grupo" value="" hidden>
-                  <button type="submit" class="collection-item black-text botonModal">PDF BOLETA DE CALIFICACIONES: PRIMERA EVALUACIÓN EXTRAORDINARIA</button>
+                  <button type="submit" class="collection-item black-text botonModal">Calificaciones Evaluación Ordinaria</button>
                 </form>
                 <form class="" action="{{ route('coordinador_pdfF') }}" method="get">
                   @csrf
                   <input type="text" name="id_grupo" value="" hidden>
-                  <button type="submit" class="collection-item black-text botonModal">PDF BOLETA DE CALIFICACIONES FINALES</button>
+                  <button type="submit" class="collection-item black-text botonModal">Calificaciones Finales</button>
                 </form>
                 <form class="" action="{{ route('coordinador_pdfAM') }}" method="get">
                   @csrf
                   <input type="text" name="id_grupo" value="" hidden>
-                  <button type="submit" class="collection-item black-text botonModal">PDF BOLETA DE CALIFICACIONES: EVALUACIÓN ORDINARIA</button>
-                </form>
-                <form class="" action="{{ route('coordinador_pdfBM') }}" method="get">
-                  @csrf
-                  <input type="text" name="id_grupo" value="" hidden>
-                  <button type="submit" class="collection-item black-text botonModal">PDF BOLETA DE CALIFICACIONES: PRIMERA EVALUACIÓN EXTRAORDINARIA</button>
+                  <button type="submit" class="collection-item black-text botonModal">Calificaciones Evaluacion Ordianaria</button>
                 </form>
                 <form class="" action="{{ route('coordinador_pdfFM') }}" method="get">
                   @csrf
                   <input type="text" name="id_grupo" value="" hidden>
-                  <button type="submit" class="collection-item black-text botonModal">PDF BOLETA DE CALIFICACIONES FINALES</button>
+                  <button type="submit" class="collection-item black-text botonModal">Calificaciones Finales</button>
                 </form>
               </div>
           </p>

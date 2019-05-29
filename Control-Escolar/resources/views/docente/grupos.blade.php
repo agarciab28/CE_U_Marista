@@ -19,8 +19,8 @@ $grupo_seleccionado=0;
 @endphp
 <div class="section container">
   <div class="row">
+    @foreach($grupos_de_profesor as $grupo)
       <div class="col s12 m4">
-        @foreach($grupos_de_profesor as $grupo)
           <div class="card card-grupo">
               <div class="card-content black-text z-depth-3">
                   <span class="card-title">Grupo: {{$grupo->id_grupo}}</span>
@@ -33,8 +33,8 @@ $grupo_seleccionado=0;
                   <a onclick="abreModal({{$grupo->id_grupo}})" href="#modal1" class="modal-trigger"><i class="fas fa-cog"></i> Opciones</a>
               </div>
           </div>
-          @endforeach
       </div>
+      @endforeach
   </div>
 </div>
 
@@ -48,32 +48,17 @@ $grupo_seleccionado=0;
               <form class="" action="{{ route('docente_consulta') }}" method="post">
                 @csrf
                 <input type="text" name="id_grupo" value="" hidden>
-                <button type="submit" class="collection-item black-text botonModal">Consultar</button>
+                <button type="submit" class="collection-item black-text botonModal">Calificaciones Parciales</button>
               </form>
               <form class="" action="{{ route('docente_calif') }}" method="post">
                 @csrf
                 <input type="text" name="id_grupo" value="" hidden>
                 <button type="submit" class="collection-item black-text botonModal">Calificaciones Finales</button>
               </form>
-              <form class="" action="{{ route('docente_pdfA') }}" method="get">
-                @csrf
-                <input type="text" name="id_grupo" value="" hidden>
-                <button type="submit" class="collection-item black-text botonModal">PDF BOLETA DE CALIFICACIONES: EVALUACIÓN ORDINARIA</button>
-              </form>
-              <form class="" action="{{ route('docente_pdfB') }}" method="get">
-                @csrf
-                <input type="text" name="id_grupo" value="" hidden>
-                <button type="submit" class="collection-item black-text botonModal">PDF BOLETA DE CALIFICACIONES: PRIMERA EVALUACIÓN EXTRAORDINARIA</button>
-              </form>
               <form class="" action="{{ route('docente_pdfC') }}" method="get">
                 @csrf
                 <input type="text" name="id_grupo" value="" hidden>
-                <button type="submit" class="collection-item black-text botonModal">PDF RELACIÓN DE ALUMNOS NO APROBADOS</button>
-              </form>
-              <form class="" action="{{ route('docente_pdfF') }}" method="get">
-                @csrf
-                <input type="text" name="id_grupo" value="" hidden>
-                <button type="submit" class="collection-item black-text botonModal">PDF BOLETA DE CALIFICACIONES FINALES</button>
+                <button type="submit" class="collection-item black-text botonModal">Relación de Alumnos no Aprobados</button>
               </form>
               <!--<form class="" action="" method="post">
                 @csrf

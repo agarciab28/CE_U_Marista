@@ -3,8 +3,7 @@
 @section('stylesheet')
 <link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
 <link href="{{{ asset('css/admin/grupos.css') }}}" rel="stylesheet">
-<!-- CORE CSS-->
-<link href="{{{ asset('css/style.css') }}}" type="text/css" rel="stylesheet" media="screen,projection">
+
 @endsection
 
 @section('title', 'Crear Grupo')
@@ -52,7 +51,11 @@
           <label for="profesor">Profesor</label>
         </div>
         <div class="input-field col s12 m6">
-          <input type="text" name="periodo" id="periodo" value="" required>
+          <select class="" name="periodo" id="periodo">
+            <option value="" disabled>Elige una opcion</option>
+            <option value="Agosto-Diciembre {{ now()->year }}">Agosto-Diciembre {{ now()->year }}</option>
+            <option value="Enero-Junio {{ now()->year }}">Enero-Junio {{ now()->year }}</option>
+          </select>
           <label for="periodo">Periodo</label>
         </div>
         <div class="col s12" style="text-align: center;">

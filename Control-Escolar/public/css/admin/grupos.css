@@ -31,4 +31,10 @@ a{
     background-color: rgba(8, 58, 99, 1);
 }
 
+td{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 /*Color of underline*/

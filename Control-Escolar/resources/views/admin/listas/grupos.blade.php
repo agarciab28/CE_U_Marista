@@ -27,10 +27,11 @@
         <th>Materia</th>
         <th>Profesor</th>
         <th>Periodo</th>
-        <th>Asignar</th>
+        <th>Inscripción</th>
         <th>Modificar</th>
         <th>Alumnos</th>
         <th>Horario</th>
+        <th>Calificaciones</th>
         <th>Deshabiliar</th>
       </tr>
     </thead>
@@ -45,10 +46,11 @@
         <td>{{$grupo->nombre_materia}}</td>
         <td>{{$grupo->nombres}} {{$grupo->apaterno}} {{$grupo->amaterno}}</td>
         <td>{{$grupo->periodo}}</td>
-        <td> <a href="{{ route('admin_asignar',[$grupo->grupo,$grupo->id_carrera]) }}" class="btn tooltipped" data-position="bottom" data-tooltip="Selecciona los alumnos que conforman el grupo a registrar"><i class="fas fa-user-plus"></i></a></td>
+        <td> <a href="{{ route('admin_asignar',[$grupo->grupo,$grupo->id_carrera]) }}" class="btn tooltipped" data-position="bottom" data-tooltip="Inscribe alumnos al grupo"><i class="fas fa-user-plus"></i></a></td>
         <td> <a onclick="modificar_grupo('{{$grupo->grupo}};{{$grupo->seccion}};{{$grupo->nombre_carrera}};{{$grupo->id_carrera}};{{$grupo->nombre_materia}};{{$grupo->id_materia}};{{$grupo->nombres}} {{$grupo->apaterno}} {{$grupo->amaterno}};{{$grupo->id_prof}};{{$grupo->periodo}}')" href="#modal_modificar" class="btn modal-trigger tooltipped" data-position="bottom" data-tooltip="Reasignación de profesor, cambio de carrera o materia"><i class="fas fa-pencil-ruler"></i></a> </td>
-        <td> <a href="{{ route('admin_show_lista',[$grupo->grupo])}}" class="btn tooltipped" data-position="bottom" data-tooltip="Ver los alumnos registrados en este grupo"><i class="fas fa-users"> </td>
-        <td> <a href="{{ route('admin_show_horarios',[$grupo->grupo])}}" class="btn tooltipped" data-position="bottom" data-tooltip="Ver los horarios de este grupo"><i class="fas fa-clock"></td>
+        <td> <a href="{{ route('admin_show_lista',[$grupo->grupo])}}" class="btn tooltipped" data-position="bottom" data-tooltip="Ver los alumnos registrados en este grupo"><i class="fas fa-users"> </a></td>
+        <td> <a href="{{ route('admin_show_horarios',[$grupo->grupo])}}" class="btn tooltipped" data-position="bottom" data-tooltip="Ver los horarios de este grupo"><i class="fas fa-clock"></a></td>
+        <td> <a href="{{ route('admin_calificaciones')}}" class="btn"><i class="fas fa-clipboard"></i></a> </td>
         <td> <a href="{{route('elimina_grupo',['grupo'=>$grupo->grupo])}}" class="btn {{($grupo->activo>0)?' green':'red'}} tooltipped" data-position="bottom" data-tooltip="Cambiar el estado del grupo en el periodo escolar actual">{{($grupo->activo>0)?' Habilitado':'Deshabilitado'}}</a> </td>
 
       </tr>
