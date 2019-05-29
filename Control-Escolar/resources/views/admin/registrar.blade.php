@@ -1,7 +1,7 @@
 @extends('layouts.app_admin')
 
 @section('stylesheet')
-<link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
+  
 <link href="{{{ asset('css/admin/usuarios.css') }}}" rel="stylesheet">
 <link href="{{{ asset('https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css') }}}" rel="stylesheet">
 @endsection
