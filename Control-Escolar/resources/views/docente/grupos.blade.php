@@ -55,25 +55,10 @@ $grupo_seleccionado=0;
                 <input type="text" name="id_grupo" value="" hidden>
                 <button type="submit" class="collection-item black-text botonModal">Calificaciones Finales</button>
               </form>
-              <form class="" action="{{ route('docente_pdfA') }}" method="get">
-                @csrf
-                <input type="text" name="id_grupo" value="" hidden>
-                <button type="submit" class="collection-item black-text botonModal">PDF Calificaciones Evaluacion Ordinaria</button>
-              </form>
-              <form class="" action="{{ route('docente_pdfB') }}" method="get">
-                @csrf
-                <input type="text" name="id_grupo" value="" hidden>
-                <button type="submit" class="collection-item black-text botonModal">PDF Calificaciones Primera Evaluación Extraordinaria</button>
-              </form>
               <form class="" action="{{ route('docente_pdfC') }}" method="get">
                 @csrf
                 <input type="text" name="id_grupo" value="" hidden>
-                <button type="submit" class="collection-item black-text botonModal">PDF Relación de Alumnos no Aprobados</button>
-              </form>
-              <form class="" action="{{ route('docente_pdfF') }}" method="get">
-                @csrf
-                <input type="text" name="id_grupo" value="" hidden>
-                <button type="submit" class="collection-item black-text botonModal">PDF Calificaciones Finales</button>
+                <button type="submit" class="collection-item black-text botonModal">Relación de Alumnos no Aprobados</button>
               </form>
               <!--<form class="" action="" method="post">
                 @csrf

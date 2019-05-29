@@ -367,6 +367,34 @@
 
       return $pdf->stream('Kárdex de calificaciones.pdf');
     }
+
+    public function pdfF_admin(){
+      $id_grupo='1';
+
+      $datos=calificaciones::select('gr.id_grupo', 'gr.seccion', 'gr.periodo', 'nombres', 'apaterno', 'amaterno', 'car.nombre_carrera', 'ma.nombre_materia')
+        ->join('grupo as gr', 'calificaciones.id_grupo', '=', 'gr.id_grupo')
+        ->join('profesor as pr', 'pr.id_prof', '=', 'gr.id_prof')
+        ->join('personal as pe', 'pe.username', '=', 'pr.username')
+        ->join('persona as per', 'per.id_persona', '=', 'pe.id_persona')
+        ->join('materia as ma', 'ma.id_materia', '=', 'gr.id_materia')
+        ->join('carrera as car', 'car.id_carrera', '=', 'gr.id_carrera')
+        ->where('calificaciones.id_grupo', $id_grupo)
+        ->get()
+        ->first();
+
+      $calificaciones=calificaciones::select('al.ncontrol', 'pe.nombres', 'pe.apaterno', 'pe.amaterno', 'opcion_calificacion', 'promedio_calificacion')
+      ->join('alumno as al', 'calificaciones.ncontrol', '=', 'al.ncontrol')
+      ->join('persona as pe', 'al.id_persona', '=', 'pe.id_persona')
+      ->where('id_grupo', $id_grupo)
+      ->get();
+
+      $configuracion=configuracion::get()->first();
+
+      $pdf = \PDF::loadView('coordinador.pdfF', compact('id_grupo','datos','calificaciones','configuracion'));
+      $pdf->setPaper('letter');
+
+      return $pdf->stream('Acta de calificaciones.pdf');
+    }
     public function showBoleta(){
       //aquí se va a obtener el ncontrol de la variable de sesión $ncontrol=session('ncontrol');
       //en lo mientras el ejemplo va a ser con el men con ncontrol 1111 que está en los seeders
