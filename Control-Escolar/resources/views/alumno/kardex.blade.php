@@ -114,10 +114,11 @@ td {
   </div>
 <br><br><br>
 <div class="subHeadPDF">CALIFICACIONES</div>
-<table bgcolor="#cfd8dc" style="border: black 1px solid;">
+@foreach($semestres as $semestre)
+<table bgcolor="#cfd8dc" style="border: black 1px solid; margin-bottom: 10px">
   <thead style="background: rgba(96, 125, 139);">
     <tr>
-        <th class="tabPDF" style="color:white;" colspan="4" scope="rowgroup">{{$configuracion->periodo_actual}}</th>
+        <th class="tabPDF" style="color:white;" colspan="4" scope="rowgroup">{{$semestre->periodo}}</th>
     </tr>
     <tr>
         <th class="tabPDF" style="color:white;">CLAVE MATERIA</th>
@@ -130,10 +131,12 @@ td {
   <tbody>
     @foreach($calificaciones as $calificacion)
     <tr>
-      <td class="bodyPDF center">{{$calificacion->id_materia}}</td>
-      <td class="bodyPDF center">{{$calificacion->nombre_materia}}</td>
-      <td class="bodyPDF center">{{$calificacion->opcion_calificacion}}</td>
+      @if($calificacion['periodo']==$semestre->periodo)
+      <td class="bodyPDF center">{{$calificacion['calificaciones']->id_materia}}</td>
+      <td class="bodyPDF center">{{$calificacion['calificaciones']->nombre_materia}}</td>
+      <td class="bodyPDF center">{{$calificacion['calificaciones']->opcion_calificacion}}</td>
       <td class="bodyPDF center">80</td>
+      @endif
     </tr>
     @endforeach
     <tr style="border: black 1px solid;">
@@ -144,6 +147,7 @@ td {
     </tr>
   </tbody>
 </table>
+@endforeach
 <br>
 <table bgcolor="#cfd8dc" style="border: black 1px solid;">
   <tbody style="background: rgba(96, 125, 139);">
