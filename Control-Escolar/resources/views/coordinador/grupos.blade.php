@@ -45,11 +45,11 @@
                     </div>
                   </div>
                 </div>
-                <div class="card-action" style="background-color:#FFB500">
+                {{-- <div class="card-action" style="background-color:#FFB500">
                   <div class="contenedor activator contenedor-card" onclick="abreModal({{$grupo->id_grupo}})">
                     <a class="white-text activator" ><i class="fas fa-cog "></i> Acciones</a> <br>
                   </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         @endforeach
