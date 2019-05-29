@@ -302,7 +302,7 @@ $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','p.id
    return view('docente.grupos',compact('grupos_de_profesor'));
  }
 
- public function describeGruposProf(Request $request){
+ public function describeGruposProf(Request $request,$id_grupo){
    //dd($request);
    $alumnos=lista_grupo::select('p.nombres as nombres','p.apaterno as apaterno','p.amaterno as amaterno','c.primer_parcial as primero','c.segundo_parcial as segundo','c.examen_final as examen','c.total_faltas as faltas','a.ncontrol as ncontrol','g.id_grupo as grupo')
     ->join('alumno as a','a.ncontrol','=','lista_grupo.ncontrol')
@@ -310,7 +310,7 @@ $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','p.id
     ->join('grupo as g','g.id_grupo','=','lista_grupo.id_grupo')
     ->join('calificaciones as c','c.ncontrol','=','a.ncontrol')
     ->where('g.id_grupo',$request->id_grupo)->get();
-   return view('docente.opciones.alumnos',compact(['alumnos']));
+   return view('docente.opciones.alumnos',compact(['alumnos','id_grupo']));
  }
 
  public function calificacionesFinalesGrupo(Request $request){

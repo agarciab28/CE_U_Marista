@@ -182,7 +182,7 @@ Route::group(["prefix" => 'docente','middleware'=>'profelogin'], function(){
 
   Route::get('/misdatos','ProfesoresController@misdatos')->name('docente_datos');
 
-  Route::post('/consulta', 'gruposController@describeGruposProf')->name('docente_consulta');
+  Route::get('/consulta/{id_grupo}', 'gruposController@describeGruposProf')->name('docente_consulta');
 
   Route::post('/actualizaCalificacion','AlumnosController@actualizaCalificacion')->name('actualizaCalificacion');
 
