@@ -26,8 +26,8 @@ $grupo_seleccionado=0;
                   <span class="card-title activator">Grupo: {{$grupo->id_grupo}}</span>
                   <span class="titulo">Seccion:</span> {{$grupo->seccion}} <br>
                   <span class="titulo">Materia: </span> {{$grupo->nombre_materia}} <br>
-                  <span class="titulo">Nombre del Profesor: </span> {{$grupo->nombres}} {{$grupo->amaterno}} {{$grupo->apaterno}} <br>
-                  <span class="titulo">Carrera: </span> {{$grupo->nombre_materia}} <br>
+                  <span class="titulo">Profesor: </span> {{$grupo->nombres}} {{$grupo->amaterno}} {{$grupo->apaterno}} <br>
+                  {{-- <span class="titulo">Carrera: </span> {{$grupo->nombre_materia}} <br> --}}
               </div>
               <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">Acciones<i class="material-icons right">close</i></span>

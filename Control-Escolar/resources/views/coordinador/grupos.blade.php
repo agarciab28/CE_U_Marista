@@ -21,11 +21,11 @@
         <div class="col s12 m4">
             <div class="card card-grupo">
                 <div class="card-content black-text z-depth-1">
-                    <span class="card-title">Grupo:</span>
-                    <span class="titulo">Materia</span> {{$grupo->nombre_materia}} <br>
-                    <span class="titulo">Seccion:</span> 01 <br>
-                    <span class="titulo">Nombre del Profesor: </span> Nancy asdf <br>
-                    <span class="titulo">Carrera: </span> Sistemas Computacionales <br>
+                    <span class="card-title">Grupo: {{$grupo->id_grupo}}</span>
+                    <span class="titulo">Materia:</span> {{$grupo->nombre_materia}} <br>
+                    <span class="titulo">Seccion:</span> {{$grupo->seccion}} <br>
+                    <span class="titulo">Profesor: </span> {{$grupo->nombres}} {{$grupo->amaterno}} {{$grupo->apaterno}} <br>
+                    {{-- <span class="titulo">Carrera: </span> {{$grupo->carrera}} <br> --}}
                 </div>
                 <div class="card-reveal">
                   <span class="card-title grey-text text-darken-4">Acciones<i class="material-icons right">close</i></span>
