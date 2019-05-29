@@ -20,13 +20,45 @@
     @foreach($grupos as $grupo)
         <div class="col s12 m4">
             <div class="card card-grupo">
-                <div class="card-content black-text z-depth-3">
+                <div class="card-content black-text z-depth-1">
                     <span class="card-title">Grupo:</span>
-                    <p>{{$grupo->nombre_materia}}</p>
-                    <p>{{$grupo->nombres}} {{$grupo->aparterno}} {{$grupo->amaterno}}</p>
+                    <span class="titulo">Materia</span> {{$grupo->nombre_materia}} <br>
+                    <span class="titulo">Seccion:</span> 01 <br>
+                    <span class="titulo">Nombre del Profesor: </span> Nancy asdf <br>
+                    <span class="titulo">Carrera: </span> Sistemas Computacionales <br>
                 </div>
-                <div class="card-action">
-                    <a onclick="abreModal({{$grupo->id_grupo}})" href="#modal1" class="modal-trigger"><i class="fas fa-cog"></i> Opciones</a>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Acciones<i class="material-icons right">close</i></span>
+                  <div class="contenedor">
+                    <br>
+                    <div class="collection">
+                      <form class="" action="{{ route('coordinador_pdfA') }}" method="get">
+                        @csrf
+                        <input type="text" name="id_grupo" value="" hidden>
+                        <button type="submit" class="collection-item black-text botonModal">Calificaciones Evaluación Ordinaria</button>
+                      </form>
+                      <form class="" action="{{ route('coordinador_pdfF') }}" method="get">
+                        @csrf
+                        <input type="text" name="id_grupo" value="" hidden>
+                        <button type="submit" class="collection-item black-text botonModal">Calificaciones Finales</button>
+                      </form>
+                      <form class="" action="{{ route('coordinador_pdfAM') }}" method="get">
+                        @csrf
+                        <input type="text" name="id_grupo" value="" hidden>
+                        <button type="submit" class="collection-item black-text botonModal">Calificaciones Evaluacion Ordianaria</button>
+                      </form>
+                      <form class="" action="{{ route('coordinador_pdfFM') }}" method="get">
+                        @csrf
+                        <input type="text" name="id_grupo" value="" hidden>
+                        <button type="submit" class="collection-item black-text botonModal">Calificaciones Finales</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-action" style="background-color:#FFB500">
+                  <div class="contenedor activator contenedor-card">
+                    <a class="white-text activator" ><i class="fas fa-cog "></i> Acciones</a> <br>
+                  </div>
                 </div>
             </div>
         </div>

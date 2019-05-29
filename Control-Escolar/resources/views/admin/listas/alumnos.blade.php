@@ -27,7 +27,7 @@
       <tr>
         <th>Número de control</th>
         <th>Nombre Completo</th>
-        <th>Fecha de Nacimiento</th>
+        <th>Carrera</th>
         <th>Correo Electrónico</th>
         <th>Kardex</th>
         <th>Modificar</th>
@@ -39,7 +39,7 @@
       <tr>
         <td class="numero">{{$persona->ncontrol}}</td>
         <td>{{$persona->nombres}} {{$persona->apaterno}} {{$persona->amaterno}}</td>
-        <td>{{$persona->fnaci}}</td>
+        <td>{{$persona->ncarrera}}</td>
         <td>{{$persona->email}}</td>
         <td> <a href="{{route('admin_kardex')}}" class="btn">Kardex</a> </td>
         <td> <a href="{{route('modificar_alumno',[$persona->id_persona])}}"  class="btn">Modificar</a> </td>

@@ -1,7 +1,7 @@
 @extends('layouts.app_admin')
 
 @section('stylesheet')
-<link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
+
 <link href="{{{ asset('css/admin/grupos.css') }}}" rel="stylesheet">
 
 @endsection
@@ -21,7 +21,7 @@
         </div>
         <div class="input-field col s12 m3">
           <input type="text" name="seccion" id="seccion" value="" required>
-          <label for="seccion">Seccion</label>
+          <label for="seccion">Sección</label>
         </div>
         <div class="input-field col s12 m5">
           <select class="" name="carrera" id="carrera">
@@ -192,7 +192,7 @@
   </div>
 </div>
 
-
+<input type="text" class="timepicker" name="hora_fin_lunes" id="hora_fin_lunes" value="">
 @endsection
 
 @section('scripts')
