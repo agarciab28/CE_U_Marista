@@ -131,14 +131,14 @@ td {
             <td class="bodyPDF">1</td>
             <td class="bodyPDF">{{$calificacion->ncontrol}}</td>
             <td class="bodyPDF" style="text-align:left;">{{$calificacion->apaterno}} {{$calificacion->amaterno}} {{$calificacion->nombres}}</td>
-            <td class="bodyPDF">75</td>
-            <td class="bodyPDF">2</td>
-            <td class="bodyPDF">80</td>
-            <td class="bodyPDF">4</td>
-            <td class="bodyPDF">85</td>
+            <td class="bodyPDF">{{$calificacion->primer_parcial}}</td>
             <td class="bodyPDF">0</td>
-            <td class="bodyPDF">6</td>
-            <td class="bodyPDF">80</td>
+            <td class="bodyPDF">{{$calificacion->segundo_parcial}}</td>
+            <td class="bodyPDF">0</td>
+            <td class="bodyPDF">{{$calificacion->examen_final}}</td>
+            <td class="bodyPDF">0</td>
+            <td class="bodyPDF">{{$calificacion->total_faltas}}</td>
+            <td class="bodyPDF">{{$calificacion->promedio_calificacion}}</td>
           </tr>
         @endforeach
           <tr>

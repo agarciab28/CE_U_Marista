@@ -36,7 +36,7 @@
 
       $configuracion=configuracion::get()->first();
 
-      $pdf = \PDF::loadView('docente.pdfA', compact('id_grupo','datos','calificaciones','configuracion'));
+      $pdf = \PDF::loadView('docente.pdfA', compact('id_grupo','datos','calificaciones','configuracion', 'promedio1','promedio2','promedio3'));
       $pdf->setPaper('letter', 'landscape');
 
       return $pdf->stream('Acta de calificaciones.pdf');
@@ -102,7 +102,35 @@
       $pdf = \PDF::loadView('docente.pdfC', compact('id_grupo','datos','calificaciones','configuracion', 'opcion'));
       $pdf->setPaper('letter');
 
-      return $pdf->stream('Acta de calificaciones.pdf');
+      return $pdf->stream('Lista de alumnos no aprobados.pdf');
+    }
+
+    public function pdfD_docente(){
+      $id_grupo='1';
+
+      $datos=calificaciones::select('gr.id_grupo', 'gr.seccion', 'gr.periodo', 'nombres', 'apaterno', 'amaterno', 'car.nombre_carrera', 'ma.nombre_materia')
+        ->join('grupo as gr', 'calificaciones.id_grupo', '=', 'gr.id_grupo')
+        ->join('profesor as pr', 'pr.id_prof', '=', 'gr.id_prof')
+        ->join('personal as pe', 'pe.username', '=', 'pr.username')
+        ->join('persona as per', 'per.id_persona', '=', 'pe.id_persona')
+        ->join('materia as ma', 'ma.id_materia', '=', 'gr.id_materia')
+        ->join('carrera as car', 'car.id_carrera', '=', 'gr.id_carrera')
+        ->where('calificaciones.id_grupo', $id_grupo)
+        ->get()
+        ->first();
+
+      $calificaciones=calificaciones::select('calificaciones.ncontrol', 'nombres', 'apaterno', 'amaterno')
+      ->join('alumno as al', 'calificaciones.ncontrol', '=', 'al.ncontrol')
+      ->join('persona as pe', 'al.id_persona', '=', 'pe.id_persona')
+      ->where('id_grupo', $id_grupo)
+      ->get();
+
+      $configuracion=configuracion::get()->first();
+
+      $pdf = \PDF::loadView('docente.pdfD', compact('id_grupo','datos','calificaciones','configuracion', 'opcion'));
+      $pdf->setPaper('letter');
+
+      return $pdf->stream('Lista de alumnos.pdf');
     }
 
     public function pdfF_docente(){
@@ -125,9 +153,14 @@
       ->where('id_grupo', $id_grupo)
       ->get();
 
+      $promedio=calificaciones::where('id_grupo', $id_grupo)
+      ->first()
+      ->avg('promedio_calificacion');
+
+
       $configuracion=configuracion::get()->first();
 
-      $pdf = \PDF::loadView('docente.pdfF', compact('id_grupo','datos','calificaciones','configuracion'));
+      $pdf = \PDF::loadView('docente.pdfF', compact('id_grupo','datos','calificaciones','configuracion', 'promedio'));
       $pdf->setPaper('letter');
 
       return $pdf->stream('Acta de calificaciones.pdf');
@@ -192,6 +225,34 @@
       $pdf->setPaper('letter');
 
       return $pdf->stream('Acta de calificaciones.pdf');
+    }
+
+    public function pdfD_coordi(){
+      $id_grupo='1';
+
+      $datos=calificaciones::select('gr.id_grupo', 'gr.seccion', 'gr.periodo', 'nombres', 'apaterno', 'amaterno', 'car.nombre_carrera', 'ma.nombre_materia')
+        ->join('grupo as gr', 'calificaciones.id_grupo', '=', 'gr.id_grupo')
+        ->join('profesor as pr', 'pr.id_prof', '=', 'gr.id_prof')
+        ->join('personal as pe', 'pe.username', '=', 'pr.username')
+        ->join('persona as per', 'per.id_persona', '=', 'pe.id_persona')
+        ->join('materia as ma', 'ma.id_materia', '=', 'gr.id_materia')
+        ->join('carrera as car', 'car.id_carrera', '=', 'gr.id_carrera')
+        ->where('calificaciones.id_grupo', $id_grupo)
+        ->get()
+        ->first();
+
+      $calificaciones=calificaciones::select('calificaciones.ncontrol', 'nombres', 'apaterno', 'amaterno')
+      ->join('alumno as al', 'calificaciones.ncontrol', '=', 'al.ncontrol')
+      ->join('persona as pe', 'al.id_persona', '=', 'pe.id_persona')
+      ->where('id_grupo', $id_grupo)
+      ->get();
+
+      $configuracion=configuracion::get()->first();
+
+      $pdf = \PDF::loadView('coordinador.pdfD', compact('id_grupo','datos','calificaciones','configuracion', 'opcion'));
+      $pdf->setPaper('letter');
+
+      return $pdf->stream('Lista de alumnos.pdf');
     }
 
     public function pdfF_coordi(){

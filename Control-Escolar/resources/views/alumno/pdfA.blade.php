@@ -83,10 +83,10 @@ td {
   <br><br>
   <div class="subHeadPDF">datos del alumno</div>
     <div class="row">
-      <div class="column tabPDF" style="text-align:left;">ALUMNO</div>
-      <div class="column" id="alumno" style="width:70%;">{{$datos->apaterno}} {{$datos->amaterno}} {{$datos->nombres}}</div>
       <div class="column tabPDF" style="text-align:left;">no CTRL</div>
       <div class="column" id="noCtrl">{{$ncontrol}}</div>
+      <div class="column tabPDF" style="text-align:left;">ALUMNO</div>
+      <div class="column" id="alumno" style="width:70%;">{{$datos->apaterno}} {{$datos->amaterno}} {{$datos->nombres}}</div>
       <br>
     </div>
     <br>
