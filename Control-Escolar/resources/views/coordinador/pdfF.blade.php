@@ -126,16 +126,16 @@ td {
           </tr>
           @foreach($calificaciones as $calificacion)
           <tr>
-            <td class="bodyPDF">1</td>
+            <td class="bodyPDF">{{$contador++}}</td>
             <td class="bodyPDF">{{$calificacion->ncontrol}}</td>
             <td class="bodyPDF" style="text-align:left;">{{$calificacion->apaterno}} {{$calificacion->amaterno}} {{$calificacion->nombres}}</td>
-            <td class="bodyPDF">{{$calificacion->opcion_calificacion}}</td>
+            <td class="bodyPDF">{{$calificacion->opcion_calificacion=='0'? 'Evaluación ordinaria': $calificacion->opcion_calificacion}}</td>
             <td class="bodyPDF">{{$calificacion->promedio_calificacion}}</td>
           </tr>
           @endforeach
           <tr>
             <td colspan="4" class="tabPDF">Promedio grupal</td>
-            <td class="bodyPDF"></td>
+            <td class="bodyPDF">{{$promfin}}</td>
           </tr>
       </table>
 </body>

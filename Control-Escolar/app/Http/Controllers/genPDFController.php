@@ -134,10 +134,11 @@
     }
 
     //PDF'S COORDINADOR
-    public function pdfA_coordi(){
-      $id_grupo='1';
+    public function pdfA_coordi(Request $request){
 
-      $datos=calificaciones::select('gr.id_grupo', 'gr.seccion', 'gr.periodo', 'nombres', 'apaterno', 'amaterno', 'car.nombre_carrera', 'ma.nombre_materia')
+      $id_grupo=$request['id_grupo'];
+
+      $datos=calificaciones::select('gr.id_grupo as id_grupo', 'gr.seccion', 'gr.periodo', 'nombres', 'apaterno', 'amaterno', 'car.nombre_carrera', 'ma.nombre_materia')
         ->join('grupo as gr', 'calificaciones.id_grupo', '=', 'gr.id_grupo')
         ->join('profesor as pr', 'pr.id_prof', '=', 'gr.id_prof')
         ->join('personal as pe', 'pe.username', '=', 'pr.username')
@@ -152,12 +153,29 @@
       ->join('alumno as al', 'calificaciones.ncontrol', '=', 'al.ncontrol')
       ->join('persona as pe', 'al.id_persona', '=', 'pe.id_persona')
       ->where('id_grupo', $id_grupo)
-      ->where('opcion_calificacion', '1')
+      ->where('opcion_calificacion', '0')
       ->get();
 
-      $configuracion=configuracion::get()->first();
+      $promprimer=calificaciones::where('id_grupo', $id_grupo)
+      ->avg('primer_parcial');
 
-      $pdf = \PDF::loadView('coordinador.pdfA', compact('id_grupo','datos','calificaciones','configuracion'));
+      $promseg=calificaciones::where('id_grupo', $id_grupo)
+      ->avg('segundo_parcial');
+
+      $promex=calificaciones::where('id_grupo', $id_grupo)
+      ->avg('examen_final');
+
+      $promfaltas=calificaciones::where('id_grupo', $id_grupo)
+      ->avg('total_faltas');
+
+      $promfinal=calificaciones::where('id_grupo', $id_grupo)
+      ->avg('promedio_calificacion');
+
+
+      $configuracion=configuracion::get()->first();
+      $contador=1;
+
+      $pdf = \PDF::loadView('coordinador.pdfA', compact('id_grupo','datos','calificaciones','configuracion','contador','promprimer','promseg','promex','promfaltas','promfinal'));
       $pdf->setPaper('letter','landscape');
 
       return $pdf->stream('Acta de calificaciones.pdf');
@@ -194,8 +212,8 @@
       return $pdf->stream('Acta de calificaciones.pdf');
     }
 
-    public function pdfF_coordi(){
-      $id_grupo='1';
+    public function pdfF_coordi(Request $request){
+      $id_grupo=$request['id_grupo'];
 
       $datos=calificaciones::select('gr.id_grupo', 'gr.seccion', 'gr.periodo', 'nombres', 'apaterno', 'amaterno', 'car.nombre_carrera', 'ma.nombre_materia')
         ->join('grupo as gr', 'calificaciones.id_grupo', '=', 'gr.id_grupo')
@@ -214,9 +232,16 @@
       ->where('id_grupo', $id_grupo)
       ->get();
 
-      $configuracion=configuracion::get()->first();
+      $promfin=calificaciones::where('id_grupo', $id_grupo)
+      ->avg('promedio_calificacion');
 
-      $pdf = \PDF::loadView('coordinador.pdfF', compact('id_grupo','datos','calificaciones','configuracion'));
+
+
+
+      $configuracion=configuracion::get()->first();
+      $contador=1;
+
+      $pdf = \PDF::loadView('coordinador.pdfF', compact('id_grupo','datos','calificaciones','configuracion','contador','promfin'));
       $pdf->setPaper('letter');
 
       return $pdf->stream('Acta de calificaciones.pdf');
@@ -368,8 +393,9 @@
       return $pdf->stream('Kárdex de calificaciones.pdf');
     }
 
-    public function pdfF_admin(){
-      $id_grupo='1';
+    public function pdfF_admin($grupo){
+
+      $id_grupo=$grupo;
 
       $datos=calificaciones::select('gr.id_grupo', 'gr.seccion', 'gr.periodo', 'nombres', 'apaterno', 'amaterno', 'car.nombre_carrera', 'ma.nombre_materia')
         ->join('grupo as gr', 'calificaciones.id_grupo', '=', 'gr.id_grupo')
@@ -382,15 +408,24 @@
         ->get()
         ->first();
 
+        if($datos==null){
+           return redirect()->route('admin_lgrupos');
+
+        }
+
       $calificaciones=calificaciones::select('al.ncontrol', 'pe.nombres', 'pe.apaterno', 'pe.amaterno', 'opcion_calificacion', 'promedio_calificacion')
       ->join('alumno as al', 'calificaciones.ncontrol', '=', 'al.ncontrol')
       ->join('persona as pe', 'al.id_persona', '=', 'pe.id_persona')
       ->where('id_grupo', $id_grupo)
       ->get();
 
-      $configuracion=configuracion::get()->first();
+      $promfin=calificaciones::where('id_grupo', $id_grupo)
+      ->avg('promedio_calificacion');
 
-      $pdf = \PDF::loadView('coordinador.pdfF', compact('id_grupo','datos','calificaciones','configuracion'));
+      $configuracion=configuracion::get()->first();
+      $contador=1;
+
+      $pdf = \PDF::loadView('coordinador.pdfF', compact('id_grupo','datos','calificaciones','configuracion','contador','promfin'));
       $pdf->setPaper('letter');
 
       return $pdf->stream('Acta de calificaciones.pdf');

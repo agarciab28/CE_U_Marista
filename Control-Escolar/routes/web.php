@@ -48,7 +48,7 @@ Route::group(["prefix" => 'admin' , 'middleware'=>'adminlogin'], function(){
     return view('admin.kardex');
   })->name('admin_kardex');
 
-  Route::get('/calificacionesGrupales','genPDFController@pdfF_admin')->name('admin_calificaciones');
+  Route::get('/calificacionesGrupales/{grupo}','genPDFController@pdfF_admin')->name('admin_calificaciones');
 
   Route::get('/descargaFormato','adminController@descarga')->name('descargaCSV');
 
@@ -243,11 +243,11 @@ Route::group(["prefix" => 'coordinador','middleware'=>'coordinadorlogin'], funct
  //listar alumnos
  Route::get('coordinador/listas/alumnos', 'AlumnosController@listacoord')->name('coord_lista_alumnos');
   //calificaciones - grupo - alumno - persona
-  Route::get('/pdfA','genPDFController@pdfA_coordi')->name('coordinador_pdfA');
+  Route::post('/pdfA','genPDFController@pdfA_coordi')->name('coordinador_pdfA');
   //calificaciones extraordinarias grupo
   Route::get('/pdfB','genPDFController@pdfB_coordi')->name('coordinador_pdfB');
   //calificaciones finales grupo
-  Route::get('/pdfF','genPDFController@pdfF_coordi')->name('coordinador_pdfF');
+  Route::post('/pdfF','genPDFController@pdfF_coordi')->name('coordinador_pdfF');
 
   //calificaciones ordinarias materia
   Route::get('/pdfAM','genPDFController@pdfAM_coordi')->name('coordinador_pdfAM');
