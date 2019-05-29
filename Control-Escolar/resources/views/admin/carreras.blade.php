@@ -4,7 +4,6 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css" rel="stylesheet">
 <link href="https://cdn.datatables.net/1.10.19/css/dataTables.material.min.css" rel="stylesheet">
 
-<link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
 <link href="{{{ asset('css/admin/carreras.css') }}}" rel="stylesheet">
 <link href="{{{ asset('css/admin/alumnos.css') }}}" rel="stylesheet">
 
@@ -87,7 +86,7 @@
         </div>
         <div class="input-field col m4 s12 ">
           <!--<i class="material-icons prefix">account_circle</i>-->
-          <input type="date" id="fechar" name="fechar" class="validate datepicker" required maxlength="35">
+          <input type="text" id="fechar" name="fechar" class="validate datepicker" required maxlength="35">
           <label for="fechar">Fecha de registro</label>
         </div>
         <div class="row">
@@ -141,7 +140,7 @@
         </div>
         <div class="input-field col m4 s12 ">
           <!--<i class="material-icons prefix">account_circle</i>-->
-          <input type="date" id="mod_fechar" name="fechar" class="validate datepicker" required maxlength="35">
+          <input type="text" id="mod_fechar" name="fechar" class="validate datepicker" required maxlength="35">
           <span for="mod_fechar">Fecha de registro</span>
         </div>
         <div class="row">

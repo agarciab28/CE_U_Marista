@@ -1,7 +1,6 @@
 @extends('layouts.app_admin')
 
 @section('stylesheet')
-<link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
 <link href="{{{ asset('css/admin/calendario.css') }}}" rel="stylesheet">
 <link href="{{{ asset('css/admin/loader.css') }}}" rel="stylesheet">
 <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->

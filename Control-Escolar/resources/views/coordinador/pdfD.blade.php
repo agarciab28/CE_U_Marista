@@ -1,7 +1,11 @@
 <style>
-td {
+table{
+  border-collapse: collapse;
+}
+td, th {
   padding-top: 7px;
   padding-bottom: 7px;
+  border: 1px solid black;
 }
   .column {
     float: left;
@@ -63,18 +67,26 @@ td {
     text-align: center;
     font-size: 10px;
   }
+
+  .tabPDF2{
+    color: rgb(255,255,255);
+    font-family: "Verdana, Geneva, sans-serif";
+    font-weight: bold;
+    text-align: center;
+    font-size: 10px;
+  }
+
   table td:nth-child(1n) {
-  	width: 1.15cm;
+    width: 2cm;
   }
   table td:nth-child(1) {
-  	width: 1cm;
+  	width: 2cm;
   }
   table td:nth-child(2) {
-  	width: 1.5cm;
+  	width: 9.5cm;
   }
-  table td:nth-child(3) {
-  	width: 9cm;
-  }
+
+
 </style>
 
 <title>Acta de calificaciones.pdf</title>
@@ -82,7 +94,8 @@ td {
   <div>
     <div class="headPDF" style="margin:20px 0px 0px 0px; font-size:20px; font-family: 'Verdana, Geneva, sans-serif'">UNIVERSIDAD</div>
     <div class="headPDF" style="font-size:25px; font-family: 'Verdana, Geneva, sans-serif'">MARISTA VALLADOLID</div>
-    <div class="head2PDF" style="text-align: center; margin:20px 0px 20px 0px;">BOLETA DE CALIFICACIONES: EVALUACIÓN ORDINARIA</div>
+    <div class="head2PDF" style="text-align: center; margin:20px 0px 20px 0px;">RELACIÓN DE ALUMNOS NO APROBADOS</div>
+</div>
   </div>
   <br><br>
   <div class="subHeadPDF">datos del grupo</div>
@@ -110,49 +123,53 @@ td {
       <br>
     </div>
   <br><br><br>
-  <div class="subHeadPDF">CALIFICACIONES</div>
+  <div class="subHeadPDF">lista de alumnos</div>
       <table>
-
           <tr>
-              <th class="tabPDF">No</th>
               <th class="tabPDF">No CTRL</th>
               <th class="tabPDF">Nombre del alumno</th>
-              <th class="tabPDF">Primer parcial</th>
-              <th class="tabPDF">Faltas</th>
-              <th class="tabPDF">Segundo parcial</th>
-              <th class="tabPDF">Faltas</th>
-              <th class="tabPDF">Tercer parcial</th>
-              <th class="tabPDF">Faltas</th>
-              <th class="tabPDF">Faltas totales</th>
-              <th class="tabPDF">Calificación final</th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> X </th>
+              <th class="tabPDF2"> XXXXX </th>
           </tr>
           @foreach($calificaciones as $calificacion)
           <tr>
-            <td class="bodyPDF">1</td>
             <td class="bodyPDF">{{$calificacion->ncontrol}}</td>
             <td class="bodyPDF" style="text-align:left;">{{$calificacion->apaterno}} {{$calificacion->amaterno}} {{$calificacion->nombres}}</td>
-            <td class="bodyPDF">{{$calificacion->primer_parcial}}</td>
-            <td class="bodyPDF">0</td>
-            <td class="bodyPDF">{{$calificacion->segundo_parcial}}</td>
-            <td class="bodyPDF">0</td>
-            <td class="bodyPDF">{{$calificacion->examen_final}}</td>
-            <td class="bodyPDF">0</td>
-            <td class="bodyPDF">{{$calificacion->total_faltas}}</td>
-            <td class="bodyPDF">{{$calificacion->promedio_calificacion}}</td>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+            <th class="tabPDF"></th>
+
           </tr>
-        @endforeach
-          <tr>
-            <td></td>
-            <td></td>
-            <td class="tabPDF">Promedio grupal</td>
-            <td class="bodyPDF">0</td>
-            <td class="bodyPDF">0</td>
-            <td class="bodyPDF">0</td>
-            <td class="bodyPDF">0</td>
-            <td class="bodyPDF">0</td>
-            <td class="bodyPDF">0</td>
-            <td class="bodyPDF">0</td>
-            <td class="bodyPDF">0</td>
-          </tr>
+          @endforeach
+
       </table>
 </body>

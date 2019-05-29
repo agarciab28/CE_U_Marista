@@ -358,3 +358,173 @@ a{
       left: 0%;
   }
 }
+
+
+
+html{
+	position: relative;
+}
+
+header,main, footer {
+	padding-left: 280px;
+}
+
+main{
+	padding-bottom: 6em;
+}
+
+.nav-wrapper{
+  background-color: #FFB500;
+	/* background-color: #003865; */
+  overflow: hidden;
+}
+
+.sidenav{
+  background-color: rgba(8,58,99,1);
+	/* background-color: #FFB500; */
+  width: 280px;
+
+}
+
+a{
+  color:white;
+}
+
+.btn{
+  /* background-color: rgba(0, 56, 101, 0.9); */
+  background-color: #003865;
+	border-radius: 20px;
+}
+
+.btn:hover{
+  background-color: rgba(0, 56, 101, 0.9);
+}
+
+.btn:active{
+  background-color: rgba(0, 56, 101, 0.9);
+}
+
+.btn:visited{
+  background-color: rgba(0, 56, 101, 0.9);
+}
+
+.btn:focus{
+  background-color: rgba(0, 56, 101, 0.9);
+}
+
+.menu-icon{
+	margin-right:1.5em;
+	margin-left:0.5em;
+	font-size:1.5em;
+}
+
+.footer{
+	margin-top: 4em;
+	font-size: 10px;
+	text-align: center;
+	opacity: 0.5;
+}
+
+.dropdown_menu{
+	background-color: rgba(0, 56, 101, 0.9);
+}
+.container {
+  padding: 0 0.5rem;
+  margin: 0 auto;
+  max-width: 85% !important;
+  width: 98%;
+}
+/*----------------------------------------
+    Breadcrumb
+------------------------------------------*/
+#breadcrumbs-wrapper {
+  background: #f3f3f3;
+}
+
+h5.breadcrumbs-header {
+  font-size: 1.64rem;
+  line-height: 1.804rem;
+  margin: 1.5rem 0 0 0;
+}
+
+.breadcrumbs {
+  padding: 0;
+  margin: 15px 0;
+  list-style: none;
+}
+
+.breadcrumbs > li {
+  display: inline-block;
+}
+
+.breadcrumbs > li + li:before {
+  padding: 0 5px;
+  color: #ccc;
+  content: "/\00a0";
+}
+
+.breadcrumbs .active {
+  font-weight: normal;
+  color: #999;
+}
+
+.breadcrumbs-title {
+  font-size: 1.5rem;
+  line-height: 1.804rem;
+  margin: 18px 0 0;
+}
+
+.breadcrumbs-nav {
+  margin: 8px 0 9px;
+}
+
+.breadcrumb:before {
+  content: "\e7c3";
+  font-family: "Material-Design-Icons";
+}
+
+@media only screen and (max-width : 992px) {
+	header, main, footer {
+		padding-left: 0;
+	}
+
+	main{
+		padding-bottom: 7em;
+	}
+}
+.chip {
+    display: inline-block;
+    height: 32px;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 32px;
+    padding: 0 12px;
+    border-radius: 16px;
+    background-color: #e4e4e4;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+.chip>img {
+    float: left;
+    margin: 0 8px 0 -12px;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+}
+
+
+ span.date-text{
+	 color: white;
+ }
+
+ .select-month input {
+    width: 80px !important;
+}
+
+
+
+.modal {
+    height: 103% !important;
+    width: 70% !important;
+}

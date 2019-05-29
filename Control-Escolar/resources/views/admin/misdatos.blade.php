@@ -2,7 +2,6 @@
 
 @section('stylesheet')
 
-<link href="{{{ asset('css/style_dashboard.css') }}}" rel="stylesheet">
 <link href="{{{ asset('css/admin/misdatos.css') }}}" rel="stylesheet">
 <link href="{{{ asset('css/tooltips.css') }}}" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

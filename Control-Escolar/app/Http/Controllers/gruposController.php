@@ -311,7 +311,7 @@ $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','p.id
     ->join('grupo as g','g.id_grupo','=','lista_grupo.id_grupo')
     ->join('calificaciones as c','c.ncontrol','=','a.ncontrol')
     ->where('g.id_grupo',$request->id_grupo)->get();
-   return view('docente.opciones.alumnos',compact(['alumnos']));
+   return view('docente.opciones.alumnos',compact(['alumnos','id_grupo']));
  }
 
  public function calificacionesFinalesGrupo(Request $request){
