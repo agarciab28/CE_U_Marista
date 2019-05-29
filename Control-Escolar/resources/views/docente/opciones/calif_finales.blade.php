@@ -42,8 +42,8 @@
                 <td> <input type="text" name="ncontrol" value="{{$sugerencia['ncontrol']}}" readonly></td>
                 <td> <input type="text" name="grupo" value="{{$sugerencia['grupo']}}" readonly></td>
                 <td>{{$sugerencia['sug']}}</td>
-                <td> <input id="calif" value="{{$sugerencia['final']}}" name="calif" type="number" class=""></td>
-                <td><button type="submit" class="btn">guardar</button></td>
+                <td> <input id="calif" value="{{$sugerencia['final']}}" name="calif"  type="text" pattern="^[0-9]+([.][0-9]+)?$" class=""></td>
+                <td><button type="submit" class="btn">Guardar</button></td>
 
               </form>
               @endforeach

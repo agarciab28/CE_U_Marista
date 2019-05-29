@@ -162,6 +162,9 @@ echo "<script type='text/javascript'>alert('$message');</script>";
     public function actualizaCalificacion(Request $request){
       //dd([$request]);
       $id_grupo=$request->grupo;
+      if ($request->cal1>=0 && $request->cal1<=10 && $request->cal1!=null && $request->cal2>=0 && $request->cal2<=10 && $request->cal2!=null && $request->examen>=0 && $request->examen<=10 && $request->examen!=null && $request->faltas!=null) {
+        // code...
+      }
       calificaciones::where('ncontrol',$request->ncontrol)
         ->update(['primer_parcial'=>$request->cal1,
         'segundo_parcial'=>$request->cal2,
@@ -185,11 +188,11 @@ echo "<script type='text/javascript'>alert('$message');</script>";
     public function actualizaFinal(Request $request){
       //dd($request->grupo);
       $grupo=$request->grupo;
-      if($request->calif<=10 && $request->calif>=0){
+      if($request->calif<=10 && $request->calif>=0 && $request->calif!=null){
         $gp = grupo::where('id_grupo',$request->grupo)->first();
-if (!$gp->check_calif) {
-grupo::where('id_grupo',$request->grupo)->update(['check_calif' => '1']);
-}
+        if (!$gp->check_calif) {
+          grupo::where('id_grupo',$request->grupo)->update(['check_calif' => '1']);
+        }
         calificaciones::where('ncontrol',$request->ncontrol)
           ->update(['promedio_calificacion'=>$request->calif]);
       }
@@ -203,6 +206,7 @@ grupo::where('id_grupo',$request->grupo)->update(['check_calif' => '1']);
       foreach ($alumnos as $alumno) {
         $promedio=($alumno->primero*30/100)+($alumno->segundo*30/100)+($alumno->examen*40/100);
         $final=$promedio;
+        //detalle, si se recomienda algo que no sea cero, no puedes regisyrar ceros
         if($alumno->final!=0){
           $final=$alumno->final;
         }

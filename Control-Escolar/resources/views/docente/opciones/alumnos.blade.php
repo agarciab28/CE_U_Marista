@@ -42,10 +42,10 @@
                 <td> {{$alumno->nombres}} {{$alumno->apaterno}} {{$alumno->amaterno}}</td>
                 <td><input type="text" name="ncontrol" value="{{$alumno->ncontrol}}" readonly></td>
                 <td><input type="text" name="grupo" value="{{$alumno->grupo}}" readonly></td>
-                <td> <input  name="cal1" type="text" value="{{$alumno->primero}}" class=""></td>
-                <td> <input  name="cal2" type="text" value="{{$alumno->segundo}}" class=""></td>
-                <td> <input  name="examen" type="text" value="{{$alumno->examen}}" class=""></td>
-                <td> <input  name="faltas" type="text" value="{{$alumno->faltas}}" class=""></td>
+                <td> <input  name="cal1"  type="text" pattern="^[0-9]+([.][0-9]+)?$" value="{{$alumno->primero}}" class=""></td>
+                <td> <input  name="cal2"  type="text" pattern="^[0-9]+([.][0-9]+)?$" value="{{$alumno->segundo}}" class=""></td>
+                <td> <input  name="examen"  type="text" pattern="^[0-9]+([.][0-9]+)?$" value="{{$alumno->examen}}" class=""></td>
+                <td> <input  name="faltas"  type="text" pattern="^[0-9]+$" value="{{$alumno->faltas}}" class=""></td>
                 <td><button type="submit" class="btn">guardar</button></td>
               </form>
               @endforeach
