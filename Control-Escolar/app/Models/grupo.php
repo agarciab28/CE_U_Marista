@@ -10,7 +10,7 @@ class grupo extends Model
 
   protected $fillable = [
     "id_grupo","seccion","id_carrera","id_materia","id_prof",
-    "periodo"
+    "periodo","check_calif"
   ];
 
   protected $hidden = [
@@ -18,6 +18,6 @@ class grupo extends Model
   ];
 
   protected $casts = [
-    
+
   ];
 }
