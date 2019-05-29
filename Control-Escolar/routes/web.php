@@ -52,41 +52,41 @@ Route::group(["prefix" => 'admin' , 'middleware'=>'adminlogin'], function(){
 
   Route::post('/sube','adminController@sube')->name('subirCSV');
 
-//rutas registro de usuarios
-Route::get('/modificar_alumno/{ida}','AlumnosController@liat_modificar')->name('modificar_alumno');
+  //rutas registro de usuarios
+  Route::get('/modificar_alumno/{ida}','AlumnosController@liat_modificar')->name('modificar_alumno');
 
-Route::get('/modificar_coor_lst/{ida}','CoordinadorController@lista_mod')->name('modificar_coor_lst');
+  Route::get('/modificar_coor_lst/{ida}','CoordinadorController@lista_mod')->name('modificar_coor_lst');
 
-Route::post('/modificar_alumnoc/{ida}','AlumnosController@modificar_alu')->name('modificar_alumnoc');
+  Route::post('/modificar_alumnoc/{ida}','AlumnosController@modificar_alu')->name('modificar_alumnoc');
 
-Route::post('/admin_modificar_coordinador/{ida}','CoordinadorController@modificar_coordinador')->name('admin_modificar_coordinador');
+  Route::post('/admin_modificar_coordinador/{ida}','CoordinadorController@modificar_coordinador')->name('admin_modificar_coordinador');
 
-Route::get('/modificar_profe/{ida}','ProfesoresController@liat_modificar')->name('modificar_profe');
+  Route::get('/modificar_profe/{ida}','ProfesoresController@liat_modificar')->name('modificar_profe');
 
-Route::post('/admin_modificar_profesor/{ida}','ProfesoresController@modificar_profesor')->name('admin_modificar_profesor');
+  Route::post('/admin_modificar_profesor/{ida}','ProfesoresController@modificar_profesor')->name('admin_modificar_profesor');
 
-Route::post('/registrar','Auth\RegisterController@registro')->name('admin_registrar_envio');
+  Route::post('/registrar','Auth\RegisterController@registro')->name('admin_registrar_envio');
 
-Route::get('/registrar', 'Auth\RegisterController@showForm')->name('admin_registrar');
+  Route::get('/registrar', 'Auth\RegisterController@showForm')->name('admin_registrar');
 
-Route::post('/carreras', 'carrerasController@registro')->name('admin_carreras_registro');
+  Route::post('/carreras', 'carrerasController@registro')->name('admin_carreras_registro');
 
-Route::get('/carreras', 'carrerasController@listaCarreras')->name('admin_carreras');
+  Route::get('/carreras', 'carrerasController@listaCarreras')->name('admin_carreras');
 
-Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_registro');
+  Route::post('/carreras', 'carrerasController@inserta')->name('admin_carreras_registro');
 
-Route::get('/carreras/elimina/{carrera}','carrerasController@elimina')->name('eliminaCarrera');
+  Route::get('/carreras/elimina/{carrera}','carrerasController@elimina')->name('eliminaCarrera');
 
-Route::post('/carreras/editar','carrerasController@editar')->name('edita_carrera');
+  Route::post('/carreras/editar','carrerasController@editar')->name('edita_carrera');
 
 
-Route::get('/materias', 'materiasController@showMaterias')->name('admin_materias');
+  Route::get('/materias', 'materiasController@showMaterias')->name('admin_materias');
 
-Route::post('/materias','materiasController@registrar')->name('registrar_materia');
+  Route::post('/materias','materiasController@registrar')->name('registrar_materia');
 
-Route::post('/materias/editar' ,'materiasController@modifica')->name('edita_materia');
+  Route::post('/materias/editar' ,'materiasController@modifica')->name('edita_materia');
 
-Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('eliminaMateria');
+  Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('eliminaMateria');
 
   Route::get('/calendario', 'calendarioController@showCalendario')->name('admin_calendario');
 
@@ -140,12 +140,12 @@ Route::get('/materias/elimina/{materia}','materiasController@elimina')->name('el
 
   Route::get('/coordinador/elimina/{usuario}','CoordinadorController@elimina')->where(['usuario'=>'[A-z]+'])->name('eliminaCoordinador');
 
-//  Route::get('/asignar/{idg}/{idc}', function(){
-//    return view('admin.asignar');
-//  })->name('admin_asignar');
+  //  Route::get('/asignar/{idg}/{idc}', function(){
+  //    return view('admin.asignar');
+  //  })->name('admin_asignar');
 
   Route::get('/asignar/{idg}/{idc}','AlumnosController@lista_as')->name('admin_asignar');
- //Route::get('/asignara','AlumnosController@lista_as')->name('asignara');
+  //Route::get('/asignara','AlumnosController@lista_as')->name('asignara');
   //rutas de grupos
   Route::post('/grupos','gruposController@registroGrupo')->name('admin_registrar_Grupos');
 
@@ -290,9 +290,9 @@ Route::group(["prefix" => 'alumno','middleware'=>'alumnologin'], function(){
 //    return view('admin.admin_registro_alumno');
 //});
 
-Route::get('/pba', function(){
+/*Route::get('/pba', function(){
   return view('admin.modificar.usuarios');
-})->name('pba');
+})->name('pba');*/
 
 /*Auth::routes();
 

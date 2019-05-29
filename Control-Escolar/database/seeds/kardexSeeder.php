@@ -52,5 +52,23 @@ class kardexSeeder extends Seeder
       $kardex->periodo='agosto-diciembre 2019';
       $kardex->save();
 
+      $kardex= new kardex();
+      $kardex->ncontrol='1111';
+      $kardex->obj_calificacion='
+      {
+        "id_materia":"DGD-1",
+        "semestre":"1",
+        "nombre_materia":"Dibujo y Geometria Descriptiva",
+        "primer_parcial":"10",
+        "segundo_parcial":"7",
+        "examen_final":"6",
+        "total_faltas":"2",
+        "promedio_calificacion":"8",
+        "opcion_calificacion":"0"
+      }
+      ';
+      $kardex->periodo='agosto-diciembre 2018';
+      $kardex->save();
+
     }
 }

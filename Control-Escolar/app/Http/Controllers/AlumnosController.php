@@ -207,11 +207,22 @@ echo "<script type='text/javascript'>alert('$message');</script>";
     return view('docente.opciones.calif_finales',compact('sugerencias'));
   }
   public function kardexAlumno(){
-    $kardex=kardex::where('ncontrol',session('ncontrol'))->get();
-    $calificacioness=array();
-    foreach ($kardex as $semestre) {
-      //dd($semestre->obj_calificacion);
-      array_push($calificacioness,$semestre->obj_calificacion);
+
+    $semestres=kardex::select('periodo')->where('ncontrol',session('ncontrol'))->groupBy('periodo')->get();
+    //dd($semestres);
+    $kardex=array();
+    foreach ($semestres as $semestre) {
+      array_push($kardex,kardex::where('ncontrol',session('ncontrol'))->where('periodo',$semestre->periodo)->get());
+    }
+    //dd($kardex);
+    $calificaciones=array();
+    //dd($semestres);
+    foreach ($kardex as $semestress) {
+      foreach ($semestress as $semestre) {
+        array_push($calificaciones,['calificaciones'=>json_decode($semestre->obj_calificacion),'periodo'=>$semestre->periodo]);
+      }
+
+
     }
     //$calificaciones=json_decode($json->obj_calificacionn,true);
 
@@ -220,12 +231,13 @@ echo "<script type='text/javascript'>alert('$message');</script>";
       ->where('alumno.ncontrol',session('ncontrol'))
       ->get()->first();
       //dd($datos);
-      $calificaciones=array();
+      /*$calificaciones=array();
       foreach ($calificacioness as $calif) {
         array_push($calificaciones,json_decode($calif));
-      }
-      
+      }*/
+      //dd($calificaciones);
       $configuracion=configuracion::get()->first();
-    return view('alumno.kardex',compact(['datos','calificaciones','configuracion']));
+      //dd([$datos,$calificaciones,$configuracion,$semestres]);
+    return view('alumno.kardex',compact(['datos','calificaciones','configuracion','semestres']));
   }
 }
