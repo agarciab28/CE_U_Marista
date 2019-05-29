@@ -14,10 +14,24 @@ a{
   color: rgba(8,58,99,1);
 }
 
+.card-content{
+  height: 15em;
+  overflow: scroll;
+}
+
 .contenedor{
   text-align: center;
 }
 
 .botonModal{
   width: 100%;
+}
+
+.contenedor-card:hover{
+  cursor: pointer;
+  opacity: 0.8
+}
+
+.titulo{
+  font-weight: bold;
 }
