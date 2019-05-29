@@ -87,7 +87,7 @@
         </div>
         <div class="input-field col m4 s12 ">
           <!--<i class="material-icons prefix">account_circle</i>-->
-          <input type="date" id="fechar" name="fechar" class="validate datepicker" required maxlength="35">
+          <input type="text" id="fechar" name="fechar" class="validate datepicker" required maxlength="35">
           <label for="fechar">Fecha de registro</label>
         </div>
         <div class="row">
@@ -141,7 +141,7 @@
         </div>
         <div class="input-field col m4 s12 ">
           <!--<i class="material-icons prefix">account_circle</i>-->
-          <input type="date" id="mod_fechar" name="fechar" class="validate datepicker" required maxlength="35">
+          <input type="text" id="mod_fechar" name="fechar" class="validate datepicker" required maxlength="35">
           <span for="mod_fechar">Fecha de registro</span>
         </div>
         <div class="row">
