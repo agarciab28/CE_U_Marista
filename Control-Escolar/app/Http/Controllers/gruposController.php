@@ -156,7 +156,14 @@ class gruposController extends Controller
    } catch (Exception $e) {
      $message="Hubo un error al guardar el grupo";
     echo "<script type='text/javascript'>alert('$message');</script>";
-    showFormGrupo();
+    $aulas=aula::get();
+    $carreras= carrera::get(['id_carrera','nombre_carrera']);
+    $materias=materia::get(['id_materia','nombre_materia']);
+    $profesores=profesor::select('nombres','apaterno','amaterno','id_prof')
+     ->join('personal as pe','pe.username','=','profesor.username')
+     ->join('persona as pers','pers.id_persona','=','pe.id_persona')
+     ->get();
+    return view('admin.grupos',compact(['carreras','materias','profesores','aulas']));
    }
 
    $grupos=grupo::select('grupo.id_grupo as grupo','seccion','nombre_materia','p.id_prof as id_prof','nombre_carrera','m.id_materia as id_materia','periodo','nombres','apaterno','amaterno','grupo.activo as activo','c.id_carrera as id_carrera')
